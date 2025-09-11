@@ -10,6 +10,7 @@
     "generate-project-data": "node scripts/generate-project-data.js",
     "create-project": "node scripts/generate-project-data.js --create",
     "prebuild": "npm run generate-project-data",
+    "postinstall": "node scripts/platform-cleanup.js",
     "deploy": "npm run build && vercel --prebuilt --prod",
     "deploy-staging": "npm run build && vercel --prebuilt"
   },
