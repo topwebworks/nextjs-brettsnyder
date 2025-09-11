@@ -1,3 +1,8 @@
+# Build cache and development files
+.next/cache/
+.next/trace/
+node_modules/
+
 # Development files
 *.log
 .env.local

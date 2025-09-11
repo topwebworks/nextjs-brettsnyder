@@ -29,7 +29,8 @@ export const metadata: Metadata = {
 };
 
 // Enable static generation with revalidation
-export const revalidate = 0; // Disable caching temporarily to test changes
+// Static regeneration - cache for 1 hour, matches other pages
+export const revalidate = 3600; // 1 hour (matches blog page and HTTP headers)
 
 export default async function ProjectsPage() {
   // Load all project data using auto-discovery
