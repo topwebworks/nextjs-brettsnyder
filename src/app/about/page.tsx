@@ -38,8 +38,8 @@ const coreSkills = [
   { name: 'Shopify/Liquid', level: 75, category: 'Development', icon: Code },
   { name: 'Next.js/React', level: 75, category: 'Frameworks', icon: Code },
   { name: 'HTML/CSS/JS', level: 95, category: 'Languages', icon: Code },
-  { name: 'UI/UX Design', level: 85, category: 'Design', icon: Lightbulb },
-  { name: 'Performance Optimization', level: 80, category: 'Technical', icon: Zap },
+  { name: 'WordPress/CMS', level: 90, category: 'Frameworks', icon: Zap },
+  { name: 'UI/UX Design', level: 85, category: 'Design', icon: Code },
   { name: 'Fluid Responsive', level: 95, category: 'Design', icon: Target }
 ];
 

@@ -68,10 +68,10 @@ const getCategoryIcon = (category: string) => {
 const developmentTools = [
   { name: 'VS Code', description: 'Primary code editor with extensive customization', category: 'Editor', rating: 10 },
   { name: 'Shopify', description: 'E-commerce platform for online stores', category: 'Framework', rating: 9 },
-  { name: 'Copilot', description: 'AI-powered code completion and suggestions', category: 'Editor', rating: 10 },
+  { name: 'Copilot', description: 'AI-assited code suggestions', category: 'Editor', rating: 9 },
   { name: 'Next.js', description: 'Full-stack React framework with excellent DX', category: 'Framework', rating: 9 },
   { name: 'Git & GitHub', description: 'Version control and collaboration platform', category: 'Version', rating: 10 },
-  { name: 'Photoshop', description: 'Because every pixel matters', category: 'Design', rating: 8 },
+  { name: 'Photoshop', description: 'Because every pixel matters', category: 'Design', rating: 9 },
   { name: 'Figma', description: 'Design collaboration and prototyping tool', category: 'Design', rating: 9 },
   { name: 'Vercel', description: 'Seamless deployment platform for modern web projects', category: 'Deployment', rating: 9 }
 ];
@@ -79,42 +79,42 @@ const developmentTools = [
 // Hardware setup data
 const hardwareSetup = [
   { name: 'Asus Zephyrus G14', description: '15-inch powerhouse for development and design work', category: 'Computer', rating: 10 },
-  { name: 'Logitech G915 TKL', description: 'Wireless mechanical keyboard for comfortable typing', category: 'Input', rating: 8 },
-  { name: 'Logitech G502 X & G Powerplay', description: 'Precision pointing device with gesture support', category: 'Input', rating: 7 },
-  { name: 'Sony WH-H900N', description: 'Noise-canceling headphones for focus and calls', category: 'Audio', rating: 10 },
+  { name: 'Logitech G915 TKL', description: 'Wireless mechanical keyboard for comfortable typing', category: 'Input', rating: 9 },
+  { name: 'Logitech G502 X & G Powerplay', description: 'Precision pointing device with gesture support', category: 'Input', rating: 9 },
+  { name: 'Sony WH-H900N', description: 'Noise-canceling headphones for focus and calls', category: 'Audio', rating: 9 },
   { name: 'Samsung Flip 6', description: 'Compact foldable phone for multitasking', category: 'Mobile', rating: 9 },
   { name: 'iVoler laptop stand & Zippi fan', description: 'Laptop stand and fan for cool ergonomic setup', category: 'Furniture', rating: 9 }
 ];
 
 // Productivity tools data
 const productivityTools = [
-  { name: 'OneNote', description: 'Multi-device all-in-one note-taking and organization tool', category: 'Organization', rating: 9 },
-  { name: 'Spotify', description: 'Music streaming for focused coding sessions', category: 'Entertainment', rating: 10 },
+  { name: 'OneNote', description: 'Multi-device all-in-one note-taking and organization tool', category: 'Organization', rating: 8 },
+  { name: 'Spotify', description: 'Music streaming for focused coding sessions', category: 'Entertainment', rating: 9 },
   { name: 'Mophie/Anker Magsafe Packs', description: 'Portable charging solutions for devices', category: 'Utility', rating: 9 },
   { name: 'Slack/Teams/Zoom', description: 'Communication and collaboration tools for remote work', category: 'Communication', rating: 8 },
-  { name: 'Vitamix Smoothie', description: 'Protein-packed smoothie for sustained energy', category: 'Lifestyle', rating: 10 },
-  { name: 'Destiny 2', description: 'Deleted account and now more productive', category: 'Gaming', rating: 8 },
-  { name: 'OneDrive', description: 'Cloud storage with versioning and file sharing service', category: 'Utility', rating: 7 },
-  { name: 'Wrike/Jira', description: 'Project management and issue tracking tools', category: 'Productivity', rating: 9 }
+  { name: 'Vitamix Smoothie', description: 'Protein smoothies, banana berry, chocolate, tropical', category: 'Lifestyle', rating: 10 },
+  { name: 'Destiny 2', description: 'Deleted account and now more productive', category: 'Gaming', rating: 6 },
+  { name: 'OneDrive', description: 'Cloud storage with versioning and file sharing service', category: 'Utility', rating: 9 },
+  { name: 'Wrike/Jira', description: 'Project management and issue tracking tools', category: 'Productivity', rating: 8 }
 ];
 
 // Reviews & Favorites data
 const favoritesTools = [
-  { name: 'Galaxy SmartTags', description: 'Item tracking and location services', category: 'Utility', rating: 10 },
+  { name: 'Galaxy SmartTags', description: 'Item tracking and location services', category: 'Utility', rating: 9 },
   { name: 'Icon ID-5100 & ID-51 Ham Radio', description: 'Amateur radio transceivers for communication and experimentation', category: 'Communication', rating: 9 },
-  { name: 'GrooveLife Products', description: '98 year warranty accessories', category: 'Lifestyle', rating: 9 },
-  { name: 'Ryobi Tools', description: 'Because I live next to Home Depot', category: 'Maintenance', rating: 10 },
-  { name: 'Birkenstock', description: 'Always a good day in Birks', category: 'Lifestyle', rating: 8 },
-  { name: 'Tailwind CSS', description: 'utility-first CSS framework for rapid UI development', category: 'Framework', rating: 10 },
-  { name: 'Supabase', description: 'Open source Firebase alternative with real-time database and auth', category: 'Database', rating: 9 },
-  { name: 'Vercel - Free Tier', description: 'Best free hosting for Next.js apps', category: 'Deployment', rating: 8 }
+  { name: 'GrooveLife Products', description: '98 year warranty accessories', category: 'Lifestyle', rating: 10 },
+  { name: 'Ryobi Tools', description: 'Because I live next to Home Depot', category: 'Maintenance', rating: 9 },
+  { name: 'Birkenstock', description: 'Always a good day in Birks', category: 'Lifestyle', rating: 9 },
+  { name: 'Tailwind CSS', description: 'utility-first CSS framework for rapid UI development', category: 'Framework', rating: 8 },
+  { name: 'Supabase', description: 'Open source Firebase alternative with real-time database and auth', category: 'Database', rating: 8 },
+  { name: 'Vercel - Free Tier', description: 'Best free hosting for Next.js apps', category: 'Deployment', rating: 10 }
 ];
 
 // Stats data
 const usesStats = [
   { label: 'Years Experience', value: '25+', icon: Target },
   { label: 'Tools Used Daily', value: '23+', icon: Code },
-  // { label: 'Projects Completed', value: '50+', icon: Lightbulb }
+  { label: 'Smoothies Consumed', value: '1K+', icon: Coffee }
 ];
 
 // Intro content
