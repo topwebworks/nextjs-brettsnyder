@@ -1,7 +1,10 @@
-# Build cache and development files
+# Build cache and development files - exclude from deployment
 .next/cache/
 .next/trace/
 node_modules/
+
+# Demo folder - large assets not needed for production
+public/demo/
 
 # Development files
 *.log
@@ -17,3 +20,8 @@ node_modules/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Source maps and build artifacts
+*.map
+.next/standalone/
+.next/server/
