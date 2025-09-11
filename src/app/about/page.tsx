@@ -336,8 +336,6 @@ export default function AboutPage() {
                         }
                       }}
                     />
-                    {/* Subtle background gradient */}
-                    <div className={styles.skillCardAccent} />
                     
                     <div className={styles.skillCardHeader}>
                       <skill.icon 
@@ -484,9 +482,6 @@ export default function AboutPage() {
                             }
                           }}
                         />
-                        
-                        {/* Dynamic Accent Background Overlay */}
-                        <div className={styles.valueDynamicAccentOverlay} />
                         
                         {/* Header with Enhanced Icon */}
                         <div 

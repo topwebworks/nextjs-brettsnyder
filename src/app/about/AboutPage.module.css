@@ -568,17 +568,6 @@
   z-index: 10;
 }
 
-.skillCardAccent {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.04) 0%, transparent 70%);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
 .skillCardHeader {
   display: flex;
   align-items: center;
@@ -1395,18 +1384,6 @@
   transform: translateY(2px);
   pointer-events: none;
 }
-/* Value Dynamic Accent Overlay */
-.valueDynamicAccentOverlay {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.04) 0%, transparent 70%);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
 /* Value Header */
 .valueHeader {
   display: flex;
