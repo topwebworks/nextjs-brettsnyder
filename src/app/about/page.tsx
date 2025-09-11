@@ -401,28 +401,6 @@ export default function AboutPage() {
                           className={`${styles.valueImageHoverOverlay} image-hover-overlay`}
                         />
 
-                        {/* Interactive Layer */}
-                        <div
-                          className={styles.valueImageInteractiveLayer}
-                          onMouseEnter={(e) => {
-                            const overlay = e.currentTarget.parentElement?.querySelector('.image-hover-overlay') as HTMLElement;
-                            const container = e.currentTarget.parentElement as HTMLElement;
-                            if (overlay && container) {
-                              overlay.style.opacity = '1';
-                              // Only transform container, no scaling to avoid double border
-                              container.style.transform = 'translateY(-10px) scale(1.05)';
-                              container.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                            }
-                          }}
-                          onMouseLeave={(e) => {
-                            const overlay = e.currentTarget.parentElement?.querySelector('.image-hover-overlay') as HTMLElement;
-                            const container = e.currentTarget.parentElement as HTMLElement;
-                            if (overlay && container) {
-                              overlay.style.opacity = '0';
-                              container.style.transform = 'translateY(0) scale(1)';
-                            }
-                          }}
-                        />
                         <Image 
                           src={value.image}
                           alt={value.imageAlt}
@@ -444,6 +422,9 @@ export default function AboutPage() {
                         <div className={styles.valueImageBadge}>
                           {value.metrics}
                         </div>
+
+                        {/* Interactive Layer - Must be last to capture hover */}
+                        <div className={styles.valueImageInteractiveLayer} />
                       </div>
 
                       {/* Content Panel with Hover Effects */}

@@ -65,6 +65,15 @@ class ScrollAnimationManager {
         transform: translateY(40px);
       }
 
+      .scroll-animated {
+        opacity: 1 !important;
+      }
+
+      .scroll-animated.scroll-fade-up,
+      .scroll-animated.scroll-fade-up-fast {
+        transform: translateY(0) !important;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .scroll-fade-up, .scroll-fade-up-fast {
           transform: none !important;
@@ -112,9 +121,20 @@ class ScrollAnimationManager {
       return;
     }
 
+    // Store original transition to restore later
+    const originalTransition = element.style.transition;
+    
     element.style.animation = `${config.keyframe} ${config.duration} cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
     element.style.opacity = '1';
-    element.style.transform = 'translateY(0)';
+    element.classList.add('scroll-animated');
+    
+    // Restore transition after animation completes
+    setTimeout(() => {
+      element.style.animation = '';
+      if (originalTransition) {
+        element.style.transition = originalTransition;
+      }
+    }, parseFloat(config.duration) * 1000);
   }
 
   private observe() {
