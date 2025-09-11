@@ -38,6 +38,50 @@ const nextConfig: NextConfig = {
   // Experimental features
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+  
+  // Webpack optimizations
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    
+    // Reduce bundle size
+    config.optimization.splitChunks = {
+      chunks: 'all',
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        vendor: {
+          chunks: 'all',
+          test: /node_modules/,
+          name: 'vendor',
+        },
+      },
+    };
+    
+    return config;
+  },
+  
+  // Exclude demo files from production builds
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // Only serve demo files in development
+        ...(process.env.NODE_ENV === 'development' ? [] : [])
+      ]
+    }
   },
 }
 

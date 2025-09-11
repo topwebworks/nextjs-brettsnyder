@@ -1,0 +1,17 @@
+# Exclude only unnecessary files, keep demos
+# public/demo/
+
+# Development files
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
