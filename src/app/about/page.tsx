@@ -82,6 +82,20 @@ export default function AboutPage() {
   const [skillsVisible, setSkillsVisible] = React.useState(false);
   const skillsRef = React.useRef<HTMLElement>(null);
   
+  // Initialize scroll animations - bulletproof for production
+  React.useEffect(() => {
+    const initAnimations = async () => {
+      const { initScrollAnimations } = await import('@/utils/scrollAnimations');
+      initScrollAnimations();
+    };
+    
+    // Multiple initialization attempts for production reliability
+    initAnimations();
+    const timer = setTimeout(initAnimations, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
   // Set up skills scroll animation
   React.useEffect(() => {
     if (!skillsRef.current) return;
