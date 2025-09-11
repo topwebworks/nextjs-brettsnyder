@@ -18,7 +18,7 @@ if (IS_EDGE) {
 }
 // =============================================================================
 
-const CACHE_NAME = 'personal-portfolio-v3-2025-09-03'; // CACHE VERSION BUMP - clears old Edge cache after rebuild
+const CACHE_NAME = 'personal-portfolio-v4-2025-09-11'; // CACHE VERSION BUMP - fixes scroll animation cache issue
 const STATIC_CACHE_URLS = [
   '/',
   // Only cache resources that actually exist

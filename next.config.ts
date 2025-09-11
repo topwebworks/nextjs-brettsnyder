@@ -35,7 +35,7 @@ const nextConfig: NextConfig = {
   generateEtags: true, // Re-enable ETags for better caching
   trailingSlash: false,
   
-  // Add headers for better caching
+  // Add headers for better caching - FIXED: Reduced aggressive caching
   async headers() {
     return [
       {
@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, stale-while-revalidate=86400',
+            value: 'public, max-age=300, stale-while-revalidate=3600', // 5 min cache, 1 hour stale
           },
         ],
       },
@@ -52,7 +52,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, stale-while-revalidate=86400',
+            value: 'public, max-age=3600, stale-while-revalidate=86400', // Keep image caching
           },
         ],
       },
@@ -61,7 +61,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=3600', // 1 hour cache - REMOVED immutable and 1-year cache
           },
         ],
       },
