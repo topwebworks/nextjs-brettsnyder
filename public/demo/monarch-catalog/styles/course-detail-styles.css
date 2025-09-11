@@ -1,0 +1,179 @@
+.benefits-list-card {
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #e0e9ef;
+    background-color: #ffffff;
+    margin: 10px 0 -145px 30px;
+    padding: 30px 5%;
+    width: 100%;
+    height: 280px;
+    max-width: 255px;
+}
+
+.benefits-list-1col {
+    justify-content: space-between;
+    max-width: 600px;
+}
+
+.benefits-lists-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header-page-title {
+    width: 100%;
+}
+
+.course-list-card-sm {
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    min-height: 72px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #e0e9ef;
+    background-color: #ffffff;
+    padding: 0 20px;
+    cursor: pointer;
+    max-width: 400px;
+}
+
+.course-list-card-sm:hover,
+.benefits-list-card:hover {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.product-description-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    justify-content: space-between;
+}
+
+.product-description-content {
+    max-width: 600px;
+    margin-right: 50%;
+}
+
+.product-description-benefit {
+    max-width: 180px;
+    height: auto;
+    border-radius: 3px;
+    background-color: var(--shade-10);
+    margin: 10px;
+    padding: 10px 2% 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.product-description-benefits-container {
+    max-width: 1000px;
+    justify-content: center;
+}
+
+.benefit-icon {
+    height: 50px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.benefit-icon-img {
+    width: 100%;
+    max-height: 50px;
+}
+
+
+.benefit-icon-title {
+    min-height: 40px;
+}
+
+.flex-group {
+    width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+    .product-description-benefits-container {
+        justify-content: flex-start;
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-description-benefit {
+        max-width: 1000px;
+        width: 90%;
+        margin: 5px;
+        padding: 10px 10px;
+        align-items: center;
+        text-align: left;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .benefit-icon-title {
+        align-items: center;
+        padding-right: 10px;
+        flex-basis: 2;
+
+    }
+
+    .benefit-icon {
+        height: 35px;
+        align-items: center;
+        margin: 0 10px;
+        flex-basis: 75px;
+    }
+
+    .benefit-icon-img {
+        width: 75px;
+        max-height: 35px;
+    }
+
+
+    .header-title-benefits-wrapper {
+        flex-direction: column;
+    }
+
+    .benefits-list-card {
+        margin: 10px auto -145px;
+    }
+
+    .course-list-card-sm {
+        height: auto;
+        padding: 10px 0 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pdf-icon {
+        margin-left: 5%;
+    }
+
+    .course-summary-data {
+        padding: 3px 10px 0;
+        background-color: var(--shade-15);
+        margin-top: 6px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .product-description-content {
+        margin: 20px 0;
+    }
+
+    .product-description-wrapper {
+        margin-top: 190px
+    }
+
+
+}

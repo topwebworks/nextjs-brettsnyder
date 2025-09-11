@@ -1,0 +1,77 @@
+/*
+  Simple CSS-based "Show More" functionality
+  This works by hiding items with CSS and using JavaScript to show them
+*/
+
+.pagination-container {
+  width: 100%;
+}
+
+/* Hide items beyond the initial count by default */
+.pagination-item {
+  display: block;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.pagination-item.hidden {
+  display: none;
+}
+
+/* Show More button styles */
+.show-more-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  margin: 2rem auto;
+  min-width: 140px;
+}
+
+.show-more-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.show-more-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.show-more-btn.loading {
+  position: relative;
+}
+
+.show-more-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: var(--text-primary);
+  border-radius: 50%;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .show-more-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

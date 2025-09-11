@@ -1,0 +1,478 @@
+/* Projects Page CSS Module */
+
+/* Main Container and Layout */
+.mainContainer {
+  min-height: 100vh;
+  position: relative;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.mainContent {
+  padding-top: clamp(6rem, 12vh, 8rem);
+  padding-bottom: clamp(4rem, 8vh, 6rem);
+}
+
+/* Hero Section Styles */
+.heroSection {
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+  margin-bottom: clamp(2rem, 8vh, 3rem);
+  text-align: center;
+}
+
+.floatPanel {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  bottom: 10%;
+  background: rgba(var(--glass-border-rgb), 0.2);
+  backdrop-filter: var(--glass-backdrop-heavy);
+  border-radius: 8px;
+  border: 1px solid var(--glass-border-subtle);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+/* Project Stats */
+.projectListStats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--text-accent);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Projects Grid Section */
+.projectsGridSection {
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+}
+
+.projectsGridContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Category Filter Styles */
+.categoryFilterContainer {
+  margin-bottom: clamp(3rem, 6vh, 4rem);
+  text-align: center;
+}
+
+.categoryFiltersContainer {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.categoryButtonsRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.categoryFilterBtn {
+  padding: 0.75rem 2rem;
+  background: var(--glass-bg-subtle);
+  backdrop-filter: var(--glass-backdrop-light);
+  border-radius: 28px;
+  border: 1px solid var(--glass-border-subtle);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.categoryFilterBtn:hover {
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  transform: translateY(-2px);
+}
+
+
+
+/* Projects Flexbox Container */
+.projectsFlexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 4vw, 2rem);
+  margin-bottom: clamp(3rem, 6vh, 4rem);
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Project Card Styles */
+.projectCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: auto;
+  max-width: 440px;
+  width: 100%;
+  /* Enhanced glassmorphism */
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Featured Project Card */
+.projectCard[data-featured="true"] {
+  border: 1px solid #9d8126; /* Gold border for featured */
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); /* Subtle gold glow */
+}
+
+.projectCardContent {
+  position: relative; 
+  z-index: 2;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+/* Project Header Row */
+.projectHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.projectCategoryBadge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(var(--accent-rgb), 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.projectDateInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Project Image and Content Styles */
+.projectImageContainer {
+  width: 100%;
+}
+
+.projectCardImage {
+  overflow: hidden;
+  background: var(--glass-bg-subtle);
+  border: 1px solid var(--glass-border-subtle);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.projectContentWithImage {
+  width: 100%;
+}
+
+/* Project Text Content */
+.projectTitle {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.projectDescription {
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.projectDescriptionNoImage {
+  margin-bottom: 1.5rem;
+}
+
+/* Technology Tags */
+.techTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techTagsContainerNoImage {
+  margin-bottom: 1.5rem;
+}
+
+.techTag {
+  padding: 0.3rem 0.75rem;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 25px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: auto;
+}
+
+.techTagAlt {
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.techTagMoreCount {
+  padding: 0.3rem 0.75rem;
+  background: rgba(var(--accent-rgb), 0.1);
+  border-radius: 25px;
+  font-size: 0.8rem;
+  color: var(--text-accent);
+  font-weight: 600;
+}
+
+/* Project Actions */
+.projectActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+.projectActionsLeft {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.projectLiveLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.projectGithubLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.viewDetailsBtn {
+  text-decoration: none;
+}
+
+/* Show More Button */
+.showMoreProjects {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.showMoreProjectsVisible {
+  display: flex;
+}
+
+/* Contact CTA Section */
+.contactCta {
+  text-align: center;
+  margin-top: clamp(4rem, 8vh, 6rem);
+}
+
+.contactCtaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactCtaTitle {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.contactCtaSubtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contactCtaActions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contactCtaLink {
+  text-decoration: none;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pagination Item Styles */
+.paginationItem {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .heroSection {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .projectsGridSection {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .categoryButtonsRow {
+    gap: 0.75rem;
+  }
+  
+  .categoryFilterBtn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .projectCard {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectCardContent {
+    padding: 20px 18px;
+  }
+  
+  .techTagsContainer {
+    gap: 0.4rem;
+  }
+  
+  .contactCtaActions {
+    gap: 1rem;
+  }
+  
+  .projectActionsLeft {
+    gap: 0.75rem;
+  }
+}
+
+/* Animation Performance Optimization */
+.projectCard,
+.categoryFilterBtn {
+  will-change: transform, opacity;
+}
+
+.projectCard:hover .projectCardImage {
+  transform: translateY(-2px);
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .projectCard {
+    border: 2px solid var(--text-primary);
+  }
+  
+  .projectCategoryBadge,
+  .techTag {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .mainContainer *,
+  .projectCard,
+  .categoryFilterBtn,
+  .techTag {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

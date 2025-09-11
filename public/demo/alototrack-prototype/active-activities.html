@@ -1,0 +1,2073 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>AloTrack 2.0 - Edit Active Activities</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="css/tailwind.css" />
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="flex h-screen overflow-hidden bg-gray-100" x-data="{ sidebarOpen: false }"
+        @keydown.window.escape="sidebarOpen = false">
+        <div x-show="sidebarOpen" class="lg:hidden"
+            x-description="Off-canvas menu for mobile, show/hide based on off-canvas menu state."
+            style="display: none;">
+            <div class="fixed inset-0 z-40 flex">
+                <div @click="sidebarOpen = false" x-show="sidebarOpen"
+                    x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state."
+                    x-transition:enter="transition-opacity ease-linear duration-300"
+                    x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition-opacity ease-linear duration-300"
+                    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0"
+                    style="display: none;">
+                    <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
+                </div>
+                <div x-show="sidebarOpen" x-description="Off-canvas menu, show/hide based on off-canvas menu state."
+                    x-transition:enter="transition ease-in-out duration-300 transform"
+                    x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                    x-transition:leave="transition ease-in-out duration-300 transform"
+                    x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
+                    class="relative flex flex-col flex-1 w-full max-w-xs pt-5 pb-0 bg-aloBlue-500"
+                    style="display: none;">
+                    <div class="absolute top-0 right-0 p-1 -mr-14">
+                        <button x-show="sidebarOpen" @click="sidebarOpen = false"
+                            class="flex items-center justify-center w-12 h-12 rounded-full focus:outline-none focus:bg-gray-600"
+                            aria-label="Close sidebar" style="display: none;">
+                            <svg class="w-6 h-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="support-activities.html" class="flex items-center justify-center flex-shrink-0 px-4">
+                        <img class="w-auto h-8" src="images/alotrack-logo-rev.svg" alt="AloTrack Home">
+                    </a>
+                    <div class="flex-1 h-0 mt-5 overflow-y-auto">
+                        <div class="flex-1 px-4 py-1.5 space-y-1 bg-aloBlue-500">
+
+                            <!-- Mobile Sidebar Content Start -->
+
+
+                            <!-- Mobile Expandable Profile START -->
+
+                            <div x-data="{ isExpanded: false }">
+                                <button
+                                    class="flex items-center w-full px-2 py-1 pr-1 mb-1 -mt-1 text-xs font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white"
+                                    @click.prevent="isExpanded = !isExpanded" x-bind:aria-expanded="isExpanded">
+
+                                    <div class="flex items-center w-52">
+
+                                        <div class="flex-shrink-0">
+                                            <span
+                                                class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-aloBlue-700">
+                                                <span class="font-medium leading-none text-white">TW</span>
+                                            </span>
+                                        </div>
+                                        <div class="w-full ml-2 truncate">
+                                            <div class="w-40 text-sm font-medium text-left text-white truncate">
+                                                Tom
+                                                Wilson</div>
+                                            <div class="w-40 text-xs font-medium text-left text-gray-300 truncate">
+                                                tom@example.com
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        :class="{ 'text-aloBlue-300 rotate-180': isExpanded, 'text-aloBlue-200': !isExpanded }"
+                                        x-state:on="Expanded" x-state:off="Collapsed"
+                                        class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <div x-show="isExpanded" style="display: none;"
+                                    class="w-full mb-1 -mt-1 text-sm text-white transition duration-150 ease-in-out group focus:outline-none">
+                                    <a href="#"
+                                        class="flex items-center w-full px-3 py-1.5 pl-12 text-xs text-white transition duration-150 ease-in-out rounded-md group hover:bg-aloBlue-600 focus:outline-none focus:bg-aloBlue-700">
+                                        Account settings
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center w-full px-3 py-1.5 pl-12 text-xs text-white transition duration-150 ease-in-out rounded-md group hover:bg-aloBlue-600 focus:outline-none focus:bg-aloBlue-700">
+                                        Sign out
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Expandable Profile END -->
+
+
+                            <!-- Mobile SideNav Start -->
+
+                            <div class="flex-1 py-4">
+                                <nav class="space-y-1">
+
+
+                                    <div
+                                        class="px-2 pt-4 pb-1 text-xs font-normal tracking-wider text-gray-300 uppercase">
+                                        Student Support
+                                    </div>
+
+                                    <!-- <a href="#"
+                                        class="flex items-center px-1.5 py-1.5 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-md bg-aloBlue-700 group focus:outline-none focus:bg-aloBlue-700">
+                                        <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-gray-300"
+                                            x-description="Heroicon name: home" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                            </path>
+                                        </svg>
+                                        Dashboard
+                                    </a> -->
+
+                                    <a href="support-activities.html"
+                                        class="flex items-center px-1.5 py-1.5 text-base font-medium leading-6 text-gray-300 transition duration-150 ease-in-out rounded-md group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                        <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-gray-300"
+                                            x-description="Heroicon name: users" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                            </path>
+                                        </svg>
+                                        Support Activities
+                                    </a>
+
+                                    <a href="student-list.html"
+                                        class="flex items-center px-1.5 py-1.5 text-base font-medium leading-6 text-gray-300 transition duration-150 ease-in-out rounded-md group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                        <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-gray-300"
+                                            x-description="Heroicon name: folder" xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        Student List
+                                    </a>
+
+                                    <div x-data="{ isExpanded: false }">
+                                        <button
+                                            class="flex items-center w-full py-1.5 pl-1.5 pr-1 mt-1 text-base font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700"
+                                            @click.prevent="isExpanded = !isExpanded" x-bind:aria-expanded="isExpanded">
+                                            <!-- Heroicon name: chart-bar -->
+                                            <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-white"
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                            </svg>
+                                            Reports
+                                            <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                            <svg :class="{ 'text-aloBlue-300 rotate-180': isExpanded, 'text-aloBlue-200': !isExpanded }"
+                                                x-state:on="Expanded" x-state:off="Collapsed" stroke="currentColor"
+                                                fill="none"
+                                                class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+                                        <!-- Expandable link section, show/hide based on state. -->
+                                        <div class="mt-1 space-y-1" x-show="isExpanded" style="display: none;">
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 1
+                                            </a>
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 2
+                                            </a>
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 3
+                                            </a>
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 4
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="admin-role">
+
+                                        <div
+                                            class="px-2 pt-4 pb-1 text-xs font-normal tracking-wider text-gray-300 uppercase">
+                                            Administration
+                                        </div>
+
+                                        <div x-data="{ isExpanded: false }">
+                                            <button
+                                                class="flex items-center w-full py-1.5 pl-1.5 pr-1 mt-1 text-base font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700"
+                                                @click.prevent="isExpanded = !isExpanded"
+                                                x-bind:aria-expanded="isExpanded">
+                                                <!-- Heroicon name: chart-bar -->
+                                                <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-white"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                                </svg>
+                                                Admin Nav 1
+                                                <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                                <svg :class="{ 'text-aloBlue-300 rotate-180': isExpanded, 'text-aloBlue-200': !isExpanded }"
+                                                    x-state:on="Expanded" x-state:off="Collapsed" stroke="currentColor"
+                                                    fill="none"
+                                                    class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7" />
+                                                </svg>
+
+
+                                            </button>
+                                            <!-- Expandable link section, show/hide based on state. -->
+                                            <div class="mt-1 space-y-1" x-show="isExpanded" style="display: none;">
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Report 1
+                                                </a>
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Report 2
+                                                </a>
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Admin 1
+                                                </a>
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Admin 2
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </nav>
+                            </div>
+
+                            <!-- Mobile SideNav End -->
+
+
+                            <!-- Mobile Sidebar Stats START -->
+                            <!--
+                            <input class="w-full -ml-1 text-sm text-white border-none bg-aloBlue-500 focus:outline-none"
+                                type="date" id="start" name="date-start" value="2020-12-21" min="2020-01-01"
+                                max="2025-12-31">
+
+                            <div class="py-2 mx-2 text-xs leading-loose text-white truncate border-t">Activities:
+                                <strong>100</strong><br />
+                                Students: <strong>100</strong><br />
+                                Time: <strong>10</strong> h <strong>40</strong> m<br />
+                                Top Categories:<br />
+                                <ul class="list-disc list-inside">
+                                    <li class="truncate">Academics</li>
+                                    <li class="truncate">Physical/Verbal Altercations</li>
+                                </ul>
+                            </div>
+                            -->
+                            <!-- Mobile Sidebar Stats END -->
+
+
+                            <!-- Mobile Expandable Reports Menu START -->
+                            <!--
+                            <div x-data="{ expanded: 0 }">
+                                <div class="px-2 pt-4 pb-1 text-xs font-medium tracking-wider text-white uppercase">
+                                    Quick Reports
+                                </div>
+
+                                <div class="my-1">
+                                    <button
+                                        class="flex items-center w-full py-2 pl-2 pr-1 mt-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700"
+                                        @click.prevent="expanded === 1 ? expanded = 0 : expanded = 1"
+                                        x-bind:aria-expanded="expanded === 1">
+                                        Grades
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            :class="{ 'text-aloBlue-300 rotate-180': expanded === 1, 'text-aloBlue-200': expanded !== 1 }"
+                                            x-state:on="Expanded" x-state:off="Collapsed"
+                                            class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    
+                                    <div x-show="expanded === 1" style="display: none;">
+
+                                        <div href="#"
+                                            class="w-full px-2 py-2 text-xs leading-5 text-white transition duration-150 ease-in-out border-t border-aloBlue-200 bg-aloBlue-500 group focus:outline-none">
+
+                                            <fieldset>
+                                                <div>
+                                                    <label for="date-start" class="sr-only">Start Date</label>
+                                                    <div class="text-gray-300">
+                                                        Start Date
+                                                    </div>
+                                                    <input
+                                                        class="w-full text-sm text-white border-none bg-aloBlue-500 focus:outline-none"
+                                                        type="date" id="date-start" name="date-start" value="2020-12-21"
+                                                        min="2020-01-01" max="2025-12-31">
+                                                </div>
+                                                <div>
+                                                    <label for="date-start" class="sr-only">End Date</label>
+                                                    <div class="text-gray-300">
+                                                        End Date
+                                                    </div>
+                                                    <input
+                                                        class="w-full text-sm text-white border-none bg-aloBlue-500 focus:outline-none"
+                                                        type="date" id="date-start" name="date-start" value="2020-12-21"
+                                                        min="2020-01-01" max="2025-12-31">
+                                                </div>
+                                                <div class="px-3">
+                                                    <a href="#"
+                                                        class="w-full py-2 my-2 text-xs font-medium text-center text-white bg-transparent border border-transparent rounded shadow-sm hover:bg-aloBlue-500 focus:outline-none ring-1 ring-white focus:bg-aloBlue-700 focus:ring-2 focus:ring-offset-2 focus:ring-aloBlue-700">
+                                                        Get Report
+                                                    </a>
+                                                </div>
+                                            </fieldset>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button
+                                        class="flex items-center w-full py-2 pl-2 pr-1 -mt-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700"
+                                        @click.prevent="expanded === 2 ? expanded = 0 : expanded = 2"
+                                        x-bind:aria-expanded="expanded === 2">
+                                        Personal Activity
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            :class="{ 'text-aloBlue-300 rotate-180': expanded === 2, 'text-aloBlue-200': expanded !== 2 }"
+                                            x-state:on="Expanded" x-state:off="Collapsed"
+                                            class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    
+                                    <div x-show="expanded === 2" style="display: none;">
+
+                                        <div href="#"
+                                            class="w-full px-2 py-2 text-xs leading-5 text-white transition duration-150 ease-in-out border-t border-aloBlue-200 bg-aloBlue-500 group focus:outline-none">
+
+                                            <fieldset>
+                                                <div>
+                                                    <label for="date-start" class="sr-only">Start Date</label>
+                                                    <div class="text-gray-300">
+                                                        Start Date
+                                                    </div>
+                                                    <input
+                                                        class="w-full text-sm text-white border-none bg-aloBlue-500 focus:outline-none"
+                                                        type="date" id="date-start" name="date-start" value="2020-12-21"
+                                                        min="2020-01-01" max="2025-12-31">
+                                                </div>
+                                                <div>
+                                                    <label for="date-start" class="sr-only">End Date</label>
+                                                    <div class="text-gray-300">
+                                                        End Date
+                                                    </div>
+                                                    <input
+                                                        class="w-full text-sm text-white border-none bg-aloBlue-500 focus:outline-none"
+                                                        type="date" id="date-start" name="date-start" value="2020-12-21"
+                                                        min="2020-01-01" max="2025-12-31">
+                                                </div>
+                                                <div class="px-3">
+                                                    <a href="#"
+                                                        class="w-full py-2 my-2 text-xs font-medium text-center text-white bg-transparent border border-transparent rounded shadow-sm hover:bg-aloBlue-500 focus:outline-none ring-1 ring-white focus:bg-aloBlue-700 focus:ring-2 focus:ring-offset-2 focus:ring-aloBlue-700">
+                                                        Get Report
+                                                    </a>
+                                                </div>
+                                            </fieldset>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                            <!-- Mobile Expandable Reports Menu END -->
+
+
+                            <!-- Mobile Sidebar Content End -->
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- Footer Start -->
+
+                    <div class="flex flex-shrink-0 p-2 bg-aloBlue-500">
+                        <!-- <a href="#" class="flex-shrink-0 block w-full group"> -->
+                        <div class="flex items-center w-full">
+                            <div class="mx-auto">
+                                <!--<img class="w-auto h-6 mx-auto" src="images/alotrack-symbol.svg" alt="AloTrack Home">-->
+                                <p
+                                    class="mt-0 text-xs leading-3 text-gray-300 transition duration-150 ease-in-out group-hover:text-gray-200">
+                                    ©2021 AloTrack, LLC
+                                </p>
+                            </div>
+                        </div>
+                        <!-- </a> -->
+                    </div>
+
+                    <!-- Footer End -->
+
+
+
+                </div>
+                <div class="flex-shrink-0 w-14">
+                    <!-- Dummy element to force sidebar to shrink to fit close icon -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop sidebar for desktop -->
+
+        <div class="hidden overflow-y-auto lg:flex lg:flex-shrink-0">
+            <div class="flex flex-col w-64">
+
+                <!-- Sidebar component, swap this element with another sidebar if you like -->
+
+                <div class="flex flex-col flex-1 h-0">
+                    <a href="support-activities.html" title="Home"
+                        class="flex items-center justify-center flex-shrink-0 h-16 px-4 bg-aloBlue-500">
+                        <img class="w-auto h-8" src="images/alotrack-logo-rev.svg" alt="AloTrack Home">
+                    </a>
+                    <div class="flex flex-col flex-1 overflow-y-auto">
+                        <nav class="flex-1 px-4 py-1.5 space-y-1 bg-aloBlue-500">
+
+                            <!-- Desktop Sidebar Content Start -->
+
+                            <!-- Desktop Expandable Profile START -->
+
+                            <div x-data="{ isExpanded: false }">
+                                <button
+                                    class="flex items-center w-full px-2 py-1 pr-1 mb-1 -mt-1 text-xs font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white"
+                                    @click.prevent="isExpanded = !isExpanded" x-bind:aria-expanded="isExpanded">
+
+                                    <div class="flex items-center w-52">
+
+                                        <div class="flex-shrink-0">
+                                            <span
+                                                class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-aloBlue-700">
+                                                <span class="font-medium leading-none text-white">TW</span>
+                                            </span>
+                                        </div>
+                                        <div class="w-full ml-2 truncate">
+                                            <div class="w-40 text-sm font-medium text-left text-white truncate">
+                                                Tom
+                                                Wilson</div>
+                                            <div class="w-40 text-xs font-medium text-left text-gray-300 truncate">
+                                                tom@example.com
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        :class="{ 'text-aloBlue-300 rotate-180': isExpanded, 'text-aloBlue-200': !isExpanded }"
+                                        x-state:on="Expanded" x-state:off="Collapsed"
+                                        class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <div x-show="isExpanded" style="display: none;"
+                                    class="w-full mb-1 -mt-1 text-sm text-white transition duration-150 ease-in-out group focus:outline-none">
+                                    <a href="#"
+                                        class="flex items-center w-full px-3 py-1.5 pl-12 text-xs text-white transition duration-150 ease-in-out rounded-md group hover:bg-aloBlue-600 focus:outline-none focus:bg-aloBlue-700">
+                                        Account settings
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center w-full px-3 py-1.5 pl-12 text-xs text-white transition duration-150 ease-in-out rounded-md group hover:bg-aloBlue-600 focus:outline-none focus:bg-aloBlue-700">
+                                        Sign out
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Desktop Expandable Profile END -->
+
+
+                            <!-- Desktop SideNav Start -->
+
+                            <div class="flex-1 py-4">
+                                <nav class="space-y-1">
+
+
+                                    <div
+                                        class="px-2 pt-4 pb-1 text-xs font-normal tracking-wider text-gray-300 uppercase">
+                                        Student Support
+                                    </div>
+
+                                    <!-- <a href="#"
+                                        class="flex items-center px-1.5 py-1.5 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-md bg-aloBlue-700 group focus:outline-none focus:bg-aloBlue-700">
+                                        <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-gray-300"
+                                            x-description="Heroicon name: home" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                            </path>
+                                        </svg>
+                                        Dashboard
+                                    </a> -->
+
+                                    <a href="support-activities.html"
+                                        class="flex items-center px-1.5 py-1.5 text-base font-medium leading-6 text-gray-300 transition duration-150 ease-in-out rounded-md group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                        <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-gray-300"
+                                            x-description="Heroicon name: users" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                            </path>
+                                        </svg>
+                                        Support Activities
+                                    </a>
+
+                                    <a href="student-list.html"
+                                        class="flex items-center px-1.5 py-1.5 text-base font-medium leading-6 text-gray-300 transition duration-150 ease-in-out rounded-md group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                        <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-gray-300"
+                                            x-description="Heroicon name: folder" xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        Student List
+                                    </a>
+
+                                    <div x-data="{ isExpanded: false }">
+                                        <button
+                                            class="flex items-center w-full py-1.5 pl-1.5 pr-1 mt-1 text-base font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700"
+                                            @click.prevent="isExpanded = !isExpanded" x-bind:aria-expanded="isExpanded">
+                                            <!-- Heroicon name: chart-bar -->
+                                            <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-white"
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                            </svg>
+                                            Reports
+                                            <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                            <svg :class="{ 'text-aloBlue-300 rotate-180': isExpanded, 'text-aloBlue-200': !isExpanded }"
+                                                x-state:on="Expanded" x-state:off="Collapsed" stroke="currentColor"
+                                                fill="none"
+                                                class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+                                        <!-- Expandable link section, show/hide based on state. -->
+                                        <div class="mt-1 space-y-1" x-show="isExpanded" style="display: none;">
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 1
+                                            </a>
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 2
+                                            </a>
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 3
+                                            </a>
+                                            <a href="#"
+                                                class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-9 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                Report 4
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="admin-role">
+
+                                        <div
+                                            class="px-2 pt-4 pb-1 text-xs font-normal tracking-wider text-gray-300 uppercase">
+                                            Administration
+                                        </div>
+
+                                        <div x-data="{ isExpanded: false }">
+                                            <button
+                                                class="flex items-center w-full py-1.5 pl-1.5 pr-1 mt-1 text-base font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md bg-aloBlue-500 group hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700"
+                                                @click.prevent="isExpanded = !isExpanded"
+                                                x-bind:aria-expanded="isExpanded">
+                                                <!-- Heroicon name: chart-bar -->
+                                                <svg class="w-5 h-5 mr-2 transition duration-150 ease-in-out text-aloBlue-300 group-hover:text-aloBlue-200 group-focus:text-white"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                                </svg>
+                                                Admin Nav 1
+                                                <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                                <svg :class="{ 'text-aloBlue-300 rotate-180': isExpanded, 'text-aloBlue-200': !isExpanded }"
+                                                    x-state:on="Expanded" x-state:off="Collapsed" stroke="currentColor"
+                                                    fill="none"
+                                                    class="w-4 h-4 ml-auto transition-colors duration-150 ease-in-out transform group-hover:text-gray-300 group-focus:text-white"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7" />
+                                                </svg>
+
+
+                                            </button>
+                                            <!-- Expandable link section, show/hide based on state. -->
+                                            <div class="mt-1 space-y-1" x-show="isExpanded" style="display: none;">
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Report 1
+                                                </a>
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Report 2
+                                                </a>
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Admin 1
+                                                </a>
+                                                <a href="#"
+                                                    class="flex items-center w-full py-1.5 pr-1 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md group pl-11 hover:text-white hover:bg-aloBlue-600 focus:outline-none focus:text-white focus:bg-aloBlue-700">
+                                                    Admin 2
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </nav>
+                            </div>
+
+                            <!-- Desktop SideNav End -->
+
+
+                            <!-- Desktop Sidebar Stats START -->
+                            <!--
+                            <input class="w-full -ml-1 text-sm text-white border-none bg-aloBlue-500 focus:outline-none"
+                                type="date" id="start" name="date-start" value="2020-12-21" min="2020-01-01"
+                                max="2025-12-31">
+
+                            <div class="py-2 mx-2 text-xs leading-loose text-white truncate border-t">Activities:
+                                <strong>100</strong><br />
+                                Students: <strong>100</strong><br />
+                                Time: <strong>10</strong> h <strong>40</strong> m<br />
+                                Top Categories:<br />
+                                <ul class="list-disc list-inside">
+                                    <li class="truncate">Academics</li>
+                                    <li class="truncate">Physical/Verbal Altercations</li>
+                                </ul>
+                            </div>
+                            -->
+                            <!-- Desktop Sidebar Stats END -->
+
+
+                            <!-- Desktop Sidebar Content End -->
+
+                        </nav>
+
+                    </div>
+
+
+                    <!-- Footer Start -->
+
+                    <div class="flex flex-shrink-0 p-2 bg-aloBlue-500">
+                        <!-- <a href="#" class="flex-shrink-0 block w-full group"> -->
+                        <div class="flex items-center w-full">
+                            <div class="mx-auto">
+                                <!--<img class="w-auto h-6 mx-auto" src="images/alotrack-symbol.svg" alt="AloTrack Home">-->
+                                <p
+                                    class="mt-0 text-xs leading-3 text-gray-300 transition duration-150 ease-in-out group-hover:text-gray-200">
+                                    ©2021 AloTrack, LLC
+                                </p>
+                            </div>
+                        </div>
+                        <!-- </a> -->
+                    </div>
+
+                    <!-- Footer End -->
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- TOPBAR START -->
+
+        <div class="flex flex-col flex-1 w-0 overflow-hidden">
+            <div class="relative flex h-16 bg-white border-b-2 shadow z-1 border-aloBlue-500">
+                <button @click.stop="sidebarOpen = true"
+                    class="px-4 text-gray-500 border-gray-200 border-none focus:outline-none focus:bg-gray-100 focus:text-gray-600 lg:hidden"
+                    aria-label="Open sidebar">
+                    <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7"></path>
+                    </svg>
+                </button>
+
+
+                <div class="flex items-center justify-between w-full xs:px-2 md:pl-4 sm:pr-7">
+
+
+                    <!-- SMART SEARCH START-->
+
+                    <div x-data="{ showDropdown: false, studentSearch: '' }"
+                        class="relative inline-block w-full text-left">
+
+                        <div>
+
+                            <!-- SEARCH INPUT START-->
+
+                            <div class="w-full pr-4 md:px-1">
+                                <label for="search" class="sr-only">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" x-description="Heroicon name: search"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <input name="search" @click.away="showDropdown = false"
+                                        x-on:focus="showDropdown = true" x-on:blur="showDropdown = false"
+                                        class="block w-full py-2 pl-10 pr-3 text-sm placeholder-gray-500 truncate bg-white border border-none rounded-md overflow-ellipsis focus:outline-none focus:text-gray-900 focus:placeholder-gray-300 focus:ring-1 focus:ring-white focus:border-none sm:text-sm"
+                                        placeholder="Search" type="search" x-model="studentSearch" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <!-- SEARCH INPUT END-->
+
+                        </div>
+
+                        <!-- SEARCH RESULTS DROPDOWN #1 START -->
+
+                        <div x-show="showDropdown && studentSearch"
+                            x-description="Dropdown panel, show/hide based on dropdown state."
+                            x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="absolute left-0 z-10 w-64 mt-2 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg sm:w-80 ring-1 ring-black ring-opacity-5"
+                            style="display: none;">
+
+                            <div class="flex justify-start pl-2 bg-gray-50">
+                                <p class="px-3 py-2 text-xs">
+                                    SEARCH RESULTS
+                                </p>
+                            </div>
+
+                            <a href="student-record.html"
+                                class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <div class="hidden sm:flex xs:flex-shrink-0">
+                                        <span
+                                            class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                            <span class="font-medium leading-none text-white">RC</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex flex-col justify-start px-2 py-2">
+                                        <p class="text-sm font-bold overflow-ellipsis">
+                                            Ricardo Cooper
+                                        </p>
+                                        <p class="text-sm font-medium text-gray-900 truncate">
+                                            #5675686
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <span
+                                        class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                        <span class="text-xs leading-none text-white">11</span>
+                                    </span>
+                                </div>
+                            </a>
+
+                            <a href="student-record.html"
+                                class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <div class="hidden sm:flex xs:flex-shrink-0">
+                                        <span
+                                            class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                            <span class="font-medium leading-none text-white">BC</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex flex-col justify-start px-2 py-2">
+                                        <p class="text-sm font-bold overflow-ellipsis">
+                                            Brandon Charles
+                                        </p>
+                                        <p class="text-sm font-medium text-gray-900 truncate">
+                                            #456456
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <span
+                                        class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                        <span class="text-xs leading-none text-white">8</span>
+                                    </span>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <!-- SEARCH DROPDOWN #1 END -->
+
+                        <!-- Recent/Frequently Viewed DROPDOWN #2 START -->
+
+                        <div x-show="showDropdown && !studentSearch"
+                            x-description="Dropdown panel, show/hide based on dropdown state."
+                            x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="absolute left-0 z-10 w-64 mt-2 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg sm:w-80 ring-1 ring-black ring-opacity-5"
+                            style="display: none;">
+
+                            <div class="flex justify-start pl-2 bg-gray-50">
+                                <p class="px-3 py-2 text-xs">
+                                    RECENTLY VIEWED
+                                </p>
+                            </div>
+
+                            <a href="student-record.html"
+                                class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <div class="hidden sm:flex xs:flex-shrink-0">
+                                        <span
+                                            class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                            <span class="font-medium leading-none text-white">RC</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex flex-col justify-start px-2 py-2">
+                                        <p class="text-sm font-bold overflow-ellipsis">
+                                            Todd VanHouten
+                                        </p>
+                                        <p class="text-sm font-medium text-gray-900 truncate">
+                                            #Frequent Flier
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <span
+                                        class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                        <span class="text-xs leading-none text-white">10</span>
+                                    </span>
+                                </div>
+                            </a>
+
+                            <a href="student-record.html"
+                                class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <div class="hidden sm:flex xs:flex-shrink-0">
+                                        <span
+                                            class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                            <span class="font-medium leading-none text-white">KR</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex flex-col justify-start px-2 py-2">
+                                        <p class="text-sm font-bold overflow-ellipsis">
+                                            Kristin Ramos
+                                        </p>
+                                        <p class="text-sm font-medium text-gray-900 truncate">
+                                            #3242343
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <span
+                                        class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                        <span class="text-xs leading-none text-white">8</span>
+                                    </span>
+                                </div>
+                            </a>
+
+                            <!--Generic Listing no Avatar START-->
+
+                            <!-- <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+	
+									<a href="#"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+										role="menuitem"><span class="block font-bold">John
+											Smith</span>#1025631</a>
+									<a href="#"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+										role="menuitem"><span class="block font-bold">John
+											Smithers</span>#1234234</a>
+									<a href="#"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+										role="menuitem"><span class="block font-bold">John
+											Smitherington</span>#7654356</a>
+								</div> -->
+
+                            <!--Generic Listing no Avatar END-->
+
+
+                        </div>
+
+                        <!-- Recent/Frequently Viewed DROPDOWN #2 END -->
+
+                    </div>
+
+                    <!-- SMART SEARCH END-->
+
+
+
+                    <div class="flex items-center">
+
+
+                        <div class="flex items-center md:ml-3 whitespace-nowrap">
+
+
+                            <!-- Alert Link Start -->
+
+                            <div class="relative inline-block pr-4 text-left">
+
+                                <div>
+                                    <a href="incomplete-activities.html"
+                                        class="flex items-center rounded-full text-amber-400 hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <div
+                                            class="absolute top-0 font-bold bg-white text-amber-700 icon-counter left-5">
+                                            9+</div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <!-- Alert Link End -->
+
+                            <!-- Timer Start -->
+
+                            <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false"
+                                class="relative inline-block pr-4 text-left">
+                                <div>
+                                    <button @click="open = !open"
+                                        class="flex items-center text-green-500 rounded-full hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                        id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open">
+                                        <span class="sr-only">Open options</span>
+                                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <div
+                                            class="absolute top-0 font-bold text-green-600 bg-white icon-counter left-6">
+                                            3</div>
+                                    </button>
+                                </div>
+
+                                <div x-show="open" x-description="Dropdown panel, show/hide based on dropdown state."
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
+                                    style="display: none;">
+
+                                    <div class="py-1 divide-y divide-gray-100" role="menu" aria-orientation="vertical"
+                                        aria-labelledby="options-menu">
+
+
+                                        <div class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                            role="menuitem">
+                                            <div class="flex flex-col">
+                                                <div
+                                                    class="flex items-center justify-between text-sm font-medium text-gray-600">
+                                                    <a href="active-activities.html" title="STOP"
+                                                        class="inline-flex items-center mr-1 -mt-1 -ml-1 text-sm font-medium text-red-400 border border-transparent rounded-full hover:text-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+                                                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </a>
+                                                    <div class="pr-2 whitespace-nowrap">2:30 pm</div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <p class="flex items-center text-sm text-green-500">
+                                                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                                <span
+                                                                    class="pl-0.5 pr-1 text-sm text-green-500 font-bold truncate">00:35:45</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="edit-activities.html" title="Edit Activity"
+                                                        class="flex items-center justify-start text-sm text-gray-800">
+                                                        <span class="pr-1 truncate">Franklin
+                                                            Jackson</span>+3
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                            role="menuitem">
+                                            <div class="flex flex-col">
+                                                <div
+                                                    class="flex items-center justify-between text-sm font-medium text-gray-600">
+                                                    <a href="active-activities.html" title="STOP"
+                                                        class="inline-flex items-center mr-1 -mt-1 -ml-1 text-sm font-medium text-red-400 border border-transparent rounded-full hover:text-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+                                                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </a>
+                                                    <div class="pr-2 whitespace-nowrap">9:45 am</div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <p class="flex items-center text-sm text-green-500">
+                                                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                                <span
+                                                                    class="pl-0.5 pr-1 text-sm text-green-500 font-bold truncate">00:45:04</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="edit-activities.html" title="Edit Activity"
+                                                        class="flex items-center justify-start text-sm text-gray-800">
+                                                        <span class="pr-1 truncate">Brandon Charles</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                            role="menuitem">
+                                            <div class="flex flex-col">
+                                                <div
+                                                    class="flex items-center justify-between text-sm font-medium text-gray-600">
+                                                    <a href="active-activities.html" title="STOP"
+                                                        class="inline-flex items-center mr-1 -mt-1 -ml-1 text-sm font-medium text-red-400 border border-transparent rounded-full hover:text-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+                                                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </a>
+                                                    <div class="pr-2 whitespace-nowrap">11:30 am</div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <p class="flex items-center text-sm text-green-500">
+                                                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                                <span
+                                                                    class="pl-0.5 pr-1 text-sm text-green-500 font-bold truncate">00:25:56</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="edit-activities.html" title="Edit Activity"
+                                                        class="flex items-center justify-start text-smtext-gray-800">
+                                                        <span class="pr-1 truncate">Marianne
+                                                            Buckinghamshire</span>+1
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timer End -->
+
+                            <!-- ADD Button Start -->
+
+                            <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false"
+                                class="relative inline-block pr-4 text-left">
+                                <div>
+                                    <button @click="open = !open"
+                                        class="flex items-center p-1 text-white bg-orange-400 rounded-full hover:bg-orange-600 focus:outline-none focus:ring-offset-1 focus:ring-2 focus:ring-yellow-400"
+                                        id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open">
+                                        <span class="sr-only">Open options</span>
+                                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div x-show="open" x-description="Dropdown panel, show/hide based on dropdown state."
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
+                                    style="display: none;">
+
+
+                                    <!--RECENT STUDENT ADD DD START-->
+
+                                    <div>
+
+                                        <div class="flex justify-start pl-2">
+                                            <p class="px-2 pt-4 text-xs font-bold">
+                                                This Student
+                                            </p>
+                                        </div>
+
+                                        <!--Student Listing no Avatar START-->
+
+                                        <div class="py-1" role="menu" aria-orientation="vertical"
+                                            aria-labelledby="options-menu">
+                                            <a href="active-activities.html"
+                                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                role="menuitem">Start timer</a>
+                                            <a href="edit-activities.html"
+                                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                role="menuitem">New activity</a>
+                                            <a href="#"
+                                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                role="menuitem">New link</a>
+                                        </div>
+
+                                        <!--Student Listing no Avatar END-->
+
+                                        <!--RECENT STUDENT ADD DD END-->
+
+                                    </div>
+
+
+                                    <!--GLOBAL ADD DD START-->
+
+                                    <div>
+
+                                        <div class="flex justify-start pl-2">
+                                            <p class="px-2 pt-4 text-xs font-bold">
+                                                AloTrack
+                                            </p>
+                                        </div>
+
+                                        <!--Gloabal Listing no Avatar START-->
+
+                                        <div class="py-1" role="menu" aria-orientation="vertical"
+                                            aria-labelledby="options-menu">
+                                            <a href="active-activities.html"
+                                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                role="menuitem">Start timer</a>
+                                            <a href="edit-activities.html"
+                                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                role="menuitem">New activity</a>
+                                        </div>
+
+                                        <!--Blobal Listing no Avatar END-->
+
+                                    </div>
+
+                                    <!--ADD DD END-->
+
+
+                                </div>
+                            </div>
+
+                            <!-- Add Button End -->
+
+
+                            <!-- Profile Start -->
+                            <!--
+                            <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false"
+                                class="relative hidden pr-4 text-left md:inline-block">
+                                <div>
+                                    <button @click="open = !open"
+                                        class="flex items-center text-gray-200 bg-gray-100 rounded-full hover:text-white focus:outline-none focus:ring-offset-1 focus:ring-2 focus:ring-aloBlue-300"
+                                        id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open">
+                                        <span class="sr-only">Open options</span>
+                                        <span
+                                            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-aloBlue-300 hover:bg-aloBlue-500">
+                                            <span class="text-sm font-medium leading-none text-white">TW</span>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div x-show="open" x-description="Dropdown panel, show/hide based on dropdown state."
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
+                                    style="display: none;">
+                                    <div class="py-1" role="menu" aria-orientation="vertical"
+                                        aria-labelledby="options-menu">
+                                        <a href="account-settings.html"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                            role="menuitem">Account settings</a>
+                                        <form method="POST" action="index.html" style="margin-block-end: 0;">
+                                            <button type="submit"
+                                                class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+                                                role="menuitem">
+                                                Sign out
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                            <!-- Profile End -->
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- TOPBAR END -->
+
+
+            <!-- Inner Content Start -->
+
+
+            <!--BLUEBAR Start-->
+
+            <div class="flex w-full border-b-2 xs:px-1 sm:pr-4 bg-aloBlue-500 border-aloBlue-500">
+
+                <div class="flex items-center justify-between w-full h-12">
+
+                    <div class="truncate">
+                        <h3 class="pl-4 text-white truncate md:pl-8 sm:block">Edit Activity</h3>
+                    </div>
+
+                    <div>
+                        <div class="flex">
+                            <p class="flex items-center pr-4 text-sm text-white">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
+                                </svg>
+                                <span class="pl-1 text-xs text-white truncate">Saved 10:00 am</span>
+                            </p>
+
+                            <div>
+                                <div>
+                                    <a href="edit-activities.html"
+                                        class="inline-flex items-center px-3 py-1.5 mr-7 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-transparent hover:bg-aloBlue-700 focus:outline-none ring-1 ring-white focus:bg-aloBlue-700 focus:ring-2 focus:ring-offset-2 focus:ring-aloBlue-700">
+                                        Save
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--Blue Bar End-->
+
+
+
+            <main class="relative z-0 flex-1 overflow-y-auto focus:outline-none" tabindex="0">
+
+                <div class="pb-8">
+
+
+                    <div class="px-1 pt-6">
+
+                        <!--2 Col Content Start -->
+
+                        <div class="px-4 mx-auto mt-6 sm:px-6 lg:px-8">
+                            <dl class="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-2">
+
+
+                                <div class="col-span-1">
+                                    <dt class="text-sm font-medium text-gray-800">
+                                        Active Timer
+                                    </dt>
+
+                                    <dd class="mt-2 text-gray-900 text-md">
+
+
+                                        <div class="p-4 border-2 border-green-500 rounded-md bg-green-50">
+                                            <div class="flex justify-center">
+
+                                                <div class="ml-3">
+
+                                                    <div class="px-4 py-2 mx-auto text-gray-700 text-md"
+                                                        role="menuitem">
+
+                                                        <div
+                                                            class="flex flex-wrap items-center justify-center font-medium text-gray-600 text-md">
+                                                            <div class="flex items-center">
+
+                                                                <div class="px-3 whitespace-nowrap">
+                                                                    Started: <span class="font-bold">9:45
+                                                                        am</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="flex items-center">
+                                                                <div>
+                                                                    <p class="flex items-center text-green-500 text-md">
+                                                                        <svg class="w-5 h-5"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                                            <path fill-rule="evenodd"
+                                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                                                                clip-rule="evenodd" />
+                                                                        </svg>
+                                                                        <span
+                                                                            class="px-1 text-2xl font-medium text-green-600 truncate">00:45:04</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <a href="#" title="STOP"
+                                                                class="inline-flex items-center px-4 py-1 mx-3 text-xs font-medium text-white bg-red-500 border border-transparent rounded shadow-sm hover:bg-red-700 focus:outline-none ring-1 ring-white focus:bg-red-700 focus:ring-2 focus:ring-offset-2 focus:ring-red-700">
+                                                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                                <span class="pl-1 text-sm text-white">STOP</span>
+                                                            </a>
+
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </dd>
+
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2">
+
+                                    <fieldset class="bg-transparent">
+                                        <legend class="block text-sm font-medium text-gray-800">
+                                            Contact Type
+                                        </legend>
+                                        <div class="mt-2 -space-y-px rounded-md shadow-sm">
+                                            <div>
+                                                <label for="contact-type" class="sr-only">Contact
+                                                    Type</label>
+                                                <select id="contact-type" name="country"
+                                                    class="relative block w-full h-10 bg-white border-gray-300 rounded-md focus:ring-aloBlue-500 focus:border-aloBlue-500 focus:z-10 sm:text-sm">
+                                                    <option>Phone</option>
+                                                    <option>Email</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="bg-transparent">
+                                        <legend class="block pt-3 text-sm font-medium text-gray-800 sm:pt-0">
+                                            Support
+                                            Team
+                                        </legend>
+                                        <div class="mt-2 -space-y-px rounded-md shadow-sm">
+                                            <div>
+                                                <label for="department" class="sr-only">Team</label>
+                                                <select id="department" name="country"
+                                                    class="relative block w-full h-10 bg-white border-gray-300 rounded-md focus:ring-aloBlue-500 focus:border-aloBlue-500 focus:z-10 sm:text-sm">
+                                                    <option>Guidance (Default)</option>
+                                                    <option>Special Education</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+
+                                <div class="sm:col-span-1">
+                                    <dt class="text-sm font-medium text-gray-800">
+                                        Manage Students
+                                    </dt>
+                                    <dd class="mt-3 text-sm text-gray-900">
+
+
+                                        <div class="flex flex-col">
+                                            <div class="-my-2 sm:-mx-6 lg:-mx-8">
+                                                <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                                    <div class="border-b border-gray-200 shadow sm:rounded-lg">
+                                                        <table class="min-w-full divide-y divide-gray-200">
+                                                            <thead class="bg-gray-50">
+                                                                <tr>
+                                                                    <th scope="col"
+                                                                        class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-800 uppercase">
+                                                                        Name
+                                                                    </th>
+                                                                    <th scope="col"
+                                                                        class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-800 uppercase">
+                                                                        ID
+                                                                    </th>
+                                                                    <th scope="col" class="relative px-6 py-3">
+                                                                        <span class="sr-only">Delete</span>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- Odd row -->
+                                                                <tr class="bg-white">
+                                                                    <td
+                                                                        class="px-4 py-2 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        Ricardo Cooper
+                                                                    </td>
+                                                                    <td
+                                                                        class="px-4 py-2 text-sm text-gray-500 whitespace-nowrap">
+                                                                        1025678
+                                                                    </td>
+                                                                    <td
+                                                                        class="flex justify-end px-4 py-2 text-sm font-medium text-right whitespace-nowrap">
+                                                                        <a href="#"
+                                                                            class="text-gray-300 rounded-full focus:text-gray-500 focus:ring-1 focus:outline-none focus:ring-gray-500">
+                                                                            <svg class="w-5 h-5"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 20 20" fill="currentColor">
+                                                                                <path fill-rule="evenodd"
+                                                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                                                                    clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <!-- Even row -->
+                                                                <tr class="bg-gray-50">
+                                                                    <td
+                                                                        class="px-4 py-2 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        Kristin Ramos
+                                                                    </td>
+                                                                    <td
+                                                                        class="px-4 py-2 text-sm text-gray-500 whitespace-nowrap">
+                                                                        1025679
+                                                                    </td>
+                                                                    <td
+                                                                        class="flex justify-end px-4 py-2 text-sm font-medium text-right whitespace-nowrap">
+                                                                        <a href="#"
+                                                                            class="text-gray-300 rounded-full focus:text-gray-500 focus:ring-1 focus:outline-none focus:ring-gray-500">
+                                                                            <svg class="w-5 h-5"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 20 20" fill="currentColor">
+                                                                                <path fill-rule="evenodd"
+                                                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                                                                    clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <!-- Odd row -->
+                                                                <tr class="bg-white">
+                                                                    <td
+                                                                        class="px-4 py-2 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        Mary Tran
+                                                                    </td>
+                                                                    <td
+                                                                        class="px-4 py-2 text-sm text-gray-500 whitespace-nowrap">
+                                                                        1025670
+                                                                    </td>
+                                                                    <td
+                                                                        class="flex justify-end px-4 py-2 text-sm font-medium text-right whitespace-nowrap">
+                                                                        <a href="#"
+                                                                            class="text-gray-300 rounded-full focus:text-gray-500 focus:ring-1 focus:outline-none focus:ring-gray-500">
+                                                                            <svg class="w-5 h-5"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 20 20" fill="currentColor">
+                                                                                <path fill-rule="evenodd"
+                                                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                                                                    clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <!-- More rows... -->
+                                                            </tbody>
+                                                        </table>
+
+
+
+                                                        <!-- SMART ADD STUDENT SEARCH START-->
+
+                                                        <div x-data="{ showDropdown: false, searchAddStudent: '' }"
+                                                            class="relative inline-block w-full text-left">
+
+                                                            <div>
+
+                                                                <!-- SEARCH INPUT START-->
+
+                                                                <div class="w-full pr-4 md:px-1">
+                                                                    <label for="search" class="sr-only">Search</label>
+                                                                    <div class="relative">
+                                                                        <div
+                                                                            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                                            <svg class="w-5 h-5 text-gray-300 "
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 20 20" fill="currentColor"
+                                                                                aria-hidden="true">
+                                                                                <path fill-rule="evenodd"
+                                                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                                                                                    clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </div>
+                                                                        <input name="searchAddStudent"
+                                                                            @click.away="showDropdown = false"
+                                                                            x-on:focus="showDropdown = true"
+                                                                            x-on:blur="showDropdown = false"
+                                                                            class="block w-full py-2 pl-10 pr-3 text-sm placeholder-gray-500 truncate bg-gray-100 border border-none rounded-md overflow-ellipsis focus:outline-none focus:text-gray-900 focus:placeholder-gray-300 focus:ring-1 focus:ring-gray-100 focus:border-none sm:text-sm"
+                                                                            placeholder="Add Student by Name or ID"
+                                                                            type="search" x-model="searchAddStudent"
+                                                                            autocomplete="off">
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- SEARCH INPUT END-->
+
+                                                            </div>
+
+                                                            <!-- SEARCH RESULTS DROPDOWN #1 START -->
+
+                                                            <div x-show="showDropdown && searchAddStudent"
+                                                                x-description="Dropdown panel, show/hide based on dropdown state."
+                                                                x-transition:enter="transition ease-out duration-100"
+                                                                x-transition:enter-start="transform opacity-0 scale-95"
+                                                                x-transition:enter-end="transform opacity-100 scale-100"
+                                                                x-transition:leave="transition ease-in duration-75"
+                                                                x-transition:leave-start="transform opacity-100 scale-100"
+                                                                x-transition:leave-end="transform opacity-0 scale-95"
+                                                                class="absolute left-0 z-10 w-64 mt-2 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg sm:w-80 ring-1 ring-black ring-opacity-5"
+                                                                style="display: none;">
+
+                                                                <div class="flex justify-start pl-2 bg-gray-50">
+                                                                    <p class="px-3 py-2 text-xs">
+                                                                        SEARCH RESULTS
+                                                                    </p>
+                                                                </div>
+
+                                                                <a href="#"
+                                                                    class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                                                    <div class="flex items-center">
+                                                                        <div class="hidden sm:flex xs:flex-shrink-0">
+                                                                            <span
+                                                                                class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                                                                <span
+                                                                                    class="font-medium leading-none text-white">RC</span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col justify-start px-2 py-2">
+                                                                            <p
+                                                                                class="text-sm font-bold overflow-ellipsis">
+                                                                                Ricardo Cooper
+                                                                            </p>
+                                                                            <p
+                                                                                class="text-sm font-medium text-gray-900 truncate">
+                                                                                #5675686
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-shrink-0">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                                                            <span
+                                                                                class="text-xs leading-none text-white">11</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+
+                                                                <a href="#"
+                                                                    class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                                                    <div class="flex items-center">
+                                                                        <div class="hidden sm:flex xs:flex-shrink-0">
+                                                                            <span
+                                                                                class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                                                                <span
+                                                                                    class="font-medium leading-none text-white">BC</span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col justify-start px-2 py-2">
+                                                                            <p
+                                                                                class="text-sm font-bold overflow-ellipsis">
+                                                                                Brandon Charles
+                                                                            </p>
+                                                                            <p
+                                                                                class="text-sm font-medium text-gray-900 truncate">
+                                                                                #456456
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-shrink-0">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                                                            <span
+                                                                                class="text-xs leading-none text-white">8</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+
+                                                            </div>
+
+                                                            <!-- SEARCH DROPDOWN #1 END -->
+
+                                                            <!-- Recent/Frequently Viewed DROPDOWN #2 START -->
+
+                                                            <div x-show="showDropdown && !searchAddStudent"
+                                                                x-description="Dropdown panel, show/hide based on dropdown state."
+                                                                x-transition:enter="transition ease-out duration-100"
+                                                                x-transition:enter-start="transform opacity-0 scale-95"
+                                                                x-transition:enter-end="transform opacity-100 scale-100"
+                                                                x-transition:leave="transition ease-in duration-75"
+                                                                x-transition:leave-start="transform opacity-100 scale-100"
+                                                                x-transition:leave-end="transform opacity-0 scale-95"
+                                                                class="absolute left-0 z-10 w-64 mt-2 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg sm:w-80 ring-1 ring-black ring-opacity-5"
+                                                                style="display: none;">
+
+                                                                <div class="flex justify-start pl-2 bg-gray-50">
+                                                                    <p class="px-3 py-2 text-xs">
+                                                                        RECENTLY VIEWED
+                                                                    </p>
+                                                                </div>
+
+                                                                <a href="#"
+                                                                    class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                                                    <div class="flex items-center">
+                                                                        <div class="hidden sm:flex xs:flex-shrink-0">
+                                                                            <span
+                                                                                class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                                                                <span
+                                                                                    class="font-medium leading-none text-white">RC</span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col justify-start px-2 py-2">
+                                                                            <p
+                                                                                class="text-sm font-bold overflow-ellipsis">
+                                                                                Todd VanHouten
+                                                                            </p>
+                                                                            <p
+                                                                                class="text-sm font-medium text-gray-900 truncate">
+                                                                                #Frequent Flier
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-shrink-0">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                                                            <span
+                                                                                class="text-xs leading-none text-white">10</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+
+                                                                <a href="#"
+                                                                    class="flex items-center justify-between px-3 py-0 hover:bg-gray-100">
+                                                                    <div class="flex items-center">
+                                                                        <div class="hidden sm:flex xs:flex-shrink-0">
+                                                                            <span
+                                                                                class="items-center justify-center hidden w-8 h-8 rounded-full sm:inline-flex bg-aloBlue-300">
+                                                                                <span
+                                                                                    class="font-medium leading-none text-white">KR</span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col justify-start px-2 py-2">
+                                                                            <p
+                                                                                class="text-sm font-bold overflow-ellipsis">
+                                                                                Kristin Ramos
+                                                                            </p>
+                                                                            <p
+                                                                                class="text-sm font-medium text-gray-900 truncate">
+                                                                                #3242343
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-shrink-0">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center w-6 h-6 bg-gray-400 rounded-full">
+                                                                            <span
+                                                                                class="text-xs leading-none text-white">8</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+
+
+                                                            </div>
+
+                                                            <!-- Recent/Frequently Viewed DROPDOWN #2 END -->
+
+                                                        </div>
+
+                                                        <!-- SMART ADD STUDENT SEARCH END-->
+
+
+
+                                                        <!--ORIG Input Field START-->
+                                                        <!--
+														<div class="relative w-full px-2 py-1 border-t bg-gray-50">
+															<div
+																class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+																<svg class="w-5 h-5 text-gray-300 "
+																	xmlns="http://www.w3.org/2000/svg"
+																	viewBox="0 0 20 20" fill="currentColor"
+																	aria-hidden="true">
+																	<path fill-rule="evenodd"
+																		d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+																		clip-rule="evenodd" />
+																</svg>
+															</div>
+															<input type="text" name="text" id="text"
+																class="block w-full py-2 pl-8 text-sm text-gray-900 placeholder-gray-500 bg-transparent border-none focus:placeholder-gray-300 focus:text-gray-600 focus:ring-0 focus:border-none sm:text-sm"
+																placeholder="Add Student by Name or ID">
+														</div>
+													-->
+                                                        <!--ORIG Input Fiels END-->
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </dd>
+                                </div>
+
+
+
+                                <div class="sm:col-span-1">
+
+                                    <dt class="text-sm font-medium text-gray-800">
+                                        Support Categories
+                                    </dt>
+
+
+                                    <dd class="mt-3 text-sm text-gray-900">
+
+                                        <div class="flex flex-col">
+                                            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                                    <div
+                                                        class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+                                                        <table class="min-w-full divide-y divide-gray-200">
+                                                            <thead class="bg-gray-50">
+                                                                <tr>
+                                                                    <th scope="col"
+                                                                        class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-800 uppercase">
+                                                                        Guidance
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- odd row -->
+                                                                <tr class="bg-white">
+                                                                    <td
+                                                                        class="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        <div class="flex items-center"
+                                                                            x-data="{ selected: false }">
+                                                                            <input id="cat_1" name="cat_1"
+                                                                                type="checkbox"
+                                                                                class="w-4 h-4 border-gray-300 rounded text-aloBlue-400 focus:ring-aloBlue-400"
+                                                                                x-on:change="selected = !selected">
+                                                                            <label for="cat_1"
+                                                                                class="block ml-2 text-sm text-gray-900">
+                                                                                <div class="inline-flex items-center px-2.5 mx-0.5 my-0.5 py-0.5 rounded-full text-sm font-medium hover:bg-blue-100 text-aloBlue-800 truncate"
+                                                                                    :class="{ 'bg-blue-100': selected }">
+                                                                                    <span class="truncate">Access
+                                                                                        to
+                                                                                        Government
+                                                                                        Services</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <!-- Even row -->
+                                                                <tr class="bg-gray-50">
+                                                                    <td
+                                                                        class="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        <div class="flex items-center"
+                                                                            x-data="{ selected: false }">
+                                                                            <input id="cat_2" name="cat_2"
+                                                                                type="checkbox"
+                                                                                class="w-4 h-4 border-gray-300 rounded text-aloBlue-400 focus:ring-aloBlue-400"
+                                                                                x-on:change=" selected=!selected">
+                                                                            <label for="cat_2"
+                                                                                class="block ml-2 text-sm text-gray-900">
+                                                                                <div class="inline-flex items-center px-2.5 mx-0.5 my-0.5 py-0.5 rounded-full text-sm font-medium hover:bg-blue-100 text-aloBlue-800 truncate"
+                                                                                    :class="{ 'bg-blue-100': selected }">
+                                                                                    <span
+                                                                                        class="truncate">Physical/Verbal
+                                                                                        Altercation</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <!-- odd row -->
+                                                                <tr class="bg-white">
+                                                                    <td
+                                                                        class="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        <div class="flex items-center"
+                                                                            x-data="{ selected: false }">
+                                                                            <input id="cat_3" name="cat_3"
+                                                                                type="checkbox"
+                                                                                class="w-4 h-4 border-gray-300 rounded text-aloBlue-400 focus:ring-aloBlue-400"
+                                                                                x-on:change="selected = !selected">
+                                                                            <label for="cat_3"
+                                                                                class="block ml-2 text-sm text-gray-900">
+                                                                                <div class="inline-flex items-center px-2.5 mx-0.5 my-0.5 py-0.5 rounded-full text-sm font-medium hover:bg-blue-100 text-aloBlue-800 truncate"
+                                                                                    :class="{ 'bg-blue-100': selected }">
+                                                                                    <span
+                                                                                        class="truncate">Emotional</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <!-- Even row -->
+                                                                <tr class="bg-gray-50">
+                                                                    <td
+                                                                        class="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        <div class="flex items-center"
+                                                                            x-data="{ selected: false }">
+                                                                            <input id="cat_4" name="cat_4"
+                                                                                type="checkbox"
+                                                                                class="w-4 h-4 border-gray-300 rounded text-aloBlue-400 focus:ring-aloBlue-400"
+                                                                                x-on:change="selected = !selected">
+                                                                            <label for="cat_4"
+                                                                                class="block ml-2 text-sm text-gray-900">
+                                                                                <div class="inline-flex items-center px-2.5 mx-0.5 my-0.5 py-0.5 rounded-full text-sm font-medium hover:bg-blue-100 text-aloBlue-800 truncate"
+                                                                                    :class="{ 'bg-blue-100': selected }">
+                                                                                    <span class="truncate">Personal
+                                                                                        Wellbeing</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <!-- odd row -->
+                                                                <tr class="bg-white">
+                                                                    <td
+                                                                        class="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        <div class="flex items-center"
+                                                                            x-data="{ selected: false }">
+                                                                            <input id="cat_5" name="cat_5"
+                                                                                type="checkbox"
+                                                                                class="w-4 h-4 border-gray-300 rounded text-aloBlue-400 focus:ring-aloBlue-400"
+                                                                                x-on:change="selected = !selected">
+                                                                            <label for="cat_5"
+                                                                                class="block ml-2 text-sm text-gray-900">
+                                                                                <div class="inline-flex items-center px-2.5 mx-0.5 my-0.5 py-0.5 rounded-full text-sm font-medium hover:bg-blue-100 text-aloBlue-800 truncate"
+                                                                                    :class="{ 'bg-blue-100': selected }">
+                                                                                    <span class="truncate">Special
+                                                                                        Needs</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <!-- Even row -->
+                                                                <tr class="bg-gray-50">
+                                                                    <td
+                                                                        class="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                                                        <div class="flex items-center"
+                                                                            x-data="{ selected: false }">
+                                                                            <input id="cat_6" name="cat_6"
+                                                                                type="checkbox"
+                                                                                class="w-4 h-4 border-gray-300 rounded text-aloBlue-400 focus:ring-aloBlue-400"
+                                                                                x-on:change=" selected=!selected">
+                                                                            <label for="cat_6"
+                                                                                class="block ml-2 text-sm text-gray-900">
+                                                                                <div class="inline-flex items-center px-2.5 mx-0.5 my-0.5 py-0.5 rounded-full text-sm font-medium hover:bg-blue-100 text-aloBlue-800 truncate"
+                                                                                    :class="{ 'bg-blue-100': selected }">
+                                                                                    <span class="truncate">Other</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+
+                                                                <!-- More rows... -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </dd>
+                                </div>
+
+
+                                <div class="sm:col-span-1">
+                                    <div class="flex">
+                                        <svg class="w-5 h-5 mr-2 text-gray-600" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
+                                                clip-rule="evenodd" />
+                                            <path
+                                                d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
+                                        </svg>
+                                        <label for="private_message"
+                                            class="block pb-1 text-sm font-medium text-gray-800 hover:text-aloBlue-500">
+                                            Private Notes</label>
+                                    </div>
+                                    <div class="pb-2 text-xs px-7">Private notes can ONLY be
+                                        viewed and edited
+                                        by&nbsp;you.
+                                    </div>
+                                    <div class="mt-1">
+                                        <textarea id="private_message" name="private_message" rows="8"
+                                            class="block w-full px-3 py-3 text-sm placeholder-gray-500 border-gray-300 rounded-md shadow-sm sm:px-7 sm:py-8 focus:text-gray-900 focus:placeholder-gray-300 focus:ring-aloBlue-500 focus:border-aloBlue-500"
+                                            placeholder="Private notes here."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-1" x-data="{ sharedMessage: ''}">
+                                    <div class="flex justify-between item-center">
+                                        <div class="flex flex-col">
+                                            <div class="flex">
+
+                                                <svg class="w-5 h-5 mr-2 text-gray-300"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                    fill="currentColor">
+                                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                                <label for="shared_message"
+                                                    class="block pb-1 text-sm font-medium text-gray-800 hover:text-aloBlue-500">
+                                                    Shared Notes</label>
+
+                                                <!--<a href="#" title="Hover tip here."
+												class="inline-flex items-start space-x-1 text-sm text-gray-500 group hover:text-gray-900">
+												<svg class="flex-shrink-0 w-5 h-5 text-gray-400 group-hover:text-gray-500"
+													xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+													fill="currentColor" aria-hidden="true">
+													<path fill-rule="evenodd"
+														d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+														clip-rule="evenodd" />
+												</svg>
+												<span>
+													&nbsp;
+												</span>
+												</a>-->
+
+                                            </div>
+                                            <div class="w-full pb-4 text-xs pl-7">Shared notes
+                                                can be viewed by your
+                                                chosen&nbsp;teams.
+                                            </div>
+
+                                        </div>
+                                        <button type="button"
+                                            class="opacity-1 h-8 relative inline-flex items-center px-3 py-1.5 mb-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-aloBlue-600 hover:bg-aloBlue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aloBlue-500"
+                                            :disabled="sharedMessage === ''"
+                                            :class="{ 'disabled-button': sharedMessage === '' }">
+                                            Share
+                                        </button>
+                                    </div>
+                                    <div class="-mt-1">
+                                        <textarea id="shared_message" name="shared_message" rows="8"
+                                            class="block w-full px-3 py-3 text-sm placeholder-gray-500 bg-transparent border-gray-300 rounded-md shadow-sm sm:px-7 sm:py-8 focus:bg-white focus:text-gray-900 focus:placeholder-gray-300 focus:ring-aloBlue-500 focus:border-aloBlue-500"
+                                            placeholder="Shared notes here." x-model="sharedMessage"
+                                            x-ref="shared_message"></textarea>
+                                    </div>
+                                </div>
+
+                            </dl>
+                        </div>
+
+                        <!-- 2 Col Content End -->
+
+
+                    </div>
+
+                    <!-- Inner Content End -->
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

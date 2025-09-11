@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Version 1.0 -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Message Block &amp; Styles</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Caladea|Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <style>
+        err-msg {
+            display: block;
+            margin: 0;
+            padding: 0;
+            min-width: 320px;
+        }
+
+        .err-text {
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+        }
+
+        .err-title {
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 54px;
+            line-height: 54px;
+            letter-spacing: -2px;
+        }
+
+        .err-img-wrapper {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        .err-img {
+            width: 100%;
+            max-width: 300px;
+            min-width: 120px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .margin-top-40 {
+            margin-top: 40px;
+        }
+
+        .margin-top-10 {
+            margin-top: 10px;
+        }
+
+        .margin-bottom-10 {
+            margin-bottom: 10px;
+        }
+
+        .margin-bottom-20 {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <!-- Error Message Start -->
+    <err-msg>
+
+        <div class="err-container">
+
+            <div class="err-title center-text margin-top-40 margin-bottom-20">
+                Oops! Off&nbsp;course.
+            </div>
+
+            <div class="err-text center-text margin-top-10 margin-bottom-20">
+                <strong>Error 404:</strong> Page Not Found
+            </div>
+
+            <div class="err-img-wrapper"><img class="err-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/off-course.svg" width="100%" /></div>
+
+            <!--<div class="err-img-wrapper"><img class="err-img" src="https://glnmedia.s3.amazonaws.com/Calvert/app/laptop-files.svg" width="100%" /></div>-->
+
+        </div>
+
+    </err-msg>
+    <!-- Error Message End -->
+
+
+</body></html>

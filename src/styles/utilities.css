@@ -1,0 +1,980 @@
+
+/* ============================================================================
+   PORTFOLIO UTILITY CLASSES
+   ============================================================================ */
+
+/* ================================
+   CONTAINER SYSTEM
+   ================================ */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.container-wide {
+  max-width: 1440px;
+}
+
+.container-narrow {
+  max-width: 768px;
+}
+
+/* ================================
+   GLASS MORPHISM SYSTEM
+   ================================ */
+
+.glass-card {
+  background: var(--bg-glass-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-glass);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glass-lg);
+  border-color: var(--border-glow);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-glass), transparent);
+  opacity: 0.6;
+}
+
+/* Glass Variants */
+.glass-strong {
+  background: var(--bg-glass-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-subtle {
+  background: var(--bg-glass-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ================================
+   LAYOUT SYSTEM - FLEXBOX PRIMARY
+   ================================ */
+
+/* Flexbox Display */
+.flex {
+  display: flex;
+}
+
+/* Flex Direction */
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+/* Flex Wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Flex Alignment */
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+/* Justify Content */
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+/* Flex Gap System */
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-16 {
+  gap: 4rem;
+}
+
+/* Flex Grow/Shrink */
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+/* ================================
+   ANIMATION SYSTEM
+   ================================ */
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s var(--animation-bounce);
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ================================
+   SPACING SYSTEM
+   ================================ */
+
+/* Padding Utilities */
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+
+/* Margin Utilities */
+.m-2 { margin: 0.5rem; }
+.m-4 { margin: 1rem; }
+.m-6 { margin: 1.5rem; }
+.m-8 { margin: 2rem; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.my-4 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-6 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-8 { margin-top: 2rem; margin-bottom: 2rem; }
+
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+
+/* Space Between Utilities */
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-8 > * + * { margin-top: 2rem; }
+
+/* ================================
+   BORDER & RADIUS SYSTEM
+   ================================ */
+
+/* Border Radius */
+.rounded { border-radius: var(--border-radius); }
+.rounded-lg { border-radius: var(--border-radius-lg); }
+.rounded-xl { border-radius: var(--border-radius-xl); }
+.rounded-full { border-radius: 9999px; }
+
+/* Border Width */
+.border { border: 1px solid; }
+.border-0 { border: 0; }
+.border-2 { border: 2px solid; }
+
+/* Border Colors */
+.border-white { border-color: white; }
+.border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
+.border-white\/20 { border-color: rgba(255, 255, 255, 0.2); }
+.border-primary { border-color: var(--color-primary); }
+.border-accent { border-color: var(--color-accent); }
+
+/* ================================
+   SHADOW SYSTEM
+   ================================ */
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-glow { box-shadow: var(--shadow-glow); }
+
+/* ================================
+   TYPOGRAPHY UTILITIES
+   ================================ */
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Font Size Utilities */
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+.text-6xl { font-size: var(--text-6xl); }
+
+/* Text Color Utilities */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-accent { color: var(--text-accent); }
+.text-white { color: white; }
+.text-black { color: black; }
+
+/* Font Weight Utilities */
+.font-thin { font-weight: var(--font-weight-thin); }
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+.font-black { font-weight: var(--font-weight-black); }
+
+/* Font Family Utilities */
+.font-mono { 
+  font-family: var(--font-mono); 
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+.font-primary { font-family: var(--font-primary); }
+.font-display { font-family: var(--font-display); }
+
+/* Line Height Utilities */
+.leading-tight { line-height: var(--leading-tight); }
+.leading-normal { line-height: var(--leading-normal); }
+.leading-relaxed { line-height: var(--leading-relaxed); }
+.leading-loose { line-height: var(--leading-loose); }
+
+/* Letter Spacing Utilities */
+.tracking-tight { letter-spacing: var(--tracking-tight); }
+.tracking-normal { letter-spacing: var(--tracking-normal); }
+.tracking-wide { letter-spacing: var(--tracking-wide); }
+.tracking-wider { letter-spacing: var(--tracking-wider); }
+
+/* ================================
+   DISPLAY & POSITION SYSTEM
+   ================================ */
+
+/* Display Utilities */
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+.hidden { display: none; }
+
+/* Position Utilities */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* ================================
+   SIZING SYSTEM
+   ================================ */
+
+/* Width Utilities */
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+.w-4 { width: 1rem; }
+.w-6 { width: 1.5rem; }
+.w-8 { width: 2rem; }
+.w-12 { width: 3rem; }
+
+/* Height Utilities */
+.h-full { height: 100%; }
+.h-auto { height: auto; }
+.h-4 { height: 1rem; }
+.h-6 { height: 1.5rem; }
+.h-8 { height: 2rem; }
+.h-12 { height: 3rem; }
+.min-h-screen { min-height: 100vh; }
+
+/* Min Width Utilities */
+.min-w-0 { min-width: 0; }
+.min-w-full { min-width: 100%; }
+.min-w-fit { min-width: fit-content; }
+.min-w-xs { min-width: 150px; }
+.min-w-sm { min-width: 200px; }
+.min-w-md { min-width: 280px; }
+.min-w-lg { min-width: 350px; }
+.min-w-xl { min-width: 450px; }
+
+/* ================================
+   INTERACTION UTILITIES
+   ================================ */
+
+/* Transition Utilities */
+.transition { transition: var(--transition-normal); }
+.transition-fast { transition: var(--transition-fast); }
+.transition-slow { transition: var(--transition-slow); }
+.transition-all { transition: all var(--transition-normal); }
+
+/* Hover Effects */
+.hover\:opacity-90:hover { opacity: 0.9; }
+.hover\:opacity-80:hover { opacity: 0.8; }
+.hover\:opacity-75:hover { opacity: 0.75; }
+
+/* Cursor Utilities */
+.cursor-pointer { cursor: pointer; }
+
+/* ================================
+   BACKGROUND COLOR SYSTEM
+   ================================ */
+
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+.bg-accent { background-color: var(--bg-accent); }
+.bg-card { background-color: var(--bg-card); }
+.bg-elevated { background-color: var(--bg-elevated); }
+
+/* Brand Color Backgrounds */
+.brand-primary { background-color: var(--color-primary); color: white; }
+.brand-accent { background-color: var(--color-accent); color: white; }
+.brand-error { background-color: var(--color-error); color: white; }
+.brand-success { background-color: var(--color-success); color: white; }
+.bg-brand-primary { background-color: var(--color-primary); color: white; }
+.bg-brand-accent { background-color: var(--color-accent); color: white; }
+
+/* Text Color Demonstration Backgrounds */
+.text-primary-bg { background-color: var(--text-primary); color: var(--bg-primary); }
+.text-secondary-bg { background-color: var(--text-secondary); color: var(--bg-primary); }
+.text-muted-bg { background-color: var(--text-muted); color: var(--bg-primary); }
+.text-accent-bg { background-color: var(--text-accent); color: white; }
+
+/* ======================================================
+   RESPONSIVE UTILITIES SYSTEM
+   ====================================================== */
+
+/* Mobile-specific utilities */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+/* Desktop-specific utilities */
+@media (min-width: 769px) {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 480px) {
+  /* Force stacked full-width buttons on mobile */
+  .cta-group {
+    flex-direction: column;
+  }
+  
+  .cta-button,
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  .btn-outline {
+    width: 100%;
+    min-height: 48px;
+  }
+  
+  /* Smart content splitting - everything stacks on mobile */
+  .content-split {
+    flex-direction: column;
+  }
+  
+  .content-split-action {
+    width: 100%;
+    margin-top: var(--space-sm);
+  }
+  
+  /* Stack button groups vertically */
+  .flex-row {
+    flex-direction: column !important;
+  }
+  
+  /* Mobile spacing adjustments */
+  .gap-2 { gap: var(--space-sm); }
+  .gap-4 { gap: var(--space-md); }
+  .gap-6 { gap: var(--space-lg); }
+}
+
+/* Tablet and up - side-by-side CTAs allowed */
+@media (min-width: 481px) {
+  .cta-group-horizontal {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .cta-button-auto {
+    width: auto;
+    flex: 1;
+    max-width: 200px;
+  }
+  
+  /* Smart content splitting - side-by-side on larger screens */
+  .content-split {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .content-split-action {
+    width: auto;
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+  
+  .card-content-horizontal {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-actions-horizontal {
+    width: auto;
+    flex-shrink: 0;
+  }
+  
+  /* Responsive width utilities */
+  .tablet-auto { width: auto; }
+  .tablet-row { flex-direction: row; }
+}
+
+/* Additional mobile utilities */
+@media (max-width: 480px) {
+  .mobile-full { width: 100%; }
+  .mobile-stack { flex-direction: column; }
+  .mobile-center { text-align: center; }
+}
+
+/* ================================
+   BUTTON SYSTEM
+   ================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md), 0 0 0 rgba(99, 102, 241, 0);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+}
+
+.btn-primary:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 2px solid var(--border-accent);
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Theme Toggle Component */
+.theme-toggle {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  margin-bottom: 1rem;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ================================
+   TEST PAGE COMPONENTS
+   ================================ */
+
+.typography-test {
+  margin: 1rem 0;
+}
+
+.typography-test > * {
+  margin-bottom: 0.5rem;
+}
+
+.color-test {
+  margin: 1rem 0;
+}
+
+.color-grid {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.color-box {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  min-width: 150px;
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm);
+}
+
+.spacing-test {
+  margin: 1rem 0;
+}
+
+.spacing-box {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+}
+
+.spacing-xs { padding: 0.25rem; }
+.spacing-sm { padding: 0.5rem; }
+.spacing-md { padding: 1rem; }
+.spacing-lg { padding: 1.5rem; }
+.spacing-xl { padding: 2rem; }
+
+.shadow-test {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.shadow-box {
+  padding: 1.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  min-width: 150px;
+}
+
+.glass-test {
+  margin: 1rem 0;
+  position: relative;
+}
+
+/* ================================
+   CTA & MOBILE LAYOUT SYSTEM
+   ================================ */
+
+/* CTA Button Groups */
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.cta-button {
+  width: 100%;
+  min-height: 44px;
+  justify-content: center;
+}
+
+/* Smart Content Layout */
+.content-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.content-split-item {
+  flex: 1;
+}
+
+.content-split-action {
+  width: 100%;
+  align-self: stretch;
+}
+
+/* Card Content Layout */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.card-header {
+  flex: 1;
+}
+
+.card-actions {
+  width: 100%;
+}
+
+/* Card Content Layout */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.card-header {
+  flex: 1;
+}
+
+.card-actions {
+  width: 100%;
+}
+
+/* ======================================================
+   FLEXBOX REPLACEMENT FOR GRID
+   ====================================================== */
+
+/* Base Flexbox Column Layouts */
+.flex-cols-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flex-cols-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.flex-cols-2 > * {
+  flex: 1;
+  min-width: calc(50% - 0.5rem);
+}
+
+.flex-cols-3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.flex-cols-3 > * {
+  flex: 1;
+  min-width: calc(33.333% - 0.667rem);
+}
+
+.flex-cols-4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.flex-cols-4 > * {
+  flex: 1;
+  min-width: calc(25% - 0.75rem);
+}
+
+/* Mobile-First Responsive Stacking */
+@media (max-width: 767px) {
+  .flex-cols-2 > *,
+  .flex-cols-3 > *,
+  .flex-cols-4 > *,
+  .sm\:flex-cols-2 > *,
+  .sm\:flex-cols-3 > *,
+  .md\:flex-cols-2 > *,
+  .md\:flex-cols-3 > *,
+  .md\:flex-cols-4 > *,
+  .lg\:flex-cols-3 > *,
+  .lg\:flex-cols-4 > *,
+  .lg\:flex-cols-6 > * {
+    min-width: 100%;
+  }
+}
+
+/* Small screen responsive flexbox columns */
+@media (min-width: 640px) {
+  .sm\:flex-cols-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .sm\:flex-cols-2 > * {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+  }
+  
+  .sm\:flex-cols-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .sm\:flex-cols-3 > * {
+    flex: 1;
+    min-width: calc(33.333% - 0.667rem);
+  }
+}
+
+/* Medium screen responsive flexbox columns */
+@media (min-width: 768px) {
+  .md\:flex-cols-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .md\:flex-cols-2 > * {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+  }
+  
+  .md\:flex-cols-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .md\:flex-cols-3 > * {
+    flex: 1;
+    min-width: calc(33.333% - 0.667rem);
+  }
+  
+  .md\:flex-cols-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .md\:flex-cols-4 > * {
+    flex: 1;
+    min-width: calc(25% - 0.75rem);
+  }
+}
+
+/* Large screen responsive flexbox columns */
+@media (min-width: 1024px) {
+  .lg\:flex-cols-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .lg\:flex-cols-3 > * {
+    flex: 1;
+    min-width: calc(33.333% - 0.667rem);
+  }
+  
+  .lg\:flex-cols-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .lg\:flex-cols-4 > * {
+    flex: 1;
+    min-width: calc(25% - 0.75rem);
+  }
+  
+  .lg\:flex-cols-6 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .lg\:flex-cols-6 > * {
+    flex: 1;
+    min-width: calc(16.667% - 0.833rem);
+  }
+}
+
+/* ======================================================
+   ASPECT RATIO UTILITIES
+   ====================================================== */
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.aspect-landscape {
+  aspect-ratio: 4 / 3;
+}
+
+/* ======================================================
+   ENHANCED SPACING UTILITIES
+   ====================================================== */
+
+/* Vertical spacing between elements */
+.space-y-16 > * + * { margin-top: 4rem; }
+.space-y-20 > * + * { margin-top: 5rem; }
+.space-y-24 > * + * { margin-top: 6rem; }
+
+/* Horizontal spacing between elements */
+.space-x-2 > * + * { margin-left: 0.5rem; }
+.space-x-3 > * + * { margin-left: 0.75rem; }
+.space-x-4 > * + * { margin-left: 1rem; }
+.space-x-6 > * + * { margin-left: 1.5rem; }

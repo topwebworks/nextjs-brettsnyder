@@ -1,0 +1,652 @@
+.subscription-plan-intro-container {
+    max-width: 1100px;
+    margin: 40px auto 20px;
+}
+
+.subscription-plan-card {
+    margin: -100px auto 40px;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #e0e9ef;
+}
+
+.subscription-plan-intro-img {
+    width: 100%;
+    min-width: 375px;
+}
+
+.subscription-plan-intro-img-wrapper {
+    display: block;
+    margin: -125px -95px 0 0;
+}
+
+.subscription-plan-content {
+    margin: 0 0 0 5%;
+    width: 65%;
+}
+
+.core-subjects-menu-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 90%;
+    justify-content: center;
+}
+
+.subject-icon-img {
+    height: 56px;
+    filter: invert(53%) sepia(17%) saturate(544%) hue-rotate(158deg) brightness(91%) contrast(88%);
+}
+
+.core-subjects-item-card:hover .subject-icon-img {
+    filter: none;
+}
+
+.bible-card--selected .subject-icon-img {
+    filter: none;
+}
+
+.core-subjects-item-card {
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 115px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #e0e9ef;
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 11px;
+}
+
+.core-subjects-menu-items-wrapper {
+    justify-content: space-between;
+}
+
+.core-subjects-item-label {
+    min-height: 45px;
+    align-items: center;
+}
+
+.bible-card:hover,
+.bible-card--selected {
+    border: solid 1px var(--bluey-grey);
+    background-color: rgba(118, 134, 197, 0.15);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    padding: 11px;
+    cursor: pointer;
+}
+
+.history-card:hover {
+    border: solid 1px var(--apple);
+    background-color: rgba(141, 199, 64, 0.15);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    padding: 11px;
+    cursor: pointer;
+}
+
+.language-card:hover {
+    border: solid 1px var(--butterscotch);
+    background-color: rgba(252, 177, 59, 0.15);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    padding: 11px;
+    cursor: pointer;
+}
+
+.math-card:hover {
+    border: solid 1px var(--error);
+    background-color: rgba(231, 91, 78, 0.15);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    padding: 11px;
+    cursor: pointer;
+}
+
+.science-card:hover {
+    border: solid 1px var(--primary);
+    background-color: rgba(8, 113, 148, 0.15);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    padding: 11px;
+    cursor: pointer;
+}
+
+.buttongroup label {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    padding: 0px 3px 0 0;
+    font-size: 18px;
+    line-height: 35px;
+    color: #222222;
+    background-color: #ffffff;
+    transition: all 0.2s;
+    text-align: center;
+    border: 1px solid var(--shade-15);
+    margin: 10px;
+    display: inline-block;
+    width: 34px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    letter-spacing: -2px;
+}
+
+.buttongroup label:hover {
+    background-color: var(--bluey-grey);
+    color: #ffffff;
+    border: 1px solid var(--bluey-grey);
+}
+
+/* Hide the radio button */
+.buttongroup input[name='grade-level'] {
+    display: none;
+}
+
+/* The checked buttons label style */
+.buttongroup input[name='grade-level']:checked + label {
+    background-color: var(--bluey-grey);
+    color: #ffffff;
+    border: 1px solid var(--bluey-grey);
+    cursor: pointer;
+}
+
+.buttongroup input[type='radio'] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 0 2px #688595;
+    cursor: pointer;
+}
+
+.buttongroup input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%;
+}
+
+.buttongroup input[type='radio']:checked:before {
+    background: var(--bluey-grey);
+    box-shadow: 0 0 0 4px #fff;
+}
+
+.buttongroup input[type='radio']:checked {
+    box-shadow: 0 0 0 2px var(--bluey-grey);
+}
+
+.grade-filter-wrapper {
+    max-width: 320px;
+    margin: 10px 0 0 -10px;
+}
+
+.grade-filter-wrapper-sm {
+    max-width: 320px;
+    margin: 10px 0 0 0;
+}
+
+.course-list-card-sm {
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    min-height: 72px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #e0e9ef;
+    background-color: #ffffff;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.course-search-list-card {
+    align-items: center;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #e0e9ef;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+.grade-summary-card {
+    border-radius: 5px;
+    border: solid 1px #e0e9ef;
+    background-color: var(--shade-5);
+    margin: 10px 0 40px 30px;
+    padding: 30px 5%;
+    width: 50%;
+    max-width: 560px;
+}
+
+.course-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 90%;
+    justify-content: center;
+}
+
+.course-detail-container {
+    width: 50%;
+}
+
+.benefits-list-2col {
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.benefits-list-1col {
+    justify-content: space-between;
+    max-width: 600px;
+}
+
+.flex-group {
+    width: 100%;
+}
+
+.pdf-icon {
+    margin-top: 7px
+}
+
+.course-summary-content {
+    padding: 10px 10px 10px 0;
+}
+
+.electives-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto 20px;
+    justify-content: space-between;
+}
+
+.electives-intro-img {
+    width: 100%;
+}
+
+.electives-intro-img-wrapper {
+    max-width: 600px;
+    width: 50%;
+    align-items: center;
+}
+
+.electives-intro-content {
+    width: 50%;
+    max-width: 550px;
+}
+
+.search-courses-submit-btn {
+    width: 147px;
+    height: 56px;
+    border-radius: 0 5px 5px 0;
+    background-color: var(--primary);
+    margin-left: -2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-courses-wrapper {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.search-courses-field {
+    width: 100%;
+}
+
+.widget-header {
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--shade-15);
+    min-height: 50px;
+}
+
+.grade-level-widget .buttongroup label {
+    margin: 5px;
+}
+
+.grade-level-widget .buttongroup label:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+}
+
+.grade-level-widget .buttongroup input[name='grade-level-1']:checked + label {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+}
+
+.grade-level-widget .buttongroup input[type='radio']:checked:before {
+    background: var(--primary);
+    box-shadow: 0 0 0 4px #fff;
+}
+
+.grade-level-widget .buttongroup input[type='radio']:checked {
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Hide the radio button */
+.grade-level-widget .buttongroup input[name='grade-level-1'] {
+    display: none;
+}
+
+.course-search-list-topbar {
+    justify-content: space-between;
+}
+
+.course-search-field {
+    height: 40px;
+    width: 100%;
+    max-width: 125px;
+}
+
+.course-search-field .mdc-select__selected-text {
+    line-height: 13px !important;
+    color: var(--shade-65) !important;
+}
+
+.course-list-totals {
+    height: 40px;
+    align-items: center;
+}
+
+.course-search-wrapper {
+    height: 40px !important;
+}
+
+.course-icon {
+    margin-right: 15px;
+}
+
+.course-icon > img {
+    display: block;
+}
+
+.course-summary-eyebrow {
+    margin: 3px 0;
+}
+
+.course-search-list-container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 5px 0 60px;
+    justify-content: space-between;
+}
+
+.course-filter-container {
+    width: 25%;
+}
+
+.course-search-columns-wrapper {
+    justify-content: space-between;
+}
+
+.course-search-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 10px auto 40px;
+    justify-content: space-between;
+}
+
+.course-search-column {
+    width: 48%;
+}
+
+.nav-arrows {
+    margin-left: 10px;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.search-placeholder {
+    padding-right: 50px;
+}
+
+.course-summary-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.course-list-card-sm:hover,
+.course-search-list-card:hover,
+.core-subjects-item-card:hover {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+
+
+
+@media screen and (max-width: 1330px) {
+
+
+    .subscription-plan-intro-img-wrapper {
+        margin: -110px -35px 0 0;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+    .electives-container {
+        margin: 60px 5%;
+    }
+
+}
+
+
+@media screen and (max-width: 950px) {
+
+    .course-search-columns-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .course-search-column {
+        width: 100%;
+    }
+
+    .course-filter-container {
+        width: 35%;
+    }
+
+    .course-search-list-container {
+        width: 60%;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+
+    body {
+        background-color: var(--shade-10);
+    }
+
+    .electives-intro-img-wrapper {
+        max-width: 474px;
+        margin: 0 auto 30px;
+    }
+
+    .electives-intro-content {
+        max-width: 1000px;
+    }
+
+    .pdf-icon {
+        margin-left: 5%;
+    }
+
+    .course-summary-data {
+        padding: 3px 10px 0;
+        background-color: var(--shade-15);
+        margin-top: 6px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .subscription-plan-content {
+        margin: 0 5%;
+        width: 90%;
+    }
+
+    .course-list-card-sm {
+        height: auto;
+        padding: 10px 0 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .course-container,
+    .benefits-list-2col,
+    .electives-container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .checklist-item {
+        margin: 5px 0 0;
+    }
+
+    .electives-intro-img-wrapper,
+    .electives-intro-content,
+    .course-detail-container {
+        width: 100%;
+    }
+
+    .grade-filter-wrapper {
+        max-width: 630px;
+        margin: 10px 0 30px -5px;
+    }
+
+    .buttongroup label {
+        margin: 5px;
+    }
+
+    .grade-summary-card {
+        width: 90%;
+        max-width: 540px;
+        margin: 10px auto 40px;
+    }
+
+    .benefits-list-card {
+        width: 90%;
+        max-width: 540px;
+        margin: 10px auto 40px;
+    }
+
+    .subscription-plan-intro-container {
+        flex-direction: column;
+    }
+
+    .subscription-plan-intro-img {
+        width: 100%;
+        min-width: 0;
+        max-width: 454px;
+    }
+
+    .subscription-plan-intro-img-wrapper {
+        margin: -110px auto 30px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .core-subjects-menu-container {
+        margin: 0 5%;
+    }
+
+    .core-subjects-item-label {
+        display: none;
+    }
+
+    .core-subjects-item-card {
+        height: 64px;
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .bible-card:hover,
+    .history-card:hover,
+    .language-card:hover,
+    .math-card:hover,
+    .science-card:hover {
+        padding: 1px;
+    }
+
+    .subject-icon-img {
+        height: 37px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 640px) {
+
+
+    .course-filter-container {
+        display: none;
+    }
+
+    .course-search-list-container {
+        width: 100%;
+    }
+
+    .bottom-filter {
+        display: none;
+    }
+
+
+    .mobile-layout-data {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mobile-layout-left-arrow {
+        position: absolute;
+        left: 20px;
+    }
+
+    .mobile-layout-right-arrow {
+        position: absolute;
+        right: 30px;
+
+    }
+
+
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    .search-courses-btn-wrapper {
+        display: none;
+    }
+
+    .subscription-plan-card {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    }
+
+}

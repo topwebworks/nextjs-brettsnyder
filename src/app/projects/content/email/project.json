@@ -1,0 +1,76 @@
+{
+  "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
+  "title": "HTML Email",
+  "description": "It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from.",
+  "technologies": [
+    "HTML",
+    "CSS",
+    "Responsive"
+  ],
+  "tags": [
+    "HTML",
+    "CSS",
+    "Responsive"
+  ],
+  "category": "Template",
+  "status": "Production",
+  "featured": false,
+  "publishDate": "2017-01-15",
+  "contentTitle": "A Different Animal",
+  "readTime": "5 min read",
+  "excerpt": "It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from.",
+  "links": {
+    "demo": "/demo/emails/sample2/index.html",
+    "live": "/demo/emails/master-email/index.html"
+  },
+  "content": {
+    "overview": "\r\\n<!-- PROJECT CONTENT - Markdown body text -->\r\\n\r\\n## \r\\n\r\\nIt has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from. It was a simple HTML file they could make their own. I hear they have made some tweaks to better fit their needs, but still pull or refer to it as a resource even today.\r\\n\r\\n## Master Email Template\r\\n\r\\nHere was some simple emails I knocked out a few years back. I added comments for cut and paste. Added top media queries for responsive, but personally I usually used fluid responsive so it could work in all devices. The media queries will get stripped out from some email clients. Fluid responsive is more reliable as it is just elastic or will just wrap down naturally.\r\\n\r\\n[Master Email Template](/demo/emails/master-email/index.html)\r\\n\r\\n\r\\n## Other Emails\r\\n\r\\nHere are some emails I did for Pearson Online Learning many years ago. These were entirely custom so took longer to build. I did use more media queries back then but tried to stick to fluid responsive as a first choice.\r\\n\r\\n[Sample Email 1](/demo/emails/sample1/index.html)\r\\n\r\\n\r\\nHere is another back from the Pearson era. Again all custom builds so they took longer than using a master template. Looking back, alot of time was spent developing what seemed almost an email newsletter. Most people, me included, just was to see a simple great offer email that connects in 1-2 seconds. Nothing more. Usually people have one finger on the delete button as they scan their emails. I would recommend keeping it simple and to the point.\r\\n\r\\n[Sample Email 2](/demo/emails/sample2/index.html)\r\\n\r\\n",
+    "overviewHtml": "<!-- PROJECT CONTENT - Markdown body text -->\n\n<h2 id=\"\" class=\"project-section-title\"></h2><p class=\"project-content-paragraph\">It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from. It was a simple HTML file they could make their own. I hear they have made some tweaks to better fit their needs, but still pull or refer to it as a resource even today.</p>\n<h2 id=\"master-email-template\" class=\"project-section-title\">Master Email Template</h2><p class=\"project-content-paragraph\">Here was some simple emails I knocked out a few years back. I added comments for cut and paste. Added top media queries for responsive, but personally I usually used fluid responsive so it could work in all devices. The media queries will get stripped out from some email clients. Fluid responsive is more reliable as it is just elastic or will just wrap down naturally.</p>\n<p class=\"project-content-paragraph\"><a href=\"/demo/emails/master-email/index.html\">Master Email Template</a></p>\n<h2 id=\"other-emails\" class=\"project-section-title\">Other Emails</h2><p class=\"project-content-paragraph\">Here are some emails I did for Pearson Online Learning many years ago. These were entirely custom so took longer to build. I did use more media queries back then but tried to stick to fluid responsive as a first choice.</p>\n<p class=\"project-content-paragraph\"><a href=\"/demo/emails/sample1/index.html\">Sample Email 1</a></p>\n<p class=\"project-content-paragraph\">Here is another back from the Pearson era. Again all custom builds so they took longer than using a master template. Looking back, alot of time was spent developing what seemed almost an email newsletter. Most people, me included, just was to see a simple great offer email that connects in 1-2 seconds. Nothing more. Usually people have one finger on the delete button as they scan their emails. I would recommend keeping it simple and to the point.</p>\n<p class=\"project-content-paragraph\"><a href=\"/demo/emails/sample2/index.html\">Sample Email 2</a></p>\n",
+    "keyAchievements": [
+      {
+        "type": "performance",
+        "icon": "🌦️",
+        "title": "What I Learned",
+        "description": "After years of building fancy emails for big companies, a few patterns stick out:",
+        "metrics": [
+          "Emails aren’t landing pages — they need to be lighter and simpler.",
+          "A reusable template saves a ton of time and can keep working for years.",
+          "Fluid layouts beat media queries since some clients strip them out. Test by deleting the head in browser.",
+          "Fully custom emails look good but take much longer to build."
+        ]
+      },
+      {
+        "type": "performance",
+        "icon": "🌦️",
+        "title": "What Works Best",
+        "description": "When it comes to getting people to actually read and click, these things matter most:",
+        "metrics": [
+          "Keep it simple — people scan and decide in seconds.",
+          "Don’t overbuild; most folks just want a clear offer fast.",
+          "Use short headlines, clear CTAs, and easy layouts.",
+          "Build flexible emails that hold up across all clients.",
+          "Simple, fast, reliable emails convert better than fancy ones."
+        ]
+      }
+    ],
+    "media": {
+      "items": [
+        {
+          "type": "image",
+          "src": "email-1.jpg",
+          "title": "Master Email Template"
+        },
+        {
+          "type": "image",
+          "src": "email-2.jpg",
+          "title": "Demo 1 Email"
+        },
+        {
+          "type": "image",
+          "src": "email-3.jpg",
+          "title": "Demo 2 Email"
+        }
+      ]
+    }
+  }
+}

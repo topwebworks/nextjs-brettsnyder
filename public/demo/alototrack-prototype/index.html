@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>AloTrack 2.0 - Login</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="css/tailwind.css" />
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-md">
+            <img class="w-auto h-10 mx-auto" src="images/at-logo-tag-web-updated.svg" alt="AloTrack Home">
+        </div>
+
+        <div class="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="px-4 py-6 bg-white shadow sm:rounded-lg sm:px-10">
+
+                <div class="mt-1 mb-4 sm:mx-auto sm:w-full sm:max-w-md">
+                    <img class="w-auto h-auto mx-auto" src="images/sign-in-google.jpg" alt="AloTrack Home">
+                </div>
+
+                <div class="my-4 sm:mx-auto sm:w-full sm:max-w-md">
+                    <img class="w-auto h-2 mx-auto" src="images/or.svg" alt="AloTrack Home">
+                </div>
+
+                <h3 class="my-4 text-2xl font-bold text-center text-gray-900">
+                    Sign in with email.
+                </h3>
+
+                <div class="p-4 mb-5 rounded-md bg-red-50">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <!-- Heroicon name: x-circle -->
+                            <svg class="w-5 h-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium leading-5 text-red-800">
+                                @error_message
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-6" action="support-activities.html" method="GET">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">
+                            Email address
+                        </label>
+                        <div class="mt-1">
+                            <input id="email" name="email" type="email" autocomplete="email" required class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-aloBlue-500 focus:border-aloBlue-500 sm:text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">
+                            Password
+                        </label>
+                        <div class="mt-1">
+                            <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-aloBlue-500 focus:border-aloBlue-500 sm:text-sm">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember_me" name="remember_me" type="checkbox" class="w-4 h-4 border-gray-300 rounded text-aloBlue-600 focus:ring-aloBlue-500">
+                            <label for="remember_me" class="block ml-2 text-sm text-gray-900">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div class="text-sm">
+                            <a href="forgot-password.html" class="font-medium text-aloBlue-600 hover:text-aloBlue-500">
+                                Forgot password?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-aloBlue-600 hover:bg-aloBlue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aloBlue-500">
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

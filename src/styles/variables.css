@@ -1,0 +1,708 @@
+
+/* ================================
+   THEME SYSTEM - LIGHT/DARK MODE
+   ================================ */
+
+/* Default (Light Theme) */
+:root,
+[data-theme="light"] {
+  /* Text Colors - Light Theme - Enhanced for better contrast */
+  --text-primary: #0a0e1a;           /* Darker primary text */
+  --text-secondary: #1e293b;         /* Much darker secondary text */
+  --text-muted: #475569;             /* Darker muted text */
+  --text-tertiary: #64748b;          /* Darker tertiary text */
+  
+  /* Background Colors - Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-elevated: #ffffff;
+  
+  /* Border Colors - Light Theme */
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --border-tertiary: #7c899c;
+  
+  /* Theme Colors - Enhanced contrast for light mode */
+  --text-accent: #4857ed;            /* Slightly darker accent */
+  --text-accent-bright: #6366f1;     /* Darker bright accent */
+  --text-accent-hero: #6056ce;       /* Even darker for hero text */
+  --text-success: #047857;           /* Darker success color */
+  --text-warning: #b45309;           /* Darker warning color */
+  --text-error: #b91c1c;             /* Darker error color */
+  --text-on-accent: #ffffff;
+  
+  /* Button Colors - Light Theme */
+  --btn-primary-bg: #1a1a1a;
+  --btn-primary-text: rgba(255, 255, 255, 0.8);
+  --btn-primary-border: transparent;
+  
+  --btn-secondary-bg: rgba(255, 255, 255, 0.8);
+  --btn-secondary-text: rgba(26, 26, 26, 0.8);
+  --btn-secondary-border: #e0e0e0;
+  
+  --btn-ghost-bg: transparent;
+  --btn-ghost-text: rgba(102, 102, 102, 0.8);
+  --btn-ghost-border: transparent;
+  
+  --btn-glass-bg: rgba(255, 255, 255, 0.1);
+  --btn-glass-text: rgba(51, 51, 51, 0.8);
+  --btn-glass-border: rgba(255, 255, 255, 0.2);
+  
+  /* Button Hover States - Light Theme */
+  --btn-primary-bg-hover: #1a1a1a;
+  --btn-primary-text-hover: rgba(255, 255, 255, 1.0);
+  --btn-primary-border-hover: rgba(255, 255, 255, 0.3);
+  --btn-primary-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  
+  --btn-secondary-bg-hover: rgba(255, 255, 255, 0.9);
+  --btn-secondary-text-hover: rgba(26, 26, 26, 1.0);
+  --btn-secondary-border-hover: rgba(26, 26, 26, 0.3);
+  --btn-secondary-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15);
+  
+  --btn-ghost-bg-hover: rgba(102, 102, 102, 0.1);
+  --btn-ghost-text-hover: rgba(102, 102, 102, 1.0);
+  
+  --btn-glass-bg-hover: rgba(255, 255, 255, 0.2);
+  --btn-glass-text-hover: rgba(51, 51, 51, 1.0);
+  --btn-glass-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  
+  /* Shadow Colors */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  /* Text Colors - Dark Theme - Enhanced for better contrast */
+  --text-primary: #ffffff;           /* Pure white for maximum contrast */
+  --text-secondary: #e2e8f0;         /* Brighter secondary text */
+  --text-muted: #cbd5e1;             /* Lighter muted text */
+  --text-tertiary: #94a3b8;          /* Kept same for subtle elements */
+  
+  /* Background Colors - Dark Theme */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #1a1a23;
+  --bg-tertiary: #2a2a37;
+  --bg-elevated: #1e1e2e;
+  
+  /* Border Colors - Dark Theme */
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  --border-tertiary: #64748b;
+  
+  /* Theme Colors */
+  --text-accent: #a0aaff;
+  --text-accent-bright: #a5b4fc;
+  --text-accent-hero: #8da3fa; /* Lighter accent for dark theme hero text */
+  --text-success: #10b981;
+  --text-warning: #f59e0b;
+  --text-error: #ef4444;
+  --text-on-accent: #ffffff;
+  
+  /* Button Colors - Dark Theme */
+  --btn-primary-bg: rgba(255, 255, 255, 0.4);
+  --btn-primary-text: rgba(26, 26, 26, 0.8);
+  --btn-primary-border: transparent;
+  
+  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+  --btn-secondary-text: rgba(255, 255, 255, 0.8);
+  --btn-secondary-border: rgba(255, 255, 255, 0.2);
+  
+  --btn-ghost-bg: transparent;
+  --btn-ghost-text: rgba(200, 200, 200, 0.8);
+  --btn-ghost-border: transparent;
+  
+  --btn-glass-bg: rgba(26, 26, 26, 0.1);
+  --btn-glass-text: rgba(224, 224, 224, 0.8);
+  --btn-glass-border: rgba(255, 255, 255, 0.15);
+  
+  /* Button Hover States - Dark Theme */
+  --btn-primary-bg-hover: rgba(255, 255, 255, 0.5);
+  --btn-primary-text-hover: rgba(26, 26, 26, 1.0);
+  --btn-primary-border-hover: rgba(26, 26, 26, 0.3);
+  --btn-primary-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15);
+  
+  --btn-secondary-bg-hover: rgba(255, 255, 255, 0.15);
+  --btn-secondary-text-hover: rgba(255, 255, 255, 1.0);
+  --btn-secondary-border-hover: rgba(255, 255, 255, 0.4);
+  --btn-secondary-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15);
+  
+  --btn-ghost-bg-hover: rgba(200, 200, 200, 0.1);
+  --btn-ghost-text-hover: rgba(200, 200, 200, 1.0);
+  
+  --btn-glass-bg-hover: rgba(26, 26, 26, 0.2);
+  --btn-glass-text-hover: rgba(224, 224, 224, 1.0);
+  --btn-glass-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  /* Shadow Colors */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+}
+
+/* ================================
+   LEGACY OBSIDIAN THEME COLORS
+   ================================ */
+
+:root {
+  
+  /* RGB Values for Dynamic Alpha Channels */
+  --glass-bg-rgb: 10, 10, 15;
+  --glass-border-rgb: 248, 250, 252;
+  --accent-rgb: 99, 102, 241;
+  --success-rgb: 16, 185, 129;
+  --warning-rgb: 245, 158, 11;
+  
+  /* Sophisticated Glass Morphism */
+  --glass-bg-primary: rgba(var(--glass-bg-rgb), 0.8);
+  --glass-bg-secondary: rgba(var(--glass-bg-rgb), 0.6);
+  --glass-bg-tertiary: rgba(var(--glass-bg-rgb), 0.4);
+  --glass-bg-subtle: rgba(var(--glass-bg-rgb), 0.2);
+  
+  --glass-border-primary: rgba(var(--glass-border-rgb), 0.2);
+  --glass-border-secondary: rgba(var(--glass-border-rgb), 0.1);
+  --glass-border-subtle: rgba(var(--glass-border-rgb), 0.05);
+  
+  /* Advanced Blur Effects */
+  --glass-blur-light: blur(10px);
+  --glass-blur-medium: blur(20px);
+  --glass-blur-heavy: blur(40px);
+  --glass-saturate: saturate(180%);
+  
+  /* Elegant Backdrop Combinations */
+  --glass-backdrop-light: var(--glass-blur-light) var(--glass-saturate);
+  --glass-backdrop-medium: var(--glass-blur-medium) var(--glass-saturate);
+  --glass-backdrop-heavy: var(--glass-blur-heavy) var(--glass-saturate);
+  
+  /* Futuristic Gradient Overlays */
+  --glass-gradient-radial: radial-gradient(circle at 20% 80%, 
+    rgba(var(--accent-rgb), 0.08) 0%, 
+    transparent 50%),
+    radial-gradient(circle at 80% 20%, 
+    rgba(var(--accent-rgb), 0.06) 0%, 
+    transparent 50%);
+    
+  --glass-gradient-linear: linear-gradient(135deg, 
+    rgba(var(--glass-bg-rgb), 0.9) 0%, 
+    rgba(var(--glass-bg-rgb), 0.7) 100%);
+    
+  --glass-gradient-mesh: radial-gradient(ellipse at top left, 
+    rgba(var(--accent-rgb), 0.1) 0%, 
+    transparent 40%),
+    radial-gradient(ellipse at bottom right, 
+    rgba(var(--success-rgb), 0.08) 0%, 
+    transparent 40%);
+
+  /* ================================
+     ELECTRIC BRAND COLORS
+     ================================ */
+  
+  /* Primary - Electric Blue */
+  --color-primary: #6366f1;
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  
+  /* Accent - Cyber Green */
+  --color-accent: #10b981;
+  --color-accent-50: #ecfdf5;
+  --color-accent-100: #d1fae5;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+  --color-accent-700: #047857;
+  --color-accent-800: #065f46;
+  --color-accent-900: #064e3b;
+
+  /* Secondary - Purple Sophistication */
+  --color-secondary: #8b5cf6;
+  --color-secondary-50: #f5f3ff;
+  --color-secondary-100: #ede9fe;
+  --color-secondary-200: #ddd6fe;
+  --color-secondary-300: #c4b5fd;
+  --color-secondary-400: #a78bfa;
+  --color-secondary-500: #8b5cf6;
+  --color-secondary-600: #7c3aed;
+  --color-secondary-700: #6d28d9;
+  --color-secondary-800: #5b21b6;
+  --color-secondary-900: #4c1d95;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #06b6d4;
+
+  /* Rich Dark Backgrounds */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --bg-elevated: #1e293b;
+  --bg-card: #1e2337;
+  --bg-subtle: #0f1419;
+  
+  /* Glass Morphism */
+  --bg-glass: rgba(30, 41, 59, 0.4);
+  --bg-glass-strong: rgba(30, 41, 59, 0.7);
+  --bg-glass-subtle: rgba(30, 41, 59, 0.2);
+  --bg-glass-card: rgba(30, 35, 55, 0.6);
+  
+  /* Professional Gradients */
+  --bg-gradient-primary: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  --bg-gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+  --bg-gradient-card: linear-gradient(135deg, rgba(30, 35, 55, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+  --bg-gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%);
+  --bg-gradient-mesh: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                      radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+
+  /* Luminous Text Colors - Enhanced for better contrast */
+  --text-primary: #ffffff;           /* Pure white for maximum contrast */
+  --text-secondary: #e2e8f0;         /* Brighter secondary text */
+  --text-tertiary: #cbd5e1;          /* Lighter tertiary text */
+  --text-muted: #94a3b8;             /* Kept readable muted text */
+  --text-accent: #a0aaff;            /* Slightly brighter accent */
+  --text-accent-bright: #c7d2fe;     /* Enhanced bright accent */
+  --text-success: #34d399;
+  --text-warning: #fbbf24;
+  --text-error: #f87171;
+  --text-on-accent: #ffffff;
+  --text-on-dark: #ffffff;           /* Pure white on dark backgrounds */
+
+  /* Sophisticated Borders */
+  --border-primary: rgba(148, 163, 184, 0.1);
+  --border-secondary: rgba(148, 163, 184, 0.05);
+  --border-accent: rgba(99, 102, 241, 0.3);
+  --border-glass: rgba(248, 250, 252, 0.1);
+  --border-glow: rgba(99, 102, 241, 0.5);
+
+  /* ================================
+     TYPOGRAPHY
+     ================================ */
+  
+  /* Variable Font Families */
+  --font-primary: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter Variable', var(--font-primary);
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Monaco, 'Cascadia Code', monospace;
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Fluid Typography - Scaling */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.83rem + 0.23vw, 0.95rem);
+  --text-base: clamp(1rem, 0.93rem + 0.35vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.02rem + 0.52vw, 1.35rem);
+  --text-xl: clamp(1.25rem, 1.11rem + 0.7vw, 1.6rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.58rem + 1.48vw, 2.625rem);
+  --text-4xl: clamp(2.25rem, 1.83rem + 2.1vw, 3.5rem);
+  --text-5xl: clamp(3rem, 2.37rem + 3.15vw, 4.75rem);
+  --text-6xl: clamp(3.75rem, 2.84rem + 4.55vw, 6.25rem);
+
+  /* Line Heights */
+  --leading-none: 0.9;
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.8;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  /* ================================
+     SPACING SYSTEM
+     ================================ */
+  
+  /* Micro Spacing */
+  --space-px: 1px;
+  --space-0: 0;
+  --space-0-5: 0.125rem;   /* 2px */
+  --space-1: 0.25rem;      /* 4px */
+  --space-1-5: 0.375rem;   /* 6px */
+  --space-2: 0.5rem;       /* 8px */
+  --space-2-5: 0.625rem;   /* 10px */
+  --space-3: 0.75rem;      /* 12px */
+  --space-3-5: 0.875rem;   /* 14px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.25rem;      /* 20px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-7: 1.75rem;      /* 28px */
+  --space-8: 2rem;         /* 32px */
+  --space-9: 2.25rem;      /* 36px */
+  --space-10: 2.5rem;      /* 40px */
+  --space-11: 2.75rem;     /* 44px */
+  --space-12: 3rem;        /* 48px */
+  --space-14: 3.5rem;      /* 56px */
+  --space-16: 4rem;        /* 64px */
+  --space-20: 5rem;        /* 80px */
+  --space-24: 6rem;        /* 96px */
+  --space-28: 7rem;        /* 112px */
+  --space-32: 8rem;        /* 128px */
+  --space-36: 9rem;        /* 144px */
+  --space-40: 10rem;       /* 160px */
+  --space-44: 11rem;       /* 176px */
+  --space-48: 12rem;       /* 192px */
+  --space-52: 13rem;       /* 208px */
+  --space-56: 14rem;       /* 224px */
+  --space-60: 15rem;       /* 240px */
+  --space-64: 16rem;       /* 256px */
+  --space-72: 18rem;       /* 288px */
+  --space-80: 20rem;       /* 320px */
+  --space-96: 24rem;       /* 384px */
+
+  /* Fluid Spacing - Responsive */
+  --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1.125rem);
+  --space-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  --space-xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --space-2xl: clamp(3rem, 2.4rem + 3vw, 4.5rem);
+  --space-3xl: clamp(4rem, 3.2rem + 4vw, 6rem);
+
+  /* Container System */
+  --container-padding: clamp(1rem, 4vw, 2rem);
+  --container-max-xs: 20rem;
+  --container-max-sm: 24rem;
+  --container-max-md: 28rem;
+  --container-max-lg: 32rem;
+  --container-max-xl: 36rem;
+  --container-max-2xl: 42rem;
+  --container-max-3xl: 48rem;
+  --container-max-4xl: 56rem;
+  --container-max-5xl: 64rem;
+  --container-max-6xl: 72rem;
+  --container-max-7xl: 80rem;
+
+  /* Section Spacing */
+  --section-padding-sm: var(--space-12);
+  --section-padding-md: var(--space-16);
+  --section-padding-lg: var(--space-24);
+  --section-padding-xl: var(--space-32);
+
+  /* ================================
+     BORDER RADIUS
+     ================================ */
+  
+  --radius-none: 0;
+  --radius-sm: 0.125rem;      /* 2px */
+  --radius-base: 0.25rem;     /* 4px */
+  --radius-md: 0.375rem;      /* 6px */
+  --radius-lg: 0.5rem;        /* 8px */
+  --radius-xl: 0.75rem;       /* 12px */
+  --radius-2xl: 1rem;         /* 16px */
+  --radius-3xl: 1.5rem;       /* 24px */
+  --radius-full: 9999px;
+
+  /* ================================
+     SMOOTH ANIMATION SYSTEM
+     ================================ */
+  
+  /* Duration */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+
+  /* Easing Functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Transitions */
+  --transition-fast: all var(--duration-fast) var(--ease-out);
+  --transition-normal: all var(--duration-normal) var(--ease-out);
+  --transition-slow: all var(--duration-slow) var(--ease-out);
+  --transition-bounce: all var(--duration-normal) var(--ease-bounce);
+
+  /* ================================
+     Z-INDEX SCALE
+     ================================ */
+  
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+
+  /* ================================
+     COMPONENT SPECIFICATIONS
+     ================================ */
+  
+  /* Button Heights */
+  --button-height-sm: 2rem;      /* 32px */
+  --button-height-md: 2.5rem;    /* 40px */
+  --button-height-lg: 3rem;      /* 48px */
+  --button-height-xl: 3.5rem;    /* 56px */
+
+  /* Input Specifications */
+  --input-height-sm: 2rem;
+  --input-height-md: 2.5rem;
+  --input-height-lg: 3rem;
+
+  /* Card Padding */
+  --card-padding-sm: var(--space-4);
+  --card-padding-md: var(--space-6);
+  --card-padding-lg: var(--space-8);
+
+  /* Focus States */
+  --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  --focus-ring-accent: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  --focus-ring-error: 0 0 0 3px rgba(239, 68, 68, 0.1);
+
+  /* Selection */
+  --selection-bg: rgba(99, 102, 241, 0.1);
+  --selection-text: var(--text-primary);
+}
+
+/* ================================
+   LIGHT THEME OVERRIDE
+   ================================ */
+
+[data-theme="light"] {
+  /* ================================
+     ELEGANT LIGHT MODE GLASSMORPHISM
+     ================================ */
+  
+  /* RGB Values for Light Theme Glass */
+  --glass-bg-rgb: 255, 255, 255;
+  --glass-border-rgb: 15, 23, 42;
+  --accent-rgb: 99, 102, 241;
+  --success-rgb: 16, 185, 129;
+  --warning-rgb: 245, 158, 11;
+  
+  /* Light Mode Glass Effects */
+  --glass-bg-primary: rgba(var(--glass-bg-rgb), 0.9);
+  --glass-bg-secondary: rgba(var(--glass-bg-rgb), 0.7);
+  --glass-bg-tertiary: rgba(var(--glass-bg-rgb), 0.5);
+  --glass-bg-subtle: rgba(var(--glass-bg-rgb), 0.3);
+  
+  --glass-border-primary: rgba(var(--glass-border-rgb), 0.15);
+  --glass-border-secondary: rgba(var(--glass-border-rgb), 0.08);
+  --glass-border-subtle: rgba(var(--glass-border-rgb), 0.04);
+  
+  /* Light Mode Gradient Overlays */
+  --glass-gradient-radial: radial-gradient(circle at 20% 80%, 
+    rgba(var(--accent-rgb), 0.06) 0%, 
+    transparent 50%),
+    radial-gradient(circle at 80% 20%, 
+    rgba(var(--accent-rgb), 0.04) 0%, 
+    transparent 50%);
+    
+  --glass-gradient-linear: linear-gradient(135deg, 
+    rgba(var(--glass-bg-rgb), 0.95) 0%, 
+    rgba(var(--glass-bg-rgb), 0.8) 100%);
+    
+  --glass-gradient-mesh: radial-gradient(ellipse at top left, 
+    rgba(var(--accent-rgb), 0.06) 0%, 
+    transparent 40%),
+    radial-gradient(ellipse at bottom right, 
+    rgba(var(--success-rgb), 0.04) 0%, 
+    transparent 40%);
+
+  /* Clean Light Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --bg-subtle: #fafafa;
+  
+  /* Light Glass Effects */
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --bg-glass-strong: rgba(255, 255, 255, 0.9);
+  --bg-glass-subtle: rgba(255, 255, 255, 0.5);
+  --bg-glass-card: rgba(248, 250, 252, 0.8);
+
+  /* Light Gradients */
+  --bg-gradient-primary: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  --bg-gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%, #f8fafc 100%);
+  --bg-gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.9) 100%);
+
+  /* Professional Text Colors - Enhanced for better contrast */
+  --text-primary: #0a0e1a;           /* Darker primary for better contrast */
+  --text-secondary: #1e293b;         /* Much darker secondary */
+  --text-tertiary: #334155;          /* Darker tertiary */
+  --text-muted: #475569;             /* Darker muted text */
+  --text-on-dark: #0a0e1a;           /* Darker text on dark elements */
+  
+  /* Theme Colors - Enhanced contrast for light mode */
+  --text-accent: #4857ed;            /* Slightly darker accent */
+  --text-accent-bright: #6366f1;     /* Darker bright accent */
+  --text-accent-hero: #6056ce;       /* Even darker for hero text */
+  --text-success: #047857;           /* Darker success color */
+  --text-warning: #b45309;           /* Darker warning color */
+  --text-error: #b91c1c;             /* Darker error color */
+  --text-on-accent: #ffffff;
+
+  /* Light Borders */
+  --border-primary: rgba(148, 163, 184, 0.2);
+  --border-secondary: rgba(148, 163, 184, 0.1);
+  --border-glass: rgba(15, 23, 42, 0.1);
+
+  /* Softer Shadows for Light */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+
+  /* Light Glow Effects */
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.1);
+  --shadow-glow-lg: 0 0 40px rgba(99, 102, 241, 0.15);
+  --shadow-glow-accent: 0 0 20px rgba(16, 185, 129, 0.1);
+
+  /* Light Glass Shadows */
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-glass-lg: 0 16px 64px rgba(0, 0, 0, 0.12);
+
+  /* Light Card Shadows */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.06), var(--shadow-glow);
+}
+
+/* ================================
+   MIDNIGHT THEME (ULTRA DARK)
+   ================================ */
+
+[data-theme="midnight"] {
+  /* Ultra-Dark Backgrounds */
+  --bg-primary: #000000;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --bg-elevated: #1e293b;
+  --bg-card: #1a202c;
+  --bg-subtle: #000000;
+  
+  /* Enhanced Glass Effects */
+  --bg-glass: rgba(30, 41, 59, 0.3);
+  --bg-glass-strong: rgba(30, 41, 59, 0.6);
+  --bg-glass-subtle: rgba(30, 41, 59, 0.1);
+  --bg-glass-card: rgba(26, 32, 44, 0.5);
+
+  /* Midnight Gradients */
+  --bg-gradient-primary: linear-gradient(135deg, #000000 0%, #0f172a 50%, #1e293b 100%);
+  --bg-gradient-hero: linear-gradient(135deg, #000000 0%, #1a202c 25%, #2d3748 50%, #1a202c 75%, #000000 100%);
+  --bg-gradient-card: linear-gradient(135deg, rgba(26, 32, 44, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%);
+
+  /* Ultra-Luminous Text */
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-accent: #a0aaff;
+  --text-accent-bright: #93c5fd;
+  --text-on-dark: #f7fafc;
+
+  /* Enhanced Borders */
+  --border-primary: rgba(226, 232, 240, 0.15);
+  --border-secondary: rgba(226, 232, 240, 0.08);
+  --border-accent: rgba(96, 165, 250, 0.4);
+  --border-glass: rgba(247, 250, 252, 0.12);
+
+  /* Enhanced Glow Effects */
+  --shadow-glow: 0 0 30px rgba(96, 165, 250, 0.25);
+  --shadow-glow-lg: 0 0 50px rgba(96, 165, 250, 0.3);
+  --shadow-glow-accent: 0 0 25px rgba(16, 185, 129, 0.2);
+  --shadow-glow-purple: 0 0 35px rgba(139, 92, 246, 0.25);
+
+  /* Enhanced Glass Shadows */
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glass-lg: 0 16px 64px rgba(0, 0, 0, 0.5);
+
+  /* Midnight Card Shadows */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+}
+
+/* ================================
+   SYSTEM THEME DETECTION
+   ================================ */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    /* Auto-apply light theme when system prefers light */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-elevated: #ffffff;
+    --bg-card: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.7);
+    
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-tertiary: #475569;
+    --text-muted: #64748b;
+    
+    --border-primary: rgba(148, 163, 184, 0.2);
+    --border-secondary: rgba(148, 163, 184, 0.1);
+    
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* ================================
+   ACCESSIBILITY & PERFORMANCE
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --transition-fast: none;
+    --transition-normal: none;
+    --transition-slow: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --border-primary: rgba(0, 0, 0, 0.3);
+    --border-secondary: rgba(0, 0, 0, 0.2);
+    --text-muted: var(--text-secondary);
+  }
+  
+  [data-theme="light"] {
+    --border-primary: rgba(0, 0, 0, 0.3);
+    --border-secondary: rgba(0, 0, 0, 0.2);
+  }
+}

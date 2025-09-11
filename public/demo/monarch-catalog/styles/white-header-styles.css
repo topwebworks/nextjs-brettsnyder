@@ -1,0 +1,137 @@
+.header-logo {
+    margin: 0;
+    width: 143px;
+}
+
+.header-logo:hover {
+    opacity: .7;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.header-logo > a > img {
+    margin: 0;
+    border: none;
+    height: 30px;
+    width: 143px;
+}
+
+.header-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--primary-shade2);
+}
+
+.nav-header-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+}
+
+.header-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 265px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-header-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 70px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.main-menu-item {
+    padding: 0 45px;
+    white-space: nowrap;
+}
+
+a > .main-menu-item:hover {
+    opacity: .7;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.main-nav {
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.main-nav-button {
+    padding: 0 20px;
+    white-space: nowrap;
+    border: 2px solid var(--primary);
+}
+
+.header-nav-group-right,
+.header-nav-group-left {
+    align-items: center;
+    height: 34px;
+}
+
+.header-page-title-wrapper {
+    margin: 20px auto;
+    width: 100%;
+}
+
+.header-return-link-wrapper {
+    margin: 20px 0 15px;
+    align-items: center;
+    width: 180px;
+}
+
+.header-grade-tag {
+    align-items: center;
+    padding: 5px 10px;
+    background-color: var(--primary-dark);
+    margin-right: 20px;
+    border-radius: 3px;
+}
+
+.tag-icon-img {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+
+    .header-page-title-wrapper {
+        margin: 20px auto;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .main-menu-item {
+        padding: 0 10px;
+    }
+
+    .header-page-title-wrapper {
+        padding: 0 10px 0 0;
+        margin: 20px auto 40px;
+    }
+
+
+}

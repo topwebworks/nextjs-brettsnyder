@@ -1,0 +1,215 @@
+/* HTML Content Styles */
+
+
+.enhanced-html-content {
+  max-width: none;
+  width: 100%;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* Typography - Matching About page hierarchy */
+.enhanced-html-content :global(.project-section-title) {
+  font-size: clamp(1.6rem, 4vw, 1.8rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: 0em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.enhanced-html-content > ul {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.enhanced-html-content :global(.project-subsection-title) {
+  font-size: clamp(1.0rem, 4vw, 1.5rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0em;
+  line-height: 1.2;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.enhanced-html-content :global(.project-detail-title) {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin: 2rem 0 1rem 0;
+  letter-spacing: 0em;
+  line-height: 1.3;
+}
+
+.enhanced-html-content :global(.project-content-paragraph) {
+  font-size: clamp(0.9rem, 2.6vw, 1.1rem);
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin: 1rem 0;
+  max-width: none;
+  /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); */
+  opacity: 0.8;
+}
+
+/* Callout Panels - Gold Standard Glassmorphism */
+.enhanced-html-content :global(.project-callout-panel) {
+  margin: 050px auto;
+  padding: 0;
+  background: linear-gradient(145deg, 
+    rgba(255, 255, 255, 0.12) 0%, 
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(20px) saturate(130%);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-left: 3px solid rgba(var(--accent-rgb), 0.6);
+  box-shadow: 
+    0 6px 18px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.enhanced-html-content :global(.project-callout-panel:hover) {
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.12),
+    0 6px 15px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(var(--accent-rgb), 0.8);
+}
+
+.enhanced-html-content :global(.project-quote) {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-primary);
+  font-weight: 300;
+}
+
+/* Lists - Enhanced Visual Hierarchy */
+.enhanced-html-content :global(.project-content-list) {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  opacity: 0.8;
+}
+
+.enhanced-html-content :global(.project-content-list li) {
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+}
+
+.enhanced-html-content :global(.project-content-list li strong) {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.enhanced-html-content :global(.project-numbered-list) {
+  list-style-type: decimal;
+}
+
+/* Code Styling - Matching About page */
+.enhanced-html-content :global(.project-inline-code) {
+  padding: 0.2em 0.4em;
+  background: rgba(var(--accent-rgb), 0.1);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+  /* color: var(--text-accent); */
+  /* border: 1px solid rgba(var(--accent-rgb), 0.2); */
+  font-weight: 500;
+}
+
+.enhanced-html-content :global(.project-code-block) {
+  margin: 2rem 0;
+  background: linear-gradient(145deg, 
+    rgba(0, 0, 0, 0.3) 0%, 
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.enhanced-html-content :global(.project-code-block pre) {
+  padding: 1.5rem;
+  margin: 0;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.enhanced-html-content :global(.project-code-block code) {
+  font-family: 'JetBrains Mono', 'Monaco', 'Courier New', monospace;
+  /* color: var(--text-primary); */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: transparent;
+}
+
+/* Image Styling - Gold Standard with Hover Effects */
+.enhanced-html-content :global(.project-image-container) {
+  position: relative;
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+.enhanced-html-content :global(.project-content-image) {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.enhanced-html-content :global(.project-content-image:hover) {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-color: rgba(var(--accent-rgb), 0.4);
+}
+
+/* Responsive Design - Mobile First */
+@media (max-width: 768px) {
+  .enhanced-html-content :global(.project-callout-panel) {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+  }
+  
+  .enhanced-html-content :global(.project-content-list) {
+    padding-left: 1.25rem;
+  }
+  
+  .enhanced-html-content :global(.project-section-title) {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .enhanced-html-content :global(.project-callout-panel) {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .enhanced-html-content :global(.project-code-block pre) {
+    padding: 1rem;
+  }
+}
+
+/* Dark/Light Theme Adjustments */
+@media (prefers-color-scheme: dark) {
+  .enhanced-html-content :global(.project-code-block) {
+    background: linear-gradient(145deg, 
+      rgba(0, 0, 0, 0.4) 0%, 
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Version 1.0 -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monarch | Course Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="styles/site-icons.css" rel="stylesheet">
+    <link href="styles/material-components-web.min.css" rel="stylesheet">
+    <!-- Start -- For Repurpose -->
+    <link href="styles/global-styles.css" rel="stylesheet">
+    <link href="styles/footer-styles.css" rel="stylesheet">
+    <link href="styles/header-styles.css" rel="stylesheet">
+    <link href="styles/catalog-styles.css" rel="stylesheet">
+    <script src="scripts/custom-scripts.js"></script>
+    <!-- End -- For Repurpose -->
+    <script src="scripts/material-components-web.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <!-- Header Topbar Start -->
+        <!-- Header Topbar End -->
+
+
+        <!-- Header Main Start -->
+
+        <div class="header-container">
+            <div class="header-wrapper flex-column">
+
+                <nav class="main-nav flex">
+                    <div class="header-nav-group-left flex">
+                        <div class="header-logo mdc-ripple-surface">
+                            <a href="#"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/mon-header-logo.svg" /></a></div>
+                        <a class="hide-in-mobile show-in-desktop" href="course-catalog.html">
+                            <div class="main-menu-item list-white">Course Catalog</div>
+                        </a>
+                    </div>
+
+                    <div class="header-nav-group-right flex">
+                        <a class="hide-in-mobile show-in-desktop" href="#">
+                            <div class="main-menu-item list-white">Login</div>
+                        </a>
+                        <a class="hide-in-mobile show-in-desktop" href="#">
+                            <div class="main-nav-button secondary-button-label-sm secondary-button-bkg-sm mdc-ripple-surface">Free Trial</div>
+                        </a>
+
+                        <div class="main-header-menu mdc-menu-surface--anchor hide-in-desktop show-in-mobile">
+                            <!-- Mobile Nav Btn Start -->
+                            <button class="menu-header-icon white-text material-icons mdc-ripple-surface mdc-icon-button">menu</button>
+                            <!-- Mobile Nav Btn End -->
+
+                            <!-- Hidden Mobile Menu Drop Down Start -->
+                            <div class="header-main-menu main-dropdown-content mdc-menu-surface">
+                                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                                    <li class="mdc-list-item" role="menuitem">
+                                        <a href="course-catalog.html"><span class="mdc-list-item__text list">Course Catalog</span></a>
+                                    </li>
+                                    <li class="mdc-list-item" role="menuitem">
+                                        <a href="#"><span class="mdc-list-item__text list">Login</span></a>
+                                    </li>
+                                    <li class="mdc-list-item" role="menuitem">
+                                        <a href="#"><span class="mdc-list-item__text list">FREE TRIAL</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Mobile Menu Drop Down End -->
+                        </div>
+
+                    </div>
+
+                </nav>
+
+                <div class="header-page-title-wrapper flex">
+                    <div class="header-page-title full-width white-text center-text billboard">Course Catalog</div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <!-- Header Main End -->
+
+    </header>
+
+
+    <!-- Main Content Start -->
+    <main>
+
+        <div class="main-container">
+
+
+
+
+            <div class="subscription-plan-wrapper">
+
+                <div class="mdc-card subscription-plan-card">
+
+                    <div class="flex-row-rev subscription-plan-intro-container">
+
+                        <div class="subscription-plan-intro-img-wrapper transition">
+                            <img class="subscription-plan-intro-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/subscription-plan-intro-img.svg" alt="" />
+                        </div>
+
+                        <div class="subscription-plan-content flex-column transition">
+                            <div class="eyebrow">Monarch Subscription Plan</div>
+                            <h1>All the courses you need, in one&nbsp;plan</h1>
+                            <div class="callout">The easiest way to get all Monarch has to offer, powerful features like automatic grading plus full access to 5 core subjects in any grade&nbsp;level.</div>
+                            <a href="#">
+                                <div class="button-bkg button-label margin-top-20 mdc-ripple-surface">Start Free Trial</div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="core-subjects-menu-container flex-column transition">
+
+                        <div class="h4-subdued title-line">Core Subjects</div>
+
+                        <div class="core-subjects-menu-items-wrapper flex transition">
+
+                            <div class="core-subjects-item-card bible-card--selected flex-column mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="core-subjects-item-icon">
+                                    <img class="subject-icon-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/bible.svg" alt="" />
+                                </div>
+                                <div class="core-subjects-item-label center-text list flex">
+                                    Bible
+                                </div>
+                            </div>
+
+                            <div class="core-subjects-item-card history-card flex-column mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="core-subjects-item-icon">
+                                    <img class="subject-icon-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/history-geography.svg" alt="" />
+                                </div>
+                                <div class="core-subjects-item-label center-text list flex">
+                                    History &amp; Geography
+                                </div>
+                            </div>
+
+                            <div class="core-subjects-item-card language-card flex-column mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="core-subjects-item-icon">
+                                    <img class="subject-icon-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/language-arts.svg" alt="" />
+                                </div>
+                                <div class="core-subjects-item-label center-text list flex">
+                                    Language Arts
+                                </div>
+                            </div>
+
+                            <div class="core-subjects-item-card math-card flex-column mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="core-subjects-item-icon">
+                                    <img class="subject-icon-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/mathematics.svg" alt="" />
+                                </div>
+                                <div class="core-subjects-item-label center-text list flex">
+                                    Mathematics
+                                </div>
+                            </div>
+
+                            <div class="core-subjects-item-card science-card flex-column mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="core-subjects-item-icon">
+                                    <img class="subject-icon-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/science.svg" alt="" />
+                                </div>
+                                <div class="core-subjects-item-label center-text list flex">
+                                    Science
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr class="divider">
+
+                    </div>
+
+                    <div class="course-container flex">
+
+                        <div class="course-detail-container flex-column">
+                            <h2>Bible</h2>
+                            <div class="body-text">Monarch Bible offers a complete, online study of the Old and New Testaments, and outlines how scriptural concepts apply to all academic areas and explains practical Christian&nbsp;living.</div>
+                            <a href="#">
+                                <div class="text-button nowrap mw-175 mdc-ripple-surface mdc-ripple-surface--primary">Get Started for Free <span class="link-arrow material-icons">navigate_next</span></div>
+                            </a>
+
+                            <div class="grade-filter-container flex-column margin-top-10">
+                                <div class="h4-subdued">Grade Levels</div>
+                                <div class="grade-filter-wrapper flex0">
+                                    <div class="buttongroup">
+                                        <input id="grade-3" type="radio" value="3" name="grade-level" checked />
+                                        <label for="grade-3">
+                                            3
+                                        </label>
+                                        <input id="grade-4" type="radio" value="4" name="grade-level" />
+                                        <label for="grade-4">
+                                            4
+                                        </label>
+                                        <input id="grade-5" type="radio" value="5" name="grade-level" />
+                                        <label for="grade-5">
+                                            5
+                                        </label>
+                                        <input id="grade-6" type="radio" value="6" name="grade-level" />
+                                        <label for="grade-6">
+                                            6
+                                        </label>
+                                        <input id="grade-7" type="radio" value="7" name="grade-level" />
+                                        <label for="grade-7">
+                                            7
+                                        </label>
+                                        <input id="grade-8" type="radio" value="8" name="grade-level" />
+                                        <label for="grade-8">
+                                            8
+                                        </label>
+                                        <input id="grade-9" type="radio" value="9" name="grade-level" />
+                                        <label for="grade-9">
+                                            9
+                                        </label>
+                                        <input id="grade-10" type="radio" value="10" name="grade-level" />
+                                        <label for="grade-10">
+                                            10
+                                        </label>
+                                        <input id="grade-11" type="radio" value="11" name="grade-level" />
+                                        <label for="grade-11">
+                                            11
+                                        </label>
+                                        <input id="grade-12" type="radio" value="12" name="grade-level" />
+                                        <label for="grade-12">
+                                            12
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grade-summary-card flex-column">
+                            <div class="eyebrow">3rd Grade</div>
+                            <h3 style="margin: 8px 0;">3rd Grade Bible</h3>
+                            <div style="margin: 8px 0;" class="h4-subdued">Your Student Will Learn</div>
+                            <div class="benefits-list-2col flex">
+                                <div class="benefits-col1">
+                                    <div class="checklist-item list nowrap"><span class="checkmark-icon bible-color material-icons">check</span> Friendship</div>
+                                    <div class="checklist-item list nowrap"><span class="checkmark-icon bible-color material-icons">check</span> Caring for others</div>
+                                </div>
+                                <div class="benefits-col2">
+                                    <div class="checklist-item list nowrap"><span class="checkmark-icon bible-color material-icons">check</span> Salvation</div>
+                                </div>
+                            </div>
+                            <div class="body-text margin-top-20">Give your homeschooler a dynamic Bible curriculum! This course teaches the stories of Joseph, Abraham, and Paul in an exciting and motivating format. This interactive Monarch homeschool course also covers being friendly, loving others, and helping&nbsp;neighbors.</div>
+                            <div class="h4-subdued margin-top-30">Course Overview</div>
+
+                            <div class="course-list-card-sm margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="flex-group flex">
+                                    <div class="pdf-icon bible-color material-icons flex" style="font-size: 30px; margin-right: 10px;">picture_as_pdf</div>
+                                    <div class="course-summary-content">
+                                        <div class="course-summary-title list"><span class="bible-color">3rd Grade Bible</span></div>
+                                        <div class="course-summary-decription helper-text">Scope and Sequence Document</div>
+                                    </div>
+                                </div>
+                                <div class="course-summary-data helper-text">139&nbsp;KB</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="electives-container flex-row-rev">
+
+                <div class="electives-intro-img-wrapper flex transition">
+                    <img class="electives-intro-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/lady-sit-paper.svg" alt="" />
+                </div>
+
+                <div class="electives-intro-content flex" style="align-items: center;">
+                    <div>
+                        <div class="eyebrow">Elective Add-ons</div>
+                        <h1>Add depth and variety to traditional core&nbsp;studies</h1>
+                        <div class="callout">Monarch electives can be added to your subscription plan, or purchased on their own for +$9.99/ Month per course per&nbsp;Student</div>
+                    </div>
+
+                    <div>
+
+                        <!--<form action="/search-results-page.html">-->
+                        <!--                        <div class="search-courses-container flex margin-top-40">
+
+                            <div class="search-courses-wrapper">
+                                <label class="search-courses-field mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
+                                    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">search</i>
+                                    <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="search-placeholder mdc-notched-outline__notch">
+                                            <span class="mdc-floating-label" id="my-label-id">What do you want to learn?</span>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="search-courses-btn-wrapper">
+                                <a href="#">
+                                    <div class="search-courses-submit-btn button-label flex mdc-ripple-surface">
+                                        Find Courses
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>-->
+                        <!--</form>-->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="course-search-container flex">
+
+
+                <div class="course-filter-container flex-column">
+
+                    <div class="grade-level-widget">
+
+                        <div class="widget-header flex-group flex" style="border-bottom: none;">
+                            <h4 class="margin-top-5">Course Search</h4>
+                            <div class="helper-text primary-text"><a href="#">CLEAR</a></div>
+                        </div>
+                        <div class="course-type-filter-wrapper flex-column">
+
+                            <!--<form action="/search-results-page.html">-->
+                            <div class="search-courses-container flex ">
+
+                                <div class="search-courses-wrapper">
+                                    <label class="search-courses-field mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
+                                        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">search</i>
+                                        <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+                                        <div class="mdc-notched-outline">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                            <div class="search-placeholder mdc-notched-outline__notch">
+                                                <span class="mdc-floating-label" id="my-label-id">What do you want to learn?</span>
+                                            </div>
+                                            <div class="mdc-notched-outline__trailing"></div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                            </div>
+                            <!--</form>-->
+
+                        </div>
+
+                    </div>
+
+                    <div class="grade-level-widget margin-top-20">
+
+                        <div class="widget-header flex-group flex">
+                            <h4 class="margin-top-5">Grade Level</h4>
+                            <div class="helper-text primary-text"><a href="#">CLEAR</a></div>
+                        </div>
+                        <div class="grade-filter-wrapper-sm">
+                            <div class="buttongroup">
+                                <input id="grade-3-1" type="radio" value="3" name="grade-level-1" />
+                                <label for="grade-3-1">
+                                    3
+                                </label>
+                                <input id="grade-4-1" type="radio" value="4" name="grade-level-1" />
+                                <label for="grade-4-1">
+                                    4
+                                </label>
+                                <input id="grade-5-1" type="radio" value="5" name="grade-level-1" />
+                                <label for="grade-5-1">
+                                    5
+                                </label>
+                                <input id="grade-6-1" type="radio" value="6" name="grade-level-1" />
+                                <label for="grade-6-1">
+                                    6
+                                </label>
+                                <input id="grade-7-1" type="radio" value="7" name="grade-level-1" />
+                                <label for="grade-7-1">
+                                    7
+                                </label>
+                                <input id="grade-8-1" type="radio" value="8" name="grade-level-1" />
+                                <label for="grade-8-1">
+                                    8
+                                </label>
+                                <input id="grade-9-1" type="radio" value="9" name="grade-level-1" />
+                                <label for="grade-9-1">
+                                    9
+                                </label>
+                                <input id="grade-10-1" type="radio" value="10" name="grade-level-1" />
+                                <label for="grade-10-1">
+                                    10
+                                </label>
+                                <input id="grade-11-1" type="radio" value="11" name="grade-level-1" />
+                                <label for="grade-11-1">
+                                    11
+                                </label>
+                                <input id="grade-12-1" type="radio" value="12" name="grade-level-1" />
+                                <label for="grade-12-1">
+                                    12
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="grade-level-widget margin-top-20">
+
+                        <div class="widget-header flex-group flex">
+                            <h4 class="margin-top-5">Course Type</h4>
+                            <div class="helper-text primary-text"><a href="#">CLEAR</a></div>
+                        </div>
+                        <div class="course-type-filter-wrapper flex-column">
+
+                            <div class="checkbox-item mdc-form-field margin-top-10">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-1" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-1"><span class="list">Electives</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-2" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-2"><span class="list">Single Core Course</span></label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="grade-level-widget margin-top-20">
+
+                        <div class="widget-header flex-group flex">
+                            <h4 class="margin-top-5">Subject</h4>
+                            <div class="helper-text primary-text"><a href="#">CLEAR</a></div>
+                        </div>
+                        <div class="course-type-filter-wrapper flex-column">
+
+                            <div class="checkbox-item mdc-form-field margin-top-10">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-3" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-3"><span class="list">World Languages</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-4" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-4"><span class="list">History</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-5" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-5"><span class="list">Literature</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-6" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-6"><span class="list">Mathematics</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-7" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-7"><span class="list">Science</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-8" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-8"><span class="list">Health</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-9" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-9"><span class="list">Civics</span></label>
+                            </div>
+
+                            <div class="checkbox-item mdc-form-field">
+                                <div class="mdc-checkbox">
+                                    <input type="checkbox" id="checkbox-10" class="mdc-checkbox__native-control" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <label for="checkbox-10"><span class="list">GED Prep</span></label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="course-search-list-container">
+
+                    <div class="course-search-list-topbar flex">
+                        <div class="course-list-totals helper-text nowrap margin-top-10">Showing 10 of 168</div>
+                        <div class="course-search-sort-filter nowrap">
+
+
+                            <div class="course-search-wrapper mdc-select mdc-select--outlined">
+                                <div class="course-search-field mdc-select__anchor">
+                                    <i class="mdc-select__dropdown-icon"></i>
+                                    <div class="mdc-select__selected-text"></div>
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <span id="outlined-select-label" class="mdc-floating-label">Sort by</span>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                    <ul class="mdc-list">
+                                        <li class="mdc-list-item" data-value="title">
+                                            Title
+                                        </li>
+                                        <li class="mdc-list-item" data-value="subject">
+                                            Subject
+                                        </li>
+                                        <li class="mdc-list-item" data-value="grade">
+                                            Grade
+                                        </li>
+                                        <li class="mdc-list-item" data-value="type">
+                                            Type
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="course-search-columns-wrapper flex">
+
+                        <div class="course-search-column flex-column">
+
+                            <a href="course-detail.html">
+                                <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                    <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/elective.svg" alt="" /></div>
+                                    <div class="course-summary-content">
+                                        <div class="course-summary-eyebrow eyebrow">Elective</div>
+                                        <div class="course-summary-title list">British Literature</div>
+                                        <div class="course-summary-decription body-text">7th-12th Grade</div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/elective.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Elective</div>
+                                    <div class="course-summary-title list">Alabama State History</div>
+                                    <div class="course-summary-decription body-text">7th-12th Grade</div>
+                                </div>
+                            </div>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/elective.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Elective</div>
+                                    <div class="course-summary-title list">American Literature</div>
+                                    <div class="course-summary-decription body-text">9th-12th Grade</div>
+                                </div>
+                            </div>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/elective.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Elective</div>
+                                    <div class="course-summary-title list">Monarch Foundations for Living: Studies in the Christian Worldview</div>
+                                    <div class="course-summary-decription body-text">9th-12th Grade</div>
+                                </div>
+                            </div>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/elective.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Elective</div>
+                                    <div class="course-summary-title list">Arizona State History</div>
+                                    <div class="course-summary-decription body-text">8th-12th Grade</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="course-search-column flex-column">
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/science-sq.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Core Course</div>
+                                    <div class="course-summary-title list">9th Grade Science</div>
+                                    <div class="course-summary-decription body-text">9th Grade</div>
+                                </div>
+                            </div>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/elective.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Elective</div>
+                                    <div class="course-summary-title list">Monarch Careers in Manufacturing Processes</div>
+                                    <div class="course-summary-decription body-text">7th-12th Grade</div>
+                                </div>
+                            </div>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/history-geography-sq.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Core Course</div>
+                                    <div class="course-summary-title list">9th Grade History &amp; Geography</div>
+                                    <div class="course-summary-decription body-text">9th Grade</div>
+                                </div>
+                            </div>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/math-sq.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Core Course</div>
+                                    <div class="course-summary-title list">9th Grade Math</div>
+                                    <div class="course-summary-decription body-text">9th Grade</div>
+                                </div>
+                            </div>
+
+                            <div class="course-search-list-card margin-top-10 flex mdc-ripple-surface mdc-ripple-surface--primary transition">
+                                <div class="course-icon"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/bible-sq.svg" alt="" /></div>
+                                <div class="course-summary-content">
+                                    <div class="course-summary-eyebrow eyebrow">Core Course</div>
+                                    <div class="course-summary-title list">3rd Grade Bible</div>
+                                    <div class="course-summary-decription body-text">3rd Grade</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="course-search-list-topbar flex margin-top-10">
+
+                        <div class="course-search-sort-filter bottom-filter nowrap">
+
+                            <div class="course-search-wrapper mdc-select mdc-select--outlined">
+                                <div class="course-search-field mdc-select__anchor">
+                                    <i class="mdc-select__dropdown-icon"></i>
+                                    <div class="mdc-select__selected-text"></div>
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <span id="outlined-select-label" class="mdc-floating-label">Per Page</span>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                    <ul class="mdc-list">
+                                        <li class="mdc-list-item" data-value="title">
+                                            10
+                                        </li>
+                                        <li class="mdc-list-item" data-value="subject">
+                                            25
+                                        </li>
+                                        <li class="mdc-list-item" data-value="grade">
+                                            50
+                                        </li>
+                                        <li class="mdc-list-item" data-value="type">
+                                            100
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="course-list-totals helper-text nowrap flex mobile-layout-data">1-10 of 168
+                            <div class="material-icons mdc-ripple-surface mdc-ripple-surface--primary nav-arrows mobile-layout-left-arrow"><a href="#">arrow_back_ios</a></div>
+                            <div class="material-icons mdc-ripple-surface mdc-ripple-surface--primary nav-arrows mobile-layout-right-arrow"><a href="#">arrow_forward_ios</a></div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+    <!-- Main Content End -->
+
+
+    <footer>
+
+        <div class="footer-banner-container container-full-width">
+            <div class="footer-banner flex">
+                <div class="footer-banner-content flex-column">
+                    <div class="eyebrow primary-tint-text">Ready to start learning?</div>
+                    <h1 class="white-text">Get Started for&nbsp;Free!</h1>
+                    <div class="callout primary-tint-text">Your first 30 Days are free, no&nbsp;credit&nbsp;card&nbsp;required.</div>
+                </div>
+                <div class="footer-banner-button flex">
+                    <a href="#">
+                        <div class="secondary-button-label secondary-button-bkg mdc-ripple-surface">Start Today</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bar-container container-full-width">
+
+            <div class="footer-bar flex">
+
+                <div class="footer-bar-left flex">
+                    <div class="footer-logo">
+                        <img class="footer-logo-img" src="https://glnmedia.s3.amazonaws.com/monarch/app/mon-footer-logo.svg" alt="" />
+                    </div>
+                    <div class="footer-address nowrap body-text white-text">
+                        <span class="primary-tint-text"><strong>Alpha Omega Publications</strong></span><br />
+                        804 N. 2nd Ave. E.<br />
+                        Rock Rapids, IA 51246<br />
+                        <a href="tel:+18006223070" class="white-text">800.622.3070</a>
+                    </div>
+                </div>
+
+                <div class="footer-bar-right flex">
+
+                    <div class="footer-links body-text white-text">
+                        <ul>
+                            <li class="eyebrow primary-tint-text"><strong>HOMESCHOOLING</strong></li>
+                            <li><a href="#" class="helper-text white-text">Getting Started is Easy</a></li>
+                            <li><a href="#" class="helper-text white-text">Placement Tests</a></li>
+                            <li> <a href="#" class="helper-text white-text">Homeschool Catalog</a></li>
+                            <li><a href="#" class="helper-text white-text">View Our Blog</a></li>
+                            <li><a href="#" class="helper-text white-text">Free Homeschool eNews</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links body-text white-text">
+                        <ul>
+                            <li class="eyebrow primary-tint-text"><strong>HELP</strong></li>
+                            <li><a href="#" class="helper-text white-text">Customer Service</a></li>
+                            <li><a href="#" class="helper-text white-text">Returns &amp; Exchange</a></li>
+                            <li><a href="#" class="helper-text white-text">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links body-text white-text">
+                        <ul>
+                            <li class="eyebrow primary-tint-text"><strong>COMPANY</strong></li>
+                            <li><a href="#" class="helper-text white-text">About AOP</a></li>
+                            <li><a href="#" class="helper-text white-text">Careers</a></li>
+                            <li><a href="#" class="helper-text white-text">Terms and Conditions</a></li>
+                            <li><a href="#" class="helper-text white-text">Partner Information</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom-container container-full-width">
+
+            <div class="footer-bottom flex">
+
+                <div class="footer-bottom-left helper-text white-text">
+                    ©2020&nbsp;All&nbsp;Rights&nbsp;Reserved.&nbsp; &nbsp;Alpha&nbsp;Omega&nbsp;Publications
+                </div>
+
+                <div class="footer-bottom-right flex">
+                    <div class="footer-social-icons nowrap white-text flex">
+                        <div class="footer-social-icon mdc-ripple-surface transition">
+                            <a href="#"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/social-media/facebook-rev.svg" /></a>
+                        </div>
+                        <div class="footer-social-icon mdc-ripple-surface transition">
+                            <a href="#"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/social-media/twitter-rev.svg" /></a>
+                        </div>
+                        <div class="footer-social-icon mdc-ripple-surface transition">
+                            <a href="#"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/social-media/pinterest-rev.svg" /></a>
+                        </div>
+                        <div class="footer-social-icon mdc-ripple-surface transition">
+                            <a href="#"><img src="https://glnmedia.s3.amazonaws.com/monarch/app/social-media/instagram-rev.svg" /></a>
+                        </div>
+                    </div>
+                    <div class="footer-chat-link list white-text">
+                        <a href="#" class="footer-chat white-text nowrap">
+                            <span class="link-arrow material-icons nowrap primary-tint-text">chat_bubble_outline</span> Chat with Us
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        $(document).ready(function() {
+            // Instantiate material design components
+
+            $(".mdc-ripple-surface").each(function() {
+                mdc.ripple.MDCRipple.attachTo(this);
+            });
+
+            $(".mdc-text-field").each(function() {
+                mdc.textField.MDCTextField.attachTo(this);
+            });
+
+            $(".mdc-select").each(function() {
+                mdc.select.MDCSelect.attachTo(this);
+            });
+
+
+        });
+
+
+
+        //Connect menu buttons to dropdowns
+
+        $(document).ready(function() {
+
+            $(".menu-header-icon").click(function() {
+                $(".header-main-menu").toggle(300);
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

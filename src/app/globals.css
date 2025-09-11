@@ -1,0 +1,436 @@
+/* ================================
+   PORTFOLIO - GLOBALS
+   ================================ */
+
+/* Import sophisticated design system */
+@import '../styles/variables.css';
+@import '../styles/components.css';
+
+/* ================================
+   LOCAL FONT LOADING - PROFESSIONAL
+   ================================ */
+
+/* Inter Variable Font - Primary Typography */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Inter-VariableFont_opsz,wght.woff2') format('woff2-variations');
+  /* Graceful fallback to system fonts */
+}
+
+/* JetBrains Mono Variable - Code Font */
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-VariableFont_wght.woff2') format('woff2-variations');
+  /* Graceful fallback to monospace */
+}
+
+/* ================================
+   PROFESSIONAL RESET & BASE
+   ================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: var(--color-border-transp);
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  /* PREVENT FLASH: Dark mode default fallback before theme loads, then CSS variables take over */
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  background: var(--bg-gradient-primary, linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Light mode fallback for users with light system preference */
+@media (prefers-color-scheme: light) {
+  body {
+    /* Light fallback before theme variables load */
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+    background: var(--bg-gradient-primary, linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%));
+  }
+}
+
+p {
+  color: var(var(--text-secondary));
+  line-height: var(--leading-relaxed);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Professional Links */
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+a:hover {
+  color: var(--text-accent-bright);
+  transform: translateY(-1px);
+}
+
+a:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Let Highlight.js handle the styling */
+code:not([class*="language-"]) {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-1) var(--space-2);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  color: var(--text-accent);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+li {
+  margin-bottom: var(--space-sm);
+  color: var(var(--text-secondary));
+  line-height: var(--leading-relaxed);
+}
+
+/* Blockquotes */
+blockquote {
+  padding: var(--space-lg);
+  border-left: 4px solid var(var(--color-primary));
+  background: var(--bg-glass-subtle);
+  border-radius: var(--radius-lg);
+  margin: var(--space-md) 0;
+  font-style: italic;
+  position: relative;
+  color: var(--text-accent-bright);
+}
+
+/* ================================
+   ACCESSIBILITY & FOCUS STATES
+   ================================ */
+
+:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-md);
+}
+
+:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+/* High contrast focus for keyboard users */
+:focus-visible {
+  outline: 2px solid var(var(--color-primary));
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring);
+}
+
+/* ================================
+   PROFESSIONAL SELECTION
+   ================================ */
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+::-moz-selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* ================================
+   SCROLLBAR STYLING - ELEGANT
+   ================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(var(--color-primary));
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-accent) var(--bg-secondary);
+}
+
+/* ================================
+   UTILITY CLASSES MOVED TO utilities.css
+   Removed duplicate utility classes on 2025-08-20T13:34:19.342Z
+   Original utilities now imported from ../styles/utilities.css
+   ================================ */
+
+
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: var(--shadow-glow); 
+  }
+  50% { 
+    box-shadow: var(--shadow-glow-lg); 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s var(--ease-out);
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s var(--ease-out);
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s var(--ease-bounce);
+}
+
+.animate-glow {
+  animation: glow 2s var(--ease-in-out) infinite;
+}
+
+/* ================================
+   RESPONSIVE UTILITIES
+   ================================ */
+
+@media (max-width: 640px) {
+  .hidden-mobile { display: none !important; }
+  .block-mobile { display: block !important; }
+}
+
+@media (min-width: 641px) {
+  .hidden-desktop { display: none !important; }
+}
+
+@media (max-width: 768px) {
+  .text-mobile-center { text-align: center; }
+  .flex-mobile-col { flex-direction: column; }
+}
+
+/* ================================
+   IMPORT UTILITY SYSTEM
+   ================================ */
+
+@import '../styles/utilities.css';
+
+/* ================================
+   LOADING PAGE STYLES
+   ================================ */
+
+.loading-content {
+  text-align: center;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.loading-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.loading-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.loading-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.progress-container {
+  width: 200px;
+  height: 2px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Fade in up animation for project cards and content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar {
+    animation: none !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+}
+
+/* ================================
+   BLOG ACTIONS RESPONSIVE
+   ================================ */
+
+@media (max-width: 480px) {
+  .blog-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+  }
+  
+  .blog-actions > div:first-child:empty {
+    display: none !important;
+  }
+  
+  .view-details-btn {
+    width: 100% !important;
+  }
+  
+  .view-details-btn > * {
+    width: 100% !important;
+  }
+}
+
+/* ================================
+   PRINT OPTIMIZATION
+   ================================ */
+
+@media print {
+  body {
+    background: var(--color-text-white) !important;
+    color: black !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
+
+/* ================================
+   HIGHLIGHT.JS CUSTOM STYLING
+   ================================ */
+
+/* Override Highlight.js theme to match your design system */
+pre code.hljs {
+  background: var(--bg-glass-card) !important;
+  border: 1px solid var(--border-glass) !important;
+  border-radius: var(--radius-lg) !important;
+  backdrop-filter: blur(16px) !important;
+  margin: var(--space-lg) 0 !important;
+  padding: var(--space-lg) !important;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}

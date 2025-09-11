@@ -1,0 +1,62 @@
+{
+  "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
+  "title": "Graphic Design",
+  "description": "What started with catalogs, mailers, and ads naturally evolved into web and digital design—where the same principles of whitespace and simplicity now drive better engagement and conversions.",
+  "technologies": [
+    "QuarkXPress",
+    "InDesign",
+    "Illustrator",
+    "Photoshop"
+  ],
+  "tags": [
+    "QuarkXPress",
+    "InDesign",
+    "Illustrator",
+    "Photoshop"
+  ],
+  "category": "Print",
+  "status": "Production",
+  "featured": false,
+  "publishDate": "2016-01-12",
+  "contentTitle": "Before Web, there was Print",
+  "readTime": "5 min read",
+  "excerpt": "What started with catalogs, mailers, and ads naturally evolved into web and digital design—where the same principles of whitespace and simplicity now drive better engagement and conversions.",
+  "links": {},
+  "content": {
+    "overview": "\r\\n<!-- PROJECT CONTENT - Markdown body text -->\r\\n\r\\n##\r\\n\r\\nI remember, my daily trips to the nice Linotype lady. She would set the type for all my print projects. I would hot wax them on chromecoat for printer handoff. Or the empowerment when I borrowed my boss's Mac Plus to bypass the Linotype step by using our laser printer. Here are a few of my favorite print projects.\r\\n\r\\n## Catalogs\r\\n\r\\n![Franklin Covey Catalog](franklin-catalog.jpg)\r\\n\r\\nHere is a mockup board I did for Franklin Covey. This piece stood out to me since I went for a more airy clean feel. A sharp contrast to their common dark, heavy, and cluttered look. My preference is more whitespace over dense content. I think it's easier to read and more inviting.\r\\n\r\\n## Mailers\r\\n\r\\n![Iomega Mailer](iomega-mailer.jpg)\r\\n\r\\nDon't you love all the direct mail you get every week? Sorry, some of that was me. The question you should always ask yourself is does the value I am presenting make it a no-brainer for the customer? If not, don't waste your time or theirs. If so, you will build brand loyalty. Here was a simple mailer for the Iomega Zip drive...and yes, new colors. Concept was nerd to a cool hipster. Crammed alot of freebies and value content in, but it worked well.\r\\n\r\\n## Logos\r\\n\r\\n![Logos](logo2.jpg)\r\\n\r\\nInstead of showing all my logos, here is one. One color. Variations. Simple. Clean.\r\\n\r\\n## Ads\r\\n\r\\n![Magazine Ad](magazine-ad.jpg)\r\\n\r\\nClean. Bright. Happy. Not too busy, single CTA. This was a full page magazine ad, sizes vary depending on the magazine.\r\\n\r\\n## Brochures\r\\n\r\\n![Reebok Brochure](reebok-brochure.jpg)\r\\n\r\\nReebok wanted to show off their new ellipticals. I added motion lines and bold text. I pushed most text to the outside to allow for larger product images. I also added a few callouts to highlight the features.\r\\n\r\\nOver the years, I have designed print media from newspaper, brochures, newsletters, catalogs, direct mail, magazine ads, billboards, stationery, packaging, and more. I have worked with printers and prepress houses. Been on press-checks from Hong Kong to other major cities.\r\\n\r\\n",
+    "overviewHtml": "<!-- PROJECT CONTENT - Markdown body text -->\n\n<h2 id=\"\" class=\"project-section-title\"></h2><p class=\"project-content-paragraph\">I remember, my daily trips to the nice Linotype lady. She would set the type for all my print projects. I would hot wax them on chromecoat for printer handoff. Or the empowerment when I borrowed my boss&#39;s Mac Plus to bypass the Linotype step by using our laser printer. Here are a few of my favorite print projects.</p>\n<h2 id=\"catalogs\" class=\"project-section-title\">Catalogs</h2><p class=\"project-content-paragraph\"><div style=\"margin-bottom: 0rem;\">\n  <div class=\"image-container\">\n  <Image \n  src={printHero} \n  alt=\"Franklin Covey Catalog\" \n  class=\"project-content-image\"\n  width={800} \n  height={600} \n  sizes=\"(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px\"\n  placeholder=\"blur\"\n  loading=\"lazy\"\n  style={{\n    width: '100%',\n    height: 'auto',\n    borderRadius: '8px',\n    marginBottom: '0.5rem',\n    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',\n    border: '1px solid rgba(255, 255, 255, 0.2)'\n  }}\n/>\n  </div>\n\n</div></p>\n<p class=\"project-content-paragraph\">Here is a mockup board I did for Franklin Covey. This piece stood out to me since I went for a more airy clean feel. A sharp contrast to their common dark, heavy, and cluttered look. My preference is more whitespace over dense content. I think it&#39;s easier to read and more inviting.</p>\n<h2 id=\"mailers\" class=\"project-section-title\">Mailers</h2><p class=\"project-content-paragraph\"><div style=\"margin-bottom: 0rem;\">\n  <div class=\"image-container\">\n  <Image \n  src={printScreenshot1} \n  alt=\"Iomega Mailer\" \n  class=\"project-content-image\"\n  width={800} \n  height={600} \n  sizes=\"(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px\"\n  placeholder=\"blur\"\n  loading=\"lazy\"\n  style={{\n    width: '100%',\n    height: 'auto',\n    borderRadius: '8px',\n    marginBottom: '0.5rem',\n    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',\n    border: '1px solid rgba(255, 255, 255, 0.2)'\n  }}\n/>\n  </div>\n\n</div></p>\n<p class=\"project-content-paragraph\">Don&#39;t you love all the direct mail you get every week? Sorry, some of that was me. The question you should always ask yourself is does the value I am presenting make it a no-brainer for the customer? If not, don&#39;t waste your time or theirs. If so, you will build brand loyalty. Here was a simple mailer for the Iomega Zip drive...and yes, new colors. Concept was nerd to a cool hipster. Crammed alot of freebies and value content in, but it worked well.</p>\n<h2 id=\"logos\" class=\"project-section-title\">Logos</h2><p class=\"project-content-paragraph\"><div style=\"margin-bottom: 0rem;\">\n  <div class=\"image-container\">\n  <Image \n  src={printScreenshot2} \n  alt=\"Logos\" \n  class=\"project-content-image\"\n  width={800} \n  height={600} \n  sizes=\"(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px\"\n  placeholder=\"blur\"\n  loading=\"lazy\"\n  style={{\n    width: '100%',\n    height: 'auto',\n    borderRadius: '8px',\n    marginBottom: '0.5rem',\n    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',\n    border: '1px solid rgba(255, 255, 255, 0.2)'\n  }}\n/>\n  </div>\n\n</div></p>\n<p class=\"project-content-paragraph\">Instead of showing all my logos, here is one. One color. Variations. Simple. Clean.</p>\n<h2 id=\"ads\" class=\"project-section-title\">Ads</h2><p class=\"project-content-paragraph\"><div style=\"margin-bottom: 0rem;\">\n  <div class=\"image-container\">\n  <Image \n  src={printScreenshot3} \n  alt=\"Magazine Ad\" \n  class=\"project-content-image\"\n  width={800} \n  height={600} \n  sizes=\"(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px\"\n  placeholder=\"blur\"\n  loading=\"lazy\"\n  style={{\n    width: '100%',\n    height: 'auto',\n    borderRadius: '8px',\n    marginBottom: '0.5rem',\n    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',\n    border: '1px solid rgba(255, 255, 255, 0.2)'\n  }}\n/>\n  </div>\n\n</div></p>\n<p class=\"project-content-paragraph\">Clean. Bright. Happy. Not too busy, single CTA. This was a full page magazine ad, sizes vary depending on the magazine.</p>\n<h2 id=\"brochures\" class=\"project-section-title\">Brochures</h2><p class=\"project-content-paragraph\"><div style=\"margin-bottom: 0rem;\">\n  <div class=\"image-container\">\n  <Image \n  src={printScreenshot4} \n  alt=\"Reebok Brochure\" \n  class=\"project-content-image\"\n  width={800} \n  height={600} \n  sizes=\"(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px\"\n  placeholder=\"blur\"\n  loading=\"lazy\"\n  style={{\n    width: '100%',\n    height: 'auto',\n    borderRadius: '8px',\n    marginBottom: '0.5rem',\n    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',\n    border: '1px solid rgba(255, 255, 255, 0.2)'\n  }}\n/>\n  </div>\n\n</div></p>\n<p class=\"project-content-paragraph\">Reebok wanted to show off their new ellipticals. I added motion lines and bold text. I pushed most text to the outside to allow for larger product images. I also added a few callouts to highlight the features.</p>\n<p class=\"project-content-paragraph\">Over the years, I have designed print media from newspaper, brochures, newsletters, catalogs, direct mail, magazine ads, billboards, stationery, packaging, and more. I have worked with printers and prepress houses. Been on press-checks from Hong Kong to other major cities.</p>\n",
+    "keyAchievements": [
+      {
+        "type": "impact",
+        "icon": "🌦️",
+        "title": "Clean Design from Print to Web",
+        "description": "Started in print, where I learned the value of whitespace, clarity, and strong calls to action. That style carried over naturally into web, where clean layouts and simple messaging drive better conversions.",
+        "metrics": [
+          "Evolved from catalogs, mailers, and ads to digital-first design",
+          "Focus on whitespace and readability for stronger engagement",
+          "Proven track record of turning dense content into clear stories",
+          "Hands-on experience with printers, prepress, and now web conversions"
+        ]
+      }
+    ],
+    "media": {
+      "items": [
+        {
+          "type": "image",
+          "src": "franklin-catalog.jpg",
+          "title": "Franklin Quest Catalog"
+        },
+        {
+          "type": "image",
+          "src": "iomega-mailer.jpg",
+          "title": "Iomega Mailer"
+        },
+        {
+          "type": "image",
+          "src": "reebok-brochure.jpg",
+          "title": "Reebok Brochure"
+        }
+      ]
+    }
+  }
+}

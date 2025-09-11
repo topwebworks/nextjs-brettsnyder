@@ -1,0 +1,2717 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+  /* ----------------------------------------------- */
+  /* ------------ MASTER TEMPLATE v1.03 ------------ */
+  /* ----------------------------------------------- */
+  /* 1. Added Tabs block 
+     2. Added Video modal
+     3. Added Fixed button
+     TO UPDATE: Replace Brand and Core styles. Add in new HTML.
+  */
+
+
+  /* ------- RECOMMENDED TEMPLATE USE ------- */
+
+  /* 1. Open template with VSCode > Live Server Extension in Chrome. 
+     2. Inspect (F12) elements using Dev Tools > Elements - delete/edit/move elements to test custom layouts.
+     3. In VSCode, comment out (Ctrl /), move or delete collapsed elements. Review start/end tags.
+     4. Add new or copy existing "CORE CSS STYLES" to "YOUR OVERRIDE STYLES" at bottom of the CSS.
+  */
+
+
+  /* --------------------------------------------------------------------------------------------------- */
+  /* ----------------------------------------- AOP BRAND START ----------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------- */
+
+
+  /* ------- IMPORT GOOGLE FONTS ------- */
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+
+  :root {
+
+    /* ------- AOP CSS VARIABLES ------- */
+
+    --primary: #2ab5cd;
+    --primary-light: #cfebef;
+    --primary-transparent: rgba(42, 181, 205, 0.45);
+    --primary-dark: #00829b;
+    --primary-dark-transparent: rgba(0, 129, 155, 0.35);
+    --primary-video-transparent: rgba(0, 67, 80, 0.80);
+    --transparent: rgba(255, 255, 255, 0);
+    --white-transparent: rgba(255, 255, 255, 0.35);
+    --font-family: 'Open Sans', sans-serif;
+    --white: #FFFFFF;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-300: #D1D5DB;
+    --gray-500: #6B7280;
+    --gray-900: #111827;
+    --purple: #7686c5;
+    --purplelight: #e9edff;
+    --green: #8dc740;
+    --greenlight: #f5ffe7;
+    --yellow: #fcb13b;
+    --yellowlight: #fff4e3;
+    --red: #f37c7c;
+    --redlight: #ffe4e4;
+    --blue: #2ab5cd;
+    --bluelight: #ddfaff;
+    --teal: #3F8F8F;
+    --teallight: #e6ffff;
+
+  }
+
+
+  /* ------- AOP HEADER/FOOTER - ON PAGE OVERRIDES ------- */
+
+  body,
+  html {
+    overflow-x: inherit;
+  }
+
+  #breadcrumb-bg-container-cms {
+    background: var(--white);
+    height: 0px;
+    margin-top: 0px;
+    /* Change from 140px to 0 if no CMS Header */
+  }
+
+  .modal-content {
+    top: inherit;
+    /* Change 140px to inherit if no CMS Header */
+  }
+
+  #cmsPageContents {
+    position: relative;
+    z-index: 0;
+  }
+
+  .container.page-content-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  footer {
+    margin-top: 0px;
+    position: relative;
+  }
+
+  #utility-menu>.container,
+  footer .container,
+  nav.container {
+    width: 1220px;
+    padding-left: 30px;
+  }
+
+  #js_freeshippingarea {
+    position: absolute;
+    left: 20px;
+  }
+
+  nav.container {
+    height: 97px;
+  }
+
+  .bordered-thin-bottom {
+    -webkit-box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 30%);
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 30%);
+  }
+
+  #main-logo {
+    margin-bottom: -27px;
+  }
+
+  header.bordered-thin-bottom {
+    border-bottom: none;
+  }
+
+  footer .footer-links {
+    margin-bottom: 30px;
+  }
+
+  footer .footer-links .icon-retweet:before,
+  footer .footer-links .icon-bubble-dialog-bottom:before {
+    display: none;
+  }
+
+
+  /* --------------------------------------------------------------------------------------------------- */
+  /* ----------------------------------------- AOP BRAND END ------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------- */
+
+
+  /* ----------------------------------------- */
+  /* ------------ CORE CSS STYLES ------------ */
+  /* ----------------------------------------- */
+
+
+  /* ------- RESET ------- */
+
+  body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  a,
+  button {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  hr,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  form {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+
+  /* ------- TESTING ------- */
+
+  .border-red {
+    border: 1px solid red;
+  }
+
+  .border-green {
+    border: 1px solid green;
+  }
+
+  .border-blue {
+    border: 1px solid blue;
+  }
+
+
+  /* ------- GLOBAL PAGE ------- */
+
+  body {
+    font-family: var(--font-family);
+    background-color: var(--white);
+  }
+
+  a:hover,
+  button:hover {
+    -webkit-transition: all 0.3s 0s ease;
+    -moz-transition: all 0.3s 0s ease;
+    -o-transition: all 0.3s 0s ease;
+    transition: all 0.3s 0s ease;
+    opacity: 0.8;
+  }
+
+  form,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    font-family: var(--font-family);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .mb-xl {
+    margin-bottom: 40px;
+  }
+
+  .mb-md {
+    margin-bottom: 10px;
+  }
+
+  .mb-sm {
+    margin-bottom: 5px;
+  }
+
+  .mb-lg {
+    margin-bottom: 20px;
+  }
+
+  .mb-0 {
+    margin-bottom: 0;
+  }
+
+  .pb-0 {
+    padding-bottom: 0;
+  }
+
+  .ml-sm {
+    margin-left: 5px;
+  }
+
+  .mr-sm {
+    margin-right: 5px;
+  }
+
+  .text-normal {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .text-sm {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .text-xs {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .text-caption {
+    font-size: 9px;
+    line-height: 14px;
+  }
+
+  .eyebrow {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 2px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-link {
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  .text-link:hover {
+    text-decoration: underline;
+  }
+
+  .title-link:hover {
+    text-decoration: underline;
+  }
+
+  .text-white {
+    color: var(--white);
+  }
+
+  .text-gray {
+    color: var(--gray-500);
+  }
+
+  .text-darkgray {
+    color: var(--gray-900);
+  }
+
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .text-darkprimary {
+    color: var(--primary-dark);
+  }
+
+  .primary-bkg {
+    background: var(--primary);
+  }
+
+  .transparent-bkg {
+    background: var(--transparent);
+  }
+
+  .button.primary-bkg:hover {
+    background: var(--primary-dark);
+  }
+
+  .button.transparent-light-bkg,
+  .button.transparent-dark-bkg {
+    background: var(--transparent);
+  }
+
+  .button.transparent-light-bkg:hover {
+    background: var(--white-transparent);
+  }
+
+  .button.transparent-dark-bkg:hover {
+    background: var(--primary-transparent);
+  }
+
+  .border-primary {
+    border: 1px solid var(--primary);
+  }
+
+  .border-primary-dark {
+    border: 1px solid var(--primary-dark);
+  }
+
+  .border-white {
+    border: 1px solid var(--white);
+  }
+
+  .border-darkgray {
+    border: 1px solid var(--gray-900);
+  }
+
+  .button-lg {
+    padding: 7px 20px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    margin: 8px 5px;
+  }
+
+  .form-button-lg {
+    padding: 5px 20px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    margin: 8px 5px;
+  }
+
+  .button-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .title-3xl {
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 58px;
+    letter-spacing: -1px;
+    padding-bottom: 10px;
+  }
+
+  .title-lg {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -1px;
+    padding-bottom: 10px;
+  }
+
+  .title-md {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0;
+    padding-bottom: 10px;
+  }
+
+  .title-xs {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0;
+    padding-bottom: 10px;
+  }
+
+  .buttonset-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .phone-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-justify {
+    justify-content: center;
+  }
+
+  .shadow-lg {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .hr-light {
+    background-color: var(--gray-300);
+    height: 1px;
+    width: 100%;
+    margin: 30px 0;
+    border-style: none;
+  }
+
+  .text-nowrap {
+    white-space: nowrap;
+  }
+
+
+  /* ------- HERO BLOCK ------- */
+
+  .hero-block-video-background {
+    display: flex;
+    background-color: var(--transparent);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 25px;
+    /* Default is 0 or use 25px if using chat widget */
+    left: 0;
+    overflow: hidden;
+  }
+
+  .hero-block-video-foreground,
+  .hero-block-video-background iframe {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    .hero-block-video-foreground {
+      height: 300%;
+      top: -100%;
+    }
+  }
+
+  @media (max-aspect-ratio: 16/9) {
+    .hero-block-video-foreground {
+      width: 300%;
+      left: -100%;
+    }
+  }
+
+  .hero-block-content {
+    max-width: 700px;
+  }
+
+  .hero-block-nav-container {
+    display: flex;
+  }
+
+  .hero-block-container {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    height: auto;
+    position: relative;
+    z-index: -99;
+  }
+
+  .hero-block-overlay {
+    z-index: 0;
+    width: 100%;
+    margin: 0;
+    background-color: var(--primary-video-transparent);
+    display: flex;
+  }
+
+  .hero-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .hero-block-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-block-nav-link,
+  .hero-block-logo-container {
+    margin: 20px;
+    font-weight: bold;
+  }
+
+  .hero-block-nav-link {
+    margin-right: 50px;
+    margin-left: -15px;
+  }
+
+  .hero-block-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    min-height: inherit;
+  }
+
+  .hero-block-left-container {
+    padding: 30px 3% 30px;
+    width: auto;
+  }
+
+  .hero-block-right-container {
+    padding: 30px 3% 30px;
+    width: auto;
+  }
+
+
+  /* ------- LEAD FORM IN CARD ------- */
+
+  .lead-form-width {
+    width: 100%;
+    max-width: inherit;
+  }
+
+  .lead-form-card {
+    display: flex;
+    height: auto;
+    width: 100%;
+    min-width: 300px;
+    border: 1px solid #e2e8f0;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: var(--white);
+    -webkit-box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.1);
+    /* change 0.1 to increase shadow intensity */
+    box-shadow: 3px 3px 12px 2px rgba(0, 0, 0, 0.1);
+    /* change 0.1 to increase shadow intensity */
+    padding: 10px;
+  }
+
+  .lead-form-container {
+    display: flex;
+  }
+
+  .lead-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lead-form-terms {
+    padding: 8px 5px;
+    max-width: 230px;
+  }
+
+  .lead-form-submit-btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+  }
+
+  .two-col-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* change from row to column to stack fields */
+  }
+
+  .lead-form-input-container {
+    display: flex;
+    width: 100%;
+  }
+
+  #fname,
+  #lname,
+  #email,
+  #phone,
+  #street,
+  #zip {
+    width: 100%;
+    margin: 6px 3px;
+  }
+
+  .form-inner input[type=text],
+  .form-inner input[type=email],
+  .form-inner input[type=tel] {
+    border: 1px solid #d2d2d2;
+    height: inherit;
+    color: var(--gray-900);
+    background: var(--white);
+    padding: 8px;
+    margin: 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: var(--font-family);
+  }
+
+  .form-error-message {
+    font-size: 11px;
+    white-space: nowrap;
+    text-align: left;
+    color: red;
+    font-weight: 600;
+    line-height: 1px;
+    position: relative;
+    top: -3px;
+    padding-left: 0;
+    font-family: sans-serif;
+  }
+
+  form input.invalid[type=text],
+  form input.invalid[type=email],
+  form input.invalid[type=tel] {
+    border: 2px solid red;
+    color: red;
+  }
+
+  form input.invalid[type=text]::placeholder,
+  form input.invalid[type=email]::placeholder,
+  form input.invalid[type=tel]::placeholder {
+    color: red;
+  }
+
+
+  /* ------- CENTERED BLOCK ------- */
+
+  .centered-block-container {
+    background-image: url("");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    min-height: inherit;
+    height: auto;
+  }
+
+  .centered-block-overlay {
+    width: 100%;
+    margin: 0;
+    background-color: var(--white);
+    display: flex;
+  }
+
+  .centered-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px 10px 60px;
+  }
+
+  .centered-block-content {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  /* ------- BENEFITS BLOCK ------- */
+
+  .benefits-block-container {
+    background-image: url("");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    min-height: inherit;
+    height: auto;
+  }
+
+  .benefits-block-overlay {
+    width: 100%;
+    margin: 0;
+    background-color: var(--white);
+    display: flex;
+  }
+
+  .benefits-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 10px 20px;
+  }
+
+  .benefits-block-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .benefits-block-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .benefits-block-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--gray-100);
+    border-radius: 8px;
+    padding: 20px 4% 20px;
+    margin: 40px 10px;
+    max-width: 600px;
+    width: 33%;
+    /* Change widths as needed - or inherit for variable widths */
+  }
+
+  .benefits-block-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -70px auto 15px;
+  }
+
+  .benefits-block-image-1 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .benefits-block-image-2 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .benefits-block-image-3 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .benefits-block-image-4 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .benefits-block-image-5 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .benefits-block-image-6 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+
+  /* ------- INFOLEFT BLOCK ------- */
+
+  .infoleft-block-content {
+    max-width: 700px;
+  }
+
+  .infoleft-block-container {
+    background-image: url("");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    min-height: inherit;
+    height: auto;
+  }
+
+  .infoleft-block-overlay {
+    width: 100%;
+    margin: 0;
+    background-color: var(--white);
+    display: flex;
+  }
+
+  .infoleft-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .infoleft-block-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px 0;
+  }
+
+  .infoleft-block-left-container {
+    padding: 30px 3% 30px;
+    width: auto;
+  }
+
+  .infoleft-block-right-container {
+    padding: 20px 2%;
+    width: 50%;
+    display: flex;
+  }
+
+  .infoleft-block-right-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .infoleft-block-image-1 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .inset-image {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+  }
+
+
+  /* ------- INFORIGHT BLOCK ------- */
+
+  .inforight-block-content {
+    max-width: 700px;
+  }
+
+  .inforight-block-container {
+    background-image: url("");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    min-height: inherit;
+    height: auto;
+  }
+
+  .inforight-block-overlay {
+    width: 100%;
+    margin: 0;
+    background-color: var(--white);
+    display: flex;
+  }
+
+  .inforight-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .inforight-block-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px 0;
+  }
+
+  .inforight-block-right-container {
+    padding: 30px 3% 30px;
+    width: auto;
+  }
+
+  .inforight-block-left-container {
+    padding: 20px 2%;
+    width: 50%;
+    display: flex;
+  }
+
+  .inforight-block-left-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .inforight-block-image-1 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .inset-image {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+  }
+
+  .link-list-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .link-list-wrapper-1 {
+    margin: 0;
+  }
+
+  .link-list-wrapper-2 {
+    margin-left: 4%;
+  }
+
+
+  /* ------- CTA BLOCK ------- */
+
+  .cta-block-container {
+    background-image: url("");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    min-height: inherit;
+    height: auto;
+  }
+
+  .cta-block-overlay {
+    width: 100%;
+    margin: 0;
+    background-color: var(--primary-light);
+    display: flex;
+  }
+
+  .cta-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px 10px 60px;
+  }
+
+  .cta-block-content {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .social-media-icons-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-media-icons {
+    width: 48px;
+    height: 48px;
+    margin: 10px 3%;
+  }
+
+
+  /* ------- INFOBAR BLOCK ------- */
+
+  .infobar-block-container {
+    background-image: url("");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    min-height: inherit;
+    height: auto;
+  }
+
+  .infobar-block-overlay {
+    width: 100%;
+    margin: 0;
+    background-color: var(--gray-500);
+    display: flex;
+  }
+
+  .infobar-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px 10px;
+  }
+
+  .infobar-block-content {
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  /* ------- TABS BLOCK ------- */
+
+  .tabs-block-container {
+    background-image: url("");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    min-height: inherit;
+    height: auto;
+  }
+
+  .tabs-block-overlay {
+    width: 100%;
+    margin: 0;
+    background-color: var(--white);
+    display: flex;
+  }
+
+  .tabs-block-wrapper {
+    width: 100%;
+    max-width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .tabs-block-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .master-tab-wrap .tab-content-right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+  }
+
+  .master-tab-wrap .tab-content-left-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    padding-right: 4%;
+  }
+
+  .master-tab-wrap {
+    -webkit-transition: 0.3s box-shadow ease;
+    transition: 0.3s box-shadow ease;
+    border-radius: 6px;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    list-style: none;
+    background-color: var(--white);
+    margin: 40px 0 20px;
+  }
+
+  .master-tab-wrap .tab {
+    display: none;
+  }
+
+  .master-tab-wrap .tab:checked+label+.tab-content {
+    opacity: 1;
+    -webkit-transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+    transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+    transition: 0.5s opacity ease-in, 0.8s transform ease;
+    transition: 0.5s opacity ease-in, 0.8s transform ease, 0.8s -webkit-transform ease;
+    position: relative;
+    top: 0;
+    z-index: 100;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    text-shadow: 0 0 0;
+  }
+
+  .master-tab-wrap .tab:checked+label {
+    box-shadow: 0 -1px 0 var(--white) inset;
+    cursor: default;
+    /* border: 1px solid var(--primary); */
+    color: var(--gray-900);
+    border-width: 2px;
+    opacity: 1;
+  }
+
+  .master-tab-wrap .tab:checked+label:hover {
+    box-shadow: 0 -1px 0 var(--white) inset;
+    background-color: var(--white);
+  }
+
+  .master-tab-wrap .tab+label {
+    width: 14%;
+    /* Change width % to fit number of tabs */
+    background-color: var(--white);
+    color: var(--gray-500);
+    box-shadow: 0 -1px 0 #eee inset;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    -webkit-transition: 0.3s background-color ease, 0.3s box-shadow ease;
+    transition: 0.3s background-color ease, 0.3s box-shadow ease;
+    height: 120px;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 1%;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.07);
+    opacity: 0.8;
+  }
+
+  .master-tab-wrap .tab+label span {
+    letter-spacing: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    font-family: var(--font-family);
+  }
+
+  .master-tab-wrap .tab+label:hover {
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 #f4f4f4 inset;
+    color: var(--gray-900);
+    opacity: 1;
+  }
+
+  .master-tab-wrap .tab-content {
+    padding: 1%;
+    background-color: transparent;
+    position: absolute;
+    width: 99%;
+    z-index: -1;
+    opacity: 0;
+    left: 0;
+    /* -webkit-transform: translateY(-3px);
+    transform: translateY(-3px); */
+    /* border-radius: 5px; */
+    order: 99;
+  }
+
+  .master-tab-wrap .tab-content-wrapper {
+    border-radius: 5px;
+    /* border: 1px solid #dddcdc; */
+    padding: 30px 3%;
+    margin: 15px auto;
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    align-items: center;
+  }
+
+  .master-tab-wrap .tab-content-right-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .master-tab-wrap .tab-content-image-1 {
+    background-image: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bkg-img-medium.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .master-tab-wrap .tab-content-product-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .master-tab-wrap .inset-image {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+  }
+
+  .tab-label1,
+  .content-border1 {
+    border: 1px solid var(--purple);
+  }
+
+  .master-tab-wrap #tab1:checked+.tab-label1 {
+    background-color: var(--purplelight);
+  }
+
+  .tab-label1:before {
+    content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/book.svg");
+    /* content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bible.svg"); */
+    display: block;
+    width: 100%;
+    max-width: 64px;
+    min-width: 43px;
+    height: auto;
+    margin: 0;
+  }
+
+  .tab-label2,
+  .content-border2 {
+    border: 1px solid var(--green);
+  }
+
+  .master-tab-wrap #tab2:checked+.tab-label2 {
+    background-color: var(--greenlight);
+  }
+
+  .tab-label2:before {
+    content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/history-geography.svg");
+    display: block;
+    width: 100%;
+    max-width: 64px;
+    min-width: 40px;
+    height: auto;
+    margin: 0;
+  }
+
+  .tab-label3,
+  .content-border3 {
+    border: 1px solid var(--yellow);
+  }
+
+  .master-tab-wrap #tab3:checked+.tab-label3 {
+    background-color: var(--yellowlight);
+  }
+
+  .tab-label3:before {
+    content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/language-arts.svg");
+    display: block;
+    width: 100%;
+    max-width: 64px;
+    min-width: 36px;
+    height: auto;
+    margin: 0;
+  }
+
+  .tab-label4,
+  .content-border4 {
+    border: 1px solid var(--red);
+  }
+
+  .master-tab-wrap #tab4:checked+.tab-label4 {
+    background-color: var(--redlight);
+  }
+
+  .tab-label4:before {
+    content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/mathematics.svg");
+    display: block;
+    width: 100%;
+    max-width: 64px;
+    min-width: 35px;
+    height: auto;
+    margin: 0;
+  }
+
+  .tab-label5,
+  .content-border5 {
+    border: 1px solid var(--blue);
+  }
+
+  .master-tab-wrap #tab5:checked+.tab-label5 {
+    background-color: var(--bluelight);
+  }
+
+  .tab-label5:before {
+    content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/science.svg");
+    display: block;
+    width: 100%;
+    max-width: 64px;
+    min-width: 40px;
+    height: auto;
+    margin: 0;
+  }
+
+  .tab-label6,
+  .content-border6 {
+    border: 1px solid var(--teal);
+  }
+
+  .master-tab-wrap #tab6:checked+.tab-label6 {
+    background-color: var(--teallight);
+  }
+
+  .tab-label6:before {
+    content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/electives.svg");
+    /* filter: invert(54%) sepia(11%) saturate(1656%) hue-rotate(190deg) brightness(96%) contrast(82%); */
+    filter: brightness(0) saturate(100%) invert(54%) sepia(15%) saturate(1420%) hue-rotate(131deg) brightness(88%) contrast(83%);
+    display: block;
+    width: 100%;
+    max-width: 60px;
+    min-width: 35px;
+    height: auto;
+    margin: 0;
+  }
+
+  /* --- Saved --- */
+
+  /* .master-tab-wrap .tab:first-of-type:not(:last-of-type)+label {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .master-tab-wrap .tab:not(:first-of-type):not(:last-of-type)+label {
+    border-radius: 0;
+  }
+
+  .master-tab-wrap .tab:last-of-type:not(:first-of-type)+label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  } */
+
+  /* .master-tab-wrap:hover {
+    box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19);
+  } */
+
+
+  /* ------- MODAL WINDOW ------- */
+
+  /* The Modal background */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  @-webkit-keyframes modal-animation {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes modal-animation {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Modal Content Box */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 18px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 900px;
+    -webkit-animation-name: modal-animation;
+    -webkit-animation-duration: 0.5s;
+    animation-name: modal-animation;
+    animation-duration: 0.5s;
+  }
+
+  .modal-content .iframe-container {
+    position: relative;
+    padding-bottom: calc(9/16*100%);
+  }
+
+  .modal-content .iframe-sizing {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  /* The Close Button */
+  .modal-content .close {
+    position: absolute;
+    top: -9px;
+    right: 3px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .modal-content .close:hover,
+  .modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  /* ------- FIXED BUTTON ------- */
+
+  #btn2 {
+    position: fixed;
+    bottom: 10vh;
+    right: -231px;
+    z-index: 5000;
+    transition: transform ease-in-out 0.3s;
+  }
+
+  #btn2.visible {
+    transform: translateX(-220px);
+    opacity: 0.6;
+  }
+
+  #btn2.visible:hover,
+  #btn2.visible:hover a {
+    opacity: 1;
+  }
+
+
+
+  /* ------- RESPONSIVE ------- */
+
+  @media screen and (max-width: 768px) {
+
+    /* AOP Site Update */
+    .content-wrapper {
+      margin-top: 69px;
+    }
+
+    .master-tab-wrap .tab-content-wrapper {
+      /* border-radius: 5px; */
+      flex-direction: column;
+    }
+
+    .master-tab-wrap .tab-content-left-container {
+      width: 100%;
+      padding: 10px auto;
+    }
+
+    .master-tab-wrap .tab-content-right-container {
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    .master-tab-wrap .tab+label {
+      height: 90px;
+    }
+
+    .hero-block-video-foreground,
+    .hero-block-video-background iframe,
+    .hero-block-video-background,
+    .master-tab-wrap .tab+label span {
+      display: none;
+    }
+
+    .title-3xl {
+      font-size: 42px;
+      line-height: 46px;
+      letter-spacing: 0;
+    }
+
+    .hero-block-content-wrapper {
+      flex-direction: column;
+    }
+
+    .infoleft-block-content-wrapper {
+      flex-direction: column-reverse;
+      /* change from "column-reverse" to "column" to swap content position */
+    }
+
+    .inforight-block-content-wrapper {
+      flex-direction: column;
+    }
+
+    .hero-block-right-container {
+      width: 92%;
+    }
+
+    .hero-block-left-container {
+      text-align: center;
+    }
+
+    .buttonset-container,
+    .phone-container {
+      justify-content: center;
+    }
+
+    .infoleft-block-right-container,
+    .inforight-block-left-container {
+      width: 92%;
+    }
+
+    .lead-form-card {
+      min-width: 260px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .benefits-block-row {
+      flex-direction: column;
+      margin: 0 auto;
+    }
+
+    .benefits-block-item-container {
+      margin: 40px auto;
+      width: 92%;
+      justify-content: center;
+    }
+
+    .link-list-wrapper-2 {
+      margin-left: 3%;
+    }
+
+    .link-list-container {
+      justify-content: center;
+    }
+
+
+  }
+
+
+  @media screen and (max-width: 480px) {
+
+    .modal-content {
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    .master-tab-wrap .tab+label {
+      height: 60px;
+    }
+
+    .phone-container {
+      justify-content: center;
+    }
+
+    .buttonset-container {
+      text-align: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .infoleft-block-wrapper,
+    .inforight-block-wrapper {
+      padding: 20px 0;
+    }
+
+    .hero-block-nav-link,
+    .hero-block-logo-container {
+      margin: 10px;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .title-3xl {
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: 0;
+    }
+
+    .title-lg {
+      font-size: 26px;
+      line-height: 30px;
+    }
+
+    .title-xs {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    .hero-block-left-container {
+      padding: 30px 10px 30px;
+    }
+
+    .lead-form-footer {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .lead-form-terms {
+      padding: 8px 5px;
+      max-width: 100%;
+    }
+
+    a.button-lg {
+      width: 90%;
+    }
+
+    .lead-form-submit-btn {
+      width: 100%;
+    }
+
+    .link-list-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .link-list-wrapper-2 {
+      margin: 0;
+    }
+
+    .infobar-block-content {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .two-col-form {
+      flex-direction: column;
+    }
+
+  }
+
+
+  /* ---------------------------------------------- */
+  /* ------------ YOUR OVERRIDE STYLES ------------ */
+  /* -------------Just Changed Styles!------------- */
+  /* ---------------------------------------------- */
+
+
+  .cta-block-overlay {
+    background-color: rgb(207 235 239 / 85%);
+  }
+
+  .cta-block-container {
+    background-image: url(https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-parent.jpg);
+  }
+
+  .inforight-block-image-1 {
+    background-image: url(https://glnmedia.s3.amazonaws.com/landing/master-template/images/disco-1200x1200.jpg);
+  }
+
+  .infoleft-block-image-1 {
+    background-image: url(https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-parent.jpg);
+  }
+
+  .centered-block-wrapper {
+    padding: 70px 10px 10px;
+    /* Temporary style override for default layout */
+  }
+
+  .inforight-block-wrapper {
+    margin: -20px auto;
+    /* Temporary style override for default layout */
+  }
+
+  :root {
+    --primary-video-transparent: rgba(0, 67, 80, 0.70);
+  }
+
+  .hero-block-logo-container img {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .benefits-block-image-1 {
+    background-image: none;
+    background-color: var(--primary-dark);
+  }
+
+  .tab-label1:before {
+    content: url("https://glnmedia.s3.amazonaws.com/landing/master-template/images/bible.svg");
+  }
+
+  .benefits-block-image-container {
+    width: 45px;
+    height: 45px;
+    margin: -40px auto 15px;
+  }
+
+  .pb-0 {
+    padding-bottom: 0;
+  }
+
+  .benefits-block-item-container {
+    background-color: #edf9fb;
+  }
+
+  .benefits-block-wrapper {
+    padding: 20px 10px 0px;
+  }
+
+  .inset-image {
+    height: 570px;
+  }
+
+  .cta-block-content {
+    max-width: 600px;
+  }
+
+  .text-sm {
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .hero-block-video-background,
+    .hide-mobile {
+      display: none;
+    }
+
+    .hero-block-container {
+      background-image: url(https://glnmedia.s3.amazonaws.com/landing/master-template/images/hero-1920w.jpg);
+    }
+
+  }
+
+
+  @media screen and (max-width: 480px) {
+
+    .some-element-selector {
+      width: 100%;
+    }
+
+  }
+</style>
+
+
+<!-- IMPORT FONTAWESOME (https://fontawesome.com/search) -->
+
+<script src="https://glnmedia.s3.amazonaws.com/landing/master-template/js/fontawesome/all.min.js"></script>
+
+
+
+<!-- HERO BLOCK START -->
+
+<div class="hero-block-container">
+
+  <div class="hero-block-video-background">
+    <div class="hero-block-video-foreground">
+      <iframe width="0" height="0"
+        src="https://www.youtube.com/embed/hgk4WfXMTqA?loop=1&autoplay=1&mute=1&playlist=hgk4WfXMTqA" frameborder="0"
+        allow="autoplay;" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="hero-block-overlay">
+    <div class="hero-block-wrapper">
+
+      <div class="hero-block-nav-container">
+
+        <div class="hero-block-logo-container"><a href="#"><img
+              src="https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-logo-white.png"
+              alt="LIFEPAC Logo" title="Home" /></a>
+        </div>
+
+        <!-- <a href="#" target="" class="text-white hero-block-nav-link button-text text-link">Link</a> -->
+
+        <div class="phone-container" style="margin-right: 1%;"><a href="tel:+18000000000"
+            class="text-white button button-lg text-normal transparent-light-bkg">
+            <span class="hide-mobile">Questions?</span>
+            <span class="mr-sm text-nowrap hide-mobile"><i
+                class="fa-solid fa-phone-volume"></i></span><strong>800.000.0000</strong>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-block-content-wrapper">
+
+        <div class="hero-block-left-container">
+
+          <div class="hero-block-content">
+
+            <div class="text-white eyebrow">Student-Paced Mastery</div>
+
+            <div class="text-white title-3xl">K-12 Christian Homeschool in&nbsp;a&nbsp;box.</div>
+
+            <div class="text-white text-normal mb-md">Since 1978, LIFEPAC has empowered achievement and success for both
+              student and teacher. Try our most popular student-paced mastery print curriculum for&nbsp;free.
+            </div>
+
+            <div class="buttonset-container">
+              <div class="button-container"><a href="#" target=""
+                  class="text-white button button-lg button-text border-primary primary-bkg">Buy Now
+                  <span><i></i></span>
+                </a>
+              </div>
+              <div class="button-container"><a id="modalBtn" href="#" target=""
+                  class="text-white border-white button button-lg button-text transparent-light-bkg">Watch Video
+                  <span><i class="fa-solid fa-video"></i></span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="hero-block-right-container">
+
+          <!-- LEAD FORM IN CARD START -->
+
+          <div class="lead-form-container">
+            <div class="lead-form-card">
+
+              <!-- LEAD FORM ONLY START - Add Fusionary_Form_Security JS Dependendancies to CMS Page -->
+
+              <form class="recaptcha-form lead-form-width" method="post">
+                <div class="form-inner">
+
+                  <input type="hidden" name="action-key" value="add-FormKey-value-here" />
+
+                  <h3 class="ml-sm">Try it for Free?</h3>
+                  <p class="text-sm mb-md ml-sm">Getting started guide &amp; LIFEPAC courses&nbsp;samples.</p>
+
+                  <div class="form-error-message ml-sm" style="display: none;">Oops! Something went wrong - try again.
+                  </div>
+
+                  <div class="two-col-form">
+                    <div class="lead-form-input-container">
+                      <input type="text" id="fname" name="fname" placeholder="First Name" required="">
+                    </div>
+                    <div class="lead-form-input-container">
+                      <input type="text" id="lname" name="lname" placeholder="Last Name" required="">
+                    </div>
+                  </div>
+                  <div class="two-col-form">
+                    <div class="lead-form-input-container">
+                      <input type="email" id="email" name="Email" placeholder="Email" required="">
+                    </div>
+                    <div class="lead-form-input-container">
+                      <input type="tel" id="phone" maxlength="20" name="phone" placeholder="Phone" required="">
+                    </div>
+                  </div>
+
+                  <!-- <div class="radio-question">
+                     <div><label for="NewToHomeSchooling">Are you new to homeschooling?</label></div>
+                 </div>
+                 <div class="radio-items">
+                     <label>Yes <input style="margin-right: 15px;" id="NewToHomeSchooling" name="NewToHomeSchooling" type="radio" value="Yes" checked="checked"></label>
+                     <label>No <input id="NewToHomeSchooling" name="NewToHomeSchooling" type="radio" value="No"></label>
+                 </div> -->
+
+                  <div class="lead-form-footer">
+
+                    <div class="lead-form-terms text-caption">By
+                      completing this form, you agree to receiving other email communication about this
+                      program. See our <a href="/terms-and-conditions" target="terms" class="text-caption">Terms</a>
+                      and&nbsp;<a href="/privacy-policy" target="terms" class="text-caption">Policy</a>.
+                    </div>
+
+                    <div class="lead-form-submit-btn-container">
+                      <button
+                        class="text-white lead-form-submit-btn button form-button-lg button-text border-primary primary-bkg"
+                        type="submit">YES<span class="ml-sm"><i class="fa-solid fa-arrow-right"></i></span></button>
+                    </div>
+
+                  </div>
+
+                </div>
+              </form>
+
+              <!-- LEAD FORM ONLY END -->
+
+            </div>
+          </div>
+
+          <!-- LEAD FORM IN CARD END -->
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HERO BLOCK END -->
+
+
+
+<!-- CENTERED BLOCK START -->
+
+<div class="centered-block-container">
+  <div class="centered-block-overlay">
+    <div class="centered-block-wrapper">
+
+      <div class="centered-block-content">
+
+        <!-- <div class="text-center eyebrow text-gray mb-sm">Enim sodales sagittis</div> -->
+
+        <div class="text-center title-lg text-darkgray">What is LIFEPAC?</div>
+
+        <div class="text-center text-normal text-darkgray mb-md">A Christian homeschool print curriculum for grades
+          K-12.
+          LIFEPAC
+          uses the principle of comprehension, mastering content before progressing to the next concept. Each
+          organized course box includes all worktext units and a teacher's&nbsp;guide.
+        </div>
+
+        <!-- <div class="buttonset-container center-justify">
+          <div class="button-container"><a href="#" target=""
+              class="text-white button button-lg button-text border-primary primary-bkg">Lorem
+              Ipsum
+              <span><i></i></span>
+            </a>
+          </div>
+          <div class="button-container"><a href="#" target=""
+              class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Lorem
+              Ipsum
+              <span><i></i></span>
+            </a>
+          </div>
+        </div> -->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CENTERED BLOCK END -->
+
+
+
+<!-- BENEFITS BLOCK START -->
+
+<div id="btn1" class="benefits-block-container">
+  <div class="benefits-block-overlay">
+    <div class="benefits-block-wrapper">
+
+      <div class="benefits-block-content">
+
+        <div class="benefits-block-row">
+          <!-- Max 3 / Row -->
+
+          <div class="benefits-block-item-container">
+
+            <div class="benefits-block-item-info">
+
+              <div class="shadow-lg benefits-block-image-container benefits-block-image-1">
+                <div class="pb-0 text-white title-sm"><i class="fa-solid fa-book-open"></i></div>
+              </div>
+              <p class="text-center mb-md">
+                <span class="title-xs text-darkprimary">Self Contained Units</span>
+              </p>
+              <p class="text-sm text-center text-darkgray mb-md">
+                Each printed worktext includes full-color student-paced lessons, self tests, and a removable
+                teacher-given&nbsp;test.
+                <!-- <a href="#" target="" class="text-sm text-link text-darkprimary">Learn More
+                  <i class="fa-solid fa-angle-right"></i></a> -->
+              </p>
+
+            </div>
+
+            <!-- <div class="buttonset-container center-justify">
+              <div class="button-container"><a href="#" target=""
+                  class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Lorem
+                  Ipsum
+                  <span><i></i></span>
+                </a>
+              </div>
+            </div> -->
+
+          </div>
+
+          <div class="benefits-block-item-container">
+
+            <div class="benefits-block-item-info">
+
+              <div class="shadow-lg benefits-block-image-container benefits-block-image-1">
+                <div class="pb-0 text-white title-sm"><i class="fa-solid fa-chart-line"></i></div>
+              </div>
+              <p class="text-center mb-md">
+                <span class="title-xs text-darkprimary">Student Success</span>
+              </p>
+              <p class="text-sm text-center text-darkgray mb-md">
+                Every mastery unit builds on learned concepts, and is not too large or overwhelming - so progress
+                feels&nbsp;achievable.
+                <!-- <a href="#" target=""
+                  class="text-sm text-link text-darkprimary">Learn More <i class="fa-solid fa-angle-right"></i></a> -->
+              </p>
+
+            </div>
+
+            <!-- <div class="buttonset-container center-justify">
+              <div class="button-container"><a href="#" target=""
+                  class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Lorem
+                  Ipsum
+                  <span><i></i></span>
+                </a>
+              </div>
+            </div> -->
+
+          </div>
+
+          <div class="benefits-block-item-container">
+
+            <div class="benefits-block-item-info">
+
+              <div class="shadow-lg benefits-block-image-container benefits-block-image-1">
+                <div class="text-white title-sm" style="padding-bottom: 0px;"><i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+              </div>
+              <p class="text-center mb-md">
+                <span class="title-xs text-darkprimary">Easy Access Storage</span>
+              </p>
+              <p class="text-sm text-center text-darkgray mb-md">
+                Easily find current or past lessons neatly stored on your shelf. Great reference for both student
+                and&nbsp;teacher.
+                <!-- <a href="#" target=""
+                  class="text-sm text-link text-darkprimary">Learn More <i class="fa-solid fa-angle-right"></i></a> -->
+              </p>
+
+            </div>
+
+            <!-- <div class="buttonset-container center-justify">
+              <div class="button-container"><a href="#" target=""
+                  class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Lorem
+                  Ipsum
+                  <span><i></i></span>
+                </a>
+              </div>
+            </div> -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS BLOCK END -->
+
+
+
+<!-- TABS BLOCK START -->
+
+<div class="tabs-block-container">
+  <div class="tabs-block-overlay">
+    <div class="tabs-block-wrapper">
+
+      <div class="tabs-block-content">
+
+        <!-- Tabs Standalone START -->
+
+        <div class="master-tab-wrap">
+
+          <!-- Tab 1 START -->
+
+          <!-- active tab on page load gets "checked" attribute -->
+          <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+          <label class="tab-label1" for="tab1"><span>Bible</span></label>
+          <div class="tab-content">
+            <div class="tab-content-wrapper content-border1">
+
+              <div class="tab-content-left-container">
+                <div class="eyebrow text-gray">Bible</div>
+                <div class="title-md">Teach your child practical Christian&nbsp;living.</div>
+                <div class="text-normal text-darkgray mb-md">Featuring the King James Version, LIFEPAC Bible is an
+                  in-depth study of the Old and New Testaments for grades 1-12, covering the themes of theology, the
+                  attributes of God, biblical literature, biblical geography, Christian growth, and
+                  Christian&nbsp;evidences.</div>
+                <div class="buttonset-container">
+                  <div class="button-container"><a href="https://www.aop.com/curriculum/shop-lifepac" target="_blank"
+                      class="text-white button button-lg button-text border-primary primary-bkg">Shop Now
+                      <span><i></i></span>
+                    </a>
+                  </div>
+                  <!-- <div class="button-container"><a href="#" target=""
+                      class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Samples
+                      <span><i></i></span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="tab-content-right-container">
+                <div class="tab-content-right-content">
+                  <div>
+                    <img
+                      src="https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-3-5-full-grade-set-cropped.png"
+                      style="width: 100%; height: auto;" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 1 END -->
+
+          <!-- Tab 2 START -->
+
+          <input type="radio" id="tab2" name="tabGroup1" class="tab">
+          <label class="tab-label2" for="tab2"><span>History & Geography</span></label>
+          <div class="tab-content">
+            <div class="tab-content-wrapper content-border2">
+
+              <div class="tab-content-left-container">
+                <div class="eyebrow text-gray">History & Geography</div>
+                <div class="title-md">Learn from the&nbsp;past.</div>
+                <div class="text-normal text-darkgray mb-md">Develop your student’s understanding of and appreciation
+                  for God’s activity as seen in the record of man and his relationships. This curriculum for grades 1-12
+                  focuses on the themes of geography, history, government, citizenship, economics, and
+                  social&nbsp;studies.</div>
+                <div class="buttonset-container">
+                  <div class="button-container"><a href="https://www.aop.com/curriculum/shop-lifepac" target="_blank"
+                      class="text-white button button-lg button-text border-primary primary-bkg">Shop Now
+                      <span><i></i></span>
+                    </a>
+                  </div>
+                  <!-- <div class="button-container"><a href="#" target=""
+                      class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Samples
+                      <span><i></i></span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="tab-content-right-container">
+                <div class="tab-content-right-content">
+                  <div>
+                    <img
+                      src="https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-3-5-full-grade-set-cropped.png"
+                      style="width: 100%; height: auto;" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 2 END -->
+
+          <!-- Tab 3 START -->
+
+          <input type="radio" id="tab3" name="tabGroup1" class="tab">
+          <label class="tab-label3" for="tab3"><span>Language Arts</span></label>
+          <div class="tab-content">
+            <div class="tab-content-wrapper content-border3">
+
+              <div class="tab-content-left-container">
+                <div class="eyebrow text-gray">Language Arts</div>
+                <div class="title-md">Embrace the gift of language and communication.</div>
+                <div class="text-normal text-darkgray mb-md">LIFEPAC Language Arts covers the six major content strands
+                  of reading, speaking and listening, writing, spelling, grammar, and composition for grades K-12. This
+                  program also covers special topics like visual media and the Bible as literature, as well as study and
+                  research&nbsp;skills.</div>
+                <div class="buttonset-container">
+                  <div class="button-container"><a href="https://www.aop.com/curriculum/shop-lifepac" target="_blank"
+                      class="text-white button button-lg button-text border-primary primary-bkg">Shop Now
+                      <span><i></i></span>
+                    </a>
+                  </div>
+                  <!-- <div class="button-container"><a href="#" target=""
+                      class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Samples
+                      <span><i></i></span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="tab-content-right-container">
+                <div class="tab-content-right-content">
+                  <div>
+                    <img
+                      src="https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-3-5-full-grade-set-cropped.png"
+                      style="width: 100%; height: auto;" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 3 END -->
+
+          <!-- Tab 4 START -->
+
+          <input type="radio" id="tab4" name="tabGroup1" class="tab">
+          <label class="tab-label4" for="tab4"><span>Math</span></label>
+          <div class="tab-content">
+            <div class="tab-content-wrapper content-border4">
+
+              <div class="tab-content-left-container">
+                <div class="eyebrow text-gray">Math</div>
+                <div class="title-md">Prepare students for using math in the real&nbsp;world.</div>
+                <div class="text-normal text-darkgray mb-md">LIFEPAC Math for grades K-12 prepares students for using
+                  math successfully in real-life situations. The curriculum targets this goal by focusing on the major
+                  themes of number skills, geometry, algebra, data analysis, and probability.</div>
+                <div class="buttonset-container">
+                  <div class="button-container"><a href="https://www.aop.com/curriculum/shop-lifepac" target="_blank"
+                      class="text-white button button-lg button-text border-primary primary-bkg">Shop Now
+                      <span><i></i></span>
+                    </a>
+                  </div>
+                  <!-- <div class="button-container"><a href="#" target=""
+                      class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Samples
+                      <span><i></i></span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="tab-content-right-container">
+                <div class="tab-content-right-content">
+                  <div>
+                    <img
+                      src="https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-3-5-full-grade-set-cropped.png"
+                      style="width: 100%; height: auto;" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 4 END -->
+
+          <!-- Tab 5 START -->
+
+          <input type="radio" id="tab5" name="tabGroup1" class="tab">
+          <label class="tab-label5" for="tab5"><span>Science</span></label>
+          <div class="tab-content">
+            <div class="tab-content-wrapper content-border5">
+
+              <div class="tab-content-left-container">
+                <div class="eyebrow text-gray">Science</div>
+                <div class="title-md">Explore God's amazing creation.</div>
+                <div class="text-normal text-darkgray mb-md">LIFEPAC Science for grades 1-12 focuses on the development
+                  of observational skills as students study the physical universe God created. The four major strands
+                  include life science, space and Earth science, physical science, and the nature of&nbsp;science.</div>
+                <div class="buttonset-container">
+                  <div class="button-container"><a href="https://www.aop.com/curriculum/shop-lifepac" target="_blank"
+                      class="text-white button button-lg button-text border-primary primary-bkg">Shop Now
+                      <span><i></i></span>
+                    </a>
+                  </div>
+                  <!-- <div class="button-container"><a href="#" target=""
+                      class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Samples
+                      <span><i></i></span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="tab-content-right-container">
+                <div class="tab-content-right-content">
+                  <div>
+                    <img
+                      src="https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-3-5-full-grade-set-cropped.png"
+                      style="width: 100%; height: auto;" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 5 END -->
+
+          <!-- Tab 6 START -->
+
+          <input type="radio" id="tab6" name="tabGroup1" class="tab">
+          <label class="tab-label6" for="tab6"><span>Electives</span></label>
+          <div class="tab-content">
+            <div class="tab-content-wrapper content-border6">
+
+              <div class="tab-content-left-container">
+                <div class="eyebrow text-gray">Electives</div>
+                <div class="title-md">Broaden your child's knowledge-base.</div>
+                <div class="text-normal text-darkgray mb-md">LIFEPAC electives offer a balanced homeschool education
+                  with 13 mastery-based courses that promote critical thinking skills in independent learners.
+                  Structured lessons are available in subjects ranging from math, art, and world languages to
+                  literature, business, and home&nbsp;living.</div>
+                <div class="buttonset-container">
+                  <div class="button-container"><a href="#" target=""
+                      class="text-white button button-lg button-text border-primary primary-bkg">Buy Now
+                      <span><i></i></span>
+                    </a>
+                  </div>
+                  <!-- <div class="button-container"><a href="#" target=""
+                      class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Samples
+                      <span><i></i></span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="tab-content-right-container">
+                <div class="tab-content-right-content">
+                  <div>
+                    <img
+                      src="https://glnmedia.s3.amazonaws.com/landing/master-template/images/lifepac-3-5-full-grade-set-cropped.png"
+                      style="width: 100%; height: auto;" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 6 END -->
+
+        </div>
+
+        <!-- Tabs Standalone END -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS BLOCK END -->
+
+
+
+<!-- INFORIGHT BLOCK START -->
+
+<div class="inforight-block-container">
+  <div class="inforight-block-overlay">
+    <div class="inforight-block-wrapper">
+
+      <div class="inforight-block-content-wrapper">
+
+        <div class="inforight-block-left-container">
+
+          <div class="inforight-block-left-content">
+            <div class="shadow-lg inforight-block-image-1 inset-image"></div>
+          </div>
+
+        </div>
+
+        <div class="inforight-block-right-container">
+
+          <div class="inforight-block-content">
+
+            <div class="eyebrow text-gray mb-sm">Updated Design</div>
+
+            <div class="title-md text-darkgray">Get down with over 60&nbsp;courses.</div>
+
+            <div class="text-normal text-darkgray mb-md">
+              Back in 1978 when LIFEPAC was launched, 2022 seemed far out. Today, LIFEPAC is AOP's most time-trusted
+              curriculum have recently undergone a redesign. Featuring the same Christian worldview you've come to
+              expect over the last 40 years, the content is now
+              presented in such a way that every course has its most age-appropriate design yet! With new colors,
+              illustrations, and graphic design, each course from kindergarten through 12th grade (more than 60 courses
+              in all) is now more enjoyable to read and study, making learning with LIFEPAC more fun for&nbsp;everyone!
+            </div>
+
+            <div class="buttonset-container">
+              <div class="button-container"><a href="#" target=""
+                  class="text-white button button-lg button-text border-primary primary-bkg">Free Samples
+                  <span><i class="fa-solid fa-arrow-up"></i></span>
+                </a>
+              </div>
+              <!-- <div class="button-container"><a href="#" target=""
+                  class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Lorem
+                  Ipsum
+                  <span><i></i></span>
+                </a>
+              </div> -->
+            </div>
+
+            <hr class="hr-light" />
+
+            <div class="text-sm text-gray mb-lg">“This is our first year homeschooling, and I have parents coming out of
+              the woodwork asking me how to get started. I always point them to your website and curriculum first. The
+              Godly thread throughout your programs has truly made a difference in my son and the rest of
+              our&nbsp;family.”
+              <span class="text-xs text-nowrap">
+                - Lisa S.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- INFORIGHT BLOCK END -->
+
+
+
+<!-- INFOLEFT BLOCK START -->
+
+<div class="infoleft-block-container">
+  <div class="infoleft-block-overlay">
+    <div class="infoleft-block-wrapper">
+
+      <div class="infoleft-block-content-wrapper">
+
+        <div class="infoleft-block-left-container">
+
+          <div class="infoleft-block-content">
+
+            <div class="eyebrow text-gray mb-sm">Homeschool in a box</div>
+
+            <div class="title-md text-darkgray">Lesson Planned.</div>
+
+            <div class="text-normal text-darkgray mb-md">Sure, some moms might have time to toil for hours cobbling
+              together
+              a curriculum using Pinterest, dollar bin finds, photocopies of photocopies, and who knows what else, but
+              you don’t have time for that. That’s why LIFEPAC is perfect for you. Coordinating lessons, exercises,
+              projects, reviews, and tests, LIFEPAC’s convenient worktexts make it incredibly easy to cover everything
+              in your homeschool year. All stored neatly together for easy&nbsp;access.
+            </div>
+
+            <div class="buttonset-container">
+              <div class="button-container"><a href="#" target=""
+                  class="text-white button button-lg button-text border-primary primary-bkg">Free Samples
+                  <span><i class="fa-solid fa-arrow-up"></i></span>
+                </a>
+              </div>
+              <!-- <div class="button-container"><a href="#" target=""
+                  class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Lorem
+                  Ipsum
+                  <span><i></i></span>
+                </a>
+              </div> -->
+            </div>
+
+            <hr class="hr-light" />
+
+            <div class="text-sm text-gray mb-lg">“I grew up doing LIFEPAC and loved it! Now I am using them to
+              homeschool my own kids! I feel good knowing LIFEPAC prepared me as a student going into college and feel
+              confident you&apos;re doing the same for my kids as&nbsp;well.”
+              <span class="text-xs text-nowrap">
+                - Kristi D.
+              </span>
+            </div>
+
+            <div class="phone-container"><a href="tel:+18000000000"
+                class="button button-lg text-normal text-darkgray border-darkgray transparent-dark-bkg">Questions?
+                <span class="mr-sm text-nowrap"><i
+                    class="fa-solid fa-phone-volume"></i></span><strong>800.000.0000</strong>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="infoleft-block-right-container">
+
+          <div class="infoleft-block-right-content">
+            <div class="shadow-lg infoleft-block-image-1 inset-image"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- INFOLEFT BLOCK END -->
+
+
+
+<!-- CTA BLOCK START -->
+
+<div class="cta-block-container">
+  <div class="cta-block-overlay">
+    <div class="cta-block-wrapper">
+
+      <div class="cta-block-content">
+
+        <!-- <div class="text-center eyebrow text-gray mb-sm">Enim sodales sagittis</div> -->
+
+        <div class="text-center title-lg text-darkgray">New to Homeschooling?</div>
+
+        <div class="text-center text-normal text-darkgray mb-md">We got you covered. When you request your free LIFEPAC
+          samples using the top form, we will also include a free Getting Started Guide with steps to get
+          you homeschooling in&nbsp;no&nbsp;time.
+        </div>
+
+        <!-- <div class="social-media-icons-container mb-md">
+          <a href="#" class="social-media-icons text-darkprimary" target="_blank"><i
+              class="fa-brands fa-facebook-square fa-3x"></i></a>
+          <a href="#" class="social-media-icons text-darkprimary" target="_blank"><i
+              class="fa-brands fa-twitter-square fa-3x"></i></a>
+          <a href="#" class="social-media-icons text-darkprimary" target="_blank"><i
+              class="fa-brands fa-pinterest-square fa-3x"></i></a>
+          <a href="#" class="social-media-icons text-darkprimary" target="_blank"><i
+              class="fa-brands fa-youtube-square fa-3x"></i></a>
+        </div> -->
+
+        <div class="buttonset-container center-justify">
+          <div class="button-container"><a href="#" target=""
+              class="text-white button button-lg button-text border-primary primary-bkg">Get Started
+              <span><i class="fa-solid fa-arrow-up"></i></span>
+            </a>
+          </div>
+          <!-- <div class="button-container"><a href="#" target=""
+              class="button button-lg button-text text-darkgray border-darkgray transparent-dark-bkg">Lorem
+              Ipsum
+              <span><i></i></span>
+            </a>
+          </div> -->
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CTA BLOCK END -->
+
+
+<!-- INFOBAR BLOCK START -->
+
+<div class="infobar-block-container">
+  <div class="infobar-block-overlay">
+    <div class="infobar-block-wrapper">
+
+      <div class="infobar-block-content">
+
+        <div class="text-xs text-center text-white">© 2022 All Rights Reserved - Alpha&nbsp;Omega&nbsp;Publications
+        </div>
+
+        <!-- <div class="buttonset-container center-justify">
+          <div class="button-container"><a href="#" target=""
+              class="text-white button button-lg button-text border-primary primary-bkg">Lorem
+              Ipsum
+              <span><i></i></span>
+            </a>
+          </div>
+          <div class="button-container"><a href="#" target=""
+              class="text-white border-white button button-lg button-text transparent-light-bkg">Lorem
+              Ipsum
+              <span><i></i></span>
+            </a>
+          </div>
+        </div> -->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- INFOBAR BLOCK END -->
+
+
+
+<!-- FIXED BUTTON START -->
+
+<div id="btn2" class="button-container"><a href="tel:+18000000000" target=""
+    class="text-white button button-lg button-text border-primary primary-bkg"><i
+      class="mr-sm fa-solid fa-phone-volume"></i><strong>800.000.0000</strong>
+  </a>
+</div>
+<script src="https://glnmedia.s3.amazonaws.com/landing/master-template/js/fixedButton.js"></script>
+
+<!-- FIXED BUTTON END -->
+
+
+
+<!-- AOP CHAT WIDGET START - Only use with no site header/footer -->
+
+<chat-container style="position: relative;">
+
+  <script src="https://apps.usw2.pure.cloud/widgets/9.0/cxbus.min.js" onload="javascript:CXBus.configure(
+            {debug:false,
+              pluginsPath:'https://apps.usw2.pure.cloud/widgets/9.0/plugins/'
+            }); 
+            CXBus.loadPlugin('widgets-core');">
+            </script>
+  <!-- Load widget file. Each file is unique to a division's widget. -->
+  <script src="https://glnmedia.s3.amazonaws.com/chat/genesys/js/hs_chat_config.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://glnmedia.s3.amazonaws.com/chat/genesys/css/aop-chat-theme.css">
+
+</chat-container>
+
+<!-- AOP CHAT WIDGET END -->
+
+
+<!-- THE MODAL START - Should be the last block -->
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="shadow-lg modal-content">
+    <div class="iframe-container">
+      <iframe class="iframe-sizing" src="https://www.youtube.com/embed/hgk4WfXMTqA?rel=0&showinfo=0" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen=""></iframe>
+    </div>
+    <span class="close">&times;</span>
+  </div>
+</div>
+<script src="https://glnmedia.s3.amazonaws.com/landing/master-template/js/modal.js"></script>
+
+<!-- THE MODAL END - Should be the last block -->
+
+</html>
