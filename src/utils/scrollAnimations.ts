@@ -168,12 +168,3 @@ export function destroyScrollAnimations(): void {
   manager?.destroy();
   manager = null;
 }
-
-// Auto-initialize disabled - handled by components for production reliability
-// if (typeof window !== 'undefined') {
-//   if (document.readyState === 'loading') {
-//     document.addEventListener('DOMContentLoaded', () => setTimeout(initScrollAnimations, 100));
-//   } else {
-//     setTimeout(initScrollAnimations, 100);
-//   }
-// }
