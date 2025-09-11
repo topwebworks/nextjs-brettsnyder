@@ -10,7 +10,6 @@
     "generate-project-data": "node scripts/generate-project-data.js",
     "create-project": "node scripts/generate-project-data.js --create",
     "prebuild": "npm run generate-project-data",
-    "postinstall": "node scripts/platform-cleanup.js",
     "deploy": "npm run build && vercel --prebuilt --prod",
     "deploy-staging": "npm run build && vercel --prebuilt"
   },
@@ -21,7 +20,8 @@
     "marked": "^16.2.0",
     "next": "^15.5.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
