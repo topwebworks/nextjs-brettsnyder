@@ -68,17 +68,15 @@ const nextConfig: NextConfig = {
     ];
   },
   
-  // Experimental features
+  // Experimental features with Turbopack
   experimental: {
     optimizePackageImports: ['lucide-react'],
-  },
-  
-  // Turbopack configuration (updated from deprecated experimental.turbo)
-  turbo: {
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
       },
     },
   },
