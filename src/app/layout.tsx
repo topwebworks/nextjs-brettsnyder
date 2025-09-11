@@ -96,16 +96,16 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>RockitCode Portfolio - Design System Test</title>
-        <meta name="description" content="Testing CSS custom properties system with local fonts and bulletproof asset management" />
-        <meta name="author" content="RockitCode Portfolio" />
+        <title>Brett Snyder Portfolio</title>
+        <meta name="description" content="Personal portfolio of Brett Snyder" />
+        <meta name="author" content="Brett Snyder" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="RockitCode Portfolio - Design System Test" />
-        <meta property="og:description" content="Testing CSS custom properties system with local fonts and bulletproof asset management" />
+        <meta property="og:title" content="Brett Snyder Portfolio" />
+        <meta property="og:description" content="Personal portfolio of Brett Snyder" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="RockitCode Portfolio - Design System Test" />
-        <meta name="twitter:description" content="Testing CSS custom properties system with local fonts and bulletproof asset management" />
+        <meta name="twitter:title" content="Brett Snyder Portfolio" />
+        <meta name="twitter:description" content="Personal portfolio of Brett Snyder" />
       </head>
       <body suppressHydrationWarning={true}>
         {/* Google Tag Manager (noscript) */}
