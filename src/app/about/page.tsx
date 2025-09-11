@@ -9,7 +9,6 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
 import Button from '@/components/ui/Button';
 import { emailLinks, resumeLinks, siteConfig } from '@/lib/config';
-import { ScrollAnimationsProvider } from "@/components/providers/ScrollAnimationsProvider";
 import styles from './AboutPage.module.css';
 
 // Global/shared images from src/images/
@@ -372,8 +371,6 @@ export default function AboutPage() {
 
 
           {/* Personal Values Section - Staggered Image & Content Layout */}
-        <ScrollAnimationsProvider>
-
           <section className={styles.valuesSection}>            
 
             <div className={styles.valuesContainer}>
@@ -500,8 +497,6 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
-          
-        </ScrollAnimationsProvider>
 
         </main>
 
