@@ -210,9 +210,7 @@ export default function AboutPage() {
                             }
                           }}
                         />
-                        {/* Subtle background accent */}
-                        <div className={styles.achievementCardAccent} />
-                        
+
                         <achievement.icon 
                           size={22} 
                           className={styles.achievementCardIcon} 
@@ -396,7 +394,7 @@ export default function AboutPage() {
                     >
                       {/* Image Panel with Hover Effects */}
                       <div 
-                        className={`${styles.valueImagePanel} image-panel photo-contemporary-container ${isEven ? 'scroll-slide-left' : 'scroll-slide-right'}`}
+                        className={`${styles.valueImagePanel} image-panel photo-contemporary-container scroll-fade-up-fast`}
                       >
                         {/* Hover Overlay with Orange Accent */}
                         <div
@@ -450,7 +448,7 @@ export default function AboutPage() {
 
                       {/* Content Panel with Hover Effects */}
                       <div 
-                        className={`${styles.valueContentPanel} ${isEven ? styles.valueContentPanelEven : styles.valueContentPanelOdd} content-panel ${isEven ? 'scroll-slide-right' : 'scroll-slide-left'} scroll-stagger-2`}
+                        className={`${styles.valueContentPanel} ${isEven ? styles.valueContentPanelEven : styles.valueContentPanelOdd} content-panel scroll-fade-up`}
                       >
                         {/* Hover Overlay with Purple Accent */}
                         <div
