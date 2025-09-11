@@ -69,9 +69,13 @@ class ScrollAnimationManager {
         opacity: 1 !important;
       }
 
-      .scroll-animated.scroll-fade-up,
+      /* Final state for fade animations - use lower specificity */
+      .scroll-animated.scroll-fade-up {
+        transform: translateY(0);
+      }
+      
       .scroll-animated.scroll-fade-up-fast {
-        transform: translateY(0) !important;
+        transform: translateY(0);
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -121,19 +125,13 @@ class ScrollAnimationManager {
       return;
     }
 
-    // Store original transition to restore later
-    const originalTransition = element.style.transition;
-    
     element.style.animation = `${config.keyframe} ${config.duration} cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
     element.style.opacity = '1';
-    element.classList.add('scroll-animated');
     
-    // Restore transition after animation completes
+    // Use CSS class for final state instead of inline transform
     setTimeout(() => {
+      element.classList.add('scroll-animated');
       element.style.animation = '';
-      if (originalTransition) {
-        element.style.transition = originalTransition;
-      }
     }, parseFloat(config.duration) * 1000);
   }
 
