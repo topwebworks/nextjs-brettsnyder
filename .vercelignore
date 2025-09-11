@@ -13,13 +13,6 @@
 # Development dependencies - these get reinstalled on Vercel anyway
 node_modules/
 
-# Demo and development assets (production doesn't need these)
-public/demo/
-public/emails/
-public/master-blocks/
-public/alototrack-prototype/
-public/monarch-catalog/
-
 # Source maps and debug files (reduce bundle size)
 **/*.map
 *.log
