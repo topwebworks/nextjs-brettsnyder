@@ -1,6 +1,3 @@
-# Exclude only unnecessary files, keep demos
-# public/demo/
-
 # Development files
 *.log
 .env.local
