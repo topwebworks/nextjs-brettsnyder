@@ -145,7 +145,7 @@ export default function Homepage() {
             const portrait = e.currentTarget.querySelector(`.${styles.heroPortrait}`) as HTMLElement;
             if (portrait) {
               // Simple desktop hover - CSS handles mobile hiding
-              portrait.style.opacity = '0.50';
+              portrait.style.opacity = '0.65';
               portrait.style.transform = 'scale(1)';
               portrait.style.filter = 'blur(0px) brightness(0.6) contrast(1.0) saturate(1.6) hue-rotate(15deg)';
             }
@@ -155,7 +155,7 @@ export default function Homepage() {
             if (portrait) {
               portrait.style.opacity = '0';
               portrait.style.transform = 'scale(1.05)';
-              portrait.style.filter = 'blur(1px) brightness(0.5) contrast(0.8) saturate(1.1)';
+              portrait.style.filter = 'blur(0px) brightness(0.5) contrast(0.8) saturate(1.1)';
             }
           }}
         >
