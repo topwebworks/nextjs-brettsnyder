@@ -16,10 +16,10 @@ import styles from './BlogPage.module.css';
 
 // Page metadata
 export const metadata: Metadata = {
-  title: 'Blog - RockitCode',
+  title: 'Blog',
   description: 'Explore my latest thoughts, tutorials, and insights on web development, technology, and design.',
   openGraph: {
-    title: 'Blog - RockitCode',
+    title: 'Blog',
     description: 'Explore my latest thoughts, tutorials, and insights on web development, technology, and design.',
     type: 'website',
   },

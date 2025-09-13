@@ -19,10 +19,10 @@ import styles from './ProjectsPage.module.css';
 
 // Page metadata
 export const metadata: Metadata = {
-  title: 'Projects - RockitCode',
+  title: 'Projects',
   description: 'Explore my latest projects and development work across web development, design, and technology.',
   openGraph: {
-    title: 'Projects - RockitCode',
+    title: 'Projects',
     description: 'Explore my latest projects and development work across web development, design, and technology.',
     type: 'website',
   },
