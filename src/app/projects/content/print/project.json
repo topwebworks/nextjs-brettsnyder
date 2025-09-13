@@ -55,11 +55,6 @@
           "type": "image",
           "src": "reebok-brochure.jpg",
           "title": "Reebok Brochure"
-        },
-        {
-          "type": "video",
-          "src": "https://www.youtube.com/watch?v=2XTl-5ehvpA",
-          "title": "Test Video"
         }
       ]
     }
