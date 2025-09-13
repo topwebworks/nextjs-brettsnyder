@@ -51,7 +51,7 @@ const personalValues = [
     description: "High-performing code is more than just neat syntax—it’s the engine behind better engagement and stronger ROI. A slow or buggy site loses users before they even see the message.",
     details: "I build fast, accessible, and scalable frontends using clean, maintainable code. I focus on fluid responsive layouts, sub-2-second load times, and reusable components that make future campaigns quicker to launch and easier to maintain.",
     icon: Code,
-    metrics: "95+ Lighthouse Score",
+    metrics: "Reusable Systems",
     image: techExcellenceImage,
     imageAlt: "Modern development workspace with multiple monitors showing code"
   },
