@@ -199,6 +199,107 @@ html {
 }
 
 /* ================================
+   ATMOSPHERIC BACKGROUND SYSTEM
+   ================================ */
+
+/* Dark theme atmospheric background */
+[data-theme="dark"] .atmospheric-background-fix {
+  background: 
+    linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.11) 0%, 
+      rgba(34, 197, 94, 0.087) 25%,
+      rgba(168, 85, 247, 0.131) 50%,
+      rgba(59, 130, 246, 0.102) 75%,
+      rgba(34, 197, 94, 0.116) 100%
+    ),
+    radial-gradient(ellipse at top left, 
+      rgba(59, 130, 246, 0.16) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at bottom right, 
+      rgba(34, 197, 94, 0.145) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at top right, 
+      rgba(168, 85, 247, 0.131) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at bottom left, 
+      rgba(251, 191, 36, 0.102) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at center, 
+      rgba(251, 146, 60, 0.073) 0%, 
+      transparent 60%
+    ) !important;
+}
+
+/* Light theme atmospheric background */
+[data-theme="light"] .atmospheric-background-fix {
+  background: 
+    linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.08) 0%, 
+      rgba(34, 197, 94, 0.06) 25%,
+      rgba(168, 85, 247, 0.09) 50%,
+      rgba(59, 130, 246, 0.07) 75%,
+      rgba(34, 197, 94, 0.08) 100%
+    ),
+    radial-gradient(ellipse at top left, 
+      rgba(59, 130, 246, 0.12) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at bottom right, 
+      rgba(34, 197, 94, 0.10) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at top right, 
+      rgba(168, 85, 247, 0.09) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at bottom left, 
+      rgba(251, 191, 36, 0.07) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at center, 
+      rgba(251, 146, 60, 0.05) 0%, 
+      transparent 60%
+    ) !important;
+}
+
+/* Default fallback for no theme attribute (dark mode) */
+:root:not([data-theme]) .atmospheric-background-fix,
+.atmospheric-background-fix {
+  background: 
+    linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.11) 0%, 
+      rgba(34, 197, 94, 0.087) 25%,
+      rgba(168, 85, 247, 0.131) 50%,
+      rgba(59, 130, 246, 0.102) 75%,
+      rgba(34, 197, 94, 0.116) 100%
+    ),
+    radial-gradient(ellipse at top left, 
+      rgba(59, 130, 246, 0.16) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at bottom right, 
+      rgba(34, 197, 94, 0.145) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at top right, 
+      rgba(168, 85, 247, 0.131) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at bottom left, 
+      rgba(251, 191, 36, 0.102) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at center, 
+      rgba(251, 146, 60, 0.073) 0%, 
+      transparent 60%
+    ) !important;
+}
+
+/* ================================
    UTILITY CLASSES MOVED TO utilities.css
    Removed duplicate utility classes on 2025-08-20T13:34:19.342Z
    Original utilities now imported from ../styles/utilities.css

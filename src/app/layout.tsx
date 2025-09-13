@@ -3,7 +3,6 @@
 import "../utils/simpleEdgeFix"; // Simple Edge browser compatibility fix - re-enabled for Edge support
 import "../utils/consoleFilter"; // Development console cleanup
 import "./globals.css"; // CSS custom properties system and utilities
-import "../styles/atmospheric-background-fix.css"; // Fix for atmospheric background in production
 import { ThemeProvider, useTheme } from "../contexts/ThemeContext";
 import HydrationFix from "../components/ui/HydrationFix";
 import { useEffect } from "react";

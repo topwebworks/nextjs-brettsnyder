@@ -31,18 +31,20 @@ interface AtmosphericBackgroundProps {
  * Extracted from the about page for reuse across the portfolio.
  * 
  * Features:
- * - Vibrant color gradients with good visibility
+ * - Vibrant color gradients with good visibility (handled by global CSS)
  * - Configurable floating orbs (selectable by ID or count)
  * - Multiple intensity variants
  * - Smooth animations with reduced motion support
  * - Custom color schemes
- * - Optional background gradients
+ * - Theme-aware background gradients (dark/light mode support)
  * 
  * Orb IDs:
  * 1: Purple orb (top-left)
  * 2: Green orb (top-right)
  * 3: Orange orb (middle-left)
  * 4: Blue orb (bottom-right)
+ * 
+ * Note: Background gradients are applied via global CSS for production reliability.
  */
 export default function AtmosphericBackground({
   variant = 'medium', // Default to balanced visibility
@@ -83,16 +85,6 @@ export default function AtmosphericBackground({
         className={`${styles.backgroundWrapper} ${styles[`variant${variant.charAt(0).toUpperCase() + variant.slice(1)}`]} atmospheric-background-fix ${className}`}
         style={{
           '--atmospheric-opacity': opacityMultiplier,
-          '--atmospheric-blue-primary': `rgba(59, 130, 246, ${0.15 * opacityMultiplier})`,
-          '--atmospheric-green-primary': `rgba(34, 197, 94, ${0.12 * opacityMultiplier})`,
-          '--atmospheric-purple-primary': `rgba(168, 85, 247, ${0.18 * opacityMultiplier})`,
-          '--atmospheric-blue-secondary': `rgba(59, 130, 246, ${0.14 * opacityMultiplier})`,
-          '--atmospheric-green-secondary': `rgba(34, 197, 94, ${0.16 * opacityMultiplier})`,
-          '--atmospheric-blue-radial': `rgba(59, 130, 246, ${0.22 * opacityMultiplier})`,
-          '--atmospheric-green-radial': `rgba(34, 197, 94, ${0.20 * opacityMultiplier})`,
-          '--atmospheric-purple-radial': `rgba(168, 85, 247, ${0.18 * opacityMultiplier})`,
-          '--atmospheric-yellow-radial': `rgba(251, 191, 36, ${0.14 * opacityMultiplier})`,
-          '--atmospheric-orange-radial': `rgba(251, 146, 60, ${0.10 * opacityMultiplier})`,
           ...style
         } as React.CSSProperties}
       >
