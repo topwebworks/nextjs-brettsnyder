@@ -11,6 +11,77 @@
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  
+  /* Default atmospheric background gradients using CSS variables */
+  background: 
+    linear-gradient(135deg, 
+      var(--atmospheric-blue-primary, rgba(59, 130, 246, 0.15)) 0%, 
+      var(--atmospheric-green-primary, rgba(34, 197, 94, 0.12)) 25%,
+      var(--atmospheric-purple-primary, rgba(168, 85, 247, 0.18)) 50%,
+      var(--atmospheric-blue-secondary, rgba(59, 130, 246, 0.14)) 75%,
+      var(--atmospheric-green-secondary, rgba(34, 197, 94, 0.16)) 100%
+    ),
+    radial-gradient(ellipse at top left, 
+      var(--atmospheric-blue-radial, rgba(59, 130, 246, 0.22)) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at bottom right, 
+      var(--atmospheric-green-radial, rgba(34, 197, 94, 0.20)) 0%, 
+      transparent 45%
+    ),
+    radial-gradient(ellipse at top right, 
+      var(--atmospheric-purple-radial, rgba(168, 85, 247, 0.18)) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at bottom left, 
+      var(--atmospheric-yellow-radial, rgba(251, 191, 36, 0.14)) 0%, 
+      transparent 40%
+    ),
+    radial-gradient(ellipse at center, 
+      var(--atmospheric-orange-radial, rgba(251, 146, 60, 0.10)) 0%, 
+      transparent 60%
+    ),
+    var(--bg-gradient-primary, transparent),
+    var(--glass-gradient-mesh, transparent);
+}
+
+/* Light mode background override */
+@media (prefers-color-scheme: light) {
+  .backgroundWrapper {
+    background: 
+      linear-gradient(135deg, 
+        rgba(248, 248, 246, calc(0.4 * var(--atmospheric-opacity, 1))) 0%, 
+        rgba(252, 251, 249, calc(0.3 * var(--atmospheric-opacity, 1))) 25%,
+        rgba(250, 249, 246, calc(0.35 * var(--atmospheric-opacity, 1))) 50%,
+        rgba(249, 248, 245, calc(0.25 * var(--atmospheric-opacity, 1))) 75%,
+        rgba(251, 250, 248, calc(0.3 * var(--atmospheric-opacity, 1))) 100%
+      ),
+      radial-gradient(ellipse at top left, 
+        rgba(245, 244, 242, calc(0.2 * var(--atmospheric-opacity, 1))) 0%, 
+        transparent 60%
+      ),
+      radial-gradient(ellipse at bottom right, 
+        rgba(247, 246, 244, calc(0.18 * var(--atmospheric-opacity, 1))) 0%, 
+        transparent 60%
+      ),
+      radial-gradient(ellipse at center, 
+        rgba(249, 248, 246, calc(0.15 * var(--atmospheric-opacity, 1))) 0%, 
+        transparent 80%
+      );
+  }
+}
+
+/* Variant styles */
+.variantSubtle {
+  --atmospheric-opacity: 0.72; /* 0.4 / 0.55 */
+}
+
+.variantMedium {
+  --atmospheric-opacity: 1.0; /* 0.55 / 0.55 */
+}
+
+.variantRich {
+  --atmospheric-opacity: 1.82; /* 1.0 / 0.55 */
 }
 
 /* Base atmospheric orb styles */

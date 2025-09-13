@@ -75,95 +75,29 @@ export default function AtmosphericBackground({
       return <>{children}</>;
     }
     
+    // Calculate opacity multiplier for CSS variables
+    const opacityMultiplier = config.opacity / 0.55;
+    
     return (
-      <>
-        <div
-          className={`${styles.backgroundWrapper} ${className}`}
-          style={{
-            background: `
-              linear-gradient(135deg, 
-                rgba(59, 130, 246, ${0.15 * (config.opacity / 0.55)}) 0%, 
-                rgba(34, 197, 94, ${0.12 * (config.opacity / 0.55)}) 25%,
-                rgba(168, 85, 247, ${0.18 * (config.opacity / 0.55)}) 50%,
-                rgba(59, 130, 246, ${0.14 * (config.opacity / 0.55)}) 75%,
-                rgba(34, 197, 94, ${0.16 * (config.opacity / 0.55)}) 100%
-              ),
-              radial-gradient(ellipse at top left, 
-                rgba(59, 130, 246, ${0.22 * (config.opacity / 0.55)}) 0%, 
-                transparent 45%
-              ),
-              radial-gradient(ellipse at bottom right, 
-                rgba(34, 197, 94, ${0.20 * (config.opacity / 0.55)}) 0%, 
-                transparent 45%
-              ),
-              radial-gradient(ellipse at top right, 
-                rgba(168, 85, 247, ${0.18 * (config.opacity / 0.55)}) 0%, 
-                transparent 40%
-              ),
-              radial-gradient(ellipse at bottom left, 
-                rgba(251, 191, 36, ${0.14 * (config.opacity / 0.55)}) 0%, 
-                transparent 40%
-              ),
-              radial-gradient(ellipse at center, 
-                rgba(251, 146, 60, ${0.10 * (config.opacity / 0.55)}) 0%, 
-                transparent 60%
-              ),
-              var(--bg-gradient-primary, transparent),
-              var(--glass-gradient-mesh, transparent)
-            `,
-            ...style
-          }}
-        >
-          {children}
-        </div>
-        
-        {/* Light mode warm background overlay */}
-        <style jsx global>{`
-          .${styles.backgroundWrapper} {
-            background: 
-              linear-gradient(135deg, 
-                rgba(59, 130, 246, ${0.15 * (config.opacity / 0.55)}) 0%, 
-                rgba(34, 197, 94, ${0.12 * (config.opacity / 0.55)}) 25%,
-                rgba(168, 85, 247, ${0.18 * (config.opacity / 0.55)}) 50%,
-                rgba(59, 130, 246, ${0.14 * (config.opacity / 0.55)}) 75%,
-                rgba(34, 197, 94, ${0.16 * (config.opacity / 0.55)}) 100%
-              ),
-              radial-gradient(ellipse at top left, 
-                rgba(59, 130, 246, ${0.22 * (config.opacity / 0.55)}) 0%, 
-                transparent 45%
-              ),
-              radial-gradient(ellipse at bottom right, 
-                rgba(34, 197, 94, ${0.20 * (config.opacity / 0.55)}) 0%, 
-                transparent 45%
-              ) !important;
-          }
-          
-          @media (prefers-color-scheme: light) {
-            .${styles.backgroundWrapper} {
-              background: 
-                linear-gradient(135deg, 
-                  rgba(248, 248, 246, ${0.4 * (config.opacity / 0.55)}) 0%, 
-                  rgba(252, 251, 249, ${0.3 * (config.opacity / 0.55)}) 25%,
-                  rgba(250, 249, 246, ${0.35 * (config.opacity / 0.55)}) 50%,
-                  rgba(249, 248, 245, ${0.25 * (config.opacity / 0.55)}) 75%,
-                  rgba(251, 250, 248, ${0.3 * (config.opacity / 0.55)}) 100%
-                ),
-                radial-gradient(ellipse at top left, 
-                  rgba(245, 244, 242, ${0.2 * (config.opacity / 0.55)}) 0%, 
-                  transparent 60%
-                ),
-                radial-gradient(ellipse at bottom right, 
-                  rgba(247, 246, 244, ${0.18 * (config.opacity / 0.55)}) 0%, 
-                  transparent 60%
-                ),
-                radial-gradient(ellipse at center, 
-                  rgba(249, 248, 246, ${0.15 * (config.opacity / 0.55)}) 0%, 
-                  transparent 80%
-                ) !important;
-            }
-          }
-        `}</style>
-      </>
+      <div
+        className={`${styles.backgroundWrapper} ${styles[`variant${variant.charAt(0).toUpperCase() + variant.slice(1)}`]} ${className}`}
+        style={{
+          '--atmospheric-opacity': opacityMultiplier,
+          '--atmospheric-blue-primary': `rgba(59, 130, 246, ${0.15 * opacityMultiplier})`,
+          '--atmospheric-green-primary': `rgba(34, 197, 94, ${0.12 * opacityMultiplier})`,
+          '--atmospheric-purple-primary': `rgba(168, 85, 247, ${0.18 * opacityMultiplier})`,
+          '--atmospheric-blue-secondary': `rgba(59, 130, 246, ${0.14 * opacityMultiplier})`,
+          '--atmospheric-green-secondary': `rgba(34, 197, 94, ${0.16 * opacityMultiplier})`,
+          '--atmospheric-blue-radial': `rgba(59, 130, 246, ${0.22 * opacityMultiplier})`,
+          '--atmospheric-green-radial': `rgba(34, 197, 94, ${0.20 * opacityMultiplier})`,
+          '--atmospheric-purple-radial': `rgba(168, 85, 247, ${0.18 * opacityMultiplier})`,
+          '--atmospheric-yellow-radial': `rgba(251, 191, 36, ${0.14 * opacityMultiplier})`,
+          '--atmospheric-orange-radial': `rgba(251, 146, 60, ${0.10 * opacityMultiplier})`,
+          ...style
+        } as React.CSSProperties}
+      >
+        {children}
+      </div>
     );
   };
   
