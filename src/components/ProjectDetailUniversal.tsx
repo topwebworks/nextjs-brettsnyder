@@ -489,6 +489,17 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                 </div>
               ) : (
                 <div className={styles.heroImageContainer}>
+                  {/* Background div with Next.js image URL */}
+                  <div 
+                    className={styles.heroImageBackground}
+                    style={{
+                      backgroundImage: `url(${(() => {
+                        const imageSrc = currentHeroImage || getImageSrc('hero');
+                        return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+                      })()})`
+                    }}
+                  />
+                  {/* Hidden Next.js Image for optimization and preloading */}
                   <Image
                     src={(() => {
                       const imageSrc = currentHeroImage || getImageSrc('hero');
@@ -497,10 +508,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                     alt={`${project.title} hero image`}
                     fill
                     sizes="100vw"
-                    style={{
-                      objectFit: 'cover',
-                      objectPosition: 'center center'
-                    }}
+                    className={styles.heroImage}
                     quality={90}
                     priority
                   />

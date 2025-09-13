@@ -173,6 +173,7 @@
   transform: translateY(-2px) scale(1.01);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   border-color: rgba(var(--accent-rgb), 0.4);
+  cursor: auto;
 }
 
 /* Responsive Design - Mobile First */
