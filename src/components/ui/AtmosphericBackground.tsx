@@ -78,10 +78,42 @@ export default function AtmosphericBackground({
     // Calculate opacity multiplier for CSS variables
     const opacityMultiplier = config.opacity / 0.55;
     
+    // Inline background as fallback in case CSS is overridden
+    const inlineBackground = `
+      linear-gradient(135deg, 
+        rgba(59, 130, 246, ${0.15 * opacityMultiplier}) 0%, 
+        rgba(34, 197, 94, ${0.12 * opacityMultiplier}) 25%,
+        rgba(168, 85, 247, ${0.18 * opacityMultiplier}) 50%,
+        rgba(59, 130, 246, ${0.14 * opacityMultiplier}) 75%,
+        rgba(34, 197, 94, ${0.16 * opacityMultiplier}) 100%
+      ),
+      radial-gradient(ellipse at top left, 
+        rgba(59, 130, 246, ${0.22 * opacityMultiplier}) 0%, 
+        transparent 45%
+      ),
+      radial-gradient(ellipse at bottom right, 
+        rgba(34, 197, 94, ${0.20 * opacityMultiplier}) 0%, 
+        transparent 45%
+      ),
+      radial-gradient(ellipse at top right, 
+        rgba(168, 85, 247, ${0.18 * opacityMultiplier}) 0%, 
+        transparent 40%
+      ),
+      radial-gradient(ellipse at bottom left, 
+        rgba(251, 191, 36, ${0.14 * opacityMultiplier}) 0%, 
+        transparent 40%
+      ),
+      radial-gradient(ellipse at center, 
+        rgba(251, 146, 60, ${0.10 * opacityMultiplier}) 0%, 
+        transparent 60%
+      )
+    `;
+    
     return (
       <div
         className={`${styles.backgroundWrapper} ${styles[`variant${variant.charAt(0).toUpperCase() + variant.slice(1)}`]} ${className}`}
         style={{
+          background: inlineBackground,
           '--atmospheric-opacity': opacityMultiplier,
           '--atmospheric-blue-primary': `rgba(59, 130, 246, ${0.15 * opacityMultiplier})`,
           '--atmospheric-green-primary': `rgba(34, 197, 94, ${0.12 * opacityMultiplier})`,

@@ -42,7 +42,7 @@
       transparent 60%
     ),
     var(--bg-gradient-primary, transparent),
-    var(--glass-gradient-mesh, transparent);
+    var(--glass-gradient-mesh, transparent) !important;
 }
 
 /* Light mode background override */
@@ -67,7 +67,7 @@
       radial-gradient(ellipse at center, 
         rgba(249, 248, 246, calc(0.15 * var(--atmospheric-opacity, 1))) 0%, 
         transparent 80%
-      );
+      ) !important;
   }
 }
 
