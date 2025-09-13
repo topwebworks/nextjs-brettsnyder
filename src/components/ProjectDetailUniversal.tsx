@@ -3,7 +3,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { ProjectData } from '@/lib/types/project';
 import { Tag, Calendar, ChevronLeft, ChevronRight, Play } from 'lucide-react';
@@ -29,11 +29,16 @@ declare global {
   }
 }
 
-// Helper function to extract YouTube video ID from URL
+// Helper function to extract YouTube video ID from URL (supports Shorts)
 function getYouTubeVideoId(url: string): string | null {
-  const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+  const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|shorts\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
   const match = url.match(regex);
   return match ? match[1] : null;
+}
+
+// Helper function to detect if a YouTube URL is a Short (vertical video)
+function isYouTubeShort(url: string): boolean {
+  return url.includes('/shorts/');
 }
 
 // Unified media processing with backward compatibility
@@ -80,6 +85,8 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
   // State for dynamic hero image
   const [currentHeroImage, setCurrentHeroImage] = useState<string | null>(null);
   const [currentHeroVideo, setCurrentHeroVideo] = useState<string | null>(null);
+  // State for dynamic aspect ratio detection
+  const [currentAspectRatio, setCurrentAspectRatio] = useState<'portrait' | 'landscape' | 'square'>('landscape');
   // State for scroll arrow visibility
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
@@ -183,6 +190,49 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
     return `https://picsum.photos/seed/${seed}/800/600`;
   }, [project.id]);
   
+  // Utility function to calculate aspect ratio from static import metadata
+  const calculateAspectRatio = useCallback((imageData: StaticImageData | null): 'portrait' | 'landscape' | 'square' => {
+    // Handle static import objects with width/height metadata
+    if (imageData && imageData.width && imageData.height) {
+      const ratio = imageData.width / imageData.height;
+      
+      if (ratio < 0.8) {
+        return 'portrait';  // Tall images (mobile screenshots, portraits)
+      } else if (ratio > 1.2) {
+        return 'landscape'; // Wide images (desktop screenshots, catalogs)
+      } else {
+        return 'square';    // Square-ish images
+      }
+    }
+    
+    // Default to landscape for missing metadata
+    return 'landscape';
+  }, []);
+  
+  // Function to resolve image data and calculate aspect ratio
+  const getImageAspectRatio = useCallback((imageSrc: string | StaticImageData): 'portrait' | 'landscape' | 'square' => {
+    // If it's already a static import object, use it directly
+    if (typeof imageSrc === 'object' && imageSrc.width && imageSrc.height) {
+      return calculateAspectRatio(imageSrc);
+    }
+    
+    // Try to find the static import from our project images
+    const heroImage = staticImages.hero;
+    if (heroImage && heroImage.src === imageSrc) {
+      return calculateAspectRatio(heroImage);
+    }
+    
+    // Check screenshots
+    for (const screenshot of staticImages.screenshots) {
+      if (screenshot && screenshot.src === imageSrc) {
+        return calculateAspectRatio(screenshot);
+      }
+    }
+    
+    // Default fallback
+    return 'landscape';
+  }, [staticImages, calculateAspectRatio]);
+  
   // Set first item as default hero if available and no hero is currently set
   useEffect(() => {
     if (!currentHeroImage && !currentHeroVideo && unifiedMediaItems.length > 0) {
@@ -190,28 +240,39 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
       if (firstItem.type === 'video') {
         const videoId = getYouTubeVideoId(firstItem.src);
         setCurrentHeroVideo(videoId);
+        // Detect aspect ratio based on video type
+        const aspectRatio = isYouTubeShort(firstItem.src) ? 'portrait' : 'landscape';
+        setCurrentAspectRatio(aspectRatio);
       } else {
         // Resolve the image source from filename to static import using dynamic resolver
         const dynamicImage = contentType === 'blog' 
           ? getBlogImageByFilename(project.id, firstItem.src)
           : getProjectImageByFilename(project.id, firstItem.src);
         let resolvedImageSrc = '';
+        let aspectRatio: 'portrait' | 'landscape' | 'square' = 'landscape';
         
         if (dynamicImage) {
           resolvedImageSrc = typeof dynamicImage === 'object' ? dynamicImage.src : dynamicImage;
+          // Calculate aspect ratio from static import metadata
+          aspectRatio = getImageAspectRatio(dynamicImage);
         } else {
           // If not found in static imports, check if it's a remote URL
           if (firstItem.src.includes('http')) {
             resolvedImageSrc = firstItem.src;
+            // Remote images default to landscape
+            aspectRatio = 'landscape';
           } else {
             // Final fallback to placeholder
             resolvedImageSrc = getPlaceholderImage('hero');
+            // Placeholders are landscape by default
+            aspectRatio = 'landscape';
           }
         }
         setCurrentHeroImage(resolvedImageSrc);
+        setCurrentAspectRatio(aspectRatio);
       }
     }
-  }, [unifiedMediaItems, currentHeroImage, currentHeroVideo, staticImages, getPlaceholderImage, project.id, contentType]);
+  }, [unifiedMediaItems, currentHeroImage, currentHeroVideo, staticImages, getPlaceholderImage, getImageAspectRatio, project.id, contentType]);
   
   // Effect for handling scroll arrow visibility
   useEffect(() => {
@@ -300,6 +361,9 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                     onClick={() => {
                       setCurrentHeroVideo(videoId);
                       setCurrentHeroImage(null);
+                      // Detect aspect ratio based on video type
+                      const aspectRatio = isYouTubeShort(item.src) ? 'portrait' : 'landscape';
+                      setCurrentAspectRatio(aspectRatio);
                     }}
                   >
                     <div className={styles.videoThumbnailContainer}>
@@ -348,6 +412,12 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                       console.log('Image clicked, setting hero to:', resolvedImageSrc);
                       setCurrentHeroImage(resolvedImageSrc);
                       setCurrentHeroVideo(null);
+                      // Calculate and set aspect ratio for the clicked image
+                      const clickedImage = contentType === 'blog' 
+                        ? getBlogImageByFilename(project.id, item.src)
+                        : getProjectImageByFilename(project.id, item.src);
+                      const aspectRatio = getImageAspectRatio(clickedImage || resolvedImageSrc);
+                      setCurrentAspectRatio(aspectRatio);
                     }}
                   >
                     <Image
@@ -375,6 +445,9 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                   onClick={() => {
                     setCurrentHeroImage(imageSrc);
                     setCurrentHeroVideo(null);
+                    // Calculate and set aspect ratio for the clicked screenshot
+                    const aspectRatio = getImageAspectRatio(screenshot);
+                    setCurrentAspectRatio(aspectRatio);
                   }}
                 >
                   <Image
@@ -454,9 +527,9 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
             </div>
           </div>
 
-          {/* Hero Media Container - Fluid 16:9 Responsive */}
+          {/* Hero Media Container - Dynamic Aspect Ratio Responsive */}
           <div className={styles.heroMediaContainer}>
-            <div className={styles.heroMediaAspectRatio}>
+            <div className={`${styles.heroMediaAspectRatio} ${styles[currentAspectRatio]}`}>
               <div className={styles.heroMediaContent}>
                 {/* Absolute positioned content container */}
             <div className={styles.heroAbsoluteContainer}>

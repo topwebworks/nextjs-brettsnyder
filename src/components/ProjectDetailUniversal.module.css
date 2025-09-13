@@ -106,17 +106,56 @@
 .heroMediaAspectRatio {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio base */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio base (landscape default) */
   min-height: 450px;
   max-height: 65vh;
 }
 
-/* Adjust aspect ratio for very wide images on mobile */
+/* Portrait aspect ratio - for tall images and vertical videos */
+.heroMediaAspectRatio.portrait {
+  padding-bottom: 125%; /* 4:5 aspect ratio for portrait content */
+  min-height: 600px;
+  max-height: 80vh;
+}
+
+/* Square aspect ratio - for square or nearly square content */
+.heroMediaAspectRatio.square {
+  padding-bottom: 100%; /* 1:1 aspect ratio for square content */
+  min-height: 500px;
+  max-height: 70vh;
+}
+
+/* Landscape aspect ratio - explicit class for wide content */
+.heroMediaAspectRatio.landscape {
+  padding-bottom: 56.25%; /* 16:9 aspect ratio for landscape content */
+  min-height: 450px;
+  max-height: 65vh;
+}
+
+/* Adjust aspect ratios for mobile screens */
 @media (max-width: 768px) {
   .heroMediaAspectRatio {
-    padding-bottom: 60%; /* Slightly taller ratio for mobile */
+    padding-bottom: 60%; /* Slightly taller base ratio for mobile */
     min-height: 350px;
     max-height: 50vh;
+  }
+  
+  .heroMediaAspectRatio.portrait {
+    padding-bottom: 133%; /* 3:4 aspect ratio for mobile portrait */
+    min-height: 450px;
+    max-height: 70vh;
+  }
+  
+  .heroMediaAspectRatio.square {
+    padding-bottom: 110%; /* Slightly taller square for mobile */
+    min-height: 400px;
+    max-height: 60vh;
+  }
+  
+  .heroMediaAspectRatio.landscape {
+    padding-bottom: 66%; /* 2:3 aspect ratio for mobile landscape */
+    min-height: 300px;
+    max-height: 45vh;
   }
 }
 
