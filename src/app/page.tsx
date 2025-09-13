@@ -53,13 +53,12 @@ export default function Homepage() {
   // Animation configuration
   const animationConfig = {
     useRandom: false,
-    maxWords: 3
+    maxWords: 2
   };
 
   // Memoize animated words to prevent unnecessary re-renders
   const animatedWords = React.useMemo(() => [
     'digital art,',
-    'gymnasts,',
     'websites.'
   ], []);
 
