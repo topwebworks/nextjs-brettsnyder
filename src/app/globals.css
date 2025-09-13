@@ -203,7 +203,7 @@ html {
    ================================ */
 
 /* Dark theme atmospheric background */
-[data-theme="dark"] .atmospheric-background-fix {
+[data-theme="dark"] .atmospheric-background {
   background: 
     linear-gradient(135deg, 
       rgba(59, 130, 246, 0.11) 0%, 
@@ -235,7 +235,7 @@ html {
 }
 
 /* Light theme atmospheric background */
-[data-theme="light"] .atmospheric-background-fix {
+[data-theme="light"] .atmospheric-background {
   background: 
     linear-gradient(135deg, 
       rgba(59, 130, 246, 0.08) 0%, 
@@ -267,8 +267,8 @@ html {
 }
 
 /* Default fallback for no theme attribute (dark mode) */
-:root:not([data-theme]) .atmospheric-background-fix,
-.atmospheric-background-fix {
+:root:not([data-theme]) .atmospheric-background,
+.atmospheric-background {
   background: 
     linear-gradient(135deg, 
       rgba(59, 130, 246, 0.11) 0%, 

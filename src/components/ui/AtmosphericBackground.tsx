@@ -82,7 +82,7 @@ export default function AtmosphericBackground({
     
     return (
       <div
-        className={`${styles.backgroundWrapper} ${styles[`variant${variant.charAt(0).toUpperCase() + variant.slice(1)}`]} atmospheric-background-fix ${className}`}
+        className={`${styles.backgroundWrapper} ${styles[`variant${variant.charAt(0).toUpperCase() + variant.slice(1)}`]} atmospheric-background ${className}`}
         style={{
           '--atmospheric-opacity': opacityMultiplier,
           ...style
