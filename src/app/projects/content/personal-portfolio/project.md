@@ -1,6 +1,6 @@
 ---
 title: "Personal Portfolio Site"
-description: "A complete rebuild of my personal portfolio site using the latest Next.js and React versions. Features a dark iridescent glassmorphism design with animated elements, markdown-powered content management, and a hybrid JSON/markdown system for optimal performance on Vercel's free tier."
+description: "A complete rebuild of my personal portfolio site using the latest Next.js and React versions. Features a dark iridescent glassmorphism design with animated elements, and a hybrid JSON/markdown system."
 contentTitle: ""
 achievementTitle: ""
 technologies: 
