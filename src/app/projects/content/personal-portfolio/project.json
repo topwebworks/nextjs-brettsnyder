@@ -1,7 +1,7 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
   "title": "Personal Portfolio Site",
-  "description": "A complete rebuild of my personal portfolio site using the latest Next.js and React versions. Features a dark iridescent glassmorphism design with animated elements, markdown-powered content management, and a hybrid JSON/markdown system for optimal performance on Vercel's free tier.",
+  "description": "A complete rebuild of my personal portfolio site using the latest Next.js and React versions. Features a dark iridescent glassmorphism design with animated elements, and a hybrid JSON/markdown system.",
   "technologies": [
     "React",
     "Nextjs",
@@ -19,7 +19,7 @@
   "featured": false,
   "publishDate": "2025-09-08",
   "readTime": "5 min read",
-  "excerpt": "A complete rebuild of my personal portfolio site using the latest Next.js and React versions. Features a dark iridescent glassmorphism design with animated elements, markdown-powered content management, and a hybrid JSON/markdown system for optimal performance on Vercel's free tier.",
+  "excerpt": "A complete rebuild of my personal portfolio site using the latest Next.js and React versions. Features a dark iridescent glassmorphism design with animated elements, and a hybrid JSON/markdown system.",
   "links": {
     "github": "https://github.com/topwebworks/nextjs-brettsnyder",
     "live": "/"
@@ -32,19 +32,19 @@
         "type": "impact",
         "icon": "🚀",
         "title": "Next.js 15 & React 19 Migration",
-        "description": "Successfully built with bleeding-edge frameworks released just weeks prior. Overcame service worker, cache, and Edge browser compatibility issues while maintaining modern development practices and performance standards.",
+        "description": "Built with bleeding-edge frameworks released just weeks prior. Overcame service worker, cache, and Edge browser compatibility issues while maintaining modern development practices and performance standards.",
         "metrics": [
           "Next.js 15 and React 19 implementation within weeks of release",
-          "Custom utility classes replacing Tailwind due to compatibility issues",
-          "Glassmorphism design system with animated orb elements",
-          "Mobile-first responsive design with fluid scaling"
+          "Custom utility classes replacing Tailwind",
+          "Glassmorphism design system with animated orb/panel elements",
+          "Fluid responsive design"
         ]
       },
       {
         "type": "technical",
         "icon": "⚡",
         "title": "Hybrid Content Management System",
-        "description": "Engineered a dual markdown/JSON content system that provides markdown editing convenience with JSON performance. Auto-generates content manifests locally while maintaining Vercel free tier compatibility.",
+        "description": "Engineered a dual markdown/JSON content system that provides markdown editing convenience with JSON performance.",
         "metrics": [
           "Automated script generates base project files and updates JSON from markdown",
           "Content redundancy ensures backup and flexibility",
