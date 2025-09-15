@@ -71,3 +71,9 @@ After I returned from Hong Kong, I drew this version. How Christ knows us, each 
 ![Lord Looketh 2](10-lord-looketh2.jpg)
 
 [See Jesus Christ Art on Facebook ⓕ](https://www.facebook.com/61575121625003/)
+
+## Inspiration Library
+
+I created the Inspiration Library using Nextjs as a safe blog for sharing my favorite short inspirational stories and thoughts. It began as an extension of the message on JesusChrist.art. I decided to keep them separate to avoid overwhelming visitors. I deliberately made it text-only, no images, for easy access on phones and easy copying.
+
+[See Inspiration Library](https://inspire.jesuschrist.art/)
