@@ -11,7 +11,7 @@ technologies:
 category: "Prototype"
 status: "Retired"
 featured: false
-publishDate: "2022-06-01"
+publishDate: "2021-06-01"
 links:
 keyAchievements:
 media:
