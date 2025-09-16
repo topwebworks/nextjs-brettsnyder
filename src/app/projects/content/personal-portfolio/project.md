@@ -19,7 +19,7 @@ keyAchievements:
   - type: "impact"
     icon: "🚀"
     title: "Next.js 15 & React 19 Migration"
-    description: "Built with bleeding-edge frameworks released just weeks prior. Overcame service worker, cache, and Edge browser compatibility issues while maintaining modern development practices and performance standards."
+    description: "Built with bleeding-edge frameworks released just weeks prior. Overcame local cache, and Edge browser compatibility issues while maintaining modern development practices and performance standards."
     metrics:
       - "Next.js 15 and React 19 implementation within weeks of release"
       - "Custom utility classes replacing Tailwind"
@@ -68,7 +68,7 @@ The glass look was intriguing to me, yet it could feel busy real fast. I added a
 
 1. **Homepage:** After my concept phase with working look and feel, I added nav and footer components to layout. Header is sticky glass. I liked the glass blur there but felt it too distracting with the content panels, mainly used rgba. Added placeholder latest blog cards and fine-tuned the hover effects. They will be pulled in dynamically later. Timeline added a splash of color, but mostly mapped static content. 
 
-   Here I had to face issues from running the latest version of Next.js and React bugs. Service worker, cache, and Edge browser, and latest Tailwind had bugs galore. I almost gave in and went back to old stable versions. But I knew they will depreciate soon, so stuck with it. I had to remove Tailwind and created my own utilities classes. I admit, my framework versions were released a couple weeks ago, so was not surprised.
+   Here I had to face issues from running the latest version of Next.js and React bugs. Service worker, cache, and Edge browser, and latest Tailwind had bugs galore. I almost gave in and went back to old stable versions. But I knew they will depreciate soon, so stuck with it. I had to remove Tailwind and created my own utilities classes. I admit, my framework versions were released a couple weeks ago, so was not surprised. Edit: Realized Vercel Edge CDN makes my Service Worker layer redundant, so I removed it. Network shows improvement.
 
 2. **About Page:** Since the homepage was done, I followed that approach, but did not want all the animated orbs on my background, so created a configurable background component depending on page it is used. Mostly went with one top left orb with motion, the rest static. Then replaced my Homepage background with that background component.
 
