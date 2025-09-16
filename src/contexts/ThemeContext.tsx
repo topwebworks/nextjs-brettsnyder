@@ -31,8 +31,8 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         if (typeof window === 'undefined') return;
         
         const savedTheme = localStorage.getItem('theme') as Theme | null;
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const initialTheme = savedTheme || systemTheme;
+        // Default to dark mode instead of system preference
+        const initialTheme = savedTheme || 'dark';
         
         setThemeState(initialTheme);
         // Always set the attribute to ensure consistency
@@ -59,12 +59,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     
     try {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handleChange = (e: MediaQueryListEvent) => {
-        if (!localStorage.getItem('theme')) {
-          const newTheme = e.matches ? 'dark' : 'light';
-          setThemeState(newTheme);
-          document.documentElement.setAttribute('data-theme', newTheme);
-        }
+      const handleChange = () => {
+        // System theme changes disabled to maintain dark mode as default
+        // Users can still manually toggle via the theme switcher
       };
 
       mediaQuery.addEventListener('change', handleChange);
