@@ -56,7 +56,7 @@ export default function Footer() {
                     className={link.isTermlyLink ? `termly-display-preferences ${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}` : `${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.color = 'var(--text-secondary)';
-                      e.currentTarget.style.transform = 'translateY(-1px)';
+                      // e.currentTarget.style.transform = 'translateY(-1px)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.color = 'var(--text-muted)';
