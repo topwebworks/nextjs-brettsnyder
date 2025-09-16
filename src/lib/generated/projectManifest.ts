@@ -6,12 +6,13 @@
 export const PROJECT_IDS: readonly string[] = [
   'email',
   'master-blocks',
+  'monarch-catalog',
   'personal-portfolio',
   'print'
 ] as const;
 
 // Project count for quick reference
-export const PROJECT_COUNT = 4;
+export const PROJECT_COUNT = 5;
 
 // Type for project ID validation
 export type ProjectId = typeof PROJECT_IDS[number];

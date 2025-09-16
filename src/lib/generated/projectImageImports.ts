@@ -9,6 +9,7 @@ import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
 import emailScreenshot2 from '@/app/projects/content/email/email-3.jpg';
 import masterblocksHero from '@/app/projects/content/master-blocks/masterblocks-hero.jpg';
+import monarchcatalogHero from '@/app/projects/content/monarch-catalog/monarch-prototype.png';
 import personalportfolioHero from '@/app/projects/content/personal-portfolio/1-personal-portfolio.png';
 import printHero from '@/app/projects/content/print/franklin-catalog.jpg';
 import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
@@ -35,6 +36,11 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
     demo: null,
     screenshots: []
   },
+  'monarch-catalog': {
+    hero: monarchcatalogHero,
+    demo: null,
+    screenshots: []
+  },
   'personal-portfolio': {
     hero: personalportfolioHero,
     demo: null,
@@ -56,6 +62,9 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
   },
   'master-blocks': {
     'masterblocks-hero.jpg': masterblocksHero
+  },
+  'monarch-catalog': {
+    'monarch-prototype.png': monarchcatalogHero
   },
   'personal-portfolio': {
     '1-personal-portfolio.png': personalportfolioHero
@@ -85,7 +94,7 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['email', 'master-blocks', 'personal-portfolio', 'print'];
+export const availableProjects = ['email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print'];
 
 // Note: Console logging removed to reduce build noise
 
@@ -94,6 +103,7 @@ export { emailHero };
 export { emailScreenshot1 };
 export { emailScreenshot2 };
 export { masterblocksHero };
+export { monarchcatalogHero };
 export { personalportfolioHero };
 export { printHero };
 export { printScreenshot1 };

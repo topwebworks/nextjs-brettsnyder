@@ -1,0 +1,32 @@
+{
+  "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
+  "title": "Monarch Catalog Prototype",
+  "description": "From scratch html prototype built from provided design. Working interactions and fluid responsive provided for devs. Catalog also partnered with a microsite I built.",
+  "technologies": [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "Prototype"
+  ],
+  "tags": [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "Prototype"
+  ],
+  "category": "Prototype",
+  "status": "Retired",
+  "featured": false,
+  "publishDate": "2022-06-01",
+  "readTime": "5 min read",
+  "excerpt": "From scratch html prototype built from provided design. Working interactions and fluid responsive provided for devs. Catalog also partnered with a microsite I built.",
+  "links": {},
+  "content": {
+    "overview": "\r\\n## Monarch Catalog Prototype\r\\n\r\\nI was asked to build an HTML prototype for home & detail pages, from a provided design. It was for a new online catalog and the devs wanted to see styles and responsive use before building it in Angular. They decided to use Material UI componenets, so I used Material.io (mdc) to get the ball rolling.\r\\nLINKS: [Listing Page](https://brettsnyder.me/demo/monarch-catalog/course-catalog.html) | [Detail Page](https://brettsnyder.me/demo/monarch-catalog/course-detail.html) | [404 Page](https://brettsnyder.me/demo/monarch-catalog/error-404.html)\r\\n\r\\n## Monarch Microsite\r\\n\r\\nHere is the microsite I built alongside the catalog prototype from provided designs. Marketing wanted an easy access CMS so I chose WordPress. Later, I updated CTA buttons with Free Trial email forms to forward to an onboarding site. \r\\nLINK: [Screenshot](https://brettsnyder.me/demo/monarch-demo.jpg)\r\\n\r\\nEDIT: This microsite and catalog are retired since we switched to Shopify, \r\\n\r\\n\r\\n\r\\n\r\\n",
+    "overviewHtml": "<h2 id=\"monarch-catalog-prototype\" class=\"project-section-title\">Monarch Catalog Prototype</h2><p class=\"project-content-paragraph\">I was asked to build an HTML prototype for home &amp; detail pages, from a provided design. It was for a new online catalog and the devs wanted to see styles and responsive use before building it in Angular. They decided to use Material UI componenets, so I used Material.io (mdc) to get the ball rolling.<br>LINKS: <a href=\"https://brettsnyder.me/demo/monarch-catalog/course-catalog.html\" target=\"_blank\" rel=\"noopener noreferrer\">Listing Page</a> | <a href=\"https://brettsnyder.me/demo/monarch-catalog/course-detail.html\" target=\"_blank\" rel=\"noopener noreferrer\">Detail Page</a> | <a href=\"https://brettsnyder.me/demo/monarch-catalog/error-404.html\" target=\"_blank\" rel=\"noopener noreferrer\">404 Page</a></p>\n<h2 id=\"monarch-microsite\" class=\"project-section-title\">Monarch Microsite</h2><p class=\"project-content-paragraph\">Here is the microsite I built alongside the catalog prototype from provided designs. Marketing wanted an easy access CMS so I chose WordPress. Later, I updated CTA buttons with Free Trial email forms to forward to an onboarding site.<br>LINK: <a href=\"https://brettsnyder.me/demo/monarch-demo.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Screenshot</a></p>\n<p class=\"project-content-paragraph\">EDIT: This microsite and catalog are retired since we switched to Shopify, </p>\n",
+    "keyAchievements": [],
+    "media": {
+      "items": null
+    }
+  }
+}
