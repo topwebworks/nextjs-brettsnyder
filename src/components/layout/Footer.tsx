@@ -52,22 +52,8 @@ export default function Footer() {
                 ].map((link, index) => (
                   <a 
                     key={link.name}
-                    href={link.isTermlyLink ? '#' : link.href}
-                    id={link.isTermlyLink ? 'cookie-preferences' : undefined}
-                    className={`${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`}
-                    onClick={link.isTermlyLink ? (e) => {
-                      e.preventDefault();
-                      // Try multiple Termly methods for localhost compatibility
-                      if (typeof window !== 'undefined' && window.termly) {
-                        if (window.termly.displayPreferences) {
-                          window.termly.displayPreferences();
-                        } else if (window.termly.togglePreferences) {
-                          window.termly.togglePreferences();
-                        }
-                      } else {
-                        console.log('Termly not loaded yet - preferences will work on live domain');
-                      }
-                    } : undefined}
+                    href={link.href}
+                    className={link.isTermlyLink ? `termly-display-preferences ${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}` : `${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.color = 'var(--text-secondary)';
                       e.currentTarget.style.transform = 'translateY(-1px)';
