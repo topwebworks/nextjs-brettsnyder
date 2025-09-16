@@ -368,7 +368,7 @@ export default function Homepage() {
                             size="medium"
                             icon="arrow-right"
                           >
-                            Read More
+                            Read
                           </Button>
                         </a>
                       </div>
