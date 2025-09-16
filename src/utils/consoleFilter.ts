@@ -149,15 +149,7 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
         '[Termly] AutoBlocker is enabled for this website',
         '[Termly] Installing AutoBlocker overrides',
         '[Termly] Region \'us\' has consent_mode set to \'opt_in\'',
-        '[Termly] A script from \'www.googletagmanager.com\' might not be categorized correctly',
-        // Service Worker messages (for cleaner debugging)
-        '✅ Service Worker registered:',
-        'Service Worker installing...',
-        'Service Worker activating...',
-        'Caching static assets',
-        '✅ Cache installation:',
-        '✅ All old caches cleared',
-        'Received SKIP_WAITING message - Firefox compatible update'
+        '[Termly] A script from \'www.googletagmanager.com\' might not be categorized correctly'
       ];
 
       if (ignoredLogs.some(log => message.includes(log))) {

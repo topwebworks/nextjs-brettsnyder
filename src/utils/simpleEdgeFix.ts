@@ -13,13 +13,6 @@ if (isEdge()) {
   if ('caches' in window) {
     caches.keys().then(names => names.forEach(name => caches.delete(name)));
   }
-  
-  // Skip service workers in Edge - they conflict with Edge's cache timing
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then(regs => 
-      regs.forEach(reg => reg.unregister())
-    );
-  }
 }
 
 export {};

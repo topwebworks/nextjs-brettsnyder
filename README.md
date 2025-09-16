@@ -72,7 +72,7 @@ If you see old content that shouldn't exist:
 2. **Type:** `clearAllCacheNow()` in console
 3. **Press Enter** - page will auto-refresh with fresh content
 
-*This clears all service worker caches, browser storage, and forces a clean reload.*
+*This clears all browser caches, storage, and forces a clean reload.*
 
 ### Adding Content
 
@@ -121,7 +121,7 @@ Vercel automatically builds and deploys on every push to main branch.
 - **Static Images**: All images processed and optimized
 - **Tree Shaking**: Unused code eliminated
 - **Compression**: Gzip enabled
-- **Caching**: Aggressive cache headers
+- **Vercel Edge Caching**: Optimized HTTP headers with stale-while-revalidate
 
 ### Runtime Optimizations
 - **Image Optimization**: Next.js Image component with WebP/AVIF
@@ -131,11 +131,21 @@ Vercel automatically builds and deploys on every push to main branch.
 
 ## 🔧 Development Tools
 
+### Cache Architecture
+**Optimized Vercel Edge Caching**
+- **Browser → Vercel CDN (126 POPs) → Origin** (Single optimized layer)
+- **HTTP Cache-Control headers** with intelligent stale-while-revalidate
+- **Image caching**: 1 hour cache + 24 hour stale
+- **Static assets**: 1 hour cache optimized for Vercel Edge
+- **Page content**: 5 minute cache + 1 hour stale for fresh content
+
 ### Cache Management (When seeing old/stale content)
 ```javascript
-// Browser Console (F12): 
-clearAllCacheNow()  // Auto-clears and refreshes
+// Browser Console (F12) - DEVELOPMENT ONLY: 
+clearAllCacheNow()  // Auto-clears and refreshes (local development only)
 ```
+
+**Note:** This function is only available during local development (`npm run dev`). In production, Vercel Edge handles caching automatically.
 
 ### Development Commands
 ```bash

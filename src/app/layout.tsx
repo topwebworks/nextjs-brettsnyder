@@ -6,7 +6,6 @@ import "./globals.css"; // CSS custom properties system and utilities
 import { ThemeProvider, useTheme } from "../contexts/ThemeContext";
 import HydrationFix from "../components/ui/HydrationFix";
 import { useEffect } from "react";
-import { registerServiceWorker } from "../utils/serviceWorkerRegistration";
 import Script from "next/script";
 
 
@@ -62,11 +61,6 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
     }
   }, [mounted]);
   
-  // Register service worker for caching
-  useEffect(() => {
-    registerServiceWorker();
-  }, []);
-
   // Initialize Termly script (simple useEffect approach)
   useEffect(() => {
     if (!window.termlyInitialized) {
