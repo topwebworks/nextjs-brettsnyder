@@ -119,7 +119,7 @@ export default async function ProjectsPage() {
                     {technologies.length - 1}
                   </div>
                   <div className={styles.statLabel}>
-                    Technologies
+                    Tech
                   </div>
                 </div>
               </div>

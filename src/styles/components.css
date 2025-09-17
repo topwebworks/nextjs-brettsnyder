@@ -1038,7 +1038,7 @@
     min-width: 280px !important;
   }
 
-  .project-list-stats,
+  /* .project-list-stats, */
   .project-actions {
     flex-direction: column;
   }
