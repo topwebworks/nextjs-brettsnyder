@@ -82,9 +82,9 @@ Glass effects were appealing but could easily become cluttered. I added a slow-m
 
    The solution came close to what I'd hoped for. To create a project or blog, you add a folder (like `my-cool-project`) in the corresponding content directory, add images to that folder, then run an npm script to generate both a markdown file and JSON file in your project folder.
 
-   You edit only the markdown file. Running the script again updates the JSON file. I use this same script to regenerate any markdown files with timestamps newer than their corresponding JSON files. This gives fast JSON loading with built-in markdown backup if the content gets corrupted.
+   > You edit only the markdown file. Running the script again updates the JSON file. I use this same script to regenerate any markdown files with timestamps newer than their corresponding JSON files. This gives fast JSON loading with built-in markdown backup if the content gets corrupted.
 
-   Originally I wanted everything pre-generated locally (file paths, latest blogs, content) for fully static deployment. But Vercel needed all build files to be static for prebuild deployment, and I was using dynamic paths. When I tried prebuild with timestamps, nothing generated on Vercel—just checking. I didn't like the full-static results, so I let Vercel handle the build and changed the file checking logic. Build times increased but stayed within free tier limits.
+   Originally I wanted everything prebuilt locally (file paths, latest blogs, content) to bypass Vercel build deployment and save resources. But Vercel needed all build files to be static for prebuild deployment, and I was using some dynamic features I did not want to compromise. I didn't like the full-static results, so I let Vercel handle the build and changed the file checking logic to build based on change timestamp comparisons. Deploy times increased but stayed well within free tier limits.
 
    Detail pages use a smart media gallery that detects tall vs. wide formats and skips thumbnail bars for single images. It supports inline images with external link awareness, feature tagging, and optional title overrides.
 
@@ -122,9 +122,9 @@ src/
 
 ## Results
 
-The portfolio rebuild hit all technical and design goals. The dark iridescent glassmorphism creates visual impact while working well across devices. The hybrid content management system gives me markdown's editing convenience with JSON's performance benefits, making it practical on Vercel's free tier.
+The portfolio rebuild hit most all technical and design goals. The dark iridescent glassmorphism creates visual impact while working well across devices. The hybrid content management system gives me markdown's editing convenience with JSON's performance benefits, making it practical on Vercel's free tier.
 
-Key achievements: implementing Next.js 15 and React 19 within weeks of their release, creating a custom utility system when Tailwind compatibility failed, and building an automated content generation workflow. The hover-activated portrait and animated orb system provides desktop impact without overwhelming mobile users.
+Key achievements: implementing latest Next.js 15 and React 19 within weeks of their release, creating a custom utility system when Tailwind compatibility failed, and building an automated content generation workflow. The hover-activated portrait and animated orb system provides desktop impact without overwhelming mobile users.
 
 It's newly launched, so I'll continue adding content and fixing bugs as I find them.
 
