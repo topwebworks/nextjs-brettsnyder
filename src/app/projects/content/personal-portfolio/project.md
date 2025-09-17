@@ -40,62 +40,62 @@ media:
 
 ---
 
-## Old Portfolio Site
+## Previous Portfolio
 
-I ran my [old portfolio site](https://nextjs-brett-snyder.vercel.app/) for many years. Customized a Nextjs Tailwind UI template that has been solid. Minimal, dark mode, markdown content, and clean design. No complaints. It may have been all I needed, but I was ready for a change.
+I ran my [old portfolio site](https://nextjs-brett-snyder.vercel.app/) for years using a customized Next.js + Tailwind UI template. It was solid—minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
 
-## My Vision
+## The Vision
 
-Build from scratch, using the latest version of NextJs and React. Scary since they were just released, so bugs. Since I am the sole stakeholder on this project, lets push it. 
+I wanted to rebuild from scratch using the newest Next.js and React versions—risky since they'd just been released and had bugs. But as the only stakeholder, why not push boundaries?
 
-I thought about using the font awesome icon set, and went with the clean Lucide set instead. I wanted a more fleshed out portfolio and a easy to use markdown blog as before. Instead of the standard flat black and white dark mode, I wanted a glassmorphism look. Dark and light irradecent with some glass/transparent effects.
+I chose Lucide icons over Font Awesome for a cleaner look. The goal was a more robust portfolio with the same easy markdown blog workflow, but instead of standard flat black-and-white dark mode, I wanted glassmorphism—dark, iridescent tones with glass and transparency effects.
 
-Overall, my site needed more impact. The normal portfolio look has a small circular avatar, not enough impact for desktop. I do not want a large picture staring at me on load. My compromise was Homepage loads clean with subtle animated orbs and clean text. Then large portrait background on hover.
+Most portfolios use small circular avatars that lack impact on desktop. I didn't want a large portrait staring at visitors on page load either. My compromise: clean homepage with animated orbs and typography, then a large portrait background that appears only on hover.
 
-Only show two large hero buttons and hide the rest of the main navigation into a side menu and footer. I also am running this on on Vercel's free Tier so I do not want any resume or commercial aspects showing. I neded to add a config to hide all commercial elements until I am ready to upgrade.
+Navigation would show just two main hero buttons, moving everything else to a side menu and footer. Since I'm on Vercel's free tier, I added a config toggle to hide resume and commercial elements until I'm ready to upgrade.
 
-Below the hero, keep my old latest blog and recent work timeline. Links to Github and Linkedin. I did like my old site flow, so will add an About and Tools page with more breakouts than before. Add a proper blog and projects listing page with thumbnails. And actually have Project case studies this time. My hope was to share the engine for blog and projects. 
+Below the hero, I'd keep the successful elements from my old site: latest blog posts, recent work timeline, GitHub and LinkedIn links. I planned expanded About and Tools pages, proper blog and project listing pages with thumbnails, and actual project case studies this time. The goal was sharing the same content engine between blogs and projects.
 
-Did not want to deal with form bots so for contact, is just be an email link as before.
+For contact, I stuck with a simple email link—no forms, no bot problems.
 
-## Look and Feel
+## Design Approach
 
-For layout, I could have created a Figma, But I already knew I was building sections close to my old site, so jumped in with just the homepage, test out some concepts. I really liked the dark iridescent look using my feathered orbs over the hero image. That gave me the soft color shift I wanted. The hover portrait on desktop was a bit scary at first, but pushed opacity and a slower hover it was impactful - not always looming.
+I could have started with Figma mockups, but I already knew I was building sections similar to my old site, so I jumped straight into homepage prototyping to test concepts. The dark iridescent effect using feathered orbs over the hero image gave me exactly the soft color shifting I wanted. The hover portrait felt aggressive at first, but adjusting opacity and easing made it impactful without being overwhelming.
 
-The glass look was intriguing to me, yet it could feel busy real fast. I added a very slow floating background panel that accentuated the transparency. Overall the hover effects to soft and subtle. I initially went glassy buttons, but ended accentuating them more. 
+Glass effects were appealing but could easily become cluttered. I added a slow-moving floating background panel to enhance the transparency effect. All hover interactions stayed soft and subtle. I initially tried fully glassy buttons but ended up emphasizing them more for better usability. 
 
 ## The Build
 
-1. **Homepage:** After my concept phase with working look and feel, I added nav and footer components to layout. Header is sticky glass. I liked the glass blur there but felt it too distracting with the content panels, mainly used rgba. Added placeholder latest blog cards and fine-tuned the hover effects. They will be pulled in dynamically later. Timeline added a splash of color, but mostly mapped static content. 
+1. **Homepage:** Once the design concepts were working, I added navigation and footer components to the layout. The header uses a sticky glass effect. I liked the glass blur there but found it too distracting with content panels, so I mainly used rgba transparency instead. I added placeholder latest blog cards and fine-tuned hover effects (the dynamic content would come later). The timeline added some color but was mostly static content mapping.
 
-   Here I had to face issues from running the latest version of Next.js and React bugs. Service worker, cache, and Edge browser, and latest Tailwind had bugs galore. I almost gave in and went back to old stable versions. But I knew they will depreciate soon, so stuck with it. I had to remove Tailwind and created my own utilities classes. I admit, my framework versions were released a couple weeks ago, so was not surprised. Edit: Realized Vercel Edge CDN makes my Service Worker layer redundant, so I removed it. Network shows improvement.
+   This is where I hit the challenges of using bleeding-edge Next.js and React. Service worker issues, caching problems, Edge browser bugs, and Tailwind incompatibilities created constant friction. I almost switched back to stable versions, but knowing they'd be deprecated soon, I stuck with it. I ended up removing Tailwind entirely and creating my own utility classes. The framework versions were only weeks old, so bugs weren't surprising. Later I realized Vercel's Edge CDN made my service worker redundant, so I removed it and saw network performance improve.
 
-2. **About Page:** Since the homepage was done, I followed that approach, but did not want all the animated orbs on my background, so created a configurable background component depending on page it is used. Mostly went with one top left orb with motion, the rest static. Then replaced my Homepage background with that background component.
+2. **About Page:** I followed the same approach as the homepage but didn't want all the animated orbs, so I built a configurable background component that adapts based on the page. The About page uses one animated orb (top-left) with the rest static. I then updated the homepage to use this same background component.
 
-   I added a few stats and achievements. Better than the verbose About message I had before. Content more geared to conversions and takeaways. Added glass effects, not as boring as before.
+   I added focused stats and achievements—much better than my previous verbose About section. The content was more conversion-oriented with clear takeaways. Glass effects made it more visually interesting than before.
 
-   This is also where I dialed in the light and dark mode styles. I tried to create several themes, but narrowed it down to two I liked best. I left some of the old test styles, in case I want to revisit. 
+   This is also where I finalized the light and dark mode styling. I experimented with several theme variations but settled on the two I liked best. I kept some old test styles in case I want to revisit them later.
 
-3. **Tools:** This was my old Uses page. I did not want to limit it to just a long list, so I added a 4 tab tile approach. Pulled category icons from a massive array and gave myself plenty of room to grow. 
+3. **Tools:** This evolved from my old "Uses" page. Instead of a long scrolling list, I created a 4-tab tile layout. Icons are pulled from a large categorized array, giving me room to expand easily.
 
-4. **Projects and Blogs:** This took trial and error to figure what worked with using the latest frameworks. The markdown approach used in my old site used did not work here despite trying many different angles. My dilemma was I wanted the ease of adding markdown content for blogs and projects, yet missing that fast load I had in other JSON based sites like Shopify. How to combine that without killing my api resources for the free Vercel Tier?
-  
-   The solution ended being close to what I hoped for. Not everything, but close. For creating a project or blog add a specific folder like my-cool-project in the corresponding content folder. Then add some images in that specific folder. Run an npm script to generate a base markdown file and JSON file to your new project folder. 
-   
-   Then easily save content to the markdown file. Run the generate script again and the JSON file will be updated. I use this same generate script to generate any markdown files that have a timestamp later than the corresponding JSON file. Speedy data load from JSON and built in content backup in case your Markdown content file gets fubar.
+4. **Projects and Blogs:** This section required the most trial and error with the new frameworks. The markdown approach from my old site didn't work despite trying multiple angles. My challenge: I wanted markdown's editing ease for blogs and projects, but also the fast loading I'd seen in JSON-based sites like Shopify. How could I combine both without exhausting API resources on Vercel's free tier?
 
-   The concept was for all filepaths, latest blogs, and content to be generated locally. The only blocker was Vercel needed all build files to be fully static for that prebuild deploy. I use dynamic paths, etc. However, if I prebuild with timestamps, nothing is generated on Vercel, just checked. I did not like the results going full static so I let Vercel do the build and changed file check. Increased my build time, but still under free build limits. 
+   The solution came close to what I'd hoped for. To create a project or blog, you add a folder (like `my-cool-project`) in the corresponding content directory, add images to that folder, then run an npm script to generate both a markdown file and JSON file in your project folder.
 
-   Detail pages use a semi-aware media gallery. Determines tall or wide format and adds no thumbnail bar if only one image. Has inline image options that are external link aware. Feature tagged. Some title overrides if not empty.
+   You edit only the markdown file. Running the script again updates the JSON file. I use this same script to regenerate any markdown files with timestamps newer than their corresponding JSON files. This gives fast JSON loading with built-in markdown backup if the content gets corrupted.
 
-   Also I used markdown to rich html conversion in my JSON files. That gives my JSON files basic html flexiblity if I need it. Markdown alone can be a slow conversion to html, and JSON is too limiting for styled content. So now with content redundancy, I have best of both worlds.
+   Originally I wanted everything pre-generated locally (file paths, latest blogs, content) for fully static deployment. But Vercel needed all build files to be static for prebuild deployment, and I was using dynamic paths. When I tried prebuild with timestamps, nothing generated on Vercel—just checking. I didn't like the full-static results, so I let Vercel handle the build and changed the file checking logic. Build times increased but stayed within free tier limits.
 
-5. **Policy Pages:** Those are just no-frill content data pages. 
+   Detail pages use a smart media gallery that detects tall vs. wide formats and skips thumbnail bars for single images. It supports inline images with external link awareness, feature tagging, and optional title overrides.
 
-6. **Mobile:** Used the common small profile picture approach for mobile as text was too hard to read. Everything stacks, nothing new there. Tried to use fluid responsive and clamp when I remembered. 
+   I also convert markdown to rich HTML within the JSON files. This gives my JSON files basic HTML flexibility when needed. Pure markdown conversion to HTML is slow, and pure JSON is too limiting for styled content. With content redundancy, I get the best of both approaches.
+
+5. **Policy Pages:** These are straightforward, no-frills content pages.
+
+6. **Mobile:** I used the standard small profile picture approach since text was hard to read otherwise. Everything stacks in typical mobile fashion. I tried to use fluid responsive design and clamp() where I remembered to. 
 
 ## Project Structure
-```html
+```
 src/
 ├── app/                    # Next.js App Router pages
 │   ├── about/              # About page
@@ -113,19 +113,19 @@ src/
 └── styles/                 # CSS files
 ```
 
-## New Project
+## Adding New Projects
 1. Create folder: `src/app/projects/content/your-project/`
-2. Add project web optimized images in root folder level
+2. Add web-optimized project images to the folder
 3. Run `npm run generate-project-data`
-4. A `project.md` and `project.json` file will be created. Edit only md file.
-5. After markdown file is edited, run `npm run generate-project-data`
+4. Edit the generated `project.md` file (ignore the JSON file)
+5. Run `npm run generate-project-data` again after editing
 
 ## Results
 
-The portfolio rebuild achieved all tech and design goals. The dark iridescent glassmorphism look creates visual impact while addressing responsive across devices. The hybrid content management system provides the editing convenience of markdown with the performance benefits of JSON, making it workable on Vercel's free tier. 
+The portfolio rebuild hit all technical and design goals. The dark iridescent glassmorphism creates visual impact while working well across devices. The hybrid content management system gives me markdown's editing convenience with JSON's performance benefits, making it practical on Vercel's free tier.
 
-Key wins include implementing Next.js 15 and React 19 within weeks of their release, creating a custom utility system when Tailwind compatibility failed, and developing an automated content generation workflow. The hover-activated portrait and animated orb system provides desktop impact without overwhelming mobile users.
+Key achievements: implementing Next.js 15 and React 19 within weeks of their release, creating a custom utility system when Tailwind compatibility failed, and building an automated content generation workflow. The hover-activated portrait and animated orb system provides desktop impact without overwhelming mobile users.
 
-It is newly released so I will add more content and bug fixes as time permits.
+It's newly launched, so I'll continue adding content and fixing bugs as I find them.
 
 
