@@ -95,7 +95,7 @@ Glass effects were appealing but could easily become cluttered. I added a slow-m
 6. **Mobile:** I used the standard small profile picture approach since text was hard to read otherwise. Everything stacks in typical mobile fashion. I tried to use fluid responsive design and clamp() where I remembered to. 
 
 ## Project Structure
-```
+```html
 src/
 ├── app/                    # Next.js App Router pages
 │   ├── about/              # About page
