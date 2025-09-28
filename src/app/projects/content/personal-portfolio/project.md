@@ -42,7 +42,7 @@ media:
 
 ## Previous Portfolio
 
-I ran my [old portfolio site](https://nextjs-brett-snyder.vercel.app/) for years using a customized Next.js + Tailwind UI template. It was solid—minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
+I ran my old portfolio site for years using a customized Next.js + Tailwind UI template. It was solid—minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
 
 ## The Vision
 
