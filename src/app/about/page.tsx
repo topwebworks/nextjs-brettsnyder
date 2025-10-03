@@ -22,7 +22,7 @@ const personalStory = {
   introduction: "I’m Brett Snyder, a designer-turned-developer with a love for bringing ideas to life on the web. From sketches that ended up in stores to code powering high-performing campaigns, I’ve spent my career balancing creativity with technology.",
   journey: "My path started in ad agencies and design departments at NuSkin and Franklin Covey, where I worked on everything from catalogs to brand campaigns. Later, I moved into direct marketing, freelancing, and even ran a recreational gymnastics business before shifting fully into web development.",
   achievements: "Along the way, I’ve created reusable systems that saved teams time, built CMS sites adopted by large organizations like Pearson, and helped grow both businesses and communities through design and code. I’ve also taught and mentored kids and colleagues alike—helping people believe in themselves as much as in the work.",
-  current: "Today I’m at Imagine Learning, where I’ve moved from Senior Designer to Frontend Developer. I focus on building flexible, responsive solutions for marketing campaigns and continue to explore new tools, frameworks, and creative projects on the side."
+  current: "At Imagine Learning, where I’ve moved from Senior Designer to Frontend Developer. I built flexible, responsive solutions for marketing campaigns and continue to explore new tools, frameworks, and creative projects on the side. Unfortunately, after 8 years, my position was eliminated due to company restructuring."
 };
 
 // Professional achievements and metrics
@@ -36,7 +36,7 @@ const achievements = [
 // Core skills with proficiency levels
 const coreSkills = [
   { name: 'Shopify/Liquid', level: 75, category: 'Development', icon: Code },
-  { name: 'Next.js/React', level: 75, category: 'Frameworks', icon: Code },
+  { name: 'Next.js/React', level: 65, category: 'Frameworks', icon: Code },
   { name: 'HTML/CSS/JS', level: 95, category: 'Languages', icon: Code },
   { name: 'WordPress/CMS', level: 90, category: 'Frameworks', icon: Zap },
   { name: 'UI/UX Design', level: 85, category: 'Design', icon: Code },
@@ -257,7 +257,7 @@ export default function AboutPage() {
                     {[
                       { title: 'My Journey', content: personalStory.journey },
                       { title: 'Key Achievements', content: personalStory.achievements },
-                      { title: 'Current Focus - Employed', content: personalStory.current }
+                      { title: 'Current', content: personalStory.current }
                     ].map((section) => (
                       <div 
                         key={section.title}

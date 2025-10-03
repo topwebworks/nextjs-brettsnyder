@@ -21,7 +21,7 @@ const workHistory = [
     title: "Frontend Developer",
     company: "Imagine Learning",
     location: "Tempe, AZ",
-    period: "2022 - Present",
+    period: "2022 - Oct 2025",
     current: true,
     description: "I focus on building fast, flexible landing pages and micro sites. I created a reusable Master Blocks template that lets our team launch responsive lead-gen pages in a fraction of the time. Created many custom Shopify marketing sections."
   },
