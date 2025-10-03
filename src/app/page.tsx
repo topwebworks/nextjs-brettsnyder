@@ -53,13 +53,14 @@ export default function Homepage() {
   // Animation configuration
   const animationConfig = {
     useRandom: false,
-    maxWords: 2
+    maxWords: 3
   };
 
   // Memoize animated words to prevent unnecessary re-renders
   const animatedWords = React.useMemo(() => [
-    'digital art,',
-    'websites.'
+    'UX/UI,',
+    'FE Code,',
+    'Websites.'
   ], []);
 
   // Generate sequence of words on component mount
