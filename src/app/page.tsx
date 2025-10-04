@@ -18,12 +18,12 @@ import styles from './HomePage.module.css';
 const workHistory = [
   {
     id: 1,
-    title: "Frontend Developer",
+    title: "Frontend Marketing Developer",
     company: "Imagine Learning",
     location: "Tempe, AZ",
     period: "2022 - Oct 2025",
-    current: true,
-    description: "I focus on building fast, flexible landing pages and micro sites. I created a reusable Master Blocks template that lets our team launch responsive lead-gen pages in a fraction of the time. Created many custom Shopify marketing sections."
+    current: false,
+    description: "I focus on building fast, flexible landing pages and micro sites. I created a reusable Master Blocks template that let our team launch responsive lead-gen pages in half the time. Created many custom core Shopify marketing sections."
   },
   {
     id: 2,
@@ -39,9 +39,9 @@ const workHistory = [
     title: "Senior Designer",
     company: "Glynlyon",
     location: "Chandler, AZ",
-    period: "2016 - 2019",
+    period: "Oct 2016 - 2019",
     current: false,
-    description: "I designed and hand-coded responsive micro sites, landing pages, and HTML email campaigns. I also improved team workflows with reusable email templates, represented at national conventions, and mentored team in design and dev best practices."
+    description: "I designed and built responsive micro sites, landing pages, and HTML email campaigns. I also improved team workflows with reusable email templates, represented at national conventions, graphic and web designs, and mentored team in design and dev best practices."
   }
 ];
 
