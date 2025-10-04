@@ -30,7 +30,7 @@ const achievements = [
   { label: 'Industry Years', value: '25+', icon: Target },
   { label: 'Artwork Sold', value: '10K+', icon: Zap },
   { label: 'Team Members Mentored', value: '12+', icon: Heart },
-  { label: 'Imagine Learning Years', value: '8+', icon: Code }
+  { label: 'Imagine Learning Years', value: '9', icon: Code }
 ];
 
 // Core skills with proficiency levels
