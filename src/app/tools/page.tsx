@@ -93,7 +93,7 @@ const productivityTools = [
   { name: 'Mophie/Anker Magsafe Packs', description: 'Portable charging solutions for devices', category: 'Utility', rating: 9 },
   { name: 'Slack/Teams/Zoom', description: 'Communication and collaboration tools for remote work', category: 'Communication', rating: 8 },
   { name: 'Vitamix Smoothie', description: 'Protein smoothies, banana berry, chocolate, tropical', category: 'Lifestyle', rating: 10 },
-  { name: 'Destiny 2', description: 'Deleted account and now more productive', category: 'Gaming', rating: 6 },
+  { name: 'Squadron 42', description: 'Because I am patient', category: 'Gaming', rating: 6 },
   { name: 'OneDrive', description: 'Cloud storage with versioning and file sharing service', category: 'Utility', rating: 9 },
   { name: 'Wrike/Jira', description: 'Project management and issue tracking tools', category: 'Productivity', rating: 8 }
 ];
