@@ -1,6 +1,6 @@
 ---
 title: "Shopify, What I Learned"
-description: "Exploring the cutting-edge technologies and methodologies shaping the future of web development, from AI-powered tools to next-generation frameworks."
+description: "EWhile my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify."
 contentTitle: "What I learned after a year in Shopify"
 achievementTitle: "Key Takeaways"
 tags: 
@@ -12,7 +12,7 @@ featured: true
 readTime: "8 min read"
 publishDate: "2025-03-31"
 author: "Brett Snyder"
-excerpt: "Discover the revolutionary technologies and development practices that are transforming how we build web applications in 2025."
+excerpt: "During my due diligence, I identified BigCommerce and Shopify Pro as the leading contenders."
 links:
   canonical: "https://brettsnyderdev.com/blog/modern-web-trends-2025"
   external: "https://web.dev/vitals/"

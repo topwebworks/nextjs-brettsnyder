@@ -17,8 +17,8 @@ export const latestBlogPosts: LatestBlogPost[] = [
   {
     "id": "shopify-what-i-learned",
     "title": "Shopify, What I Learned",
-    "description": "Exploring the cutting-edge technologies and methodologies shaping the future of web development, from AI-powered tools to next-generation frameworks.",
-    "excerpt": "Discover the revolutionary technologies and development practices that are transforming how we build web applications in 2025.",
+    "description": "EWhile my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify.",
+    "excerpt": "During my due diligence, I identified BigCommerce and Shopify Pro as the leading contenders.",
     "category": "Technology",
     "publishDate": "2025-03-31",
     "readTime": "8 min read",
