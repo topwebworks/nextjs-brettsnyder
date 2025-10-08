@@ -46,14 +46,14 @@ const coreSkills = [
 // Personal values and working style - Enhanced for staggered layout
 const personalValues = [
   {
-    title: "Technical Excellence",
-    subtitle: "Crafting solutions that scale",
-    description: "High-performing code is more than just neat syntax—it’s the engine behind better engagement and stronger ROI. A slow or buggy site loses users before they even see the message.",
-    details: "I build fast, accessible, and scalable frontends using clean, maintainable code. I focus on fluid responsive layouts, sub-2-second load times, and reusable components that make future campaigns quicker to launch and easier to maintain.",
+    title: "How Do I Use AI?",
+    // subtitle: "AI isn't going anywhere",
+    description: "AI is quickly becoming a key tool in almost every part of life. I see it as a growing, time-saving library of knowledge that's still young and needs thoughtful direction. As a frontend developer, once I learned to consistently build clean, user-friendly designs—and use AI to assist me—barriers disappeared and only possibilities remained. My background in graphic and responsive web design gives me a strong foundation, and knowing some Python and JavaScript helps me understand and debug AI's output. Sometimes AI gets lost in the details, so I step in, test things manually, and guide it back on track.",
+    details: "With person-led AI assistance, my projects evolve to be way better than first envisioned. It's not a hands-off process; it's like guiding a smart but curious toddler—correcting missteps while moving forward.",
     icon: Code,
-    metrics: "Reusable Systems",
+    metrics: "Endless Possibilities",
     image: techExcellenceImage,
-    imageAlt: "Modern development workspace with multiple monitors showing code"
+    imageAlt: "Person-led AI assistancee"
   },
   {
     title: "Continuous Innovation",
