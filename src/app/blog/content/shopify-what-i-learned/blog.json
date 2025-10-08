@@ -1,7 +1,7 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
   "title": "Shopify, What I Learned",
-  "description": "EWhile my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify.",
+  "description": "While my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify.",
   "technologies": [
     "Liquid",
     "Shopify"
