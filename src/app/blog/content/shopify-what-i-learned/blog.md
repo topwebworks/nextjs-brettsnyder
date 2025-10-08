@@ -1,6 +1,6 @@
 ---
 title: "Shopify, What I Learned"
-description: "EWhile my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify."
+description: "While my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify."
 contentTitle: "What I learned after a year in Shopify"
 achievementTitle: "Key Takeaways"
 tags: 
