@@ -18,7 +18,7 @@ import styles from './HomePage.module.css';
 const workHistory = [
   {
     id: 1,
-    title: "Frontend Marketing Developer",
+    title: "Marketing Web Developer",
     company: "Imagine Learning",
     location: "Tempe, AZ",
     period: "2022 - Oct 2025",
