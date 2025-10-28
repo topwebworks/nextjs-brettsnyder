@@ -213,7 +213,7 @@ export default function Homepage() {
           <div className={styles.heroContent}>
             {/* Refined Role Badge */}
             <div className={styles.roleBadge}>
-              FRONTEND DEVELOPER
+              MARKETING WEB DEVELOPER
             </div>
 
             {/* Mobile Portrait - Shows only on mobile */}
