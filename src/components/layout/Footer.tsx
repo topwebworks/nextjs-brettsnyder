@@ -70,7 +70,7 @@ export default function Footer() {
 
             {/* Copyright Below Links */}
             <div className={styles.copyright}>
-              © 2025 Brett Snyder. All rights reserved worldwide. Non-commercial site.
+              © 2025 Brett Snyder. All rights reserved worldwide.
             </div>
           </div>
 
