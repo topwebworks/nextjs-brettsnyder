@@ -5,6 +5,7 @@
 import { StaticImageData } from 'next/image';
 
 // Import statements for all project images
+import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.png';
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
 import emailScreenshot2 from '@/app/projects/content/email/email-3.jpg';
@@ -26,6 +27,11 @@ export interface ProjectImageImports {
 
 // Export map for easy access by project ID
 export const projectImageImports: Record<string, ProjectImageImports> = {
+  'cywire': {
+    hero: cywireHero,
+    demo: null,
+    screenshots: []
+  },
   'email': {
     hero: emailHero,
     demo: null,
@@ -55,6 +61,9 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
 
 // Filename-based lookup for direct image resolution
 export const projectImagesByFilename: Record<string, Record<string, StaticImageData>> = {
+  'cywire': {
+    '1-cywire-master-prompts.png': cywireHero
+  },
   'email': {
     'email-1.jpg': emailHero,
     'email-2.jpg': emailScreenshot1,
@@ -94,11 +103,12 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print'];
+export const availableProjects = ['cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print'];
 
 // Note: Console logging removed to reduce build noise
 
 // Individual variable exports for direct access
+export { cywireHero };
 export { emailHero };
 export { emailScreenshot1 };
 export { emailScreenshot2 };

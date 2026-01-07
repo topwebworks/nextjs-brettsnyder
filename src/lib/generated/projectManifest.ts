@@ -4,6 +4,7 @@
 
 // Static project list - no filesystem calls needed
 export const PROJECT_IDS: readonly string[] = [
+  'cywire',
   'email',
   'master-blocks',
   'monarch-catalog',
@@ -12,7 +13,7 @@ export const PROJECT_IDS: readonly string[] = [
 ] as const;
 
 // Project count for quick reference
-export const PROJECT_COUNT = 5;
+export const PROJECT_COUNT = 6;
 
 // Type for project ID validation
 export type ProjectId = typeof PROJECT_IDS[number];
