@@ -62,7 +62,7 @@ export default function Homepage() {
   // Memoize animated words to prevent unnecessary re-renders
   const animatedWords = React.useMemo(() => [
     'AI Master Prompts,',
-    'AI Web Features.'
+    'Websites.'
   ], []);
 
   // Generate sequence of words on component mount
