@@ -49,6 +49,9 @@ export default function Homepage() {
   // Image loading states
   const [portraitLoaded, setPortraitLoaded] = React.useState(false);
   const [mobilePortraitLoaded, setMobilePortraitLoaded] = React.useState(false);
+  
+  // Portrait hover state
+  const [isPortraitHovered, setIsPortraitHovered] = React.useState(false);
     
   // Animation configuration
   const animationConfig = {
@@ -141,26 +144,20 @@ export default function Homepage() {
         {/* Hero Section with Portrait Reveal */}
         <section 
           className={styles.heroSection}
-          onMouseEnter={(e) => {
-            const portrait = e.currentTarget.querySelector(`.${styles.heroPortrait}`) as HTMLElement;
-            if (portrait) {
-              // Simple desktop hover - CSS handles mobile hiding
-              portrait.style.opacity = '0.65';
-              portrait.style.transform = 'scale(1)';
-              portrait.style.filter = 'blur(0px) brightness(0.6) contrast(1.0) saturate(1.6) hue-rotate(15deg)';
-            }
-          }}
-          onMouseLeave={(e) => {
-            const portrait = e.currentTarget.querySelector(`.${styles.heroPortrait}`) as HTMLElement;
-            if (portrait) {
-              portrait.style.opacity = '0';
-              portrait.style.transform = 'scale(1.05)';
-              portrait.style.filter = 'blur(0px) brightness(0.5) contrast(0.8) saturate(1.1)';
-            }
-          }}
+          onMouseEnter={() => setIsPortraitHovered(true)}
+          onMouseLeave={() => setIsPortraitHovered(false)}
         >
           {/* Portrait Background */}
-          <div className={styles.heroPortrait}>
+          <div 
+            className={styles.heroPortrait}
+            style={{
+              opacity: isPortraitHovered ? 0.65 : 0,
+              transform: isPortraitHovered ? 'scale(1)' : 'scale(1.05)',
+              filter: isPortraitHovered 
+                ? 'blur(0px) brightness(0.6) contrast(1.0) saturate(1.6) hue-rotate(15deg)'
+                : 'blur(0px) brightness(0.5) contrast(0.8) saturate(1.1)'
+            }}
+          >
             {/* Loading placeholder */}
             {!portraitLoaded && (
               <div className={styles.heroPortraitLoading}>

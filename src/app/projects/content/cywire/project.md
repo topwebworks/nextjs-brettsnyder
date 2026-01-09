@@ -1,14 +1,14 @@
 ---
 title: "CyWire Master Prompts"
 description: "A Project I did to create foundational data structure for AI features. I see using these in every website I build in the future. It will work for anywhere that uses JSON and AI."
-contentTitle: "Why AI Needs Structure, Not More Prompts"
+contentTitle: "Why AI Needs Structure"
 achievementTitle: ""
 technologies: 
   - "AI Master Prompt"
   - "Web Development"
   - "Web Design"
 category: "Website"
-status: "Alpha"
+status: 
 featured: True
 publishDate: "2026-01-02"
 links:
@@ -73,7 +73,7 @@ Wire user input or data into that blueprint, send the compiled prompt to the LLM
 
 No guessing. No brittle parsing. Fewer surprises. My time developing Shopify content showed how fast and solid JSON is. That's what I wanted in a prompt.
 
-## What a Master Prompt Is (and Isn't)
+## What a Master Prompt Is
 
 A Master Prompt isn't a long natural text sentence. It isn't a manual local prompt-engineering time sink. It's a reliable single-feature blueprint.
 

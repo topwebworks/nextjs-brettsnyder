@@ -261,6 +261,11 @@
   z-index: 10;
 }
 
+.heroSocialIcons :global(button),
+.heroSocialIcons > * {
+  margin: 0 !important;
+}
+
 .heroSocialIcon {
   animation-fill-mode: both;
 }
@@ -344,7 +349,7 @@
 /* Role Badge */
 .roleBadge {
   display: inline-block;
-  padding: 0.5rem 1.5rem;
+  padding: 2rem 1.5rem 0.5rem;
   border-radius: 50px;
   border: 1px solid transparent;
   font-size: 0.875rem;
