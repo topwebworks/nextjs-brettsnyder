@@ -9,7 +9,8 @@
     "lint": "next lint",
     "generate-project-data": "node scripts/generate-project-data.js",
     "create-project": "node scripts/generate-project-data.js --create",
-    "prebuild": "npm run generate-project-data",
+    "generate-resume": "node scripts/generate-resume-pdf.js",
+    "prebuild": "npm run generate-project-data && npm run generate-resume",
     "deploy": "npm run build && vercel --prebuilt --prod",
     "deploy-staging": "npm run build && vercel --prebuilt"
   },
@@ -31,6 +32,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "globby": "^14.1.0",
+    "puppeteer": "^23.11.1",
     "purgecss": "^7.0.2",
     "stylelint": "^16.23.1",
     "stylelint-config-standard": "^39.0.0",

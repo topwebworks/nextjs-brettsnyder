@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Mail, FileText } from 'lucide-react';
 import ThemeToggle from '@/components/ui/ThemeToggle';
-import { emailLinks, resumeLinks, siteConfig } from '@/lib/config';
+import { emailLinks, siteConfig } from '@/lib/config';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = () => {
     { href: '/tools', label: 'Tools', icon: null },
     { href: '/blog', label: 'Blog', icon: null },
     { href: emailLinks.portfolio(), label: 'Email Me', icon: Mail, external: true },
-    ...(siteConfig.showResume ? [{ href: resumeLinks.getPath(), label: 'Resume', icon: FileText, external: true }] : [])
+    ...(siteConfig.showResume ? [{ href: '/resume-brett-snyder.pdf', label: 'Resume', icon: FileText, external: true }] : [])
   ];
 
   return (
@@ -114,6 +114,7 @@ const Header: React.FC<HeaderProps> = () => {
               href={link.href}
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noopener noreferrer' : undefined}
+              download={link.label === 'Resume' ? 'resume-brett-snyder.pdf' : undefined}
               className={`${styles.drawerNavLink} ${isMobileMenuOpen ? styles.drawerLinkAnimated : styles.drawerLinkHidden} ${styles[`animateDelay${Math.min(index, 6)}` as keyof typeof styles]}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >

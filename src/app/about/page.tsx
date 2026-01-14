@@ -8,7 +8,8 @@ import Footer from '@/components/layout/Footer';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
 import Button from '@/components/ui/Button';
-import { emailLinks, resumeLinks, siteConfig } from '@/lib/config';
+import { emailLinks, siteConfig } from '@/lib/config';
+import ResumeButton from '@/components/ui/ResumeButton';
 import styles from './AboutPage.module.css';
 
 // Global/shared images from src/images/
@@ -276,18 +277,13 @@ export default function AboutPage() {
                   {/* Action Buttons with Mobile Responsiveness */}
                   <div className={styles.actionButtons}>
                     {siteConfig.showResume && (
-                      <div 
-                        onClick={resumeLinks.download}
-                        className={styles.actionButtonContainer}
+                      <ResumeButton
+                        variant="primary"
+                        size="medium"
+                        icon="download"
                       >
-                        <Button
-                          variant="primary"
-                          size="medium"
-                          icon="download"
-                        >
-                          Download Resume
-                        </Button>
-                      </div>
+                        Download Resume
+                      </ResumeButton>
                     )}
 
                     <a 

@@ -2,13 +2,14 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, Mail, Github, Linkedin, FileText, Calendar, MapPin, BookOpen } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Calendar, MapPin, BookOpen } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
-import { siteConfig, emailLinks, resumeLinks } from '@/lib/config';
+import { siteConfig, emailLinks } from '@/lib/config';
+import ResumeButton from '@/components/ui/ResumeButton';
 import { latestBlogPosts } from '@/lib/generated/latestBlogPosts';
 import professionalPortrait from '@/images/portrait/professional-portrait.jpg';
 import styles from './HomePage.module.css';
@@ -392,12 +393,11 @@ export default function Homepage() {
                     />
                     
                     {siteConfig.showResume && (
-                      <Button
+                      <ResumeButton
                         variant="ghost"
                         size="small"
-                        icon={FileText}
-                        aria-label="Download Resume"
-                        onClick={() => resumeLinks.download()}
+                        icon="file"
+                        showText={false}
                       />
                     )}
                   </div>

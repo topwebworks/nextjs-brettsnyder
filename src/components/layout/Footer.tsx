@@ -1,8 +1,9 @@
 "use client"
 
 import React from 'react';
-import { Mail, FileText, Linkedin, Github } from 'lucide-react';
-import { siteConfig, emailLinks, resumeLinks } from '../../lib/config';
+import { Mail, Linkedin, Github } from 'lucide-react';
+import { siteConfig, emailLinks } from '../../lib/config';
+import ResumeButton from '../ui/ResumeButton';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -152,28 +153,14 @@ export default function Footer() {
               </a>
               
               {siteConfig.showResume && (
-                <button
-                  onClick={resumeLinks.download}
-                  className={`${styles.socialIcon} ${styles.resumeIcon}`}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'var(--glass-bg-medium)';
-                    e.currentTarget.style.borderColor = 'rgba(var(--success-rgb), 0.4)';
-                    e.currentTarget.style.color = 'rgba(var(--success-rgb), 1)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.opacity = '1';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(var(--success-rgb), 0.2)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'var(--glass-bg-subtle)';
-                    e.currentTarget.style.borderColor = 'var(--glass-border-subtle)';
-                    e.currentTarget.style.color = 'var(--text-muted)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.opacity = '0.8';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
-                  <FileText size={16} strokeWidth={1.5} />
-                </button>
+                <div className={`${styles.socialIcon} ${styles.resumeIcon}`}>
+                  <ResumeButton
+                    variant="ghost"
+                    size="small"
+                    showText={false}
+                    icon="file"
+                  />
+                </div>
               )}
             </div>
 
