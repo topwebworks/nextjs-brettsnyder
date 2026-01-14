@@ -5,7 +5,7 @@ This project includes an automated HTML-to-PDF resume generation system.
 ## Files
 
 - **`public/resume-brett-snyder.html`** - Source HTML resume with inline styles
-- **`public/resume-brett-snyder.pdf`** - Auto-generated PDF (do not edit manually)
+- **`public/resume-brett-snyder.pdf`** - Auto-generated PDF (committed to repo)
 - **`scripts/generate-resume-pdf.js`** - PDF generation script using Puppeteer
 
 ## Usage
@@ -16,13 +16,16 @@ npm run generate-resume
 ```
 
 ### Auto-generate During Build
-The PDF is automatically generated during the build process via the `prebuild` script.
+The PDF is automatically generated during local builds via the `prebuild` script.
+
+**Note:** PDF generation is skipped in CI/production environments (like Vercel) because Puppeteer requires Chrome and system libraries not available in those environments. The pre-generated PDF must be committed to the repository.
 
 ## Making Changes
 
 1. **Edit the HTML file only**: `public/resume-brett-snyder.html`
 2. **Run the generator**: `npm run generate-resume`
-3. The PDF will be created/updated automatically
+3. **Commit both files**: HTML and the updated PDF
+4. The PDF will be deployed with your site
 
 ## Page Break Controls
 

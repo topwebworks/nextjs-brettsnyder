@@ -12,6 +12,13 @@ const path = require('path');
 const fs = require('fs');
 
 async function generateResumePDF() {
+  // Skip PDF generation in CI/production environments (like Vercel)
+  if (process.env.VERCEL || process.env.CI) {
+    console.log('⏭️  Skipping PDF generation in CI/production environment');
+    console.log('📝 Make sure to commit the pre-generated PDF to your repository');
+    return;
+  }
+  
   console.log('🚀 Starting resume PDF generation...');
   
   const htmlPath = path.join(__dirname, '..', 'public', 'resume-brett-snyder.html');
