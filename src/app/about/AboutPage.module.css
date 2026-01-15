@@ -677,6 +677,7 @@
   margin-bottom: clamp(3rem, 6vh, 4rem);
   color: var(--text-primary);
   letter-spacing: 0em;
+  line-height: 3rem;
 }
 
 .valuesGrid {

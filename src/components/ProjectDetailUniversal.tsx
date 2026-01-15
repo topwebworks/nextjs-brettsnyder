@@ -565,6 +565,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                   {/* Background div with Next.js image URL */}
                   <div 
                     className={styles.heroImageBackground}
+                    data-project-id={project.id}
                     style={{
                       backgroundImage: `url(${(() => {
                         const imageSrc = currentHeroImage || getImageSrc('hero');

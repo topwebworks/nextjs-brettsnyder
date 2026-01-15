@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Mail, FileText } from 'lucide-react';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import ResumeButton from '@/components/ui/ResumeButton';
 import { emailLinks, siteConfig } from '@/lib/config';
 import styles from './Header.module.css';
 
@@ -46,7 +47,6 @@ const Header: React.FC<HeaderProps> = () => {
     { href: '/tools', label: 'Tools', icon: null },
     { href: '/blog', label: 'Blog', icon: null },
     { href: emailLinks.portfolio(), label: 'Email Me', icon: Mail, external: true },
-    ...(siteConfig.showResume ? [{ href: '/resume-brett-snyder.pdf', label: 'Resume', icon: FileText, external: true }] : [])
   ];
 
   return (
@@ -122,6 +122,19 @@ const Header: React.FC<HeaderProps> = () => {
               {link.label}
             </a>
           ))}
+          
+          {/* Resume Link with Modal */}
+          {siteConfig.showResume && (
+            <ResumeButton>
+              <a
+                className={`${styles.drawerNavLink} ${isMobileMenuOpen ? styles.drawerLinkAnimated : styles.drawerLinkHidden} ${styles[`animateDelay${drawerNavigation.length}` as keyof typeof styles]}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <FileText size={18} strokeWidth={1.5} />
+                Resume
+              </a>
+            </ResumeButton>
+          )}
         </nav>
 
         {/* Drawer Footer */}

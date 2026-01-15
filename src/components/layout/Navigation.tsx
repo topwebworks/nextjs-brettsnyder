@@ -28,7 +28,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       <div className="container">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <h1 className="text-xl font-bold text-primary">
               {logo}
             </h1>

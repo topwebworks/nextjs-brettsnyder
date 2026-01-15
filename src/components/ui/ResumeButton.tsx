@@ -7,27 +7,42 @@ import Button from './Button';
 import styles from './ResumeButton.module.css';
 
 interface ResumeButtonProps {
+  // New flexible API - just wrap any children
+  children?: React.ReactNode;
+  className?: string;
+  
+  // Legacy API - for backward compatibility
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'small' | 'medium' | 'large';
   icon?: 'download' | 'file';
   showText?: boolean;
-  children?: React.ReactNode;
-  className?: string;
 }
 
 /**
  * ResumeButton Component
  * 
- * Handles both HTML resume viewing and PDF generation via print
- * Replaces the old download pattern with a modal viewer + print option
+ * A flexible wrapper that adds resume modal functionality.
+ * Handles both HTML resume viewing and PDF generation via print.
+ * 
+ * NEW USAGE (flexible - wraps any children):
+ * <ResumeButton>
+ *   <a className={styles.socialIcon}>
+ *     <FileText size={16} />
+ *   </a>
+ * </ResumeButton>
+ * 
+ * LEGACY USAGE (with built-in Button):
+ * <ResumeButton variant="primary" size="medium" icon="download">
+ *   Download Resume
+ * </ResumeButton>
  */
 export const ResumeButton: React.FC<ResumeButtonProps> = ({
+  children,
+  className = '',
   variant = 'primary',
   size = 'medium',
   icon = 'download',
   showText = true,
-  children,
-  className = ''
 }) => {
   const [showModal, setShowModal] = useState(false);
   const resumeHtmlPath = '/resume-brett-snyder.html';
@@ -62,19 +77,31 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
     }
   };
 
+  // Determine if using new flexible API or legacy API
+  const isFlexibleMode = children && typeof children === 'object' && 
+    React.isValidElement(children) && children.type !== 'string';
+  
   const IconComponent = icon === 'file' ? FileText : Download;
 
   return (
     <>
-      <Button
-        variant={variant}
-        size={size}
-        icon={IconComponent}
-        onClick={openResume}
-        className={className}
-      >
-        {showText && (children || 'Download Resume')}
-      </Button>
+      {isFlexibleMode ? (
+        // New flexible mode - just wrap the children with click handler
+        <div onClick={openResume} className={className} style={{ cursor: 'pointer', display: 'inline-flex' }}>
+          {children}
+        </div>
+      ) : (
+        // Legacy mode - render a Button component
+        <Button
+          variant={variant}
+          size={size}
+          icon={IconComponent}
+          onClick={openResume}
+          className={className}
+        >
+          {showText && (children || 'Download Resume')}
+        </Button>
+      )}
 
       {showModal && typeof document !== 'undefined' && createPortal(
         <div className={styles.modalOverlay} onClick={closeModal}>

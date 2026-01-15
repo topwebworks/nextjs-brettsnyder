@@ -33,7 +33,7 @@ const workHistory = [
     location: "Chandler, AZ",
     period: "2019 - 2022",
     current: false,
-    description: "In my UI/UX role, I worked closely with stakeholders through live prototyping sessions to shape site flows and designs. I delivered custom WordPress sites, landing pages, and HTML emails, and supported dev teams with front-end style code and QA. "
+    description: "In my UI/UX role, I worked closely with stakeholders through live prototyping sessions to shape site flows and designs. I delivered custom WordPress sites, landing pages, and HTML emails, and supported dev teams with front-end style code and QA."
   },
   {
     id: 3,

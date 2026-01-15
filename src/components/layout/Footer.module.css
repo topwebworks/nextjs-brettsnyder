@@ -73,6 +73,8 @@
   gap: clamp(1rem, 2.5vw, 1.5rem);
   flex-wrap: nowrap;
   align-items: center;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 /* Main navigation link */
@@ -145,6 +147,15 @@
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: 0.8;
+  padding: 0;
+  min-width: 36px;
+  min-height: 36px;
+  flex-shrink: 0;
+}
+
+/* Override button styles when used as social icon */
+.socialIcon.button {
+  border-radius: 10px !important; /* Ensure consistent rounded corners */
 }
 
 .socialIcon:hover {
@@ -319,6 +330,8 @@
   .socialIcon {
     width: 32px;
     height: 32px;
+    min-width: 32px;
+    min-height: 32px;
   }
 }
 
@@ -386,6 +399,8 @@
   .socialIcon {
     width: 28px;
     height: 28px;
+    min-width: 28px;
+    min-height: 28px;
   }
 }
 

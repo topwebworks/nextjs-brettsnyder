@@ -258,6 +258,11 @@
   z-index: 1;
 }
 
+/* Project-specific background positioning */
+.heroImageBackground[data-project-id="cywire"] {
+  background-position: left top;
+}
+
 /* Responsive background positioning */
 @media (max-width: 768px) {
   .heroImageBackground {
