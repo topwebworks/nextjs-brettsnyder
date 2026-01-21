@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brett Snyder - Marketing Frontend Developer Resume</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brett Snyder - Marketing Frontend Developer Resume</title>
+        <style>
         * {
             margin: 0;
             padding: 0;
@@ -14,10 +14,10 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-size: 10.5pt;
-            line-height: 1.5;
+            line-height: 1.45;
             color: #1e293b;
             background: #ffffff;
-            padding: 0.5in 0.65in;
+            padding: 0.18in 0.5in;
             max-width: 8.5in;
             margin: 0 auto;
         }
@@ -25,37 +25,41 @@
         /* Header */
         .header {
             text-align: center;
-            margin-bottom: 0.3in;
-            padding-bottom: 0.2in;
-            border-bottom: 2px solid #2563eb;
+            margin-bottom: 0.2in;
+            padding-bottom: 0.06in;
+            border-bottom: 1px solid #2563eb;
         }
 
         h1 {
-            font-size: 26pt;
+            font-size: 13pt;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 0.1in;
-            letter-spacing: -0.5px;
+            margin-bottom: 0;
+            letter-spacing: 0.5px;
+            display: inline;
         }
 
         .tagline {
-            font-size: 12pt;
+            font-size: 13pt;
             color: #475569;
-            font-weight: 600;
-            margin-bottom: 0.08in;
+            font-weight: 400;
+            display: inline;
+        }
+
+        .tagline::before {
+            content: " — ";
+            color: #475569;
         }
 
         .subtitle {
-            font-size: 10pt;
-            color: #64748b;
-            font-style: italic;
-            margin-bottom: 0.12in;
+            display: none;
         }
 
         .contact {
-            font-size: 9.5pt;
+            font-size: 8.5pt;
             color: #475569;
-            line-height: 1.6;
+            line-height: 1.3;
+            margin-top: 0.02in;
         }
 
         .contact a {
@@ -65,14 +69,14 @@
 
         /* Section Headers */
         h2 {
-            font-size: 12pt;
+            font-size: 11.5pt;
             font-weight: 700;
             color: #0f172a;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-top: 0.25in;
-            margin-bottom: 0.12in;
-            padding-bottom: 0.06in;
+            margin-top: 0.2in;
+            margin-bottom: 0.06in;
+            padding-bottom: 0.03in;
             border-bottom: 2px solid #e2e8f0;
         }
 
@@ -80,43 +84,51 @@
             font-size: 11pt;
             font-weight: 700;
             color: #0f172a;
-            margin-top: 0.14in;
+            margin-top: 0.18in;
             margin-bottom: 0.06in;
             line-height: 1.3;
         }
 
         /* Summary */
         .summary {
-            margin-bottom: 0.15in;
+            margin-bottom: 0.08in;
         }
 
         .summary p {
-            margin-bottom: 0.12in;
-            line-height: 1.6;
+            margin-bottom: 0.06in;
+            line-height: 1.45;
             text-align: left;
+            font-size: 10.5pt;
         }
 
         /* Core Competencies */
         .competencies {
-            margin-bottom: 0.15in;
+            margin-bottom: 0.08in;
+        }
+
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.05in 0.15in;
+            font-size: 10.5pt;
+            line-height: 1.45;
         }
 
         .competency-category {
-            margin-bottom: 0.12in;
+            margin-bottom: 0;
         }
 
         .competency-category strong {
             color: #0f172a;
             font-weight: 600;
-            display: block;
-            margin-bottom: 0.05in;
+            display: inline;
             font-size: 10.5pt;
         }
 
         .competency-category span {
             color: #475569;
-            font-size: 10pt;
-            line-height: 1.6;
+            font-size: 10.5pt;
+            line-height: 1.45;
         }
 
         /* Lists - Universal styling */
@@ -128,9 +140,10 @@
         li {
             position: relative;
             padding-left: 0.25in;
-            margin-bottom: 0.08in;
+            margin-bottom: 0.04in;
             color: #334155;
-            line-height: 1.6;
+            line-height: 1.45;
+            font-size: 10.5pt;
         }
 
         li::before {
@@ -149,12 +162,12 @@
 
         /* Experience */
         .experience-item {
-            margin-bottom: 0.22in;
+            margin-bottom: 0.12in;
             page-break-inside: avoid;
         }
 
         .job-header {
-            margin-bottom: 0.09in;
+            margin-bottom: 0.05in;
         }
 
         .job-title {
@@ -168,7 +181,7 @@
             font-size: 9.5pt;
             color: #64748b;
             font-style: italic;
-            margin-top: 0.03in;
+            margin-top: 0.05in;
         }
 
         .experience-item ul {
@@ -199,52 +212,251 @@
 
         .earlier-experience p {
             margin-bottom: 0.08in;
-            line-height: 1.6;
+            line-height: 1.45;
+            font-size: 10.5pt;
         }
 
         /* Education */
         .education p {
             margin-bottom: 0.06in;
             color: #334155;
-            line-height: 1.5;
+            line-height: 1.45;
+            font-size: 10.5pt;
         }
 
-        /* 768px and below - Mobile Optimization */
+        /* 768px and below - Tablet/Mobile Optimization */
         @media (max-width: 768px) {
             body {
-                padding: 50px 20px;
+                padding: 0.3in 0.25in;
+                font-size: 11pt;
             }
-        } 
 
-        /* 480px and below - Small Mobile Optimization */
+            h1 {
+                font-size: 18pt;
+            }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 30px 10px;
+            .tagline {
+                font-size: 14pt;
+            }
+
+            .contact {
+                font-size: 10pt;
+                line-height: 1.5;
+            }
+
+            h2 {
+                font-size: 13pt;
+                margin-top: 0.2in;
+                margin-bottom: 0.1in;
+            }
+
+            .competency-grid {
+                grid-template-columns: 1fr;
+                gap: 0.1in;
+                font-size: 10.5pt;
+            }
+
+            .competency-category strong,
+            .competency-category span {
+                font-size: 10.5pt;
+            }
+
+            li {
+                font-size: 10.5pt;
+                line-height: 1.6;
+                margin-bottom: 0.08in;
+            }
+
+            .job-title {
+                font-size: 12pt;
+            }
+
+            .job-meta {
+                font-size: 10pt;
             }
         }
 
-
-        /* Print Optimization */
-        @media print {
+        /* 480px and below - Small Mobile Optimization */
+        @media (max-width: 480px) {
             body {
+                padding: 0.25in 0.15in;
                 font-size: 10pt;
-                padding: 0.4in 0.5in;
             }
-            
+
+            .header {
+                margin-bottom: 0.15in;
+            }
+
             h1 {
-                font-size: 22pt;
+                font-size: 16pt;
+                display: block;
+                margin-bottom: 0.05in;
+            }
+
+            .tagline {
+                font-size: 13pt;
+                display: block;
+                margin-left: 0;
+            }
+
+            .tagline::before {
+                content: "";
+            }
+
+            .contact {
+                font-size: 9pt;
+                line-height: 1.6;
             }
 
             h2 {
                 font-size: 12pt;
-                margin-top: 0.15in;
+                letter-spacing: 1px;
+            }
+
+            .summary p {
+                font-size: 10pt;
+            }
+
+            .competency-grid {
+                font-size: 9.5pt;
+            }
+
+            .competency-category strong,
+            .competency-category span {
+                font-size: 9.5pt;
+            }
+
+            li {
+                font-size: 10pt;
+                padding-left: 0.2in;
+            }
+
+            .job-title {
+                font-size: 11pt;
+            }
+
+            .job-meta {
+                font-size: 9pt;
+            }
+
+            .experience-item {
+                margin-bottom: 0.2in;
+            }
+        }
+
+
+        /* Print Optimization - Scale browser print to 0.85 */
+        @media print {
+            /* Scale font sizes and spacing to 0.85x */
+            body {
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+                padding: 0.153in 0.425in; /* 0.18 * 0.85, 0.5 * 0.85 */
+            }
+
+            .header {
+                margin-bottom: 0.17in; /* 0.2 * 0.85 */
+                padding-bottom: 0.051in; /* 0.06 * 0.85 */
+                page-break-after: avoid;
+            }
+
+            h1 {
+                font-size: 11.05pt; /* 13 * 0.85 */
+            }
+
+            .tagline {
+                font-size: 11.05pt; /* 13 * 0.85 */
+            }
+
+            .contact {
+                font-size: 7.225pt; /* 8.5 * 0.85 */
+            }
+
+            h2 {
+                font-size: 9.775pt; /* 11.5 * 0.85 */
+                margin-top: 0.17in; /* 0.2 * 0.85 */
+                margin-bottom: 0.051in; /* 0.06 * 0.85 */
+                padding-bottom: 0.0255in; /* 0.03 * 0.85 */
                 page-break-after: avoid;
             }
 
             h3 {
-                font-size: 11pt;
+                font-size: 9.35pt; /* 11 * 0.85 */
+                margin-top: 0.153in; /* 0.18 * 0.85 */
+                margin-bottom: 0.051in; /* 0.06 * 0.85 */
                 page-break-after: avoid;
+            }
+
+            .summary {
+                margin-bottom: 0.068in; /* 0.08 * 0.85 */
+                page-break-inside: avoid;
+            }
+
+            .summary p {
+                margin-bottom: 0.051in; /* 0.06 * 0.85 */
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+            }
+
+            .competencies {
+                margin-bottom: 0.068in; /* 0.08 * 0.85 */
+                page-break-inside: avoid;
+            }
+
+            .competency-grid {
+                gap: 0.0425in 0.1275in; /* 0.05 * 0.85, 0.15 * 0.85 */
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+                line-height: 1.45;
+            }
+
+            .competency-category strong {
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+            }
+
+            .competency-category span {
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+                line-height: 1.45;
+            }
+
+            li {
+                padding-left: 0.2125in; /* 0.25 * 0.85 */
+                margin-bottom: 0.034in; /* 0.04 * 0.85 */
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+            }
+
+            li::before {
+                font-size: 6.8pt; /* 8 * 0.85 */
+                top: 0.017in; /* 0.02 * 0.85 */
+            }
+
+            .experience-item {
+                margin-bottom: 0.102in; /* 0.12 * 0.85 */
+            }
+
+            .job-header {
+                margin-bottom: 0.0425in; /* 0.05 * 0.85 */
+                page-break-after: avoid;
+            }
+
+            .job-title {
+                font-size: 9.35pt; /* 11 * 0.85 */
+            }
+
+            .job-meta {
+                font-size: 8.075pt; /* 9.5 * 0.85 */
+                margin-top: 0.0425in; /* 0.05 * 0.85 */
+            }
+
+            .experience-item ul {
+                margin-top: 0.068in; /* 0.08 * 0.85 */
+            }
+
+            .earlier-experience p {
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+                line-height: 1.45;
+            }
+
+            .education p {
+                font-size: 8.925pt; /* 10.5 * 0.85 */
+                line-height: 1.45;
             }
 
             /* Prevent orphans and widows */
@@ -257,9 +469,9 @@
             .project-item {
                 page-break-inside: avoid;
             }
-            
-            /* Keep job header with first bullet */
-            .job-header {
+
+            /* Prevent break immediately after first bullet in a job */
+            .experience-item li:first-child {
                 page-break-after: avoid;
             }
 
@@ -270,316 +482,227 @@
         }
 
         @page {
-            margin: 0.4in 0.5in;
+            margin: 0.255in 0.425in; /* 0.3 * 0.85, 0.5 * 0.85 */
         }
     </style>
-  </head>
-  <body>
-    <div class="header">
-      <h1>BRETT SNYDER</h1>
-      <div class="tagline">Marketing Frontend Developer</div>
-      <div class="subtitle">AI-Literate Marketing Developer | Design-to-Code
-        Specialist</div>
-      <div class="contact">
-        Queen Creek, AZ (Hybrid / Remote) • 602-561-5771 • <a
-          href="mailto:info@brettsnyder.me">info@brettsnyder.me</a><br>
-        <a href="https://brettsnyder.me" target="_blank"
-          rel="noopener noreferrer">brettsnyder.me</a> • <a
-          href="https://linkedin.com/in/topwebworks" target="_blank"
-          rel="noopener noreferrer">linkedin.com/in/topwebworks</a>
-        • <a href="https://github.com/topwebworks" target="_blank"
-          rel="noopener noreferrer">github.com/topwebworks</a>
-      </div>
-    </div>
-
-    <section class="summary">
-      <h2>Professional Summary</h2>
-      <p>Marketing Web Developer with deep AI literacy who specializes in
-        high-converting landing pages
-        and responsive web experiences for enterprise marketing teams. Native
-        expertise in HTML5, CSS3, and JavaScript with professional-level
-        proficiency in React, Next.js, and TypeScript using strategic
-        AI-assisted&nbsp;workflows.</p>
-
-      <p>Unique AI differentiator: Built CyWire.com, a SaaS platform that
-        provides structured AI prompt blueprints (Master Prompts) for reliable,
-        validated JSON outputs. This demonstrates deep understanding of prompt
-        engineering, JSON schema validation, and how to architect AI features
-        that teams can trust—not just using AI tools, but building them. Can
-        help marketing teams integrate AI into their workflows while maintaining
-        quality control and code&nbsp;ownership.</p>
-
-      <p>Proven Shopify/Liquid frontend specialist with experience migrating and
-        customizing 3 enterprise e-commerce sites, building custom marketing
-        sections from scratch that replaced paid apps. Expert in
-        creating reusable modular systems that
-        drastically reduced
-        landing page
-        production time while maintaining perfect brand&nbsp;consistency.</p>
-
-      <p>Unique value for marketing departments: combines frontend development
-        with professional UI/UX and responsive design skills. This rare
-        combination eliminates the typical designer-to-developer handoff
-        bottleneck, enabling faster campaign launches with pixel-perfect
-        execution. Leverages AI to accelerate iteration cycles, explore multiple
-        design approaches rapidly, and ship features 2-3x faster while
-        maintaining full control over quality and architecture. Can translate
-        marketing briefs directly into production-ready
-        code, speak both creative and technical language, and iterate quickly
-        based on A/B testing data. Seeking stable enterprise marketing
-        environment where AI literacy is&nbsp;valued.</p>
-    </section>
-
-    <section class="competencies">
-      <h2>Core Competencies</h2>
-
-      <div class="competency-category">
-        <strong>Core Frontend Development (Native)</strong>
-        <span>HTML5 • CSS3 • JavaScript (ES6+) • Responsive/Mobile-first
-          Development • Cross-browser Testing • Web
-          Accessibility&nbsp;(WCAG)</span>
-      </div>
-
-      <div class="competency-category">
-        <strong>Frameworks & Modern Stack (AI-Assisted)</strong>
-        <span>React • Next.js • TypeScript • Component Architecture • Tailwind
-          CSS • Interactive UI • Performance Optimization</span>
-      </div>
-
-      <div class="competency-category">
-        <strong>Learning & Personal Projects</strong>
-        <span>Python & JavaScript refresher courses (Ensign College) •
-          Continuous
-          exploration of emerging frameworks and&nbsp;tools</span>
-      </div>
-
-      <div class="competency-category">
-        <strong>Design & UX</strong>
-        <span>UI/UX Design • Figma • Responsive Web Design • Wireframing •
-          High-fidelity Prototyping • Design Systems • Visual Brand
-          Implementation</span>
-      </div>
-
-      <div class="competency-category">
-        <strong>E-commerce & CMS Frontend</strong>
-        <span>Shopify Plus • Liquid Templating • Schema-based Components • Theme
-          Customization • Custom Marketing Sections • Shopify CLI • WordPress
-          (Custom Themes & Blocks) • Pantheon.io • CMS Frontend Development •
-          Headless CMS • Matrixify</span>
-      </div>
-
-      <div class="competency-category">
-        <strong>Marketing & Campaigns</strong>
-        <span>Landing Page Development • Lead Generation • Conversion Rate
-          Optimization • A/B Testing • Responsive HTML Email Design/Development
-          • Campaign Performance Optimization • Sales
-          Funnel&nbsp;Optimization</span>
-      </div>
-
-      <div class="competency-category">
-        <strong>AI-Assisted Development & Tools</strong>
-        <span>Prompt Engineering • AI-accelerated Prototyping • Logic Generation
-          • Structured JSON Workflows • Rapid Validation • Code Refactoring •
-          Supabase • Vercel • Git/GitHub</span>
-      </div>
-    </section>
-
-    <section>
-      <h2>Featured Projects</h2>
-
-      <div class="project-item">
-        <h3>CyWire.com — AI Master Prompt Platform</h3>
-        <div class="project-meta">Product Developer / Founder
-          (Cosaint,&nbsp;Inc.) |
-          November 2025 – Present</div>
-        <ul>
-          <li>Built complete SaaS platform providing industry Master Prompts
-            (structured JSON blueprints) that turn AI into a reliable data layer
-            for consistent, validated&nbsp;outputs.</li>
-          <li>Developed complete frontend using <strong>Next.js, React,
-              TypeScript, and Tailwind CSS</strong> with
-            <strong>Supabase</strong> backend and
-            <strong>Vercel</strong>&nbsp;deployment.</li>
-          <li><strong>Technical Architecture:</strong> Visual Master Prompt
-            builder with JSON schema validation, community marketplace with user
-            authentication, document intelligence system (PDF/Word/Excel
-            processing), AI Prompt Chat Generator for popular AI models,
-            dashboard analytics, and gamified leaderboard&nbsp;system.</li>
-          <li>Demonstrates ability to architect and ship production-grade web
-            applications using modern frameworks, AI-assisted development, and
-            full-stack thinking while maintaining frontend specialization.</li>
-        </ul>
-      </div>
-
-      <div class="project-item">
-        <h3>Portfolio Site Rebuild — brettsnyder.me</h3>
-        <div class="project-meta">Personal Project | September 2025 |
-          Next.js/React/TypeScript</div>
-        <ul>
-          <li>Complete rebuild of personal portfolio using latest Next.js,
-            React, and TypeScript with dark iridescent
-            glassmorphism&nbsp;design.</li>
-          <li>Implemented hybrid JSON/markdown content system with animated
-            elements for modern, performant user&nbsp;experience.</li>
-          <li>Code available on GitHub to demonstrate technical approach and
-            architecture&nbsp;decisions.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Professional Experience</h2>
-
-      <div class="experience-item">
-        <div class="job-header">
-          <div class="job-title">Product Developer / Founder — Cosaint,
-            Inc.</div>
-          <div class="job-meta">November 2025 – Present | Queen Creek, AZ
-            (Remote)</div>
+    </head>
+    <body>
+        <div class="header">
+            <div><h1>BRETT SNYDER</h1><span class="tagline">Marketing Frontend
+                    Developer</span></div>
+            <div class="contact">Queen Creek, AZ •&nbsp;602-561-5771 •&nbsp;<a
+                    href="mailto:info@brettsnyder.me">info@brettsnyder.me</a> •&nbsp;<a
+                    href="https://brettsnyder.me" target="_blank"
+                    rel="noopener noreferrer">brettsnyder.me</a> •&nbsp;<a
+                    href="https://linkedin.com/in/topwebworks" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a> •&nbsp;<a
+                    href="https://github.com/topwebworks" target="_blank"
+                    rel="noopener noreferrer">GitHub</a></div>
         </div>
-        <ul>
-          <li>Launched <strong>CyWire.com</strong> - a SaaS platform providing
-            industry Master Prompts (structured JSON blueprints) that enable
-            teams to build reliable AI features with consistent,
-            validated&nbsp;outputs.</li>
-          <li>Built and launched complete platform from concept to production
-            using
-            accelerated AI-assisted development workflows, demonstrating rapid
-            execution capabilities and full-stack product&nbsp;thinking.</li>
-          <li>Active development continuing with marketplace expansion and
-            related EdTech product using CyWire's Master Prompt
-            architecture.</li>
-        </ul>
-      </div>
 
-      <div class="experience-item">
-        <div class="job-header">
-          <div class="job-title">Marketing Web Developer — Imagine Learning
-            (formerly Weld North Education)</div>
-          <div class="job-meta">March 2022 – October 2025 |
-            Arizona&nbsp;(Remote)</div>
-        </div>
-        <ul>
-          <li><strong>Fully managed 10+ WordPress sites</strong> hosted on
-            Pantheon.io, handling design, development, maintenance, and updates
-            for enterprise marketing&nbsp;needs.</li>
-          <li><strong>Led Shopify content migration of 3 enterprise Shopify
-              sites</strong> from legacy .NET CMS, managing marketing pages,
-            collections, menus, apps, and branding elements across
-            tight&nbsp;timelines.</li>
-          <li><strong>Designed and Built custom Liquid/Schema marketing
-              sections</strong> that replaced two paid apps while greatly
-            enhancing functionality, now refactored into Shopify's Horizon theme
-            for long-term maintainability.</li>
-          <li>Built and maintained <strong>50+ conversion-focused landing
-              pages</strong> and campaign microsites supporting paid media,
-            social, SEO, and lead generation&nbsp;efforts.</li>
-          <li>Developed a customizable <strong>HTML5 Master Blocks template
-              system</strong> (code samples on GitHub) that reduced landing page
-            production time by approximately 40% while maintaining perfect brand
-            consistency across&nbsp;campaigns.</li>
-          <li><strong>Unique marketing advantage:</strong> Combined design and
-            development skills eliminated designer-to-developer handoff delays,
-            enabling rapid iteration from concept to production.</li>
-          <li>Partnered with marketing managers and designers to translate
-            campaign goals, brand guidelines, and performance data into clean,
-            responsive frontend&nbsp;solutions.</li>
-          <li>Optimized pages using insights from <strong>A/B testing, heatmaps,
-              and traffic behavior</strong> to improve clarity, engagement, and
-            conversion&nbsp;rates.</li>
-          <li>Designed and hand-coded <strong>responsive HTML emails</strong>
-            that rendered cleanly across major desktop and mobile clients,
-            supporting high-volume marketing&nbsp;campaigns.</li>
-          <li>Translated Figma concepts into <strong>pixel-accurate, accessible
-              markup</strong>, reducing design-to-dev back-and-forth and helping
-            campaigns launch on&nbsp;schedule.</li>
-          <li><strong>Mentored 12+ team members</strong> on web development best
-            practices and modern frontend&nbsp;workflows.</li>
-          <li>Used AI-assisted development to accelerate iteration and
-            troubleshooting while maintaining full ownership of
-            the&nbsp;codebase.</li>
-        </ul>
-      </div>
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>Marketing Web Developer with 9+ years enterprise experience at
+                Imagine
+                Learning, specializing in high-converting landing pages,
+                Shopify/Liquid
+                customization, and responsive web experiences. Native expertise
+                in
+                HTML5, CSS3, JavaScript with AI-assisted proficiency in React,
+                Next.js,
+                TypeScript. Combines frontend dev with professional
+                UI/UX&nbsp;design
+                skills
+                to accelerate campaign launches and streamline design-to-dev workflows. Proven track record managing
+                10+&nbsp;WordPress&nbsp;sites,
+                migrating&nbsp;3
+                enterprise Shopify sites, and building custom marketing sections
+                that
+                replaced paid&nbsp;apps.</p>
+        </section>
 
-      <div class="experience-item">
-        <div class="job-header">
-          <div class="job-title">UI/UX Designer/Developer — Imagine Learning
-            (Weld North Education)</div>
-          <div class="job-meta">April 2019 – March 2022 | Chandler,
-            AZ&nbsp;(Hybrid)</div>
-        </div>
-        <ul>
-          <li>Managed multiple WordPress sites on Pantheon.io platform, ensuring
-            performance, security, and seamless&nbsp;updates.</li>
-          <li>Led UI/UX design and frontend execution for marketing and
-            product-facing web experiences.</li>
-          <li>Created high-fidelity wireframes and prototypes in Figma to align
-            stakeholders early and reduce&nbsp;rework.</li>
-          <li>Built responsive HTML prototypes from design comps including
-            <strong>Monarch Catalog project</strong> with working interactions
-            for development team&nbsp;handoff.</li>
-          <li>Hand-coded responsive layouts and interactive elements with
-            consistent cross-device&nbsp;behavior.</li>
-          <li>Collaborated with marketing, product, and engineering teams to
-            refine user flows and&nbsp;usability.</li>
-        </ul>
-      </div>
+        <section class="competencies">
+            <h2>Core Competencies</h2>
+            <div class="competency-grid">
+                <div class="competency-category"><strong>Frontend Dev:</strong>
+                    <span>HTML5 •&nbsp;CSS3 •&nbsp;JavaScript&nbsp;(ES6+) •&nbsp;React •&nbsp;Next.js •&nbsp;TypeScript
+                        •&nbsp;Tailwind •&nbsp;Responsive&nbsp;Design</span></div>
+                <div
+                    class="competency-category"><strong>E-commerce/CMS:</strong>
+                    <span>Shopify&nbsp;Plus •&nbsp;Liquid •&nbsp;WordPress •&nbsp;PHP •&nbsp;Pantheon.io •&nbsp;Custom&nbsp;Theme
+                        Dev</span></div>
+                <div class="competency-category"><strong>Marketing:</strong>
+                    <span>Landing&nbsp;Pages •&nbsp;Lead&nbsp;Gen •&nbsp;CRO •&nbsp;A/B&nbsp;Testing •&nbsp;Responsive&nbsp;Email
+                        •&nbsp;Campaign&nbsp;Optimization</span></div>
+                <div class="competency-category"><strong>Design/UX:</strong>
+                    <span>UI/UX
+                        Design •&nbsp;Figma •&nbsp;Wireframing •&nbsp;Prototyping •&nbsp;Design
+                        Systems</span></div>
+                <div class="competency-category"><strong>AI Dev:</strong>
+                    <span>Prompt
+                        Engineering •&nbsp;AI-accelerated&nbsp;Prototyping •&nbsp;JSON
+                        Workflows •&nbsp;Supabase
+                        •&nbsp;Vercel</span></div>
+                <div class="competency-category"><strong>Tools:</strong>
+                    <span>Git/GitHub •&nbsp;Cross-browser&nbsp;Testing •&nbsp;WCAG •&nbsp;Performance
+                        Optimization</span></div>
+            </div>
+        </section>
 
-      <div class="experience-item">
-        <div class="job-header">
-          <div class="job-title">Senior Designer — Glynlyon&nbsp;Inc.</div>
-          <div class="job-meta">October 2016 – April 2019 |
-            Chandler,&nbsp;AZ</div>
-        </div>
-        <ul>
-          <li>Managed WordPress sites on Pantheon.io, establishing foundation
-            for enterprise-level CMS management&nbsp;practices.</li>
-          <li>Designed and developed responsive landing pages, emails, and
-            digital campaign&nbsp;assets.</li>
-          <li>Created <strong>master HTML email system</strong> including
-            CRM-ready templates that became the company standard for all
-            internal and external&nbsp;campaigns.</li>
-          <li>Managed entire design-to-code pipeline, from user stories and
-            wireframes to <strong>hand-coded fluid
-              responsive&nbsp;pages</strong>.</li>
-          <li>Applied A/B testing insights to layout and content decisions in
-            collaboration with marketing&nbsp;leadership.</li>
-          <li>Mentored team members on web development best practices, focusing
-            on structural foundations before applying&nbsp;styles.</li>
-        </ul>
-      </div>
-    </section>
+        <section>
+            <h2>Professional Experience</h2>
 
-    <section class="earlier-experience">
-      <h2>Earlier Contract Experience (Selected)</h2>
-      <p><strong>Top Web Works (Freelance)</strong> | <em>Front-end Developer,
-          Web Design, UI/UX Designer</em> | 2006 – 2016<br>
-        Worked closely with clients to create tailored web solutions, focusing
-        on understanding their needs and expectations. Delivered projects on
-        time and within budget, with commitment to quality and client
-        satisfaction resulting in long-term partnerships of 5+ years with
-        many&nbsp;clients.</p>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Product/Web Developer — Cosaint,
+                        Inc.</div>
+                    <div class="job-meta">November&nbsp;2025 – Present |
+                        Queen&nbsp;Creek,
+                        AZ</div>
+                </div>
+                <ul>
+                    <li><strong>Architected and launched CyWire.com SaaS
+                            platform</strong>
+                        from concept to production using Next.js, React,
+                        TypeScript,
+                        Tailwind, Supabase, and Vercel—featuring AI&nbsp;prompt
+                        engineering
+                        tools, JSON schema validation, community marketplace w/
+                        auth,
+                        document intelligence, and
+                        dashboard&nbsp;analytics.</li>
+                    <li><strong>Demonstrated rapid full-stack execution</strong>
+                        by
+                        building complete production app using
+                        AI-assisted&nbsp;dev
+                        workflows,
+                        showcasing ability to deliver modern web apps with
+                        professional
+                        frontend architecture and UX&nbsp;design.</li>
+                </ul>
+            </div>
 
-      <p><strong>Notable Contracts:</strong> Pearson Online Learning (fluid
-        responsive email systems), Rio Salado College (portal redesign with 22+
-        mockup iterations), Pearson Education (CMS prototype leading to extended
-        contract), Net Media Group (A/B testing and
-        conversion&nbsp;optimization).</p>
-    </section>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Imagine Learning (formerly
+                        Weld&nbsp;North
+                        Education
+                        / Glynlyon&nbsp;Inc.)</div>
+                    <div class="job-meta">October&nbsp;2016 – October&nbsp;2025
+                        | 9&nbsp;Years
+                        — Role
+                        Progression in Marketing
+                        &amp;&nbsp;Frontend&nbsp;Development</div>
+                </div>
+            </div>
 
-    <section>
-      <h2>Additional Experience</h2>
-      <p><strong>Earlier Roles:</strong> Graphic Designer & Art Director at
-        Franklin Covey, Nu Skin, and Studeo Interactive Direct. Transitioned
-        from print design to web development in early 2000s, bringing strong
-        visual design foundation to digital&nbsp;work.</p>
-    </section>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Marketing Web Developer</div>
+                    <div class="job-meta">March&nbsp;2022 – October&nbsp;2025 |
+                        Arizona
+                        (Remote)</div>
+                </div>
+                <ul>
+                    <li><strong>Managed enterprise marketing web
+                            infrastructure:</strong>
+                        Designed/developed pages for 10+&nbsp;WordPress sites on
+                        Pantheon.io,
+                        created migration plan/estimates and led Shopify
+                        migration of&nbsp;3
+                        e-commerce sites from legacy .NET&nbsp;CMS,
+                        designed/developed custom
+                        frontend Liquid/Schema marketing sections replacing paid
+                        apps,
+                        developed HTML5 Master Blocks system reducing landing
+                        page
+                        production time 40% across 50+&nbsp;conversion-focused
+                        pages.</li>
+                    <li><strong>Accelerated campaign execution combining
+                            design/dev
+                            expertise:</strong> Translated Figma designs to
+                        pixel-accurate
+                        accessible markup, designed/coded responsive HTML
+                        emails, optimized
+                        pages using A/B&nbsp;testing/heatmap data, mentored
+                        12+&nbsp;team
+                        members,
+                        eliminated designer-dev handoff delays for rapid
+                        iteration.</li>
+                </ul>
+            </div>
 
-    <section class="education">
-      <h2>Education</h2>
-      <p><strong>Brigham Young University</strong> — Graphic&nbsp;Design</p>
-      <p><strong>Brigham Young University–Idaho</strong> — Associates Degree,
-        Fine&nbsp;Art</p>
-    </section>
-  </body>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">UI/UX Designer/Developer</div>
+                    <div class="job-meta">April&nbsp;2019 – March&nbsp;2022 |
+                        Chandler,&nbsp;AZ
+                        (Hybrid)</div>
+                </div>
+                <ul>
+                    <li>Led UI/UX design and frontend dev for marketing/product
+                        web
+                        experiences, managed WordPress sites on Pantheon.io,
+                        created
+                        high-fidelity Figma and HTML prototypes from
+                        scratch.</li>
+                    <li>Built responsive HTML prototypes incl.
+                        Monarch&nbsp;Catalog
+                        project&nbsp;w/
+                        working interactions for dev handoff, collaborated with
+                        cross-functional teams to refine user
+                        flows/usability.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Senior Designer</div>
+                    <div class="job-meta">October&nbsp;2016 – April&nbsp;2019 |
+                        Chandler,
+                        AZ</div>
+                </div>
+                <ul>
+                    <li>Established enterprise WordPress mgmt practices on
+                        Pantheon.io,
+                        designed/developed responsive landing pages, emails,
+                        campaign
+                        assets.</li>
+                    <li>Created master HTML email system w/&nbsp;CRM-ready
+                        templates
+                        that
+                        became company standard, managed design-to-code
+                        pipeline, applied
+                        A/B&nbsp;testing insights to
+                        optimize&nbsp;conversions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="earlier-experience">
+            <h2>Earlier Experience</h2>
+            <p><strong>Front-end Developer/Designer</strong> | 2006 – 2016<br>
+                Contract work with enterprise clients including
+                Pearson&nbsp;Online
+                Learning
+                (responsive email systems), Rio&nbsp;Salado&nbsp;College (portal
+                redesign), and
+                Net&nbsp;Media&nbsp;Group (A/B testing and conversion
+                optimization).
+                Earlier
+                graphic design roles at Franklin&nbsp;Covey, Nu&nbsp;Skin, and
+                Studeo
+                Interactive
+                Direct before transitioning to web&nbsp;development.</p>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <p><strong>Brigham Young University</strong> —
+                Graphic&nbsp;Design</p>
+            <p><strong>Brigham Young University–Idaho</strong> — Associates
+                Degree,
+                Fine&nbsp;Art</p>
+        </section>
+    </body>
 </html>
