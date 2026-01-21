@@ -15,19 +15,6 @@ export interface LatestBlogPost {
 
 export const latestBlogPosts: LatestBlogPost[] = [
   {
-    "id": "shopify-what-i-learned",
-    "title": "Shopify, What I Learned",
-    "description": "While my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify.",
-    "excerpt": "During my due diligence, I identified BigCommerce and Shopify Pro as the leading contenders.",
-    "category": "Technology",
-    "publishDate": "2025-03-31",
-    "readTime": "8 min read",
-    "tags": [
-      "Liquid",
-      "Shopify"
-    ]
-  },
-  {
     "id": "jesus-christ-art",
     "title": "Jesus Christ Art",
     "description": "Original portrait series of Jesus Christ created in Photoshop between 2023-2024. This local free outreach project soon expanded to the JesusChrist.art website.",
@@ -39,6 +26,21 @@ export const latestBlogPosts: LatestBlogPost[] = [
       "Prints",
       "Website",
       "Photoshop"
+    ]
+  },
+  {
+    "id": "funastics",
+    "title": "Funastics",
+    "description": "Funastics was a place where kids built skills, confidence, and character while having fun. With strong branding and smart systems, it grew into a trusted community hub that felt bigger than a single location.",
+    "excerpt": "Funastics was a place where kids built skills, confidence, and character while having fun. With strong branding and smart systems, it grew into a trusted community hub that felt bigger than a single location.",
+    "category": "Mentor",
+    "publishDate": "2006-06-01",
+    "readTime": "5 min read",
+    "tags": [
+      "Owner",
+      "Instructor",
+      "Gymnastics",
+      "Life Skills"
     ]
   }
 ];

@@ -11,11 +11,10 @@ status: ""
 featured: true
 readTime: "8 min read"
 publishDate: "2025-03-31"
+links:
+  live: "https://aop.com/pages/mktg-custom-dev"
 author: "Brett Snyder"
 excerpt: "During my due diligence, I identified BigCommerce and Shopify Pro as the leading contenders."
-links:
-  canonical: "https://brettsnyderdev.com/blog/modern-web-trends-2025"
-  external: "https://web.dev/vitals/"
 keyAchievements:
   - type: "impact"
     icon: "🌱"

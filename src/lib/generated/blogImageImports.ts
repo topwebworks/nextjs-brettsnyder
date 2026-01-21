@@ -19,7 +19,6 @@ import jesuschristartScreenshot6 from '@/app/blog/content/jesus-christ-art/6-asc
 import jesuschristartScreenshot7 from '@/app/blog/content/jesus-christ-art/7-crown-thorns.jpg';
 import jesuschristartScreenshot8 from '@/app/blog/content/jesus-christ-art/8-crown-thorns2.jpg';
 import jesuschristartScreenshot9 from '@/app/blog/content/jesus-christ-art/9-lord-looketh.jpg';
-import shopifywhatilearnedHero from '@/app/blog/content/shopify-what-i-learned/shopify-hero.jpg';
 
 // Type definition for blog image imports
 export interface BlogImageImports {
@@ -39,11 +38,6 @@ export const blogImageImports: Record<string, BlogImageImports> = {
     hero: jesuschristartHero,
     demo: null,
     screenshots: [jesuschristartScreenshot1, jesuschristartScreenshot2, jesuschristartScreenshot3, jesuschristartScreenshot4, jesuschristartScreenshot5, jesuschristartScreenshot6, jesuschristartScreenshot7, jesuschristartScreenshot8, jesuschristartScreenshot9]
-  },
-  'shopify-what-i-learned': {
-    hero: shopifywhatilearnedHero,
-    demo: null,
-    screenshots: []
   }
 };
 
@@ -66,9 +60,6 @@ export const blogImagesByFilename: Record<string, Record<string, StaticImageData
     '7-crown-thorns.jpg': jesuschristartScreenshot7,
     '8-crown-thorns2.jpg': jesuschristartScreenshot8,
     '9-lord-looketh.jpg': jesuschristartScreenshot9
-  },
-  'shopify-what-i-learned': {
-    'shopify-hero.jpg': shopifywhatilearnedHero
   }
 };
 
@@ -88,7 +79,7 @@ export function getBlogImageByFilename(blogId: string, filename: string): Static
 }
 
 // List of all available blog IDs
-export const availableBlog = ['funastics', 'jesus-christ-art', 'shopify-what-i-learned'];
+export const availableBlog = ['funastics', 'jesus-christ-art'];
 
 // Note: Console logging removed to reduce build noise
 
@@ -107,4 +98,3 @@ export { jesuschristartScreenshot6 };
 export { jesuschristartScreenshot7 };
 export { jesuschristartScreenshot8 };
 export { jesuschristartScreenshot9 };
-export { shopifywhatilearnedHero };
