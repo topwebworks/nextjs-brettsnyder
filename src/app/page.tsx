@@ -299,7 +299,7 @@ export default function Homepage() {
               <div className={styles.contentColumn}>
                 <div className={styles.sectionHeadingRow}>
                   <h2 className={styles.sectionHeadingRowTitle}>
-                    Latest Articles
+                    Latest Blogs
                   </h2>
                   
                   {/* Blog Icon Link */}
