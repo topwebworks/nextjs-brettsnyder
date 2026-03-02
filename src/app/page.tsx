@@ -57,13 +57,14 @@ export default function Homepage() {
   // Animation configuration
   const animationConfig = {
     useRandom: false,
-    maxWords: 2
+    maxWords: 3
   };
 
   // Memoize animated words to prevent unnecessary re-renders
   const animatedWords = React.useMemo(() => [
-    'AI Master Prompts,',
-    'Websites.'
+    'prompt engineer,',
+    'web designer,',
+    'web developer.'
   ], []);
 
   // Generate sequence of words on component mount
@@ -124,7 +125,7 @@ export default function Homepage() {
           setWordsShown(prev => prev + 1); // Increment counter when word is fully typed
         }
       }
-    }, isDeleting ? 80 : isPaused ? 5000 : 120); // Much longer pause between words for better readability
+    }, isDeleting ? 80 : isPaused ? 2000 : 120); // Much longer pause between words for better readability
 
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, isPaused, currentWordIndex, wordsShown, maxWords, randomWords]);
@@ -236,7 +237,7 @@ export default function Homepage() {
 
             {/* Main Heading - with Animated Word */}
             <h1 className={styles.heroTitle}>
-              I create
+              I am a
               <br />
               <span className={styles.animatedTextContainer}>
                 <span className={styles.animatedText}>{currentText}</span>
