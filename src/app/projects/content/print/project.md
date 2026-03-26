@@ -43,8 +43,6 @@ media:
 
 <!-- PROJECT CONTENT - Markdown body text -->
 
-##
-
 I remember, my daily trips to the nice Linotype lady. She would set the type for all my print projects. I would hot wax them on chromecoat for printer handoff. Or the empowerment when I borrowed my boss's Mac Plus to bypass the Linotype step by using our laser printer. Here are a few of my favorite print projects.
 
 ## Catalogs

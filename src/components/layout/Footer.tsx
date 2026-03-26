@@ -1,67 +1,53 @@
 "use client"
 
 import React from 'react';
+import Link from 'next/link';
 import { Mail, Linkedin, Github, FileText } from 'lucide-react';
 import { siteConfig, emailLinks } from '../../lib/config';
 import ResumeButton from '../ui/ResumeButton';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className={styles.footer}>
-      {/* Subtle Background Orb */}
       <div className={styles.backgroundOrb} />
-      
+
       <div className={styles.container}>
-        {/* Simple Layout: Single Row Links + Icons */}
         <div className={styles.footerLayout}>
-          {/* Left Side - All Links in One Line + Copyright Below */}
           <div className={styles.footerLeft}>
-            {/* Single Row: All Links */}
             <div className={styles.linksContainer}>
-              {/* Main Navigation Links (Bold) - No Wrap Group */}
               <div className={styles.mainNavGroup}>
                 {[
                   { name: 'About', href: '/about' },
                   { name: 'Projects', href: '/projects' },
                   { name: 'Blog', href: '/blog' }
                 ].map((link, index) => (
-                  <a 
+                  <Link
                     key={link.name}
                     href={link.href}
                     className={`${styles.mainNavLink} ${styles[`animateLink${index + 1}` as keyof typeof styles]}`}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--text-primary)';
-                      e.currentTarget.style.transform = 'translateY(-1px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--text-secondary)';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
 
-              {/* Legal/Compliance Links (Regular) - No Wrap Group */}
               <div className={styles.legalLinksGroup}>
                 {[
                   { name: 'Privacy', href: '/policy' },
                   { name: 'Terms', href: '/terms' },
                   { name: 'Cookies', href: '#', isTermlyLink: true }
                 ].map((link, index) => (
-                  <a 
+                  <a
                     key={link.name}
                     href={link.href}
-                    className={link.isTermlyLink ? `termly-display-preferences ${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}` : `${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--text-secondary)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--text-muted)';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }}
+                    className={
+                      link.isTermlyLink
+                        ? `termly-display-preferences ${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`
+                        : `${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`
+                    }
                   >
                     {link.name}
                   </a>
@@ -69,35 +55,17 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Copyright Below Links */}
             <div className={styles.copyright}>
-              © 2025 Brett Snyder. All rights reserved worldwide.
+              © {currentYear} Brett Snyder. All rights reserved worldwide.
             </div>
           </div>
 
-          {/* Right Side - Contact Icons + Built With */}
           <div className={styles.footerIcons}>
-            {/* Contact Icons */}
             <div className={styles.iconsContainer}>
               <a
                 href={emailLinks.portfolio()}
                 className={styles.socialIcon}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--glass-bg-medium)';
-                  e.currentTarget.style.borderColor = 'rgba(var(--accent-rgb), 0.4)';
-                  e.currentTarget.style.color = 'var(--text-accent)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.opacity = '1';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(var(--accent-rgb), 0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'var(--glass-bg-subtle)';
-                  e.currentTarget.style.borderColor = 'var(--glass-border-subtle)';
-                  e.currentTarget.style.color = 'var(--text-muted)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.opacity = '0.8';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
+                aria-label="Email Brett Snyder"
               >
                 <Mail size={16} strokeWidth={1.5} />
               </a>
@@ -107,22 +75,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--glass-bg-medium)';
-                  e.currentTarget.style.borderColor = 'rgba(var(--accent-rgb), 0.4)';
-                  e.currentTarget.style.color = 'var(--text-accent)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.opacity = '1';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(var(--accent-rgb), 0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'var(--glass-bg-subtle)';
-                  e.currentTarget.style.borderColor = 'var(--glass-border-subtle)';
-                  e.currentTarget.style.color = 'var(--text-muted)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.opacity = '0.8';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
+                aria-label="LinkedIn profile"
               >
                 <Linkedin size={16} strokeWidth={1.5} />
               </a>
@@ -132,70 +85,26 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--glass-bg-medium)';
-                  e.currentTarget.style.borderColor = 'rgba(var(--accent-rgb), 0.4)';
-                  e.currentTarget.style.color = 'var(--text-accent)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.opacity = '1';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(var(--accent-rgb), 0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'var(--glass-bg-subtle)';
-                  e.currentTarget.style.borderColor = 'var(--glass-border-subtle)';
-                  e.currentTarget.style.color = 'var(--text-muted)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.opacity = '0.8';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
+                aria-label="GitHub profile"
               >
                 <Github size={16} strokeWidth={1.5} />
               </a>
-              
+
               {siteConfig.showResume && (
-                <ResumeButton>
-                  <a
-                    className={`${styles.socialIcon} ${styles.resumeIcon}`}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--glass-bg-medium)';
-                      e.currentTarget.style.borderColor = 'rgba(var(--success-rgb), 0.4)';
-                      e.currentTarget.style.color = 'rgba(var(--success-rgb), 1)';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.opacity = '1';
-                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(var(--success-rgb), 0.2)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--glass-bg-subtle)';
-                      e.currentTarget.style.borderColor = 'var(--glass-border-subtle)';
-                      e.currentTarget.style.color = 'var(--text-muted)';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.opacity = '0.8';
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
+                <ResumeButton aria-label="Open resume">
+                  <span className={`${styles.socialIcon} ${styles.resumeIcon}`}>
                     <FileText size={16} strokeWidth={1.5} />
-                  </a>
+                  </span>
                 </ResumeButton>
               )}
             </div>
 
-            {/* Built With Technologies */}
             <div className={styles.builtWith}>
               <span className={styles.builtWithLabel}>Built with</span>
               {['Next.js', 'TypeScript', 'React', 'CSS3', 'Lucide Icons'].map((tech, index) => (
                 <span
                   key={tech}
                   className={`${styles.techTag} ${styles[`animateTech${index + 1}` as keyof typeof styles]}`}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = 'var(--text-secondary)';
-                    e.currentTarget.style.background = 'var(--glass-bg-medium)';
-                    e.currentTarget.style.transform = 'translateY(-1px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'var(--text-muted)';
-                    e.currentTarget.style.background = 'var(--glass-bg-subtle)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
                 >
                   {tech}
                 </span>

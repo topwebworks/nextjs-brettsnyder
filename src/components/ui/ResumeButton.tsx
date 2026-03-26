@@ -16,6 +16,7 @@ interface ResumeButtonProps {
   size?: 'small' | 'medium' | 'large';
   icon?: 'download' | 'file';
   showText?: boolean;
+  'aria-label'?: string;
 }
 
 /**
@@ -43,6 +44,7 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
   size = 'medium',
   icon = 'download',
   showText = true,
+  'aria-label': ariaLabel,
 }) => {
   const [showModal, setShowModal] = useState(false);
   const resumeHtmlPath = '/resume-brett-snyder.html';
@@ -78,8 +80,7 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
   };
 
   // Determine if using new flexible API or legacy API
-  const isFlexibleMode = children && typeof children === 'object' && 
-    React.isValidElement(children) && children.type !== 'string';
+  const isFlexibleMode = React.isValidElement(children);
   
   const IconComponent = icon === 'file' ? FileText : Download;
 
@@ -87,9 +88,14 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
     <>
       {isFlexibleMode ? (
         // New flexible mode - just wrap the children with click handler
-        <div onClick={openResume} className={className} style={{ cursor: 'pointer', display: 'inline-flex' }}>
+        <button
+          type="button"
+          onClick={openResume}
+          className={`${styles.trigger} ${className}`.trim()}
+          aria-label={ariaLabel ?? 'Open resume'}
+        >
           {children}
-        </div>
+        </button>
       ) : (
         // Legacy mode - render a Button component
         <Button
@@ -98,6 +104,7 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
           icon={IconComponent}
           onClick={openResume}
           className={className}
+          aria-label={ariaLabel}
         >
           {showText && (children || 'Download Resume')}
         </Button>

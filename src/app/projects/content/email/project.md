@@ -52,8 +52,6 @@ media:
 
 <!-- PROJECT CONTENT - Markdown body text -->
 
-## 
-
 It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from. It was a simple HTML file they could make their own. I hear they have made some tweaks to better fit their needs, but still pull or refer to it as a resource even today.
 
 ## Master Email Template

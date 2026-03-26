@@ -235,6 +235,11 @@
   width: 100%;
 }
 
+.projectCardImageMedia {
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Blog Text Content */
 .blogTitle {
   font-size: clamp(1.4rem, 3vw, 1.8rem);
@@ -243,6 +248,15 @@
   margin-bottom: 0.75rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
+}
+
+.blogTitleLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blogTitleLink:hover {
+  color: var(--text-accent);
 }
 
 .blogDescription {
@@ -343,6 +357,7 @@
 
 .viewDetailsBtn {
   text-decoration: none;
+  display: inline-flex;
 }
 
 /* Show More Button */
@@ -390,6 +405,7 @@
 
 .subscribeCtaLink {
   text-decoration: none;
+  display: inline-flex;
 }
 
 /* Animation Classes */
@@ -403,6 +419,17 @@
     transform: translateY(0);
   }
 }
+
+.blogCardDelay0 { animation: fadeInUp 0.6s ease-out 0s both; }
+.blogCardDelay1 { animation: fadeInUp 0.6s ease-out 0.1s both; }
+.blogCardDelay2 { animation: fadeInUp 0.6s ease-out 0.2s both; }
+.blogCardDelay3 { animation: fadeInUp 0.6s ease-out 0.3s both; }
+.blogCardDelay4 { animation: fadeInUp 0.6s ease-out 0.4s both; }
+.blogCardDelay5 { animation: fadeInUp 0.6s ease-out 0.5s both; }
+.blogCardDelay6 { animation: fadeInUp 0.6s ease-out 0.6s both; }
+.blogCardDelay7 { animation: fadeInUp 0.6s ease-out 0.7s both; }
+.blogCardDelay8 { animation: fadeInUp 0.6s ease-out 0.8s both; }
+.blogCardDelay9 { animation: fadeInUp 0.6s ease-out 0.9s both; }
 
 /* Pagination Item Styles */
 .paginationItem {

@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { Github, Calendar } from 'lucide-react';
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
@@ -151,13 +152,10 @@ export default async function ProjectsPage() {
                 {allProjects.map((project: ProjectData, index: number) => (
                   <article
                     key={`project-${project?.id || index}`}
-                    className={`project-card pagination-item ${styles.projectCard} ${styles.paginationItem} ${index >= 2 ? styles.hidden : ''}`}
+                    className={`project-card pagination-item ${styles.projectCard} ${styles.paginationItem} ${styles[`projectCardDelay${Math.min(index, 9)}` as keyof typeof styles]} ${index >= 2 ? styles.hidden : ''}`}
                     data-category={project?.category || 'General'}
                     data-featured={project?.featured ? 'true' : 'false'}
                     data-index={index}
-                    style={{
-                      animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
-                    }}
                   >
 
                     <div className={styles.projectCardContent}>
@@ -186,11 +184,6 @@ export default async function ProjectsPage() {
                       {(() => {
                         const firstImage = getFirstImage(project?.id || '', project);
                         
-                        // Debug logging for production troubleshooting
-                        if (process.env.NODE_ENV === 'development') {
-                          console.log(`Project ${project?.id}: firstImage:`, firstImage);
-                        }
-                        
                         if (firstImage) {
                           // With image: stacked layout
                           return (
@@ -205,12 +198,7 @@ export default async function ProjectsPage() {
                                   width={672}
                                   height={400}
                                   sizes="(max-width: 768px) 100vw, 550px"
-                                  style={{
-                                    objectFit: 'cover',
-                                    objectPosition: 'center',
-                                    width: '100%',
-                                    height: 'auto'
-                                  }}
+                                  className={styles.projectCardImageMedia}
                                   quality={85}
                                   loading="lazy"
                                   placeholder={typeof firstImage === 'object' && firstImage.blurDataURL ? "blur" : "empty"}
@@ -220,7 +208,9 @@ export default async function ProjectsPage() {
                               <div className={`project-content-with-image ${styles.projectContentWithImage}`}>
                                 {/* Project Title */}
                                 <h3 className={styles.projectTitle}>
-                                  {project?.title || 'Untitled Project'}
+                                  <Link href={`/projects/${project?.id || 'unknown'}`} className={styles.projectTitleLink}>
+                                    {project?.title || 'Untitled Project'}
+                                  </Link>
                                 </h3>
 
 
@@ -254,7 +244,9 @@ export default async function ProjectsPage() {
                             <>
                               {/* Project Title */}
                               <h3 className={styles.projectTitle}>
-                                {project?.title || 'Untitled Project'}
+                                <Link href={`/projects/${project?.id || 'unknown'}`} className={styles.projectTitleLink}>
+                                  {project?.title || 'Untitled Project'}
+                                </Link>
                               </h3>
 
                               {/* Project Description */}
@@ -323,18 +315,15 @@ export default async function ProjectsPage() {
                           )}
                         </div>
 
-                        <a
+                        <Button
+                          variant="secondary"
+                          size="medium"
+                          icon="arrow-right"
                           href={`/projects/${project?.id || 'unknown'}`}
                           className={`view-details-btn ${styles.viewDetailsBtn}`}
                         >
-                          <Button
-                            variant="secondary"
-                            size="medium"
-                            icon="arrow-right"
-                          >
-                            View Details
-                          </Button>
-                        </a>
+                          View Details
+                        </Button>
                       </div>
                     </div>
                   </article>
@@ -366,18 +355,15 @@ export default async function ProjectsPage() {
                   {/* Two Button CTA matching homepage */}
                   <div className={styles.contactCtaActions}>
                     {/* Primary Button */}
-                    <a 
+                    <Button
+                      variant="primary"
+                      size="medium"
+                      icon="user"
                       href={emailLinks.project()}
                       className={styles.contactCtaLink}
                     >
-                      <Button
-                        variant="primary"
-                        size="medium"
-                        icon="user"
-                      >
-                        Say Hello
-                      </Button>
-                    </a>
+                      Say Hello
+                    </Button>
                   </div>
                 </div>
               </div>

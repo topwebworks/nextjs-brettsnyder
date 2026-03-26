@@ -252,7 +252,7 @@
   transform: translateY(-6px) scale(1.02);
 }
 
-.portraitWrapper:hover .portraitHoverOverlay {
+.portraitImageWrapper:hover .portraitHoverOverlay {
   opacity: 1;
 }
 
@@ -354,6 +354,14 @@
   right: 0;
   bottom: 0;
   z-index: 20;
+}
+
+.achievementCard:hover {
+  transform: translateY(-6px);
+}
+
+.achievementCard:hover .achievementCardHover {
+  opacity: 1;
 }
 
 .achievementCardIcon {
@@ -606,6 +614,19 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+.skillLevel65 { width: 65%; }
+.skillLevel75 { width: 75%; }
+.skillLevel85 { width: 85%; }
+.skillLevel90 { width: 90%; }
+.skillLevel95 { width: 95%; }
+
+.skillDelay0 { transition-delay: 0s; }
+.skillDelay1 { transition-delay: 0.2s; }
+.skillDelay2 { transition-delay: 0.4s; }
+.skillDelay3 { transition-delay: 0.6s; }
+.skillDelay4 { transition-delay: 0.8s; }
+.skillDelay5 { transition-delay: 1s; }
+
 .skillProgressFill {
   position: absolute;
   top: 0;
@@ -754,6 +775,11 @@
   object-position: center;
 }
 
+.valueImageAsset {
+  object-fit: cover;
+  object-position: center;
+}
+
 .valueImageGradient {
   position: absolute;
   inset: 0;
@@ -829,6 +855,15 @@
 .valueContentPanel:hover .valueContentHoverOverlay {
   opacity: 1;
   transform: translateY(0);
+}
+
+.valueContentInteractiveLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
 }
 
 .valueHeader {

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Mail, FileText } from 'lucide-react';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import ResumeButton from '@/components/ui/ResumeButton';
@@ -15,6 +16,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll detection for sticky header styling
   useEffect(() => {
@@ -39,13 +41,17 @@ const Header: React.FC<HeaderProps> = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const desktopNavigation = [
+    { href: '/about', label: 'About', icon: null, external: false },
+    { href: '/projects', label: 'Projects', icon: null, external: false },
+    { href: '/tools', label: 'Tools', icon: null, external: false },
+    { href: '/blog', label: 'Blog', icon: null, external: false },
+  ];
+
   // Full drawer menu items (many items for drawer)  
   const drawerNavigation = [
-    { href: '/', label: 'Home', icon: null },
-    { href: '/about', label: 'About', icon: null },
-    { href: '/projects', label: 'Projects', icon: null },
-    { href: '/tools', label: 'Tools', icon: null },
-    { href: '/blog', label: 'Blog', icon: null },
+    { href: '/', label: 'Home', icon: null, external: false },
+    ...desktopNavigation,
     { href: emailLinks.portfolio(), label: 'Email Me', icon: Mail, external: true },
   ];
 
@@ -64,8 +70,22 @@ const Header: React.FC<HeaderProps> = () => {
             >
               Brett Snyder
             </Link>
+            <nav className={styles.mainNav} aria-label="Primary">
+              {desktopNavigation.map((item) => {
+                const isActive = pathname === item.href;
 
-
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
           </div>
 
           {/* Right Side: Theme Toggle + Mobile Menu */}
@@ -78,6 +98,8 @@ const Header: React.FC<HeaderProps> = () => {
               className={styles.mobileMenuButton}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-drawer-menu"
             >
               {isMobileMenuOpen ? (
                 <X size={20} />
@@ -90,7 +112,10 @@ const Header: React.FC<HeaderProps> = () => {
       </header>
 
       {/* Mobile Drawer Menu */}
-      <div className={`${styles.mobileDrawer} ${isMobileMenuOpen ? styles.mobileDrawerOpen : styles.mobileDrawerClosed}`}>
+      <div
+        id="mobile-drawer-menu"
+        className={`${styles.mobileDrawer} ${isMobileMenuOpen ? styles.mobileDrawerOpen : styles.mobileDrawerClosed}`}
+      >
         {/* Drawer Header */}
         <div className={styles.drawerHeader}>
           <h2 className={styles.drawerTitle}>
@@ -109,30 +134,41 @@ const Header: React.FC<HeaderProps> = () => {
         {/* Drawer Navigation */}
         <nav className={styles.drawerNav}>
           {drawerNavigation.map((link, index) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target={link.external ? '_blank' : undefined}
-              rel={link.external ? 'noopener noreferrer' : undefined}
-              download={link.label === 'Resume' ? 'resume-brett-snyder.pdf' : undefined}
-              className={`${styles.drawerNavLink} ${isMobileMenuOpen ? styles.drawerLinkAnimated : styles.drawerLinkHidden} ${styles[`animateDelay${Math.min(index, 6)}` as keyof typeof styles]}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.icon && <link.icon size={18} strokeWidth={1.5} />}
-              {link.label}
-            </a>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.drawerNavLink} ${isMobileMenuOpen ? styles.drawerLinkAnimated : styles.drawerLinkHidden} ${styles[`animateDelay${Math.min(index, 6)}` as keyof typeof styles]}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.icon && <link.icon size={18} strokeWidth={1.5} />}
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${styles.drawerNavLink} ${isMobileMenuOpen ? styles.drawerLinkAnimated : styles.drawerLinkHidden} ${styles[`animateDelay${Math.min(index, 6)}` as keyof typeof styles]}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.icon && <link.icon size={18} strokeWidth={1.5} />}
+                {link.label}
+              </Link>
+            )
           ))}
           
           {/* Resume Link with Modal */}
           {siteConfig.showResume && (
-            <ResumeButton>
-              <a
+            <ResumeButton aria-label="Open resume">
+              <span
                 className={`${styles.drawerNavLink} ${isMobileMenuOpen ? styles.drawerLinkAnimated : styles.drawerLinkHidden} ${styles[`animateDelay${drawerNavigation.length}` as keyof typeof styles]}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <FileText size={18} strokeWidth={1.5} />
                 Resume
-              </a>
+              </span>
             </ResumeButton>
           )}
         </nav>

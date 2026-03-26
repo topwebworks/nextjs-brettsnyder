@@ -149,26 +149,7 @@ export default function AboutPage() {
 
                     <div className={styles.portraitWrapper}>
                       {/* Interactive Layer */}
-                      <div
-                        className={styles.portraitInteractiveLayer}
-                        onMouseEnter={(e) => {
-                          const overlay = e.currentTarget.parentElement?.parentElement?.querySelector('.portrait-hover-overlay') as HTMLElement;
-                          const container = e.currentTarget.parentElement?.parentElement as HTMLElement;
-                          if (overlay && container) {
-                            overlay.style.opacity = '1';
-                            container.style.transform = 'translateY(-6px) scale(1.02)';
-                            container.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                          }
-                        }}
-                        onMouseLeave={(e) => {
-                          const overlay = e.currentTarget.parentElement?.parentElement?.querySelector('.portrait-hover-overlay') as HTMLElement;
-                          const container = e.currentTarget.parentElement?.parentElement as HTMLElement;
-                          if (overlay && container) {
-                            overlay.style.opacity = '0';
-                            container.style.transform = 'translateY(0) scale(1)';
-                          }
-                        }}
-                      />
+                      <div className={styles.portraitInteractiveLayer} />
                     {/* Loading placeholder */}
                     {!portraitLoaded && (
                       <div className={styles.portraitLoadingPlaceholder}>
@@ -204,26 +185,7 @@ export default function AboutPage() {
                         <div className={`${styles.achievementCardHover} stats-hover-overlay`} />
 
                         {/* Interactive Layer */}
-                        <div
-                          className={styles.achievementInteractiveLayer}
-                          onMouseEnter={(e) => {
-                            const overlay = e.currentTarget.parentElement?.querySelector('.stats-hover-overlay') as HTMLElement;
-                            const container = e.currentTarget.parentElement as HTMLElement;
-                            if (overlay && container) {
-                              overlay.style.opacity = '1';
-                              container.style.transform = 'translateY(-6px)';
-                              container.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                            }
-                          }}
-                          onMouseLeave={(e) => {
-                            const overlay = e.currentTarget.parentElement?.querySelector('.stats-hover-overlay') as HTMLElement;
-                            const container = e.currentTarget.parentElement as HTMLElement;
-                            if (overlay && container) {
-                              overlay.style.opacity = '0';
-                              container.style.transform = 'translateY(0)';
-                            }
-                          }}
-                        />
+                        <div className={styles.achievementInteractiveLayer} />
 
                         <achievement.icon 
                           size={22} 
@@ -286,18 +248,15 @@ export default function AboutPage() {
                       </ResumeButton>
                     )}
 
-                    <a 
+                    <Button
+                      variant="secondary"
+                      size="medium"
+                      icon="mail"
                       href={emailLinks.connect()}
                       className={styles.actionButtonLink}
                     >
-                      <Button
-                        variant="secondary"
-                        size="medium"
-                        icon="mail"
-                      >
-                        Say Hello
-                      </Button>
-                    </a>
+                      Say Hello
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -322,27 +281,7 @@ export default function AboutPage() {
                     <div className={`${styles.skillHoverOverlay} skill-hover-overlay`} />
 
                     {/* Interactive Layer */}
-                    <div
-                      className={styles.skillInteractiveLayer}
-                      onMouseEnter={(e) => {
-                        const overlay = e.currentTarget.parentElement?.querySelector('.skill-hover-overlay') as HTMLElement;
-                        const container = e.currentTarget.parentElement as HTMLElement;
-                        if (overlay && container) {
-                          overlay.style.opacity = '1';
-                          // Only transform, no scaling to avoid border conflicts
-                          container.style.transform = 'translateY(-6px)';
-                          container.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        const overlay = e.currentTarget.parentElement?.querySelector('.skill-hover-overlay') as HTMLElement;
-                        const container = e.currentTarget.parentElement as HTMLElement;
-                        if (overlay && container) {
-                          overlay.style.opacity = '0';
-                          container.style.transform = 'translateY(0)';
-                        }
-                      }}
-                    />
+                    <div className={styles.skillInteractiveLayer} />
                     
                     <div className={styles.skillCardHeader}>
                       <skill.icon 
@@ -362,11 +301,7 @@ export default function AboutPage() {
                     {/* Enhanced Skill Progress Bar with Better Visibility */}
                     <div className={styles.skillProgressBarContainer}>
                       <div 
-                        className={`${styles.skillProgressBar} ${skillsVisible ? styles.skillProgressBarVisible : ''}`}
-                        style={{
-                          width: skillsVisible ? `${skill.level}%` : '0%',
-                          transitionDelay: `${index * 0.2}s`,
-                        }}
+                        className={`${styles.skillProgressBar} ${styles[`skillLevel${skill.level}` as keyof typeof styles]} ${styles[`skillDelay${index}` as keyof typeof styles]} ${skillsVisible ? styles.skillProgressBarVisible : ''}`}
                       />
                     </div>
 
@@ -413,13 +348,9 @@ export default function AboutPage() {
                           alt={value.imageAlt}
                           fill
                           sizes="(max-width: 768px) 95vw, (max-width: 1024px) 400px, 450px"
-                          className="photo-contemporary"
+                          className={`${styles.valueImageAsset} photo-contemporary`}
                           loading="lazy"
                           placeholder="blur"
-                          style={{
-                            objectFit: 'cover',
-                            objectPosition: 'center'
-                          }}
                         />
                         
                         {/* Subtle Gradient Overlay */}
@@ -444,30 +375,7 @@ export default function AboutPage() {
                         />
                         
                         {/* Interactive Layer for Hover Detection */}
-                        <div
-                          style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            zIndex: 10
-                          }}
-                          onMouseEnter={(e) => {
-                            const overlay = e.currentTarget.parentElement?.querySelector('.hover-overlay') as HTMLElement;
-                            if (overlay) {
-                              overlay.style.opacity = '1';
-                              overlay.style.transform = 'translateY(0)';
-                            }
-                          }}
-                          onMouseLeave={(e) => {
-                            const overlay = e.currentTarget.parentElement?.querySelector('.hover-overlay') as HTMLElement;
-                            if (overlay) {
-                              overlay.style.opacity = '0';
-                              overlay.style.transform = 'translateY(2px)';
-                            }
-                          }}
-                        />
+                        <div className={styles.valueContentInteractiveLayer} />
                         
                         {/* Header with Enhanced Icon */}
                         <div 

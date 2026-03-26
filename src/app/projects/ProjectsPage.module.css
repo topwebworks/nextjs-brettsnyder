@@ -231,6 +231,13 @@
   margin-bottom: 1.5rem;
 }
 
+.projectCardImageMedia {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: auto;
+}
+
 .projectContentWithImage {
   width: 100%;
 }
@@ -250,6 +257,15 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
+}
+
+.projectTitleLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.projectTitleLink:hover {
+  color: var(--text-accent);
 }
 
 .projectDescriptionNoImage {
@@ -329,6 +345,7 @@
 
 .viewDetailsBtn {
   text-decoration: none;
+  display: inline-flex;
 }
 
 /* Show More Button */
@@ -376,6 +393,7 @@
 
 .contactCtaLink {
   text-decoration: none;
+  display: inline-flex;
 }
 
 /* Animation Classes */
@@ -389,6 +407,17 @@
     transform: translateY(0);
   }
 }
+
+.projectCardDelay0 { animation: fadeInUp 0.6s ease-out 0s both; }
+.projectCardDelay1 { animation: fadeInUp 0.6s ease-out 0.1s both; }
+.projectCardDelay2 { animation: fadeInUp 0.6s ease-out 0.2s both; }
+.projectCardDelay3 { animation: fadeInUp 0.6s ease-out 0.3s both; }
+.projectCardDelay4 { animation: fadeInUp 0.6s ease-out 0.4s both; }
+.projectCardDelay5 { animation: fadeInUp 0.6s ease-out 0.5s both; }
+.projectCardDelay6 { animation: fadeInUp 0.6s ease-out 0.6s both; }
+.projectCardDelay7 { animation: fadeInUp 0.6s ease-out 0.7s both; }
+.projectCardDelay8 { animation: fadeInUp 0.6s ease-out 0.8s both; }
+.projectCardDelay9 { animation: fadeInUp 0.6s ease-out 0.9s both; }
 
 /* Pagination Item Styles */
 .paginationItem {

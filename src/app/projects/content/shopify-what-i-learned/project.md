@@ -34,8 +34,6 @@ media:
 
 ---
 
-##
-
 Our previous custom CMS, built on .NET, served us well for many years with its bespoke features and adaptive responsive capabilities. However, the aging system's limitations became increasingly apparent as time passed, holding us back from scaling and modernizing effectively. It was clear we needed to explore new&nbsp;options.
 
 During my due diligence, I identified BigCommerce and Shopify Pro as the leading contenders. While my suggestion to explore BigCommerce was bypassed in favor of other headless solutions, the decision ultimately landed on Shopify. I was surprised by this choice, given my preparation for a more developer-centric platform like Next.js. However, Shopify proved to be a robust solution for our&nbsp;needs.

@@ -228,15 +228,14 @@ export default function NotFound() {
 
               {/* Action Buttons */}
               <div className="not-found-actions">
-                <Link href="/">
-                  <Button 
-                    variant="primary" 
-                    icon={Home}
-                    aria-label="Go to homepage"
-                  >
-                    Go Home
-                  </Button>
-                </Link>
+                <Button 
+                  variant="primary" 
+                  icon={Home}
+                  aria-label="Go to homepage"
+                  href="/"
+                >
+                  Go Home
+                </Button>
                 <Button
                   variant="secondary"
                   icon={ArrowLeft}

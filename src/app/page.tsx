@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight, Mail, Github, Linkedin, Calendar, MapPin, BookOpen } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -147,17 +148,12 @@ export default function Homepage() {
           className={styles.heroSection}
           onMouseEnter={() => setIsPortraitHovered(true)}
           onMouseLeave={() => setIsPortraitHovered(false)}
+          onFocusCapture={() => setIsPortraitHovered(true)}
+          onBlurCapture={() => setIsPortraitHovered(false)}
         >
           {/* Portrait Background */}
           <div 
-            className={styles.heroPortrait}
-            style={{
-              opacity: isPortraitHovered ? 0.65 : 0,
-              transform: isPortraitHovered ? 'scale(1)' : 'scale(1.05)',
-              filter: isPortraitHovered 
-                ? 'blur(0px) brightness(0.6) contrast(1.0) saturate(1.6) hue-rotate(15deg)'
-                : 'blur(0px) brightness(0.5) contrast(0.8) saturate(1.1)'
-            }}
+            className={`${styles.heroPortrait} ${isPortraitHovered ? styles.heroPortraitVisible : styles.heroPortraitHidden}`}
           >
             {/* Loading placeholder */}
             {!portraitLoaded && (
@@ -191,17 +187,19 @@ export default function Homepage() {
           {/* Refined Social Icons - Minimal & Elegant */}
           <div className={styles.heroSocialIcons}>
             {[
-              { icon: Github, href: siteConfig.github, label: 'GitHub' },
-              { icon: Linkedin, href: siteConfig.linkedin, label: 'LinkedIn' },
-              { icon: Mail, href: emailLinks.portfolio(), label: 'Email' }
-            ].map(({ icon: Icon, href, label }) => (
+              { icon: Github, href: siteConfig.github, label: 'GitHub', external: true },
+              { icon: Linkedin, href: siteConfig.linkedin, label: 'LinkedIn', external: true },
+              { icon: Mail, href: emailLinks.portfolio(), label: 'Email', external: false }
+            ].map(({ icon: Icon, href, label, external }) => (
               <Button
                 key={label}
                 variant="secondary"
                 size="medium"
                 icon={Icon}
+                href={href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
                 aria-label={label}
-                onClick={() => window.open(href, '_blank')}
                 className={styles.heroSocialIcon}
               />
             ))}
@@ -260,7 +258,7 @@ export default function Homepage() {
                 variant="primary"
                 size="large"
                 icon={ArrowRight}
-                onClick={() => window.location.href = 'projects'}
+                href="/projects"
               >
                 View Projects
               </Button>
@@ -269,22 +267,12 @@ export default function Homepage() {
                 variant="secondary"
                 size="large"
                 icon={Mail}
-                onClick={() => window.location.href = emailLinks.workTogether()}
+                href={emailLinks.workTogether()}
               >
                 Say Hello
               </Button>
             </div>
           </div>
-
-          {/* Legacy support for mobile portrait visibility */}
-          <style jsx global>{`
-            @media (max-width: 768px) {
-              /* Hide background portrait on mobile */
-              .${styles.heroSection}:hover .${styles.heroPortrait} {
-                opacity: 0 !important;
-              }
-            }
-          `}</style>
           
         </section>
 
@@ -309,8 +297,8 @@ export default function Homepage() {
                       variant="ghost"
                       size="small"
                       icon={BookOpen}
+                      href="/blog"
                       aria-label="View all blog posts"
-                      onClick={() => window.location.href = '/blog'}
                     />
                   </div>
                 </div>
@@ -334,13 +322,13 @@ export default function Homepage() {
                       </div>
                       
                       <h3 className={styles.blogTitle}>
-                        <a 
+                        <Link 
                           href={`/blog/${post.id}`}
                           className={styles.blogTitleLink}
                         >
                           {post.title}
                           {/* <ArrowRight size={18} className={styles.blogArrowIcon} /> */}
-                        </a>
+                        </Link>
                       </h3>
                       
                       <p className={styles.blogExcerpt}>
@@ -358,18 +346,15 @@ export default function Homepage() {
                         </time>
 
                         {/* Button - Bottom Right */}
-                        <a
+                        <Button
+                          variant="secondary"
+                          size="medium"
+                          icon="arrow-right"
                           href={`/blog/${post.id}`}
                           className={`${styles.blogReadMoreLink} view-details-btn blog-read-more-btn`}
                         >
-                          <Button
-                            variant="secondary"
-                            size="medium"
-                            icon="arrow-right"
-                          >
-                            Read
-                          </Button>
-                        </a>
+                          Read
+                        </Button>
                       </div>
                     </article>
                   ))}
@@ -389,8 +374,10 @@ export default function Homepage() {
                       variant="ghost"
                       size="small"
                       icon={Linkedin}
+                      href={siteConfig.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="LinkedIn Profile"
-                      onClick={() => window.open('https://linkedin.com/in/yourprofile', '_blank')}
                     />
                     
                     {siteConfig.showResume && (

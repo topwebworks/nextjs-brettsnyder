@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, Clock, Tag } from 'lucide-react';
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
@@ -131,13 +132,10 @@ export default async function BlogPage() {
                 {allBlogs.map((blog: BlogData, index: number) => (
                   <article
                     key={`blog-${blog?.id || index}`}
-                    className={`blog-card pagination-item ${styles.blogCard} ${styles.paginationItem} ${index >= 1 ? styles.hidden : ''}`}
+                    className={`blog-card pagination-item ${styles.blogCard} ${styles.paginationItem} ${styles[`blogCardDelay${Math.min(index, 9)}` as keyof typeof styles]} ${index >= 1 ? styles.hidden : ''}`}
                     data-category={blog?.category || 'General'}
                     data-featured={blog?.featured ? 'true' : 'false'}
                     data-index={index}
-                    style={{
-                      animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
-                    }}
                   >
 
                     <div className={styles.blogCardContent}>
@@ -177,10 +175,7 @@ export default async function BlogPage() {
                                     alt={`${blog?.title || 'Blog post'} preview`}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 550px"
-                                    style={{
-                                      objectFit: 'cover',
-                                      objectPosition: 'center'
-                                    }}
+                                    className={styles.projectCardImageMedia}
                                     quality={85}
                                     loading="lazy"
                                     unoptimized={typeof firstImage === 'string' && firstImage.startsWith('http')}
@@ -190,7 +185,9 @@ export default async function BlogPage() {
                                 <div className={`project-content-with-image ${styles.projectContentWithImage}`}>
                                   {/* Blog Title */}
                                   <h3 className={styles.blogTitle}>
-                                    {blog?.title || 'Untitled Post'}
+                                    <Link href={`/blog/${blog?.id || 'unknown'}`} className={styles.blogTitleLink}>
+                                      {blog?.title || 'Untitled Post'}
+                                    </Link>
                                   </h3>
 
                                   {/* Blog Description */}
@@ -231,7 +228,9 @@ export default async function BlogPage() {
                               <>
                                 {/* Blog Title */}
                                 <h3 className={styles.blogTitle}>
-                                  {blog?.title || 'Untitled Post'}
+                                  <Link href={`/blog/${blog?.id || 'unknown'}`} className={styles.blogTitleLink}>
+                                    {blog?.title || 'Untitled Post'}
+                                  </Link>
                                 </h3>
 
                                 {/* Blog Description */}
@@ -274,18 +273,15 @@ export default async function BlogPage() {
                         <div className={styles.blogActionsLeft}>
                         </div>
 
-                        <a
+                        <Button
+                          variant="secondary"
+                          size="medium"
+                          icon="arrow-right"
                           href={`/blog/${blog?.id || 'unknown'}`}
                           className={`view-details-btn ${styles.viewDetailsBtn}`}
                         >
-                          <Button
-                            variant="secondary"
-                            size="medium"
-                            icon="arrow-right"
-                          >
-                            Read More
-                          </Button>
-                        </a>
+                          Read More
+                        </Button>
                       </div>
                     </div>
                   </article>
@@ -317,18 +313,15 @@ export default async function BlogPage() {
                   {/* Contact CTA matching homepage */}
                   <div className={styles.subscribeCtaActions}>
                     {/* Primary Button */}
-                    <a 
+                    <Button
+                      variant="primary"
+                      size="medium"
+                      icon="user"
                       href={emailLinks.blog()}
                       className={styles.subscribeCtaLink}
                     >
-                      <Button
-                        variant="primary"
-                        size="medium"
-                        icon="user"
-                      >
-                        Say Hello
-                      </Button>
-                    </a>
+                      Say Hello
+                    </Button>
                   </div>
                 </div>
               </div>

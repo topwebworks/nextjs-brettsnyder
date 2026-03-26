@@ -107,6 +107,10 @@ export default function Error({ error, reset }: ErrorPageProps) {
           color: var(--text-secondary);
           line-height: var(--leading-relaxed);
         }
+
+        .error-detail-block {
+          margin-top: var(--space-2);
+        }
         
         .error-details pre {
           background: var(--glass-bg-secondary);
@@ -222,11 +226,11 @@ export default function Error({ error, reset }: ErrorPageProps) {
                       <strong>Error:</strong> {error.message}
                     </div>
                     {error.digest && (
-                      <div style={{ marginTop: 'var(--space-2)' }}>
+                      <div className="error-detail-block">
                         <strong>Digest:</strong> {error.digest}
                       </div>
                     )}
-                    <div style={{ marginTop: 'var(--space-2)' }}>
+                    <div className="error-detail-block">
                       <strong>Stack:</strong>
                       <pre>
                         {error.stack}
@@ -249,7 +253,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
                 </Button>
                 <Button
                   variant="secondary"
-                  onClick={() => window.location.href = '/'}
+                  href="/"
                   aria-label="Go to homepage"
                   className="error-action-secondary"
                   icon={Home}

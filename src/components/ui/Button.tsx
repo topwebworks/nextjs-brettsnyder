@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { 
   LucideIcon, 
   Download, 
@@ -49,10 +50,15 @@ export interface ButtonProps {
   size?: ButtonSize;
   icon?: LucideIcon | string; // Accept both icon component and string
   disabled?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   style?: React.CSSProperties;
+  href?: string;
+  target?: React.HTMLAttributeAnchorTarget;
+  rel?: string;
+  download?: string | boolean;
+  prefetch?: boolean;
   'aria-label'?: string;
 }
 
@@ -80,6 +86,11 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   className = '',
   style = {},
+  href,
+  target,
+  rel,
+  download,
+  prefetch,
   'aria-label': ariaLabel,
   ...rest
 }) => {
@@ -101,16 +112,8 @@ export const Button: React.FC<ButtonProps> = ({
     className
   ].filter(Boolean).join(' ');
 
-  return (
-    <button
-      type={type}
-      disabled={disabled}
-      onClick={onClick}
-      aria-label={ariaLabel || (ResolvedIcon && !children ? `${variant} button` : undefined)}
-      className={buttonClasses}
-      style={style}
-      {...rest}
-    >
+  const content = (
+    <>
       {children && (
         <span className={styles.content}>
           {children}
@@ -121,6 +124,66 @@ export const Button: React.FC<ButtonProps> = ({
           <ResolvedIcon strokeWidth={1.8} />
         </span>
       )}
+    </>
+  );
+
+  const label = ariaLabel || (ResolvedIcon && !children ? `${variant} button` : undefined);
+  if (href) {
+    const resolvedHref = href;
+    const isInternalHref =
+      !resolvedHref.startsWith('mailto:') &&
+      !resolvedHref.startsWith('tel:') &&
+      !resolvedHref.startsWith('http://') &&
+      !resolvedHref.startsWith('https://');
+
+    const linkRel = target === '_blank'
+      ? rel ?? 'noopener noreferrer'
+      : rel;
+
+    if (isInternalHref) {
+      return (
+        <Link
+          href={resolvedHref}
+          className={buttonClasses}
+          style={style}
+          aria-label={label}
+          onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
+          prefetch={prefetch}
+          {...rest}
+        >
+          {content}
+        </Link>
+      );
+    }
+
+    return (
+      <a
+        href={resolvedHref}
+        target={target}
+        rel={linkRel}
+        download={download}
+        aria-label={label}
+        className={buttonClasses}
+        style={style}
+        onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
+        {...rest}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      aria-label={label}
+      className={buttonClasses}
+      style={style}
+      {...rest}
+    >
+      {content}
     </button>
   );
 };

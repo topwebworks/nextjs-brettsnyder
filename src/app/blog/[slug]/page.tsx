@@ -27,16 +27,16 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     }
     
     return {
-      title: `${blogData.title} - RockitCode`,
+      title: `${blogData.title} | Brett Snyder Portfolio`,
       description: blogData.description,
       openGraph: {
-        title: blogData.title,
+        title: `${blogData.title} | Brett Snyder Portfolio`,
         description: blogData.description,
         type: 'article',
       },
       twitter: {
         card: 'summary_large_image',
-        title: blogData.title,
+        title: `${blogData.title} | Brett Snyder Portfolio`,
         description: blogData.description,
       },
     };

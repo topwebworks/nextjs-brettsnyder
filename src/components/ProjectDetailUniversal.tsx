@@ -4,7 +4,6 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 import { ProjectData } from '@/lib/types/project';
 import { Tag, Calendar, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import Header from '@/components/layout/Header';
@@ -310,6 +309,11 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
     return getPlaceholderImage('hero');
   };
 
+  const heroImageSrc = (() => {
+    const imageSrc = currentHeroImage || getImageSrc('hero');
+    return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+  })();
+
   // Render media gallery section - extracted for better JSX parsing
   const renderMediaGallery = () => {
     // Only show media gallery if we have actual media items to display in the scrollable thumbnails
@@ -399,7 +403,6 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                     resolvedImageSrc = item.src;
                   } else {
                     // Fallback to placeholder if static import not found
-                    console.warn(`Image ${item.src} not found in static imports for project ${project.id}`);
                     resolvedImageSrc = getPlaceholderImage('screenshot');
                   }
                 }
@@ -409,7 +412,6 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                     className={styles.mediaItem}
                     data-type="image"
                     onClick={() => {
-                      console.log('Image clicked, setting hero to:', resolvedImageSrc);
                       setCurrentHeroImage(resolvedImageSrc);
                       setCurrentHeroVideo(null);
                       // Calculate and set aspect ratio for the clicked image
@@ -476,21 +478,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
       <Header />
 
       {/* Subtle Background Panel */}
-      <div style={{
-        position: 'absolute',
-        top: '10%',
-        left: '5%',
-        right: '5%',
-        bottom: '10%',
-        background: 'var(--glass-gradient-linear)',
-        backdropFilter: 'var(--glass-backdrop-light)',
-        borderRadius: '8px',
-        border: '1px solid var(--glass-border-subtle)',
-        opacity: '0.2',
-        zIndex: 0
-      }} 
-      className='float-panel'
-      />
+      <div className={`${styles.floatPanel} float-panel`} />
 
       <section className={styles.heroSection}>
 
@@ -562,27 +550,12 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                 </div>
               ) : (
                 <div className={styles.heroImageContainer}>
-                  {/* Background div with Next.js image URL */}
-                  <div 
-                    className={styles.heroImageBackground}
-                    data-project-id={project.id}
-                    style={{
-                      backgroundImage: `url(${(() => {
-                        const imageSrc = currentHeroImage || getImageSrc('hero');
-                        return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
-                      })()})`
-                    }}
-                  />
-                  {/* Hidden Next.js Image for optimization and preloading */}
                   <Image
-                    src={(() => {
-                      const imageSrc = currentHeroImage || getImageSrc('hero');
-                      return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
-                    })()}
+                    src={heroImageSrc}
                     alt={`${project.title} hero image`}
                     fill
                     sizes="100vw"
-                    className={styles.heroImage}
+                    className={`${styles.heroImage} ${project.id === 'cywire' ? styles.heroImageCywire : ''}`}
                     quality={90}
                     priority
                   />
@@ -667,43 +640,40 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                     {/* Buttons Row - Stack on mobile (480px and below) */}
                     <div className={styles.projectButtonsContainer}>
                       {project.links.demo && (
-                        <Link href={project.links.demo} target="_blank" 
-                          style={{ textDecoration: 'none' }}
+                        <Button
+                          variant="primary"
+                          size="small"
+                          href={project.links.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <Button
-                            variant="primary"
-                            size="small"
-                          >
-                            Demo
-                          </Button>
-                        </Link>
+                          Demo
+                        </Button>
                       )}
                       
                       {project.links.live && (
-                        <Link href={project.links.live} target="_blank" 
-                          style={{ textDecoration: 'none' }}
+                        <Button
+                          variant="primary"
+                          size="small"
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <Button
-                            variant="primary"
-                            size="small"
-                          >
-                            Live
-                          </Button>
-                        </Link>
+                          Live
+                        </Button>
                       )}
                       
                       {project.links.github && (
-                        <Link href={project.links.github} target="_blank" 
-                          style={{ textDecoration: 'none' }}
+                        <Button
+                          variant="secondary"
+                          size="small"
+                          icon="github"
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <Button
-                            variant="secondary"
-                            size="small"
-                            icon="github"
-                          >
-                            Code
-                          </Button>
-                        </Link>
+                          Code
+                        </Button>
                       )}
                     </div>
                   </div>
@@ -807,18 +777,15 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
       {/* Back to Projects/Blog - Bottom Navigation */}
       <section className={styles.backToProjectsSection}>
         <div className={styles.backToProjectsContainer}>
-          <Link href={contentType === 'blog' ? '/blog' : '/projects'} style={{ textDecoration: 'none' }}>
-            <Button
-              variant="secondary"
-              size="medium"
-              icon="arrow-left"
-              style={{
-                margin: '0 auto',
-              }}
-            >
-              {contentType === 'blog' ? 'Back to Blog' : 'Back to Projects'}
-            </Button>
-          </Link>
+          <Button
+            variant="secondary"
+            size="medium"
+            icon="arrow-left"
+            href={contentType === 'blog' ? '/blog' : '/projects'}
+            className={styles.backButton}
+          >
+            {contentType === 'blog' ? 'Back to Blog' : 'Back to Projects'}
+          </Button>
         </div>
       </section>
       
