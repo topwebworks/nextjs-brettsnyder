@@ -10,11 +10,12 @@ export const PROJECT_IDS: readonly string[] = [
   'monarch-catalog',
   'personal-portfolio',
   'print',
-  'shopify-what-i-learned'
+  'shopify-what-i-learned',
+  'topwebworks'
 ] as const;
 
 // Project count for quick reference
-export const PROJECT_COUNT = 7;
+export const PROJECT_COUNT = 8;
 
 // Type for project ID validation
 export type ProjectId = typeof PROJECT_IDS[number];

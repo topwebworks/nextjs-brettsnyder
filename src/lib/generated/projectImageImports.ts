@@ -18,6 +18,7 @@ import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
 import printScreenshot3 from '@/app/projects/content/print/magazine-ad.jpg';
 import printScreenshot4 from '@/app/projects/content/print/reebok-brochure.jpg';
 import shopifywhatilearnedHero from '@/app/projects/content/shopify-what-i-learned/shopify-hero.jpg';
+import topwebworksHero from '@/app/projects/content/topwebworks/topwebworks-hero.png';
 
 // Type definition for project image imports
 export interface ProjectImageImports {
@@ -62,6 +63,11 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
     hero: shopifywhatilearnedHero,
     demo: null,
     screenshots: []
+  },
+  'topwebworks': {
+    hero: topwebworksHero,
+    demo: null,
+    screenshots: []
   }
 };
 
@@ -93,6 +99,9 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
   },
   'shopify-what-i-learned': {
     'shopify-hero.jpg': shopifywhatilearnedHero
+  },
+  'topwebworks': {
+    'topwebworks-hero.png': topwebworksHero
   }
 };
 
@@ -112,7 +121,7 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'shopify-what-i-learned'];
+export const availableProjects = ['cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'shopify-what-i-learned', 'topwebworks'];
 
 // Note: Console logging removed to reduce build noise
 
@@ -130,3 +139,4 @@ export { printScreenshot2 };
 export { printScreenshot3 };
 export { printScreenshot4 };
 export { shopifywhatilearnedHero };
+export { topwebworksHero };
