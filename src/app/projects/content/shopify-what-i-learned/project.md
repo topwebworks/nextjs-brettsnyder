@@ -8,7 +8,7 @@ tags:
   - "Shopify" 
 category: "Technology"
 status: ""
-featured: true
+featured: false
 readTime: "8 min read"
 publishDate: "2025-03-31"
 links:
