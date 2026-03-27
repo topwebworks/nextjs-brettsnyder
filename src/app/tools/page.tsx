@@ -68,8 +68,11 @@ const getCategoryIcon = (category: string) => {
 const developmentTools = [
   { name: 'VS Code', description: 'Primary code editor with extensive customization', category: 'Editor', rating: 10 },
   { name: 'Shopify', description: 'E-commerce platform for online stores', category: 'Framework', rating: 9 },
-  { name: 'Copilot', description: 'AI-assited code suggestions', category: 'Editor', rating: 9 },
+  { name: 'Claude Code', description: 'Agentic AI coding assistant in the terminal', category: 'Editor', rating: 10 },
+  { name: 'Codex', description: 'OpenAI cloud coding agent for automated tasks', category: 'Editor', rating: 9 },
+  { name: 'OpenRouter', description: 'Unified API gateway for multiple AI models', category: 'Editor', rating: 9 },
   { name: 'Next.js', description: 'Full-stack React framework with excellent DX', category: 'Framework', rating: 9 },
+  { name: 'CyWire', description: 'Wire AI for reliable data.', category: 'Tools', rating: 10 },
   { name: 'Git & GitHub', description: 'Version control and collaboration platform', category: 'Version', rating: 10 },
   { name: 'Photoshop', description: 'Because every pixel matters', category: 'Design', rating: 9 },
   { name: 'Figma', description: 'Design collaboration and prototyping tool', category: 'Design', rating: 9 },
@@ -88,6 +91,7 @@ const hardwareSetup = [
 
 // Productivity tools data
 const productivityTools = [
+  { name: 'ChatGPT', description: 'AI content creation and copywriting assistant', category: 'Creative', rating: 9 },
   { name: 'OneNote', description: 'Multi-device all-in-one note-taking and organization tool', category: 'Organization', rating: 8 },
   { name: 'Spotify', description: 'Music streaming for focused coding sessions', category: 'Entertainment', rating: 9 },
   { name: 'Mophie/Anker Magsafe Packs', description: 'Portable charging solutions for devices', category: 'Utility', rating: 9 },
