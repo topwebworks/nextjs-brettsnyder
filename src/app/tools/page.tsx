@@ -76,7 +76,8 @@ const developmentTools = [
   { name: 'Git & GitHub', description: 'Version control and collaboration platform', category: 'Version', rating: 10 },
   { name: 'Photoshop', description: 'Because every pixel matters', category: 'Design', rating: 9 },
   { name: 'Figma', description: 'Design collaboration and prototyping tool', category: 'Design', rating: 9 },
-  { name: 'Vercel', description: 'Seamless deployment platform for modern web projects', category: 'Deployment', rating: 9 }
+  { name: 'Vercel', description: 'Seamless deployment platform for modern web projects', category: 'Deployment', rating: 9 },
+  { name: 'Supabase', description: 'PostgreSQL backend with real-time APIs, auth, and row-level security', category: 'Database', rating: 9 }
 ];
 
 // Hardware setup data
