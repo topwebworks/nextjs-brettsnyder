@@ -1,13 +1,13 @@
 ---
 title: "CyWire Master Prompts"
-description: "A Project I did to create foundational data structure for AI features. I see using these in every website I build in the future. It will work for anywhere that uses JSON and AI."
+description: "A B2B SaaS platform built to create foundational data structure for AI features. Structured AI prompts with validated JSON outputs that work for any platform using JSON and AI."
 contentTitle: "Why AI Needs Structure"
 achievementTitle: ""
 technologies: 
   - "AI Master Prompt"
   - "Web Development"
   - "Web Design"
-category: "Website"
+category: "SaaS"
 status: 
 featured: True
 publishDate: "2026-01-02"
