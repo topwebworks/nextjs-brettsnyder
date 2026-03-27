@@ -8,7 +8,7 @@ technologies:
   - "Nextjs"
   - "Typescript" 
   - "Web Design"
-category: "Template"
+category: "Website"
 status: "Prod"
 featured: false
 publishDate: "2025-09-08"
