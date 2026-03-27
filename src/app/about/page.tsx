@@ -49,8 +49,8 @@ const personalValues = [
   {
     title: "How Do I Use AI?",
     // subtitle: "AI isn't going anywhere",
-    description: "AI is quickly becoming a key tool in almost every part of life. I see it as a growing, time-saving library of knowledge that's still young and needs thoughtful direction. As a frontend developer, once I learned to consistently build clean, user-friendly designs—and use AI to assist me—barriers disappeared. My background in graphic and responsive web design gives me a strong foundation, and knowing some Python and JavaScript helps me understand and debug AI's output. Sometimes AI gets lost in the details, so I step in, test things manually, and guide it back on track.",
-    details: "With person-led AI assistance, my projects evolve to be way better than first envisioned. It's not a hands-off process; it's like guiding a smart but curious toddler—correcting missteps while moving forward.",
+    description: "My AI stack is centered on VS Code with Claude Code as my primary tool, Codex as a strong second, and OpenRouter for added model flexibility when needed. I use AI to speed up planning, coding, debugging, and iteration while staying grounded in the actual codebase and solid frontend fundamentals.",
+    details: "AI as a tool gives me speed, keeps me hands-on, and helps me maintain ownership and authorship of the work.",
     icon: Code,
     metrics: "Endless Possibilities",
     image: techExcellenceImage,
