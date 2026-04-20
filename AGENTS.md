@@ -1,48 +1,33 @@
-# Brett Snyder Portfolio — Codex Instructions
+# Brett Snyder Portfolio - Codex Instructions
 
-## Reference Documents
-Read before every build task — live source of truth:
-- `docs/northstar.md` — mission, audience, non-negotiables
-- `docs/build-plan.md` — stack, features, content workflow
+## Read Order
+1. `docs/handoff.md` if it exists
+2. `docs/build-plan.md`
+3. `docs/northstar.md`
+4. `c:\Users\topwe\OneDrive\Apps\remotely-save\My KB\docs\agent-operating-system.md`
+5. `c:\Users\topwe\OneDrive\Apps\remotely-save\My KB\projects\brettsnyder\Current state.md`
+6. `c:\Users\topwe\OneDrive\Apps\remotely-save\My KB\projects\brettsnyder\Decision log.md`
 
----
+## Cross-Agent Rules
+- Codex and Claude Code alternate on this repo.
+- Keep `AGENTS.md` and `CLAUDE.md` identical except for skill syntax.
+- Before stopping, update `docs/build-plan.md` if phase, next tasks, or direction changed.
+- Run `$handoff` when switching agents or ending meaningful work.
+- Distill durable project-level insight into KB project notes first. Use `memory.md` only when the insight matters across the whole vault.
 
-## Skills — When to Use Them
+## Local Skill
+- `$handoff` is the only required repo-local skill.
+- The rest of the operating flow now lives in `c:\Users\topwe\OneDrive\Apps\remotely-save\My KB\docs\agent-operating-system.md`.
 
-Global skills are available in every session. Suggest the right one proactively — do not wait to be asked.
-
-| Skill | Use when |
-|-------|----------|
-| `$start [task]` | Before writing any code for a new task, page, or feature |
-| `$checkpoint` | Mid-task when something feels off or scope has grown |
-| `$review-page [feature]` | Before marking any page or feature complete |
-| `$debug [problem]` | Something is broken and the cause is not obvious |
-| `$update-docs [what changed]` | Direction, scope, or approach has changed |
-| `$health` | After a batch of features, or when starting a new phase |
-
-**Proactive prompts — use without being asked:**
-- User describes a new task → suggest `$start` before proceeding
-- Scope has expanded or work has gone long → suggest `$checkpoint`
-- Feature declared done → suggest `$review-page` before moving on
-- Error appears → suggest `$debug` for systematic diagnosis
-- Direction change mentioned → suggest `$update-docs` before continuing
-- Batch of features done or phase boundary reached → suggest `$health`
-
----
-
-## Design Rules
-- CSS Modules + custom CSS only — no Tailwind, no new CSS frameworks
-- No inline styles
-- Follow existing component patterns — check `src/components/` before creating anything new
-- Performance first — optimise images, no unnecessary dependencies
-
-## Content Rules
-- All blog and project content lives in Markdown files
-- After adding or modifying content files, run `npm run generate-project-data` to rebuild manifests
-- Resume changes: edit `public/resume-brett-snyder.html` then run `npm run generate-resume` — never edit the PDF directly
-- Media in project descriptions uses shortcode syntax — see `docs/MEDIA-SHORTCODE-REFERENCE.md`
+## Project-Specific Rules
+- CSS Modules and existing custom CSS only - no Tailwind or new CSS frameworks.
+- No inline styles.
+- Follow existing component patterns before creating new ones.
+- Content stays in Markdown files.
+- After content file changes, run `npm run generate-project-data`.
+- Resume changes: edit `public/resume-brett-snyder.html`, then run `npm run generate-resume` - never edit the PDF directly.
 
 ## Hard Boundaries
-- No backend, no auth, no database — this is a static content site
-- No CMS integration
-- No new icon libraries — Lucide React is already installed
+- No backend, auth, or database features.
+- No CMS integration unless explicitly requested.
+- No new icon libraries - use existing Lucide React.

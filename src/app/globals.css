@@ -490,10 +490,7 @@ html {
   
   .view-details-btn {
     width: 100% !important;
-  }
-  
-  .view-details-btn > * {
-    width: 100% !important;
+    justify-content: center !important;
   }
 }
 
