@@ -546,7 +546,8 @@
   /* Blog read more button full width on small mobile */
   .blogReadMoreLink {
     width: 100% !important;
-    display: block !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 }
 
@@ -769,7 +770,6 @@ margin-bottom: 0;
 
 .blogReadMoreLink {
   text-decoration: none;
-  display: inline-flex;
 }
 
 /* Work Timeline */
