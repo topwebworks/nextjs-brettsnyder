@@ -1,5 +1,7 @@
 # Brett Snyder Portfolio — Build Plan
 
+> **Token discipline:** When this file exceeds ~100 lines, move open tasks only into `docs/build-plan-remaining.md` and update the Read Order in `CLAUDE.md` and `AGENTS.md` to load that file instead of this one.
+
 ## Stack
 Next.js 15 (App Router), TypeScript, CSS Modules + custom CSS, Markdown + gray-matter (content), Lucide React (icons), Vercel (deployment)
 

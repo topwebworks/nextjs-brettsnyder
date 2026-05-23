@@ -27,6 +27,16 @@
 - After content file changes, run `npm run generate-project-data`.
 - Resume changes: edit `public/resume-brett-snyder.html`, then run `npm run generate-resume` - never edit the PDF directly.
 
+## Token Discipline
+- Read only the files needed for the current task.
+- Do not scan the whole repo unless explicitly asked.
+- Ask before reading more than 5 files.
+- Ignore `node_modules`, `.next`, `build`, `dist`, lock files, and generated files.
+- Keep explanations brief. Make the smallest safe change.
+
+## Compact Instructions
+When compacting, preserve: current task, any content or CSS decisions made this session, file paths changed, and hard boundaries. Drop: full file contents already read, tool output, and intermediate reasoning.
+
 ## Hard Boundaries
 - No backend, auth, or database features.
 - No CMS integration unless explicitly requested.

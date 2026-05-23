@@ -70,3 +70,11 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.temp
+
+# lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# dist
+/dist

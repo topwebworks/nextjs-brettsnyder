@@ -49,7 +49,7 @@ const personalValues = [
   {
     title: "How Do I Use AI?",
     // subtitle: "AI isn't going anywhere",
-    description: "My AI stack is centered on VS Code with Claude Code as my primary tool, Codex as a strong second, and OpenRouter for added model flexibility when needed. I use AI to speed up planning, coding, debugging, and iteration while staying grounded in the actual codebase and solid frontend fundamentals.",
+    description: "My AI stack is centered on VS Code with Claude Code as my primary tool and Codex as a strong second. I use AI to speed up planning, coding, debugging, and iteration while staying grounded in the actual codebase and solid frontend fundamentals.",
     details: "AI as a tool gives me speed, keeps me hands-on, and helps me maintain ownership and authorship of the work.",
     icon: Code,
     metrics: "Endless Possibilities",
