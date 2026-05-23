@@ -85,7 +85,7 @@ const hardwareSetup = [
   { name: 'Logitech G915 TKL', description: 'Wireless mechanical keyboard for comfortable typing', category: 'Input', rating: 9 },
   { name: 'Logitech G502 X & G Powerplay', description: 'Precision pointing device with gesture support', category: 'Input', rating: 9 },
   { name: 'Sony WH-H900N', description: 'Noise-canceling headphones for focus and calls', category: 'Audio', rating: 9 },
-  { name: 'Samsung Flip 6', description: 'Compact foldable phone for multitasking', category: 'Mobile', rating: 9 },
+  { name: 'Samsung Flip 6', description: 'Compact foldable phone for multitasking', category: 'Mobile', rating: 1 },
   { name: 'iVoler laptop stand & Zippi fan', description: 'Laptop stand and fan for cool ergonomic setup', category: 'Furniture', rating: 9 }
 ];
 
