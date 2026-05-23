@@ -92,7 +92,7 @@ const hardwareSetup = [
 // Productivity tools data
 const productivityTools = [
   { name: 'ChatGPT', description: 'AI content creation and copywriting assistant', category: 'Creative', rating: 9 },
-  { name: 'OneNote', description: 'Multi-device all-in-one note-taking and organization tool', category: 'Organization', rating: 8 },
+  { name: 'Obsidian', description: 'Local-first knowledge base and note-taking with linked thinking', category: 'Organization', rating: 9 },
   { name: 'Spotify', description: 'Music streaming for focused coding sessions', category: 'Entertainment', rating: 9 },
   { name: 'Mophie/Anker Magsafe Packs', description: 'Portable charging solutions for devices', category: 'Utility', rating: 9 },
   { name: 'Slack/Teams/Zoom', description: 'Communication and collaboration tools for remote work', category: 'Communication', rating: 8 },
