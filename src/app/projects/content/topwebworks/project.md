@@ -38,6 +38,15 @@ keyAchievements:
       - "Supabase backend powering auth, client data, and request tracking"
       - "Stripe integration for setup fees and recurring maintenance subscriptions"
       - "Sanity headless CMS powering the blog"
+  - type: "technical"
+    icon: "🔍"
+    title: "SEO, AEO, and GEO Implementation"
+    description: "Built search and AI-answer-engine visibility into both the marketing site and client Shopify stores, not bolted on after launch."
+    metrics:
+      - "JSON-LD structured data (Organization, Product, FAQ) across key pages"
+      - "Semantic heading structure and Q&A-formatted content written to be directly quotable by AI answer engines (ChatGPT, Perplexity, Google AI Overviews)"
+      - "Technical SEO: sitemap.xml, robots.txt, canonical URLs, Core Web Vitals"
+      - "Applied the same structured-data and content approach to client Shopify stores"
 media:
   items:
 
@@ -97,6 +106,18 @@ Stripe handles payment collection for setup fees and recurring maintenance subsc
 ## The Blog
 
 The site also includes a full blog powered by Sanity as a headless CMS. Blog content is authored and published through Sanity's studio and rendered on the Next.js frontend, keeping content management separate from the codebase.
+
+## SEO, AEO, and GEO
+
+Search visibility couldn't just mean traditional SEO anymore. More buying research now happens inside AI answer engines — ChatGPT, Perplexity, Google AI Overviews — so I built the site to perform in both worlds at once: SEO for search engines, AEO (answer engine optimization) and GEO (generative engine optimization) for AI-driven discovery.
+
+On the technical SEO side: sitemap.xml, robots.txt, canonical URLs, and attention to Core Web Vitals so pages are fast and fully crawlable.
+
+For structured data, I added JSON-LD schema (Organization, Product, FAQ) so search engines and AI crawlers can parse exactly what the business offers instead of inferring it from unstructured page copy.
+
+For AEO/GEO specifically, that meant writing content in a format AI systems can lift directly into an answer — clear semantic heading hierarchy, and service/pricing information framed as direct Q&A rather than marketing copy that has to be reinterpreted. The How It Works and Pricing pages are the clearest example: structured so an AI answer engine can quote the process and pricing verbatim.
+
+I carried the same approach into client Shopify stores — structured data and content formatting aren't a Top Web Works-only feature, they're part of the store setup service itself.
 
 ## What I Built Into the Experience
 
