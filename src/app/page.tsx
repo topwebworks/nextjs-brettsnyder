@@ -63,9 +63,9 @@ export default function Homepage() {
 
   // Memoize animated words to prevent unnecessary re-renders
   const animatedWords = React.useMemo(() => [
-    'prompt engineer,',
-    'web designer,',
-    'web developer.'
+    'design engineer,',
+    'Shopify developer,',
+    'frontend developer.'
   ], []);
 
   // Generate sequence of words on component mount
@@ -249,7 +249,7 @@ export default function Homepage() {
             {/* Refined Description */}
             <div>
               <p className={styles.heroSubtitle}>
-              I’m Brett Snyder. At 17, a sketch of mine reached stores. I’ve since worked in graphic and web design, turned ideas into code, and taught gymnastics to kids in Vermont and Arizona. This site highlights my interests and&nbsp;projects.</p>
+              I’m Brett Snyder, a design engineer and frontend developer. I build SaaS products, Shopify experiences, and conversion-focused websites. This site highlights the products, systems, and campaigns behind that&nbsp;work.</p>
             </div>
 
             {/* CTA */}

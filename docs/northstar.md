@@ -17,3 +17,4 @@ A visitor can find Brett's work, read his background, download his resume, and r
 
 ## Brand & Tone
 Professional but personal. Approachable, not corporate. Shows real work, not marketing copy.
+Do not use em dashes in public-facing content. Use commas, periods, colons, or parentheses instead.
