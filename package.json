@@ -11,7 +11,8 @@
     "generate-project-data": "node scripts/generate-project-data.js",
     "create-project": "node scripts/generate-project-data.js --create",
     "generate-resume": "node scripts/generate-resume-pdf.js",
-    "prebuild": "npm run generate-project-data && npm run generate-resume",
+    "generate-cover-letter": "node scripts/generate-cover-letter-pdf.js",
+    "prebuild": "npm run generate-project-data && npm run generate-resume && npm run generate-cover-letter",
     "deploy": "npm run build && vercel --prebuilt --prod",
     "deploy-staging": "npm run build && vercel --prebuilt"
   },
