@@ -1,0 +1,77 @@
+BRETT SNYDER
+Design Engineer | Product-Focused Frontend Developer
+Queen Creek, AZ
+Phone: 602-561-5771
+Email: info@brettsnyder.me
+Portfolio: https://brettsnyder.me
+LinkedIn: https://linkedin.com/in/topwebworks
+GitHub: https://github.com/topwebworks
+
+PROFESSIONAL SUMMARY
+
+Product-focused frontend developer with 15+ years of experience across SaaS products, enterprise marketing websites, e-commerce, and conversion-focused landing pages. Combines UI/UX design with hands-on development using React, Next.js, TypeScript, Shopify/Liquid, WordPress, and modern HTML, CSS, and JavaScript. Recently launched the CyWire AI SaaS platform and relaunched TopWebWorks as a productized web-services business, following extensive enterprise web work at Imagine Learning.
+
+CORE COMPETENCIES
+
+Frontend Development: HTML5, CSS3, JavaScript (ES6+), React, Next.js, TypeScript, Tailwind CSS, Responsive Design
+E-commerce/CMS: Shopify Plus, Liquid, WordPress, Headless WordPress, PHP, Pantheon.io, cPanel, Custom Theme Development
+Marketing: Landing Pages, Lead Generation, CRO, A/B Testing, Responsive Email, Campaign Optimization, SEO/AEO/GEO, Playbooks
+AI & Agentic Development: Claude Code, Codex, Prompt Architecture, Structured Outputs/JSON Schema, Custom Agent Skills & Governance, MCP Integrations, AI-Assisted & Agentic Development Workflows
+Paid Media: Google Ads, Meta Ads, Google Business Profile, CRM Automation
+Analytics: Google Analytics (GA4), Google Tag Manager, Search Console, Lighthouse, Hotjar, Crazy Egg, Shopify Analytics, CRM Analytics
+Design/UX: UI/UX Design, Figma, Wireframing, Functional Web Prototyping, Design Systems
+Delivery & Quality: Git/GitHub, Supabase, Vercel, Cross-Browser Testing, WCAG Accessibility, Core Web Vitals & Performance
+
+PROFESSIONAL EXPERIENCE
+
+PRODUCT & FRONTEND DEVELOPER
+Cosaint, Inc. | Queen Creek, AZ
+November 2025 - Present
+
+- Built and launched CyWire.com (https://cywire.com) in three months, taking the B2B AI platform from concept to production while refining its core engine through three major architectural versions to achieve the intended product vision. Developed it with Next.js, React, TypeScript, Tailwind CSS, Supabase, and Vercel.
+- Designed CyWire's model-agnostic Master Prompt system: reusable JSON blueprints with defined variables, instructions, constraints, and output schemas that guide AI-powered features to produce consistent, validated, machine-readable output across LLMs and platforms.
+- Delivered the platform's product ecosystem, including a no-code visual builder, 170+ free global prompts, community marketplace, document-backed knowledge base supporting PDF, Word, and Excel uploads, Pro+ Labs Chat Prompt Generator, authentication, tier-based access control, scoped team workspaces, dashboards, and leaderboards.
+- Relaunched and rebuilt TopWebWorks (https://topwebworks.com), Cosaint's productized web-services division. Developed a full-service delivery model centered on free, functional website prototypes, taking projects through audience positioning, messaging, site copy, UI/UX design, custom Next.js or Shopify development, and supporting visual assets, with three-tier recurring service plans.
+- Lead ongoing web operations for TopWebWorks clients, including hosting and maintenance plus CRM workflows that capture live-chat and contact-form inquiries in a centralized pipeline, trigger instant lead notifications, and automate email/SMS confirmations, follow-up, estimate and booking requests, and post-job reviews through a dedicated business texting number.
+- Manage client growth programs across conversion-focused landing pages, blog and social content, Google Business posts, email campaigns, local SEO tracking, SEO/AEO/GEO implementation, paid advertising, analytics, monthly performance reporting, and strategy calls.
+
+IMAGINE LEARNING
+Formerly Weld North Education / Glynlyon Inc.
+October 2016 - October 2025 | 9 years
+Role progression in marketing and frontend development
+
+MARKETING WEB DEVELOPER
+Arizona (Remote)
+March 2022 - October 2025
+
+- Managed enterprise marketing web infrastructure spanning 13 WordPress sites on Pantheon and one custom CMS property, building accessible, responsive pages for enterprise marketing campaigns.
+- Planned and led migrations of three e-commerce properties to Shopify, replacing paid apps with custom Liquid sections and configurable Shopify schemas.
+- Created a reusable HTML5 Master Blocks system that reduced landing-page production time by 40% across more than 50 conversion-focused pages; also developed a modular marketing design-block system for Shopify and CMS-embeddable HTML components.
+- Accelerated campaign execution by translating Figma designs into accessible markup, coding responsive HTML emails, and optimizing pages with A/B testing and heatmap data; mentored 12+ team members and streamlined design-to-development handoffs.
+
+UI/UX DESIGNER/DEVELOPER
+Chandler, AZ (Hybrid)
+April 2019 - March 2022
+
+- Led UI/UX design and frontend development for marketing and product web experiences, maintained WordPress properties, and created high-fidelity Figma designs and functional HTML prototypes.
+- Built a responsive Monarch Catalog HTML prototype with working interactions for engineering handoff and collaborated with cross-functional teams to refine user flows and usability.
+
+SENIOR DESIGNER
+Chandler, AZ
+October 2016 - April 2019
+
+- Established enterprise WordPress management practices and created responsive landing pages, HTML emails, and campaign assets.
+- Created a reusable HTML email system with CRM-ready templates that became the company standard; managed the design-to-code pipeline and applied A/B testing insights to improve conversions.
+
+EARLIER EXPERIENCE
+
+FRONT-END DEVELOPER/DESIGNER
+2006 - 2016
+
+Rehired by Pearson Online Learning for a second contract after initially developing and repairing custom CMS websites; returned to build responsive email systems and resolve website issues. Additional enterprise work included Rio Salado College (portal redesign) and Net Media Group (A/B testing and conversion optimization).
+
+EDUCATION
+
+Brigham Young University - Graphic Design Studies
+Brigham Young University-Idaho - Associate Degree in Fine Art
+Ensign College - Professional Development Coursework: Python, JavaScript, Web Development
