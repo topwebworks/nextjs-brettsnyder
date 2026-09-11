@@ -29,10 +29,15 @@ Cosaint, Inc. | Queen Creek, AZ
 November 2025 - Present
 
 - Built and launched CyWire.com (https://cywire.com) in three months, taking the B2B AI platform from concept to production while refining its core engine through three major architectural versions to achieve the intended product vision. Developed it with Next.js, React, TypeScript, Tailwind CSS, Supabase, and Vercel.
+
 - Designed CyWire's model-agnostic Master Prompt system: reusable JSON blueprints with defined variables, instructions, constraints, and output schemas that guide AI-powered features to produce consistent, validated, machine-readable output across LLMs and platforms.
+
 - Delivered the platform's product ecosystem, including a no-code visual builder, 170+ free global prompts, community marketplace, document-backed knowledge base supporting PDF, Word, and Excel uploads, Pro+ Labs Chat Prompt Generator, authentication, tier-based access control, scoped team workspaces, dashboards, and leaderboards.
+
 - Relaunched and rebuilt TopWebWorks (https://topwebworks.com), Cosaint's productized web-services division. Developed a full-service delivery model centered on free, functional website prototypes, taking projects through audience positioning, messaging, site copy, UI/UX design, custom Next.js or Shopify development, and supporting visual assets, with three-tier recurring service plans.
+
 - Lead ongoing web operations for TopWebWorks clients, including hosting and maintenance plus CRM workflows that capture live-chat and contact-form inquiries in a centralized pipeline, trigger instant lead notifications, and automate email/SMS confirmations, follow-up, estimate and booking requests, and post-job reviews through a dedicated business texting number.
+
 - Manage client growth programs across conversion-focused landing pages, blog and social content, Google Business posts, email campaigns, local SEO tracking, SEO/AEO/GEO implementation, paid advertising, analytics, monthly performance reporting, and strategy calls.
 
 IMAGINE LEARNING
@@ -45,8 +50,11 @@ Arizona (Remote)
 March 2022 - October 2025
 
 - Managed enterprise marketing web infrastructure spanning 13 WordPress sites on Pantheon and one custom CMS property, building accessible, responsive pages for enterprise marketing campaigns.
+
 - Planned and led migrations of three e-commerce properties to Shopify, replacing paid apps with custom Liquid sections and configurable Shopify schemas.
+
 - Created a reusable HTML5 Master Blocks system that reduced landing-page production time by 40% across more than 50 conversion-focused pages; also developed a modular marketing design-block system for Shopify and CMS-embeddable HTML components.
+
 - Accelerated campaign execution by translating Figma designs into accessible markup, coding responsive HTML emails, and optimizing pages with A/B testing and heatmap data; mentored 12+ team members and streamlined design-to-development handoffs.
 
 UI/UX DESIGNER/DEVELOPER
@@ -54,6 +62,7 @@ Chandler, AZ (Hybrid)
 April 2019 - March 2022
 
 - Led UI/UX design and frontend development for marketing and product web experiences, maintained WordPress properties, and created high-fidelity Figma designs and functional HTML prototypes.
+
 - Built a responsive Monarch Catalog HTML prototype with working interactions for engineering handoff and collaborated with cross-functional teams to refine user flows and usability.
 
 SENIOR DESIGNER
@@ -61,6 +70,7 @@ Chandler, AZ
 October 2016 - April 2019
 
 - Established enterprise WordPress management practices and created responsive landing pages, HTML emails, and campaign assets.
+
 - Created a reusable HTML email system with CRM-ready templates that became the company standard; managed the design-to-code pipeline and applied A/B testing insights to improve conversions.
 
 EARLIER EXPERIENCE
@@ -68,7 +78,7 @@ EARLIER EXPERIENCE
 FRONT-END DEVELOPER/DESIGNER
 2006 - 2016
 
-Rehired by Pearson Online Learning for a second contract after initially developing and repairing custom CMS websites; returned to build responsive email systems and resolve website issues. Additional enterprise work included Rio Salado College (portal redesign) and Net Media Group (A/B testing and conversion optimization).
+Completed two separate engagements with Pearson Online Learning: an earlier contract building custom CMS sites for multiple departments, followed later by a full-time Web Developer role focused on responsive HTML emails and website-page debugging. Additional enterprise work included Rio Salado College (portal redesign) and Net Media Group (A/B testing and conversion optimization).
 
 EDUCATION
 
