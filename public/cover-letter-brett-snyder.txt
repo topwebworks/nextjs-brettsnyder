@@ -1,0 +1,21 @@
+Brett Snyder
+Queen Creek, Arizona
+info@brettsnyder.me
+https://brettsnyder.me
+
+Dear Hiring Team,
+
+I'm a designer and developer who understands how the whole project fits together, not just my part of it. I'm comfortable taking work from an early idea through launch while collaborating with designers, developers, marketers, and business stakeholders along the way. My experience spans conversion-focused websites, lead systems, and digital marketing, as well as SaaS products and custom tools. My strength is connecting design, development, and business goals so the work comes together.
+
+I started in design and expanded my work into UI/UX and frontend development. Today, I work most often with React, Next.js, TypeScript, Shopify Plus/Liquid, and WordPress, with AI-assisted workflows woven into how I plan, build, and refine.
+
+Most recently, I took CyWire from an idea to a live B2B AI platform in three months. It helps businesses and developers get consistent, structured results from the AI-powered features they build. I designed the Master Prompt system and built the product around it, from the visual builder and marketplace to the knowledge base, membership access, team workspaces, and dashboards. I reworked the core engine three times until it matched the product I had envisioned.
+
+I also relaunched TopWebWorks, where I take service-business websites from the first idea through launch. I shape the message, create working prototypes, write the site copy, design and build the pages, and source or create supporting assets when needed. The finished site can consolidate most client communication to a CRM pipeline with automated email and SMS follow-up, estimate or booking requests, and review requests, supported by SEO, content, paid campaigns, and reporting. As a previous small-business owner, I know a website has to do more than look good. It has to attract the right people, make the next step easy, and help ensure that no lead is missed.
+
+Before that, I spent nine years at Imagine Learning, moving from Senior Designer to UI/UX Designer/Developer and Marketing Web Developer. I managed 13 WordPress sites and one custom CMS property, led migrations of three e-commerce properties to Shopify, and built reusable block systems for Shopify and CMS content that reduced landing-page production time by 40% across more than 50 conversion-focused pages.
+
+I'm now looking for a full-time role where I can contribute this range of experience to larger, long-term work as part of a collaborative team. I enjoy working across design, development, and marketing, asking thoughtful questions, communicating directly, and staying engaged from early decisions through launch and ongoing improvement. I'd welcome the opportunity to talk about how I could contribute.
+
+Sincerely,
+Brett Snyder
