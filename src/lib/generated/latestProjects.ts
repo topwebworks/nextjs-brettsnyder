@@ -32,7 +32,8 @@ export const latestProjects: LatestProject[] = [
     "technologies": [
       "Next.js",
       "TypeScript",
-      "MDX"
+      "MDX",
+      "CRM Integration"
     ]
   }
 ];

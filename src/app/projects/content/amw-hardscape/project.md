@@ -7,6 +7,7 @@ technologies:
   - "Next.js"
   - "TypeScript"
   - "MDX"
+  - "CRM Integration"
 category: "Website"
 status: "Production"
 featured: false

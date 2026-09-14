@@ -5,12 +5,14 @@
   "technologies": [
     "Next.js",
     "TypeScript",
-    "MDX"
+    "MDX",
+    "CRM Integration"
   ],
   "tags": [
     "Next.js",
     "TypeScript",
-    "MDX"
+    "MDX",
+    "CRM Integration"
   ],
   "category": "Website",
   "status": "Production",

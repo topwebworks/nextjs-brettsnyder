@@ -8,9 +8,8 @@ technologies:
   - "React"
   - "TypeScript"
   - "Tailwind CSS"
-  - "Stripe"
-  - "Sanity"
-  - "Shopify"
+  - "MDX"
+  - "CRM Integration"
 category: "Website"
 status:
 featured: True
@@ -68,19 +67,21 @@ That clarity required deliberate structure. A lot of small business service webs
 
 One of the strongest parts of the rebrand was turning the service into a simple step-by-step system: a free homepage prototype first, a deposit to start the full build once the client approves it, the balance due at launch, and a recurring plan that starts the following month. That structure makes the service feel real and operational instead of abstract, and it removes the risk of committing before seeing the work.
 
-The build itself moves through audience positioning, messaging, site copy, and UI/UX design, resulting in either a custom conversion-focused site or a Shopify e-commerce store. Ongoing recurring plans then cover hosting, maintenance, and lead follow-up, so clients aren't left managing the site or chasing leads alone after launch.
+Each client build moves through audience positioning, messaging, site copy, and UI/UX design, resulting in either a custom conversion-focused site or a Shopify e-commerce store for the client. Ongoing recurring plans then cover hosting, maintenance, and lead follow-up, so clients aren't left managing the site or chasing leads alone after launch.
 
 A clear process is easier to trust, and easier to buy into.
 
-Stripe handles payment collection for setup fees and recurring maintenance subscriptions.
+Payment for setup fees and recurring maintenance runs through Stripe invoices I send manually, no checkout flow built into the site itself.
 
 ## The Blog
 
-The site also includes a full blog powered by Sanity as a headless CMS. Blog content is authored and published through Sanity's studio and rendered on the Next.js frontend, keeping content management separate from the codebase.
+The site includes a full blog. I started with Sanity as a headless CMS, but switched to a custom MDX-based system instead, fewer restrictions and better speed than running content through a third-party CMS.
 
 ## Every Site Ships With the Lead System Built In
 
-Every site ships with the lead system already configured and tested, before it goes live. Every form, chat message, and inquiry is captured into a centralized CRM pipeline with instant email notification and an automated confirmation, so nothing slips through from day one. Automated email follow-up runs at every tier; customer SMS follow-up is added on top of that workflow at Grow and above.
+Topwebworks.com runs on the same lead system it sells: every form, chat message, and inquiry that comes through the site is captured into a centralized CRM pipeline with instant email notification and an automated confirmation, so nothing slips through from day one.
+
+Every client site ships with that same system already configured and tested before it goes live. Automated email follow-up runs at every tier; customer SMS follow-up is added on top of that workflow at Grow and above.
 
 From there, I lead the ongoing operations that keep it running for clients: a dedicated business texting number, estimate and booking requests built into the follow-up flow, and post-job review requests. Text, email, and chat all land in one inbox clients can manage from their phone or desktop, instead of scattered across email threads and missed calls.
 
@@ -127,5 +128,5 @@ The finished project brings together several layers:
 - Clear service positioning around a free prototype, a conversion-focused build, and managed follow-up
 - Custom page structure for About, Pricing, Works, How It Works, and process content
 - CRM-driven lead capture and follow-up built into every site
-- Stripe for payments and subscriptions
-- Sanity headless CMS for blog content
+- Manual Stripe invoicing for setup fees and recurring maintenance
+- Custom MDX blog system, replacing an earlier Sanity CMS setup
