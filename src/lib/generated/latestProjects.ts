@@ -13,6 +13,17 @@ export interface LatestProject {
 
 export const latestProjects: LatestProject[] = [
   {
+    "id": "brightpath-ops",
+    "title": "Brightpath Operations",
+    "excerpt": "A functional UI prototype for an internal operations tool designed to surface only what needs attention across events and courses, built to triage alerts from multiple platforms with AI-assisted notes once connected to live data.",
+    "category": "Prototype",
+    "publishDate": "2026-09-14",
+    "technologies": [
+      "Next.js",
+      "TypeScript"
+    ]
+  },
+  {
     "id": "amw-hardscape",
     "title": "AMW Hardscape Solutions",
     "excerpt": "A full marketing system for a licensed Arizona hardscape contractor: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads.",
@@ -22,23 +33,6 @@ export const latestProjects: LatestProject[] = [
       "Next.js",
       "TypeScript",
       "MDX"
-    ]
-  },
-  {
-    "id": "topwebworks",
-    "title": "Top Web Works Rebrand",
-    "excerpt": "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js, and built portal workflows for both clients and admin.",
-    "category": "Website",
-    "publishDate": "2026-03-27",
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Supabase",
-      "Stripe",
-      "Sanity",
-      "Shopify"
     ]
   }
 ];

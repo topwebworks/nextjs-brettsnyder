@@ -5,6 +5,7 @@
 // Static project list - no filesystem calls needed
 export const PROJECT_IDS: readonly string[] = [
   'amw-hardscape',
+  'brightpath-ops',
   'cywire',
   'email',
   'master-blocks',
@@ -16,7 +17,7 @@ export const PROJECT_IDS: readonly string[] = [
 ] as const;
 
 // Project count for quick reference
-export const PROJECT_COUNT = 9;
+export const PROJECT_COUNT = 10;
 
 // Type for project ID validation
 export type ProjectId = typeof PROJECT_IDS[number];

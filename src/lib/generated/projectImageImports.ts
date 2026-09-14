@@ -6,6 +6,7 @@ import { StaticImageData } from 'next/image';
 
 // Import statements for all project images
 import amwhardscapeHero from '@/app/projects/content/amw-hardscape/amw-hardscape-hero.png';
+import brightpathopsHero from '@/app/projects/content/brightpath-ops/ops-hero.png';
 import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.png';
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
@@ -32,6 +33,11 @@ export interface ProjectImageImports {
 export const projectImageImports: Record<string, ProjectImageImports> = {
   'amw-hardscape': {
     hero: amwhardscapeHero,
+    demo: null,
+    screenshots: []
+  },
+  'brightpath-ops': {
+    hero: brightpathopsHero,
     demo: null,
     screenshots: []
   },
@@ -82,6 +88,9 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
   'amw-hardscape': {
     'amw-hardscape-hero.png': amwhardscapeHero
   },
+  'brightpath-ops': {
+    'ops-hero.png': brightpathopsHero
+  },
   'cywire': {
     '1-cywire-master-prompts.png': cywireHero
   },
@@ -130,12 +139,13 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['amw-hardscape', 'cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'shopify-migrations', 'topwebworks'];
+export const availableProjects = ['amw-hardscape', 'brightpath-ops', 'cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'shopify-migrations', 'topwebworks'];
 
 // Note: Console logging removed to reduce build noise
 
 // Individual variable exports for direct access
 export { amwhardscapeHero };
+export { brightpathopsHero };
 export { cywireHero };
 export { emailHero };
 export { emailScreenshot1 };
