@@ -9,7 +9,7 @@ technologies:
   - "MDX"
 category: "Website"
 status: "Production"
-featured: true
+featured: false
 publishDate: "2026-07-01"
 links:
   live: "https://amwhardscape.com"
@@ -23,22 +23,6 @@ keyAchievements:
       - "Service cards for paver installation, concrete work, driveways, decorative rock, artificial turf, and custom outdoor living open in a modal instead of a separate page"
       - "Trust section covers licensing, bonded status, crew credentials, and Google review signals"
       - "Filterable project gallery and nine full Google reviews on the homepage"
-  - type: "technical"
-    icon: "⚙️"
-    title: "Automated Lead and Review System"
-    description: "Every estimate submission and closed job feeds a backend lead and review pipeline instead of a static contact form."
-    metrics:
-      - "Estimate submissions route into a lead system with pipeline tracking and automatic SMS and email follow-up"
-      - "Closed jobs automatically trigger a review request, growing the on-site reviews on their own"
-      - "Cookie consent, GTM-gated analytics, LocalBusiness schema, and a dynamic sitemap ship with the site"
-  - type: "technical"
-    icon: "🔍"
-    title: "AI-Visible SEO and Campaign Content"
-    description: "Built an MDX blog and site structure aimed at both search engines and AI answer engines, backed by a recurring cross-channel campaign."
-    metrics:
-      - "MDX blog posts go live on push to GitHub, no CMS dashboard or deploy step"
-      - "Site structured for AI tools to read and surface content after a lead reported finding AMW through ChatGPT"
-      - "Monthly campaign theme run across email, blog, social, and paid ads so the offer stays consistent across channels"
 media:
   items: []
 ---
@@ -53,7 +37,9 @@ Services land near the top of the page, each opening in a modal with full detail
 
 ## An Estimate Path Backed by Automation
 
-Both CTAs scroll straight to the estimate form, paired with direct phone and text options and a short "what happens next" breakdown for visitors still deciding. Every submission lands in a full lead pipeline with automatic follow-up, so a Saturday lead isn't waiting until Monday for a response.
+Both CTAs scroll straight to the estimate form, paired with direct phone and text options and a short "what happens next" breakdown for visitors still deciding. Every submission lands in a full lead pipeline with automatic SMS and email follow-up, so a Saturday lead isn't waiting until Monday for a response. Closed jobs automatically trigger a review request too, so the reviews on the homepage keep growing on their own.
+
+Cookie consent, GTM-gated analytics, LocalBusiness schema, and a dynamic sitemap all ship with the site.
 
 ## SEO Built for Search and AI Visibility
 

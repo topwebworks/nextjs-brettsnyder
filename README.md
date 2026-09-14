@@ -34,6 +34,14 @@ npm run dev
 
 The local site runs at `http://localhost:3000`.
 
+### Clearing a Stale Browser Cache
+
+If a change isn't showing up locally, it's usually the browser serving a cached version rather than a real bug. Try in order:
+
+1. Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac).
+2. In DevTools, open the Network tab and check "Disable cache" (stays active while DevTools is open).
+3. In `npm run dev` only, open the DevTools console and run `clearAllCacheNow()`. This clears the Cache API, unregisters service workers, clears local/session storage, and reloads. It's only available in development.
+
 ## Common Commands
 
 ```bash

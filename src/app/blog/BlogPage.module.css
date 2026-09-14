@@ -163,6 +163,12 @@
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.blogCardOverlayLink {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 /* Featured Blog Card */
 .blogCard[data-featured="true"] {
   border: 1px solid #9d8126; /* Gold border for featured */
@@ -170,8 +176,9 @@
 }
 
 .blogCardContent {
-  position: relative; 
+  position: relative;
   z-index: 2;
+  pointer-events: none;
   padding: 30px 25px;
   display: flex;
   flex-direction: column;
@@ -251,6 +258,9 @@
 }
 
 .blogTitleLink {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
   color: inherit;
   text-decoration: none;
 }
@@ -356,6 +366,9 @@
 }
 
 .viewDetailsBtn {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
   text-decoration: none;
 }
 

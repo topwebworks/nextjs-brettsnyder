@@ -25,15 +25,6 @@ keyAchievements:
       - "Custom utility classes replacing Tailwind"
       - "Glassmorphism design system with animated orb/panel elements"
       - "Fluid responsive design"
-  - type: "technical"
-    icon: "⚡"
-    title: "Hybrid Content Management System"
-    description: "Engineered a dual markdown/JSON content system that provides markdown editing convenience with JSON performance."
-    metrics:
-      - "Automated script generates base project files and updates JSON from markdown"
-      - "Content redundancy ensures backup and flexibility"
-      - "Local manifest generation reduces API calls on Vercel"
-      - "Rich HTML conversion from markdown in JSON for enhanced formatting"
 media:
   items:
 

@@ -27,16 +27,6 @@ keyAchievements:
       - A reusable template saves a ton of time and can keep working for years.  
       - Fluid layouts beat media queries since some clients strip them out. Test by deleting the head in browser. 
       - Fully custom emails look good but take much longer to build.
-  - type: "performance"
-    icon: "🌦️"
-    title: "What Works Best"
-    description: "When it comes to getting people to actually read and click, these things matter most:"
-    metrics:
-      - Keep it simple — people scan and decide in seconds.  
-      - Don’t overbuild; most folks just want a clear offer fast.  
-      - Use short headlines, clear CTAs, and easy layouts.  
-      - Build flexible emails that hold up across all clients. 
-      - Simple, fast, reliable emails convert better than fancy ones.
 media:
   items:
     - type: "image"
@@ -71,4 +61,8 @@ Here are some emails I did for Pearson Online Learning many years ago. These wer
 Here is another back from the Pearson era. Again all custom builds so they took longer than using a master template. Looking back, alot of time was spent developing what seemed almost an email newsletter. Most people, me included, just was to see a simple great offer email that connects in 1-2 seconds. Nothing more. Usually people have one finger on the delete button as they scan their emails. I would recommend keeping it simple and to the point.
 
 [Sample Email 2](/demo/emails/sample2/index.html)
+
+## What Works Best
+
+Don't overbuild; most folks just want a clear offer fast. Short headlines, clear CTAs, and easy layouts beat anything fancy. Build flexible emails that hold up across all clients. Simple, fast, reliable emails convert better than fancy ones.
 

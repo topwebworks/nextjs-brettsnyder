@@ -46,55 +46,6 @@
           "Built a cleaner service path from free preview to build to onboarding to long-term maintenance",
           "Framed the business around ownership, transparency, and recurring support"
         ]
-      },
-      {
-        "type": "technical",
-        "icon": "⚡",
-        "title": "Next.js Marketing Site and Multi-Portal Workflow",
-        "description": "Rebuilt the public site in Next.js with a modern service architecture, then paired it with portal workflows that support both client activity and internal admin management.",
-        "metrics": [
-          "Custom marketing site built in Next.js instead of a WordPress theme stack",
-          "Client portal for requests, quotes, status tracking, and monthly summaries",
-          "Admin-side portal for managing client requests, quotes, and operational follow-through",
-          "Supabase backend powering auth, client data, and request tracking",
-          "Stripe integration for setup fees and recurring maintenance subscriptions",
-          "Sanity headless CMS powering the blog"
-        ]
-      },
-      {
-        "type": "technical",
-        "icon": "🔍",
-        "title": "SEO, AEO, and GEO Implementation",
-        "description": "Built search and AI-answer-engine visibility into the marketing site, applying the same approach to client builds, not bolted on after launch.",
-        "metrics": [
-          "JSON-LD structured data (Organization, Product, FAQ) across key pages",
-          "Semantic heading structure and Q&A-formatted content written to be directly quotable by AI answer engines (ChatGPT, Perplexity, Google AI Overviews)",
-          "Technical SEO: sitemap.xml, robots.txt, canonical URLs, Core Web Vitals",
-          "Applied the same structured-data and content approach to client sites"
-        ]
-      },
-      {
-        "type": "impact",
-        "icon": "📈",
-        "title": "Client Service Delivery and Growth Operations",
-        "description": "Built the productized service model behind the rebrand: a free homepage prototype, a conversion-focused build, recurring plans, and CRM-driven client growth operations.",
-        "metrics": [
-          "Free homepage prototype leading into a custom conversion-focused build",
-          "Recurring plans covering hosting, maintenance, and lead follow-up",
-          "CRM pipeline routing live-chat and form leads with instant notifications and automated SMS/email follow-up"
-        ]
-      },
-      {
-        "type": "impact",
-        "icon": "📣",
-        "title": "Ongoing Growth Programs",
-        "description": "Manage recurring marketing programs for Top Web Works clients across paid, organic, and lifecycle channels, scaled to each client's plan.",
-        "metrics": [
-          "Meta ad campaigns, managed and optimized monthly",
-          "Monthly campaign landing pages and blog posts building local search rankings",
-          "Social content on a set cadence across Facebook and Instagram, plus Google Business posts",
-          "Email campaigns to the customer list, local SEO tracking, and monthly performance reporting with strategy calls"
-        ]
       }
     ],
     "media": {

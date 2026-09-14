@@ -1059,11 +1059,9 @@
   flex-wrap: wrap;
 }
 
-/* Achievement Icon Container */
+/* Achievement Icon Container - icon and dot are hidden, so hide the container too */
 .achievementIconContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: none;
 }
 
 /* Achievement Icon */

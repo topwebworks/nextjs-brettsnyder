@@ -181,26 +181,71 @@ export default async function ProjectsPage() {
                     data-featured={project?.featured ? 'true' : 'false'}
                     data-index={index}
                   >
+                    <Link
+                      href={`/projects/${project?.id || 'unknown'}`}
+                      className={styles.projectCardOverlayLink}
+                      aria-label={project?.title || 'View project'}
+                      tabIndex={-1}
+                    />
 
                     <div className={styles.projectCardContent}>
 
                    <div>
 
-                      {/* Project Header Row - Category and Date */}
+                      {/* Project Header Row - Category, Date, and Links */}
                       <div className={styles.projectHeaderRow}>
                         <div className={styles.projectCategoryBadge}>
                           {project?.category || 'General'}
                         </div>
 
-                        <div className={styles.projectDateInfo}>
-                          <Calendar size={14} />
-                          {project?.publishDate 
-                            ? new Date(project.publishDate).toLocaleDateString('en-US', { 
-                                year: 'numeric', 
-                                month: 'short' 
-                              })
-                            : 'No Date'
-                          }
+                        <div className={styles.projectHeaderRight}>
+                          <div className={styles.projectDateInfo}>
+                            <Calendar size={14} />
+                            {project?.publishDate
+                              ? new Date(project.publishDate).toLocaleDateString('en-US', {
+                                  year: 'numeric',
+                                  month: 'short'
+                                })
+                              : 'No Date'
+                            }
+                          </div>
+
+                          {(project.links?.demo || project.links?.live || project.links?.github) && (
+                            <div className={styles.projectHeaderLinks}>
+                              {/* Show only 2 links max - Priority: demo > live > github */}
+                              {project.links?.demo && (
+                                <a
+                                  href={project.links.demo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.projectLiveLink}
+                                >
+                                  Demo
+                                </a>
+                              )}
+                              {!project.links?.demo && project.links?.live && (
+                                <a
+                                  href={project.links.live}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.projectLiveLink}
+                                >
+                                  Live
+                                </a>
+                              )}
+                              {project.links?.github && (
+                                <a
+                                  href={project.links.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.projectGithubLink}
+                                >
+                                  <Github size={16} />
+                                  Code
+                                </a>
+                              )}
+                            </div>
+                          )}
                         </div>
                       </div>
 
@@ -302,52 +347,10 @@ export default async function ProjectsPage() {
                    </div>
 
 
-                      {/* Project Actions */}
+                      {/* Project Actions - links moved to header row, whole card is clickable */}
                       <div className={`${styles.projectActions} project-actions`}>
                         <div className={styles.projectActionsLeft}>
-                          {/* Show only 2 links max - Priority: demo > live > github */}
-                          {project.links?.demo && (
-                            <a
-                              href={project.links.demo}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.projectLiveLink}
-                            >
-                              Demo
-                            </a>
-                          )}
-                          {!project.links?.demo && project.links?.live && (
-                            <a
-                              href={project.links.live}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.projectLiveLink}
-                            >
-                              Live
-                            </a>
-                          )}
-                          {project.links?.github && (
-                            <a
-                              href={project.links.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.projectGithubLink}
-                            >
-                              <Github size={16} />
-                              Code
-                            </a>
-                          )}
                         </div>
-
-                        <Button
-                          variant="secondary"
-                          size="medium"
-                          icon="arrow-right"
-                          href={`/projects/${project?.id || 'unknown'}`}
-                          className={`view-details-btn ${styles.viewDetailsBtn}`}
-                        >
-                          View Details
-                        </Button>
                       </div>
                     </div>
                   </article>

@@ -26,24 +26,6 @@ keyAchievements:
       - "Consistent, machine-readable JSON output every time"
       - "Works with any LLM or platform"
       - "Eliminates parsing errors and unexpected formats"
-  - type: "technical"
-    icon: "⚡"
-    title: "Industry-Specific Marketplace & Visual Builder"
-    description: "Created a no-code visual builder and marketplace system that makes structured AI accessible to non-developers while maintaining enterprise-level reliability."
-    metrics:
-      - "Form-based builder—no coding required to create master prompts"
-      - "Industry-specific templates for healthcare, finance, manufacturing, and more"
-      - "Community marketplace with free and premium master prompts"
-      - "Version control and collaborative editing with full code access"
-  - type: "impact"
-    icon: "🏗️"
-    title: "Concept to Production in Three Months"
-    description: "Took CyWire from concept to production in three months, refining the core engine through three major architectural versions to reach the intended product behavior."
-    metrics:
-      - "Document-backed knowledge base supporting PDF, Word, and Excel uploads"
-      - "Labs: a Pro+ chat-based Master Prompt generator"
-      - "Authentication with tier-based access control across membership levels"
-      - "Scoped team workspaces, dashboards, and leaderboards"
 media:
   items:
 
@@ -129,8 +111,8 @@ I built and launched CyWire in three months, taking it from concept to productio
 
 Beyond the Master Prompt system itself, the platform includes:
 
-- A no-code visual builder for creating and editing Master Prompts without writing raw JSON
-- A community marketplace for sharing and discovering Master Prompts
+- A no-code visual builder for creating and editing Master Prompts without writing raw JSON, with version control and collaborative editing on the full underlying code
+- A community marketplace with free and premium Master Prompts, including industry-specific templates for healthcare, finance, manufacturing, and more
 - A document-backed knowledge base supporting PDF, Word, and Excel uploads
 - Labs, a Pro+ chat-based Master Prompt generator
 - Authentication with tier-based access control across membership levels

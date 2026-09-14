@@ -158,6 +158,12 @@ export default async function BlogPage() {
                     data-featured={blog?.featured ? 'true' : 'false'}
                     data-index={index}
                   >
+                    <Link
+                      href={`/blog/${blog?.id || 'unknown'}`}
+                      className={styles.blogCardOverlayLink}
+                      aria-label={blog?.title || 'Read blog post'}
+                      tabIndex={-1}
+                    />
 
                     <div className={styles.blogCardContent}>
 
@@ -289,20 +295,10 @@ export default async function BlogPage() {
 
                       </div>
 
-                      {/* Blog Actions */}
+                      {/* Blog Actions - button removed, whole card is clickable */}
                       <div className={`${styles.blogActions} blog-actions`}>
                         <div className={styles.blogActionsLeft}>
                         </div>
-
-                        <Button
-                          variant="secondary"
-                          size="medium"
-                          icon="arrow-right"
-                          href={`/blog/${blog?.id || 'unknown'}`}
-                          className={`view-details-btn ${styles.viewDetailsBtn}`}
-                        >
-                          Read More
-                        </Button>
                       </div>
                     </div>
                   </article>

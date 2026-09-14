@@ -305,24 +305,39 @@ export default function Homepage() {
                 
                 <div className={styles.blogArticleList}>
                   {latestProjects.map((project) => (
-                    <article 
+                    <article
                       key={project.id}
                       className={styles.blogArticle}
                     >
-                      
+                      <Link
+                        href={`/projects/${project.id}`}
+                        className={styles.blogArticleOverlayLink}
+                        aria-label={project.title}
+                        tabIndex={-1}
+                      />
+
                       {/* Floating Category Badge */}
                       <div className={styles.blogCategoryBadge}>
                         {project.category}
                       </div>
                       
                       <div className={styles.blogMetaRow}>
+                        <time className={styles.blogDate}>
+                          <Calendar size={12} />
+                          {new Date(project.publishDate + 'T00:00:00').toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                          })}
+                        </time>
+
                         <span className={styles.blogReadTime}>
                           {project.technologies.slice(0, 2).join(' + ') || 'Project'}
                         </span>
                       </div>
-                      
+
                       <h3 className={styles.blogTitle}>
-                        <Link 
+                        <Link
                           href={`/projects/${project.id}`}
                           className={styles.blogTitleLink}
                         >
@@ -330,32 +345,10 @@ export default function Homepage() {
                           {/* <ArrowRight size={18} className={styles.blogArrowIcon} /> */}
                         </Link>
                       </h3>
-                      
+
                       <p className={styles.blogExcerpt}>
                         {project.excerpt}
                       </p>
-                      
-                      <div className={styles.blogFooter}>
-                        <time className={styles.blogDate}>
-                          <Calendar size={12} />
-                          {new Date(project.publishDate + 'T00:00:00').toLocaleDateString('en-US', {
-                            year: 'numeric', 
-                            month: 'short', 
-                            day: 'numeric' 
-                          })}
-                        </time>
-
-                        {/* Button - Bottom Right */}
-                        <Button
-                          variant="secondary"
-                          size="medium"
-                          icon="arrow-right"
-                          href={`/projects/${project.id}`}
-                          className={`${styles.blogReadMoreLink} view-details-btn blog-read-more-btn`}
-                        >
-                          View
-                        </Button>
-                      </div>
                     </article>
                   ))}
                 </div>
