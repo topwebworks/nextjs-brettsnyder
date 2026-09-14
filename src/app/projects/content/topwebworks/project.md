@@ -1,6 +1,6 @@
 ---
 title: "Top Web Works Rebrand"
-description: "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js, and built portal workflows for both clients and admin."
+description: "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js, and built the CRM-driven lead and follow-up system behind it."
 contentTitle: "Websites That Capture and Follow Up on Every Lead"
 achievementTitle: ""
 technologies:
@@ -8,7 +8,6 @@ technologies:
   - "React"
   - "TypeScript"
   - "Tailwind CSS"
-  - "Supabase"
   - "Stripe"
   - "Sanity"
   - "Shopify"
@@ -35,7 +34,7 @@ media:
 
 ## The Logo
 
-Part of the rebrand was designing a new logo from scratch, a custom mark built from the TWW letterforms and paired with the Top Web Works wordmark. It appears in the site header, footer, client portal, and login screens, and carries the visual identity across every touchpoint of the business.
+Part of the rebrand was designing a new logo from scratch, a custom mark built from the TWW letterforms and paired with the Top Web Works wordmark. It appears in the site header and footer, carrying the visual identity across every touchpoint of the business.
 
 ## The Starting Point
 
@@ -49,7 +48,7 @@ This wasn't a website refresh, it was a full repositioning of the business.
 
 Because this rebrand was about moving forward, I did not want to rebuild the new business on the same foundation it was moving away from.
 
-I rebuilt the site in Next.js because the rebrand was a platform shift, not just a redesign. A custom Next.js build gave me a cleaner foundation for the portal integrations and lead-capture workflows the business model required. Auth, client data, request tracking, CRM pipelines, and payment flows are a much better fit in a React app than bolted onto a WordPress install.
+I rebuilt the site in Next.js because the rebrand was a platform shift, not just a redesign. A custom Next.js build gave me a cleaner foundation for the lead-capture workflows the business model required. CRM pipelines and payment flows are a much better fit in a React app than bolted onto a WordPress install.
 
 ## What the Public Site Needed to Do
 
@@ -72,14 +71,6 @@ One of the strongest parts of the rebrand was turning the service into a simple 
 The build itself moves through audience positioning, messaging, site copy, and UI/UX design, resulting in either a custom conversion-focused site or a Shopify e-commerce store. Ongoing recurring plans then cover hosting, maintenance, and lead follow-up, so clients aren't left managing the site or chasing leads alone after launch.
 
 A clear process is easier to trust, and easier to buy into.
-
-## The Portal Side of the Project
-
-A major part of the build was supporting the business with portal workflows.
-
-The client portal lets clients submit requests, review quotes, track work status, and access monthly summaries. That supports the recurring-plan model without relying on scattered email threads.
-
-The admin portal gives the business side a structured way to receive requests, manage workflow, handle quotes, and keep monthly work organized. Both portals are backed by Supabase for auth, data persistence, and request tracking.
 
 Stripe handles payment collection for setup fees and recurring maintenance subscriptions.
 
@@ -135,8 +126,6 @@ The finished project brings together several layers:
 - A modern, lead-focused marketing site in Next.js and TypeScript
 - Clear service positioning around a free prototype, a conversion-focused build, and managed follow-up
 - Custom page structure for About, Pricing, Works, How It Works, and process content
-- A client portal flow tied to onboarding and ongoing maintenance
-- Admin-side portal support for managing client operations
-- Supabase backend for auth and data
+- CRM-driven lead capture and follow-up built into every site
 - Stripe for payments and subscriptions
 - Sanity headless CMS for blog content
