@@ -31,16 +31,16 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     }
     
     return {
-      title: `${projectData.title} | Brett Snyder Portfolio`,
+      title: projectData.title,
       description: projectData.description,
       openGraph: {
-        title: `${projectData.title} | Brett Snyder Portfolio`,
+        title: projectData.title,
         description: projectData.description,
         type: 'website',
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${projectData.title} | Brett Snyder Portfolio`,
+        title: projectData.title,
         description: projectData.description,
       },
     };

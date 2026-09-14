@@ -21,9 +21,9 @@ import userCenteredDesignImage from '@/images/user-centered-design.jpg';
 // Personal story data with employer-focused content
 const personalStory = {
   introduction: "I’m Brett Snyder, a designer-turned-developer with a love for bringing ideas to life on the web. From sketches that ended up in stores to code powering high-performing campaigns, I’ve spent my career balancing creativity with technology.",
-  journey: "My path started in ad agencies and design departments at NuSkin and Franklin Covey, where I worked on everything from catalogs to brand campaigns. Later, I moved into direct marketing, freelancing, and even ran a recreational gymnastics business before shifting fully into web development.",
+  journey: "My path started in ad agencies and design departments at NuSkin and Franklin Covey, where I worked on everything from catalogs to brand campaigns. From there I moved into direct marketing and freelancing, then into UI/UX design and frontend development at Imagine Learning, turning Figma designs into functional prototypes and eventually owning full builds myself.",
   achievements: "Along the way, I’ve created reusable systems that saved teams time, built CMS sites adopted by large organizations like Pearson, and helped grow both businesses and communities through design and code. I’ve also taught and mentored kids and colleagues alike—helping people believe in themselves as much as in the work.",
-  current: "At Imagine Learning, where I’ve moved from Senior Designer to Frontend Developer. Trained team members in best practices. I built modular, responsive solutions for marketing campaigns, setup/migrated three Shopify sites with custom core marketing sections, and continue to explore new tools, frameworks, and creative projects on the side. Unfortunately, after 9 years, my position was moved offshore. I’m now looking for my next opportunity."
+  current: "At Cosaint, Inc., where I’m a Product & Frontend Developer. I built and launched CyWire, a B2B AI SaaS platform, in three months, and continue to lead its product and frontend development. I also run TopWebWorks, Cosaint’s productized web-services division, taking projects from positioning through custom conversion-focused sites and Shopify e-commerce stores, CRM workflows, and ongoing growth support."
 };
 
 // Professional achievements and metrics
@@ -41,7 +41,7 @@ const coreSkills = [
   { name: 'HTML/CSS/JS', level: 95, category: 'Languages', icon: Code },
   { name: 'WordPress/CMS', level: 90, category: 'Frameworks', icon: Zap },
   { name: 'UI/UX Design', level: 85, category: 'Design', icon: Code },
-  { name: 'Fluid Responsive', level: 95, category: 'Design', icon: Target }
+  { name: 'AI & Agentic Development', level: 90, category: 'Development', icon: Target }
 ];
 
 // Personal values and working style - Enhanced for staggered layout

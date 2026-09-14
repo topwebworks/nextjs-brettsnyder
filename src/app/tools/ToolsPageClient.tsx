@@ -67,16 +67,20 @@ const getCategoryIcon = (category: string) => {
 // Development tools data
 const developmentTools = [
   { name: 'VS Code', description: 'Primary code editor with extensive customization', category: 'Editor', rating: 10 },
-  { name: 'Shopify', description: 'E-commerce platform for online stores', category: 'Framework', rating: 9 },
+  { name: 'Shopify Plus', description: 'Enterprise e-commerce platform for online stores', category: 'Framework', rating: 9 },
   { name: 'Claude Code', description: 'Agentic AI coding assistant in the terminal', category: 'Editor', rating: 10 },
   { name: 'Codex', description: 'OpenAI cloud coding agent for automated tasks', category: 'Editor', rating: 9 },
+  { name: 'CyWire', description: 'Master Prompt platform I built for structured, reliable AI output', category: 'Tools', rating: 10 },
   { name: 'Next.js', description: 'Full-stack React framework with excellent DX', category: 'Framework', rating: 9 },
-  { name: 'CyWire', description: 'Wire AI for reliable data.', category: 'Tools', rating: 10 },
+  { name: 'React', description: 'Component-based UI library for building interfaces', category: 'Framework', rating: 9 },
+  { name: 'TypeScript', description: 'Typed superset of JavaScript for safer, scalable code', category: 'Language', rating: 9 },
+  { name: 'Tailwind CSS', description: 'Utility-first CSS framework for rapid UI development', category: 'Framework', rating: 8 },
   { name: 'Git & GitHub', description: 'Version control and collaboration platform', category: 'Version', rating: 10 },
   { name: 'Photoshop', description: 'Because every pixel matters', category: 'Design', rating: 9 },
   { name: 'Figma', description: 'Design collaboration and prototyping tool', category: 'Design', rating: 9 },
   { name: 'Vercel', description: 'Seamless deployment platform for modern web projects', category: 'Deployment', rating: 9 },
   { name: 'Supabase', description: 'PostgreSQL backend with real-time APIs, auth, and row-level security', category: 'Database', rating: 9 },
+  { name: 'WordPress', description: 'Content management system for client and hobby sites', category: 'Framework', rating: 9 },
   { name: 'cPanel', description: 'Self-managed WordPress hosting server', category: 'Server', rating: 8 }
 ];
 
@@ -109,10 +113,7 @@ const favoritesTools = [
   { name: 'Icon ID-5100 & ID-51 Ham Radio', description: 'Amateur radio transceivers for communication and experimentation', category: 'Communication', rating: 9 },
   { name: 'GrooveLife Products', description: '98 year warranty accessories', category: 'Lifestyle', rating: 10 },
   { name: 'Ryobi Tools', description: 'Because I live next to Home Depot', category: 'Maintenance', rating: 9 },
-  { name: 'Birkenstock', description: 'Always a good day in Birks', category: 'Lifestyle', rating: 9 },
-  { name: 'Tailwind CSS', description: 'utility-first CSS framework for rapid UI development', category: 'Framework', rating: 8 },
-  { name: 'Supabase', description: 'Open source Firebase alternative with real-time database and auth', category: 'Database', rating: 8 },
-  { name: 'Vercel - Free Tier', description: 'Best free hosting for Next.js apps', category: 'Deployment', rating: 10 }
+  { name: 'Birkenstock', description: 'Always a good day in Birks', category: 'Lifestyle', rating: 9 }
 ];
 
 // Stats data

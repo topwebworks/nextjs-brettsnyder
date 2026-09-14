@@ -71,5 +71,4 @@ docs/                    Product direction, current plan, and technical referenc
 
 - [Product direction](docs/northstar.md)
 - [Current build plan](docs/build-plan.md)
-- [Positioning alignment plan](docs/positioning-refresh-plan.md)
 - [Media shortcode reference](docs/MEDIA-SHORTCODE-REFERENCE.md)

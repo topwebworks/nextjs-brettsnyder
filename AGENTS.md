@@ -4,7 +4,6 @@
 
 1. `docs/build-plan.md`
 2. `docs/northstar.md`
-3. `docs/positioning-refresh-plan.md` when the task relates to the current alignment work
 
 ## Shared Workflow
 

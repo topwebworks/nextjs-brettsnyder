@@ -53,7 +53,7 @@ Services land near the top of the page, each opening in a modal with full detail
 
 ## An Estimate Path Backed by Automation
 
-Both CTAs scroll straight to the estimate form, paired with direct phone and text options and a short "what happens next" breakdown for visitors still deciding. Every submission lands in a full lead pipeline with automatic follow-up, so a Saturday lead isn't waiting until Monday for a response. It's a marketing system, not just a website.
+Both CTAs scroll straight to the estimate form, paired with direct phone and text options and a short "what happens next" breakdown for visitors still deciding. Every submission lands in a full lead pipeline with automatic follow-up, so a Saturday lead isn't waiting until Monday for a response.
 
 ## SEO Built for Search and AI Visibility
 

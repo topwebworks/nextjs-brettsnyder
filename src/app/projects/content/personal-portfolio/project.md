@@ -126,6 +126,6 @@ The portfolio rebuild hit most all technical and design goals. The dark iridesce
 
 Key achievements: implementing latest Next.js 15 and React 19 within weeks of their release, creating a custom utility system when Tailwind compatibility failed, and building an automated content generation workflow. The hover-activated portrait and animated orb system provides desktop impact without overwhelming mobile users.
 
-I continue to build on it — adding projects, refining content, and evolving the site as the work behind it grows.
+I'm still adding to it. New projects, updated content, whatever the site needs next.
 
 

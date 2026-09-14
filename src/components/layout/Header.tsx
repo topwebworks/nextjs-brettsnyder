@@ -17,6 +17,7 @@ const Header: React.FC<HeaderProps> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const currentYear = new Date().getFullYear();
 
   // Handle scroll detection for sticky header styling
   useEffect(() => {
@@ -176,7 +177,7 @@ const Header: React.FC<HeaderProps> = () => {
         {/* Drawer Footer */}
         <div className={styles.drawerFooter}>
           <p className={styles.drawerFooterText}>
-            © 2025 Brett Snyder
+            © {currentYear} Brett Snyder
           </p>
         </div>
       </div>
