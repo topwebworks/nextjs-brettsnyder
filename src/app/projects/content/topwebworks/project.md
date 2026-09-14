@@ -106,6 +106,10 @@ That same pipeline supports growth programs that scale with each client:
 - Local SEO rankings tracked and reviewed monthly
 - Monthly performance reporting and strategy calls
 
+## Internal Tools Behind the Scenes
+
+Running the business day to day also meant building a couple of private internal tools. A prospect mailer tool manages the local outreach pipeline: manual calls, texts, and emails to new prospects, with duplicate detection and strict compliance rules around send limits and do-not-contact tracking. A separate monthly client report tool generates and emails PDF reports tied to each client's plan tier, replacing a manual checklist workflow. Neither is public-facing; both run locally to support operations, not client delivery.
+
 ## Design Matters Too
 
 Getting found, capturing leads, and following up automatically are systems. But the site still has to look like the business it represents: no generic templates, no colors competing for attention, just a clean, modern build around each client's actual brand.
@@ -121,6 +125,8 @@ For structured data, I added JSON-LD schema (Organization, Product, FAQ) so sear
 For AEO/GEO specifically, that meant writing content in a format AI systems can lift directly into an answer: clear semantic heading hierarchy, and service/pricing information framed as direct Q&A rather than marketing copy that has to be reinterpreted. The How It Works and Pricing pages are the clearest example: structured so an AI answer engine can quote the process and pricing verbatim.
 
 I carried the same approach into client builds. Structured data and content formatting are part of the service, not a Top Web Works-only feature.
+
+It's already working. People have told me they found Top Web Works through ChatGPT, not a Google search.
 
 ## What I Built Into the Experience
 
