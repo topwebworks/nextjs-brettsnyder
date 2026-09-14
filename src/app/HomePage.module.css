@@ -614,8 +614,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: clamp(2rem, 4vh, 3rem);
-  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .sectionHeadingRowTitle {
@@ -631,8 +630,8 @@
   align-items: center;
 }
 
-.headerButtonGroup > button {
-margin-bottom: 0;
+.headerButtonGroup > * {
+  margin-bottom: 0 !important;
 }
 
 /* Blog Articles */

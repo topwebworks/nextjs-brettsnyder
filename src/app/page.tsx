@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Mail, Github, Linkedin, Calendar, MapPin, BookOpen } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Calendar, MapPin, FolderOpen } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
@@ -11,7 +11,7 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
 import { siteConfig, emailLinks } from '@/lib/config';
 import ResumeButton from '@/components/ui/ResumeButton';
-import { latestBlogPosts } from '@/lib/generated/latestBlogPosts';
+import { latestProjects } from '@/lib/generated/latestProjects';
 import professionalPortrait from '@/images/portrait/professional-portrait.jpg';
 import styles from './HomePage.module.css';
 
@@ -20,30 +20,30 @@ import styles from './HomePage.module.css';
 const workHistory = [
   {
     id: 1,
-    title: "Marketing Web Developer",
-    company: "Imagine Learning",
-    location: "Tempe, AZ",
-    period: "2022 - Oct 2025",
-    current: false,
-    description: "I focus on building fast, flexible landing pages and micro sites. I created a reusable Master Blocks template that let our team launch responsive lead-gen pages in half the time. Created many custom core Shopify marketing sections."
+    title: "Product & Frontend Developer",
+    company: "Cosaint, Inc.",
+    location: "Queen Creek, AZ",
+    period: "Nov 2025 - Present",
+    current: true,
+    description: "I built and launched CyWire, a B2B AI SaaS platform, in three months and continue to lead its product and frontend development. I also run TopWebWorks projects from positioning and functional prototypes through Next.js or Shopify builds, CRM workflows, and ongoing growth support."
   },
   {
     id: 2,
-    title: "UI/UX Designer/Developer",
+    title: "Marketing Web Developer",
     company: "Imagine Learning",
-    location: "Chandler, AZ",
-    period: "2019 - 2022",
+    location: "Arizona (Remote)",
+    period: "Mar 2022 - Oct 2025",
     current: false,
-    description: "In my UI/UX role, I worked closely with stakeholders through live prototyping sessions to shape site flows and designs. I delivered custom WordPress sites, landing pages, and HTML emails, and supported dev teams with front-end style code and QA."
+    description: "I managed 13 WordPress sites and one custom CMS property, led three Shopify migrations, and built accessible campaign pages and reusable HTML and Shopify block systems. The Master Blocks system reduced landing-page production time by 40% across more than 50 pages."
   },
   {
     id: 3,
-    title: "Senior Designer",
-    company: "Glynlyon",
+    title: "UI/UX Designer/Developer",
+    company: "Imagine Learning",
     location: "Chandler, AZ",
-    period: "Oct 2016 - 2019",
+    period: "Apr 2019 - Mar 2022",
     current: false,
-    description: "I designed and built responsive micro sites, landing pages, and HTML email campaigns. I also improved team workflows with reusable email templates, represented at national conventions, graphic and web designs, and mentored team in design and dev best practices."
+    description: "I led UI/UX and frontend work for marketing and product experiences, maintained WordPress properties, and turned Figma designs into functional HTML prototypes. I also built the responsive Monarch Catalog prototype with working interactions for engineering handoff."
   }
 ];
 
@@ -209,7 +209,7 @@ export default function Homepage() {
           <div className={styles.heroContent}>
             {/* Refined Role Badge */}
             <div className={styles.roleBadge}>
-              MARKETING WEB DEVELOPER
+              DESIGN ENGINEER &amp; FRONTEND DEVELOPER
             </div>
 
             {/* Mobile Portrait - Shows only on mobile */}
@@ -284,61 +284,61 @@ export default function Homepage() {
           
           <div className={styles.sectionContent}>
             <div className={styles.contentColumns}>
-              {/* Left Column - Latest Blog Articles */}
+              {/* Left Column - Latest Projects */}
               <div className={styles.contentColumn}>
                 <div className={styles.sectionHeadingRow}>
                   <h2 className={styles.sectionHeadingRowTitle}>
-                    Latest Blogs
+                    Latest Projects
                   </h2>
                   
-                  {/* Blog Icon Link */}
+                  {/* Projects Icon Link */}
                   <div className={styles.headerButtonGroup}>
                     <Button
-                      variant="ghost"
+                      variant="secondary"
                       size="small"
-                      icon={BookOpen}
-                      href="/blog"
-                      aria-label="View all blog posts"
+                      icon={FolderOpen}
+                      href="/projects"
+                      aria-label="View all projects"
                     />
                   </div>
                 </div>
                 
                 <div className={styles.blogArticleList}>
-                  {latestBlogPosts.map((post) => (
+                  {latestProjects.map((project) => (
                     <article 
-                      key={post.id}
+                      key={project.id}
                       className={styles.blogArticle}
                     >
                       
                       {/* Floating Category Badge */}
                       <div className={styles.blogCategoryBadge}>
-                        {post.category}
+                        {project.category}
                       </div>
                       
                       <div className={styles.blogMetaRow}>
                         <span className={styles.blogReadTime}>
-                          {post.readTime}
+                          {project.technologies.slice(0, 2).join(' + ') || 'Project'}
                         </span>
                       </div>
                       
                       <h3 className={styles.blogTitle}>
                         <Link 
-                          href={`/blog/${post.id}`}
+                          href={`/projects/${project.id}`}
                           className={styles.blogTitleLink}
                         >
-                          {post.title}
+                          {project.title}
                           {/* <ArrowRight size={18} className={styles.blogArrowIcon} /> */}
                         </Link>
                       </h3>
                       
                       <p className={styles.blogExcerpt}>
-                        {post.excerpt || post.description}
+                        {project.excerpt}
                       </p>
                       
                       <div className={styles.blogFooter}>
                         <time className={styles.blogDate}>
                           <Calendar size={12} />
-                          {new Date(post.publishDate + 'T00:00:00').toLocaleDateString('en-US', { 
+                          {new Date(project.publishDate + 'T00:00:00').toLocaleDateString('en-US', {
                             year: 'numeric', 
                             month: 'short', 
                             day: 'numeric' 
@@ -350,10 +350,10 @@ export default function Homepage() {
                           variant="secondary"
                           size="medium"
                           icon="arrow-right"
-                          href={`/blog/${post.id}`}
+                          href={`/projects/${project.id}`}
                           className={`${styles.blogReadMoreLink} view-details-btn blog-read-more-btn`}
                         >
-                          Read
+                          View
                         </Button>
                       </div>
                     </article>
@@ -371,7 +371,7 @@ export default function Homepage() {
                   {/* LinkedIn and Resume Links */}
                   <div className={styles.headerButtonGroup}>
                     <Button
-                      variant="ghost"
+                      variant="secondary"
                       size="small"
                       icon={Linkedin}
                       href={siteConfig.linkedin}
@@ -382,7 +382,7 @@ export default function Homepage() {
                     
                     {siteConfig.showResume && (
                       <ResumeButton
-                        variant="ghost"
+                        variant="secondary"
                         size="small"
                         icon="file"
                         showText={false}

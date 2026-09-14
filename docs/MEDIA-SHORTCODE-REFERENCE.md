@@ -1,338 +1,181 @@
-# 📱 Media Shortcode System - Complete Reference Guide
-*Advanced Content Management for Project Portfolio*
+# Media and Markdown Reference
 
-## 🎯 Overview
-The Media Shortcode System allows you to embed rich media and interactive content directly in your project descriptions using simple, intuitive shortcode syntax. This system transforms plain text into dynamic, interactive portfolio content.
+This document covers the content and media behavior currently implemented by the portfolio. Project and Blog content use standard Markdown plus YAML frontmatter. The content generator converts the source files into JSON, rich HTML, static image imports, and TypeScript manifests used by the site.
 
-## 📸 Image Shortcuts
+## Content Locations
 
-### Basic Image References
+```text
+src/app/projects/content/<project-slug>/project.md
+src/app/blog/content/<post-slug>/blog.md
+```
+
+Keep related images in the same folder as the Markdown file.
+
+## Generate Content
+
+Run the generator after editing a project, Blog post, or related image:
+
+```bash
+npm run generate-project-data
+```
+
+Generated JSON and files under `src/lib/generated/` should not be edited directly.
+
+## Supported Frontmatter
+
+The generator currently reads these shared fields:
+
+- `title`
+- `description`
+- `contentTitle`
+- `achievementTitle`
+- `technologies` or `tags`
+- `category`
+- `status`
+- `featured`
+- `publishDate`
+- `links`
+- `keyAchievements`
+- `media.items`
+
+Blog content can also use:
+
+- `readTime`
+- `author`
+- `excerpt`
+
+Project links currently rendered by the detail page are:
+
+- `live`
+- `demo`
+- `github`
+
+## Markdown Body
+
+The Markdown body supports GitHub-flavored Markdown through `marked`, including:
+
+- Headings
+- Paragraphs and line breaks
+- Ordered and unordered lists
+- Links
+- Blockquotes
+- Inline code and fenced code blocks
+- Standard Markdown images
+
+External links open in a new browser tab. Generated headings receive IDs and the project's existing typography classes.
+
+## Inline Images
+
+Use standard Markdown image syntax:
+
 ```markdown
-![Alt Text](image-name.jpg)           # References specific image in project folder
-![Hero Image](hero)                   # Uses auto-detected hero image
-![Demo Screenshot](demo)              # Uses main demo screenshot
+![Descriptive alternative text](dashboard-overview.jpg)
 ```
 
-### Screenshot Gallery System
+For local images, place the referenced file in the same project or Blog folder. Supported discovered image extensions are `.jpg`, `.jpeg`, `.png`, `.gif`, `.webp`, and `.svg`.
+
+The alternative text is used by the rendered image and should describe the image's useful content. Do not use filenames or keyword lists as alternative text.
+
+## Automatic Image Roles
+
+The generator scans images in each content folder and assigns roles using the current filename rules:
+
+1. A filename containing `hero` or `main` becomes the primary image.
+2. If no explicit primary image exists, the first discovered image becomes the primary image.
+3. A remaining filename containing `demo` or `gif` becomes the demo image.
+4. Other discovered images become gallery screenshots.
+
+Use clear filenames such as:
+
+```text
+hero.jpg
+demo.gif
+dashboard-overview.jpg
+mobile-estimate-form.jpg
+```
+
+## Media Gallery
+
+Add gallery entries through `media.items` in frontmatter.
+
+### Image
+
+```yaml
+media:
+  items:
+    - type: "image"
+      src: "dashboard-overview.jpg"
+      title: "Dashboard overview"
+```
+
+### YouTube Video
+
+```yaml
+media:
+  items:
+    - type: "video"
+      src: "https://www.youtube.com/watch?v=VIDEO_ID"
+      title: "Feature walkthrough"
+```
+
+The gallery recognizes standard YouTube, `youtu.be`, embed, and Shorts URLs. The current video renderer expects a YouTube URL. Local video-file shortcodes are not implemented.
+
+## Minimal Project Example
+
 ```markdown
-![Screenshot 1](screenshot:0)         # First screenshot from project gallery
-![Screenshot 2](screenshot:1)         # Second screenshot from project gallery  
-![Screenshot 3](screenshot:2)         # Third screenshot from project gallery
-![All Screenshots](gallery)          # Opens lightbox with all project images
-```
-
-### Specialized Image Types
-```markdown
-![Mobile View](mobile)                # Mobile-optimized screenshot
-![Desktop View](desktop)              # Desktop interface screenshot
-![Admin Panel](admin)                 # Backend/admin interface
-![Before/After](comparison)           # Before and after comparison images
-```
-
-## 🎥 Video Integration
-
-### YouTube Embeds
-```markdown
-[📺 Demo Video](https://youtube.com/watch?v=VIDEO_ID)     # Standard YouTube embed
-[🎥 Tutorial Series](https://youtu.be/VIDEO_ID)          # YouTube short URL format
-[▶️ Feature Walkthrough](https://youtube.com/watch?v=ID&t=30s)  # YouTube with timestamp
-```
-
-### Video File References
-```markdown
-[🎬 Local Demo](demo-video.mp4)       # References video file in project folder
-[🎞️ Screen Recording](screen-capture.mp4)  # Local screen recording file
-[📹 User Testing](user-test.mov)      # User testing video
-```
-
-### Video Controls
-```markdown
-[🎥 Autoplay Demo](demo-video.mp4?autoplay=true)  # Video with autoplay
-[🔇 Silent Demo](demo-video.mp4?muted=true)       # Muted video playback
-[⏩ Quick Demo](demo-video.mp4?speed=1.5)         # Playback speed control
-```
-
-## 🔗 Interactive Link Shortcuts
-
-### Project Links
-```markdown
-[🌐 Live Demo](live)                  # Uses project.links.live URL
-[📁 Source Code](github)              # Uses project.links.github URL  
-[📖 Case Study](case_study)           # Uses project.links.case_study URL
-[🎯 Project Brief](brief)             # Uses project.links.brief URL
-```
-
-### Media Controls
-```markdown
-[🔍 View Gallery](gallery)            # Opens image gallery lightbox
-[🖼️ Expand Image](image-name.jpg)     # Opens specific image in lightbox
-[📱 Mobile Gallery](mobile-gallery)   # Mobile-specific image gallery
-[🖥️ Desktop Gallery](desktop-gallery) # Desktop-specific image gallery
-```
-
-### External Links with Icons
-```markdown
-[📄 Documentation](https://docs.example.com)     # External documentation
-[🐛 Bug Reports](https://github.com/user/repo/issues)  # GitHub issues
-[💬 Discussion](https://discord.gg/example)      # Discord/community links
-[📊 Analytics](https://analytics.example.com)    # Analytics dashboard
-```
-
-## 🎨 Content Enhancement Shortcuts
-
-### Highlighted Content Blocks
-```markdown
-[💡 Key Insight](This insight gets highlighted with special styling and icon)
-[⚠️ Challenge](This challenge gets emphasized with warning styling and color)
-[✅ Solution](This solution gets success styling with checkmark and green accent)
-[📊 Results](This result gets metrics styling with chart icon and accent colors)
-[🚀 Innovation](This innovation gets featured styling with rocket icon)
-```
-
-### Status and Progress Indicators
-```markdown
-[🔄 In Progress](Feature currently being developed)
-[✅ Completed](Feature fully implemented and tested)
-[❌ Deprecated](Feature removed or no longer supported)  
-[🔒 Premium](Feature available in premium version only)
-[🧪 Beta](Feature in beta testing phase)
-```
-
-### Performance and Metrics
-```markdown
-[📈 Performance](40% increase in conversion rates)
-[⚡ Speed](2.3s faster load times achieved)
-[👥 Users](10,000+ active monthly users)
-[💰 Revenue]($2M+ in transactions processed)
-[🎯 Goals](95% user satisfaction rating)
-```
-
-## 🛠️ Technical Implementation Examples
-
-### React Component Integration
-```markdown
-[⚛️ React Demo](component:ButtonShowcase)     # Embed React component demo
-[🎛️ Controls](interactive:FeatureToggle)      # Interactive feature controls
-[📊 Live Chart](chart:UserGrowthChart)        # Live data visualization
-[🎮 Playground](playground:CodeEditor)        # Interactive code playground
-```
-
-### Code and Development
-```markdown
-[💻 Code Sample](code:main-function.js)       # Syntax-highlighted code block
-[🔧 Configuration](config:package.json)      # Configuration file display
-[📋 API Docs](api:endpoints.json)            # API documentation
-[🧪 Test Results](test:coverage-report.html) # Test coverage reports
-```
-
-## 📱 Responsive Media Controls
-
-### Device-Specific Content
-```markdown
-[📱 Mobile Only](mobile:screenshot-mobile.jpg)    # Show only on mobile
-[💻 Desktop Only](desktop:screenshot-desktop.jpg)  # Show only on desktop
-[📟 Tablet View](tablet:screenshot-tablet.jpg)     # Tablet-specific content
-[🖥️ Large Screen](large:screenshot-4k.jpg)        # Large display content
-```
-
-### Responsive Galleries
-```markdown
-[🖼️ Responsive Gallery](responsive-gallery:all)  # Adaptive image gallery
-[📱 Mobile Gallery](mobile-gallery:screenshots)   # Mobile-optimized gallery
-[💻 Desktop Gallery](desktop-gallery:mockups)     # Desktop-focused gallery
-```
-
-## 🎭 Content Presentation Modes
-
-### Layout Controls
-```markdown
-[📋 List View](layout:list)           # Display content as list
-[🎴 Grid View](layout:grid)           # Display content as grid
-[📊 Card View](layout:cards)          # Display content as cards
-[📑 Timeline](layout:timeline)        # Display as timeline
-```
-
-### Content Grouping
-```markdown
-[📦 Feature Group](group:core-features)       # Group related features
-[🏷️ Category](category:user-interface)        # Categorize content
-[🔖 Section](section:implementation-details)   # Section-specific content
-[📌 Highlight](highlight:key-achievements)     # Highlighted content group
-```
-
-## 🎨 Styling and Theming
-
-### Accent Colors (Section-Specific)
-```markdown
-[🔵 Primary](primary:Main call-to-action button)    # Blue accent styling
-[🟢 Success](success:Feature successfully delivered) # Green accent styling  
-[🟣 Creative](creative:Innovative design solution)   # Purple accent styling
-[🟠 Warning](warning:Performance bottleneck found)   # Orange accent styling
-```
-
-### Content Emphasis
-```markdown
-[⭐ Featured](featured:Main project highlight)       # Featured content styling
-[🎯 Focus](focus:Critical implementation detail)     # Focused attention styling
-[💎 Premium](premium:Advanced feature showcase)      # Premium content styling
-[🔥 Hot](hot:Recently added feature)               # Trending/hot content styling
-```
-
-## 🚀 Advanced Interactions
-
-### Hover and Animation Effects
-```markdown
-[✨ Animated](animate:fade-in)        # Content with fade-in animation
-[🎭 Hover Effect](hover:scale-up)     # Scale animation on hover
-[🌊 Wave](wave:slide-in-left)         # Wave animation effect
-[🎪 Carousel](carousel:testimonials)  # Carousel interaction
-```
-
-### User Actions
-```markdown
-[👆 Click to Expand](expand:detailed-explanation)    # Expandable content
-[🔄 Toggle View](toggle:before-after)               # Toggle between states
-[📋 Copy Code](copy:installation-command)           # Copy-to-clipboard action
-[📤 Share](share:project-link)                      # Social sharing options
-```
-
-## 📊 Data and Analytics Integration
-
-### Live Data Display
-```markdown
-[📊 Live Stats](stats:github-stars)           # Live GitHub stars count
-[👥 User Count](count:active-users)           # Real-time user counter
-[💻 Deploy Status](status:vercel-deployment)  # Deployment status badge  
-[🎯 Performance](perf:lighthouse-score)       # Live Lighthouse scores
-```
-
-### Historical Data
-```markdown
-[📈 Growth Chart](chart:user-growth-6months)  # 6-month growth visualization
-[📉 Performance](perf:load-times-history)     # Historical performance data
-[🔄 Activity](activity:commit-frequency)      # Development activity chart
-[📅 Timeline](timeline:project-milestones)    # Project milestone timeline
-```
-
-## 🎓 Usage Examples in Project Content
-
-### Complete Project Description Example
-```json
-{
-  "content": {
-    "overview": "Modern e-commerce platform with advanced features. ![Hero Dashboard](hero) The system includes ![Admin Panel](admin) and ![Mobile App](mobile) interfaces. [📺 Watch the demo](https://youtube.com/watch?v=demo123) to see the complete user journey.",
-    
-    "challenge": "[⚠️ Challenge](The client needed a scalable platform handling 10,000+ concurrent users.) The existing system couldn't handle ![Traffic Spike](traffic-graph.jpg) during peak sales periods. [📊 Performance Issues](performance-bottleneck.jpg)",
-    
-    "solution": "[✅ Solution](Implemented microservices architecture with Redis caching.) We designed ![New Architecture](architecture-diagram.jpg) with horizontal scaling capabilities. [🚀 Innovation](Auto-scaling infrastructure reduces costs by 40%.) [🔍 View technical details](gallery)",
-    
-    "results": "[📈 Performance](3x faster load times, 99.9% uptime achieved.) [💰 Revenue]($2M+ in transactions processed successfully.) [👥 Users](50,000+ registered users in first 6 months.) [🌐 Try the live demo](live) or [📁 explore the code](github)."
-  }
-}
-```
-
-### Skills Section Enhancement
-```json
-{
-  "skills": {
-    "frontend": "Expert in React and Next.js development. [⚛️ React Demo](component:InteractiveExample) showcases my component architecture. [🎨 Design System](gallery:design-tokens) demonstrates UI consistency.",
-    
-    "backend": "Proficient in Node.js and database design. [🛠️ API Architecture](api:endpoints-demo) shows RESTful implementation. [📊 Performance](chart:response-times) proves optimization skills.",
-    
-    "devops": "Experienced with CI/CD and cloud deployment. [🚀 Deployment Pipeline](deployment-diagram.jpg) illustrates automated processes. [📈 Uptime Stats](stats:server-uptime) validates reliability."
-  }
-}
-```
-
-## ⚙️ Implementation Status
-
-### ✅ Currently Working
-- Basic project links (live, github, demo)
-- External YouTube links (opens in new tab)
-- Static image references (via existing system)
-
-### 🔄 In Development (Phase 2.4+)
-- Markdown parsing for image shortcodes
-- YouTube embed components
-- Lightbox modal system
-- Content enhancement shortcuts
-
-### 🔮 Future Enhancements (Phase 3.0+)
-- Interactive component embedding
-- Live data integration
-- Advanced animation controls
-- Responsive content adaptation
-
-## 🛠️ Developer Implementation Guide
-
-### Content Processing Pipeline
-```typescript
-// 1. Parse shortcodes from content string
-const parseShortcodes = (content: string): ShortcodeToken[] => {
-  // Extract [icon text](target) and ![alt](src) patterns
-  // Return structured tokens for processing
-}
-
-// 2. Resolve media references
-const resolveMediaShortcode = (token: ShortcodeToken, project: ProjectData): MediaResource => {
-  // Map shortcode targets to actual file paths/URLs
-  // Handle special keywords like 'live', 'github', 'gallery'
-}
-
-// 3. Generate React components
-const renderShortcode = (token: ShortcodeToken, resource: MediaResource): ReactNode => {
-  // Return appropriate React component based on shortcode type
-  // Apply section-specific styling and interactions
-}
-```
-
-### Component Architecture
-```typescript
-interface ShortcodeProcessor {
-  parseContent(content: string, project: ProjectData): ReactNode[];
-  registerShortcode(type: string, handler: ShortcodeHandler): void;
-  resolveMedia(reference: string, project: ProjectData): MediaResource;
-}
-
-interface MediaResource {
-  type: 'image' | 'video' | 'link' | 'component';
-  source: string | StaticImageData;
-  metadata: Record<string, any>;
-}
-```
-
+---
+title: "Project Name"
+description: "A short, accurate description for project cards and metadata."
+technologies:
+  - "Next.js"
+  - "TypeScript"
+category: "Web Application"
+status: "Production"
+featured: true
+publishDate: "2026-09-14"
+links:
+  live: "https://project.example"
+keyAchievements:
+  - type: "technical"
+    title: "Clear achievement"
+    description: "What was built and why it mattered."
+    metrics:
+      - "A supported result with enough context to explain it"
+media:
+  items:
+    - type: "image"
+      src: "dashboard-overview.jpg"
+      title: "Dashboard overview"
 ---
 
-## 📝 Quick Reference Cheat Sheet
+## Overview
 
-### Most Common Shortcuts
-```markdown
-# Images
-![Hero](hero)                    # Main project image
-![Screenshot](screenshot:0)      # First screenshot
-![Gallery](gallery)              # All project images
+Explain the problem, your role, the solution, and the result.
 
-# Videos  
-[📺 Demo](https://youtube.com/watch?v=ID)  # YouTube video
-[🎬 Recording](demo.mp4)         # Local video file
-
-# Links
-[🌐 Live Demo](live)             # Live project URL
-[📁 Source Code](github)         # GitHub repository
-[🔍 View Gallery](gallery)       # Image lightbox
-
-# Content Enhancement
-[💡 Insight](key insight text)   # Highlighted insight
-[✅ Result](achievement text)     # Success highlight
-[📊 Metric](performance data)     # Data/metrics styling
+![Dashboard showing the completed workflow](dashboard-overview.jpg)
 ```
 
-### Styling Reference
-- 🔵 **Blue accents**: Stats, analytics, data-focused content
-- 🟢 **Green accents**: Skills, learning, growth-related content  
-- 🟣 **Purple accents**: Values, personal, about-focused content
-- 🟠 **Orange accents**: Images, visual, creative-focused content
+## Create a Content Folder
 
----
+The generator can create a starter Markdown file when a new project or Blog folder contains an image but no source file. A project can also be created from the command line:
 
-*This reference guide will be updated as new shortcode features are implemented in future development phases.*
+```bash
+npm run create-project -- project-name
+```
+
+Review generated starter content before publishing. Replace all example titles, links, technologies, and metrics with accurate project information.
+
+## Not Implemented
+
+The current content system does not provide custom Markdown shortcodes for:
+
+- Embedded React components
+- Charts or live analytics
+- Live GitHub or deployment statistics
+- Custom grid, card, timeline, or carousel layouts
+- Animation and hover directives
+- Copy, share, toggle, or expand actions
+- Special insight, result, premium, or status blocks
+- Local video-file playback controls
+
+Use standard Markdown and the existing frontmatter fields unless the content engine is explicitly extended and tested in a future approved phase.
