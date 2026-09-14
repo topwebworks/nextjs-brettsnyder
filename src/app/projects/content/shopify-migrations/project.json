@@ -1,0 +1,29 @@
+{
+  "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
+  "title": "Shopify Plus Migrations",
+  "description": "Three enterprise e-commerce migrations to Shopify Plus, replacing paid apps with custom Liquid sections and configurable Shopify schemas.",
+  "technologies": [
+    "Shopify Plus",
+    "Liquid"
+  ],
+  "tags": [
+    "Shopify Plus",
+    "Liquid"
+  ],
+  "category": "E-commerce",
+  "status": "Production",
+  "featured": false,
+  "publishDate": "2022-06-01",
+  "contentTitle": "Three Migrations to Shopify Plus",
+  "readTime": "5 min read",
+  "excerpt": "Three enterprise e-commerce migrations to Shopify Plus, replacing paid apps with custom Liquid sections and configurable Shopify schemas.",
+  "links": {},
+  "content": {
+    "overview": "\\n## Three Migrations, One Platform\\n\\nI planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.\\n\\n## Custom Sections Over Paid Apps\\n\\nRather than leaning on the app ecosystem for marketing functionality, I built reusable, schema-driven Liquid sections tailored to each property's content needs. Schema settings exposed layout and content controls to marketing without touching code, while the underlying sections stayed consistent and maintainable across storefronts.\\n\\nThis is a separate system from [Master Blocks](/projects/master-blocks), the HTML/CMS block system built for WordPress and standalone pages — the Shopify sections are Liquid-native and schema-driven, built specifically for the Shopify theme architecture.\\n\\n## Working Across Platform Constraints\\n\\nThe [Shopify Tips](/blog/shopify-tips) write-up covers the practical side of this work in more depth: theme selection, staging workflows, and the tradeoffs of customizing versus extending Shopify's default Horizon theme. Across all three migrations, the priority was the same — keep the upgrade path open, build additively, and avoid core theme changes that would leave a store stuck on an unsupported foundation.\\n",
+    "overviewHtml": "<h2 id=\"three-migrations-one-platform\" class=\"project-section-title\">Three Migrations, One Platform</h2><p class=\"project-content-paragraph\">I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.</p>\n<h2 id=\"custom-sections-over-paid-apps\" class=\"project-section-title\">Custom Sections Over Paid Apps</h2><p class=\"project-content-paragraph\">Rather than leaning on the app ecosystem for marketing functionality, I built reusable, schema-driven Liquid sections tailored to each property&#39;s content needs. Schema settings exposed layout and content controls to marketing without touching code, while the underlying sections stayed consistent and maintainable across storefronts.</p>\n<p class=\"project-content-paragraph\">This is a separate system from <a href=\"/projects/master-blocks\">Master Blocks</a>, the HTML/CMS block system built for WordPress and standalone pages — the Shopify sections are Liquid-native and schema-driven, built specifically for the Shopify theme architecture.</p>\n<h2 id=\"working-across-platform-constraints\" class=\"project-section-title\">Working Across Platform Constraints</h2><p class=\"project-content-paragraph\">The <a href=\"/blog/shopify-tips\">Shopify Tips</a> write-up covers the practical side of this work in more depth: theme selection, staging workflows, and the tradeoffs of customizing versus extending Shopify&#39;s default Horizon theme. Across all three migrations, the priority was the same — keep the upgrade path open, build additively, and avoid core theme changes that would leave a store stuck on an unsupported foundation.</p>\n",
+    "keyAchievements": [],
+    "media": {
+      "items": []
+    }
+  }
+}

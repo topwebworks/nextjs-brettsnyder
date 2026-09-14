@@ -13,9 +13,21 @@ export interface LatestProject {
 
 export const latestProjects: LatestProject[] = [
   {
+    "id": "amw-hardscape",
+    "title": "AMW Hardscape Solutions",
+    "excerpt": "A full marketing system for a licensed Arizona hardscape contractor: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads.",
+    "category": "Website",
+    "publishDate": "2026-07-01",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "MDX"
+    ]
+  },
+  {
     "id": "topwebworks",
     "title": "Top Web Works Rebrand",
-    "excerpt": "A rebrand and rebuild of Top Web Works from a WordPress-focused web business into a Shopify-focused business. I repositioned the offer, rebuilt the marketing site in Next.js, and built portal workflows for both clients and admin.",
+    "excerpt": "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js, and built portal workflows for both clients and admin.",
     "category": "Website",
     "publishDate": "2026-03-27",
     "technologies": [
@@ -27,18 +39,6 @@ export const latestProjects: LatestProject[] = [
       "Stripe",
       "Sanity",
       "Shopify"
-    ]
-  },
-  {
-    "id": "cywire",
-    "title": "CyWire Master Prompts",
-    "excerpt": "A B2B SaaS platform built to create foundational data structure for AI features. Structured AI prompts with validated JSON outputs that work for any platform using JSON and AI.",
-    "category": "SaaS",
-    "publishDate": "2026-01-02",
-    "technologies": [
-      "AI Master Prompt",
-      "Web Development",
-      "Web Design"
     ]
   }
 ];

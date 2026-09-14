@@ -25,7 +25,7 @@ const workHistory = [
     location: "Queen Creek, AZ",
     period: "Nov 2025 - Present",
     current: true,
-    description: "I built and launched CyWire, a B2B AI SaaS platform, in three months and continue to lead its product and frontend development. I also run TopWebWorks projects from positioning and functional prototypes through Next.js or Shopify builds, CRM workflows, and ongoing growth support."
+    description: "I built and launched CyWire, a B2B AI SaaS platform, in three months and continue to lead its product and frontend development. I also run TopWebWorks projects from positioning and functional prototypes through custom conversion-focused sites and Shopify e-commerce stores, CRM workflows, and ongoing growth support."
   },
   {
     id: 2,

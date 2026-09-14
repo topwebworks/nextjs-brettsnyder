@@ -4,9 +4,12 @@ description: "A B2B SaaS platform built to create foundational data structure fo
 contentTitle: "Why AI Needs Structure"
 achievementTitle: ""
 technologies: 
-  - "AI Master Prompt"
-  - "Web Development"
-  - "Web Design"
+  - "Next.js"
+  - "React"
+  - "TypeScript"
+  - "Tailwind CSS"
+  - "Supabase"
+  - "Vercel"
 category: "SaaS"
 status: 
 featured: True
@@ -32,6 +35,15 @@ keyAchievements:
       - "Industry-specific templates for healthcare, finance, manufacturing, and more"
       - "Community marketplace with free and premium master prompts"
       - "Version control and collaborative editing with full code access"
+  - type: "impact"
+    icon: "🏗️"
+    title: "Concept to Production in Three Months"
+    description: "Took CyWire from concept to production in three months, refining the core engine through three major architectural versions to reach the intended product behavior."
+    metrics:
+      - "Document-backed knowledge base supporting PDF, Word, and Excel uploads"
+      - "Labs: a Pro+ chat-based Master Prompt generator"
+      - "Authentication with tier-based access control across membership levels"
+      - "Scoped team workspaces, dashboards, and leaderboards"
 media:
   items:
 
@@ -110,6 +122,20 @@ It's a way to design structured JSON blueprints for AI features—so they're eas
 Product managers, analysts, content strategists, and designers, etc. can build, edit, and test a Master Prompt visually, then hand a solid JSON blueprint to a developer to wire up the compiled full prompt.
 
 That's the vision.
+
+## What's in the Platform
+
+I built and launched CyWire in three months, taking it from concept to production, refining the core engine through three major architectural versions along the way to reach the product vision above. It's built with Next.js, React, TypeScript, Tailwind CSS, Supabase, and Vercel.
+
+Beyond the Master Prompt system itself, the platform includes:
+
+- A no-code visual builder for creating and editing Master Prompts without writing raw JSON
+- A community marketplace for sharing and discovering Master Prompts
+- A document-backed knowledge base supporting PDF, Word, and Excel uploads
+- Labs, a Pro+ chat-based Master Prompt generator
+- Authentication with tier-based access control across membership levels
+- Scoped team workspaces for collaborative editing
+- Dashboards and leaderboards for tracking usage and activity
 
 ## Why This Matters
 

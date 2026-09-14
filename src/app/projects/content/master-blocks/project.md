@@ -22,9 +22,8 @@ keyAchievements:
     title: "Accelerated Landing Page Delivery"
     description: "Built a master template of reusable blocks so the marketing team could edit or even create landing pages. The simple HTML/CSS setup let them mix, match, and edit layouts right in the CMS—making campaigns faster to launch and easier to stay on brand."
     metrics:
-      - "50% faster landing page development vs. previous workflow"
-      - "Modular block system reused across 6+ product brands"
-      - "Round 1 pages delivered within 2 business days"
+      - "Reduced landing-page production time by 40% across more than 50 conversion-focused pages"
+      - "Modular block system reused across multiple product brands"
       - "Flexible CMS-compatible HTML/CSS design for long-term scalability"
 media:
   items:
@@ -64,7 +63,7 @@ All blocks can be moved, but what is the best default sequence? Having done some
 
 8. **Chat Widget** integration - only used if no existing cms header is in&nbsp;play.
 
-> **Performance Insight**: Now custom cms landing pages are developed twice as fast. They can also work as standalone pages, just have to add in the missing HTML head&nbsp;code.
+> **Performance Insight**: Now custom cms landing pages are developed 40% faster. They can also work as standalone pages, just have to add in the missing HTML head&nbsp;code.
 
 ## The Build
 
@@ -136,6 +135,6 @@ The goal was for either myself or the marketing team can cut and paste code bloc
 
 ## Results
 
-After the first round of landing pages were quickly churned out, I added round 2 features to the template. I also created an example to illustrate use for the designers. Links are shown [above](#top-links). Now custom cms landing pages are developed twice as fast. They can also work as standalone pages, just have to add in the missing HTML head&nbsp;code.
+After the first round of landing pages were quickly churned out, I added round 2 features to the template. I also created an example to illustrate use for the designers. Links are shown [above](#top-links). Now custom cms landing pages are developed 40% faster. They can also work as standalone pages, just have to add in the missing HTML head&nbsp;code.
 
 

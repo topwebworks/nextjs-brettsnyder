@@ -99,6 +99,17 @@ const nextConfig: NextConfig = {
     return config;
   },
   
+  // Permanent redirects for moved/renamed content
+  async redirects() {
+    return [
+      {
+        source: '/projects/shopify-what-i-learned',
+        destination: '/blog/shopify-tips',
+        permanent: true,
+      },
+    ];
+  },
+
   // Exclude demo files from production builds
   async rewrites() {
     return {

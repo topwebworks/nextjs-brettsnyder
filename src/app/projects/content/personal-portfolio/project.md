@@ -42,7 +42,7 @@ media:
 
 ## Previous Portfolio
 
-I ran my [old portfolio site](https://www.topwebwork.com) for years using a customized Next.js + Tailwind UI template. It was solid—minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
+I ran my old portfolio site for years using a customized Next.js + Tailwind UI template. It was solid—minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
 
 ## The Vision
 
@@ -52,9 +52,9 @@ I chose Lucide icons over Font Awesome for a cleaner look. The goal was a more r
 
 Most portfolios use small circular avatars that lack impact on desktop. I didn't want a large portrait staring at visitors on page load either. My compromise: clean homepage with animated orbs and typography, then a large portrait background that appears only on hover.
 
-Navigation would show just two main hero buttons, moving everything else to a side menu and footer. Since I'm on Vercel's free tier, I added a config toggle to hide resume and commercial elements until I'm ready to upgrade.
+Navigation would show just two main hero buttons, moving everything else to a side menu and footer. Since I'm on Vercel's free tier, I added a config toggle to hide resume and commercial elements, which I've since turned back on as the site matured.
 
-Below the hero, I'd keep the successful elements from my old site: latest blog posts, recent work timeline, GitHub and LinkedIn links. I planned expanded About and Tools pages, proper blog and project listing pages with thumbnails, and actual project case studies this time. The goal was sharing the same content engine between blogs and projects.
+Below the hero, I'd keep the successful elements from my old site: latest project cards, recent work timeline, GitHub and LinkedIn links. I planned expanded About and Tools pages, proper blog and project listing pages with thumbnails, and actual project case studies this time. The goal was sharing the same content engine between blogs and projects.
 
 For contact, I stuck with a simple email link—no forms, no bot problems.
 
@@ -66,7 +66,7 @@ Glass effects were appealing but could easily become cluttered. I added a slow-m
 
 ## The Build
 
-1. **Homepage:** Once the design concepts were working, I added navigation and footer components to the layout. The header uses a sticky glass effect. I liked the glass blur there but found it too distracting with content panels, so I mainly used rgba transparency instead. I added placeholder latest blog cards and fine-tuned hover effects (the dynamic content would come later). The timeline added some color but was mostly static content mapping.
+1. **Homepage:** Once the design concepts were working, I added navigation and footer components to the layout. The header uses a sticky glass effect. I liked the glass blur there but found it too distracting with content panels, so I mainly used rgba transparency instead. I added placeholder latest project cards and fine-tuned hover effects (the dynamic content would come later). The timeline added some color but was mostly static content mapping.
 
    This is where I hit the challenges of using bleeding-edge Next.js and React. Service worker issues, caching problems, Edge browser bugs, and Tailwind incompatibilities created constant friction. I almost switched back to stable versions, but knowing they'd be deprecated soon, I stuck with it. I ended up removing Tailwind entirely and creating my own utility classes. The framework versions were only weeks old, so bugs weren't surprising. Later I realized Vercel's Edge CDN made my service worker redundant, so I removed it and saw network performance improve.
 
@@ -126,6 +126,6 @@ The portfolio rebuild hit most all technical and design goals. The dark iridesce
 
 Key achievements: implementing latest Next.js 15 and React 19 within weeks of their release, creating a custom utility system when Tailwind compatibility failed, and building an automated content generation workflow. The hover-activated portrait and animated orb system provides desktop impact without overwhelming mobile users.
 
-It's newly launched, so I'll continue adding content and fixing bugs as I find them.
+I continue to build on it — adding projects, refining content, and evolving the site as the work behind it grows.
 
 

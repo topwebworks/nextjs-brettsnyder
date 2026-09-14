@@ -21,7 +21,7 @@ media:
 
 ## Monarch Catalog Prototype
 
-I was asked to build an HTML prototype for home & detail pages, from a provided design. It was for a new online catalog and the devs wanted to see styles and responsive use before building it in Angular. They decided to use Material UI componenets, so I used Material.io (mdc) to get the ball rolling.
+I was asked to build an HTML prototype for home & detail pages, from a provided design. It was for a new online catalog and the devs wanted to see styles and responsive use before building it in Angular. They decided to use Material UI components, so I used Material.io (mdc) to get the ball rolling.
 LINKS: [Listing Page](https://brettsnyder.me/demo/monarch-catalog/course-catalog.html) | [Detail Page](https://brettsnyder.me/demo/monarch-catalog/course-detail.html) | [404 Page](https://brettsnyder.me/demo/monarch-catalog/error-404.html)
 
 ## Monarch Microsite

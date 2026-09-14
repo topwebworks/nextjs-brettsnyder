@@ -5,6 +5,7 @@
 import { StaticImageData } from 'next/image';
 
 // Import statements for all project images
+import amwhardscapeHero from '@/app/projects/content/amw-hardscape/amw-hardscape-hero.png';
 import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.png';
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
@@ -17,7 +18,7 @@ import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
 import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
 import printScreenshot3 from '@/app/projects/content/print/magazine-ad.jpg';
 import printScreenshot4 from '@/app/projects/content/print/reebok-brochure.jpg';
-import shopifywhatilearnedHero from '@/app/projects/content/shopify-what-i-learned/shopify-hero.jpg';
+import shopifymigrationsHero from '@/app/projects/content/shopify-migrations/shopify-hero.jpg';
 import topwebworksHero from '@/app/projects/content/topwebworks/topwebworks-hero.png';
 
 // Type definition for project image imports
@@ -29,6 +30,11 @@ export interface ProjectImageImports {
 
 // Export map for easy access by project ID
 export const projectImageImports: Record<string, ProjectImageImports> = {
+  'amw-hardscape': {
+    hero: amwhardscapeHero,
+    demo: null,
+    screenshots: []
+  },
   'cywire': {
     hero: cywireHero,
     demo: null,
@@ -59,8 +65,8 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
     demo: null,
     screenshots: [printScreenshot1, printScreenshot2, printScreenshot3, printScreenshot4]
   },
-  'shopify-what-i-learned': {
-    hero: shopifywhatilearnedHero,
+  'shopify-migrations': {
+    hero: shopifymigrationsHero,
     demo: null,
     screenshots: []
   },
@@ -73,6 +79,9 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
 
 // Filename-based lookup for direct image resolution
 export const projectImagesByFilename: Record<string, Record<string, StaticImageData>> = {
+  'amw-hardscape': {
+    'amw-hardscape-hero.png': amwhardscapeHero
+  },
   'cywire': {
     '1-cywire-master-prompts.png': cywireHero
   },
@@ -97,8 +106,8 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'magazine-ad.jpg': printScreenshot3,
     'reebok-brochure.jpg': printScreenshot4
   },
-  'shopify-what-i-learned': {
-    'shopify-hero.jpg': shopifywhatilearnedHero
+  'shopify-migrations': {
+    'shopify-hero.jpg': shopifymigrationsHero
   },
   'topwebworks': {
     'topwebworks-hero.png': topwebworksHero
@@ -121,11 +130,12 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'shopify-what-i-learned', 'topwebworks'];
+export const availableProjects = ['amw-hardscape', 'cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'shopify-migrations', 'topwebworks'];
 
 // Note: Console logging removed to reduce build noise
 
 // Individual variable exports for direct access
+export { amwhardscapeHero };
 export { cywireHero };
 export { emailHero };
 export { emailScreenshot1 };
@@ -138,5 +148,5 @@ export { printScreenshot1 };
 export { printScreenshot2 };
 export { printScreenshot3 };
 export { printScreenshot4 };
-export { shopifywhatilearnedHero };
+export { shopifymigrationsHero };
 export { topwebworksHero };

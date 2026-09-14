@@ -4,18 +4,19 @@
 
 // Static project list - no filesystem calls needed
 export const PROJECT_IDS: readonly string[] = [
+  'amw-hardscape',
   'cywire',
   'email',
   'master-blocks',
   'monarch-catalog',
   'personal-portfolio',
   'print',
-  'shopify-what-i-learned',
+  'shopify-migrations',
   'topwebworks'
 ] as const;
 
 // Project count for quick reference
-export const PROJECT_COUNT = 8;
+export const PROJECT_COUNT = 9;
 
 // Type for project ID validation
 export type ProjectId = typeof PROJECT_IDS[number];

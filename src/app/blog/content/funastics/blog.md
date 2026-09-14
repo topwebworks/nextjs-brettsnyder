@@ -21,7 +21,7 @@ keyAchievements:
   - type: "Impact"
     icon: "💹"
     title: "Building a Brand and a Community"
-    description: "I launched Funastics as a recreational gymnastics program that blended skill-building with life lessons, while also running it like a polished, professional brand. The gym became a place where kids gained confidence, learned leadership, and had a blast, while parents appreciated the quality curricullum and life lessons, strong branding, and online systems."
+    description: "I launched Funastics as a recreational gymnastics program that blended skill-building with life lessons, while also running it like a polished, professional brand. The gym became a place where kids gained confidence, learned leadership, and had a blast, while parents appreciated the quality curriculum and life lessons, strong branding, and online systems."
     metrics:
       - "50–80 students per day across multiple age groups for 3 years"
       - "Life lessons, motivational huddles, and leadership training built into every class"
@@ -59,7 +59,7 @@ Funastics was built around one simple idea: **progress at your own pace in a sup
 
 Every child tracked their growth on an **individual progress chart** that included flexibility, strength, and skill goals. Skills were separated into levels and had to be passed off one-on-one with an instructor before moving on. This gave kids structure and safety while helping them see real progress. Each time they advanced, they earned a colored star for the sleeve of their Funastics shirt. Earning that next star wasn’t just about tumbling — it was about persistence, self-control, and believing they could&nbsp;do&nbsp;it.  
 
-At the top of the program sat the **Gold Star students**, who could join the **Junior Instructor track**. This wasn’t just a title; it was available leadership training. Older kids learned how to demonstarate and guide younger ones from experience, safely spot skills, and learn to truely mentor. They wore their stars proudly, knowing they had earned them through commitment and consistency. The whole program came to be known as the **Funastics Star Program** — a system that blended gymnastics skills with character-building.  
+At the top of the program sat the **Gold Star students**, who could join the **Junior Instructor track**. This wasn’t just a title; it was available leadership training. Older kids learned how to demonstrate and guide younger ones from experience, safely spot skills, and learn to truly mentor. They wore their stars proudly, knowing they had earned them through commitment and consistency. The whole program came to be known as the **Funastics Star Program** — a system that blended gymnastics skills with character-building.  
 
 ### We also taught four simple values that every student could understand:  
 
