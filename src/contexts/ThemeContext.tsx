@@ -88,15 +88,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     setTheme(newTheme);
   };
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return (
-      <ThemeContext.Provider value={{ theme: 'dark', toggleTheme: () => {}, setTheme: () => {}, mounted: false }}>
-        {children}
-      </ThemeContext.Provider>
-    );
-  }
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme, mounted }}>
       {children}

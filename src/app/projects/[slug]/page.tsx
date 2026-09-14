@@ -5,6 +5,10 @@ import { notFound } from 'next/navigation';
 import { getProject, generateStaticParams as getStaticParams } from '@/lib/projectLoader';
 import ProjectDetailUniversal from '@/components/ProjectDetailUniversal';
 import { Metadata } from 'next';
+import { siteConfig } from '@/lib/config';
+import { getProjectImages } from '@/lib/generated/projectImageImports';
+
+const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -66,13 +70,37 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   try {
     // Load the project data using auto-discovery
     const project = await getProject(sanitizedSlug);
-    
+
     if (!project) {
       notFound();
     }
 
+    const heroImage = getProjectImages(sanitizedSlug).hero;
+    const isCyWire = sanitizedSlug === 'cywire';
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': isCyWire ? 'SoftwareApplication' : 'CreativeWork',
+      name: project.title,
+      description: project.description,
+      url: `${siteUrl}/projects/${sanitizedSlug}`,
+      ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
+      ...(isCyWire && {
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+      }),
+    };
+
     // Render using the universal project detail component
-    return <ProjectDetailUniversal project={project} contentType="project" />;
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <ProjectDetailUniversal project={project} contentType="project" />
+      </>
+    );
   } catch (error) {
     console.error('Failed to load project:', error);
     notFound();

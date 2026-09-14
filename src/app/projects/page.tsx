@@ -17,6 +17,7 @@ import { Metadata } from 'next';
 import ProjectScripts from '@/components/ProjectScripts';
 import '@/styles/pagination.css';
 import styles from './ProjectsPage.module.css';
+import { siteConfig } from '@/lib/config';
 
 // Page metadata
 export const metadata: Metadata = {
@@ -28,6 +29,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
+
+const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
 // Enable static generation with revalidation
 // Static regeneration - cache for 1 hour, matches other pages
@@ -69,8 +72,29 @@ export default async function ProjectsPage() {
     return null;
   };
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Projects',
+    description: 'Explore my latest projects and development work across web development, design, and technology.',
+    url: `${siteUrl}/projects`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: allProjects.map((project: ProjectData, index: number) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${siteUrl}/projects/${project.id}`,
+        name: project.title,
+      })),
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className={styles.mainContainer}>
         {/* Atmospheric Background */}
         <AtmosphericBackground variant="subtle" orbCount={3} includeBackground={true} />

@@ -1,0 +1,426 @@
+"use client"
+
+import React from 'react';
+import Image from 'next/image';
+import { Zap, Heart, Code, Lightbulb, Target } from 'lucide-react';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
+import Button from '@/components/ui/Button';
+import { emailLinks, siteConfig } from '@/lib/config';
+import ResumeButton from '@/components/ui/ResumeButton';
+import styles from './AboutPage.module.css';
+
+// Global/shared images from src/images/
+import professionalPortrait from '@/images/portrait/professional-portrait.jpg';
+import techExcellenceImage from '@/images/tech-excellence.jpg';
+import continuousInnovationImage from '@/images/continuous-innovation.jpg';
+import userCenteredDesignImage from '@/images/user-centered-design.jpg';
+
+// Personal story data with employer-focused content
+const personalStory = {
+  introduction: "I’m Brett Snyder, a designer-turned-developer with a love for bringing ideas to life on the web. From sketches that ended up in stores to code powering high-performing campaigns, I’ve spent my career balancing creativity with technology.",
+  journey: "My path started in ad agencies and design departments at NuSkin and Franklin Covey, where I worked on everything from catalogs to brand campaigns. Later, I moved into direct marketing, freelancing, and even ran a recreational gymnastics business before shifting fully into web development.",
+  achievements: "Along the way, I’ve created reusable systems that saved teams time, built CMS sites adopted by large organizations like Pearson, and helped grow both businesses and communities through design and code. I’ve also taught and mentored kids and colleagues alike—helping people believe in themselves as much as in the work.",
+  current: "At Imagine Learning, where I’ve moved from Senior Designer to Frontend Developer. Trained team members in best practices. I built modular, responsive solutions for marketing campaigns, setup/migrated three Shopify sites with custom core marketing sections, and continue to explore new tools, frameworks, and creative projects on the side. Unfortunately, after 9 years, my position was moved offshore. I’m now looking for my next opportunity."
+};
+
+// Professional achievements and metrics
+const achievements = [
+  { label: 'Industry Years', value: '25+', icon: Target },
+  { label: 'Artwork Sold', value: '10K+', icon: Zap },
+  { label: 'Team Members Mentored', value: '12+', icon: Heart },
+  { label: 'Imagine Learning Years', value: '9', icon: Code }
+];
+
+// Core skills with proficiency levels
+const coreSkills = [
+  { name: 'Shopify/Liquid', level: 75, category: 'Development', icon: Code },
+  { name: 'Next.js/React', level: 65, category: 'Frameworks', icon: Code },
+  { name: 'HTML/CSS/JS', level: 95, category: 'Languages', icon: Code },
+  { name: 'WordPress/CMS', level: 90, category: 'Frameworks', icon: Zap },
+  { name: 'UI/UX Design', level: 85, category: 'Design', icon: Code },
+  { name: 'Fluid Responsive', level: 95, category: 'Design', icon: Target }
+];
+
+// Personal values and working style - Enhanced for staggered layout
+const personalValues = [
+  {
+    title: "How Do I Use AI?",
+    // subtitle: "AI isn't going anywhere",
+    description: "My AI stack is centered on VS Code with Claude Code as my primary tool and Codex as a strong second. I use AI to speed up planning, coding, debugging, and iteration while staying grounded in the actual codebase and solid frontend fundamentals.",
+    details: "AI as a tool gives me speed, keeps me hands-on, and helps me maintain ownership and authorship of the work.",
+    icon: Code,
+    metrics: "Endless Possibilities",
+    image: techExcellenceImage,
+    imageAlt: "Person-led AI assistancee"
+  },
+  {
+    title: "Continuous Innovation",
+    subtitle: "Always learning, always growing",
+    description: "Digital markets shift quickly, and the best results come from staying ahead of the curve. Innovation keeps websites relevant and ensures they outperform competitors.",
+    details: "I set aside time each month to explore new frameworks, conversion strategies, and UX patterns. I bring these lessons back into client and employer projects—delivering fresh, modern solutions that keep brands competitive and profitable.",
+    icon: Lightbulb,
+    metrics: "30+ Hrs/mo Learning",
+    image: continuousInnovationImage,
+    imageAlt: "Futuristic technology and digital innovation concept"
+  },
+  {
+    title: "User-Centered Design",
+    subtitle: "Technology should serve people",
+    description: "A website succeeds when it connects with its audience. Technology should serve people by being clear, intuitive, and focused on guiding users toward action.",
+    details: "I design with conversion in mind, clean layouts, clear content hierarchy, and easy navigation that reduces friction. Prototyping, testing, and iterating ensure the end product not only looks good but also drives measurable results.",
+    icon: Heart,
+    metrics: "ADA Compliance",
+    image: userCenteredDesignImage,
+    imageAlt: "User experience design process with sketches and wireframes"
+  }
+];
+
+export default function AboutPage() {
+  const [portraitLoaded, setPortraitLoaded] = React.useState(false);
+  const [skillsVisible, setSkillsVisible] = React.useState(false);
+  const skillsRef = React.useRef<HTMLElement>(null);
+  
+  // Initialize scroll animations - bulletproof for production
+  React.useEffect(() => {
+    const initAnimations = async () => {
+      const { initScrollAnimations } = await import('@/utils/scrollAnimations');
+      initScrollAnimations();
+    };
+    
+    // Multiple initialization attempts for production reliability
+    initAnimations();
+    const timer = setTimeout(initAnimations, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  // Set up skills scroll animation
+  React.useEffect(() => {
+    if (!skillsRef.current) return;
+
+    const skillsElement = skillsRef.current;
+
+    // Add scroll animation class
+    skillsElement.classList.add('scroll-skills-progress');
+
+    // Listen for the custom event triggered by scroll animation
+    const handleSkillsInView = () => {
+      setSkillsVisible(true);
+    };
+
+    skillsElement.addEventListener('skillsInView', handleSkillsInView);
+
+    return () => {
+      skillsElement.removeEventListener('skillsInView', handleSkillsInView);
+    };
+  }, []);
+  
+  return (
+    <>      
+      <div className={styles.pageContainer}>
+        {/* Atmospheric Background Component */}
+        <AtmosphericBackground variant="subtle" orbCount={4} />
+        
+        {/* Header */}
+        <Header />
+
+
+          {/* Subtle Background Glass Panel */}
+          <div className={`${styles.backgroundGlassPanel} float-panel`} />
+
+
+        {/* Main Content */}
+        <main>
+
+          {/* Hero Section - About Introduction */}
+          <section className={styles.heroSection}>
+            
+            <div className={styles.heroContainer}>
+              <div className={styles.heroContent}>
+                {/* Left Column - Portrait */}
+                <div className={styles.portraitContainer}>
+                  {/* Enhanced Professional Portrait Container with Sophisticated Glassmorphism */}
+                  <div className={styles.portraitImageWrapper}>
+                    {/* Hover Overlay with Purple Accent - Outside main container */}
+                    <div className={`${styles.portraitHoverOverlay} portrait-hover-overlay`}></div>
+
+                    <div className={styles.portraitWrapper}>
+                      {/* Interactive Layer */}
+                      <div className={styles.portraitInteractiveLayer} />
+                    {/* Loading placeholder */}
+                    {!portraitLoaded && (
+                      <div className={styles.portraitLoadingPlaceholder}>
+                        <LoadingSpinner size="lg" />
+                      </div>
+                    )}
+                    
+                    <Image 
+                      src={professionalPortrait}
+                      alt="Professional Portrait"
+                      fill
+                      sizes="(max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
+                      className={`portrait-image ${styles.portraitImage} ${portraitLoaded ? styles.portraitImageLoaded : styles.portraitImageLoading}`}
+                      placeholder="blur"
+                      loading="eager"
+                      priority={true}
+                      onLoad={() => setPortraitLoaded(true)}
+                    />
+
+                    {/* Subtle overlay for depth */}
+                    <div className={styles.portraitOverlay} />
+                    </div>
+                  </div>
+
+                  {/* Enhanced Professional Achievements Grid with Production Glassmorphism */}
+                  <div className={styles.achievementsGrid}>
+                    {achievements.map((achievement) => (
+                      <div 
+                        key={achievement.label}
+                        className={styles.achievementCard}
+                      >
+                        {/* Hover Overlay with Blue Accent */}
+                        <div className={`${styles.achievementCardHover} stats-hover-overlay`} />
+
+                        {/* Interactive Layer */}
+                        <div className={styles.achievementInteractiveLayer} />
+
+                        <achievement.icon 
+                          size={22} 
+                          className={styles.achievementCardIcon} 
+                        />
+                        <div className={styles.achievementCardLabel}>
+                          {achievement.label}
+                        </div>
+                        <div className={styles.achievementCardValue}>
+                          {achievement.value}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Column - Content */}
+                <div className={styles.textContent}>
+                  {/* Header */}
+                  <div className={styles.textHeader}>
+                    <h1 className={styles.textTitle}>
+                      About Me
+                    </h1>
+                    
+                    <p className={styles.textIntroduction}>
+                      {personalStory.introduction}
+                    </p>
+                  </div>
+
+                  {/* Personal Story Sections */}
+                  <div className={styles.personalStorySections}>
+                    {[
+                      { title: 'My Journey', content: personalStory.journey },
+                      { title: 'Key Achievements', content: personalStory.achievements },
+                      { title: 'Current', content: personalStory.current }
+                    ].map((section) => (
+                      <div 
+                        key={section.title}
+                        className={styles.personalStorySection}
+                      >
+                        <h2 className={styles.personalStorySectionTitle}>
+                          {section.title}
+                        </h2>
+                        <p className={styles.personalStorySectionContent}>
+                          {section.content}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action Buttons with Mobile Responsiveness */}
+                  <div className={styles.actionButtons}>
+                    {siteConfig.showResume && (
+                      <ResumeButton
+                        variant="primary"
+                        size="medium"
+                        icon="download"
+                      >
+                        Download Resume
+                      </ResumeButton>
+                    )}
+
+                    <Button
+                      variant="secondary"
+                      size="medium"
+                      icon="mail"
+                      href={emailLinks.connect()}
+                      className={styles.actionButtonLink}
+                    >
+                      Say Hello
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Core Skills Section */}
+          <section ref={skillsRef} className={styles.skillsSection}>
+
+            <div className={styles.skillsContainer}>
+              <h2 className={styles.skillsTitle}>
+                Core Skills
+              </h2>
+
+              <div className={`${styles.skillsGrid} skills-grid`}>
+                {coreSkills.map((skill, index) => (
+                  <div 
+                    key={skill.name}
+                    className={styles.skillCard}
+                  >
+                    {/* Hover Overlay with Green Accent */}
+                    <div className={`${styles.skillHoverOverlay} skill-hover-overlay`} />
+
+                    {/* Interactive Layer */}
+                    <div className={styles.skillInteractiveLayer} />
+                    
+                    <div className={styles.skillCardHeader}>
+                      <skill.icon 
+                        size={22} 
+                        className={styles.skillCardIcon}
+                      />
+                      <div>
+                        <h2 className={styles.skillCardTitle}>
+                          {skill.name}
+                        </h2>
+                        <div className={styles.skillCategory}>
+                          {skill.category}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Enhanced Skill Progress Bar with Better Visibility */}
+                    <div className={styles.skillProgressBarContainer}>
+                      <div 
+                        className={`${styles.skillProgressBar} ${styles[`skillLevel${skill.level}` as keyof typeof styles]} ${styles[`skillDelay${index}` as keyof typeof styles]} ${skillsVisible ? styles.skillProgressBarVisible : ''}`}
+                      />
+                    </div>
+
+                    <div className={styles.skillLevelDisplay}>
+                      {skill.level}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+
+          {/* Personal Values Section - Staggered Image & Content Layout */}
+          <section className={styles.valuesSection}>            
+
+            <div className={styles.valuesContainer}>
+              <h2 className={styles.valuesSectionTitle}>
+                Philosophy & Approach
+              </h2>
+
+              <div className={styles.valuesListContainer}>
+                {personalValues.map((value, index) => {
+                  const Icon = value.icon;
+                  const isEven = index % 2 === 0;
+                  
+                  return (
+                    <div 
+                      key={value.title}
+                      className={`${styles.valueContainer} ${isEven ? styles.valueContainerEven : styles.valueContainerOdd} value-container value-container-${index}`}
+                      data-scroll-trigger={index}
+                    >
+                      {/* Image Panel with Hover Effects */}
+                      <div 
+                        className={`${styles.valueImagePanel} image-panel photo-contemporary-container scroll-fade-up-fast`}
+                      >
+                        {/* Hover Overlay with Orange Accent */}
+                        <div
+                          className={`${styles.valueImageHoverOverlay} image-hover-overlay`}
+                        />
+
+                        <Image 
+                          src={value.image}
+                          alt={value.imageAlt}
+                          fill
+                          sizes="(max-width: 768px) 95vw, (max-width: 1024px) 400px, 450px"
+                          className={`${styles.valueImageAsset} photo-contemporary`}
+                          loading="lazy"
+                          placeholder="blur"
+                        />
+                        
+                        {/* Subtle Gradient Overlay */}
+                        <div className={styles.valueImageOverlay} />
+                        
+                        {/* Glassmorphism Pill Badge */}
+                        <div className={styles.valueImageBadge}>
+                          {value.metrics}
+                        </div>
+
+                        {/* Interactive Layer - Must be last to capture hover */}
+                        <div className={styles.valueImageInteractiveLayer} />
+                      </div>
+
+                      {/* Content Panel with Hover Effects */}
+                      <div 
+                        className={`${styles.valueContentPanel} ${isEven ? styles.valueContentPanelEven : styles.valueContentPanelOdd} content-panel scroll-fade-up`}
+                      >
+                        {/* Hover Overlay with Purple Accent */}
+                        <div
+                          className={`${styles.valueContentHoverOverlay} hover-overlay`}
+                        />
+                        
+                        {/* Interactive Layer for Hover Detection */}
+                        <div className={styles.valueContentInteractiveLayer} />
+                        
+                        {/* Header with Enhanced Icon */}
+                        <div 
+                          className={`${styles.valueHeader} value-header`}
+                        >
+                          <div className={styles.valueIconContainer}>
+                            <Icon 
+                              size={36} 
+                              className={styles.valueIcon}
+                            />
+                          </div>
+                          <div>
+                            <h2 className={styles.valueTitle}>
+                              {value.title}
+                            </h2>
+                            <p className={styles.valueSubtitle}>
+                              {value.subtitle}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Description */}
+                        <p className={styles.valueDescriptionUpdated}>
+                          {value.description}
+                        </p>
+                        
+                        {/* Clean Modern Quote Box */}
+                        <div className={styles.valueQuoteBox}>
+                          <p className={styles.valueQuoteText}>
+                            {value.details}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+    </>
+  );
+}

@@ -35,7 +35,7 @@ The site should provide clear evidence across:
 5. Keep the voice direct, personal, and easy to explain in an interview.
 6. Do not introduce new public-facing em dashes.
 
-## Phase 0: Public Repository Documentation
+## Phase 0: Public Repository Documentation - Done
 
 Review every tracked document as part of the public portfolio.
 
@@ -52,7 +52,7 @@ Completed 2026-09-14. Application code, site layouts, and generated site content
 
 Review checkpoint: public documentation only.
 
-## Phase 1: Search Foundation
+## Phase 1: Search Foundation - In Progress
 
 SEO, AEO, and GEO use the same accurate technical and content foundation. Schema.org does not define separate AEO or GEO schema types.
 
@@ -87,7 +87,7 @@ Do not add review, rating, FAQ, service, or organization claims that are absent 
 
 Review checkpoint: search changes with no intentional visual difference.
 
-## Phase 2: Homepage Alignment
+## Phase 2: Homepage Alignment - Done
 
 Keep the exact layout and visual treatment.
 

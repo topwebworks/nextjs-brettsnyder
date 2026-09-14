@@ -5,6 +5,10 @@ import { notFound } from 'next/navigation';
 import { loadBlogData } from '@/lib/blogLoader';
 import ProjectDetailUniversal from '@/components/ProjectDetailUniversal';
 import { Metadata } from 'next';
+import { siteConfig } from '@/lib/config';
+import { getBlogImages } from '@/lib/generated/blogImageImports';
+
+const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
 interface BlogPageProps {
   params: Promise<{
@@ -77,8 +81,29 @@ export default async function BlogPage({ params }: BlogPageProps) {
       technologies: blog.tags, // Map tags to technologies for compatibility
     };
 
+    const heroImage = getBlogImages(sanitizedSlug).hero;
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: blog.title,
+      description: blog.description,
+      url: `${siteUrl}/blog/${sanitizedSlug}`,
+      datePublished: blog.publishDate,
+      author: { '@type': 'Person', name: blog.author || 'Brett Snyder' },
+      ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
+    };
+
     // Render using the universal project detail component with blog content type
-    return <ProjectDetailUniversal project={adaptedBlog} contentType="blog" />;
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <ProjectDetailUniversal project={adaptedBlog} contentType="blog" />
+      </>
+    );
   } catch (error) {
     console.error('Failed to load blog:', error);
     notFound();

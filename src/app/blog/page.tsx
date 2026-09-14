@@ -14,6 +14,7 @@ import { Metadata } from 'next';
 import BlogScripts from '@/components/BlogScripts';
 import '@/styles/pagination.css';
 import styles from './BlogPage.module.css';
+import { siteConfig } from '@/lib/config';
 
 // Page metadata
 export const metadata: Metadata = {
@@ -25,6 +26,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
+
+const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
 // Enable static generation with revalidation
 export const revalidate = 3600; // 1 hour
@@ -50,8 +53,26 @@ export default async function BlogPage() {
     return remoteHero || remoteScreenshot || null;
   };
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Blog',
+    description: 'Explore my latest thoughts, tutorials, and insights on web development, technology, and design.',
+    url: `${siteUrl}/blog`,
+    blogPost: allBlogs.map((blog: BlogData) => ({
+      '@type': 'BlogPosting',
+      headline: blog.title,
+      url: `${siteUrl}/blog/${blog.id}`,
+      datePublished: blog.publishDate,
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className={styles.mainContainer}>
         {/* Atmospheric Background */}
         <AtmosphericBackground variant="subtle" orbCount={3} includeBackground={true} />
