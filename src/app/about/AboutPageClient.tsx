@@ -60,7 +60,7 @@ const personalValues = [
     title: "Design Systems",
     subtitle: "Consistency that scales",
     description: "A shared set of components and styles means every new page or feature looks right the first time, instead of getting rebuilt from scratch or drifting from the brand.",
-    details: "I've built design systems that saved teams real time on delivery, and I run on the same principle for client work: shared components, consistent styling, and a system that scales cleanly as a site grows.",
+    details: "I've built design systems that saved teams real time on delivery, translating an existing brand guide into core tokens, then building the shared components on top. I run on the same principle for client work: shared components, consistent styling, and a system that scales cleanly as a site grows.",
     icon: Layers,
     metrics: "Built for Scale",
     image: continuousInnovationImage,
