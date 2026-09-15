@@ -1,6 +1,6 @@
 ---
 title: "Shopify Plus Migrations"
-description: "Three enterprise e-commerce migrations to Shopify Plus, replacing paid apps with custom Liquid sections and configurable Shopify schemas."
+description: "A Shopify Plus marketing design system of reusable Liquid sections and schemas, built for designers and developers across three enterprise e-commerce migrations."
 contentTitle: "Three Migrations to Shopify Plus"
 achievementTitle: ""
 technologies:
@@ -9,8 +9,10 @@ technologies:
 category: "E-commerce"
 status: "Production"
 featured: false
+designSystem: true
 publishDate: "2022-06-01"
 links:
+  live: "https://aop.com/pages/mktg-custom-dev"
 keyAchievements:
   - type: "technical"
     icon: "🤝"
@@ -27,13 +29,13 @@ media:
 
 ## Three Migrations, One Platform
 
-I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
+I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a [custom marketing design system](https://aop.com/pages/mktg-custom-dev), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
 
-## Custom Sections Over Paid Apps
+## A Design System, Built in Liquid
 
-Rather than leaning on the app ecosystem for marketing functionality, I built reusable, schema-driven Liquid sections tailored to each property's content needs. Schema settings exposed layout and content controls to marketing without touching code, while the underlying sections stayed consistent and maintainable across storefronts.
+Rather than leaning on the app ecosystem for marketing functionality, I built a design system of reusable, schema-driven Liquid sections tailored to each property's content needs: shared brand tokens, a consistent section library, and schema settings that exposed layout and content controls to marketing and design without touching code. The underlying sections stayed consistent and maintainable across storefronts, so designers and marketers could compose new pages from existing pieces instead of requesting one-off builds.
 
-This is a separate system from [Master Blocks](/projects/master-blocks), the HTML/CMS block system built for WordPress and standalone pages. The Shopify sections are Liquid-native and schema-driven, built specifically for the Shopify theme architecture.
+This is a separate design system from [Master Blocks](/projects/master-blocks), the HTML/CMS block system built for WordPress and standalone pages. The Shopify sections are Liquid-native and schema-driven, built specifically for the Shopify theme architecture, but the same principle carries across both: shared tokens and components that designers and developers can both work&nbsp;from.
 
 ## Collaboration and Ongoing Support
 

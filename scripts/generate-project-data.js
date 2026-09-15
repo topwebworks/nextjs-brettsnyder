@@ -632,6 +632,7 @@ async function processContentMarkdownToJson(contentId, contentDir, contentType) 
       category: frontmatter.category || (useExistingJson ? existingJson?.category : undefined) || 'Uncategorized',
       status: frontmatter.status || (useExistingJson ? existingJson?.status : undefined) || 'Unknown',
       featured: frontmatter.featured !== undefined ? frontmatter.featured : (useExistingJson ? existingJson?.featured : undefined) || false,
+      designSystem: frontmatter.designSystem !== undefined ? frontmatter.designSystem : (useExistingJson ? existingJson?.designSystem : undefined) || false,
       publishDate: frontmatter.publishDate || (useExistingJson ? existingJson?.publishDate : undefined) || new Date().toISOString().split('T')[0],
       contentTitle: frontmatter.contentTitle || frontmatter['content-title'] || (useExistingJson ? existingJson?.contentTitle : undefined) || undefined,
       achievementTitle: frontmatter.achievementTitle || frontmatter['achievement-title'] || (useExistingJson ? existingJson?.achievementTitle : undefined) || undefined,

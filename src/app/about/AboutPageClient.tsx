@@ -22,7 +22,7 @@ import userCenteredDesignImage from '@/images/user-centered-design.jpg';
 const personalStory = {
   introduction: "I’m Brett Snyder, a designer-turned-developer with a love for bringing ideas to life on the web. From sketches that ended up in stores to code powering high-performing campaigns, I’ve spent my career balancing creativity with technology.",
   journey: "My path started in ad agencies and design departments at NuSkin and Franklin Covey, where I worked on everything from catalogs to brand campaigns. From there I moved into direct marketing and freelancing, then into UI/UX design and frontend development at Imagine Learning, turning Figma designs into functional prototypes and eventually owning full builds myself.",
-  achievements: "Along the way, I’ve created reusable systems that saved teams time, built CMS sites adopted by large organizations like Pearson, and helped grow both businesses and communities through design and code. I’ve also taught and mentored kids and colleagues alike—helping people believe in themselves as much as in the work.",
+  achievements: "Along the way, I’ve built design systems that saved teams time, built CMS sites adopted by large organizations like Pearson, and helped grow both businesses and communities through design and code. I’ve also taught and mentored kids and colleagues alike—helping people believe in themselves as much as in the work.",
   current: "At Cosaint, Inc., where I’m a Product & Frontend Developer. I built and launched CyWire, a B2B AI SaaS platform, in three months, and continue to lead its product and frontend development. I also run TopWebWorks, Cosaint’s productized web-services division, taking projects from positioning through custom conversion-focused sites and Shopify e-commerce stores, CRM workflows, and ongoing growth support."
 };
 
@@ -59,7 +59,7 @@ const personalValues = [
   {
     title: "Continuous Innovation",
     subtitle: "Always learning, always growing",
-    description: "Digital markets shift quickly, and the best results come from staying ahead of the curve. Innovation keeps websites relevant and ensures they outperform competitors.",
+    description: "Frameworks, tools, and best practices change fast, and clients notice when a site feels dated. Staying hands-on with what's new is how I keep the work relevant.",
     details: "I set aside time each month to explore new frameworks, conversion strategies, and UX patterns. I bring these lessons back into client and employer projects—delivering fresh, modern solutions that keep brands competitive and profitable.",
     icon: Lightbulb,
     metrics: "30+ Hrs/mo Learning",
@@ -69,8 +69,8 @@ const personalValues = [
   {
     title: "User-Centered Design",
     subtitle: "Technology should serve people",
-    description: "A website succeeds when it connects with its audience. Technology should serve people by being clear, intuitive, and focused on guiding users toward action.",
-    details: "I design with conversion in mind, clean layouts, clear content hierarchy, and easy navigation that reduces friction. Prototyping, testing, and iterating ensure the end product not only looks good but also drives measurable results.",
+    description: "A website only works if people can actually use it and get where they're trying to go. Good design gets out of the way and lets that happen.",
+    details: "I build with conversion in mind: clean layouts, a clear content hierarchy, and navigation that doesn't make people think. I prototype, test, and iterate until the site looks good and actually moves the numbers I'm being measured on.",
     icon: Heart,
     metrics: "ADA Compliance",
     image: userCenteredDesignImage,

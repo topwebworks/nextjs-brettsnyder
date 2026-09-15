@@ -1,7 +1,7 @@
 ---
 title: "AMW Hardscape Solutions"
-description: "A full marketing system for a licensed Arizona hardscape contractor: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads."
-contentTitle: "A Marketing System, Not Just a Website"
+description: "A full marketing system for a licensed Arizona hardscape contractor, built on my Top Web Works service-pages design system: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads."
+contentTitle: "A Full Marketing System"
 achievementTitle: ""
 technologies:
   - "Next.js"
@@ -11,6 +11,7 @@ technologies:
 category: "Website"
 status: "Production"
 featured: false
+designSystem: true
 publishDate: "2026-07-01"
 links:
   live: "https://amwhardscape.com"
@@ -32,6 +33,8 @@ media:
 
 AMW Hardscape Solutions is a licensed hardscape contractor serving San Tan Valley, Queen Creek, Gilbert, Mesa, Chandler, and Apache Junction. The site is built custom on Next.js rather than a theme, so there's no ceiling on features or page speed.
 
+It's built on my [Top Web Works](/projects/topwebworks) service-pages design system: the same set of customizable Next.js blocks behind the homepage-first conversion layout, trust section, and estimate path used across conversion-focused client&nbsp;sites.
+
 ## Services and Trust, Above the Fold
 
 Services land near the top of the page, each opening in a modal with full detail instead of a separate page. Below that sits a trust section, a filterable project gallery, nine full Google reviews, and a four-step process section.
@@ -44,8 +47,8 @@ Cookie consent, GTM-gated analytics, LocalBusiness schema, and a dynamic sitemap
 
 ## SEO Built for Search and AI Visibility
 
-The MDX blog goes live on a GitHub push, no CMS dashboard or deploy step. After a lead mentioned finding AMW through ChatGPT, the site was structured so AI tools can read and surface that content too, not just Google.
+The MDX blog goes live on a GitHub push, no CMS dashboard or deploy step. After a lead mentioned finding AMW through ChatGPT, the site was structured so AI tools can read and surface that content too.
 
-## A Campaign, Not a One-Time Launch
+## An Ongoing Monthly Campaign
 
 AMW runs a monthly campaign theme across email, blog, social, and paid ads, so the offer a lead sees in an ad is the same one waiting in their inbox.

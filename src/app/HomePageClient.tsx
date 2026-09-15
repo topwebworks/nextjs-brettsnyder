@@ -34,7 +34,7 @@ const workHistory = [
     location: "Arizona (Remote)",
     period: "Mar 2022 - Oct 2025",
     current: false,
-    description: "I managed 13 WordPress sites and one custom CMS property, led three Shopify migrations, and built accessible campaign pages and reusable HTML and Shopify block systems. The Master Blocks system reduced landing-page production time by 40% across more than 50 pages."
+    description: "I managed 13 WordPress sites and one custom CMS property, led three Shopify migrations, and built two design systems: Master Blocks for HTML/CMS landing pages and a Shopify Plus marketing design system in Liquid. Master Blocks reduced landing-page production time by 40% across more than 50 pages."
   },
   {
     id: 3,

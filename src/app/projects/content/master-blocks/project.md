@@ -1,6 +1,6 @@
 ---
-title: "Master Blocks Template"
-description: "A flexible fluid responsive master template of landing page building blocks. This enabled our marketing team to create lead gen landing pages in a fraction of the time and still keep direct code flexibility available."
+title: "Master Blocks Design System"
+description: "A design system of reusable, token-based landing page blocks for marketing and design teams. This enabled our marketing team to create lead gen landing pages in a fraction of the time and still keep direct code flexibility available."
 contentTitle: ""
 achievementTitle: ""
 technologies: 
@@ -11,6 +11,7 @@ technologies:
 category: "Template"
 status: "Prod"
 featured: false
+designSystem: true
 publishDate: "2019-03-15"
 links:
   demo: "/demo/master-blocks/example-aop-lp.html"
@@ -39,7 +40,9 @@ What would be the fastest most efficient path to churn these out? A template of 
 
 ## A Solution
 
-By late afternoon, I threw together a quick [wireframe](https://www.figma.com/file/Touan7noP4nCCu9D7xioU2/Master-LP-Blocks-Graybox-(Copy)?type=design&node-id=0%3A1&t=iLDWaBbBw2Z5Y7jr-1) showing what a master template might look like - reflecting their provided wireframe elements - and then some. The concept was to create a flex template of modular content blocks that are portable. Flex is more forgiving of change than CSS Grid. Meaning each block and child element can be moved or deleted without breaking the layout on any cms, or even standalone. The template would include almost all elements they would ever need, then refactor the page from there. The pitch was approved and I was off to the&nbsp;races.
+By late afternoon, I threw together a quick [wireframe](https://www.figma.com/file/Touan7noP4nCCu9D7xioU2/Master-LP-Blocks-Graybox-(Copy)?type=design&node-id=0%3A1&t=iLDWaBbBw2Z5Y7jr-1) showing what a master template might look like - reflecting their provided wireframe elements - and then some. The concept was to design a system, not just a page: a library of modular content blocks, built on shared design tokens (CSS variables for color, type, and spacing), that are portable across brands and CMS platforms. Flex is more forgiving of change than CSS Grid. Meaning each block and child element can be moved or deleted without breaking the layout on any cms, or even standalone. The design system would include almost all elements they would ever need, then refactor the page from there. The pitch was approved and I was off to the&nbsp;races.
+
+This is a design system in the same sense as a component library in Figma or a token-based system in React: a shared set of building blocks, brand variables, and rules for how they combine, meant to be used by both designers and developers rather than hand-built per page. The platform here is HTML/CSS/CMS, but the same tokens-and-components approach ports to any framework, including&nbsp;Next.js.
 
 ## Default Block Sequence
 

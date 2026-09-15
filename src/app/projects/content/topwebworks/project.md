@@ -1,6 +1,6 @@
 ---
 title: "Top Web Works Rebrand"
-description: "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js, and built the CRM-driven lead and follow-up system behind it."
+description: "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js on a fully customized Tailwind design system, and implemented the CRM-driven lead and follow-up system behind it, plus the two separate Next.js design systems client sites are built on."
 contentTitle: "Websites That Capture and Follow Up on Every Lead"
 achievementTitle: ""
 technologies:
@@ -13,6 +13,7 @@ technologies:
 category: "Website"
 status:
 featured: True
+designSystem: true
 publishDate: "2026-03-27"
 links:
   live: "https://topwebworks.com"
@@ -33,63 +34,63 @@ media:
 
 ## The Logo
 
-Part of the rebrand was designing a new logo from scratch, a custom mark built from the TWW letterforms and paired with the Top Web Works wordmark. It appears in the site header and footer, carrying the visual identity across every touchpoint of the business.
+Part of the rebrand meant designing a new logo from scratch: a custom mark built from the TWW letterforms, paired with the Top Web Works wordmark. It runs in the header and footer, so the new identity shows up everywhere on the site.
 
 ## The Starting Point
 
-Top Web Works originally operated as a WordPress-focused business centered around hosting and building websites. That model worked, but it kept the business broad and didn't say anything about the problem that actually costs local businesses money: leads going cold with no follow-up.
+Top Web Works started out as a WordPress business built around hosting and building websites. That model worked fine, but it stayed broad, and it never actually spoke to the thing that costs local businesses money: leads going cold because nobody followed up.
 
-Over time, a more focused offer made more sense: custom-built, conversion-focused websites for local businesses, paired with a lead capture and follow-up system Top Web Works runs on the client's behalf. Shopify remains available for clients who need a store, but it's one option inside a broader, lead-focused service, not the business's core positioning.
+So I narrowed the offer. Custom-built, conversion-focused websites for local businesses, paired with a lead capture and follow-up system Top Web Works runs for them. Shopify is still on the table for clients who need a store, but it's one option now, not the core pitch.
 
-This wasn't a website refresh, it was a full repositioning of the business.
+This wasn't a redesign. It was a full repositioning of the business.
 
 ## Why Next.js Instead of Staying in WordPress
 
-Because this rebrand was about moving forward, I did not want to rebuild the new business on the same foundation it was moving away from.
+I didn't want to rebuild the new business on the same foundation it was leaving behind.
 
-I rebuilt the site in Next.js because the rebrand was a platform shift, not just a redesign. A custom Next.js build gave me a cleaner foundation for the lead-capture workflows the business model required. CRM pipelines and payment flows are a much better fit in a React app than bolted onto a WordPress install.
+The rebrand was a platform shift, not just a fresh coat of paint, so I moved the site to Next.js. It gave me a cleaner base for the lead-capture workflows the new business model needed. CRM pipelines and payment flows just fit better in a React app than bolted onto WordPress.
 
 ## What the Public Site Needed to Do
 
-The live site centers the business around a clear offer: a free homepage prototype first, a conversion-focused custom build, and a lead capture and follow-up system built into every site from launch. The homepage, About, How It Works, Pricing, and Works pages all support that message from different angles.
+The live site is built around one clear offer: a free homepage prototype first, then a conversion-focused custom build, with lead capture and follow-up built into every site from day one. The homepage, About, How It Works, Pricing, and Works pages all back that up from different angles.
 
-The public-facing content had to do a few things well:
+The public-facing content had a short list of jobs:
 
-- Explain the lead-follow-up focus clearly: no inquiry slips through
+- Make the lead-follow-up focus obvious, so no inquiry slips through
 - Show that the free prototype comes before any commitment
-- Make the service tiers and what's included visible and easy to understand
-- Reinforce that follow-up runs on planned workflows, not guesswork
-- Give customers a clear next step into a free preview
+- Lay out the service tiers and what's included, clearly
+- Make clear that follow-up runs on planned workflows, not guesswork
+- Give people an easy next step into a free preview
 
-That clarity required deliberate structure. A lot of small business service websites stay vague. This one needed to be plain, specific, and easy to trust.
+Getting that across took real structure. A lot of small business service sites stay vague. This one had to be plain, specific, and easy to trust.
 
 ## Building the Service Story
 
-One of the strongest parts of the rebrand was turning the service into a simple step-by-step system: a free homepage prototype first, a deposit to start the full build once the client approves it, the balance due at launch, and a recurring plan that starts the following month. That structure makes the service feel real and operational instead of abstract, and it removes the risk of committing before seeing the work.
+One of the better parts of the rebrand was turning the service into a simple, step-by-step process: free homepage prototype first, a deposit once the client approves it, the balance due at launch, then a recurring plan starting the next month. It makes the service feel real and operational instead of abstract, and it takes the risk out of committing before seeing any work.
 
-Each client build moves through audience positioning, messaging, site copy, and UI/UX design, resulting in either a custom conversion-focused site or a Shopify e-commerce store for the client. Ongoing recurring plans then cover hosting, maintenance, and lead follow-up, so clients aren't left managing the site or chasing leads alone after launch.
+Each client build moves through audience positioning, messaging, site copy, and UI/UX design, and ends in either a custom conversion-focused site or a Shopify store. From there, a recurring plan covers hosting, maintenance, and lead follow-up, so clients aren't stuck managing the site or chasing leads on their own after launch.
 
-A clear process is easier to trust, and easier to buy into.
+A clear process is just easier to trust and easier to buy into.
 
-Payment for setup fees and recurring maintenance runs through Stripe invoices I send manually, no checkout flow built into the site itself.
+Setup fees and recurring maintenance get paid through Stripe invoices I send manually. There's no checkout flow built into the site itself.
 
 ## The Blog
 
-The site includes a full blog. I started with Sanity as a headless CMS, but switched to a custom MDX-based system instead, fewer restrictions and better speed than running content through a third-party CMS.
+The site includes a full blog. I started with Sanity as a headless CMS, then switched to a custom MDX-based system, fewer restrictions and better speed than running content through a third-party CMS.
 
 ## Every Site Ships With the Lead System Built In
 
-Topwebworks.com runs on the same lead system it sells: every form, chat message, and inquiry that comes through the site is captured into a centralized CRM pipeline with instant email notification and an automated confirmation, so nothing slips through from day one.
+Topwebworks.com runs on the same lead system it sells. Every form, chat message, and inquiry coming through the site lands in a central CRM pipeline, with an instant email notification and an automated confirmation, so nothing gets missed from day one.
 
-Every client site ships with that same system already configured and tested before it goes live. Automated email follow-up runs at every tier; customer SMS follow-up is added on top of that workflow at Grow and above.
+Every client site ships with that same system already configured and tested before launch. Automated email follow-up runs at every tier; SMS follow-up gets added on top at Grow and above.
 
-From there, I lead the ongoing operations that keep it running for clients: a dedicated business texting number, estimate and booking requests built into the follow-up flow, and post-job review requests. Text, email, and chat all land in one inbox clients can manage from their phone or desktop, instead of scattered across email threads and missed calls.
+From there, I run the ongoing operations that keep it working for clients: a dedicated business texting number, estimate and booking requests built into the follow-up flow, and post-job review requests. Text, email, and chat all land in one inbox clients can check from their phone or desktop instead of chasing scattered emails and missed calls.
 
 ## Ongoing Growth Programs
 
-That same pipeline supports growth programs that scale with each client:
+That same pipeline feeds growth programs that scale with each client:
 
-- Social content published on a set monthly cadence across Facebook and Instagram
+- Social content on a set monthly cadence across Facebook and Instagram
 - Google Business posts keeping each client's profile active
 - Monthly email campaigns to the client's customer list
 - Meta ad campaigns, managed and optimized monthly
@@ -100,33 +101,24 @@ That same pipeline supports growth programs that scale with each client:
 
 ## Internal Tools Behind the Scenes
 
-Running the business day to day also meant building a couple of private internal tools. A prospect mailer tool manages the local outreach pipeline: manual calls, texts, and emails to new prospects, with duplicate detection and strict compliance rules around send limits and do-not-contact tracking. A separate monthly client report tool generates and emails PDF reports tied to each client's plan tier, replacing a manual checklist workflow. Neither is public-facing; both run locally to support operations, not client delivery.
+Running the business day to day also meant building a couple of private internal tools. A prospect mailer tool manages the local outreach pipeline: manual calls, texts, and emails to new prospects, with duplicate detection and strict compliance rules around send limits and do-not-contact tracking. A separate monthly client report tool generates and emails PDF reports tied to each client's plan tier, replacing what used to be a manual checklist. Neither is public-facing; both run locally.
 
-## Design Matters Too
+## Three Design Systems, Each With a Job
 
-Getting found, capturing leads, and following up automatically are systems. But the site still has to look like the business it represents: no generic templates, no colors competing for attention, just a clean, modern build around each client's actual brand.
+Topwebworks.com itself runs on a fully customized Tailwind design system I built for the marketing site. No generic templates, no colors fighting for attention, just a clean, modern build around the brand.
+
+Client sites run on two separate custom Next.js design systems instead, one for service sites and one for informational sites, in place of a page builder or UI kit. Both are conversion-focused, both are built from shared components and consistent styling, and both ship with the same lead capture and follow-up system underneath.
 
 ## SEO, AEO, and GEO
 
-Search visibility couldn't just mean traditional SEO anymore. More buying research now happens inside AI answer engines like ChatGPT, Perplexity, and Google AI Overviews. I built the site to perform in both worlds at once: SEO for search engines, AEO (answer engine optimization) and GEO (generative engine optimization) for AI-driven discovery.
+Search visibility doesn't just mean traditional SEO anymore. A lot of buying research now happens inside AI answer engines like ChatGPT, Perplexity, and Google AI Overviews, so I built the site to perform in both worlds at once: SEO for search engines, AEO (answer engine optimization) and GEO (generative engine optimization) for AI-driven discovery.
 
-On the technical SEO side: sitemap.xml, robots.txt, canonical URLs, and attention to Core Web Vitals so pages are fast and fully crawlable.
+On the technical SEO side: sitemap.xml, robots.txt, canonical URLs, and real attention to Core Web Vitals so pages stay fast and fully crawlable.
 
-For structured data, I added JSON-LD schema (Organization, Product, FAQ) so search engines and AI crawlers can parse exactly what the business offers instead of inferring it from unstructured page copy.
+For structured data, I added JSON-LD schema (Organization, Product, FAQ) so search engines and AI crawlers can read exactly what the business offers instead of inferring it from unstructured page copy.
 
-For AEO/GEO specifically, that meant writing content in a format AI systems can lift directly into an answer: clear semantic heading hierarchy, and service/pricing information framed as direct Q&A rather than marketing copy that has to be reinterpreted. The How It Works and Pricing pages are the clearest example: structured so an AI answer engine can quote the process and pricing verbatim.
+For AEO and GEO specifically, that meant writing content in a format AI systems can lift straight into an answer: a clear semantic heading hierarchy, and service and pricing info framed as direct Q&A instead of marketing copy that needs to be reinterpreted. The How It Works and Pricing pages show this best, structured so an AI answer engine can quote the process and pricing verbatim.
 
-I carried the same approach into client builds. Structured data and content formatting are part of the service, not a Top Web Works-only feature.
+I carried the same approach into client builds too. Structured data and content formatting are part of the service.
 
-It's already working. People have told me they found Top Web Works through ChatGPT, not a Google search.
-
-## What I Built Into the Experience
-
-The finished project brings together several layers:
-
-- A modern, lead-focused marketing site in Next.js and TypeScript
-- Clear service positioning around a free prototype, a conversion-focused build, and managed follow-up
-- Custom page structure for About, Pricing, Works, How It Works, and process content
-- CRM-driven lead capture and follow-up built into every site
-- Manual Stripe invoicing for setup fees and recurring maintenance
-- Custom MDX blog system, replacing an earlier Sanity CMS setup
+It's already paying off. People have told me they found Top Web Works through ChatGPT.

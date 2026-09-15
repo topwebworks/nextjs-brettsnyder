@@ -26,7 +26,7 @@ export const latestProjects: LatestProject[] = [
   {
     "id": "amw-hardscape",
     "title": "AMW Hardscape Solutions",
-    "excerpt": "A full marketing system for a licensed Arizona hardscape contractor: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads.",
+    "excerpt": "A full marketing system for a licensed Arizona hardscape contractor, built on my Top Web Works service-pages design system: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads.",
     "category": "Website",
     "publishDate": "2026-07-01",
     "technologies": [

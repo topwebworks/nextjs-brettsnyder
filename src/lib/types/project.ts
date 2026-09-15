@@ -16,6 +16,7 @@ export interface ProjectData {
   category: string;
   status: string;
   featured: boolean;
+  designSystem?: boolean;
   publishDate: string;
   contentTitle?: string; 
   achievementTitle?: string;

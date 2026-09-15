@@ -72,6 +72,8 @@ Shopify's Liquid templating language and schema-based settings approach offer re
 
 Liquid allows you to create reusable components (sections) that streamline development without extensive coding knowledge. Better to build your theme marketing sections from scratch than try to shoehorn the existing template sections. Add to - not replace theme sections... and you do not break your upgrade&nbsp;path.
 
+Turning those sections into an actual design system, shared tokens, a consistent component library, schema settings marketing can use on their own, is what gets pages looking exactly how you want them, every&nbsp;time.
+
 ## Static Site Generation vs. Shopify
 
 While platforms like Next.js offer unparalleled speed and flexibility, here are some Shopify-specific&nbsp;tips:

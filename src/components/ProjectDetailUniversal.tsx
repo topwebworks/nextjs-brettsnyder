@@ -485,15 +485,21 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
             <div className={styles.projectCategory}>
-              <Tag 
-                size={16} 
+              <Tag
+                size={16}
                 className={styles.categoryIcon}
               />
               <span className={styles.categoryText}>
                 {project.category}
               </span>
             </div>
-            
+
+            {project.designSystem && (
+              <div className={styles.designSystemBadge}>
+                Design System
+              </div>
+            )}
+
             <h1 className={styles.heroTitle}>
               {project.title}
             </h1>
