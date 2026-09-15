@@ -76,7 +76,7 @@ Setup fees and recurring maintenance get paid through Stripe invoices I send man
 
 ## The Blog
 
-The site includes a full blog. I started with Sanity as a headless CMS, then switched to a custom MDX-based system, fewer restrictions and better speed than running content through a third-party CMS.
+The site includes a full blog. I ran it on Sanity for years, a solid headless CMS that plenty of companies build on. I eventually moved this site and my client sites to a custom MDX-based system instead, since content lives in the repo and ships with the same build, no separate CMS to manage.
 
 ## Every Site Ships With the Lead System Built In
 
