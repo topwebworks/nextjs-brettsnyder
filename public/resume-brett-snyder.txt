@@ -24,8 +24,8 @@ Delivery & Quality: Git/GitHub, Supabase, Vercel, Cross-Browser Testing, WCAG Ac
 
 PROFESSIONAL EXPERIENCE
 
-PRODUCT & FRONTEND DEVELOPER
-Cosaint, Inc. | Queen Creek, AZ
+FOUNDER & PRODUCT/FRONTEND DEVELOPER
+Cosaint, Inc. (Freelance) | Queen Creek, AZ
 November 2025 - Present
 
 - Built and launched CyWire.com (https://cywire.com) in three months, taking the B2B AI platform from concept to production while refining its core engine through three major architectural versions to achieve the intended product vision. Developed it with Next.js, React, TypeScript, Tailwind CSS, Supabase, and Vercel.

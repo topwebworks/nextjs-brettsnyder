@@ -803,6 +803,7 @@
   z-index: 2;
   text-align: center;
   white-space: nowrap;
+  line-height: 1;
 }
 
 /* Value Content Panel */
@@ -1351,6 +1352,7 @@
   z-index: 2;
   text-align: center;
   white-space: nowrap;
+  line-height: 1;
 }
 
 /* Value Content Panel */

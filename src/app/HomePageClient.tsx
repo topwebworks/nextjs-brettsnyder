@@ -20,12 +20,12 @@ import styles from './HomePage.module.css';
 const workHistory = [
   {
     id: 1,
-    title: "Product & Frontend Developer",
-    company: "Cosaint, Inc.",
+    title: "Founder & Product/Frontend Developer",
+    company: "Cosaint, Inc. (Freelance)",
     location: "Queen Creek, AZ",
     period: "Nov 2025 - Present",
     current: true,
-    description: "I built and launched CyWire, a B2B AI SaaS platform, in three months and continue to lead its product and frontend development. I also run TopWebWorks projects from positioning and functional prototypes through custom conversion-focused sites and Shopify e-commerce stores, CRM workflows, and ongoing growth support."
+    description: "I run Cosaint, Inc., my own business entity for freelance and contract work. Through it, I built and launched CyWire, a B2B AI SaaS platform, in three months and continue to lead its product and frontend development. I also run TopWebWorks projects from positioning and functional prototypes through custom conversion-focused sites and Shopify e-commerce stores, CRM workflows, and ongoing growth support."
   },
   {
     id: 2,

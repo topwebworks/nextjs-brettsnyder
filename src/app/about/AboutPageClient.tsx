@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Zap, Heart, Code, Lightbulb, Target } from 'lucide-react';
+import { Zap, Heart, Code, Layers, Target } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
@@ -23,7 +23,7 @@ const personalStory = {
   introduction: "I’m Brett Snyder, a designer-turned-developer with a love for bringing ideas to life on the web. From sketches that ended up in stores to code powering high-performing campaigns, I’ve spent my career balancing creativity with technology.",
   journey: "My path started in ad agencies and design departments at NuSkin and Franklin Covey, where I worked on everything from catalogs to brand campaigns. From there I moved into direct marketing and freelancing, then into UI/UX design and frontend development at Imagine Learning, turning Figma designs into functional prototypes and eventually owning full builds myself.",
   achievements: "Along the way, I’ve built design systems that saved teams time, built CMS sites adopted by large organizations like Pearson, and helped grow both businesses and communities through design and code. I’ve also taught and mentored kids and colleagues alike—helping people believe in themselves as much as in the work.",
-  current: "At Cosaint, Inc., where I’m a Product & Frontend Developer. I built and launched CyWire, a B2B AI SaaS platform, in three months, and continue to lead its product and frontend development. I also run TopWebWorks, Cosaint’s productized web-services division, taking projects from positioning through custom conversion-focused sites and Shopify e-commerce stores, CRM workflows, and ongoing growth support."
+  current: "I run Cosaint, Inc., my own business entity for freelance and contract work. Through it, I built and launched CyWire, a B2B AI SaaS platform, in three months, and continue to lead its product and frontend development. I also run TopWebWorks, Cosaint’s productized web-services division, taking projects from positioning through custom conversion-focused sites and Shopify e-commerce stores, CRM workflows, and ongoing growth support."
 };
 
 // Professional achievements and metrics
@@ -36,8 +36,8 @@ const achievements = [
 
 // Core skills with proficiency levels
 const coreSkills = [
-  { name: 'Shopify/Liquid', level: 75, category: 'Development', icon: Code },
-  { name: 'Next.js/React', level: 65, category: 'Frameworks', icon: Code },
+  { name: 'Shopify/Liquid', level: 90, category: 'Development', icon: Code },
+  { name: 'Next.js/React', level: 90, category: 'Frameworks', icon: Code },
   { name: 'HTML/CSS/JS', level: 95, category: 'Languages', icon: Code },
   { name: 'WordPress/CMS', level: 90, category: 'Frameworks', icon: Zap },
   { name: 'UI/UX Design', level: 85, category: 'Design', icon: Code },
@@ -48,7 +48,7 @@ const coreSkills = [
 const personalValues = [
   {
     title: "How Do I Use AI?",
-    // subtitle: "AI isn't going anywhere",
+    subtitle: "AI as a tool, not a replacement",
     description: "My AI stack is centered on VS Code with Claude Code as my primary tool and Codex as a strong second. I use AI to speed up planning, coding, debugging, and iteration while staying grounded in the actual codebase and solid frontend fundamentals.",
     details: "AI as a tool gives me speed, keeps me hands-on, and helps me maintain ownership and authorship of the work.",
     icon: Code,
@@ -57,22 +57,22 @@ const personalValues = [
     imageAlt: "Person-led AI assistancee"
   },
   {
-    title: "Continuous Innovation",
-    subtitle: "Always learning, always growing",
-    description: "Frameworks, tools, and best practices change fast, and clients notice when a site feels dated. Staying hands-on with what's new is how I keep the work relevant.",
-    details: "I set aside time each month to explore new frameworks, conversion strategies, and UX patterns. I bring these lessons back into client and employer projects—delivering fresh, modern solutions that keep brands competitive and profitable.",
-    icon: Lightbulb,
-    metrics: "30+ Hrs/mo Learning",
+    title: "Design Systems",
+    subtitle: "Consistency that scales",
+    description: "A shared set of components and styles means every new page or feature looks right the first time, instead of getting rebuilt from scratch or drifting from the brand.",
+    details: "I've built design systems that saved teams real time on delivery, and I run on the same principle for client work: shared components, consistent styling, and a system that scales cleanly as a site grows.",
+    icon: Layers,
+    metrics: "Built for Scale",
     image: continuousInnovationImage,
-    imageAlt: "Futuristic technology and digital innovation concept"
+    imageAlt: "Design system components and consistent UI patterns"
   },
   {
-    title: "User-Centered Design",
-    subtitle: "Technology should serve people",
-    description: "A website only works if people can actually use it and get where they're trying to go. Good design gets out of the way and lets that happen.",
-    details: "I build with conversion in mind: clean layouts, a clear content hierarchy, and navigation that doesn't make people think. I prototype, test, and iterate until the site looks good and actually moves the numbers I'm being measured on.",
+    title: "Conversion-Focused Design",
+    subtitle: "Design that drives results",
+    description: "A website only works if it turns visitors into leads and customers. Every page needs one clear action, so a visitor never leaves without a way to reach you.",
+    details: "I start by knowing exactly who the site is for, then design around that audience: clean layouts, a clear content hierarchy, and a single obvious next step on every page. UI/UX decisions are made to move the numbers I'm being measured on, not just to look good.",
     icon: Heart,
-    metrics: "ADA Compliance",
+    metrics: "Built to Convert",
     image: userCenteredDesignImage,
     imageAlt: "User experience design process with sketches and wireframes"
   }
