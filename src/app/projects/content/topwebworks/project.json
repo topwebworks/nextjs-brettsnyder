@@ -1,7 +1,7 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
   "title": "Top Web Works Rebrand",
-  "description": "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js on a fully customized Tailwind design system, and implemented the CRM-driven lead and follow-up system behind it, plus the two separate Next.js design systems client sites are built on.",
+  "description": "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses, with two design systems behind the client sites it builds.",
   "technologies": [
     "Next.js",
     "React",
@@ -25,7 +25,7 @@
   "publishDate": "2026-03-27",
   "contentTitle": "Websites That Capture and Follow Up on Every Lead",
   "readTime": "5 min read",
-  "excerpt": "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js on a fully customized Tailwind design system, and implemented the CRM-driven lead and follow-up system behind it, plus the two separate Next.js design systems client sites are built on.",
+  "excerpt": "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses, with two design systems behind the client sites it builds.",
   "links": {
     "live": "https://topwebworks.com"
   },

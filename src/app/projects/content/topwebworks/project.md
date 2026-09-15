@@ -1,6 +1,6 @@
 ---
 title: "Top Web Works Rebrand"
-description: "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses. I repositioned the offer, rebuilt the marketing site in Next.js on a fully customized Tailwind design system, and implemented the CRM-driven lead and follow-up system behind it, plus the two separate Next.js design systems client sites are built on."
+description: "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses, with two design systems behind the client sites it builds."
 contentTitle: "Websites That Capture and Follow Up on Every Lead"
 achievementTitle: ""
 technologies:
