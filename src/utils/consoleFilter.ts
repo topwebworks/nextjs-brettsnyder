@@ -72,12 +72,6 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
         // CSS positioning warnings (fixed at source)
         'Provided "static" should be one of absolute,fixed,relative',
         'has "fill" and parent element with invalid "position"',
-        // Termly development noise (expected behavior)
-        '[Termly] Termly ResourceBlocker is not the first script on the page',
-        '[Termly] A script from \'www.googletagmanager.com\' might not be categorized correctly',
-        'Termly ResourceBlocker is not the first script on the page',
-        'A script from \'www.googletagmanager.com\' might not be categorized correctly'
-
       ];
 
       if (ignoredWarnings.some(warning => message.includes(warning))) {
@@ -145,11 +139,6 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
         'data-gr-ext-installed',
         // Edge compatibility messages
         '🔧 Edge fixes applied',
-        // Termly AutoBlocker informational messages
-        '[Termly] AutoBlocker is enabled for this website',
-        '[Termly] Installing AutoBlocker overrides',
-        '[Termly] Region \'us\' has consent_mode set to \'opt_in\'',
-        '[Termly] A script from \'www.googletagmanager.com\' might not be categorized correctly'
       ];
 
       if (ignoredLogs.some(log => message.includes(log))) {

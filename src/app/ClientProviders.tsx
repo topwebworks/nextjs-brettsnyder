@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Script from "next/script";
 import { ThemeProvider, useTheme } from "../contexts/ThemeContext";
 import HydrationFix from "../components/ui/HydrationFix";
+import CookieConsent from "../components/layout/CookieConsent";
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
   const { mounted } = useTheme();
@@ -57,17 +58,6 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
     }
   }, [mounted]);
 
-  // Initialize Termly script (simple useEffect approach)
-  useEffect(() => {
-    if (!window.termlyInitialized) {
-      const termlyScript = document.createElement('script');
-      termlyScript.src = `https://app.termly.io/resource-blocker/${process.env.NEXT_PUBLIC_TERMLY_UUID || 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'}?autoBlock=on`;
-      termlyScript.async = false;
-      document.head.prepend(termlyScript);
-      window.termlyInitialized = true;
-    }
-  }, []);
-
   return <>{children}</>;
 }
 
@@ -116,6 +106,8 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       <ThemeProvider>
         <LayoutContent>{children}</LayoutContent>
       </ThemeProvider>
+
+      <CookieConsent />
 
       {/* Google Tag Manager */}
       <Script

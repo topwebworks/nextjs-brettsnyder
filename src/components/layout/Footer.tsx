@@ -38,20 +38,22 @@ export default function Footer() {
                 {[
                   { name: 'Privacy', href: '/policy' },
                   { name: 'Terms', href: '/terms' },
-                  { name: 'Cookies', href: '#', isTermlyLink: true }
                 ].map((link, index) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className={
-                      link.isTermlyLink
-                        ? `termly-display-preferences ${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`
-                        : `${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`
-                    }
+                    className={`${styles.legalLink} ${styles[`animateLink${index + 4}` as keyof typeof styles]}`}
                   >
                     {link.name}
                   </a>
                 ))}
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
+                  className={`${styles.legalLink} ${styles.legalLinkButton} ${styles.animateLink6}`}
+                >
+                  Cookies
+                </button>
               </div>
             </div>
 

@@ -37,12 +37,8 @@ declare module '*.webp' {
 // Global window extensions
 declare global {
   interface Window {
-    termlyInitialized?: boolean;
-    termly?: {
-      displayPreferences?: () => void;
-      togglePreferences?: () => void;
-      showPreferences?: () => void;
-    };
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 

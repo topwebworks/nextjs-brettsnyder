@@ -1,0 +1,204 @@
+/* CookieConsent.module.css */
+
+.banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem clamp(1rem, 4vw, 2rem);
+  background: var(--glass-gradient-linear), var(--glass-gradient-mesh);
+  backdrop-filter: var(--glass-backdrop-medium);
+  border-top: 1px solid var(--glass-border-primary);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  width: 100%;
+  max-width: 28rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.75rem;
+  border-radius: 16px;
+  background: var(--glass-bg-medium);
+  backdrop-filter: var(--glass-backdrop-medium);
+  border: 1px solid var(--glass-border-primary);
+}
+
+.modalTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.text {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.link {
+  color: var(--text-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.modalActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.primaryButton {
+  flex: 1;
+  background: rgb(var(--accent-rgb));
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.primaryButton:hover {
+  filter: brightness(1.1);
+}
+
+.secondaryButton {
+  background: var(--glass-bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--glass-border-subtle);
+}
+
+.secondaryButton:hover {
+  background: var(--glass-bg-medium);
+  color: var(--text-primary);
+}
+
+.prefRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--glass-border-subtle);
+}
+
+.prefName {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.prefDescription {
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.alwaysOn {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.toggle {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.toggleTrack {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--glass-bg-subtle);
+  border: 1px solid var(--glass-border-subtle);
+  transition: background 0.25s ease;
+}
+
+.toggleTrack::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.25s ease;
+}
+
+.toggle input:checked + .toggleTrack {
+  background: rgb(var(--accent-rgb));
+}
+
+.toggle input:checked + .toggleTrack::after {
+  transform: translateX(16px);
+}
+
+@media (max-width: 640px) {
+  .banner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggleTrack,
+  .toggleTrack::after,
+  .primaryButton,
+  .secondaryButton {
+    transition-duration: 0.01ms !important;
+  }
+}
