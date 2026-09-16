@@ -89,7 +89,14 @@ class ScrollAnimationManager {
   }
 
   init() {
-    if (this.observer || typeof window === 'undefined') return;
+    if (typeof window === 'undefined') return;
+
+    if (this.observer) {
+      // Already initialized (e.g. client-side navigation back to this page) -
+      // just observe any newly mounted elements.
+      this.observe();
+      return;
+    }
 
     // Regular observer for content
     this.observer = new IntersectionObserver((entries) => {
