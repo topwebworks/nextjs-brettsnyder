@@ -591,10 +591,10 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
           <article className={styles.mainContentArticle}>
             
             {/* Content */}
-            <div className={styles.mainContentContainer}>
+            <div id="top-links" className={styles.mainContentContainer}>
               {/* Only show content title if contentTitle is specified */}
               {project.contentTitle && project.contentTitle.trim() && (
-                <h2 id="top-links" className={styles.mainContentTitle}>
+                <h2 className={styles.mainContentTitle}>
                   {project.contentTitle}
                 </h2>
               )}
