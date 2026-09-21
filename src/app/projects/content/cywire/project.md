@@ -28,7 +28,12 @@ keyAchievements:
       - "Eliminates parsing errors and unexpected formats"
 media:
   items:
-
+    - type: "video"
+      title: "CyWire Demo"
+      src: "https://www.youtube.com/watch?v=aSprWf0Byto"
+    - type: "image"
+      title: "Master Prompts Library"
+      src: "1-cywire-master-prompts.png"
 
 ---
 

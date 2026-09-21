@@ -491,20 +491,30 @@ Summarize the key takeaways and next steps for readers.
 // Helper function to categorize images based on filename patterns (same as projectLoader.ts)
 function categorizeImage(fileName, allImages) {
   const lowerFileName = fileName.toLowerCase();
-  
+
   // Hero patterns - first priority
-  if (lowerFileName.includes('hero') || 
-      lowerFileName.includes('main') || 
-      lowerFileName.includes('continuous-innovation') || 
-      allImages.indexOf(fileName) === 0) {
+  if (lowerFileName.includes('hero') ||
+      lowerFileName.includes('main') ||
+      lowerFileName.includes('continuous-innovation')) {
     return 'hero';
   }
-  
+
   // Demo patterns
   if (lowerFileName.includes('demo') || lowerFileName.includes('gif')) {
     return 'demo';
   }
-  
+
+  // Fallback: if nothing in the folder matches a hero pattern, the first
+  // file (alphabetically, via readdir) stands in as the hero so a project
+  // always has one. Only applies when no explicit hero/main file exists.
+  const hasExplicitHero = allImages.some(f => {
+    const lower = f.toLowerCase();
+    return lower.includes('hero') || lower.includes('main') || lower.includes('continuous-innovation');
+  });
+  if (!hasExplicitHero && allImages.indexOf(fileName) === 0) {
+    return 'hero';
+  }
+
   // Everything else is a screenshot
   return 'screenshot';
 }

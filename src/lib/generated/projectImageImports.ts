@@ -19,6 +19,14 @@ import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
 import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
 import printScreenshot3 from '@/app/projects/content/print/magazine-ad.jpg';
 import printScreenshot4 from '@/app/projects/content/print/reebok-brochure.jpg';
+import pushpadHero from '@/app/projects/content/pushpad/pushpad-hero.png';
+import pushpadScreenshot1 from '@/app/projects/content/pushpad/course-manager.png';
+import pushpadScreenshot2 from '@/app/projects/content/pushpad/course-scaffold.png';
+import pushpadScreenshot3 from '@/app/projects/content/pushpad/create-lesson-pad.png';
+import pushpadScreenshot4 from '@/app/projects/content/pushpad/edit-course.png';
+import pushpadScreenshot5 from '@/app/projects/content/pushpad/learner-pad-shell.png';
+import pushpadScreenshot6 from '@/app/projects/content/pushpad/parsed-pad-data.png';
+import pushpadScreenshot7 from '@/app/projects/content/pushpad/raw-pad-data.png';
 import shopifymigrationsHero from '@/app/projects/content/shopify-migrations/shopify-hero.jpg';
 import topwebworksHero from '@/app/projects/content/topwebworks/topwebworks-hero.png';
 
@@ -71,6 +79,11 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
     demo: null,
     screenshots: [printScreenshot1, printScreenshot2, printScreenshot3, printScreenshot4]
   },
+  'pushpad': {
+    hero: pushpadHero,
+    demo: null,
+    screenshots: [pushpadScreenshot1, pushpadScreenshot2, pushpadScreenshot3, pushpadScreenshot4, pushpadScreenshot5, pushpadScreenshot6, pushpadScreenshot7]
+  },
   'shopify-migrations': {
     hero: shopifymigrationsHero,
     demo: null,
@@ -115,6 +128,16 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'magazine-ad.jpg': printScreenshot3,
     'reebok-brochure.jpg': printScreenshot4
   },
+  'pushpad': {
+    'pushpad-hero.png': pushpadHero,
+    'course-manager.png': pushpadScreenshot1,
+    'course-scaffold.png': pushpadScreenshot2,
+    'create-lesson-pad.png': pushpadScreenshot3,
+    'edit-course.png': pushpadScreenshot4,
+    'learner-pad-shell.png': pushpadScreenshot5,
+    'parsed-pad-data.png': pushpadScreenshot6,
+    'raw-pad-data.png': pushpadScreenshot7
+  },
   'shopify-migrations': {
     'shopify-hero.jpg': shopifymigrationsHero
   },
@@ -139,7 +162,7 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['amw-hardscape', 'brightpath-ops', 'cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'shopify-migrations', 'topwebworks'];
+export const availableProjects = ['amw-hardscape', 'brightpath-ops', 'cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'pushpad', 'shopify-migrations', 'topwebworks'];
 
 // Note: Console logging removed to reduce build noise
 
@@ -158,5 +181,13 @@ export { printScreenshot1 };
 export { printScreenshot2 };
 export { printScreenshot3 };
 export { printScreenshot4 };
+export { pushpadHero };
+export { pushpadScreenshot1 };
+export { pushpadScreenshot2 };
+export { pushpadScreenshot3 };
+export { pushpadScreenshot4 };
+export { pushpadScreenshot5 };
+export { pushpadScreenshot6 };
+export { pushpadScreenshot7 };
 export { shopifymigrationsHero };
 export { topwebworksHero };

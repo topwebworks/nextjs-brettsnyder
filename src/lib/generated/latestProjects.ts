@@ -13,6 +13,21 @@ export interface LatestProject {
 
 export const latestProjects: LatestProject[] = [
   {
+    "id": "pushpad",
+    "title": "PushPad",
+    "excerpt": "An in-progress supplemental learning platform where educators build 7-section lesson pads and PushPad grades them, gates progress on mastery, and adapts the path with educator approval.",
+    "category": "SaaS",
+    "publishDate": "2026-09-21",
+    "technologies": [
+      "Next.js",
+      "React",
+      "Supabase",
+      "Anthropic API",
+      "Stripe Connect",
+      "Vercel"
+    ]
+  },
+  {
     "id": "brightpath-ops",
     "title": "Brightpath Operations",
     "excerpt": "A functional UI prototype for an internal operations tool designed to surface only what needs attention across events and courses, built to triage alerts from multiple platforms with AI-assisted notes once connected to live data.",
@@ -21,19 +36,6 @@ export const latestProjects: LatestProject[] = [
     "technologies": [
       "Next.js",
       "TypeScript"
-    ]
-  },
-  {
-    "id": "amw-hardscape",
-    "title": "AMW Hardscape Solutions",
-    "excerpt": "A full marketing system for a licensed Arizona hardscape contractor, built on my Top Web Works service-pages design system: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads.",
-    "category": "Website",
-    "publishDate": "2026-07-01",
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "MDX",
-      "CRM Integration"
     ]
   }
 ];

@@ -12,8 +12,8 @@ import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
 import Button from '@/components/ui/Button';
 import MarkdownContent from '@/components/ui/MarkdownContent';
 import EnhancedHTMLContent from '@/components/ui/EnhancedHTMLContent';
-import { getProjectImages, getProjectImageByFilename } from '@/lib/generated/projectImageImports';
-import { getBlogImages, getBlogImageByFilename } from '@/lib/generated/blogImageImports';
+import { getProjectImages, getProjectImageByFilename, projectImagesByFilename } from '@/lib/generated/projectImageImports';
+import { getBlogImages, getBlogImageByFilename, blogImagesByFilename } from '@/lib/generated/blogImageImports';
 import { useTheme } from '@/contexts/ThemeContext';
 import '@/styles/markdown.css';
 import styles from './ProjectDetailUniversal.module.css';
@@ -38,6 +38,28 @@ function getYouTubeVideoId(url: string): string | null {
 // Helper function to detect if a YouTube URL is a Short (vertical video)
 function isYouTubeShort(url: string): boolean {
   return url.includes('/shorts/');
+}
+
+// Turn a filename like "course-manager.png" into a readable title like "Course Manager"
+function titleFromFilename(filename: string): string {
+  return filename
+    .replace(/\.[^.]+$/, '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+// Look up a static image's real filename (by reference) so gallery thumbnails
+// can show its actual name instead of a generic "Screenshot N" fallback.
+function getScreenshotTitle(
+  filenameMap: Record<string, StaticImageData> | undefined,
+  image: StaticImageData,
+  index: number
+): string {
+  if (filenameMap) {
+    const match = Object.entries(filenameMap).find(([, img]) => img === image);
+    if (match) return titleFromFilename(match[0]);
+  }
+  return `Screenshot ${index + 1}`;
 }
 
 // Unified media processing with backward compatibility
@@ -182,7 +204,8 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
   
   // Get static image imports for this project/blog (ZERO API CALLS!)
   const staticImages = contentType === 'blog' ? getBlogImages(project.id) : getProjectImages(project.id);
-  
+  const staticImagesByFilename = contentType === 'blog' ? blogImagesByFilename[project.id] : projectImagesByFilename[project.id];
+
   // Generate placeholder images for consistent UI
   const getPlaceholderImage = useCallback((type: 'hero' | 'demo' | 'screenshot', index?: number) => {
     const seed = project.id + type + (index || 0);
@@ -440,8 +463,9 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
             {/* Fallback: If no unified media items, show static images */}
             {unifiedMediaItems.length === 0 && staticImages.screenshots && staticImages.screenshots.map((screenshot, index) => {
               const imageSrc = typeof screenshot === 'string' ? screenshot : screenshot.src;
+              const title = getScreenshotTitle(staticImagesByFilename, screenshot, index);
               return (
-                <div key={`static-image-${index}`} 
+                <div key={`static-image-${index}`}
                   className={styles.mediaItem}
                   data-type="image"
                   onClick={() => {
@@ -454,13 +478,13 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                 >
                   <Image
                     src={imageSrc}
-                    alt={`Project Screenshot ${index + 1}`}
+                    alt={title}
                     width={350}
                     height={200}
                     className={styles.mediaItemImage}
                   />
                   <div className={styles.mediaItemTitle}>
-                    Screenshot {index + 1}
+                    {title}
                   </div>
                 </div>
               );
