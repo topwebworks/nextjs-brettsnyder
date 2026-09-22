@@ -132,6 +132,8 @@ Master Prompts aren't a temporary fix for today's AI, they're a permanent requir
 
 Master Prompts lock intent, constraints, and output contracts in place, ensuring AI remains predictable, governable, and production-ready. They're a foundational necessity for building AI features that can actually hold up in production. That's why I built CyWire.
 
+[PushPad](/projects/pushpad) is the real-world proof of concept, it runs on two Master Prompts, one for Sonnet to write lesson content and one for Haiku to grade it.
+
 For the initial launch, I've shared many free, industry-specific Master Prompts in the CyWire community—use them as-is or adapt them for your own work. You have access to the entire master prompt code. Join as a free member, no credit card needed.
 
 If you're building AI features that need to actually be reliable, this approach may work for you. For me, it only made sense.
