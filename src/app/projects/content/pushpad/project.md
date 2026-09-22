@@ -30,6 +30,33 @@ keyAchievements:
 
 media:
   items:
+    - type: "image"
+      title: "PushPad Overview"
+      src: "pushpad-hero.png"
+    - type: "image"
+      title: "Course Manager"
+      src: "course-manager.png"
+    - type: "image"
+      title: "Course Scaffold"
+      src: "course-scaffold.png"
+    - type: "image"
+      title: "Create Lesson Pad"
+      src: "create-lesson-pad.png"
+    - type: "image"
+      title: "Edit Course"
+      src: "edit-course.png"
+    - type: "image"
+      title: "Intervene"
+      src: "intervene.png"
+    - type: "image"
+      title: "Learner Pad Shell"
+      src: "learner-pad-shell.png"
+    - type: "image"
+      title: "Raw Pad Data"
+      src: "raw-pad-data.png"
+    - type: "image"
+      title: "Rendered Pad Data"
+      src: "rendered-pad-data.png"
 
 ---
 

@@ -24,9 +24,11 @@ import pushpadScreenshot1 from '@/app/projects/content/pushpad/course-manager.pn
 import pushpadScreenshot2 from '@/app/projects/content/pushpad/course-scaffold.png';
 import pushpadScreenshot3 from '@/app/projects/content/pushpad/create-lesson-pad.png';
 import pushpadScreenshot4 from '@/app/projects/content/pushpad/edit-course.png';
-import pushpadScreenshot5 from '@/app/projects/content/pushpad/learner-pad-shell.png';
-import pushpadScreenshot6 from '@/app/projects/content/pushpad/parsed-pad-data.png';
-import pushpadScreenshot7 from '@/app/projects/content/pushpad/raw-pad-data.png';
+import pushpadScreenshot5 from '@/app/projects/content/pushpad/intervene.png';
+import pushpadScreenshot6 from '@/app/projects/content/pushpad/learner-pad-shell.png';
+import pushpadScreenshot7 from '@/app/projects/content/pushpad/parsed-pad-data.png';
+import pushpadScreenshot8 from '@/app/projects/content/pushpad/raw-pad-data.png';
+import pushpadScreenshot9 from '@/app/projects/content/pushpad/rendered-pad-data.png';
 import shopifymigrationsHero from '@/app/projects/content/shopify-migrations/shopify-hero.jpg';
 import topwebworksHero from '@/app/projects/content/topwebworks/topwebworks-hero.png';
 
@@ -82,7 +84,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'pushpad': {
     hero: pushpadHero,
     demo: null,
-    screenshots: [pushpadScreenshot1, pushpadScreenshot2, pushpadScreenshot3, pushpadScreenshot4, pushpadScreenshot5, pushpadScreenshot6, pushpadScreenshot7]
+    screenshots: [pushpadScreenshot1, pushpadScreenshot2, pushpadScreenshot3, pushpadScreenshot4, pushpadScreenshot5, pushpadScreenshot6, pushpadScreenshot7, pushpadScreenshot8, pushpadScreenshot9]
   },
   'shopify-migrations': {
     hero: shopifymigrationsHero,
@@ -134,9 +136,11 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'course-scaffold.png': pushpadScreenshot2,
     'create-lesson-pad.png': pushpadScreenshot3,
     'edit-course.png': pushpadScreenshot4,
-    'learner-pad-shell.png': pushpadScreenshot5,
-    'parsed-pad-data.png': pushpadScreenshot6,
-    'raw-pad-data.png': pushpadScreenshot7
+    'intervene.png': pushpadScreenshot5,
+    'learner-pad-shell.png': pushpadScreenshot6,
+    'parsed-pad-data.png': pushpadScreenshot7,
+    'raw-pad-data.png': pushpadScreenshot8,
+    'rendered-pad-data.png': pushpadScreenshot9
   },
   'shopify-migrations': {
     'shopify-hero.jpg': shopifymigrationsHero
@@ -189,5 +193,7 @@ export { pushpadScreenshot4 };
 export { pushpadScreenshot5 };
 export { pushpadScreenshot6 };
 export { pushpadScreenshot7 };
+export { pushpadScreenshot8 };
+export { pushpadScreenshot9 };
 export { shopifymigrationsHero };
 export { topwebworksHero };
