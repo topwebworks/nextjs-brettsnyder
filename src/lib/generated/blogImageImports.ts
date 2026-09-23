@@ -5,6 +5,7 @@
 import { StaticImageData } from 'next/image';
 
 // Import statements for all blog images
+import designsystemsHero from '@/app/blog/content/design-systems/design-systems-hero.jpg';
 import funasticsHero from '@/app/blog/content/funastics/1-funastics-photos.jpg';
 import funasticsScreenshot1 from '@/app/blog/content/funastics/2-funastics-curriculum.jpg';
 import funasticsScreenshot2 from '@/app/blog/content/funastics/3-funastics-web.jpg';
@@ -30,6 +31,11 @@ export interface BlogImageImports {
 
 // Export map for easy access by blog ID
 export const blogImageImports: Record<string, BlogImageImports> = {
+  'design-systems': {
+    hero: designsystemsHero,
+    demo: null,
+    screenshots: []
+  },
   'funastics': {
     hero: funasticsHero,
     demo: null,
@@ -49,6 +55,9 @@ export const blogImageImports: Record<string, BlogImageImports> = {
 
 // Filename-based lookup for direct image resolution
 export const blogImagesByFilename: Record<string, Record<string, StaticImageData>> = {
+  'design-systems': {
+    'design-systems-hero.jpg': designsystemsHero
+  },
   'funastics': {
     '1-funastics-photos.jpg': funasticsHero,
     '2-funastics-curriculum.jpg': funasticsScreenshot1,
@@ -88,11 +97,12 @@ export function getBlogImageByFilename(blogId: string, filename: string): Static
 }
 
 // List of all available blog IDs
-export const availableBlog = ['funastics', 'jesus-christ-art', 'shopify-tips'];
+export const availableBlog = ['design-systems', 'funastics', 'jesus-christ-art', 'shopify-tips'];
 
 // Note: Console logging removed to reduce build noise
 
 // Individual variable exports for direct access
+export { designsystemsHero };
 export { funasticsHero };
 export { funasticsScreenshot1 };
 export { funasticsScreenshot2 };

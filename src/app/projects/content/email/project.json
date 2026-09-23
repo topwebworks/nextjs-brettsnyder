@@ -15,6 +15,7 @@
   "category": "Template",
   "status": "Production",
   "featured": false,
+  "designSystem": true,
   "publishDate": "2017-01-15",
   "contentTitle": "A Different Animal",
   "readTime": "5 min read",

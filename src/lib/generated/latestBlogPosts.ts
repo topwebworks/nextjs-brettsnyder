@@ -15,6 +15,22 @@ export interface LatestBlogPost {
 
 export const latestBlogPosts: LatestBlogPost[] = [
   {
+    "id": "design-systems",
+    "title": "Design Systems",
+    "description": "What a design system actually is, how I use tokens and components in practice, and why every system I've built started as the answer to a real deadline or a real limitation.",
+    "excerpt": "I was building design systems before anyone called them that. Here's what they are, how I use tokens, and why every one I've built started as the answer to a real deadline, not a trend.",
+    "category": "Design",
+    "publishDate": "2026-09-23",
+    "readTime": "9 min read",
+    "tags": [
+      "Design Systems",
+      "CSS",
+      "Shopify",
+      "React",
+      "Figma"
+    ]
+  },
+  {
     "id": "shopify-tips",
     "title": "Shopify Tips",
     "description": "Practical Shopify notes on theme selection, Liquid and schema, staging workflows, and content structure for building scalable, maintainable stores.",
@@ -25,20 +41,6 @@ export const latestBlogPosts: LatestBlogPost[] = [
     "tags": [
       "Liquid",
       "Shopify"
-    ]
-  },
-  {
-    "id": "jesus-christ-art",
-    "title": "Jesus Christ Art",
-    "description": "Original portrait series of Jesus Christ created in Photoshop between 2023-2024. This local free outreach project soon expanded to the JesusChrist.art website.",
-    "excerpt": "I used Photoshop as my canvas, locally generated AI elements, sketches, and some stock for base references. Then manually restructure and repaint.",
-    "category": "Digital Art",
-    "publishDate": "2023-06-15",
-    "readTime": "2 min read",
-    "tags": [
-      "Prints",
-      "Website",
-      "Photoshop"
     ]
   }
 ];

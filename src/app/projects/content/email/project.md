@@ -11,6 +11,7 @@ technologies:
 category: "Template"
 status: "Production"
 featured: false
+designSystem: true
 publishDate: "2017-01-15"
 links:
   demo: "/demo/emails/sample2/index.html"

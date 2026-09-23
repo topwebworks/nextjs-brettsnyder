@@ -12,7 +12,7 @@ category: "Template"
 status: "Prod"
 featured: false
 designSystem: true
-publishDate: "2019-03-15"
+publishDate: "2022-06-15"
 links:
   demo: "/demo/master-blocks/example-aop-lp.html"
   github: "https://github.com/topwebworks/master-lp-blocks"

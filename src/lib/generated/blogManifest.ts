@@ -4,13 +4,14 @@
 
 // Static blog list - no filesystem calls needed
 export const BLOG_IDS: readonly string[] = [
+  'design-systems',
   'funastics',
   'jesus-christ-art',
   'shopify-tips'
 ] as const;
 
 // Blog count for quick reference
-export const BLOG_COUNT = 3;
+export const BLOG_COUNT = 4;
 
 // Type for blog ID validation
 export type BlogId = typeof BLOG_IDS[number];

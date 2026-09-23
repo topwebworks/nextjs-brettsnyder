@@ -6,6 +6,7 @@
   width: 100%;
   color: var(--text-primary);
   line-height: 1.7;
+  text-wrap: pretty;
 }
 
 /* Typography - Matching About page hierarchy */
@@ -18,6 +19,7 @@
   margin-top: 50px;
   margin-bottom: 20px;
   line-height: 2rem;
+  text-wrap: pretty;
 }
 
 .enhanced-html-content > ul {
@@ -33,6 +35,7 @@
   line-height: 1.2;
   margin-top: 30px;
   margin-bottom: 20px;
+  text-wrap: pretty;
 }
 
 .enhanced-html-content :global(.project-detail-title) {
@@ -52,6 +55,7 @@
   max-width: none;
   /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); */
   opacity: 0.8;
+  text-wrap: pretty;
 }
 
 /* Callout Panels - Gold Standard Glassmorphism */
@@ -100,6 +104,7 @@
 .enhanced-html-content :global(.project-content-list li) {
   margin-bottom: 0.75rem;
   font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  text-wrap: pretty;
 }
 
 .enhanced-html-content :global(.project-content-list li strong) {
