@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Brett Snyder - Design Engineer and Product-Focused Frontend Developer Resume</title>
+        <title>Brett Snyder - Frontend Developer and Design Engineer Resume</title>
         <style>
         * {
             margin: 0;
@@ -345,34 +345,19 @@
         }
 
 
-        /* Print Optimization - Scale browser print to 0.85 */
+        /* Print layout */
         @media print {
-            /* Scale font sizes and spacing to 0.85x */
             body {
-                font-size: 8.925pt; /* 10.5 * 0.85 */
-                padding: 0.068in 0.238in; /* 0.08 * 0.85, 0.28 * 0.85 */
+                padding: 0.068in 0.238in;
             }
 
             .header {
-                margin-bottom: 0.17in; /* 0.2 * 0.85 */
-                padding-bottom: 0.051in; /* 0.06 * 0.85 */
+                margin-bottom: 0.17in;
+                padding-bottom: 0.051in;
                 page-break-after: avoid;
             }
 
-            h1 {
-                font-size: 11.05pt; /* 13 * 0.85 */
-            }
-
-            .tagline {
-                font-size: 11.05pt; /* 13 * 0.85 */
-            }
-
-            .contact {
-                font-size: 7.225pt; /* 8.5 * 0.85 */
-            }
-
             h2 {
-                font-size: 9.775pt;
                 margin-top: 0.12in;
                 margin-bottom: 0.045in;
                 padding-bottom: 0.02in;
@@ -380,7 +365,6 @@
             }
 
             h3 {
-                font-size: 9.35pt;
                 margin-top: 0.1in;
                 margin-bottom: 0.04in;
                 page-break-after: avoid;
@@ -393,7 +377,6 @@
 
             .summary p {
                 margin-bottom: 0.045in;
-                font-size: 8.925pt;
             }
 
             .competencies {
@@ -403,28 +386,20 @@
 
             .competency-grid {
                 gap: 0.03in 0.1in;
-                font-size: 8.925pt;
                 line-height: 1.35;
             }
 
-            .competency-category strong {
-                font-size: 8.925pt;
-            }
-
             .competency-category span {
-                font-size: 8.925pt;
                 line-height: 1.35;
             }
 
             li {
                 padding-left: 0.2125in;
                 margin-bottom: 0.03in;
-                font-size: 8.925pt;
                 line-height: 1.4;
             }
 
             li::before {
-                font-size: 6.8pt;
                 top: 0.017in;
             }
 
@@ -437,12 +412,7 @@
                 page-break-after: avoid;
             }
 
-            .job-title {
-                font-size: 9.35pt;
-            }
-
             .job-meta {
-                font-size: 8.075pt;
                 margin-top: 0.03in;
             }
 
@@ -451,12 +421,10 @@
             }
 
             .earlier-experience p {
-                font-size: 8.925pt;
                 line-height: 1.4;
             }
 
             .education p {
-                font-size: 8.925pt; /* 10.5 * 0.85 */
                 line-height: 1.45;
             }
 
@@ -489,8 +457,7 @@
     </head>
     <body>
         <div class="header">
-            <div><h1>BRETT SNYDER</h1><span class="tagline">Design Engineer |
-                    Product-Focused Frontend Developer</span></div>
+            <div><h1>BRETT SNYDER</h1><span class="tagline">Frontend Developer | Design Engineer</span></div>
             <div class="contact">Queen Creek, AZ •&nbsp;602-561-5771 •&nbsp;<a
                     href="mailto:info@brettsnyder.me">info@brettsnyder.me</a>
                 •&nbsp;<a
@@ -504,68 +471,34 @@
 
         <section class="summary">
             <h2>Professional Summary</h2>
-            <p>Product-focused frontend developer with 15+&nbsp;years of
-                experience across SaaS products, enterprise marketing websites,
-                e-commerce, and conversion-focused landing pages. Combines
-                UI/UX&nbsp;design with hands-on development using React,
-                Next.js, TypeScript, Shopify/Liquid, WordPress, and modern HTML,
-                CSS, and JavaScript. Recently launched the CyWire AI SaaS
-                platform and relaunched TopWebWorks as a productized web-services
-                business, following extensive enterprise web work at
-                Imagine&nbsp;Learning.</p>
+            <p>Frontend developer and design engineer with 15+&nbsp;years across
+                enterprise marketing websites, e-commerce, and recent SaaS work.
+                Builds token-based design systems with reusable components in
+                HTML/CSS, Shopify/Liquid, and Next.js. At Imagine&nbsp;Learning,
+                managed 13&nbsp;WordPress sites, led three Shopify migrations,
+                and cut landing-page production time by&nbsp;40% across more
+                than 50&nbsp;pages. Recently launched CyWire and rebuilt
+                TopWebWorks with Next.js, React, and TypeScript.</p>
         </section>
 
         <section class="competencies">
             <h2>Core Competencies</h2>
             <div class="competency-grid">
-                <div class="competency-category"><strong>Frontend Dev:</strong>
-                    <span>HTML5 •&nbsp;CSS3 •&nbsp;JavaScript&nbsp;(ES6+)
-                        •&nbsp;React •&nbsp;Next.js •&nbsp;TypeScript
-                        •&nbsp;Tailwind&nbsp;CSS
-                        •&nbsp;Responsive&nbsp;Design</span></div>
-                <div
-                    class="competency-category"><strong>E-commerce/CMS:</strong>
-                    <span>Shopify&nbsp;Plus •&nbsp;Liquid •&nbsp;WordPress
-                        •&nbsp;Headless&nbsp;WordPress •&nbsp;PHP
-                        •&nbsp;Pantheon.io •&nbsp;cPanel
-                        •&nbsp;Custom&nbsp;Theme
-                        Development</span></div>
-                <div class="competency-category"><strong>Marketing:</strong>
-                    <span>Landing&nbsp;Pages •&nbsp;Lead&nbsp;Gen •&nbsp;CRO
-                        •&nbsp;A/B&nbsp;Testing •&nbsp;Responsive&nbsp;Email
-                        •&nbsp;Campaign&nbsp;Optimization •&nbsp;SEO/AEO/GEO
-                        •&nbsp;Playbooks</span></div>
-                <div class="competency-category"><strong>AI &amp; Agentic
-                        Development:</strong>
-                    <span>Claude&nbsp;Code •&nbsp;Codex
-                        •&nbsp;Prompt&nbsp;Architecture •&nbsp;Structured
-                        Outputs/JSON&nbsp;Schema •&nbsp;Custom Agent Skills
-                        &amp;&nbsp;Governance •&nbsp;MCP&nbsp;Integrations
-                        •&nbsp;AI-Assisted &amp;&nbsp;Agentic Development
-                        Workflows</span></div>
-                <div
-                    class="competency-category"><strong>Paid Media:</strong>
-                    <span>Google&nbsp;Ads •&nbsp;Meta&nbsp;Ads
-                        •&nbsp;Google&nbsp;Business&nbsp;Profile
-                        •&nbsp;CRM&nbsp;Automation</span></div>
-                <div
-                    class="competency-category"><strong>Analytics:</strong>
-                    <span>Google&nbsp;Analytics&nbsp;(GA4)
-                        •&nbsp;Google&nbsp;Tag&nbsp;Manager
-                        •&nbsp;Search&nbsp;Console •&nbsp;Lighthouse
-                        •&nbsp;Hotjar •&nbsp;Crazy&nbsp;Egg
-                        •&nbsp;Shopify&nbsp;Analytics •&nbsp;CRM&nbsp;Analytics</span></div>
-                <div class="competency-category"><strong>Design/UX:</strong>
-                    <span>UI/UX
-                        Design •&nbsp;Figma •&nbsp;Wireframing
-                        •&nbsp;Functional Web&nbsp;Prototyping •&nbsp;Design
-                        Systems</span></div>
-                <div class="competency-category"><strong>Delivery &amp;
-                        Quality:</strong>
-                    <span>Git/GitHub •&nbsp;Supabase •&nbsp;Vercel
-                        •&nbsp;Cross-browser&nbsp;Testing
-                        •&nbsp;WCAG&nbsp;Accessibility •&nbsp;Core Web Vitals
-                        &amp;&nbsp;Performance</span></div>
+                <div class="competency-category"><strong>Frontend:</strong>
+                    <span>React •&nbsp;Next.js •&nbsp;TypeScript
+                        •&nbsp;JavaScript •&nbsp;HTML •&nbsp;CSS
+                        •&nbsp;Tailwind&nbsp;CSS •&nbsp;Responsive Design</span></div>
+                <div class="competency-category"><strong>CMS &amp; Commerce:</strong>
+                    <span>WordPress •&nbsp;Shopify&nbsp;Plus •&nbsp;Liquid
+                        •&nbsp;Headless&nbsp;WordPress •&nbsp;PHP</span></div>
+                <div class="competency-category"><strong>Design &amp; Growth:</strong>
+                    <span>Figma •&nbsp;UI/UX Design •&nbsp;Design Systems
+                        •&nbsp;Landing Pages •&nbsp;Accessibility
+                        •&nbsp;A/B Testing •&nbsp;CRO •&nbsp;SEO</span></div>
+                <div class="competency-category"><strong>Analytics &amp; Delivery:</strong>
+                    <span>GA4 •&nbsp;Google Tag Manager
+                        •&nbsp;Search Console •&nbsp;Core Web Vitals
+                        •&nbsp;Git/GitHub •&nbsp;Vercel •&nbsp;Supabase</span></div>
             </div>
         </section>
 
@@ -574,8 +507,8 @@
 
             <div class="experience-item">
                 <div class="job-header">
-                    <div class="job-title">Founder &amp; Product/Frontend Developer — Cosaint,
-                        Inc. (Freelance)</div>
+                    <div class="job-title">Frontend Developer &amp; Founder — Cosaint,
+                        Inc.</div>
                     <div class="job-meta">November&nbsp;2025 – Present |
                         Queen&nbsp;Creek,
                         AZ</div>
@@ -584,102 +517,62 @@
                     <li><strong>Built and launched <a
                                 href="https://cywire.com" target="_blank"
                                 rel="noopener noreferrer">CyWire.com</a> in
-                            three months</strong>, taking the B2B AI platform
-                        from concept to production while refining its core
-                        engine through three major architectural versions to
-                        achieve the intended product vision. Developed it with
-                        Next.js, React, TypeScript, Tailwind&nbsp;CSS, Supabase,
-                        and Vercel.</li>
-                    <li><strong>Designed CyWire's model-agnostic Master Prompt
-                            system:</strong> reusable JSON blueprints with
-                        defined variables, instructions, constraints, and output
-                        schemas that guide AI-powered features to produce
-                        consistent, validated, machine-readable output across
-                        LLMs and platforms.</li>
-                    <li><strong>Delivered the platform's product
-                            ecosystem</strong>, including a no-code visual
-                        builder, 170+&nbsp;free global prompts, community
-                        marketplace, document-backed knowledge base supporting
-                        PDF, Word, and Excel uploads, Pro+&nbsp;Labs Chat Prompt
-                        Generator, authentication, tier-based access control,
-                        scoped team workspaces, dashboards, and leaderboards.</li>
-                    <li><strong>Relaunched and rebuilt <a
+                            three months</strong>, taking a B2B AI platform
+                        from concept to production with Next.js, React,
+                        TypeScript, Tailwind&nbsp;CSS, Supabase, and Vercel.
+                        Delivered a visual builder, knowledge base, and team
+                        workspaces.</li>
+                    <li><strong>Designed CyWire's Master Prompt system</strong>
+                        using reusable JSON blueprints, defined variables,
+                        constraints, and output schemas to produce validated,
+                        machine-readable AI output across models.</li>
+                    <li><strong>Built three design systems for <a
                                 href="https://topwebworks.com" target="_blank"
-                                rel="noopener noreferrer">TopWebWorks</a>,
-                            Cosaint's productized web-services division.</strong>
-                        Developed a full-service delivery model centered on
-                        free, functional website prototypes, taking projects
-                        through audience positioning, messaging, site copy,
-                        UI/UX design, custom Next.js or Shopify development, and
-                        supporting visual assets, with three-tier recurring
-                        service plans.</li>
-                    <li><strong>Lead ongoing web operations for TopWebWorks
-                            clients</strong>, including hosting and maintenance
-                        plus CRM workflows that capture live-chat and
-                        contact-form inquiries in a centralized pipeline,
-                        trigger instant lead notifications, and automate
-                        email/SMS confirmations, follow-up, estimate and booking
-                        requests, and post-job reviews through a dedicated
-                        business texting number.</li>
-                    <li><strong>Manage client growth programs</strong> across
-                        conversion-focused landing pages, blog and social
-                        content, Google Business posts, email campaigns, local
-                        SEO tracking, SEO/AEO/GEO implementation, paid
-                        advertising, analytics, monthly performance reporting,
-                        and strategy calls.</li>
+                                rel="noopener noreferrer">TopWebWorks</a></strong>:
+                        a Tailwind system for its Next.js marketing site and two
+                        reusable Next.js component systems for service and
+                        informational client sites, supporting fast custom
+                        prototypes.</li>
+                    <li><strong>Lead client website and growth operations</strong>
+                        covering CRM lead capture, automated email and SMS
+                        follow-up, landing pages, SEO, analytics, and ongoing
+                        performance reporting.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="job-header">
-                    <div class="job-title">Imagine Learning (formerly
-                        Weld&nbsp;North
-                        Education
-                        / Glynlyon&nbsp;Inc.)</div>
-                    <div class="job-meta">October&nbsp;2016 – October&nbsp;2025
-                        | 9&nbsp;Years
-                        — Role
-                        Progression in Marketing
-                        &amp;&nbsp;Frontend&nbsp;Development</div>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
                     <div class="job-title">Marketing Web Developer</div>
-                    <div class="job-meta">March&nbsp;2022 – October&nbsp;2025 |
+                    <div class="job-meta">Imagine Learning (formerly Weld&nbsp;North
+                        Education / Glynlyon&nbsp;Inc.) | March&nbsp;2022 – October&nbsp;2025 |
                         Arizona
                         (Remote)</div>
                 </div>
                 <ul>
-                    <li><strong>Managed enterprise marketing web
-                        infrastructure</strong> spanning 13&nbsp;WordPress
-                        sites on Pantheon and one custom CMS property, building
-                        accessible, responsive pages for enterprise marketing
-                        campaigns.</li>
-                    <li><strong>Planned and led migrations of three e-commerce
-                            properties to Shopify</strong>, replacing paid apps
-                        with custom Liquid sections and configurable Shopify
-                        schemas.</li>
-                    <li><strong>Created a reusable HTML5 Master Blocks
-                            system</strong> that reduced landing-page production
-                        time by&nbsp;40% across more than
-                        50&nbsp;conversion-focused pages; also developed a
-                        modular marketing design-block system for Shopify and
-                        CMS-embeddable HTML components.</li>
-                    <li><strong>Accelerated campaign execution</strong> by
-                        translating Figma designs into accessible markup, coding
-                        responsive HTML emails, and optimizing pages with
-                        A/B&nbsp;testing and heatmap data; mentored
-                        12+&nbsp;team members and streamlined
-                        design-to-development handoffs.</li>
+                    <li><strong>Built Master Blocks, a token-based HTML/CSS
+                            design system</strong> that reduced landing-page
+                        production time by&nbsp;40% across more than
+                        50&nbsp;conversion-focused pages and gave marketing
+                        teams reusable, CMS-compatible components.</li>
+                    <li><strong>Managed 13&nbsp;WordPress sites on Pantheon and
+                            one custom CMS property</strong>, building accessible,
+                        responsive pages for enterprise campaigns.</li>
+                    <li><strong>Led three Shopify migrations with one reusable
+                            Liquid design system</strong> across two theme
+                        frameworks, using brand tokens and configurable sections
+                        to replace paid apps and give marketers page controls.</li>
+                    <li><strong>Turned Figma designs into accessible web pages
+                            and responsive emails</strong>, using A/B testing and
+                        heatmap data to guide improvements; mentored
+                        12+&nbsp;team members and improved design-to-development
+                        handoffs.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="job-header">
                     <div class="job-title">UI/UX Designer/Developer</div>
-                    <div class="job-meta">April&nbsp;2019 – March&nbsp;2022 |
+                    <div class="job-meta">Imagine Learning | April&nbsp;2019 – March&nbsp;2022 |
                         Chandler,&nbsp;AZ
                         (Hybrid)</div>
                 </div>
@@ -698,7 +591,7 @@
             <div class="experience-item">
                 <div class="job-header">
                     <div class="job-title">Senior Designer</div>
-                    <div class="job-meta">October&nbsp;2016 – April&nbsp;2019 |
+                    <div class="job-meta">Imagine Learning | October&nbsp;2016 – April&nbsp;2019 |
                         Chandler,
                         AZ</div>
                 </div>
@@ -706,10 +599,9 @@
                     <li>Established enterprise WordPress management practices
                         and created responsive landing pages, HTML
                         emails, and campaign assets.</li>
-                    <li>Created a reusable HTML email system with CRM-ready
-                        templates that became the company standard; managed the
-                        design-to-code pipeline and applied A/B&nbsp;testing
-                        insights to improve conversions.</li>
+                    <li>Built a modular HTML email design system with reusable,
+                        CRM-ready components that became the company standard;
+                        applied A/B&nbsp;testing insights to improve conversions.</li>
                 </ul>
             </div>
         </section>

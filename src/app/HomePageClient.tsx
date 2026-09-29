@@ -164,7 +164,7 @@ export default function Homepage() {
             
             <Image 
               src={professionalPortrait}
-              alt="Professional Portrait"
+              alt="Portrait of Brett Snyder"
               fill
               className={`${styles.heroPortraitImage} ${portraitLoaded ? styles['heroPortraitImage--loaded'] : styles['heroPortraitImage--loading']}`}
               priority
@@ -223,7 +223,7 @@ export default function Homepage() {
               
               <Image 
                 src={professionalPortrait}
-                alt="Professional Portrait"
+                alt="Portrait of Brett Snyder"
                 width={120}
                 height={120}
                 className={`${styles.mobilePortraitImage} ${mobilePortraitLoaded ? styles['mobilePortraitImage--loaded'] : styles['mobilePortraitImage--loading']}`}

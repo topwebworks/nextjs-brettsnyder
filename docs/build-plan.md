@@ -18,7 +18,7 @@ Next.js 15 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 - Add or edit a project in `src/app/projects/content/`, then run `npm run generate-project-data`.
 - Add or edit a Blog post in `src/app/blog/content/`, then run `npm run generate-project-data`.
-- Edit `public/resume-brett-snyder.html`, then run `npm run generate-resume`.
+- Edit `public/resume-brett-snyder.html`, keep `public/resume-brett-snyder.txt` in sync, then run `npm run generate-resume`.
 - Edit `public/cover-letter-brett-snyder.txt`, then run `npm run generate-cover-letter`.
 - Never edit generated JSON, TypeScript manifests, or PDFs directly.
 

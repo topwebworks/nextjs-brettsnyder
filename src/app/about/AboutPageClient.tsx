@@ -159,7 +159,7 @@ export default function AboutPage() {
                     
                     <Image 
                       src={professionalPortrait}
-                      alt="Professional Portrait"
+                      alt="Portrait of Brett Snyder"
                       fill
                       sizes="(max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
                       className={`portrait-image ${styles.portraitImage} ${portraitLoaded ? styles.portraitImageLoaded : styles.portraitImageLoading}`}
