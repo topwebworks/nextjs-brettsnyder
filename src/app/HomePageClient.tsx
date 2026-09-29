@@ -71,7 +71,7 @@ export default function Homepage() {
   // Generate sequence of words on component mount
   const [randomWords, setRandomWords] = React.useState<string[]>([]);
   const [currentWordIndex, setCurrentWordIndex] = React.useState(0);
-  const [currentText, setCurrentText] = React.useState(''); 
+  const [currentText, setCurrentText] = React.useState(animatedWords[0]);
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [isPaused, setIsPaused] = React.useState(true);
   const [wordsShown, setWordsShown] = React.useState(1); // Start at 1 since first word is shown immediately
