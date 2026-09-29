@@ -210,13 +210,11 @@
   }
 }
 
-/* Dark/Light Theme Adjustments */
-@media (prefers-color-scheme: dark) {
-  .enhanced-html-content :global(.project-code-block) {
-    background: linear-gradient(145deg, 
-      rgba(0, 0, 0, 0.4) 0%, 
-      rgba(0, 0, 0, 0.3) 100%
-    );
-    border-color: rgba(255, 255, 255, 0.15);
-  }
+/* Dark Theme Adjustments - follows the site theme toggle, not the OS setting */
+:global([data-theme="dark"]) .enhanced-html-content :global(.project-code-block) {
+  background: linear-gradient(145deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.15);
 }

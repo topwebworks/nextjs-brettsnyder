@@ -11,6 +11,17 @@
   overflow: hidden;
 }
 
+/* Light theme: slate tint so the footer sits as the page base instead of the brightest band */
+:global([data-theme="light"]) .footer {
+  background: rgba(226, 232, 240, 0.6);
+}
+
+:global([data-theme="light"]) .socialIcon,
+:global([data-theme="light"]) .techTag {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: var(--glass-border-secondary);
+}
+
 /* Subtle background orb */
 .backgroundOrb {
   position: absolute;
@@ -167,7 +178,7 @@
 }
 
 .socialIcon:hover {
-  background: var(--glass-bg-medium);
+  background: var(--glass-bg-primary);
   border-color: rgba(var(--accent-rgb), 0.4);
   color: var(--text-accent);
   transform: translateY(-2px);
@@ -213,7 +224,7 @@
 
 .techTag:hover {
   color: var(--text-secondary);
-  background: var(--glass-bg-medium);
+  background: var(--glass-bg-primary);
   transform: translateY(-1px);
 }
 

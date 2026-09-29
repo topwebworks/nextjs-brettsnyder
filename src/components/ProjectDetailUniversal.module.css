@@ -479,26 +479,17 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Light mode scrollbar styling */
-@media (prefers-color-scheme: light) {
-  .mediaScrollContainer::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
-  }
-  
-  .mediaScrollContainer::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .mediaScrollContainer {
-    scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
-  }
+/* Light mode scrollbar styling - follows the site theme toggle, not the OS setting */
+:global([data-theme="light"]) .mediaScrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode scrollbar styling */
-@media (prefers-color-scheme: dark) {
-  .mediaScrollContainer {
-    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
-  }
+:global([data-theme="light"]) .mediaScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+:global([data-theme="light"]) .mediaScrollContainer {
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
 }
 
 /* Media Navigation Arrows */

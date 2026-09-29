@@ -207,28 +207,26 @@
   border-radius: 0 0 16px 16px;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .modalContent {
-    background: #1e293b;
-  }
+/* Dark mode support - follows the site theme toggle, not the OS setting */
+:global([data-theme="dark"]) .modalContent {
+  background: #1e293b;
+}
 
-  .modalHeader {
-    border-bottom-color: #334155;
-  }
+:global([data-theme="dark"]) .modalHeader {
+  border-bottom-color: #334155;
+}
 
-  .modalHeader h2 {
-    color: #f1f5f9;
-  }
+:global([data-theme="dark"]) .modalHeader h2 {
+  color: #f1f5f9;
+}
 
-  .closeButton {
-    color: #94a3b8;
-  }
+:global([data-theme="dark"]) .closeButton {
+  color: #94a3b8;
+}
 
-  .closeButton:hover {
-    background: #334155;
-    color: #f1f5f9;
-  }
+:global([data-theme="dark"]) .closeButton:hover {
+  background: #334155;
+  color: #f1f5f9;
 }
 
 /* Mobile responsiveness */
