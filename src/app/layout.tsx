@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en" data-theme="light">
       <body suppressHydrationWarning={true}>
         {/* Google Consent Mode default - must run before GTM loads */}
         <script

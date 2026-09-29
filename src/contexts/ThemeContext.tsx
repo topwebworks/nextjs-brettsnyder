@@ -18,7 +18,7 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>('dark');
+  const [theme, setThemeState] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
   // Simplified initialization for Edge compatibility - FIXED: Remove Edge delay that causes white page
@@ -31,8 +31,8 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         if (typeof window === 'undefined') return;
         
         const savedTheme = localStorage.getItem('theme') as Theme | null;
-        // Default to dark mode instead of system preference
-        const initialTheme = savedTheme || 'dark';
+        // Default to light mode instead of system preference
+        const initialTheme = savedTheme || 'light';
         
         setThemeState(initialTheme);
         // Always set the attribute to ensure consistency
@@ -40,9 +40,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       } catch (error) {
         console.warn('Theme init failed:', error);
         setMounted(true);
-        setThemeState('dark');
+        setThemeState('light');
         try {
-          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.setAttribute('data-theme', 'light');
         } catch {
           // Silent fallback
         }
@@ -52,24 +52,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     // FIXED: Initialize immediately for ALL browsers - no Edge delay to prevent white page after rebuild
     initTheme();
   }, []);
-
-  // Listen for system theme changes - simplified for Edge
-  useEffect(() => {
-    if (!mounted || typeof window === 'undefined') return;
-    
-    try {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handleChange = () => {
-        // System theme changes disabled to maintain dark mode as default
-        // Users can still manually toggle via the theme switcher
-      };
-
-      mediaQuery.addEventListener('change', handleChange);
-      return () => mediaQuery.removeEventListener('change', handleChange);
-    } catch (error) {
-      console.warn('System theme listener failed:', error);
-    }
-  }, [mounted]);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);

@@ -26,7 +26,7 @@
   /* Theme Colors - Enhanced contrast for light mode */
   --text-accent: #4857ed;            /* Slightly darker accent */
   --text-accent-bright: #6366f1;     /* Darker bright accent */
-  --text-accent-hero: #6056ce;       /* Even darker for hero text */
+  --text-accent-hero: #3730a3;       /* Even darker for hero text */
   --text-success: #047857;           /* Darker success color */
   --text-warning: #b45309;           /* Darker warning color */
   --text-error: #b91c1c;             /* Darker error color */
@@ -566,7 +566,7 @@
   /* Theme Colors - Enhanced contrast for light mode */
   --text-accent: #4857ed;            /* Slightly darker accent */
   --text-accent-bright: #6366f1;     /* Darker bright accent */
-  --text-accent-hero: #6056ce;       /* Even darker for hero text */
+  --text-accent-hero: #3730a3;       /* Even darker for hero text */
   --text-success: #047857;           /* Darker success color */
   --text-warning: #b45309;           /* Darker warning color */
   --text-error: #b91c1c;             /* Darker error color */

@@ -268,6 +268,7 @@ export default function Homepage() {
                 size="large"
                 icon={Mail}
                 href={emailLinks.workTogether()}
+                className={styles.heroSecondaryButton}
               >
                 Say Hello
               </Button>

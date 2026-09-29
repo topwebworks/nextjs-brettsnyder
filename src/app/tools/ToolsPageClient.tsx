@@ -205,13 +205,8 @@ export default function UsesPage() {
   ];
 
   return (
-    <>
-      <AtmosphericBackground 
-        variant="subtle" 
-        orbCount={4} 
-        includeBackground={true}
-        className={styles.atmosphericBackground}
-      />
+    <div className={styles.pageContainer}>
+      <AtmosphericBackground variant="subtle" orbCount={4} includeBackground={true} />
       <Header />
       
       <main className={styles.mainContainer}>
@@ -361,6 +356,6 @@ export default function UsesPage() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }
