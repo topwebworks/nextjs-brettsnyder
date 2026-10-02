@@ -3,18 +3,18 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Mail, Github, Linkedin, Calendar, MapPin, FolderOpen } from 'lucide-react';
+import { ArrowRight, ChevronDown, Mail, Github, Linkedin, Calendar, MapPin, FolderOpen } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
+import LineRibbons from '@/components/ui/LineRibbons';
 import { siteConfig, emailLinks } from '@/lib/config';
 import ResumeButton from '@/components/ui/ResumeButton';
 import { latestProjects } from '@/lib/generated/latestProjects';
 import professionalPortrait from '@/images/portrait/professional-portrait.jpg';
 import styles from './HomePage.module.css';
-
 
 // Memoize static data to prevent unnecessary re-renders
 const workHistory = [
@@ -64,7 +64,7 @@ export default function Homepage() {
   // Memoize animated words to prevent unnecessary re-renders
   const animatedWords = React.useMemo(() => [
     'design engineer,',
-    'Shopify developer,',
+    'storefront developer,',
     'frontend developer.'
   ], []);
 
@@ -136,7 +136,7 @@ export default function Homepage() {
       <div className={styles.mainContainer}>
       
       {/* Atmospheric Background Component */}
-      <AtmosphericBackground variant="subtle" orbIds={[3, 4]} includeBackground={true} />
+      <AtmosphericBackground variant="subtle" orbIds={[3, 4]} includeBackground={true} lines={false} />
       
       {/* Header */}
       <Header />
@@ -184,6 +184,8 @@ export default function Homepage() {
           <div className={styles.heroBgElementPrimary} />
           
           <div className={styles.heroBgElementSecondary} />
+
+          <LineRibbons className={styles.heroLines} />
 
           {/* Refined Social Icons - Minimal & Elegant */}
           <div className={styles.heroSocialIcons}>
@@ -239,10 +241,14 @@ export default function Homepage() {
               I am a
               <br />
               <span className={styles.animatedTextContainer}>
-                <span className={styles.animatedText}>{currentText}</span>
-                {showCursor && (
-                   <span className={styles.textCursor}>|</span>
-                )}
+                {/* Invisible full copy of the current word: it types from its final centered start instead of re-centering per letter */}
+                <span className={styles.animatedTextGhost} aria-hidden="true">
+                  {randomWords[currentWordIndex] ?? currentText}
+                </span>
+                <span className={styles.animatedText}>
+                  {currentText}
+                  {showCursor && <span className={styles.textCursor}>|</span>}
+                </span>
               </span>
               <br />
             </h1>
@@ -250,7 +256,7 @@ export default function Homepage() {
             {/* Refined Description */}
             <div>
               <p className={styles.heroSubtitle}>
-              I’m Brett Snyder, a design engineer and frontend developer. I build SaaS products, Shopify experiences, and conversion-focused websites. This site highlights the products, systems, and campaigns behind that&nbsp;work.</p>
+              I’m Brett Snyder. I build SaaS products, Shopify experiences, and conversion-focused&nbsp;websites.</p>
             </div>
 
             {/* CTA */}
@@ -275,7 +281,8 @@ export default function Homepage() {
               </Button>
             </div>
           </div>
-          
+
+          <ChevronDown className={styles.heroScrollHint} size={28} strokeWidth={1.5} aria-hidden="true" />
         </section>
 
         {/* Main Content Section */}

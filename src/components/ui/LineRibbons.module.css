@@ -1,0 +1,35 @@
+/* LineRibbons.module.css */
+
+.lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.lines svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max(200%, 2880px); /* keeps waves gentle on narrow screens */
+  height: 100%;
+  color: var(--text-accent-bright);
+  animation: lineRibbonsDrift 70s linear infinite;
+}
+
+.lines svg + svg {
+  color: var(--text-success);
+  animation-duration: 110s;
+  animation-direction: reverse;
+}
+
+.static svg,
+.static svg + svg {
+  animation: none;
+}
+
+@keyframes lineRibbonsDrift {
+  to {
+    transform: translateX(-50%);
+  }
+}

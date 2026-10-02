@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from './AtmosphericBackground.module.css';
+import LineRibbons from './LineRibbons';
 
 interface AtmosphericBackgroundProps {
   /** Background intensity variant */
@@ -18,6 +19,8 @@ interface AtmosphericBackgroundProps {
   orbIds?: number[];
   /** Include theme-aware background gradients */
   includeBackground?: boolean;
+  /** Static line art behind the page content (off on the homepage, whose hero has its own) */
+  lines?: boolean;
   /** Additional CSS class name */
   className?: string;
   /** Additional inline styles */
@@ -51,6 +54,7 @@ export default function AtmosphericBackground({
   orbCount = 4, // Show all four orbs by default (legacy support)
   orbIds, // New flexible orb selection system
   includeBackground = true,
+  lines = true,
   className = '',
   style = {}
 }: AtmosphericBackgroundProps) {
@@ -95,7 +99,9 @@ export default function AtmosphericBackground({
   
   return (
     <BackgroundWrapper>
-      {/* Primary Orb - Large Purple - Top Left (ID: 1) - Now animated */}
+      {lines && <LineRibbons subtle className={styles.backgroundLines} />}
+
+      {/* Primary Orb - Large Purple - Top Left (ID: 1) */}
       {activeOrbs.includes(1) && (
         <div 
           className={`${styles.atmosphericOrb} ${styles.orbPrimary} ${className}`}
@@ -128,7 +134,7 @@ export default function AtmosphericBackground({
       />
       )}
       
-      {/* Secondary Orb - Large Green - Top Right (ID: 2) - Now static and bigger */}
+      {/* Secondary Orb - Large Green - Top Right (ID: 2) */}
       {activeOrbs.includes(2) && (
         <div 
         className={`${styles.atmosphericOrb} ${styles.orbSecondary} ${className}`}
@@ -160,7 +166,7 @@ export default function AtmosphericBackground({
       />
       )}
       
-      {/* Accent Orb - Small Orange - Middle Left (ID: 3) - Static for performance */}
+      {/* Accent Orb - Small Orange - Middle Left (ID: 3) */}
       {activeOrbs.includes(3) && (
         <div 
           className={`${styles.atmosphericOrb} ${styles.orbAccent} ${className}`}
@@ -185,7 +191,7 @@ export default function AtmosphericBackground({
         />
       )}
       
-      {/* Extra Ambient Orb - Bottom Right Blue (ID: 4) - Static for performance */}
+      {/* Extra Ambient Orb - Bottom Right Blue (ID: 4) */}
       {activeOrbs.includes(4) && (
         <div 
           className={`${styles.atmosphericOrb} ${styles.orbAmbient} ${className}`}
