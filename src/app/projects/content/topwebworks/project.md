@@ -12,7 +12,7 @@ technologies:
   - "CRM Integration"
 category: "Website"
 status:
-featured: True
+featured: false
 designSystem: true
 publishDate: "2026-03-27"
 links:

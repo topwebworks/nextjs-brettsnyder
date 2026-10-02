@@ -12,7 +12,7 @@ technologies:
   - "Vercel"
 category: "SaaS"
 status: 
-featured: True
+featured: false
 publishDate: "2026-01-02"
 links:
   live: "https://cywire.com"
