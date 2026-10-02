@@ -283,10 +283,15 @@
   background: linear-gradient(135deg, rgba(var(--success-rgb), 0.45) 0%, rgba(var(--success-rgb), 0.3) 50%, rgba(var(--success-rgb), 0.15) 100%);
   border-radius: 44% 56% 52% 48% / 58% 44% 56% 42%;
   filter: blur(30px);
-  opacity: 0.95;
+  opacity: 0.7;
   animation: floatWide 40s ease-in-out infinite reverse, blobMorph 26s ease-in-out infinite reverse;
   z-index: 0;
   box-shadow: 0 0 70px rgba(var(--success-rgb), 0.35), inset 0 0 50px rgba(var(--success-rgb), 0.25), 0 0 100px rgba(var(--success-rgb), 0.2);
+}
+
+/* Light theme: mint reads louder on the pale background, so dim it further */
+:global([data-theme="light"]) .heroBgElementSecondary {
+  opacity: 0.55;
 }
 
 /* Hero line art (LineRibbons): dimmed behind the text, fades in on load */
