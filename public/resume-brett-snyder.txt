@@ -26,7 +26,7 @@ Cosaint, Inc. | Queen Creek, AZ | November 2025 - Present
 - Built and launched CyWire.com (https://cywire.com) in three months, taking a B2B AI platform from concept to production with Next.js, React, TypeScript, Tailwind CSS, Supabase, and Vercel. Delivered a visual builder, knowledge base, and team workspaces.
 - Designed CyWire's Master Prompt system using reusable JSON blueprints, defined variables, constraints, and output schemas to produce validated, machine-readable AI output across models.
 - Built three design systems for TopWebWorks (https://topwebworks.com): a Tailwind system for its Next.js marketing site and two reusable Next.js component systems for service and informational client sites, supporting fast custom prototypes.
-- Lead client website and growth operations covering CRM lead capture, automated email and SMS follow-up, landing pages, SEO, analytics, and ongoing performance reporting.
+- Lead client website, Shopify store, and growth operations covering CRM lead capture, automated email and SMS follow-up, landing pages, SEO, analytics, and ongoing performance reporting.
 
 MARKETING WEB DEVELOPER
 Imagine Learning (formerly Weld North Education / Glynlyon Inc.) | Arizona (Remote) | March 2022 - October 2025
