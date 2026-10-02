@@ -245,6 +245,11 @@
   box-shadow: 0 0 80px rgba(var(--accent-rgb), 0.4), inset 0 0 60px rgba(var(--accent-rgb), 0.3), 0 0 120px rgba(var(--accent-rgb), 0.2);
 }
 
+/* Light theme: calmer orb so it doesn't pull focus to the social icons */
+:global([data-theme="light"]) .heroBgElementPrimary {
+  opacity: 0.7;
+}
+
 .heroBgElementSecondary {
   position: absolute;
   bottom: 30%;
@@ -327,9 +332,16 @@
   margin-bottom: clamp(2rem, 6vh, 3rem);
 }
 
-/* Light theme: full-strength subtitle so it holds up over the portrait */
+/* Light theme: softer at rest, darkens with the portrait reveal so it holds up over the photo */
 :global([data-theme="light"]) .heroSubtitle {
   opacity: 1;
+  color: var(--text-muted);
+  transition: color 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+:global([data-theme="light"]) .heroSection:hover .heroSubtitle,
+:global([data-theme="light"]) .heroSection:focus-within .heroSubtitle {
+  color: var(--text-secondary);
 }
 
 /* Animated Text */
@@ -392,6 +404,16 @@
   letter-spacing: 0.3em;
   margin-bottom: clamp(1.5rem, 3vh, 2rem);
   animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Light theme: badge darkens with the portrait reveal */
+:global([data-theme="light"]) .roleBadge {
+  transition: color 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+:global([data-theme="light"]) .heroSection:hover .roleBadge,
+:global([data-theme="light"]) .heroSection:focus-within .roleBadge {
+  color: var(--text-primary);
 }
 
 /* Mobile Portrait */

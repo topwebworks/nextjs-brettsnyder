@@ -146,6 +146,7 @@ export default function Homepage() {
         {/* Hero Section with Portrait Reveal */}
         <section 
           className={styles.heroSection}
+          data-portrait-visible={isPortraitHovered || undefined}
           onMouseEnter={() => setIsPortraitHovered(true)}
           onMouseLeave={() => setIsPortraitHovered(false)}
           onFocusCapture={() => setIsPortraitHovered(true)}

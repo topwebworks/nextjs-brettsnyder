@@ -76,6 +76,11 @@
   color: var(--text-primary);
 }
 
+/* Light theme: darken nav while the homepage hero portrait is revealed behind it */
+:global([data-theme="light"]:has([data-portrait-visible])) .navLink {
+  color: var(--text-primary);
+}
+
 /* Right section */
 .rightSection {
   display: flex;
