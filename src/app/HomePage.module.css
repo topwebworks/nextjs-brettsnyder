@@ -332,18 +332,6 @@
   margin-bottom: clamp(2rem, 6vh, 3rem);
 }
 
-/* Light theme: softer at rest, darkens with the portrait reveal so it holds up over the photo */
-:global([data-theme="light"]) .heroSubtitle {
-  opacity: 1;
-  color: var(--text-muted);
-  transition: color 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-:global([data-theme="light"]) .heroSection:hover .heroSubtitle,
-:global([data-theme="light"]) .heroSection:focus-within .heroSubtitle {
-  color: var(--text-secondary);
-}
-
 /* Animated Text */
 .animatedTextContainer {
   color: var(--text-accent-hero);
@@ -363,6 +351,44 @@
   color: var(--text-accent-hero);
   font-size: 0.8em;
   font-weight: 200;
+}
+
+/* Light theme: hero text is softer at rest and darkens as the portrait fades in behind it */
+:global([data-theme="light"]) .roleBadge,
+:global([data-theme="light"]) .heroTitle,
+:global([data-theme="light"]) .animatedTextContainer,
+:global([data-theme="light"]) .textCursor,
+:global([data-theme="light"]) .heroSubtitle {
+  transition: color 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+:global([data-theme="light"]) .roleBadge,
+:global([data-theme="light"]) .heroTitle {
+  color: var(--text-tertiary);
+}
+
+:global([data-theme="light"]) .animatedTextContainer,
+:global([data-theme="light"]) .textCursor {
+  color: color-mix(in srgb, var(--text-accent-hero) 85%, white);
+}
+
+:global([data-theme="light"]) .heroSubtitle {
+  opacity: 1;
+  color: var(--text-muted);
+}
+
+:global([data-theme="light"]) [data-portrait-visible] .roleBadge,
+:global([data-theme="light"]) [data-portrait-visible] .heroTitle {
+  color: var(--text-primary);
+}
+
+:global([data-theme="light"]) [data-portrait-visible] .animatedTextContainer,
+:global([data-theme="light"]) [data-portrait-visible] .textCursor {
+  color: var(--text-accent-hero);
+}
+
+:global([data-theme="light"]) [data-portrait-visible] .heroSubtitle {
+  color: var(--text-secondary);
 }
 
 /* Action Buttons */
@@ -404,16 +430,6 @@
   letter-spacing: 0.3em;
   margin-bottom: clamp(1.5rem, 3vh, 2rem);
   animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-/* Light theme: badge darkens with the portrait reveal */
-:global([data-theme="light"]) .roleBadge {
-  transition: color 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-:global([data-theme="light"]) .heroSection:hover .roleBadge,
-:global([data-theme="light"]) .heroSection:focus-within .roleBadge {
-  color: var(--text-primary);
 }
 
 /* Mobile Portrait */
