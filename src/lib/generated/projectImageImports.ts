@@ -19,7 +19,7 @@ import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
 import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
 import printScreenshot3 from '@/app/projects/content/print/magazine-ad.jpg';
 import printScreenshot4 from '@/app/projects/content/print/reebok-brochure.jpg';
-import pushpadHero from '@/app/projects/content/pushpad/pushpad-hero.png';
+import pushpadHero from '@/app/projects/content/pushpad/pushpad-hero.jpg';
 import pushpadScreenshot1 from '@/app/projects/content/pushpad/course-manager.png';
 import pushpadScreenshot2 from '@/app/projects/content/pushpad/course-scaffold.png';
 import pushpadScreenshot3 from '@/app/projects/content/pushpad/create-lesson-pad.png';
@@ -131,7 +131,7 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'reebok-brochure.jpg': printScreenshot4
   },
   'pushpad': {
-    'pushpad-hero.png': pushpadHero,
+    'pushpad-hero.jpg': pushpadHero,
     'course-manager.png': pushpadScreenshot1,
     'course-scaffold.png': pushpadScreenshot2,
     'create-lesson-pad.png': pushpadScreenshot3,

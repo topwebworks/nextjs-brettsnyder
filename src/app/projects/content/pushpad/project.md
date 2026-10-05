@@ -32,7 +32,7 @@ media:
   items:
     - type: "image"
       title: "PushPad Overview"
-      src: "pushpad-hero.png"
+      src: "pushpad-hero.jpg"
     - type: "image"
       title: "Course Manager"
       src: "course-manager.png"
