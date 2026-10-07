@@ -70,6 +70,8 @@ const developmentTools = [
   { name: 'Shopify Plus', description: 'Enterprise e-commerce platform for online stores', category: 'Framework', rating: 9 },
   { name: 'Claude Code', description: 'Agentic AI coding assistant in the terminal', category: 'Editor', rating: 10 },
   { name: 'Codex', description: 'OpenAI cloud coding agent for automated tasks', category: 'Editor', rating: 9 },
+  { name: 'Grok Bot', description: 'xAI assistant for coding, debugging, and iteration', category: 'Editor', rating: 10 },
+  { name: 'Cursor IDE', description: 'AI-native code editor for agentic development', category: 'Editor', rating: 10 },
   { name: 'CyWire', description: 'Master Prompt platform I built for structured, reliable AI output', category: 'Tools', rating: 10 },
   { name: 'Next.js', description: 'Full-stack React framework with excellent DX', category: 'Framework', rating: 9 },
   { name: 'React', description: 'Component-based UI library for building interfaces', category: 'Framework', rating: 9 },
