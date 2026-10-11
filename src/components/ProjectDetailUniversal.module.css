@@ -713,6 +713,7 @@
 
 .mainContentArticle {
   position: relative;
+  padding-top: 2rem;
   border-radius: 8px;
   overflow: visible;
   background: linear-gradient(
@@ -755,7 +756,7 @@
 .projectMetaInfo {
   max-width: 700px;
   margin: 0 auto;
-  padding: 0 1.75rem;
+  padding: 0 1.75rem 2rem;
   position: relative;
   border-radius: 8px;
   /* background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(255, 255, 255, 0.01);
