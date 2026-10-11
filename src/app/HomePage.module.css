@@ -148,6 +148,7 @@
   min-height: 100vh;
   position: relative;
   color: var(--text-primary);
+  text-wrap: pretty;
   transition: opacity 0.5s ease-in-out;
 }
 
