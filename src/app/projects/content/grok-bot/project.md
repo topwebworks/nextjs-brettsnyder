@@ -78,6 +78,8 @@ A returning worker needs current rules alongside those records. Director checks 
 
 These checks catch specific kinds of drift. The bot still has to do careful research and make sound judgments. Or off to HR they go, not really.
 
+The fun part testing was clicking the red Grok reset button, and seeing all the data still there after full reset. 
+
 ## Boot ID to the rescue
 
 I had no reset notification to trigger recovery. Then I noticed that the computer's boot ID changed after a reset. I built the recovery process around four parts:
