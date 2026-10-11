@@ -78,7 +78,7 @@ A returning worker needs current rules alongside those records. Director checks 
 
 These checks catch specific kinds of drift. The bot still has to do careful research and make sound judgments. Or off to HR they go, not really.
 
-The fun part testing was clicking the red Grok reset button, then having all the data still there after a full reset. I took it as a learning experience, yes durable, but now team setup better for future growth.
+The fun part testing was clicking the red Grok reset button, then having all the data still there after a full reset. I took it as a learning experience, yes durable, but the team is now setup for future growth.
 
 ## Boot ID to the rescue
 
