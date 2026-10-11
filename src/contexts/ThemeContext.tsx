@@ -18,7 +18,7 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>('light');
+  const [theme, setThemeState] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
 
   // Simplified initialization for Edge compatibility - FIXED: Remove Edge delay that causes white page
@@ -31,8 +31,8 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         if (typeof window === 'undefined') return;
         
         const savedTheme = localStorage.getItem('theme') as Theme | null;
-        // Default to light mode instead of system preference
-        const initialTheme = savedTheme || 'light';
+        // Default to dark mode instead of system preference
+        const initialTheme = savedTheme || 'dark';
         
         setThemeState(initialTheme);
         // Always set the attribute to ensure consistency
@@ -40,9 +40,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       } catch (error) {
         console.warn('Theme init failed:', error);
         setMounted(true);
-        setThemeState('light');
+        setThemeState('dark');
         try {
-          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.setAttribute('data-theme', 'dark');
         } catch {
           // Silent fallback
         }

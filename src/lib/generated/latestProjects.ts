@@ -13,6 +13,21 @@ export interface LatestProject {
 
 export const latestProjects: LatestProject[] = [
   {
+    "id": "grok-bot",
+    "title": "Grok Bot",
+    "excerpt": "Director gives Grok Bot workers a durable home for instructions, research, schedules, and saved progress so work can continue after resets.",
+    "category": "Web Application",
+    "publishDate": "2026-10-11",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Grok Bot",
+      "QStash",
+      "Vercel"
+    ]
+  },
+  {
     "id": "pushpad",
     "title": "PushPad",
     "excerpt": "An in-progress supplemental learning platform where educators build 7-section lesson pads and PushPad grades them, gates progress on mastery, and adapts the path with educator approval.",
@@ -25,17 +40,6 @@ export const latestProjects: LatestProject[] = [
       "Anthropic API",
       "Stripe Connect",
       "Vercel"
-    ]
-  },
-  {
-    "id": "brightpath-ops",
-    "title": "Brightpath Operations",
-    "excerpt": "A functional UI prototype for an internal operations tool designed to surface only what needs attention across events and courses, built to triage alerts from multiple platforms with AI-assisted notes once connected to live data.",
-    "category": "Prototype",
-    "publishDate": "2026-09-14",
-    "technologies": [
-      "Next.js",
-      "TypeScript"
     ]
   }
 ];

@@ -11,6 +11,7 @@ import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.pn
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
 import emailScreenshot2 from '@/app/projects/content/email/email-3.jpg';
+import grokbotHero from '@/app/projects/content/grok-bot/grok-hero.png';
 import masterblocksHero from '@/app/projects/content/master-blocks/masterblocks-hero.jpg';
 import monarchcatalogHero from '@/app/projects/content/monarch-catalog/monarch-prototype.png';
 import personalportfolioHero from '@/app/projects/content/personal-portfolio/1-personal-portfolio.png';
@@ -60,6 +61,11 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
     hero: emailHero,
     demo: null,
     screenshots: [emailScreenshot1, emailScreenshot2]
+  },
+  'grok-bot': {
+    hero: grokbotHero,
+    demo: null,
+    screenshots: []
   },
   'master-blocks': {
     hero: masterblocksHero,
@@ -114,6 +120,9 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'email-2.jpg': emailScreenshot1,
     'email-3.jpg': emailScreenshot2
   },
+  'grok-bot': {
+    'grok-hero.png': grokbotHero
+  },
   'master-blocks': {
     'masterblocks-hero.jpg': masterblocksHero
   },
@@ -166,7 +175,7 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['amw-hardscape', 'brightpath-ops', 'cywire', 'email', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'pushpad', 'shopify-migrations', 'topwebworks'];
+export const availableProjects = ['amw-hardscape', 'brightpath-ops', 'cywire', 'email', 'grok-bot', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'pushpad', 'shopify-migrations', 'topwebworks'];
 
 // Note: Console logging removed to reduce build noise
 
@@ -177,6 +186,7 @@ export { cywireHero };
 export { emailHero };
 export { emailScreenshot1 };
 export { emailScreenshot2 };
+export { grokbotHero };
 export { masterblocksHero };
 export { monarchcatalogHero };
 export { personalportfolioHero };

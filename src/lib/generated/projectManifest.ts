@@ -8,6 +8,7 @@ export const PROJECT_IDS: readonly string[] = [
   'brightpath-ops',
   'cywire',
   'email',
+  'grok-bot',
   'master-blocks',
   'monarch-catalog',
   'personal-portfolio',
@@ -18,7 +19,7 @@ export const PROJECT_IDS: readonly string[] = [
 ] as const;
 
 // Project count for quick reference
-export const PROJECT_COUNT = 11;
+export const PROJECT_COUNT = 12;
 
 // Type for project ID validation
 export type ProjectId = typeof PROJECT_IDS[number];
