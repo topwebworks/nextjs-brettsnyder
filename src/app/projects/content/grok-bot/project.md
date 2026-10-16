@@ -103,7 +103,7 @@ Some cases need my attention. The handoff should tell me what was saved, what re
 
 ## Less repeated work
 
-Director handles routine checks in code, leaving the bots to evaluate prospects and draft useful replies. When Leo saves research, Nina can use it for a follow-up without repeating the search. I can review their work from the same record.
+Director handles routine checks in code, leaving the bots to evaluate prospects and draft useful replies. When Leo saves research, Nina can use it for a follow-up without repeating the search. I can review their work from the same record. Director also sends outreach email itself through the Gmail API rather than the Grok Bot mail connector, so links arrive exactly as written.
 
 ## Back to that morning
 
