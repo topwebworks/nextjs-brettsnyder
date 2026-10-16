@@ -24,7 +24,7 @@ keyAchievements:
     title: "What I Learned"
     description: "After years of building fancy emails for big companies, a few patterns stick out:"
     metrics:
-      - Emails aren’t landing pages — they need to be lighter and simpler.  
+      - Emails aren’t landing pages. They need to be lighter and simpler.  
       - A reusable template saves a ton of time and can keep working for years.  
       - Fluid layouts beat media queries since some clients strip them out. Test by deleting the head in browser. 
       - Fully custom emails look good but take much longer to build.

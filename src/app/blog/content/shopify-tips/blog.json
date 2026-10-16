@@ -33,7 +33,7 @@
         "title": "Shopify Content Development Tips",
         "description": "Key development lessons for scalable, maintainable Shopify builds",
         "metrics": [
-          "Use Horizon theme — stable, updated, and safer for long-term upgrades",
+          "Use Horizon theme: stable, updated, and safer for long-term upgrades",
           "Additive approach and preserve Shop store upgrade paths. Do not change core files.",
           "Templates = content, Pages = URL wrappers",
           "Clone templates for new content, assign to temp pages for approvals, then swap live",

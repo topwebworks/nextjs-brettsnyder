@@ -33,13 +33,13 @@ media:
 
 ## Previous Portfolio
 
-I ran my old portfolio site for years using a customized Next.js + Tailwind UI template. It was solid—minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
+I ran my old portfolio site for years using a customized Next.js + Tailwind UI template. It was solid: minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
 
 ## The Vision
 
-I wanted to rebuild from scratch using the newest Next.js and React versions—risky since they'd just been released and had bugs. But as the only stakeholder, why not push boundaries?
+I wanted to rebuild from scratch using the newest Next.js and React versions, which was risky since they'd just been released and had bugs. But as the only stakeholder, why not push boundaries?
 
-I chose Lucide icons over Font Awesome for a cleaner look. The goal was a more robust portfolio with the same easy markdown blog workflow, but instead of standard flat black-and-white dark mode, I wanted glassmorphism—dark, iridescent tones with glass and transparency effects.
+I chose Lucide icons over Font Awesome for a cleaner look. The goal was a more robust portfolio with the same easy markdown blog workflow, but instead of standard flat black-and-white dark mode, I wanted glassmorphism: dark, iridescent tones with glass and transparency effects.
 
 Most portfolios use small circular avatars that lack impact on desktop. I didn't want a large portrait staring at visitors on page load either. My compromise: clean homepage with animated orbs and typography, then a large portrait background that appears only on hover.
 
@@ -47,7 +47,7 @@ Navigation would show just two main hero buttons, moving everything else to a si
 
 Below the hero, I'd keep the successful elements from my old site: latest project cards, recent work timeline, GitHub and LinkedIn links. I planned expanded About and Tools pages, proper blog and project listing pages with thumbnails, and actual project case studies this time. The goal was sharing the same content engine between blogs and projects.
 
-For contact, I stuck with a simple email link—no forms, no bot problems.
+For contact, I stuck with a simple email link. No forms, no bot problems.
 
 ## Design Approach
 
@@ -63,7 +63,7 @@ Glass effects were appealing but could easily become cluttered. I added a slow-m
 
 2. **About Page:** I followed the same approach as the homepage but didn't want all the animated orbs, so I built a configurable background component that adapts based on the page. The About page uses one animated orb (top-left) with the rest static. I then updated the homepage to use this same background component.
 
-   I added focused stats and achievements—much better than my previous verbose About section. The content was more conversion-oriented with clear takeaways. Glass effects made it more visually interesting than before.
+   I added focused stats and achievements, much better than my previous verbose About section. The content was more conversion-oriented with clear takeaways. Glass effects made it more visually interesting than before.
 
    This is also where I finalized the light and dark mode styling. I experimented with several theme variations but settled on the two I liked best. I kept some old test styles in case I want to revisit them later.
 

@@ -57,9 +57,9 @@ I’ve always been the kid flipping front and back handsprings down school hallw
 
 Funastics was built around one simple idea: **progress at your own pace in a supportive, fun environment**. No stress, no competitive team. Every student could succeed by taking the next step that was right for them. We borrowed from martial arts the concepts of earned rank and respect, then reimagined it for kids&nbsp;gymnastics.  
 
-Every child tracked their growth on an **individual progress chart** that included flexibility, strength, and skill goals. Skills were separated into levels and had to be passed off one-on-one with an instructor before moving on. This gave kids structure and safety while helping them see real progress. Each time they advanced, they earned a colored star for the sleeve of their Funastics shirt. Earning that next star wasn’t just about tumbling — it was about persistence, self-control, and believing they could&nbsp;do&nbsp;it.  
+Every child tracked their growth on an **individual progress chart** that included flexibility, strength, and skill goals. Skills were separated into levels and had to be passed off one-on-one with an instructor before moving on. This gave kids structure and safety while helping them see real progress. Each time they advanced, they earned a colored star for the sleeve of their Funastics shirt. Earning that next star wasn’t just about tumbling. It was about persistence, self-control, and believing they could&nbsp;do&nbsp;it.  
 
-At the top of the program sat the **Gold Star students**, who could join the **Junior Instructor track**. This wasn’t just a title; it was available leadership training. Older kids learned how to demonstrate and guide younger ones from experience, safely spot skills, and learn to truly mentor. They wore their stars proudly, knowing they had earned them through commitment and consistency. The whole program came to be known as the **Funastics Star Program** — a system that blended gymnastics skills with character-building.  
+At the top of the program sat the **Gold Star students**, who could join the **Junior Instructor track**. This wasn’t just a title; it was available leadership training. Older kids learned how to demonstrate and guide younger ones from experience, safely spot skills, and learn to truly mentor. They wore their stars proudly, knowing they had earned them through commitment and consistency. The whole program came to be known as the **Funastics Star Program**, a system that blended gymnastics skills with character-building.  
 
 ### We also taught four simple values that every student could understand:  
 
@@ -68,7 +68,7 @@ At the top of the program sat the **Gold Star students**, who could join the **J
 - **Control** – learning to focus body and mind.  
 - **Confidence** – the self-belief that grows with each&nbsp;success.  
 
-These were reinforced in our daily **life-skill huddles**. After each activity rotation, we pulled together for a short motivational talk — sometimes about effort, sometimes about teamwork, sometimes about bouncing back after a fall. Kids shouted affirmations back as a group: “Who controls your body? I do!” “Who decides you are good? I do!” Those chants stuck. Parents often told me their kids used them at home before school tests or sports&nbsp;games.
+These were reinforced in our daily **life-skill huddles**. After each activity rotation, we pulled together for a short motivational talk: sometimes about effort, sometimes about teamwork, sometimes about bouncing back after a fall. Kids shouted affirmations back as a group: “Who controls your body? I do!” “Who decides you are good? I do!” Those chants stuck. Parents often told me their kids used them at home before school tests or sports&nbsp;games.
 
 ## Curriculum & Class Structure  
 
@@ -80,9 +80,9 @@ The one-on-one stations were where progress happened. An instructor spotted each
 
 ## Strength in Body and Mind  
 
-Funastics was about getting stronger in all ways. Physically, kids built the flexibility to stretch further, the strength to hold handstands, and the control to master each move safely. Mentally, they built resilience. When a child stumbled on a skill, the focus was always on what they *could* do — and on trying again. Over time, even shy or hesitant kids learned to push past fear and surprise&nbsp;themselves.  
+Funastics was about getting stronger in all ways. Physically, kids built the flexibility to stretch further, the strength to hold handstands, and the control to master each move safely. Mentally, they built resilience. When a child stumbled on a skill, the focus was always on what they *could* do, and on trying again. Over time, even shy or hesitant kids learned to push past fear and surprise&nbsp;themselves.  
 
-We saw courage grow every day. A child who once said, “I can’t do it” would eventually say, “Watch me.” Each new star badge wasn’t just fabric on a sleeve; it was proof of their effort and progress. It gave them something they could point to and be proud of. That visible recognition mattered — it told them their hard work&nbsp;counted.  
+We saw courage grow every day. A child who once said, “I can’t do it” would eventually say, “Watch me.” Each new star badge wasn’t just fabric on a sleeve; it was proof of their effort and progress. It gave them something they could point to and be proud of. That visible recognition mattered. It told them their hard work&nbsp;counted.  
 
 Parents often commented that they saw changes at home: kids more willing to take on chores, schoolwork, or even speaking up in class. The confidence they built inside the gym carried into the rest of their&nbsp;lives.
 
@@ -90,7 +90,7 @@ Parents often commented that they saw changes at home: kids more willing to take
 
 Our physical space was designed for energy and community. The strip-mall unit was gutted and rebuilt with padded flooring, mirrors, and bright paint. Modular equipment could be moved and reset daily to fit the class plan. Around the mats, we placed chairs so families could watch, cheer, and even join in games. On the windows, our logo, phone number, website, and a tray of free trial coupons made it easy for anyone walking by to step&nbsp;inside.  
 
-We created an environment where families felt part of the action. Some nights we held **special events** — open gyms where kids could explore freely, movie and pizza nights with public demonstrations where students proudly performed for their parents and friends. Even air powered Bounce Gyms for the toddlers. We offered branded gym gear, and car window decals so students could display Funastics brand outside the gym, too. All of it added to the sense that this wasn’t just a class — it was a&nbsp;community.
+We created an environment where families felt part of the action. Some nights we held **special events**: open gyms where kids could explore freely, movie and pizza nights with public demonstrations where students proudly performed for their parents and friends. Even air powered Bounce Gyms for the toddlers. We offered branded gym gear, and car window decals so students could display Funastics brand outside the gym, too. All of it added to the sense that this wasn’t just a class. It was a&nbsp;community.
 
 ## Digital and Local Outreach  
 
@@ -102,8 +102,8 @@ Offline, I worked the neighborhoods and some schools. Every month I delivered la
 
 For three years, Funastics ran at full speed, with 50–80 students a day tumbling, laughing, and growing in confidence. I hired some wonderful instructors, worked with supportive families, and watched kids transform before my eyes. Some families drove an hour each way just to be part of&nbsp;it.  
 
-When the 2008 real estate crash hit, many of our families were impacted. Enrollment dropped, and I eventually sold the gym location in 2009. But the lessons — for the kids and for me — lasted far&nbsp;longer.  
+When the 2008 real estate crash hit, many of our families were impacted. Enrollment dropped, and I eventually sold the gym location in 2009. But the lessons, for the kids and for me, lasted far&nbsp;longer.  
 
-What Funastics taught me is that kids thrive when you give them structure, positivity, and belief in themselves. They don’t just learn skills — they learn who they are. They learn to set goals, push through setbacks, and celebrate progress. I’ll never forget the look on a child’s face when they earned that next star or stuck their first back handspring. That spark of confidence is what Funastics was always&nbsp;about.  
+What Funastics taught me is that kids thrive when you give them structure, positivity, and belief in themselves. They don’t just learn skills. They learn who they are. They learn to set goals, push through setbacks, and celebrate progress. I’ll never forget the look on a child’s face when they earned that next star or stuck their first back handspring. That spark of confidence is what Funastics was always&nbsp;about.  
 
 **Help someone believe in themselves, and they’ll find a way&nbsp;to&nbsp;fly.**

@@ -43,7 +43,7 @@ AI is already part of most jobs, and if it's not yet, it will be soon. It remove
 
 But there's a problem we don't talk about enough: AI without structure creates messes.
 
-Vague prompts, inconsistent output, features that work one day and break the next. Codebases end up littered with half-working "AI solutions" that someone eventually has to decipher and retarget. Even agentic workflows—which are impressive—start to feel risky once you move beyond small, repetitive tasks and into business-critical systems.
+Vague prompts, inconsistent output, features that work one day and break the next. Codebases end up littered with half-working "AI solutions" that someone eventually has to decipher and retarget. Even agentic workflows, which are impressive, start to feel risky once you move beyond small, repetitive tasks and into business-critical systems.
 
 If you're a betting person, maybe you're comfortable with that. I'm not.
 
@@ -59,7 +59,7 @@ What I needed was consistency.
 
 ## From Prompts to Blueprints
 
-The breakthrough wasn't "better prompting." It was structure. Instead of one long block of natural text, I wanted a single JSON blueprint—a file that contains everything the AI needs:
+The breakthrough wasn't "better prompting." It was structure. Instead of one long block of natural text, I wanted a single JSON blueprint, a file that contains everything the AI needs:
 
 - Clear instruction sections
 - Defined variables
@@ -76,7 +76,7 @@ Less guessing, less brittle parsing, fewer surprises. My time developing Shopify
 
 A Master Prompt is a reliable, single-feature blueprint, not a long natural-text sentence or a manual prompt-engineering time sink.
 
-Store it like code. Treat it as your AI feature Source of Truth. You version it. You reuse it. One Master Prompt per AI feature—focused, testable, and practical to ship.
+Store it like code. Treat it as your AI feature Source of Truth. You version it. You reuse it. One Master Prompt per AI feature: focused, testable, and practical to ship.
 
 The output is structured JSON data that can be rendered into reports, instructions, workflows, dashboards, or downstream systems, etc. The goal is predictability. JSON is fast and reliable, which is why most platforms and devs love it.
 
@@ -94,7 +94,7 @@ As I refined the approach, it evolved - from a weekend project to several weeks:
 
 I experimented with chaining Master Prompts together using RAG-style flows. It worked, but in practice I preferred the clarity and cost control of one comprehensive Master Prompt per feature. For agentic workflows use smaller master prompts.
 
-The main drawback was editing. Long structured prompts are powerful—but painful to maintain when they live as raw text.
+The main drawback was editing. Long structured prompts are powerful, but painful to maintain when they live as raw text.
 
 So I built tooling to make them easier to create, edit, and test. So became CyWire.
 
@@ -134,7 +134,7 @@ Master Prompts lock intent, constraints, and output contracts in place, ensuring
 
 [PushPad](/projects/pushpad) is the real-world proof of concept, it runs on two Master Prompts, one for Sonnet to write lesson content and one for Haiku to grade it.
 
-For the initial launch, I've shared many free, industry-specific Master Prompts in the CyWire community—use them as-is or adapt them for your own work. You have access to the entire master prompt code. Join as a free member, no credit card needed.
+For the initial launch, I've shared many free, industry-specific Master Prompts in the CyWire community. Use them as-is or adapt them for your own work. You have access to the entire master prompt code. Join as a free member, no credit card needed.
 
 If you're building AI features that need to actually be reliable, this approach may work for you. For me, it only made sense.
 
