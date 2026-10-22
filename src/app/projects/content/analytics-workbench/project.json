@@ -4,7 +4,7 @@
   "description": "A local tool that records what a page and its cross-domain iframes send to GTM, GA4 and ad platforms, then explains each gap as a fix.",
   "technologies": [
     "Node.js",
-    "Chrome DevTools Protocol",
+    "Chrome CDP",
     "React",
     "TypeScript",
     "Vite",
@@ -14,7 +14,7 @@
   ],
   "tags": [
     "Node.js",
-    "Chrome DevTools Protocol",
+    "Chrome CDP",
     "React",
     "TypeScript",
     "Vite",

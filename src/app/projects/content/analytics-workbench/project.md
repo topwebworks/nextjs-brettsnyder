@@ -5,7 +5,7 @@ contentTitle: "Tracking Across Iframes"
 achievementTitle: "Recording, Checks & Attribution"
 technologies:
   - "Node.js"
-  - "Chrome DevTools Protocol"
+  - "Chrome CDP"
   - "React"
   - "TypeScript"
   - "Vite"

@@ -20,7 +20,7 @@ export const latestProjects: LatestProject[] = [
     "publishDate": "2026-10-22",
     "technologies": [
       "Node.js",
-      "Chrome DevTools Protocol",
+      "Chrome CDP",
       "React",
       "TypeScript",
       "Vite",
