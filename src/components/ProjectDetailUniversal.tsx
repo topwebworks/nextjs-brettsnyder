@@ -300,6 +300,8 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
         <div className={styles.mediaContainer}>
           {showLeftArrow && (
             <button
+              type="button"
+              aria-label="Scroll gallery left"
               className={`scroll-arrow-left ${styles.scrollArrow} ${styles.scrollArrowLeft}`}
               onClick={scrollLeft}
             >
@@ -309,6 +311,8 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
           
           {showRightArrow && (
             <button
+              type="button"
+              aria-label="Scroll gallery right"
               className={`scroll-arrow-right ${styles.scrollArrow} ${styles.scrollArrowRight}`}
               onClick={scrollRight}
             >
@@ -329,9 +333,11 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                 const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
                 
                 return (
-                  <div key={`video-${index}`} 
+                  <button key={`video-${index}`}
+                    type="button"
                     className={styles.mediaItem}
                     data-type="video"
+                    aria-pressed={currentHeroVideo === videoId}
                     onClick={() => {
                       setCurrentHeroVideo(videoId);
                       setCurrentHeroImage(null);
@@ -340,22 +346,22 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                       setCurrentVideoAspectRatio(aspectRatio);
                     }}
                   >
-                    <div className={styles.videoThumbnailContainer}>
+                    <span className={styles.videoThumbnailContainer}>
                       <Image
                         src={thumbnailUrl}
-                        alt={item.title || `Video ${index + 1}`}
+                        alt=""
                         width={350}
                         height={200}
                         className={styles.videoThumbnail}
                       />
-                      <div className={styles.playButtonOverlay}>
-                        <Play size={40} className={styles.playIcon} />
-                      </div>
-                    </div>
-                    <div className={styles.mediaItemTitle}>
+                      <span className={styles.playButtonOverlay}>
+                        <Play size={40} className={styles.playIcon} aria-hidden="true" />
+                      </span>
+                    </span>
+                    <span className={styles.mediaItemTitle}>
                       {item.title || `Demo Video ${index + 1}`}
-                    </div>
-                  </div>
+                    </span>
+                  </button>
                 );
               } else {
                 // Handle Image Items - Dynamic mapping from JSON filename to static import
@@ -378,9 +384,11 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                 }
                 
                 return (
-                  <div key={`image-${index}`} 
+                  <button key={`image-${index}`}
+                    type="button"
                     className={styles.mediaItem}
                     data-type="image"
+                    aria-pressed={!currentHeroVideo && heroImageKey === resolvedImageSrc}
                     onClick={() => {
                       setCurrentHeroImage(dynamicImage || resolvedImageSrc);
                       setCurrentHeroVideo(null);
@@ -388,15 +396,15 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                   >
                     <Image
                       src={resolvedImageSrc}
-                      alt={item.title || `Project Image ${index + 1}`}
+                      alt=""
                       width={350}
                       height={200}
                       className={styles.mediaItemImage}
                     />
-                    <div className={styles.mediaItemTitle}>
+                    <span className={styles.mediaItemTitle}>
                       {item.title || 'Project Image'}
-                    </div>
-                  </div>
+                    </span>
+                  </button>
                 );
               }
             })}
@@ -406,9 +414,11 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
               const imageSrc = typeof screenshot === 'string' ? screenshot : screenshot.src;
               const title = getScreenshotTitle(staticImagesByFilename, screenshot, index);
               return (
-                <div key={`static-image-${index}`}
+                <button key={`static-image-${index}`}
+                  type="button"
                   className={styles.mediaItem}
                   data-type="image"
+                  aria-pressed={!currentHeroVideo && heroImageKey === imageSrc}
                   onClick={() => {
                     setCurrentHeroImage(screenshot);
                     setCurrentHeroVideo(null);
@@ -416,15 +426,15 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                 >
                   <Image
                     src={imageSrc}
-                    alt={title}
+                    alt=""
                     width={350}
                     height={200}
                     className={styles.mediaItemImage}
                   />
-                  <div className={styles.mediaItemTitle}>
+                  <span className={styles.mediaItemTitle}>
                     {title}
-                  </div>
-                </div>
+                  </span>
+                </button>
               );
             })}
           </div>

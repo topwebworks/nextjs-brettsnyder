@@ -10,6 +10,7 @@ Next.js 15 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 - Markdown-driven Projects and Blog routes.
 - Generated JSON content and TypeScript manifests.
 - Universal detail-page template with inline images and media galleries. Hero images fill the gallery width at their natural proportions and fade in after loading, respecting reduced motion.
+- Keyboard-accessible gallery thumbnails with a visible selected state.
 - About and Tools pages.
 - Light and dark themes with reduced-motion support.
 - Editable resume and cover-letter sources with automated PDF generation.

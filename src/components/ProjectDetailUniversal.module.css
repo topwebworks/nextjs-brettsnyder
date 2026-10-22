@@ -502,6 +502,9 @@
 
 /* Media Items */
 .mediaItem {
+  padding: 0;
+  font: inherit;
+  text-align: left;
   min-width: 350px;
   height: 200px;
   border-radius: 5px;
@@ -545,6 +548,17 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+.mediaItem[aria-pressed="true"] {
+  outline: 2px solid rgba(var(--accent-rgb), 0.8);
+  outline-offset: -2px;
+}
+
+.mediaItem:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: -4px;
+  transition: none;
+}
+
 /* Media Item Image */
 .mediaItemImage {
   width: 100%;
@@ -574,6 +588,7 @@
 
 /* Video Thumbnail Container */
 .videoThumbnailContainer {
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;
