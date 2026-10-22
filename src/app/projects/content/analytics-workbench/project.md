@@ -12,7 +12,7 @@ technologies:
   - "GTM"
   - "GA4"
   - "Vercel"
-category: "Web Application"
+category: "Developer Tool"
 status: "Production"
 featured: true
 publishDate: "2026-10-22"
@@ -55,9 +55,9 @@ Tag Assistant is the right tool for debugging a GTM container you manage. It wor
 The workbench answers a different set of questions:
 
 - **Which tags fired, on which trigger, with which variables?** Tag Assistant shows this in detail, with container access. The workbench reads the published container and doesn't replace Preview.
-- **What did the page and each iframe push to their own dataLayer?** Tag Assistant sees only containers it can debug. The workbench records every frame, cross-domain included.
-- **Did an event cross from the iframe to the host page?** Only the workbench answers this, with each event labelled by frame.
-- **Did the campaign survive the trip into the iframe and onto the purchase?** Only the workbench, from recorded values, not from the URL alone.
+- **What did the page and each iframe push to their own dataLayer?** Tag Assistant shows each frame whose container or Google tag it can debug; iframes need its Chrome extension. The workbench records every frame, cross-domain included, even a vendor iframe whose container you can't open.
+- **Did an event cross from the iframe to the host page?** Tag Assistant can show both sides when it can debug both containers, and you match them up. The workbench puts both on one timeline, each event labelled by frame.
+- **Did the campaign survive the trip into the iframe and onto the purchase?** The workbench checks this directly, from recorded values, not from the URL alone.
 - **Were Google Ads and Meta requests sent, and with what value, currency and consent?** Tag Assistant covers Google tags. The workbench reads GA4, Google Ads and Meta requests.
 - **Does this flow match a reference flow or a GA4 purchase standard?** Compare answers this with a score and field differences.
 - **What exactly should change, and where?** Tag Assistant shows behaviour. The workbench gives findings with a location, numbered steps and an AI prompt for code fixes.

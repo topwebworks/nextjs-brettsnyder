@@ -10,7 +10,7 @@ technologies:
   - "Grok Bot"
   - "QStash"
   - "Vercel"
-category: "Web Application"
+category: "AI Automation"
 status: "Production"
 featured: true
 publishDate: "2026-10-11"

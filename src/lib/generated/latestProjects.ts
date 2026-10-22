@@ -16,7 +16,7 @@ export const latestProjects: LatestProject[] = [
     "id": "analytics-workbench",
     "title": "Analytics Workbench",
     "excerpt": "A local tool that records what a page and its cross-domain iframes send to GTM, GA4 and ad platforms, then explains each gap as a fix.",
-    "category": "Web Application",
+    "category": "Developer Tool",
     "publishDate": "2026-10-22",
     "technologies": [
       "Node.js",
@@ -33,7 +33,7 @@ export const latestProjects: LatestProject[] = [
     "id": "grok-bot",
     "title": "Grok Bot",
     "excerpt": "Director gives Grok Bot workers a durable home for instructions, research, schedules, and saved progress so work can continue after resets.",
-    "category": "Web Application",
+    "category": "AI Automation",
     "publishDate": "2026-10-11",
     "technologies": [
       "Next.js",

@@ -21,9 +21,9 @@ The workbench answers a different set of questions:
 | Question | Tag Assistant | Analytics Workbench |
 |---|---|---|
 | Which tags fired, on which trigger, with which variables? | Yes, in detail, with container access | Reads the published container; doesn't replace Preview |
-| What did the page and each iframe push to their own dataLayer? | Only containers it can debug | Every frame, cross-domain included |
-| Did an event cross from the iframe to the host page? | No | Yes, labelled per frame |
-| Did the campaign survive the trip into the iframe and onto the purchase? | No | Yes, from recorded values, not from the URL alone |
+| What did the page and each iframe push to their own dataLayer? | Frames whose container it can debug (iframes need its Chrome extension) | Every frame, cross-domain included |
+| Did an event cross from the iframe to the host page? | Both sides, if it can debug both containers; you match them up | Yes, on one timeline, labelled per frame |
+| Did the campaign survive the trip into the iframe and onto the purchase? | Not checked directly | Yes, from recorded values, not from the URL alone |
 | Were Google Ads and Meta requests sent, and with what value, currency and consent? | Google tags only | GA4, Google Ads and Meta requests |
 | Does this flow match a reference flow or a GA4 purchase standard? | No | Compare, with a score and field differences |
 | What exactly should be changed, and where? | Shows behaviour | Findings with location, numbered steps and an AI prompt for code fixes |
