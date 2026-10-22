@@ -13,6 +13,23 @@ export interface LatestProject {
 
 export const latestProjects: LatestProject[] = [
   {
+    "id": "analytics-workbench",
+    "title": "Analytics Workbench",
+    "excerpt": "A local tool that records what a page and its cross-domain iframes send to GTM, GA4 and ad platforms, then explains each gap as a fix.",
+    "category": "Web Application",
+    "publishDate": "2026-10-22",
+    "technologies": [
+      "Node.js",
+      "Chrome DevTools Protocol",
+      "React",
+      "TypeScript",
+      "Vite",
+      "GTM",
+      "GA4",
+      "Vercel"
+    ]
+  },
+  {
     "id": "grok-bot",
     "title": "Grok Bot",
     "excerpt": "Director gives Grok Bot workers a durable home for instructions, research, schedules, and saved progress so work can continue after resets.",
@@ -24,21 +41,6 @@ export const latestProjects: LatestProject[] = [
       "Supabase",
       "Grok Bot",
       "QStash",
-      "Vercel"
-    ]
-  },
-  {
-    "id": "pushpad",
-    "title": "PushPad",
-    "excerpt": "An in-progress supplemental learning platform where educators build 7-section lesson pads and PushPad grades them, gates progress on mastery, and adapts the path with educator approval.",
-    "category": "SaaS",
-    "publishDate": "2026-09-21",
-    "technologies": [
-      "Next.js",
-      "React",
-      "Supabase",
-      "Anthropic API",
-      "Stripe Connect",
       "Vercel"
     ]
   }

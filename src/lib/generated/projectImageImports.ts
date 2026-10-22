@@ -6,6 +6,7 @@ import { StaticImageData } from 'next/image';
 
 // Import statements for all project images
 import amwhardscapeHero from '@/app/projects/content/amw-hardscape/amw-hardscape-hero.png';
+import analyticsworkbenchHero from '@/app/projects/content/analytics-workbench/analytics-workbench-hero.png';
 import brightpathopsHero from '@/app/projects/content/brightpath-ops/ops-hero.png';
 import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.png';
 import emailHero from '@/app/projects/content/email/email-1.jpg';
@@ -44,6 +45,11 @@ export interface ProjectImageImports {
 export const projectImageImports: Record<string, ProjectImageImports> = {
   'amw-hardscape': {
     hero: amwhardscapeHero,
+    demo: null,
+    screenshots: []
+  },
+  'analytics-workbench': {
+    hero: analyticsworkbenchHero,
     demo: null,
     screenshots: []
   },
@@ -108,6 +114,9 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
 export const projectImagesByFilename: Record<string, Record<string, StaticImageData>> = {
   'amw-hardscape': {
     'amw-hardscape-hero.png': amwhardscapeHero
+  },
+  'analytics-workbench': {
+    'analytics-workbench-hero.png': analyticsworkbenchHero
   },
   'brightpath-ops': {
     'ops-hero.png': brightpathopsHero
@@ -175,12 +184,13 @@ export function getProjectImageByFilename(projectId: string, filename: string): 
 }
 
 // List of all available project IDs
-export const availableProjects = ['amw-hardscape', 'brightpath-ops', 'cywire', 'email', 'grok-bot', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'pushpad', 'shopify-migrations', 'topwebworks'];
+export const availableProjects = ['amw-hardscape', 'analytics-workbench', 'brightpath-ops', 'cywire', 'email', 'grok-bot', 'master-blocks', 'monarch-catalog', 'personal-portfolio', 'print', 'pushpad', 'shopify-migrations', 'topwebworks'];
 
 // Note: Console logging removed to reduce build noise
 
 // Individual variable exports for direct access
 export { amwhardscapeHero };
+export { analyticsworkbenchHero };
 export { brightpathopsHero };
 export { cywireHero };
 export { emailHero };
