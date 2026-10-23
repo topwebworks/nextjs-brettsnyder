@@ -7,15 +7,18 @@ import { PAGINATION_CONFIGS } from '@/utils/paginationConfig';
 
 export default function BlogScripts() {
   useEffect(() => {
+    let cleanupFilter: (() => void) | undefined;
+
     // Add a small delay to ensure DOM is fully ready
     const timer = setTimeout(() => {
       // Initialize both scripts when component mounts
-      initCategoryFilter();
+      cleanupFilter = initCategoryFilter();
       initPagination(PAGINATION_CONFIGS.blog, '.blog-card');
     }, 100);
 
     return () => {
       clearTimeout(timer);
+      cleanupFilter?.();
     };
   }, []);
 

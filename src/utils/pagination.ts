@@ -54,13 +54,10 @@ export function initPagination(config: PaginationConfig, itemSelector: string = 
   // Show More button click handler
   showMoreBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    console.log('Show more button clicked');
-    
-    const visibleItems = getVisibleItems();
-    const remainingItems = visibleItems.length - currentlyVisible;
-    
+
+    const remainingItems = getVisibleItems().length - currentlyVisible;
+
     if (remainingItems <= 0) {
-      console.log('No more items to show');
       return;
     }
     
@@ -70,11 +67,7 @@ export function initPagination(config: PaginationConfig, itemSelector: string = 
     
     // Brief loading state for UX
     setTimeout(function() {
-      const prevVisible = currentlyVisible;
       currentlyVisible += config.loadMoreCount;
-      console.log('Increased visible count from', prevVisible, 'to', currentlyVisible);
-      console.log('Remaining items after increase:', Math.max(0, visibleItems.length - currentlyVisible));
-      
       updatePagination();
       
       // Remove loading state
@@ -87,13 +80,11 @@ export function initPagination(config: PaginationConfig, itemSelector: string = 
   const filterButtons = document.querySelectorAll('.category-filter-btn');
   filterButtons.forEach(btn => {
     btn.addEventListener('click', function(this: HTMLElement) {
-      console.log('Filter changed, resetting pagination');
       currentlyVisible = config.initialCount; // Reset to initial count
-      
+
       // For "All" filter, we need to reset display states first
       const filterCategory = this.textContent?.trim() || '';
       if (filterCategory === 'All') {
-        console.log('All filter clicked - resetting display states');
         const allItems = document.querySelectorAll(itemSelector);
         allItems.forEach(item => {
           const htmlItem = item as HTMLElement;
@@ -103,7 +94,6 @@ export function initPagination(config: PaginationConfig, itemSelector: string = 
       }
       
       setTimeout(() => {
-        console.log('Applying pagination after filter change');
         updatePagination(); // Update pagination after filter has been applied
       }, 200); // Wait for filter animation to complete
     });

@@ -35,38 +35,8 @@ const nextConfig: NextConfig = {
   generateEtags: true, // Re-enable ETags for better caching
   trailingSlash: false,
   
-  // Add headers for better caching - FIXED: Reduced aggressive caching
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=300, stale-while-revalidate=3600', // 5 min cache, 1 hour stale
-          },
-        ],
-      },
-      {
-        source: '/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600, stale-while-revalidate=86400', // Keep image caching
-          },
-        ],
-      },
-      {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600', // 1 hour cache - REMOVED immutable and 1-year cache
-          },
-        ],
-      },
-    ];
-  },
+  // No custom Cache-Control: Next.js/Vercel defaults let the CDN cache pages and clear it on
+  // each deploy. A browser max-age on pages served stale HTML after deploys.
   
   // Experimental features
   experimental: {
@@ -108,16 +78,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
     ];
-  },
-
-  // Exclude demo files from production builds
-  async rewrites() {
-    return {
-      beforeFiles: [
-        // Only serve demo files in development
-        ...(process.env.NODE_ENV === 'development' ? [] : [])
-      ]
-    }
   },
 }
 

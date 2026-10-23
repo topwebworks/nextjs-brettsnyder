@@ -12,7 +12,7 @@ technologies:
   - "Vercel"
 category: "SaaS"
 status: "Prototype"
-featured: true
+featured: false
 publishDate: "2026-09-21"
 links:
   live: "https://pushpad.com"

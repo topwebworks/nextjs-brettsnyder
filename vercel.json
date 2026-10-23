@@ -5,10 +5,5 @@
     "src/app/**/*.tsx": {
       "maxDuration": 10
     }
-  },
-  "build": {
-    "env": {
-      "NEXT_CACHE_HANDLER": "false"
-    }
   }
 }

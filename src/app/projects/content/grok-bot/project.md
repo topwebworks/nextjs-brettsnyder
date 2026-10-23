@@ -12,7 +12,7 @@ technologies:
   - "Vercel"
 category: "AI Automation"
 status: "Production"
-featured: true
+featured: false
 publishDate: "2026-10-11"
 links: {}
 

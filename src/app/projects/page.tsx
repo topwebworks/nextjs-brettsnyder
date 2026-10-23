@@ -35,7 +35,7 @@ const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
 // Enable static generation with revalidation
 // Static regeneration - cache for 1 hour, matches other pages
-export const revalidate = 3600; // 1 hour (matches blog page and HTTP headers)
+export const revalidate = 3600; // 1 hour (matches blog page)
 
 export default async function ProjectsPage() {
   // Load all project data using auto-discovery
