@@ -48,7 +48,7 @@ Analytics Workbench records what a page and every frame inside it actually do: d
 
 It runs in two places. The full tool runs locally and controls its own Chrome window, which is what lets it see inside cross-domain iframes and capture network requests. A smaller online version runs entirely in the browser, with the limits that implies.
 
-## Not a replacement for Tag Assistant
+## How it compares to Tag Assistant
 
 Tag Assistant is the right tool for debugging a GTM container you manage. It works because GTM's own code is already on the page: Tag Assistant opens your site with a debug parameter, GTM switches into preview mode, and reports every tag, trigger and variable back to the Tag Assistant window. For full detail you need Preview access to the container.
 
@@ -64,7 +64,7 @@ The workbench answers a different set of questions:
 
 The answers about cross-domain iframes and tag requests come from the local version; the online edition covers the page itself.
 
-## Why it was worth building
+## Why I built it
 
 Each Google tool sees one stage of the journey. GTM Preview and Tag Assistant show what the container did on the page they're attached to. GA4's Realtime and DebugView show what the property received. None of them follows a single booking from the ad click, through the host page, into a vendor's iframe and back out as a purchase, and none of them says which of those steps broke.
 
@@ -72,7 +72,7 @@ That gap kept producing the same investigations, with time in DevTools comparing
 
 It works alongside the Google tools. It reads the GTM container and checks its triggers and variables against what the site actually pushes, so a Preview session starts at the right tag. It reads a GA4 property's settings and shows which requests left the browser and from which frame, so DebugView confirms the fix instead of hunting for the fault. Once the cause is known, Tag Assistant is the right tool for making and testing the change.
 
-## How the local version sees what a web page can't
+## How it sees inside iframes
 
 Browsers keep sites apart. A script on one site can't read another site's DOM, dataLayer or network traffic, and that holds for iframes too. Any tool that runs as a normal web page inherits that limit.
 
@@ -82,7 +82,7 @@ Because it runs locally, it also reaches places a hosted tool can't: `localhost`
 
 Each session gets a fresh Chrome profile with no cookies, saved consent choices or extensions, so you arrive the way a first-time visitor from an ad would. Several sessions can run side by side without sharing storage.
 
-## A recording session
+## Recording a session
 
 A session opens your URL in that controlled Chrome window, with the workbench's sidebar docked beside the page. As you click through, the timeline fills in newest first:
 
@@ -95,7 +95,7 @@ Filters hide what you don't need, such as GTM's own internal events, and a frame
 
 You can also start a session from embed code instead of a URL. Paste the snippet a vendor gives its customers, optionally with a GTM container ID and campaign parameters, and the workbench serves it on a neutral test page. That shows how an embed behaves on a clean host before anyone puts it on a real site.
 
-## Checks: findings you can act on
+## Checks
 
 In a live session, Checks examine the current page: its dataLayer, frames, code and tag requests, plus the published GTM container and each GA4 property's public tag settings. On an ended or imported recording, they run on the recorded events instead. None of that requires a login: the published container and GA4's tag settings are public files that the browser downloads anyway. You can also enter GTM container IDs and GA4 Measurement IDs the page doesn't load, or hides, to check another container or property, and upload a container export to include changes that aren't published yet.
 
@@ -113,7 +113,7 @@ Every error and warning comes with numbered steps, and most say where the proble
 
 Severity follows what the recording shows. On a page you only loaded, a checkout event that hasn't happened yet is a note, not a warning. A skipped step only becomes a warning when a later step did happen. Settings that repeat across several GA4 properties are reported once. When a site blocks the workbench, through bot protection or a strict security policy, the finding says so instead of reporting missing tags. And because an ad blocker in your own browser can hide tags too, missing-tag findings ask you to rule that out first.
 
-## Attribution: will this booking be credited?
+## Attribution
 
 The campaign section lists the UTM parameters and ad click IDs that actually reached the dataLayer, with the entry each value came from. Values that only exist in the URL are shown separately and never count as success, because a campaign in the address bar proves nothing about what the purchase event carried.
 
@@ -131,7 +131,7 @@ An audit is a one-page check without clicking. A hidden browser loads the URL, r
 
 Use an audit for a quick look at any site's setup, and a session for anything that involves a flow. Some sites refuse hidden browsers; for those, a checkbox runs the audit in a visible window. The same audit runs from the command line for scripted checks.
 
-## Three problems it makes obvious
+## Problems it catches
 
 **Booking steps that never reach GTM.** The form pushes `add_to_cart` and `purchase` into its own dataLayer, inside the iframe. GTM lives on the host page, so Preview shows nothing from the booking and GA4 never gets the steps. In the workbench the timeline shows those events labelled with the iframe's domain and nothing on the page, and Checks report the events stuck in that iframe. The fix belongs to whoever owns the form: relay each step to the host page with `postMessage`, which is what the embed kit does.
 
@@ -143,7 +143,7 @@ In each case the recording is the evidence to show a client or a vendor what hap
 
 To test the rules, I set up a practice booking with nine planted faults: a placeholder GA4 ID, events stuck in the iframe, two event names that don't match their triggers, a purchase tag that doesn't send ecommerce data, a duplicate purchase tag, a variable reading the wrong key, revenue sent as text, and a campaign that never reaches the iframe. Checks flag all nine, each with its fix.
 
-## The embed kit and a debug link
+## The embed kit
 
 For booking and checkout products that run in an iframe, the workbench also includes a reference implementation of two small scripts that close it from the vendor's side, without asking each site owner to change anything. A vendor has to ship them:
 
@@ -167,7 +167,7 @@ The hosted version is a browser-only edition of the same interface. As an ordina
 
 Sessions live in memory until you save them. **Save** keeps a recording as a local file, or in browser storage online, and **Export** produces a JSON file anyone can import. Locally, reports come out as Markdown: issues by severity, each with its location and steps, and the code prompts collected at the end. That format drops straight into a ticket or a pull request.
 
-## No private data online
+## Privacy
 
 The online version has no server code, database, accounts or cookies, and runs no analytics of its own. Recordings you import or save stay in your browser's storage, and what the bookmark records stays in that tab. The site's security policy doesn't allow it to send data anywhere. The two sample recordings had account names, IDs, order numbers and session identifiers replaced before they were published.
 
@@ -175,7 +175,7 @@ The online version has no server code, database, accounts or cookies, and runs n
 
 It doesn't edit GTM, GA4 or ad accounts, and it doesn't need access to them. It reads GA4, Google Ads and Meta requests; other ad platforms' tags aren't checked. Its findings describe the data it could see on the pages you recorded, not every page of a site.
 
-## Foundation first
+## Start with the dataLayer
 
 Most of these problems start the same way: each site and each embed invents its own event names and fields. The order of work that holds up is:
 
@@ -185,6 +185,6 @@ Most of these problems start the same way: each site and each embed invents its 
 
 With that in place, every site reports the same way, a fix can be rolled out to all of them at once, and the next step (a new ad platform, server-side tagging, another product) starts from a known base. Without it, you keep putting out the same fires site by site while the cause stays in place. The workbench checks each stage: Compare a site against the standard before and after a change.
 
-## Seeing it
+## Try the demo
 
 The workbench is a private tool I run on my own machine. Like most working tools, it was built quickly to solve a specific problem, not as a full SaaS product. The online demo at [analytics-workbench-one.vercel.app](https://analytics-workbench-one.vercel.app/) shows the same interface with two sample recordings, one from the demo booking on the embed kit and one from a vendor widget without it. Checks and Compare run on both, and the bookmark shows what the browser-only edition can record.
