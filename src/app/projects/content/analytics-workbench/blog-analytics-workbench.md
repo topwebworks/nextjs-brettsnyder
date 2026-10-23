@@ -141,6 +141,16 @@ The online version has no server code, database, accounts or cookies, and runs n
 
 It doesn't edit GTM, GA4 or ad accounts, and it doesn't need access to them. It reads GA4, Google Ads and Meta requests; other ad platforms' tags aren't checked. Its findings describe the data it could see on the pages you recorded, not every page of a site.
 
+## Foundation first
+
+Most of these problems start the same way: each site and each embed invents its own event names and fields. The order of work that holds up is:
+
+1. **One dataLayer standard.** GA4 event names, one ecommerce object, and the few booking fields every product sends the same way.
+2. **The embed kit ships it.** It runs from the vendor's side, so every site that embeds the form gets the same events with the campaign attached, and no site owner has to edit anything.
+3. **One shared GTM import.** A container built around that standard, merged into each related site's container. Each site's own IDs live in a single variable, so the shared part can be updated everywhere without overwriting what's local.
+
+With that in place, every site reports the same way, a fix can be rolled out to all of them at once, and the next step (a new ad platform, server-side tagging, another product) starts from a known base instead of another investigation. The workbench checks each stage: Compare a site against the standard before and after a change.
+
 ## Seeing it
 
 The workbench is a private tool I run on my own machine. Like most working tools, it was built quickly to solve a specific problem, not as a full SaaS product. The online demo at [analytics-workbench-one.vercel.app](https://analytics-workbench-one.vercel.app/) shows the same interface with two sample recordings, one from the demo booking on the embed kit and one from a vendor widget without it. Checks and Compare run on both, and the bookmark shows what the browser-only edition can record.
