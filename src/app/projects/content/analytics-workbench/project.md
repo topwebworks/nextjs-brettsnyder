@@ -183,7 +183,7 @@ Most of these problems start the same way: each site and each embed invents its 
 2. **The embed kit ships it.** It runs from the vendor's side, so every site that embeds the form gets the same events with the campaign attached, and no site owner has to edit anything.
 3. **One shared GTM import.** A container built around that standard, merged into each related site's container. Each site's own IDs live in a single variable, so the shared part can be updated everywhere without overwriting what's local.
 
-With that in place, every site reports the same way, a fix can be rolled out to all of them at once, and the next step (a new ad platform, server-side tagging, another product) starts from a known base instead of another investigation. The workbench checks each stage: Compare a site against the standard before and after a change.
+With that in place, every site reports the same way, a fix can be rolled out to all of them at once, and the next step (a new ad platform, server-side tagging, another product) starts from a known base. Without it, you keep putting out the same fires site by site while the cause stays in place. The workbench checks each stage: Compare a site against the standard before and after a change.
 
 ## Seeing it
 
