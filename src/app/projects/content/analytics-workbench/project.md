@@ -131,13 +131,17 @@ An audit is a one-page check without clicking. A hidden browser loads the URL, r
 
 Use an audit for a quick look at any site's setup, and a session for anything that involves a flow. Some sites refuse hidden browsers; for those, a checkbox runs the audit in a visible window. The same audit runs from the command line for scripted checks.
 
-## Two problems it makes obvious
+## Three problems it makes obvious
+
+**Booking steps that never reach GTM.** The form pushes `add_to_cart` and `purchase` into its own dataLayer, inside the iframe. GTM lives on the host page, so Preview shows nothing from the booking and GA4 never gets the steps. In the workbench the timeline shows those events labelled with the iframe's domain and nothing on the page, and Checks report the events stuck in that iframe. The fix belongs to whoever owns the form: relay each step to the host page with `postMessage`, which is what the embed kit does.
 
 **The campaign that disappears at the iframe.** A visitor lands from a paid search ad with `utm_campaign` and `gclid` on the URL. The booking form is an iframe on the vendor's domain, loaded without those parameters. Inside the iframe, the vendor's analytics sees a visit with no campaign, a referral from the host site at best. In the workbench this shows up in two places. The campaign forwarding check reports that the iframe didn't receive the page's UTMs. The Attribution tab shows the purchase arriving with no campaign fields. The fix is specific: forward the campaign parameters into the iframe's `src`, and relay the purchase back to the host page with the campaign attached.
 
-**The purchase counted twice.** A host site installs a GA4 purchase tag in its own GTM, which fires when the vendor relays the purchase to the page. Separately, the booking vendor's own Google integration sends a purchase to the same GA4 property from inside its iframe. Both are working as configured. The recording shows two GA4 purchase hits for one booking, one from the page and one from the iframe, and Checks on the recording report that the property received the purchase from two senders. The fix is a choice of sender: keep one GA4 purchase sender per property, and use the relayed purchase for ad platforms if the vendor's integration stays on.
+**The purchase counted twice.** A host site installs a GA4 purchase tag in its own GTM, which fires when the vendor relays the purchase to the page. Separately, the booking vendor's own Google integration sends a purchase to the same GA4 property from inside its iframe. Both are working as configured. The recording shows two GA4 purchase hits for one booking, one from the page and one from the iframe, and Checks on the recording report that the property received the purchase from two senders. The fix is a choice of sender: keep one GA4 purchase sender per property, and use the relayed purchase for ad platforms if the vendor's integration stays on. The same symptom often has a plainer cause, an old purchase tag left running beside the new one, which Checks flag from the container alone.
 
-In both cases the recording is the evidence to show a client or a vendor what happened.
+In each case the recording is the evidence to show a client or a vendor what happened.
+
+To test the rules, I set up a practice booking with nine planted faults: a placeholder GA4 ID, events stuck in the iframe, two event names that don't match their triggers, a purchase tag that doesn't send ecommerce data, a duplicate purchase tag, a variable reading the wrong key, revenue sent as text, and a campaign that never reaches the iframe. Checks flag all nine, each with its fix.
 
 ## The embed kit and a debug link
 
