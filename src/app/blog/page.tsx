@@ -12,6 +12,7 @@ import { getBlogImages } from '@/lib/generated/blogImageImports';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import BlogScripts from '@/components/BlogScripts';
+import { PAGINATION_CONFIGS } from '@/utils/paginationConfig';
 import '@/styles/pagination.css';
 import styles from './BlogPage.module.css';
 import { siteConfig } from '@/lib/config';
@@ -153,7 +154,7 @@ export default async function BlogPage() {
                 {allBlogs.map((blog: BlogData, index: number) => (
                   <article
                     key={`blog-${blog?.id || index}`}
-                    className={`blog-card pagination-item ${styles.blogCard} ${styles.paginationItem} ${styles[`blogCardDelay${Math.min(index, 9)}` as keyof typeof styles]} ${index >= 1 ? styles.hidden : ''}`}
+                    className={`blog-card pagination-item ${styles.blogCard} ${styles.paginationItem} ${styles[`blogCardDelay${Math.min(index, 9)}` as keyof typeof styles]} ${index >= PAGINATION_CONFIGS.blog.initialCount ? 'hidden' : ''}`}
                     data-category={blog?.category || 'General'}
                     data-featured={blog?.featured ? 'true' : 'false'}
                     data-index={index}

@@ -14,8 +14,9 @@
   transition: all 0.3s ease;
 }
 
+/* !important: categoryFilter sets inline display:flex on matching cards */
 .pagination-item.hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Show More button styles */

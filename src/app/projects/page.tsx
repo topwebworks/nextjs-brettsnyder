@@ -15,6 +15,7 @@ import { getProjectImages } from '@/lib/generated/projectImageImports';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import ProjectScripts from '@/components/ProjectScripts';
+import { PAGINATION_CONFIGS } from '@/utils/paginationConfig';
 import '@/styles/pagination.css';
 import styles from './ProjectsPage.module.css';
 import { siteConfig } from '@/lib/config';
@@ -176,7 +177,7 @@ export default async function ProjectsPage() {
                 {allProjects.map((project: ProjectData, index: number) => (
                   <article
                     key={`project-${project?.id || index}`}
-                    className={`project-card pagination-item ${styles.projectCard} ${styles.paginationItem} ${styles[`projectCardDelay${Math.min(index, 9)}` as keyof typeof styles]} ${index >= 2 ? styles.hidden : ''}`}
+                    className={`project-card pagination-item ${styles.projectCard} ${styles.paginationItem} ${styles[`projectCardDelay${Math.min(index, 9)}` as keyof typeof styles]} ${index >= PAGINATION_CONFIGS.projects.initialCount ? 'hidden' : ''}`}
                     data-category={project?.category || 'General'}
                     data-featured={project?.featured ? 'true' : 'false'}
                     data-index={index}

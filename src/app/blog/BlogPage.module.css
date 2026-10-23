@@ -449,10 +449,6 @@
   position: relative;
 }
 
-.hidden {
-  display: none;
-}
-
 /* Responsive Utilities */
 @media (max-width: 768px) {
   .heroSection {
