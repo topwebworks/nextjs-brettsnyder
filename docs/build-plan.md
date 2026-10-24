@@ -10,7 +10,7 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 - Markdown-driven Projects and Blog routes.
 - Generated JSON content and TypeScript manifests.
 - Universal detail-page template with inline images and media galleries. Hero images fill the gallery width at their natural proportions; gallery swaps fade in, respecting reduced motion.
-- Detail pages open with an "All projects" or "All posts" link plus Previous and Next in list order. Previous and Next become icon-only 44px buttons at 480px and below, and the button for a missing neighbor is hidden at the ends of the list.
+- Detail pages open with an "All projects" or "All posts" link plus Previous and Next in list order. Previous and Next become icon-only 44px buttons at 480px and below, and the button for a missing neighbor is hidden at the ends of the list. Previous/Next slide the content below the header in the direction of travel (shared view-transition name `detail-content`, transition types `detail-prev` / `detail-next`).
 - Keyboard-accessible gallery thumbnails with a visible selected state. Left and Right arrows select the previous or next thumbnail, load it into the hero, and scroll the strip to keep it in view.
 - Shared-element view transitions: a `/projects` or `/blog` card image morphs into the detail hero via React `<ViewTransition>`, named `project-<id>` or `blog-<id>`. The morph runs only for card clicks (Link `transitionTypes={['card-to-hero']}`). Browser Back stays instant because React renders it synchronously for scroll restoration. The first hero image skips its fade so the morph lands on an opaque image.
 - About and Tools pages.
