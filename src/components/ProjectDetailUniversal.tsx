@@ -481,327 +481,332 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
       {/* Subtle Background Panel */}
       <div className={`${styles.floatPanel} float-panel`} />
 
-      <section className={styles.heroSection}>
+      {/* Shared name across detail pages: Previous/Next slide the content (header and background stay put). */}
+      <ViewTransition name="detail-content" default="none" share={{ 'detail-next': 'slide-next', 'detail-prev': 'slide-prev', default: 'none' }}>
+        <div>
+          <section className={styles.heroSection}>
 
-        <div className={styles.heroContainer}>
-          {/* Above-the-fold navigation: back to the list, previous/next in list order (icon-only on small screens) */}
-          <nav className={styles.detailNav} aria-label={contentType === 'blog' ? 'Blog posts' : 'Projects'}>
-            <Link href={`/${listPath}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink}`}>
-              <ArrowLeft size={16} aria-hidden="true" />
-              {contentType === 'blog' ? 'All posts' : 'All projects'}
-            </Link>
-            <div className={styles.detailNavSteps}>
-              {prev && (
-                <Link href={`/${listPath}/${prev.id}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink} ${styles.detailNavStep}`} aria-label={`Previous: ${prev.title}`}>
-                  <ChevronLeft size={16} aria-hidden="true" />
-                  <span className={styles.detailNavLabel}>Previous</span>
+            <div className={styles.heroContainer}>
+              {/* Above-the-fold navigation: back to the list, previous/next in list order (icon-only on small screens) */}
+              <nav className={styles.detailNav} aria-label={contentType === 'blog' ? 'Blog posts' : 'Projects'}>
+                <Link href={`/${listPath}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink}`}>
+                  <ArrowLeft size={16} aria-hidden="true" />
+                  {contentType === 'blog' ? 'All posts' : 'All projects'}
                 </Link>
-              )}
-              {next && (
-                <Link href={`/${listPath}/${next.id}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink} ${styles.detailNavStep}`} aria-label={`Next: ${next.title}`}>
-                  <span className={styles.detailNavLabel}>Next</span>
-                  <ChevronRight size={16} aria-hidden="true" />
-                </Link>
-              )}
-            </div>
-          </nav>
-
-          <div className={styles.heroContent}>
-            <div className={styles.projectCategory}>
-              <Tag
-                size={16}
-                className={styles.categoryIcon}
-              />
-              <span className={styles.categoryText}>
-                {project.category}
-              </span>
-            </div>
-
-            {project.designSystem && (
-              <div className={styles.designSystemBadge}>
-                Design System
-              </div>
-            )}
-
-            <h1 className={styles.heroTitle}>
-              {project.title}
-            </h1>
-            
-            <p className={styles.heroDescription}>
-              {project.description}
-            </p>
-            
-            {/* Tech Stack Tags - Moved from Meta Info to Hero */}
-            <div className={styles.heroTechStackContainer}>
-              {project.technologies.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className={styles.heroTechStackPill}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Images follow their natural proportions; videos keep their responsive frame.
-              Stable wrapper (not the keyed image) so the list card morphs in even when the gallery swaps media.
-              Morphs only for card clicks (Link transitionTypes 'card-to-hero'). Browser Back stays instant:
-              React renders popstate synchronously for scroll restoration and would only sometimes animate it. */}
-          <ViewTransition name={`${contentType}-${project.id}`} default="none" share={{ 'card-to-hero': 'auto', default: 'none' }}>
-            <div className={styles.heroMediaContainer}>
-              {currentHeroVideo ? (
-                <div className={`${styles.heroMediaAspectRatio} ${styles[currentVideoAspectRatio]}`}>
-                  <div className={styles.heroMediaContent}>
-                    <div className={styles.heroVideoContainer}>
-                      <iframe
-                        src={`https://www.youtube.com/embed/${currentHeroVideo}?controls=1&modestbranding=1&fs=1&rel=0&playsinline=1`}
-                        title="Project Demo Video"
-                        className={styles.heroVideo}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                        allowFullScreen
-                        frameBorder="0"
-                      />
-                    </div>
-                  </div>
+                <div className={styles.detailNavSteps}>
+                  {prev && (
+                    <Link href={`/${listPath}/${prev.id}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink} ${styles.detailNavStep}`} aria-label={`Previous: ${prev.title}`} transitionTypes={['detail-prev']}>
+                      <ChevronLeft size={16} aria-hidden="true" />
+                      <span className={styles.detailNavLabel}>Previous</span>
+                    </Link>
+                  )}
+                  {next && (
+                    <Link href={`/${listPath}/${next.id}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink} ${styles.detailNavStep}`} aria-label={`Next: ${next.title}`} transitionTypes={['detail-next']}>
+                      <span className={styles.detailNavLabel}>Next</span>
+                      <ChevronRight size={16} aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
-              ) : (
-                <div className={styles.heroImageContainer}>
-                  <Image
-                    key={heroImageKey}
-                    src={heroImageSrc}
-                    alt={`${project.title} hero image`}
-                    width={typeof heroImageSrc === 'string' ? 800 : heroImageSrc.width}
-                    height={typeof heroImageSrc === 'string' ? 600 : heroImageSrc.height}
-                    sizes="(max-width: 1276px) 94vw, 1200px"
-                    className={`${styles.heroImage} ${loadedHeroImage === heroImageKey ? styles.heroImageLoaded : ''}`}
-                    // First load stores '' (no fade) so the card morph lands on an opaque hero; gallery swaps still fade in
-                    onLoad={() => setLoadedHeroImage((prev) => (prev === null ? '' : heroImageKey))}
-                    quality={90}
-                    priority
+              </nav>
+
+              <div className={styles.heroContent}>
+                <div className={styles.projectCategory}>
+                  <Tag
+                    size={16}
+                    className={styles.categoryIcon}
                   />
-                  <div className={styles.heroOverlay} />
+                  <span className={styles.categoryText}>
+                    {project.category}
+                  </span>
                 </div>
-              )}
-            </div>
-          </ViewTransition>
-        </div>
 
-      </section>
-
-      {renderMediaGallery()}
-
-      <section className={styles.mainContentSection}>
-
-        <div className={styles.mainContentContainer}>
-
-          {/* Comprehensive Project Case Study */}
-          <article className={styles.mainContentArticle}>
-            
-            {/* Content */}
-            <div id="top-links" className={styles.mainContentContainer}>
-              {/* Only show content title if contentTitle is specified */}
-              {project.contentTitle && project.contentTitle.trim() && (
-                <h2 className={styles.mainContentTitle}>
-                  {project.contentTitle}
-                </h2>
-              )}
-
-              {/* Project Meta Information - Only show if we have meaningful data */}
-              {((project.publishDate) || 
-                (project.status && project.status.trim() && project.status.toLowerCase() !== 'unknown') || 
-                project.featured || 
-                project.links.demo || 
-                project.links.live || 
-                project.links.github) && (
-                <div className={styles.projectMetaInfo}>
-                  {/* Subtle accent overlay for meta section */}
-                  <div className={styles.metaAccentOverlay} />
-                  {/* Top Row - Main Info and Buttons (Mobile Responsive) */}
-                  <div className={styles.metaInfoTopRow}>
-                    {/* Project Info Row */}
-                    <div className={styles.projectInfoRow}>
-                      {project.publishDate && (
-                        <div className={styles.metaInfoItem}>
-                          <Calendar size={16} className={styles.metaIcon} />
-                          <span className={styles.metaText}>
-                            {new Date(project.publishDate).toLocaleDateString('en-US', { 
-                              year: 'numeric', 
-                              month: 'short' 
-                            })}
-                          </span>
-                        </div>
-                      )}
-                      
-                      {project.status && project.status.trim() && project.status.toLowerCase() !== 'unknown' && (
-                        <div className={styles.metaInfoItem}>
-                          <span className={`${styles.statusBadge} ${
-                            project.status === 'Production Ready' || project.status === 'Production' ? styles.production :
-                            project.status === 'In Development' ? styles.development : styles.default
-                          }`}>
-                            {project.status.charAt(0).toUpperCase() + project.status.slice(1).toLowerCase()}
-                          </span>
-                        </div>
-                      )}
-                      
-                      {project.featured && (
-                        <div className={styles.featuredBadge}>
-                          FEATURED
-                        </div>
-                      )}
-                    </div>
-                    
-                    {/* Buttons Row - Stack on mobile (480px and below) */}
-                    <div className={styles.projectButtonsContainer}>
-                      {project.links.demo && (
-                        <Button
-                          variant="primary"
-                          size="small"
-                          href={project.links.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Demo
-                        </Button>
-                      )}
-                      
-                      {project.links.live && (
-                        <Button
-                          variant="primary"
-                          size="small"
-                          href={project.links.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Live
-                        </Button>
-                      )}
-                      
-                      {project.links.github && (
-                        <Button
-                          variant="secondary"
-                          size="small"
-                          icon="github"
-                          href={project.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Code
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Long-form Case Study Content */}
-              <div className={styles.caseStudyContent}>
-                {project.content?.overviewHtml ? (
-                  <EnhancedHTMLContent 
-                    content={project.content.overviewHtml} 
-                    projectId={project.id} 
-                    contentType={contentType}
-                  />
-                ) : project.content?.overview ? (
-                  <MarkdownContent 
-                    content={project.content.overview} 
-                    projectId={project.id} 
-                  />
-                ) : (
-                  <div className={styles.defaultContent}>
-                    <p className={styles.contentParagraph}>
-                      {project.description}
-                    </p>
+                {project.designSystem && (
+                  <div className={styles.designSystemBadge}>
+                    Design System
                   </div>
                 )}
-              </div>
-            </div>
-          </article>
 
-          {/* Key Achievements & Impact - Only show if achievements exist */}
-          {project.content?.keyAchievements && project.content.keyAchievements.length > 0 && (
-            <article className={styles.keyAchievementsSection}>
-              {/* Dynamic Accent Background - Success Green for Achievements */}
-              <div className={styles.achievementAccentBackground} />
-              
-              <div className={styles.achievementContent}>
-                <h2 className={styles.achievementTitle}>
-                  {project.achievementTitle || 'Key Achievements & Impact'}
-                </h2>
-
-                {/* Dynamic Achievement Cards from JSON */}
-                <div className={styles.achievementCardsContainer}>
-                  
-                  {project.content.keyAchievements.map((achievement, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className={`${styles.achievementCard} ${
-                          achievement.type === 'performance' ? styles.achievementCardPerformance :
-                          achievement.type === 'technical' ? styles.achievementCardTechnical :
-                          styles.achievementCardImpact
-                        }`}
-                      >
-                        <div className={styles.achievementCardHeader}>
-                          <div className={styles.achievementIconContainer}>
-                            <div className={styles.achievementIcon}>
-                              {achievement.icon}
-                            </div>
-                            <div className={
-                              achievement.type === 'performance' ? styles.achievementIconDotPerformance :
-                              achievement.type === 'technical' ? styles.achievementIconDotTechnical :
-                              styles.achievementIconDotImpact
-                            } />
-                          </div>
-                          <h3 className={styles.achievementCardTitle}>
-                            {achievement.title}
-                          </h3>
-                        </div>
-                        <p className={styles.achievementDescription}>
-                          {achievement.description}
-                        </p>
-                        {achievement.metrics && achievement.metrics.length > 0 && (
-                          <ul className={styles.achievementMetrics}>
-                            {achievement.metrics.map((metric, metricIndex) => (
-                              <li key={metricIndex} className={styles.achievementMetric}>
-                                <span className={
-                                  achievement.type === 'performance' ? styles.achievementMetricBulletPerformance :
-                                  achievement.type === 'technical' ? styles.achievementMetricBulletTechnical :
-                                  styles.achievementMetricBulletImpact
-                                }>
-                                  •
-                                </span>
-                                <span>{metric}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    );
-                  })}
-
+                <h1 className={styles.heroTitle}>
+                  {project.title}
+                </h1>
+                
+                <p className={styles.heroDescription}>
+                  {project.description}
+                </p>
+                
+                {/* Tech Stack Tags - Moved from Meta Info to Hero */}
+                <div className={styles.heroTechStackContainer}>
+                  {project.technologies.map((tech, index) => (
+                    <span 
+                      key={index} 
+                      className={styles.heroTechStackPill}
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </article>
-          )}
 
-        </div>
-      </section>
+              {/* Images follow their natural proportions; videos keep their responsive frame.
+                  Stable wrapper (not the keyed image) so the list card morphs in even when the gallery swaps media.
+                  Morphs only for card clicks (Link transitionTypes 'card-to-hero'). Browser Back stays instant:
+                  React renders popstate synchronously for scroll restoration and would only sometimes animate it. */}
+              <ViewTransition name={`${contentType}-${project.id}`} default="none" share={{ 'card-to-hero': 'auto', default: 'none' }}>
+                <div className={styles.heroMediaContainer}>
+                  {currentHeroVideo ? (
+                    <div className={`${styles.heroMediaAspectRatio} ${styles[currentVideoAspectRatio]}`}>
+                      <div className={styles.heroMediaContent}>
+                        <div className={styles.heroVideoContainer}>
+                          <iframe
+                            src={`https://www.youtube.com/embed/${currentHeroVideo}?controls=1&modestbranding=1&fs=1&rel=0&playsinline=1`}
+                            title="Project Demo Video"
+                            className={styles.heroVideo}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                            allowFullScreen
+                            frameBorder="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={styles.heroImageContainer}>
+                      <Image
+                        key={heroImageKey}
+                        src={heroImageSrc}
+                        alt={`${project.title} hero image`}
+                        width={typeof heroImageSrc === 'string' ? 800 : heroImageSrc.width}
+                        height={typeof heroImageSrc === 'string' ? 600 : heroImageSrc.height}
+                        sizes="(max-width: 1276px) 94vw, 1200px"
+                        className={`${styles.heroImage} ${loadedHeroImage === heroImageKey ? styles.heroImageLoaded : ''}`}
+                        // First load stores '' (no fade) so the card morph lands on an opaque hero; gallery swaps still fade in
+                        onLoad={() => setLoadedHeroImage((prev) => (prev === null ? '' : heroImageKey))}
+                        quality={90}
+                        priority
+                      />
+                      <div className={styles.heroOverlay} />
+                    </div>
+                  )}
+                </div>
+              </ViewTransition>
+            </div>
 
-      {/* Back to Projects/Blog - Bottom Navigation */}
-      <section className={styles.backToProjectsSection}>
-        <div className={styles.backToProjectsContainer}>
-          <Button
-            variant="secondary"
-            size="medium"
-            icon="arrow-left"
-            href={contentType === 'blog' ? '/blog' : '/projects'}
-            className={styles.backButton}
-          >
-            {contentType === 'blog' ? 'Back to Blog' : 'Back to Projects'}
-          </Button>
+          </section>
+
+          {renderMediaGallery()}
+
+          <section className={styles.mainContentSection}>
+
+            <div className={styles.mainContentContainer}>
+
+              {/* Comprehensive Project Case Study */}
+              <article className={styles.mainContentArticle}>
+                
+                {/* Content */}
+                <div id="top-links" className={styles.mainContentContainer}>
+                  {/* Only show content title if contentTitle is specified */}
+                  {project.contentTitle && project.contentTitle.trim() && (
+                    <h2 className={styles.mainContentTitle}>
+                      {project.contentTitle}
+                    </h2>
+                  )}
+
+                  {/* Project Meta Information - Only show if we have meaningful data */}
+                  {((project.publishDate) || 
+                    (project.status && project.status.trim() && project.status.toLowerCase() !== 'unknown') || 
+                    project.featured || 
+                    project.links.demo || 
+                    project.links.live || 
+                    project.links.github) && (
+                    <div className={styles.projectMetaInfo}>
+                      {/* Subtle accent overlay for meta section */}
+                      <div className={styles.metaAccentOverlay} />
+                      {/* Top Row - Main Info and Buttons (Mobile Responsive) */}
+                      <div className={styles.metaInfoTopRow}>
+                        {/* Project Info Row */}
+                        <div className={styles.projectInfoRow}>
+                          {project.publishDate && (
+                            <div className={styles.metaInfoItem}>
+                              <Calendar size={16} className={styles.metaIcon} />
+                              <span className={styles.metaText}>
+                                {new Date(project.publishDate).toLocaleDateString('en-US', { 
+                                  year: 'numeric', 
+                                  month: 'short' 
+                                })}
+                              </span>
+                            </div>
+                          )}
+                          
+                          {project.status && project.status.trim() && project.status.toLowerCase() !== 'unknown' && (
+                            <div className={styles.metaInfoItem}>
+                              <span className={`${styles.statusBadge} ${
+                                project.status === 'Production Ready' || project.status === 'Production' ? styles.production :
+                                project.status === 'In Development' ? styles.development : styles.default
+                              }`}>
+                                {project.status.charAt(0).toUpperCase() + project.status.slice(1).toLowerCase()}
+                              </span>
+                            </div>
+                          )}
+                          
+                          {project.featured && (
+                            <div className={styles.featuredBadge}>
+                              FEATURED
+                            </div>
+                          )}
+                        </div>
+                        
+                        {/* Buttons Row - Stack on mobile (480px and below) */}
+                        <div className={styles.projectButtonsContainer}>
+                          {project.links.demo && (
+                            <Button
+                              variant="primary"
+                              size="small"
+                              href={project.links.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Demo
+                            </Button>
+                          )}
+                          
+                          {project.links.live && (
+                            <Button
+                              variant="primary"
+                              size="small"
+                              href={project.links.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Live
+                            </Button>
+                          )}
+                          
+                          {project.links.github && (
+                            <Button
+                              variant="secondary"
+                              size="small"
+                              icon="github"
+                              href={project.links.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Code
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Long-form Case Study Content */}
+                  <div className={styles.caseStudyContent}>
+                    {project.content?.overviewHtml ? (
+                      <EnhancedHTMLContent 
+                        content={project.content.overviewHtml} 
+                        projectId={project.id} 
+                        contentType={contentType}
+                      />
+                    ) : project.content?.overview ? (
+                      <MarkdownContent 
+                        content={project.content.overview} 
+                        projectId={project.id} 
+                      />
+                    ) : (
+                      <div className={styles.defaultContent}>
+                        <p className={styles.contentParagraph}>
+                          {project.description}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </article>
+
+              {/* Key Achievements & Impact - Only show if achievements exist */}
+              {project.content?.keyAchievements && project.content.keyAchievements.length > 0 && (
+                <article className={styles.keyAchievementsSection}>
+                  {/* Dynamic Accent Background - Success Green for Achievements */}
+                  <div className={styles.achievementAccentBackground} />
+                  
+                  <div className={styles.achievementContent}>
+                    <h2 className={styles.achievementTitle}>
+                      {project.achievementTitle || 'Key Achievements & Impact'}
+                    </h2>
+
+                    {/* Dynamic Achievement Cards from JSON */}
+                    <div className={styles.achievementCardsContainer}>
+                      
+                      {project.content.keyAchievements.map((achievement, index) => {
+                        return (
+                          <div
+                            key={index}
+                            className={`${styles.achievementCard} ${
+                              achievement.type === 'performance' ? styles.achievementCardPerformance :
+                              achievement.type === 'technical' ? styles.achievementCardTechnical :
+                              styles.achievementCardImpact
+                            }`}
+                          >
+                            <div className={styles.achievementCardHeader}>
+                              <div className={styles.achievementIconContainer}>
+                                <div className={styles.achievementIcon}>
+                                  {achievement.icon}
+                                </div>
+                                <div className={
+                                  achievement.type === 'performance' ? styles.achievementIconDotPerformance :
+                                  achievement.type === 'technical' ? styles.achievementIconDotTechnical :
+                                  styles.achievementIconDotImpact
+                                } />
+                              </div>
+                              <h3 className={styles.achievementCardTitle}>
+                                {achievement.title}
+                              </h3>
+                            </div>
+                            <p className={styles.achievementDescription}>
+                              {achievement.description}
+                            </p>
+                            {achievement.metrics && achievement.metrics.length > 0 && (
+                              <ul className={styles.achievementMetrics}>
+                                {achievement.metrics.map((metric, metricIndex) => (
+                                  <li key={metricIndex} className={styles.achievementMetric}>
+                                    <span className={
+                                      achievement.type === 'performance' ? styles.achievementMetricBulletPerformance :
+                                      achievement.type === 'technical' ? styles.achievementMetricBulletTechnical :
+                                      styles.achievementMetricBulletImpact
+                                    }>
+                                      •
+                                    </span>
+                                    <span>{metric}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        );
+                      })}
+
+                    </div>
+                  </div>
+                </article>
+              )}
+
+            </div>
+          </section>
+
+          {/* Back to Projects/Blog - Bottom Navigation */}
+          <section className={styles.backToProjectsSection}>
+            <div className={styles.backToProjectsContainer}>
+              <Button
+                variant="secondary"
+                size="medium"
+                icon="arrow-left"
+                href={contentType === 'blog' ? '/blog' : '/projects'}
+                className={styles.backButton}
+              >
+                {contentType === 'blog' ? 'Back to Blog' : 'Back to Projects'}
+              </Button>
+            </div>
+          </section>
         </div>
-      </section>
+      </ViewTransition>
       
       {/* Footer */}
       <Footer />

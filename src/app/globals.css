@@ -392,6 +392,28 @@ html {
   object-fit: cover;
 }
 
+/* Previous/Next on detail pages: content slides in the direction of travel.
+   height: auto undoes the crop rule above, which would scale a tall content block. */
+::view-transition-old(.slide-next),
+::view-transition-new(.slide-next),
+::view-transition-old(.slide-prev),
+::view-transition-new(.slide-prev) {
+  height: auto;
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+::view-transition-old(.slide-next) { animation-name: vt-out-left; }
+::view-transition-new(.slide-next) { animation-name: vt-in-right; }
+::view-transition-old(.slide-prev) { animation-name: vt-out-right; }
+::view-transition-new(.slide-prev) { animation-name: vt-in-left; }
+
+@keyframes vt-out-left { to { opacity: 0; transform: translateX(-48px); } }
+@keyframes vt-in-right { from { opacity: 0; transform: translateX(48px); } }
+@keyframes vt-out-right { to { opacity: 0; transform: translateX(48px); } }
+@keyframes vt-in-left { from { opacity: 0; transform: translateX(-48px); } }
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-old(*),
