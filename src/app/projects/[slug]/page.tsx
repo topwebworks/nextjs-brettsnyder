@@ -67,44 +67,39 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  try {
-    // Load the project data using auto-discovery
-    const project = await getProject(sanitizedSlug);
+  // Load the project data using auto-discovery (returns null on load errors)
+  const project = await getProject(sanitizedSlug);
 
-    if (!project) {
-      notFound();
-    }
-
-    const heroImage = getProjectImages(sanitizedSlug).hero;
-    const isCyWire = sanitizedSlug === 'cywire';
-
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': isCyWire ? 'SoftwareApplication' : 'CreativeWork',
-      name: project.title,
-      description: project.description,
-      url: `${siteUrl}/projects/${sanitizedSlug}`,
-      ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
-      ...(isCyWire && {
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web',
-      }),
-    };
-
-    // Render using the universal project detail component
-    return (
-      <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <ProjectDetailUniversal project={project} contentType="project" />
-      </>
-    );
-  } catch (error) {
-    console.error('Failed to load project:', error);
+  if (!project) {
     notFound();
   }
+
+  const heroImage = getProjectImages(sanitizedSlug).hero;
+  const isCyWire = sanitizedSlug === 'cywire';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': isCyWire ? 'SoftwareApplication' : 'CreativeWork',
+    name: project.title,
+    description: project.description,
+    url: `${siteUrl}/projects/${sanitizedSlug}`,
+    ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
+    ...(isCyWire && {
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+    }),
+  };
+
+  // Render using the universal project detail component
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProjectDetailUniversal project={project} contentType="project" />
+    </>
+  );
 }
 
 // Generate static paths for all available projects at build time

@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 3600, // 1 hour cache (was 60 seconds)
     deviceSizes: [640, 768, 1024, 1280, 1600],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    qualities: [75, 85, 90], // Next 16 only allows 75 by default; card images use 85, project hero 90
   },
   
   // Enhanced caching and optimizations
@@ -41,32 +42,6 @@ const nextConfig: NextConfig = {
   // Experimental features
   experimental: {
     optimizePackageImports: ['lucide-react'],
-  },
-  
-  // Webpack optimizations
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-      };
-    }
-    
-    // Reduce bundle size
-    config.optimization.splitChunks = {
-      chunks: 'all',
-      cacheGroups: {
-        default: false,
-        vendors: false,
-        vendor: {
-          chunks: 'all',
-          test: /node_modules/,
-          name: 'vendor',
-        },
-      },
-    };
-    
-    return config;
   },
   
   // Permanent redirects for moved/renamed content

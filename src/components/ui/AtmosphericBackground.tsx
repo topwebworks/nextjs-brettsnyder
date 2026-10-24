@@ -75,8 +75,8 @@ export default function AtmosphericBackground({
   
   const config = variantConfig[variant];
   
-  // Background wrapper component
-  const BackgroundWrapper = ({ children }: { children: React.ReactNode }) => {
+  // Background wrapper (plain function, not a component, so children are not remounted each render)
+  const wrapBackground = (children: React.ReactNode) => {
     if (!includeBackground) {
       return <>{children}</>;
     }
@@ -98,7 +98,7 @@ export default function AtmosphericBackground({
   };
   
   return (
-    <BackgroundWrapper>
+    wrapBackground(<>
       {lines && <LineRibbons subtle className={styles.backgroundLines} />}
 
       {/* Primary Orb - Large Purple - Top Left (ID: 1) */}
@@ -215,6 +215,6 @@ export default function AtmosphericBackground({
           }}
         />
       )}
-    </BackgroundWrapper>
+    </>)
   );
 }

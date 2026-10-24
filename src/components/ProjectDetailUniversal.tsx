@@ -218,6 +218,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
       const firstItem = unifiedMediaItems[0];
       if (firstItem.type === 'video') {
         const videoId = getYouTubeVideoId(firstItem.src);
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time default; user gallery clicks own this state afterwards
         setCurrentHeroVideo(videoId);
         // Detect aspect ratio based on video type
         const aspectRatio = isYouTubeShort(firstItem.src) ? 'portrait' : 'landscape';

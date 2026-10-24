@@ -6,7 +6,7 @@ The site presents product, Shopify, CMS, design-system, and marketing web work t
 
 ## Stack
 
-- Next.js 15 App Router
+- Next.js 16 App Router
 - React 19 and TypeScript
 - CSS Modules and custom CSS
 - Markdown with gray-matter frontmatter

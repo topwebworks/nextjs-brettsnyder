@@ -5,6 +5,7 @@
 /* Import sophisticated design system */
 @import '../styles/variables.css';
 @import '../styles/components.css';
+@import '../styles/utilities.css';
 
 /* ================================
    LOCAL FONT LOADING - PROFESSIONAL
@@ -78,7 +79,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  color: var(var(--text-secondary));
   line-height: var(--leading-relaxed);
   margin-bottom: 10px;
   margin-top: 10px;
@@ -123,14 +123,12 @@ ul, ol {
 
 li {
   margin-bottom: var(--space-sm);
-  color: var(var(--text-secondary));
   line-height: var(--leading-relaxed);
 }
 
 /* Blockquotes */
 blockquote {
   padding: var(--space-lg);
-  border-left: 4px solid var(var(--color-primary));
   background: var(--bg-glass-subtle);
   border-radius: var(--radius-lg);
   margin: var(--space-md) 0;
@@ -155,7 +153,6 @@ blockquote {
 
 /* High contrast focus for keyboard users */
 :focus-visible {
-  outline: 2px solid var(var(--color-primary));
   outline-offset: 2px;
   box-shadow: var(--focus-ring);
 }
@@ -190,10 +187,6 @@ blockquote {
 ::-webkit-scrollbar-thumb {
   background: var(--border-accent);
   border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(var(--color-primary));
 }
 
 /* Firefox scrollbar */
@@ -386,12 +379,6 @@ html {
   .text-mobile-center { text-align: center; }
   .flex-mobile-col { flex-direction: column; }
 }
-
-/* ================================
-   IMPORT UTILITY SYSTEM
-   ================================ */
-
-@import '../styles/utilities.css';
 
 /* ================================
    LOADING PAGE STYLES

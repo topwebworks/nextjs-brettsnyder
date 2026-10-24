@@ -91,6 +91,7 @@ export default function Homepage() {
     };
     
     const wordSelection = getWords();
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- random pick must run client-side to avoid a hydration mismatch
     setRandomWords(wordSelection);
     setCurrentText(wordSelection[0] || 'experiences'); // Start with first word
   }, [animatedWords, maxWords, animationConfig.useRandom]);

@@ -47,6 +47,7 @@ export default function CookieConsent() {
   useEffect(() => {
     const saved = readPrefs();
     if (saved) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is only readable after hydration
       setPrefs(saved);
       applyConsent(saved);
     } else {
