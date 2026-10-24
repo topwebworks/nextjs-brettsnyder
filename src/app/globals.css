@@ -381,6 +381,26 @@ html {
 }
 
 /* ================================
+   VIEW TRANSITIONS
+   ================================ */
+
+/* Card image → detail hero morphs keep their crop when the shapes differ.
+   Global on purpose: CSS modules reject selectors without a local class. */
+::view-transition-old(*),
+::view-transition-new(*) {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* ================================
    LOADING PAGE STYLES
    ================================ */
 

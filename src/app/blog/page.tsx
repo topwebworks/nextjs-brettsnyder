@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ViewTransition } from 'react';
 import { Calendar, Clock, Tag } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
@@ -161,6 +161,7 @@ export default async function BlogPage() {
                   >
                     <Link
                       href={`/blog/${blog?.id || 'unknown'}`}
+                      transitionTypes={['card-to-hero']}
                       className={styles.blogCardOverlayLink}
                       aria-label={blog?.title || 'Read blog post'}
                       tabIndex={-1}
@@ -195,25 +196,28 @@ export default async function BlogPage() {
                             // With image: stacked layout
                             return (
                               <div className={`project-image-container ${styles.projectImageContainer}`}>
-                                <div 
-                                  className={`project-card-image ${styles.projectCardImage}`}
-                                >
-                                  <Image
-                                    src={firstImage}
-                                    alt={`${blog?.title || 'Blog post'} preview`}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, 550px"
-                                    className={styles.projectCardImageMedia}
-                                    quality={85}
-                                    loading="lazy"
-                                    unoptimized={typeof firstImage === 'string' && firstImage.startsWith('http')}
-                                  />
-                                </div>
+                                {/* Morphs into the post hero (same name in ProjectDetailUniversal), only on card clicks */}
+                                <ViewTransition name={`blog-${blog.id}`} default="none" share={{ 'card-to-hero': 'auto', default: 'none' }}>
+                                  <div
+                                    className={`project-card-image ${styles.projectCardImage}`}
+                                  >
+                                    <Image
+                                      src={firstImage}
+                                      alt={`${blog?.title || 'Blog post'} preview`}
+                                      fill
+                                      sizes="(max-width: 768px) 100vw, 550px"
+                                      className={styles.projectCardImageMedia}
+                                      quality={85}
+                                      loading="lazy"
+                                      unoptimized={typeof firstImage === 'string' && firstImage.startsWith('http')}
+                                    />
+                                  </div>
+                                </ViewTransition>
 
                                 <div className={`project-content-with-image ${styles.projectContentWithImage}`}>
                                   {/* Blog Title */}
                                   <h3 className={styles.blogTitle}>
-                                    <Link href={`/blog/${blog?.id || 'unknown'}`} className={styles.blogTitleLink}>
+                                    <Link href={`/blog/${blog?.id || 'unknown'}`} transitionTypes={['card-to-hero']} className={styles.blogTitleLink}>
                                       {blog?.title || 'Untitled Post'}
                                     </Link>
                                   </h3>

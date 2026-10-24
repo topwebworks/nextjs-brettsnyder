@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState, useRef, useEffect, useCallback, type KeyboardEvent, type MouseEvent } from 'react';
+import { useState, useRef, useEffect, useCallback, ViewTransition, type KeyboardEvent, type MouseEvent } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ProjectData } from '@/lib/types/project';
 import { Tag, Calendar, ChevronLeft, ChevronRight, Play } from 'lucide-react';
@@ -516,41 +516,47 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
             </div>
           </div>
 
-          {/* Images follow their natural proportions; videos keep their responsive frame. */}
-          <div className={styles.heroMediaContainer}>
-            {currentHeroVideo ? (
-              <div className={`${styles.heroMediaAspectRatio} ${styles[currentVideoAspectRatio]}`}>
-                <div className={styles.heroMediaContent}>
-                  <div className={styles.heroVideoContainer}>
-                    <iframe
-                      src={`https://www.youtube.com/embed/${currentHeroVideo}?controls=1&modestbranding=1&fs=1&rel=0&playsinline=1`}
-                      title="Project Demo Video"
-                      className={styles.heroVideo}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                      allowFullScreen
-                      frameBorder="0"
-                    />
+          {/* Images follow their natural proportions; videos keep their responsive frame.
+              Stable wrapper (not the keyed image) so the list card morphs in even when the gallery swaps media.
+              Morphs only for card clicks (Link transitionTypes 'card-to-hero'). Browser Back stays instant:
+              React renders popstate synchronously for scroll restoration and would only sometimes animate it. */}
+          <ViewTransition name={`${contentType}-${project.id}`} default="none" share={{ 'card-to-hero': 'auto', default: 'none' }}>
+            <div className={styles.heroMediaContainer}>
+              {currentHeroVideo ? (
+                <div className={`${styles.heroMediaAspectRatio} ${styles[currentVideoAspectRatio]}`}>
+                  <div className={styles.heroMediaContent}>
+                    <div className={styles.heroVideoContainer}>
+                      <iframe
+                        src={`https://www.youtube.com/embed/${currentHeroVideo}?controls=1&modestbranding=1&fs=1&rel=0&playsinline=1`}
+                        title="Project Demo Video"
+                        className={styles.heroVideo}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                        allowFullScreen
+                        frameBorder="0"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className={styles.heroImageContainer}>
-                <Image
-                  key={heroImageKey}
-                  src={heroImageSrc}
-                  alt={`${project.title} hero image`}
-                  width={typeof heroImageSrc === 'string' ? 800 : heroImageSrc.width}
-                  height={typeof heroImageSrc === 'string' ? 600 : heroImageSrc.height}
-                  sizes="(max-width: 1276px) 94vw, 1200px"
-                  className={`${styles.heroImage} ${loadedHeroImage === heroImageKey ? styles.heroImageLoaded : ''}`}
-                  onLoad={() => setLoadedHeroImage(heroImageKey)}
-                  quality={90}
-                  priority
-                />
-                <div className={styles.heroOverlay} />
-              </div>
-            )}
-          </div>
+              ) : (
+                <div className={styles.heroImageContainer}>
+                  <Image
+                    key={heroImageKey}
+                    src={heroImageSrc}
+                    alt={`${project.title} hero image`}
+                    width={typeof heroImageSrc === 'string' ? 800 : heroImageSrc.width}
+                    height={typeof heroImageSrc === 'string' ? 600 : heroImageSrc.height}
+                    sizes="(max-width: 1276px) 94vw, 1200px"
+                    className={`${styles.heroImage} ${loadedHeroImage === heroImageKey ? styles.heroImageLoaded : ''}`}
+                    // First load stores '' (no fade) so the card morph lands on an opaque hero; gallery swaps still fade in
+                    onLoad={() => setLoadedHeroImage((prev) => (prev === null ? '' : heroImageKey))}
+                    quality={90}
+                    priority
+                  />
+                  <div className={styles.heroOverlay} />
+                </div>
+              )}
+            </div>
+          </ViewTransition>
         </div>
 
       </section>

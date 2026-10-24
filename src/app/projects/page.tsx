@@ -1,7 +1,7 @@
 // Projects Index Page using JSX Content Templates
 // This replaces the old API-based approach with direct JSX content templates
 
-import React from 'react';
+import React, { ViewTransition } from 'react';
 import { Github, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
@@ -184,6 +184,7 @@ export default async function ProjectsPage() {
                   >
                     <Link
                       href={`/projects/${project?.id || 'unknown'}`}
+                      transitionTypes={['card-to-hero']}
                       className={styles.projectCardOverlayLink}
                       aria-label={project?.title || 'View project'}
                       tabIndex={-1}
@@ -258,27 +259,30 @@ export default async function ProjectsPage() {
                           // With image: stacked layout
                           return (
                             <div className={`project-image-container ${styles.projectImageContainer}`}>
-                              <div 
-                                className={`project-card-image ${styles.projectCardImage}`}
-                              >
-                                {/* Always use Next.js Image component - pass StaticImageData object directly */}
-                                <Image
-                                  src={firstImage}
-                                  alt={`${project?.title || 'Project'} preview`}
-                                  width={672}
-                                  height={400}
-                                  sizes="(max-width: 768px) 100vw, 550px"
-                                  className={styles.projectCardImageMedia}
-                                  quality={85}
-                                  loading="lazy"
-                                  placeholder={typeof firstImage === 'object' && firstImage.blurDataURL ? "blur" : "empty"}
-                                />
-                              </div>
+                              {/* Morphs into the project hero (same name in ProjectDetailUniversal), only on card clicks */}
+                              <ViewTransition name={`project-${project.id}`} default="none" share={{ 'card-to-hero': 'auto', default: 'none' }}>
+                                <div
+                                  className={`project-card-image ${styles.projectCardImage}`}
+                                >
+                                  {/* Always use Next.js Image component - pass StaticImageData object directly */}
+                                  <Image
+                                    src={firstImage}
+                                    alt={`${project?.title || 'Project'} preview`}
+                                    width={672}
+                                    height={400}
+                                    sizes="(max-width: 768px) 100vw, 550px"
+                                    className={styles.projectCardImageMedia}
+                                    quality={85}
+                                    loading="lazy"
+                                    placeholder={typeof firstImage === 'object' && firstImage.blurDataURL ? "blur" : "empty"}
+                                  />
+                                </div>
+                              </ViewTransition>
 
                               <div className={`project-content-with-image ${styles.projectContentWithImage}`}>
                                 {/* Project Title */}
                                 <h3 className={styles.projectTitle}>
-                                  <Link href={`/projects/${project?.id || 'unknown'}`} className={styles.projectTitleLink}>
+                                  <Link href={`/projects/${project?.id || 'unknown'}`} transitionTypes={['card-to-hero']} className={styles.projectTitleLink}>
                                     {project?.title || 'Untitled Project'}
                                   </Link>
                                 </h3>
