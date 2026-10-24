@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, type KeyboardEvent, type MouseEvent } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ProjectData } from '@/lib/types/project';
 import { Tag, Calendar, ChevronLeft, ChevronRight, Play } from 'lucide-react';
@@ -182,6 +182,26 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
     }
   };
 
+  // Safari and macOS Firefox don't focus buttons on click, so arrow keys would have no starting thumbnail
+  const focusClickedThumbnail = (e: MouseEvent<HTMLDivElement>) => {
+    (e.target as HTMLElement).closest('button')?.focus({ preventScroll: true });
+  };
+
+  // Arrow keys move to the previous/next thumbnail and load it into the hero, same as a click
+  const handleGalleryKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const current = (e.target as HTMLElement).closest('button');
+    const next = e.key === 'ArrowRight' ? current?.nextElementSibling : current?.previousElementSibling;
+    if (next instanceof HTMLButtonElement) {
+      e.preventDefault();
+      // focus() alone won't scroll a partly visible thumbnail into view. inline 'start' matches the strip's
+      // scroll-snap-align, so mandatory snapping can't pull a partly scrolled thumbnail back out of view.
+      next.focus({ preventScroll: true });
+      next.scrollIntoView({ block: 'nearest', inline: 'start' });
+      next.click();
+    }
+  };
+
   // Function to update scroll arrow visibility based on overflow
   const updateScrollArrows = useCallback(() => {
     if (!scrollContainerRef.current) {
@@ -323,6 +343,8 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
           <div 
             ref={scrollContainerRef}
             className={styles.mediaScrollContainer}
+            onClick={focusClickedThumbnail}
+            onKeyDown={handleGalleryKeyDown}
           >
             
             {/* Render unified media items if they exist */}
