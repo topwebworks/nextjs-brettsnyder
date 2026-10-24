@@ -1194,3 +1194,43 @@
   color: var(--text-primary);
   border: 1px solid rgba(var(--accent-rgb), 0.7);
 }
+
+/* Detail navigation: All / Previous / Next above the hero.
+   Links reuse .heroTechStackPill; kept at the end so these overrides win over its media rules. */
+.detailNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 1200px;
+  margin: 0 auto clamp(1rem, 3vh, 2rem);
+}
+
+.detailNavSteps {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.detailNavLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 480px) {
+  .detailNavLink {
+    min-height: 44px;
+  }
+
+  /* Icon-only circles; the accessible name stays on aria-label */
+  .detailNavStep {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .detailNavLabel {
+    display: none;
+  }
+}

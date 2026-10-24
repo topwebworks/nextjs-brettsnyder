@@ -5,7 +5,8 @@
 import { useState, useRef, useEffect, useCallback, ViewTransition, type KeyboardEvent, type MouseEvent } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ProjectData } from '@/lib/types/project';
-import { Tag, Calendar, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import Link from 'next/link';
+import { Tag, Calendar, ArrowLeft, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
@@ -97,12 +98,16 @@ function getUnifiedMediaItems(project: ProjectData): Array<{type: 'video' | 'ima
   return legacyItems;
 }
 
+type AdjacentItem = { id: string; title: string };
+
 interface ProjectDetailProps {
   project: ProjectData;
   contentType?: 'project' | 'blog';
+  prev: AdjacentItem | null;
+  next: AdjacentItem | null;
 }
 
-export default function ProjectDetailUniversal({ project, contentType = 'project' }: ProjectDetailProps) {
+export default function ProjectDetailUniversal({ project, contentType = 'project', prev, next }: ProjectDetailProps) {
   // State for dynamic hero image
   const [currentHeroImage, setCurrentHeroImage] = useState<string | StaticImageData | null>(null);
   const [loadedHeroImage, setLoadedHeroImage] = useState<string | null>(null);
@@ -304,6 +309,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
 
   const heroImageSrc = currentHeroImage || getImageSrc('hero');
   const heroImageKey = typeof heroImageSrc === 'string' ? heroImageSrc : heroImageSrc.src;
+  const listPath = contentType === 'blog' ? 'blog' : 'projects';
 
   // Render media gallery section - extracted for better JSX parsing
   const renderMediaGallery = () => {
@@ -478,6 +484,28 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
       <section className={styles.heroSection}>
 
         <div className={styles.heroContainer}>
+          {/* Above-the-fold navigation: back to the list, previous/next in list order (icon-only on small screens) */}
+          <nav className={styles.detailNav} aria-label={contentType === 'blog' ? 'Blog posts' : 'Projects'}>
+            <Link href={`/${listPath}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink}`}>
+              <ArrowLeft size={16} aria-hidden="true" />
+              {contentType === 'blog' ? 'All posts' : 'All projects'}
+            </Link>
+            <div className={styles.detailNavSteps}>
+              {prev && (
+                <Link href={`/${listPath}/${prev.id}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink} ${styles.detailNavStep}`} aria-label={`Previous: ${prev.title}`}>
+                  <ChevronLeft size={16} aria-hidden="true" />
+                  <span className={styles.detailNavLabel}>Previous</span>
+                </Link>
+              )}
+              {next && (
+                <Link href={`/${listPath}/${next.id}`} className={`${styles.heroTechStackPill} ${styles.detailNavLink} ${styles.detailNavStep}`} aria-label={`Next: ${next.title}`}>
+                  <span className={styles.detailNavLabel}>Next</span>
+                  <ChevronRight size={16} aria-hidden="true" />
+                </Link>
+              )}
+            </div>
+          </nav>
+
           <div className={styles.heroContent}>
             <div className={styles.projectCategory}>
               <Tag

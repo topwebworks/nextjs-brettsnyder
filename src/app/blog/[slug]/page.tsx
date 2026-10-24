@@ -2,7 +2,7 @@
 // Automatically loads any blog from folder structure
 
 import { notFound } from 'next/navigation';
-import { loadBlogData } from '@/lib/blogLoader';
+import { loadBlogData, getAllBlogs } from '@/lib/blogLoader';
 import ProjectDetailUniversal from '@/components/ProjectDetailUniversal';
 import { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
@@ -83,6 +83,11 @@ export default async function BlogPage({ params }: BlogPageProps) {
     technologies: blog.tags, // Map tags to technologies for compatibility
   };
 
+  // Previous/next follow the /blog list order; only id + title go to the client
+  const all = await getAllBlogs();
+  const index = all.findIndex((b) => b.id === sanitizedSlug);
+  const [prev, next] = [all[index - 1], all[index + 1]].map((b) => (index >= 0 && b ? { id: b.id, title: b.title } : null));
+
   const heroImage = getBlogImages(sanitizedSlug).hero;
 
   const jsonLd = {
@@ -103,7 +108,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProjectDetailUniversal project={adaptedBlog} contentType="blog" />
+      <ProjectDetailUniversal project={adaptedBlog} contentType="blog" prev={prev} next={next} />
     </>
   );
 }

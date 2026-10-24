@@ -2,7 +2,7 @@
 // Automatically loads any project from folder structure
 
 import { notFound } from 'next/navigation';
-import { getProject, generateStaticParams as getStaticParams } from '@/lib/projectLoader';
+import { getProject, getAllProjects, generateStaticParams as getStaticParams } from '@/lib/projectLoader';
 import ProjectDetailUniversal from '@/components/ProjectDetailUniversal';
 import { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
@@ -74,6 +74,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  // Previous/next follow the /projects list order; only id + title go to the client
+  const all = await getAllProjects();
+  const index = all.findIndex((p) => p.id === sanitizedSlug);
+  const [prev, next] = [all[index - 1], all[index + 1]].map((p) => (index >= 0 && p ? { id: p.id, title: p.title } : null));
+
   const heroImage = getProjectImages(sanitizedSlug).hero;
   const isCyWire = sanitizedSlug === 'cywire';
 
@@ -97,7 +102,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProjectDetailUniversal project={project} contentType="project" />
+      <ProjectDetailUniversal project={project} contentType="project" prev={prev} next={next} />
     </>
   );
 }
