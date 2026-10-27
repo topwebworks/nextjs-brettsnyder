@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import ToolsPage from './ToolsPageClient';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools' },
   title: 'Tools',
   description:
     'The software, hardware, and workflow tools Brett Snyder uses for development, design, and productivity.',

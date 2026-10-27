@@ -5,6 +5,7 @@ import styles from '@/components/legal/LegalPageLayout.module.css';
 import { emailLinks } from '@/lib/config';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/terms' },
   title: 'Terms & Conditions | Brett Snyder Portfolio',
   description: 'Terms and conditions for using the Brett Snyder portfolio website.',
   openGraph: {

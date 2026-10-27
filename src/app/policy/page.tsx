@@ -5,6 +5,7 @@ import styles from '@/components/legal/LegalPageLayout.module.css';
 import { emailLinks } from '@/lib/config';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/policy' },
   title: 'Privacy Policy | Brett Snyder Portfolio',
   description: 'Privacy policy for the Brett Snyder portfolio website.',
   openGraph: {

@@ -19,6 +19,7 @@ import { siteConfig } from '@/lib/config';
 
 // Page metadata
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog' },
   title: 'Blog',
   description: 'Explore my latest thoughts, tutorials, and insights on web development, technology, and design.',
   openGraph: {
