@@ -17,7 +17,7 @@ status: "Production"
 featured: true
 publishDate: "2026-10-22"
 links:
-  live: "https://analytics-workbench-one.vercel.app/"
+  live: "https://analytics.rockitcode.com/"
 
 keyAchievements:
   - type: "technical"
@@ -209,4 +209,4 @@ With that in place, every site reports the same way, a fix can be rolled out to 
 
 ## Try the demo
 
-The workbench is a private tool I run on my own machine. Like most working tools, it was built quickly to solve a specific problem, not as a full SaaS product. The online demo at [analytics-workbench-one.vercel.app](https://analytics-workbench-one.vercel.app/) shows the same interface with two sample recordings, one from the demo booking on the embed kit and one from a vendor widget without it. Checks, Compare and reports work on both. Enter a GTM container ID in Checks to see the container checks run against a recording, and use the bookmark to see what the browser-only edition can record.
+The workbench is a private tool I run on my own machine. Like most working tools, it was built quickly to solve a specific problem, not as a full SaaS product. The online demo at [analytics.rockitcode.com](https://analytics.rockitcode.com/) shows the same interface with two sample recordings, one from the demo booking on the embed kit and one from a vendor widget without it. Checks, Compare and reports work on both. Enter a GTM container ID in Checks to see the container checks run against a recording, and use the bookmark to see what the browser-only edition can record.
