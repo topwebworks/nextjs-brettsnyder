@@ -30,7 +30,7 @@ keyAchievements:
       - "Per-platform verdict on whether a purchase will be credited"
       - "Compare against a GA4 purchase standard or a known-good recording"
       - "Embed kit relays booking events and campaigns from the iframe to the host page"
-      - "Browser-only online demo that stores no private data online"
+      - "Browser-only online demo with published GTM and GA4 checks and Markdown reports, and no server code"
 
 media:
   items: []
@@ -97,7 +97,7 @@ You can also start a session from embed code instead of a URL. Paste the snippet
 
 ## Checks
 
-In a live session, Checks examine the current page: its dataLayer, frames, code and tag requests, plus the published GTM container and each GA4 property's public tag settings. On an ended or imported recording, they run on the recorded events instead. None of that requires a login: the published container and GA4's tag settings are public files that the browser downloads anyway. You can also enter GTM container IDs and GA4 Measurement IDs the page doesn't load, or hides, to check another container or property, and upload a container export to include changes that aren't published yet.
+In a live session, Checks examine the current page: its dataLayer, frames, code and tag requests, plus the published GTM container and each GA4 property's public tag settings. On an ended or imported recording, they run on the recorded events instead, and still read the published container and GA4 settings for the IDs the recording holds or that you enter, so the trigger, variable and duplicate-tag checks work on a recording too. None of that requires a login: the published container and GA4's tag settings are public files that the browser downloads anyway. You can also enter GTM container IDs and GA4 Measurement IDs the page doesn't load, or hides, to check another container or property, and upload a container export to include changes that aren't published yet.
 
 The rules cover the problems that most often break purchase tracking:
 
@@ -160,16 +160,19 @@ The hosted version is a browser-only edition of the same interface. As an ordina
 
 - A **bookmark**: drag it to the bookmarks bar, open any site, and click it. A sidebar docks beside the page and records its dataLayer, clicks and errors. Its Checks tab audits that page. On a site with a strict security policy, it says the site blocked it rather than failing silently.
 - **Import, Save and Export** work as they do locally.
-- **Checks and Compare** run on recordings in the browser. Checks that need a live page, such as reading a GTM container, are left out and labelled as such.
+- **Checks and Compare** run on recordings in the browser. Checks also read the published GTM container and GA4 settings straight from Google, for the recording's GA4 IDs or any container or Measurement ID you enter. Checks that need the live page (its code, the tags it loaded, consent) are left out and labelled as such.
+- **Reports** download as Markdown, built in the browser.
 - **Two sample recordings** show the difference between an embed that relays every step and a vendor widget that passes on only the purchase.
+
+The online edition runs the same rules file and the same report code as the local tool. Moving these features online meant making the report code free of Node-only imports, not writing a browser copy, so there is no second version to drift out of step. Google's tag server allows these reads from another site, so the browser fetches the container directly and no server function sits in between.
 
 ## Saving and sharing
 
-Sessions live in memory until you save them. **Save** keeps a recording as a local file, or in browser storage online, and **Export** produces a JSON file anyone can import. Locally, reports come out as Markdown: issues by severity, each with its location and steps, and the code prompts collected at the end. That format drops straight into a ticket or a pull request.
+Sessions live in memory until you save them. **Save** keeps a recording as a local file, or in browser storage online, and **Export** produces a JSON file anyone can import. Reports come out as Markdown, locally and online: issues by severity, each with its location and steps, and the code prompts collected at the end. That format drops straight into a ticket or a pull request.
 
 ## Privacy
 
-The online version has no server code, database, accounts or cookies, and runs no analytics of its own. Recordings you import or save stay in your browser's storage, and what the bookmark records stays in that tab. The site's security policy doesn't allow it to send data anywhere. The two sample recordings had account names, IDs, order numbers and session identifiers replaced before they were published.
+The online version has no server code, database, accounts or cookies, and runs no analytics of its own. Recordings you import or save stay in your browser's storage, and what the bookmark records stays in that tab. The site's security policy allows one destination: Google's tag server, which your browser asks for the published container or GA4 settings of an ID you check. Google sees that ID and your IP address, as it would on any page that loads the tag, and no referrer is sent. The recording itself never leaves the browser. The two sample recordings had account names, IDs, order numbers and session identifiers replaced before they were published.
 
 ## What it doesn't do
 
@@ -187,4 +190,4 @@ With that in place, every site reports the same way, a fix can be rolled out to 
 
 ## Try the demo
 
-The workbench is a private tool I run on my own machine. Like most working tools, it was built quickly to solve a specific problem, not as a full SaaS product. The online demo at [analytics-workbench-one.vercel.app](https://analytics-workbench-one.vercel.app/) shows the same interface with two sample recordings, one from the demo booking on the embed kit and one from a vendor widget without it. Checks and Compare run on both, and the bookmark shows what the browser-only edition can record.
+The workbench is a private tool I run on my own machine. Like most working tools, it was built quickly to solve a specific problem, not as a full SaaS product. The online demo at [analytics-workbench-one.vercel.app](https://analytics-workbench-one.vercel.app/) shows the same interface with two sample recordings, one from the demo booking on the embed kit and one from a vendor widget without it. Checks, Compare and reports work on both. Enter a GTM container ID in Checks to see the container checks run against a recording, and use the bookmark to see what the browser-only edition can record.
