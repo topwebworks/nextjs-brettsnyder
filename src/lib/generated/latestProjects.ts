@@ -15,7 +15,7 @@ export const latestProjects: LatestProject[] = [
   {
     "id": "analytics-workbench",
     "title": "Analytics Workbench",
-    "excerpt": "A local tool that records what a page and its cross-domain iframes send to GTM, GA4 and ad platforms, then explains each gap as a fix.",
+    "excerpt": "A workbench that records what a page and its cross-domain iframes send to GTM, GA4 and ad platforms, checks the site around it, and explains each gap as a fix.",
     "category": "Developer Tool",
     "publishDate": "2026-10-22",
     "technologies": [

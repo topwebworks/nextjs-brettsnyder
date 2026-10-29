@@ -1,6 +1,6 @@
 ---
 title: "Analytics Workbench"
-description: "A local tool that records what a page and its cross-domain iframes send to GTM, GA4 and ad platforms, then explains each gap as a fix."
+description: "A workbench that records what a page and its cross-domain iframes send to GTM, GA4 and ad platforms, checks the site around it, and explains each gap as a fix."
 contentTitle: "Tracking Across Iframes"
 achievementTitle: "Recording, Checks & Attribution"
 technologies:
@@ -30,6 +30,7 @@ keyAchievements:
       - "Per-platform verdict on whether a purchase will be credited"
       - "Compare against a GA4 purchase standard or a known-good recording"
       - "Embed kit relays booking events and campaigns from the iframe to the host page"
+      - "Webmaster tools: campaign links, email deliverability, domain DNS, security policy, server-side tagging, site basics and page speed"
       - "Browser-only online demo with published GTM and GA4 checks and Markdown reports, and no server code"
 
 media:
@@ -109,6 +110,9 @@ The rules cover the problems that most often break purchase tracking:
 - **Ad platforms**: Google Ads conversion tags missing value, currency or transaction ID, no conversion linker, enhanced conversions settings, and Meta pixels that never track Purchase.
 - **Consent**: missing Consent Mode defaults, and conversions sent with ad storage denied.
 
+- **Flow health and cookies**: failed requests and insecure http requests during the flow, how much script each tag vendor loads, tracking cookies set before the visitor consented, and Safari's 7-day limit on cookies set by script.
+- **Page metadata**: a missing title or viewport tag, a leftover `noindex`, a canonical tag pointing to another page, social preview tags, and structured data.
+
 Every error and warning comes with numbered steps, and most say where the problem lives: a GTM tag, a GA4 admin screen or the site's code. Fixes that need code also come with a prompt for an AI coding assistant such as Claude or Codex, describing the problem, the page and the constraints to respect.
 
 Severity follows what the recording shows. On a page you only loaded, a checkout event that hasn't happened yet is a note, not a warning. A skipped step only becomes a warning when a later step did happen. Settings that repeat across several GA4 properties are reported once. When a site blocks the workbench, through bot protection or a strict security policy, the finding says so instead of reporting missing tags. And because an ad blocker in your own browser can hide tags too, missing-tag findings ask you to rule that out first.
@@ -130,6 +134,20 @@ It works well as a release check. Record the flow on staging, compare it with la
 An audit is a one-page check without clicking. A hidden browser loads the URL, reads the page's code, GTM container and GA4 settings, and runs the same checks. Requests to GA4, Google Ads and Meta are answered locally rather than sent, so an audit doesn't add visits to those reports. The result is a report you can download.
 
 Use an audit for a quick look at any site's setup, and a session for anything that involves a flow. Some sites refuse hidden browsers; for those, a checkbox runs the audit in a visible window. The same audit runs from the command line for scripted checks.
+
+## Beyond tracking: the Tools menu
+
+Whether a conversion gets counted often depends on things around the tags: a campaign link that loses its parameters in a redirect, confirmation emails landing in spam, a security policy that blocks the tag, or a tagging subdomain whose cookies Safari cuts to a week. The Tools menu checks those, one site or domain at a time, with the same findings and reports:
+
+- **Campaign links**: builds tagged links and checks them for inconsistent or missing UTMs, hard-coded click IDs and mediums GA4 won't recognise. Locally it follows redirects and flags any that drop the campaign.
+- **Email deliverability**: SPF (including the 10-lookup limit most checkers don't count), DMARC, DKIM, MX, MTA-STS, TLS reporting and BIMI.
+- **Domain overview**: every DNS record with its TTL, DNSSEC that is on, off or broken, the www and bare domain, IPv6, CAA and a second resolver's answer. Saving a snapshot before a DNS change shows exactly what changed afterwards. Locally it also reads the registration's expiry date and lock.
+- **Security policy for tags**: what a Content-Security-Policy blocks for GTM, GA4, Google Ads, Meta or an embed, using the sources Google documents, and the policy with the missing ones added.
+- **Server-side tagging**: whether Safari keeps the cookies a tagging subdomain sets, based on its domain, a CNAME to another company, and whether its IP address sits in the site's network.
+- **Site basics** (local): certificate expiry and chain, a CAA record that would block the next renewal, http and www redirects, security headers, robots.txt, the sitemap, and the links on one page.
+- **Page speed**: Core Web Vitals from real Chrome visitors and a lab score, from Google's PageSpeed Insights with your own free API key.
+
+These are webmaster tools for your own site. They check one target you type, read only public data, and leave out anything that maps other people's infrastructure: no port scans, subdomain discovery or bulk lists.
 
 ## Problems it catches
 
@@ -162,6 +180,7 @@ The hosted version is a browser-only edition of the same interface. As an ordina
 - **Import, Save and Export** work as they do locally.
 - **Checks and Compare** run on recordings in the browser. Checks also read the published GTM container and GA4 settings straight from Google, for the recording's GA4 IDs or any container or Measurement ID you enter. Checks that need the live page (its code, the tags it loaded, consent) are left out and labelled as such.
 - **Reports** download as Markdown, built in the browser.
+- **The Tools menu** works online too, except the parts that need to fetch another site directly: following redirects, reading a certificate or headers, a page's links, and registration data.
 - **Two sample recordings** show the difference between an embed that relays every step and a vendor widget that passes on only the purchase.
 
 The online edition runs the same rules file and the same report code as the local tool. Moving these features online meant making the report code free of Node-only imports, not writing a browser copy, so there is no second version to drift out of step. Google's tag server allows these reads from another site, so the browser fetches the container directly and no server function sits in between.
@@ -172,11 +191,11 @@ Sessions live in memory until you save them. **Save** keeps a recording as a loc
 
 ## Privacy
 
-The online version has no server code, database, accounts or cookies, and runs no analytics of its own. Recordings you import or save stay in your browser's storage, and what the bookmark records stays in that tab. The site's security policy allows one destination: Google's tag server, which your browser asks for the published container or GA4 settings of an ID you check. Google sees that ID and your IP address, as it would on any page that loads the tag, and no referrer is sent. The recording itself never leaves the browser. The two sample recordings had account names, IDs, order numbers and session identifiers replaced before they were published.
+The online version has no server code, database, accounts or cookies, and runs no analytics of its own. Recordings you import or save stay in your browser's storage, and what the bookmark records stays in that tab. The site's security policy allows four destinations, each used only when you run the check that needs it: Google's tag server (published GTM and GA4 settings for an ID you check), Google Public DNS and Cloudflare DNS (the DNS tools), and Google's PageSpeed Insights (Page speed). They see what you asked about and your IP address, and no referrer is sent. Recordings and DNS snapshots never leave the browser. The two sample recordings had account names, IDs, order numbers and session identifiers replaced before they were published.
 
 ## What it doesn't do
 
-It doesn't edit GTM, GA4 or ad accounts, and it doesn't need access to them. It reads GA4, Google Ads and Meta requests; other ad platforms' tags aren't checked. Its findings describe the data it could see on the pages you recorded, not every page of a site.
+It doesn't edit GTM, GA4 or ad accounts, and it doesn't need access to them. It reads GA4, Google Ads and Meta requests; other ad platforms' tags aren't checked. It doesn't monitor sites over time or check DNS from locations around the world; those need servers running somewhere, and dedicated services already do them well. Its findings describe the data it could see on the pages you recorded, not every page of a site.
 
 ## Start with the dataLayer
 
