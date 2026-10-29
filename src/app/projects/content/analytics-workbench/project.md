@@ -27,6 +27,7 @@ keyAchievements:
       - "dataLayer pushes, clicks and GA4, Google Ads and Meta requests from every frame"
       - "Checks for tags, ecommerce, campaigns, consent, cookies and ad conversions"
       - "Seven site tools: campaign links, email, DNS, security policy, server-side tagging, site basics, page speed"
+      - "Search and AI tools for Search Console, Keyword Planner and GA4 exports, SEO health and AI referrals"
       - "Tested on 11 real sites; errors cut by more than half after tuning"
       - "Online edition runs entirely in the browser, with no accounts or cookies"
 
@@ -67,7 +68,7 @@ Each click shows what it triggered within a second and a half. "No dataLayer eve
 
 ## Tools for the rest of the site
 
-Tracking problems often start outside the tags, so I added a Tools menu. Each tool checks one site or domain and gives the same kind of findings:
+Tracking problems often start outside the tags, so I added a Site & tracking menu. Each tool checks one site or domain and gives the same kind of findings:
 
 - **Campaign links**: builds tagged links and catches mixed case, missing source or medium, hard-coded click IDs, and redirects that drop the campaign.
 - **Email deliverability**: SPF (including the 10-lookup limit), DMARC, DKIM, MX and MTA-STS.
@@ -78,6 +79,18 @@ Tracking problems often start outside the tags, so I added a Tools menu. Each to
 - **Page speed**: Core Web Vitals from Google's PageSpeed Insights.
 
 They're for checking your own sites. There's nothing in there for scanning other people's.
+
+## Search and AI visibility
+
+A second menu covers search. It reads exports you already have, in your browser, and shows what they say:
+
+- **Search performance**: Search Console exports, with weighted CTR and position, trends, and the pages or queries worth a closer look.
+- **Keyword opportunities**: Keyword Planner estimates next to the queries Search Console says you already get.
+- **SEO health**: indexing, metadata and content checks for one page.
+- **Answer visibility**: how clearly a page answers questions and shows its sources, which is what AI answer engines pick up.
+- **AI referrals**: visits and outcomes from ChatGPT, Perplexity, Claude, Copilot and Gemini in your GA4 data.
+
+Nothing is uploaded, and there's no invented visibility score. Every number comes from a file you chose, and the report says which one.
 
 ## Testing it on real sites
 
