@@ -68,7 +68,7 @@ Each click shows what it triggered within a second and a half. "No dataLayer eve
 
 ## Tools for the rest of the site
 
-Tracking problems often start outside the tags, so I added a Site & tracking menu. Each tool checks one site or domain and gives the same kind of findings:
+Tracking problems often start outside the tags, so I added a Tools menu. Each tool checks one site or domain and gives the same kind of findings:
 
 - **Campaign links**: builds tagged links and catches mixed case, missing source or medium, hard-coded click IDs, and redirects that drop the campaign.
 - **Email deliverability**: SPF (including the 10-lookup limit), DMARC, DKIM, MX and MTA-STS.
