@@ -8,6 +8,7 @@ technologies:
   - "Node.js"
   - "Chrome DevTools Protocol"
   - "Vite"
+  - "Recharts"
   - "GTM"
   - "GA4"
   - "Vercel"
@@ -28,6 +29,7 @@ keyAchievements:
       - "Checks for tags, ecommerce, campaigns, consent, cookies and ad conversions"
       - "Seven site tools: campaign links, email, DNS, security policy, server-side tagging, site basics, page speed"
       - "Search and AI tools for Search Console, Keyword Planner and GA4 exports, SEO health and AI referrals"
+      - "Stat tiles and charts on the data tools, drawn only from data you supply"
       - "Tested on 11 real sites; errors cut by more than half after tuning"
       - "Online edition runs entirely in the browser, with no accounts or cookies"
 
@@ -71,7 +73,7 @@ Each click shows what it triggered within a second and a half. "No dataLayer eve
 Tracking problems often start outside the tags, so I added a Tools menu. Each tool checks one site or domain and gives the same kind of findings:
 
 - **Campaign links**: builds tagged links and catches mixed case, missing source or medium, hard-coded click IDs, and redirects that drop the campaign.
-- **Email deliverability**: SPF (including the 10-lookup limit), DMARC, DKIM, MX and MTA-STS.
+- **Email deliverability**: SPF (including the 10-lookup limit), DMARC, DKIM, MX, MTA-STS and BIMI.
 - **Domain overview**: DNS records, DNSSEC, IPv6 and CAA, plus a snapshot you can compare after a DNS change.
 - **Security policy for tags**: what a Content-Security-Policy blocks for GTM, GA4, Google Ads or Meta, and the lines to add.
 - **Server-side tagging**: whether Safari will keep the cookies your tagging subdomain sets.
@@ -92,6 +94,18 @@ A second menu covers search. It reads exports you already have, in your browser,
 
 Nothing is uploaded, and there's no invented visibility score. Every number comes from a file you chose, and the report says which one.
 
+## Charts and stats
+
+The data tools open with stat tiles and charts, so the main numbers are readable at a glance:
+
+- **Search performance**: clicks, impressions, CTR and position with the change since the earlier period, daily trends, clicks by weekday, and CTR against position.
+- **Page speed**: the score on a gauge, real-visitor Core Web Vitals split into good, needs improvement and poor, and charts for page weight, main-thread time and third-party tags.
+- **AI referrals and keywords**: sessions, engagement and revenue by AI source, and keyword demand next to what Search Console already shows.
+- **Email and domain**: SPF lookups against the limit of 10, DMARC and DKIM status, and DNS records by type.
+- **Sessions**: an At a glance panel that updates as events come in, with tag hits by platform and activity by frame.
+
+Every chart comes from the data you supplied. A blank cell stays blank instead of becoming a zero, a failed lookup shows as unknown, and each chart has a table of the exact numbers under it.
+
 ## Testing it on real sites
 
 Before calling it done, I ran it against eleven real sites: online stores, SaaS companies, a news site, and my own CyWire site. The first pass was too noisy. It reported a dataLayer reset on three large sites because a pattern matched inside minified code. It judged a page that had blocked the audit as if it were the real site. And it warned SaaS companies about missing purchase tracking when they convert on sign-ups.
@@ -105,6 +119,8 @@ For products that run inside an iframe, I wrote two small scripts that close the
 ## Online and desktop
 
 The online version at [analytics.rockitcode.com](https://analytics.rockitcode.com/) runs entirely in your browser. You can open the sample recordings, import your own, run Checks and Compare, use the tools, download reports, and record any page with a bookmark. The parts that need to drive a browser, like recording iframes and tag requests or reading another site's certificate, are in the desktop edition, which isn't publicly released yet.
+
+Each tool has its own page with answers to common questions, and a switch in the header changes between light and dark themes.
 
 There are no accounts, cookies or analytics on the site. Recordings stay in your browser. When a check needs outside data, your browser asks Google or Cloudflare directly, and the Legal page lists exactly what goes where.
 
