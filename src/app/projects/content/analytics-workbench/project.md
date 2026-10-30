@@ -8,7 +8,6 @@ technologies:
   - "Node.js"
   - "Chrome DevTools Protocol"
   - "Vite"
-  - "Recharts"
   - "GTM"
   - "GA4"
   - "Vercel"
