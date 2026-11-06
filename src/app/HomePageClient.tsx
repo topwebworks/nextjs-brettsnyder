@@ -13,7 +13,7 @@ import LineRibbons from '@/components/ui/LineRibbons';
 import { siteConfig, emailLinks } from '@/lib/config';
 import ResumeButton from '@/components/ui/ResumeButton';
 import { latestProjects } from '@/lib/generated/latestProjects';
-import professionalPortrait from '@/images/portrait/professional-portrait.jpg';
+import professionalPortrait from '../../public/brett-snyder-portrait.jpg';
 import styles from './HomePage.module.css';
 
 // Memoize static data to prevent unnecessary re-renders
@@ -166,6 +166,7 @@ export default function Homepage() {
             
             <Image 
               src={professionalPortrait}
+              overrideSrc="/brett-snyder-portrait.jpg"
               alt="Portrait of Brett Snyder"
               fill
               className={`${styles.heroPortraitImage} ${portraitLoaded ? styles['heroPortraitImage--loaded'] : styles['heroPortraitImage--loading']}`}
@@ -227,6 +228,7 @@ export default function Homepage() {
               
               <Image 
                 src={professionalPortrait}
+                overrideSrc="/brett-snyder-portrait.jpg"
                 alt="Portrait of Brett Snyder"
                 width={120}
                 height={120}

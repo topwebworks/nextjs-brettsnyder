@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import AboutPage from './AboutPageClient';
+import { personSchema } from '@/lib/profile';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/about' },
@@ -15,6 +16,24 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${personSchema.url}/about#profilepage`,
+  url: `${personSchema.url}/about`,
+  name: 'About Brett Snyder',
+  mainEntity: personSchema,
+  primaryImageOfPage: personSchema.image,
+};
+
 export default function Page() {
-  return <AboutPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <AboutPage />
+    </>
+  );
 }

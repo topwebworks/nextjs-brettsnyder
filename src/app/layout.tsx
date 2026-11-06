@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   authors: [{ name: "Brett Snyder" }],
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, 'max-image-preview': 'large' },
   openGraph: {
     title: "Brett Snyder | Frontend Developer & Design Engineer",
     description: siteDescription,

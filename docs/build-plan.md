@@ -15,6 +15,7 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 - Shared-element view transitions: a `/projects` or `/blog` card image morphs into the detail hero via React `<ViewTransition>`, named `project-<id>` or `blog-<id>`. The morph runs only for card clicks (Link `transitionTypes={['card-to-hero']}`). Browser Back stays instant because React renders it synchronously for scroll restoration. The first hero image skips its fade so the morph lands on an opaque image.
 - About and Tools pages.
 - Light and dark themes with reduced-motion support.
+- Homepage and About profile markup share Brett's identity and portrait. Visible portrait images, social metadata, and image sitemap entries use the named public portrait; search metadata permits large image previews.
 - Editable resume and cover-letter sources with automated PDF generation.
 
 ## Content Workflow

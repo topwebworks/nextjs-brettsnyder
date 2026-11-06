@@ -12,8 +12,8 @@ import { emailLinks, siteConfig } from '@/lib/config';
 import ResumeButton from '@/components/ui/ResumeButton';
 import styles from './AboutPage.module.css';
 
-// Global/shared images from src/images/
-import professionalPortrait from '@/images/portrait/professional-portrait.jpg';
+// Portrait and shared images
+import professionalPortrait from '../../../public/brett-snyder-portrait.jpg';
 import techExcellenceImage from '@/images/tech-excellence.jpg';
 import continuousInnovationImage from '@/images/continuous-innovation.jpg';
 import userCenteredDesignImage from '@/images/user-centered-design.jpg';
@@ -159,6 +159,7 @@ export default function AboutPage() {
                     
                     <Image 
                       src={professionalPortrait}
+                      overrideSrc="/brett-snyder-portrait.jpg"
                       alt="Portrait of Brett Snyder"
                       fill
                       sizes="(max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
