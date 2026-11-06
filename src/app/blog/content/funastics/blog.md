@@ -96,7 +96,7 @@ We created an environment where families felt part of the action. Some nights we
 
 At the time, our website stood out. It was built in Flash, full of animated images, dynamic content, music from the gym, and even hidden arcade games (which parents loved as much as the kids). Parents could sign up and pay bills online, a feature that impressed families in those early days of e-commerce. With just a $50/month ad budget, I had Funastics.com ranking above local franchises in a matter of&nbsp;months.  
 
-Offline, I worked the neighborhoods and some schools. Every month I delivered laminated trial coupons, mini-flyer business cards, and postcards. Families called, referrals grew, and soon the classes were filling up. After 1 year I was in the black. The polished branding left many people convinced Funastics was a franchise, not a single-location.
+Offline, I worked the neighborhoods and some schools, trying to cover a different nearby neighborhood each month. I alternated two-sided half-page flyers and mini-flyer business cards in the doors, along with laminated trial coupons and postcards, and sometimes hired someone to do the rounds. At the gym, the flyers went in a tray outside or on the counter with the cards. Families called, referrals grew, and soon the classes were filling up. After 1 year I was in the black. The polished branding left many people convinced Funastics was a franchise, not a single-location.
 
 ## Reflection and Moving Forward  
 
