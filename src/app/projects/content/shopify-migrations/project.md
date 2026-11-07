@@ -12,7 +12,7 @@ featured: false
 designSystem: true
 publishDate: "2022-06-01"
 links:
-  live: "https://aop.com/pages/mktg-custom-dev"
+  live: "https://topwebworks.com/works/aop"
 keyAchievements:
   - type: "technical"
     icon: "🤝"
@@ -29,7 +29,7 @@ media:
 
 ## Three Migrations, One Platform
 
-I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a [custom marketing design system](https://aop.com/pages/mktg-custom-dev), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
+I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a [custom marketing design system](https://topwebworks.com/works/aop), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
 
 ## A Design System, Built in Liquid
 

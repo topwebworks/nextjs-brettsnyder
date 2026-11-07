@@ -12,7 +12,7 @@ featured: false
 readTime: "8 min read"
 publishDate: "2025-03-31"
 links:
-  live: "https://aop.com/pages/mktg-custom-dev"
+  live: "https://topwebworks.com/works/aop"
 author: "Brett Snyder"
 excerpt: "Practical notes on Shopify theme selection, Liquid and schema, staging workflows, and content structure."
 keyAchievements:
