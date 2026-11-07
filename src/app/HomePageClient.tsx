@@ -235,10 +235,14 @@ export default function Homepage() {
             </div>
 
             {/* Main Heading - with Animated Word */}
-            {/* The name badge sits inside the H1 so the homepage's main heading carries Brett's name for search.
-                The roles it used to list are the typed words below. */}
+            {/* The name badge sits inside the H1 so the homepage's main heading carries Brett's name and title for search.
+                On phones the role drops to its own line. */}
             <h1 className={styles.heroTitle}>
-              <span className={styles.roleBadge}>Brett Snyder</span>
+              <span className={styles.roleBadge}>
+                Brett Snyder{' '}
+                <span className={styles.badgeSep} aria-hidden="true">·</span>{' '}
+                <span className={styles.badgeRole}>Design Engineer</span>
+              </span>
               <br />
               I am a
               <br />
@@ -258,7 +262,7 @@ export default function Homepage() {
             {/* Refined Description */}
             <div>
               <p className={styles.heroSubtitle}>
-              I build SaaS products, Shopify experiences, and conversion-focused&nbsp;websites.</p>
+              I build SaaS products, design systems, Shopify experiences, and conversion-focused&nbsp;websites.</p>
             </div>
 
             {/* CTA */}

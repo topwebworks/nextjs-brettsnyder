@@ -510,6 +510,16 @@
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
+@media (max-width: 520px) {
+  .badgeSep {
+    display: none;
+  }
+
+  .badgeRole {
+    display: block;
+  }
+}
+
 /* Mobile Portrait */
 .mobilePortraitContainer {
   animation: fadeInUp 0.8s ease-out 0.25s both;
