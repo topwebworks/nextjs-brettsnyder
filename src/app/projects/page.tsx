@@ -14,6 +14,7 @@ import type { ProjectData } from '@/lib/types/project';
 import { getProjectImages } from '@/lib/generated/projectImageImports';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { shareImage } from '@/lib/profile';
 import ProjectScripts from '@/components/ProjectScripts';
 import { PAGINATION_CONFIGS } from '@/utils/paginationConfig';
 import '@/styles/pagination.css';
@@ -24,11 +25,12 @@ import { siteConfig } from '@/lib/config';
 export const metadata: Metadata = {
   alternates: { canonical: '/projects' },
   title: 'Projects',
-  description: 'Explore my latest projects and development work across web development, design, and technology.',
+  description: 'Projects by Brett Snyder: SaaS platforms, design systems, Shopify Plus migrations, client marketing sites, and prototypes, with the results behind each.',
   openGraph: {
     title: 'Projects',
-    description: 'Explore my latest projects and development work across web development, design, and technology.',
+    description: 'Projects by Brett Snyder: SaaS platforms, design systems, Shopify Plus migrations, client marketing sites, and prototypes, with the results behind each.',
     type: 'website',
+    images: [shareImage],
   },
 };
 
@@ -78,7 +80,7 @@ export default async function ProjectsPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Projects',
-    description: 'Explore my latest projects and development work across web development, design, and technology.',
+    description: 'Projects by Brett Snyder: SaaS platforms, design systems, Shopify Plus migrations, client marketing sites, and prototypes, with the results behind each.',
     url: `${siteUrl}/projects`,
     mainEntity: {
       '@type': 'ItemList',

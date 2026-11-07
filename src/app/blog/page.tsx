@@ -11,6 +11,7 @@ import type { BlogData } from '@/lib/types/blog';
 import { getBlogImages } from '@/lib/generated/blogImageImports';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { shareImage } from '@/lib/profile';
 import BlogScripts from '@/components/BlogScripts';
 import { PAGINATION_CONFIGS } from '@/utils/paginationConfig';
 import '@/styles/pagination.css';
@@ -21,11 +22,12 @@ import { siteConfig } from '@/lib/config';
 export const metadata: Metadata = {
   alternates: { canonical: '/blog' },
   title: 'Blog',
-  description: 'Explore my latest thoughts, tutorials, and insights on web development, technology, and design.',
+  description: 'Blog posts by Brett Snyder on design systems, Shopify, digital art, and running a small business, written from real projects.',
   openGraph: {
     title: 'Blog',
-    description: 'Explore my latest thoughts, tutorials, and insights on web development, technology, and design.',
+    description: 'Blog posts by Brett Snyder on design systems, Shopify, digital art, and running a small business, written from real projects.',
     type: 'website',
+    images: [shareImage],
   },
 };
 
@@ -59,7 +61,7 @@ export default async function BlogPage() {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'Blog',
-    description: 'Explore my latest thoughts, tutorials, and insights on web development, technology, and design.',
+    description: 'Blog posts by Brett Snyder on design systems, Shopify, digital art, and running a small business, written from real projects.',
     url: `${siteUrl}/blog`,
     blogPost: allBlogs.map((blog: BlogData) => ({
       '@type': 'BlogPosting',

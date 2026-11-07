@@ -1,6 +1,6 @@
 ---
 title: "PushPad"
-description: "An in-progress supplemental learning platform where educators build 7-section lesson pads and PushPad grades them, gates progress on mastery, and adapts the path with educator approval."
+description: "An in-progress learning platform where educators build 7-section lesson pads that PushPad grades, gates on mastery, and adapts with their approval."
 contentTitle: "Start Small. Learn Big."
 achievementTitle: ""
 technologies:

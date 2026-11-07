@@ -1,7 +1,7 @@
 ---
 # PROJECT METADATA - Remove comments after editing
 title: "Funastics"
-description: "Funastics was a place where kids built skills, confidence, and character while having fun. With strong branding and smart systems, it grew into a trusted community hub that felt bigger than a single location."
+description: "Funastics was a kids' gym where skills, confidence, and character grew through fun. Strong branding and smart systems made it feel bigger than one location."
 contentTitle: "Champions For Life"
 achievementTitle: "Key Takeaways"
 technologies:

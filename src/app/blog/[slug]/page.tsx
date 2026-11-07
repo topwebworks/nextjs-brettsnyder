@@ -7,6 +7,7 @@ import ProjectDetailUniversal from '@/components/ProjectDetailUniversal';
 import { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
 import { getBlogImages } from '@/lib/generated/blogImageImports';
+import { breadcrumbSchema, personSchema, shareImage, summaryAbstract } from '@/lib/profile';
 
 const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
@@ -30,6 +31,8 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
       };
     }
     
+    const hero = getBlogImages(slug).hero;
+
     return {
       title: blogData.title,
       alternates: { canonical: `/blog/${slug}` },
@@ -38,6 +41,9 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
         title: blogData.title,
         description: blogData.description,
         type: 'article',
+        publishedTime: blogData.publishDate,
+        modifiedTime: blogData.updatedDate || blogData.publishDate,
+        images: [hero ? { url: hero.src, width: hero.width, height: hero.height, alt: blogData.title } : shareImage],
       },
       twitter: {
         card: 'summary_large_image',
@@ -91,15 +97,24 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
   const heroImage = getBlogImages(sanitizedSlug).hero;
 
+  // ponytail: every post is Brett's, so author is his shared Person entity; frontmatter author is display-only.
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: blog.title,
-    description: blog.description,
-    url: `${siteUrl}/blog/${sanitizedSlug}`,
-    datePublished: blog.publishDate,
-    author: { '@type': 'Person', name: blog.author || 'Brett Snyder' },
-    ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: blog.title,
+        description: blog.description,
+        url: `${siteUrl}/blog/${sanitizedSlug}`,
+        datePublished: blog.publishDate,
+        dateModified: blog.updatedDate || blog.publishDate,
+        author: personSchema,
+        abstract: summaryAbstract(blog.content?.keyAchievements),
+        keywords: blog.tags,
+        ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
+      },
+      breadcrumbSchema('Blog', 'blog', blog.title),
+    ],
   };
 
   // Render using the universal project detail component with blog content type

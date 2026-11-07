@@ -60,6 +60,29 @@
   margin-bottom: 3rem;
 }
 
+/* Page H1 + intro above the tabs, matching the category header scale one step up */
+.pageHeader {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vh, 3rem);
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.pageIntro {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--text-secondary);
+  opacity: 0.8;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 .tabNavigationContainer {
   max-width: 92%;
   width: 100%;

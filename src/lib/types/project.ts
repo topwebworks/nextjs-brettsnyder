@@ -18,6 +18,7 @@ export interface ProjectData {
   featured: boolean;
   designSystem?: boolean;
   publishDate: string;
+  updatedDate?: string;     // Optional "YYYY-MM-DD" for meaningful revisions
   contentTitle?: string; 
   achievementTitle?: string;
   links: {

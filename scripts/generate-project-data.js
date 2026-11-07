@@ -630,6 +630,7 @@ async function processContentMarkdownToJson(contentId, contentDir, contentType) 
       featured: frontmatter.featured !== undefined ? frontmatter.featured : (useExistingJson ? existingJson?.featured : undefined) || false,
       designSystem: frontmatter.designSystem !== undefined ? frontmatter.designSystem : (useExistingJson ? existingJson?.designSystem : undefined) || false,
       publishDate: frontmatter.publishDate || (useExistingJson ? existingJson?.publishDate : undefined) || new Date().toISOString().split('T')[0],
+      updatedDate: frontmatter.updatedDate || (useExistingJson ? existingJson?.updatedDate : undefined) || undefined,
       contentTitle: frontmatter.contentTitle || frontmatter['content-title'] || (useExistingJson ? existingJson?.contentTitle : undefined) || undefined,
       achievementTitle: frontmatter.achievementTitle || frontmatter['achievement-title'] || (useExistingJson ? existingJson?.achievementTitle : undefined) || undefined,
       // Blog-specific fields

@@ -1,6 +1,6 @@
 ---
 title: "AMW Hardscape Solutions"
-description: "A full marketing system for a licensed Arizona hardscape contractor, built on my Top Web Works service-pages design system: homepage-first conversion, automated follow-up and reviews, AI-visible SEO, and a monthly campaign across email, social, and paid ads."
+description: "A full marketing system for an Arizona hardscape contractor: conversion-first homepage, automated follow-up and reviews, AI-visible SEO, and monthly campaigns."
 contentTitle: "A Full Marketing System"
 achievementTitle: ""
 technologies:
@@ -33,7 +33,7 @@ media:
 
 AMW Hardscape Solutions is a licensed hardscape contractor serving San Tan Valley, Queen Creek, Gilbert, Mesa, Chandler, and Apache Junction. The site is built custom on Next.js rather than a theme, so there's no ceiling on features or page speed.
 
-It's built on my [Top Web Works](/projects/topwebworks) service-pages design system: the same set of customizable Next.js blocks behind the homepage-first conversion layout, trust section, and estimate path used across conversion-focused client&nbsp;sites.
+It's built on my [Top Web Works](/projects/topwebworks) service-pages [design system](/blog/design-systems): the same set of customizable Next.js blocks behind the homepage-first conversion layout, trust section, and estimate path used across conversion-focused client&nbsp;sites.
 
 ## Services and Trust, Above the Fold
 

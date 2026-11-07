@@ -17,7 +17,7 @@ export const latestBlogPosts: LatestBlogPost[] = [
   {
     "id": "design-systems",
     "title": "Design Systems",
-    "description": "What a design system actually is, how I use tokens and components in practice, and why every system I've built started as the answer to a real deadline or a real limitation.",
+    "description": "What a design system actually is, how I use tokens and components, and why every system I've built started as the answer to a real deadline or limitation.",
     "excerpt": "I was building design systems before anyone called them that. Here's what they are, how I use tokens, and why every one I've built started as the answer to a real deadline, not a trend.",
     "category": "Design",
     "publishDate": "2026-09-23",

@@ -1,7 +1,7 @@
 ---
 # PROJECT METADATA - Remove comments after editing
 title: "Graphic Design"
-description: "What started with catalogs, mailers, and ads naturally evolved into web and digital design, where the same principles of whitespace and simplicity now drive better engagement and conversions."
+description: "Catalogs, mailers, and ads evolved into web and digital design, where the same principles of whitespace and simplicity now drive engagement and conversions."
 contentTitle: "Before Web, there was Print"
 achievementTitle: ""
 technologies:

@@ -1,0 +1,91 @@
+/* Pill matching the detail page's tech-stack pills, in muted text so it reads as a control, not a tag. */
+.listen {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  border-radius: 999px;
+  background: rgba(var(--accent-rgb), 0.06);
+  backdrop-filter: blur(8px);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  animation: listenFade 250ms ease-out;
+}
+
+.toggle,
+.stop,
+.voice {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.toggle:hover,
+.stop:hover,
+.voice:hover {
+  color: var(--text-accent);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.9rem;
+  font-weight: 500;
+}
+
+.stop {
+  display: inline-flex;
+  padding: 0.5rem;
+  animation: listenFade 250ms ease-out;
+}
+
+.divider {
+  width: 1px;
+  height: 1rem;
+  margin: 0 0.15rem;
+  background: rgba(var(--accent-rgb), 0.25);
+}
+
+.voice {
+  padding: 0.4rem 0.6rem 0.4rem 0.3rem;
+}
+
+.voice option {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+/* 44px touch targets; 16px select text stops iOS zooming the page on tap. */
+@media (max-width: 480px) {
+  .toggle,
+  .stop,
+  .voice {
+    min-height: 44px;
+  }
+
+  .stop {
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .voice {
+    font-size: 1rem;
+  }
+}
+
+@keyframes listenFade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen,
+  .stop {
+    animation: none;
+  }
+}

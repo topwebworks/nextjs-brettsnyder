@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Zap, Heart, Code, Layers, Target } from 'lucide-react';
+import Link from 'next/link';
+import { Zap, Heart, Code, Layers, Target, ChevronDown, ArrowRight } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
@@ -10,6 +11,8 @@ import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
 import Button from '@/components/ui/Button';
 import { emailLinks, siteConfig } from '@/lib/config';
 import ResumeButton from '@/components/ui/ResumeButton';
+import ListenButton from '@/components/ui/ListenButton';
+import { faqs } from './faq';
 import styles from './AboutPage.module.css';
 
 // Portrait and shared images
@@ -210,14 +213,20 @@ export default function AboutPage() {
                     <h1 className={styles.textTitle}>
                       About Me
                     </h1>
-                    
+
+                    <ListenButton
+                      targetId="about-story"
+                      title={`About Me. ${personalStory.introduction}`}
+                      className={styles.listen}
+                    />
+
                     <p className={styles.textIntroduction}>
                       {personalStory.introduction}
                     </p>
                   </div>
 
                   {/* Personal Story Sections */}
-                  <div className={styles.personalStorySections}>
+                  <div id="about-story" className={styles.personalStorySections}>
                     {[
                       { title: 'My Journey', content: personalStory.journey },
                       { title: 'Key Achievements', content: personalStory.achievements },
@@ -413,6 +422,35 @@ export default function AboutPage() {
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ - native details/summary, so it opens without JS and works with find-in-page */}
+          <section className={`${styles.valuesSection} ${styles.faqSection}`}>
+            <div className={styles.valuesContainer}>
+              <h2 className={styles.valuesSectionTitle}>Questions</h2>
+
+              <div className={styles.faqList}>
+                {faqs.map((faq) => (
+                  <details key={faq.q} className={styles.faqItem}>
+                    <summary className={styles.faqQuestion}>
+                      <span>{faq.q}</span>
+                      <ChevronDown size={20} className={styles.faqIcon} aria-hidden="true" />
+                    </summary>
+                    <div className={styles.faqAnswer}>
+                      {faq.a.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                      {faq.link && (
+                        <Link href={faq.link.href} className={styles.faqLink}>
+                          {faq.link.label}
+                          <ArrowRight size={16} aria-hidden="true" />
+                        </Link>
+                      )}
+                    </div>
+                  </details>
+                ))}
               </div>
             </div>
           </section>

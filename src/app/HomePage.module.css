@@ -437,23 +437,20 @@
   font-weight: 200;
 }
 
-/* Light theme: hero text is softer at rest and darkens as the portrait fades in behind it */
+/* Light theme: hero text sits one step softer at rest and reaches full strength as the portrait fades in.
+   The typed role keeps the full accent color in both states. */
 :global([data-theme="light"]) .roleBadge,
 :global([data-theme="light"]) .heroTitle,
-:global([data-theme="light"]) .animatedTextContainer,
-:global([data-theme="light"]) .textCursor,
 :global([data-theme="light"]) .heroSubtitle {
   transition: color 2.4s ease-in-out;
 }
 
-:global([data-theme="light"]) .roleBadge,
-:global([data-theme="light"]) .heroTitle {
-  color: var(--text-tertiary);
+:global([data-theme="light"]) .roleBadge {
+  color: var(--text-muted);
 }
 
-:global([data-theme="light"]) .animatedTextContainer,
-:global([data-theme="light"]) .textCursor {
-  color: color-mix(in srgb, var(--text-accent-hero) 85%, white);
+:global([data-theme="light"]) .heroTitle {
+  color: var(--text-secondary);
 }
 
 :global([data-theme="light"]) .heroSubtitle {
@@ -464,11 +461,6 @@
 :global([data-theme="light"]) [data-portrait-visible] .roleBadge,
 :global([data-theme="light"]) [data-portrait-visible] .heroTitle {
   color: var(--text-primary);
-}
-
-:global([data-theme="light"]) [data-portrait-visible] .animatedTextContainer,
-:global([data-theme="light"]) [data-portrait-visible] .textCursor {
-  color: var(--text-accent-hero);
 }
 
 :global([data-theme="light"]) [data-portrait-visible] .heroSubtitle {
@@ -510,8 +502,10 @@
   border: 1px solid transparent;
   font-size: 0.875rem;
   font-weight: 500;
+  line-height: 1.6; /* inside the H1 now; don't inherit its tight 0.95 */
   color: var(--text-secondary);
   letter-spacing: 0.3em;
+  text-transform: uppercase; /* source stays "Brett Snyder" so screen readers say the name, not letters */
   margin-bottom: clamp(1.5rem, 3vh, 2rem);
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }

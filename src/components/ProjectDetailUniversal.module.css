@@ -36,8 +36,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem 0.5rem;
   margin-bottom: 1rem;
+}
+
+/* Listen control sits after the category label with a little more room than the icon gap. */
+.categoryText + * {
+  margin-inline-start: 0.5rem;
 }
 
 .categoryText {

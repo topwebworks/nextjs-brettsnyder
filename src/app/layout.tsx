@@ -4,10 +4,9 @@ import "../utils/consoleFilter"; // Development console cleanup
 import "./globals.css"; // CSS custom properties system and utilities
 import ClientProviders from "./ClientProviders";
 import { siteConfig } from "@/lib/config";
+import { shareImage, siteDescription } from "@/lib/profile";
 
 const siteUrl = siteConfig.url || "https://www.brettsnyder.me";
-const siteDescription =
-  "Brett Snyder is a frontend developer and design engineer building SaaS products, design systems, Shopify experiences, and conversion-focused websites.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,14 +23,10 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Brett Snyder",
-    images: [{ url: "/brett-snyder-portrait.jpg", width: 896, height: 1200, alt: "Brett Snyder" }],
+    images: [shareImage],
   },
-  twitter: {
-    card: "summary",
-    title: "Brett Snyder | Frontend Developer & Design Engineer",
-    description: siteDescription,
-    images: ["/brett-snyder-portrait.jpg"],
-  },
+  // Title, description, and image fall back to each page's Open Graph tags, so pages without their own twitter block stay accurate.
+  twitter: { card: "summary" },
 };
 
 export const viewport: Viewport = {
@@ -45,8 +40,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" data-scroll-behavior="smooth">
+    // suppressHydrationWarning: the script below may switch data-theme to the visitor's saved choice before React hydrates.
+    <html lang="en" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body suppressHydrationWarning={true}>
+        {/* Apply a returning visitor's saved theme before first paint, so light-mode visitors don't see a dark flash.
+            New visitors keep the dark default. ThemeContext reads the same key after hydration. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
+          }}
+        />
         {/* Google Consent Mode default - must run before GTM loads */}
         <script
           dangerouslySetInnerHTML={{

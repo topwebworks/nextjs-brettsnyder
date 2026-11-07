@@ -1,6 +1,6 @@
 ---
 title: "Design Systems"
-description: "What a design system actually is, how I use tokens and components in practice, and why every system I've built started as the answer to a real deadline or a real limitation."
+description: "What a design system actually is, how I use tokens and components, and why every system I've built started as the answer to a real deadline or limitation."
 contentTitle: "Design Systems: The Habit I Never Named"
 achievementTitle: "Where I've Used This"
 tags:
@@ -33,17 +33,17 @@ media:
 
 ---
 
-I was building design systems before anyone I worked with called them that. The first one was a master email template with every block variation already built in: header styles, content blocks, CTAs, footers, all built once and dropped into place instead of rebuilt for every campaign. Nobody handed me the term "design system." The approach just made&nbsp;sense.
+I was building design systems before anyone I worked with called them that. The first one was a master [email template](/projects/email) with every block variation already built in: header styles, content blocks, CTAs, footers, all built once and dropped into place instead of rebuilt for every campaign. Nobody handed me the term "design system." The approach just made&nbsp;sense.
 
 A design system is a shared set of tokens, components, pacing rules, and conversion rules. Tokens are the values, color, spacing, type, defined once and reused everywhere instead of typed in over and over. Components are the parts built from those tokens: a button, a card, a hero block. The pacing rules are what tell you what order those parts go in down the page. The conversion rules are data-backed: which of those parts actually needs to be there, a form, a CTA, a testimonial, so a page built by someone else still converts, not just&nbsp;matches.
 
-I didn't build any of mine because design systems sounded good, or because I read about them somewhere. A director gave me a deadline that building every page from scratch couldn't hit. A Shopify migration needed more than the theme's defaults could cover. A client base that couldn't afford months of custom work every time I built them a site. Five systems, five different problems, one repeated&nbsp;habit.
+I didn't build any of mine because design systems sounded good, or because I read about them somewhere. A director gave me a deadline that building every page from scratch couldn't hit. A [Shopify migration](/projects/shopify-migrations) needed more than the theme's defaults could cover. A client base that couldn't afford months of custom work every time I built them a site. Five systems, five different problems, one repeated&nbsp;habit.
 
 ## My Tokens, Plainly
 
 I'm not usually building across a dozen devices and platforms at once. I'm not running one token source that feeds native iOS, Android, and web apps at the same time. My work is web-first: HTML and CSS, Shopify Liquid, React and Next.js. So my tokens are, mainly, plain CSS custom properties. `--color-primary`, `--space-lg`, `--font-primary`. Set once at the root, referenced everywhere else. Change the value in one place and every component using it updates.
 
-It's the right-sized tool for the job I actually have. This portfolio runs on exactly that: a token layer for color, spacing, and font driving both the light and dark theme off the same&nbsp;components.
+It's the right-sized tool for the job I actually have. [This portfolio](/projects/personal-portfolio) runs on exactly that: a token layer for color, spacing, and font driving both the light and dark theme off the same&nbsp;components.
 
 The mechanism is the same everywhere I've used it, even when the platform changes. Plain CSS variables in Master Blocks. On this site, a Next.js build, the tokens live in one global stylesheet and every component pulls from it through its own CSS Module, so the values stay shared but the styles stay scoped to the component that uses them. Liquid's version of the same idea inside Shopify's style blocks. Tailwind's token layer on TopWebWorks, which is CSS variables under the hood no matter what utility classes sit on top of it. One approach, reused on purpose every&nbsp;time.
 

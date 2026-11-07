@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { shareImage } from '@/lib/profile';
 import { Shield, Database, Globe, Lock } from 'lucide-react';
 import LegalPageLayout from '@/components/legal/LegalPageLayout';
 import styles from '@/components/legal/LegalPageLayout.module.css';
@@ -6,12 +7,13 @@ import { emailLinks } from '@/lib/config';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/policy' },
-  title: 'Privacy Policy | Brett Snyder Portfolio',
+  title: 'Privacy Policy',
   description: 'Privacy policy for the Brett Snyder portfolio website.',
   openGraph: {
-    title: 'Privacy Policy | Brett Snyder Portfolio',
+    title: 'Privacy Policy | Brett Snyder',
     description: 'Privacy policy for the Brett Snyder portfolio website.',
     type: 'website',
+    images: [shareImage],
   },
 };
 

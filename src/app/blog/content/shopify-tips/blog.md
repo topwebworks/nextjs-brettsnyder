@@ -34,7 +34,7 @@ media:
 
 ---
 
-Shopify offers a broad mix of simplicity and power. Here are practical notes on theme selection, Liquid, schema, and content workflows for building a scalable, maintainable&nbsp;store.
+Shopify offers a broad mix of simplicity and power. Here are practical notes on theme selection, Liquid, schema, and content workflows for building a scalable, maintainable&nbsp;store. This is the practical side of the work behind my [three migrations to Shopify Plus](/projects/shopify-migrations).
 
 ## Would I Recommend Shopify?
 
@@ -72,7 +72,7 @@ Shopify's Liquid templating language and schema-based settings approach offer re
 
 Liquid allows you to create reusable components (sections) that streamline development without extensive coding knowledge. Better to build your theme marketing sections from scratch than try to shoehorn the existing template sections. Add to - not replace theme sections... and you do not break your upgrade&nbsp;path.
 
-Turning those sections into an actual design system, shared tokens, a consistent component library, schema settings marketing can use on their own, is what gets pages looking exactly how you want them, every&nbsp;time.
+Turning those sections into an actual [design system](/blog/design-systems), shared tokens, a consistent component library, schema settings marketing can use on their own, is what gets pages looking exactly how you want them, every&nbsp;time.
 
 ## Static Site Generation vs. Shopify
 

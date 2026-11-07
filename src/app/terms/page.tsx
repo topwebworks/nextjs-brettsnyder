@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { shareImage } from '@/lib/profile';
 import { Scale, FileText } from 'lucide-react';
 import LegalPageLayout from '@/components/legal/LegalPageLayout';
 import styles from '@/components/legal/LegalPageLayout.module.css';
@@ -6,12 +7,13 @@ import { emailLinks } from '@/lib/config';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/terms' },
-  title: 'Terms & Conditions | Brett Snyder Portfolio',
+  title: 'Terms & Conditions',
   description: 'Terms and conditions for using the Brett Snyder portfolio website.',
   openGraph: {
-    title: 'Terms & Conditions | Brett Snyder Portfolio',
+    title: 'Terms & Conditions | Brett Snyder',
     description: 'Terms and conditions for using the Brett Snyder portfolio website.',
     type: 'website',
+    images: [shareImage],
   },
 };
 

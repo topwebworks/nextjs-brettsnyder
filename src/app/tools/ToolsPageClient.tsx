@@ -184,25 +184,29 @@ export default function UsesPage() {
       id: 'development',
       label: 'Development',
       icon: Code,
-      tools: developmentTools
+      tools: developmentTools,
+      description: 'The software and frameworks that form the backbone of my development workflow.'
     },
     {
       id: 'hardware',
       label: 'Hardware',
       icon: Monitor,
-      tools: hardwareSetup
+      tools: hardwareSetup,
+      description: 'The physical tools and devices that enable my productivity and creativity.'
     },
     {
       id: 'productivity',
       label: 'Productivity',
       icon: Zap,
-      tools: productivityTools
+      tools: productivityTools,
+      description: 'Apps and tools that enhance my daily productivity and work-life balance.'
     },
     {
       id: 'favorites',
       label: 'Favorites',
       icon: Star,
-      tools: favoritesTools
+      tools: favoritesTools,
+      description: 'My latest discoveries and favorite tools that are changing how I work and create.'
     }
   ];
 
@@ -218,6 +222,10 @@ export default function UsesPage() {
 
         {/* Tab Navigation */}
         <section className={styles.tabNavigationSection}>
+          <header className={styles.pageHeader}>
+            <h1 className={styles.pageTitle}>Tools I Use</h1>
+            <p className={styles.pageIntro}>{usesIntro.description}</p>
+          </header>
           <div className={styles.tabNavigationContainer}>
             <div className={styles.tabNavWrapper}>
               {/* Left Scroll Arrow */}
@@ -264,22 +272,22 @@ export default function UsesPage() {
         <section className={styles.tabContentSection}>
           
           <div className={styles.tabContentContainer}>
+            {/* Every tab is in the HTML so search engines see all tools; inactive tabs are just hidden. */}
+            {categories.map((category, index) => (
+            <div key={category.id} hidden={activeTab !== index}>
             {/* Category Header */}
             <div className={styles.categoryHeader}>
               <h2 className={styles.categoryTitle}>
-                {categories[activeTab].label}
+                {category.label}
               </h2>
               <p className={styles.categoryDescription}>
-                {activeTab === 0 && "The software and frameworks that form the backbone of my development workflow."}
-                {activeTab === 1 && "The physical tools and devices that enable my productivity and creativity."}
-                {activeTab === 2 && "Apps and tools that enhance my daily productivity and work-life balance."}
-                {activeTab === 3 && "My latest discoveries and favorite tools that are changing how I work and create."}
+                {category.description}
               </p>
             </div>
 
             {/* Tools Flexbox */}
             <div className={styles.toolsContainer}>
-              {categories[activeTab].tools.map((tool) => (
+              {category.tools.map((tool) => (
                 <div
                   key={tool.name}
                   className={styles.toolCard}
@@ -323,6 +331,8 @@ export default function UsesPage() {
                 </div>
               ))}
             </div>
+            </div>
+            ))}
 
             {/* Stats Row */}
             <div className={styles.statsContainer}>

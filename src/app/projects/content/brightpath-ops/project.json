@@ -1,7 +1,7 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
   "title": "Brightpath Operations",
-  "description": "A functional UI prototype for an internal operations tool designed to surface only what needs attention across events and courses, built to triage alerts from multiple platforms with AI-assisted notes once connected to live data.",
+  "description": "A functional UI prototype for an internal operations tool that surfaces only what needs attention across events, courses, and alerts from multiple platforms.",
   "technologies": [
     "Next.js",
     "TypeScript"
@@ -13,10 +13,11 @@
   "category": "Prototype",
   "status": "Prototype",
   "featured": false,
+  "designSystem": false,
   "publishDate": "2026-09-14",
   "contentTitle": "Only What Needs Attention",
   "readTime": "5 min read",
-  "excerpt": "A functional UI prototype for an internal operations tool designed to surface only what needs attention across events and courses, built to triage alerts from multiple platforms with AI-assisted notes once connected to live data.",
+  "excerpt": "A functional UI prototype for an internal operations tool that surfaces only what needs attention across events, courses, and alerts from multiple platforms.",
   "links": {
     "live": "https://nextjs-nr-ops.vercel.app"
   },

@@ -1,6 +1,6 @@
 ---
 title: "Brightpath Operations"
-description: "A functional UI prototype for an internal operations tool designed to surface only what needs attention across events and courses, built to triage alerts from multiple platforms with AI-assisted notes once connected to live data."
+description: "A functional UI prototype for an internal operations tool that surfaces only what needs attention across events, courses, and alerts from multiple platforms."
 contentTitle: "Only What Needs Attention"
 achievementTitle: ""
 technologies:

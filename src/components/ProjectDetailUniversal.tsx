@@ -11,6 +11,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
 import Button from '@/components/ui/Button';
+import ListenButton from '@/components/ui/ListenButton';
 import MarkdownContent from '@/components/ui/MarkdownContent';
 import EnhancedHTMLContent from '@/components/ui/EnhancedHTMLContent';
 import { getProjectImages, getProjectImageByFilename, projectImagesByFilename } from '@/lib/generated/projectImageImports';
@@ -521,6 +522,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                   <span className={styles.categoryText}>
                     {project.category}
                   </span>
+                  <ListenButton targetId="article-body" title={project.title} />
                 </div>
 
                 {project.designSystem && (
@@ -702,7 +704,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                   )}
 
                   {/* Long-form Case Study Content */}
-                  <div className={styles.caseStudyContent}>
+                  <div id="article-body" className={styles.caseStudyContent}>
                     {project.content?.overviewHtml ? (
                       <EnhancedHTMLContent 
                         content={project.content.overviewHtml} 
@@ -727,12 +729,13 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
 
               {/* Key Achievements & Impact - Only show if achievements exist */}
               {project.content?.keyAchievements && project.content.keyAchievements.length > 0 && (
-                <article className={styles.keyAchievementsSection}>
+                // A section, not a second <article>, so text extractors treat the summary as part of the main article.
+                <section className={styles.keyAchievementsSection} aria-labelledby="key-summary">
                   {/* Dynamic Accent Background - Success Green for Achievements */}
                   <div className={styles.achievementAccentBackground} />
                   
                   <div className={styles.achievementContent}>
-                    <h2 className={styles.achievementTitle}>
+                    <h2 id="key-summary" className={styles.achievementTitle}>
                       {project.achievementTitle || 'Key Achievements & Impact'}
                     </h2>
 
@@ -789,7 +792,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
 
                     </div>
                   </div>
-                </article>
+                </section>
               )}
 
             </div>

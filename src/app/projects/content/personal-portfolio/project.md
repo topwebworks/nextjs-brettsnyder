@@ -1,6 +1,6 @@
 ---
 title: "Personal Portfolio Site"
-description: "A complete rebuild of my personal portfolio site using the latest Next.js and React versions. Features a dark iridescent glassmorphism design with animated elements, and a hybrid JSON/markdown system."
+description: "A ground-up rebuild of my portfolio on the latest Next.js and React, with dark iridescent glassmorphism, animated elements, and a hybrid JSON/Markdown system."
 contentTitle: ""
 achievementTitle: ""
 technologies: 
@@ -59,7 +59,7 @@ Glass effects were appealing but could easily become cluttered. I added a slow-m
 
 1. **Homepage:** Once the design concepts were working, I added navigation and footer components to the layout. The header uses a sticky glass effect. I liked the glass blur there but found it too distracting with content panels, so I mainly used rgba transparency instead. I added placeholder latest project cards and fine-tuned hover effects (the dynamic content would come later). The timeline added some color but was mostly static content mapping.
 
-   This is where I hit the challenges of using bleeding-edge Next.js and React. Service worker issues, caching problems, Edge browser bugs, and Tailwind incompatibilities created constant friction. I almost switched back to stable versions, but knowing they'd be deprecated soon, I stuck with it. I ended up removing Tailwind entirely and creating my own utility classes. The framework versions were only weeks old, so bugs weren't surprising. Later I realized Vercel's Edge CDN made my service worker redundant, so I removed it and saw network performance improve.
+   This is where I hit the challenges of using bleeding-edge Next.js and React. Service worker issues, caching problems, Edge browser bugs, and Tailwind incompatibilities created constant friction. I almost switched back to stable versions, but knowing they'd be deprecated soon, I stuck with it. I ended up removing Tailwind entirely and creating [my own utility classes](/blog/design-systems). The framework versions were only weeks old, so bugs weren't surprising. Later I realized Vercel's Edge CDN made my service worker redundant, so I removed it and saw network performance improve.
 
 2. **About Page:** I followed the same approach as the homepage but didn't want all the animated orbs, so I built a configurable background component that adapts based on the page. The About page uses one animated orb (top-left) with the rest static. I then updated the homepage to use this same background component.
 

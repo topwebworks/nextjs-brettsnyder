@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { shareImage } from '@/lib/profile';
 import ToolsPage from './ToolsPageClient';
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     description:
       'The software, hardware, and workflow tools Brett Snyder uses for development, design, and productivity.',
     type: 'website',
+    images: [shareImage],
   },
 };
 

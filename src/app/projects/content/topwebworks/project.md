@@ -1,6 +1,6 @@
 ---
 title: "Top Web Works Rebrand"
-description: "A rebrand and rebuild of Top Web Works into a custom-built, lead-follow-up-focused web service for local businesses, with two design systems behind the client sites it builds."
+description: "A rebrand and rebuild of Top Web Works into a custom, lead-follow-up-focused web service for local businesses, with two design systems behind its client sites."
 contentTitle: "Websites That Capture and Follow Up on Every Lead"
 achievementTitle: ""
 technologies:
@@ -76,7 +76,7 @@ Setup fees and recurring maintenance get paid through Stripe invoices I send man
 
 ## The Blog
 
-The site includes a full blog. I ran it on Sanity for years, a solid headless CMS that plenty of companies build on. I eventually moved this site and my client sites to a custom MDX-based system instead, since content lives in the repo and ships with the same build, no separate CMS to manage.
+The site includes a full blog. I ran it on Sanity for years, a solid headless CMS that plenty of companies build on. I eventually moved this site and my [client sites](/projects/amw-hardscape) to a custom MDX-based system instead, since content lives in the repo and ships with the same build, no separate CMS to manage.
 
 ## Every Site Ships With the Lead System Built In
 
@@ -105,7 +105,7 @@ Running the business day to day also meant building a couple of private internal
 
 ## Three Design Systems, Each With a Job
 
-Topwebworks.com itself runs on a fully customized Tailwind design system I built for the marketing site. No generic templates, no colors fighting for attention, just a clean, modern build around the brand.
+Topwebworks.com itself runs on a fully customized Tailwind [design system](/blog/design-systems) I built for the marketing site. No generic templates, no colors fighting for attention, just a clean, modern build around the brand.
 
 Client sites run on two separate custom Next.js design systems instead, one for service sites and one for informational sites, in place of a page builder or UI kit. Both are conversion-focused, both are built from shared components and consistent styling, and both ship with the same lead capture and follow-up system underneath.
 

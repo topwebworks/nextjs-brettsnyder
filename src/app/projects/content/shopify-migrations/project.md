@@ -1,6 +1,6 @@
 ---
 title: "Shopify Plus Migrations"
-description: "A Shopify Plus marketing design system of reusable Liquid sections and schemas, built for designers and developers across three enterprise e-commerce migrations."
+description: "A Shopify Plus marketing design system of reusable Liquid sections and schemas, built for designers and developers across three enterprise migrations."
 contentTitle: "Three Migrations to Shopify Plus"
 achievementTitle: ""
 technologies:
@@ -32,7 +32,7 @@ media:
 
 ## Three Migrations, One Platform
 
-I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a custom marketing design system, giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
+I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a custom marketing [design system](/blog/design-systems), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
 
 ## A Design System, Built in Liquid
 

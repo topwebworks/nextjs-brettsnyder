@@ -1,7 +1,7 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
   "title": "Monarch Catalog Prototype",
-  "description": "From scratch html prototype built from provided design. Working interactions and fluid responsive provided for devs. Catalog also partnered with a microsite I built.",
+  "description": "A from-scratch HTML prototype built from a provided design, with working interactions and fluid responsive layouts for devs, plus a partner microsite I built.",
   "technologies": [
     "HTML",
     "CSS",
@@ -17,9 +17,10 @@
   "category": "Prototype",
   "status": "Retired",
   "featured": false,
+  "designSystem": false,
   "publishDate": "2021-06-01",
   "readTime": "5 min read",
-  "excerpt": "From scratch html prototype built from provided design. Working interactions and fluid responsive provided for devs. Catalog also partnered with a microsite I built.",
+  "excerpt": "A from-scratch HTML prototype built from a provided design, with working interactions and fluid responsive layouts for devs, plus a partner microsite I built.",
   "links": {},
   "content": {
     "overview": "\r\\n## Monarch Catalog Prototype\r\\n\r\\nI was asked to build an HTML prototype for home & detail pages, from a provided design. It was for a new online catalog and the devs wanted to see styles and responsive use before building it in Angular. They decided to use Material UI components, so I used Material.io (mdc) to get the ball rolling.\r\\nLINKS: [Listing Page](https://brettsnyder.me/demo/monarch-catalog/course-catalog.html) | [Detail Page](https://brettsnyder.me/demo/monarch-catalog/course-detail.html) | [404 Page](https://brettsnyder.me/demo/monarch-catalog/error-404.html)\r\\n\r\\n## Monarch Microsite\r\\n\r\\nHere is the microsite I built alongside the catalog prototype from provided designs. Marketing wanted an easy access CMS so I chose WordPress. Later, I updated CTA buttons with Free Trial email forms to forward to an onboarding site. \r\\nLINK: [Screenshot](https://brettsnyder.me/demo/monarch-demo.jpg)\r\\n\r\\nEDIT: This microsite and catalog are retired since we switched to Shopify, \r\\n\r\\n\r\\n\r\\n\r\\n",

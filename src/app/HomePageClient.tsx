@@ -212,11 +212,6 @@ export default function Homepage() {
 
           {/* Typography Hierarchy */}
           <div className={styles.heroContent}>
-            {/* Refined Role Badge */}
-            <div className={styles.roleBadge}>
-              DESIGN ENGINEER &amp; FRONTEND DEVELOPER
-            </div>
-
             {/* Mobile Portrait - Shows only on mobile */}
             <div className={styles.mobilePortraitContainer}>
               {/* Loading placeholder for mobile portrait */}
@@ -240,7 +235,11 @@ export default function Homepage() {
             </div>
 
             {/* Main Heading - with Animated Word */}
+            {/* The name badge sits inside the H1 so the homepage's main heading carries Brett's name for search.
+                The roles it used to list are the typed words below. */}
             <h1 className={styles.heroTitle}>
+              <span className={styles.roleBadge}>Brett Snyder</span>
+              <br />
               I am a
               <br />
               <span className={styles.animatedTextContainer}>
@@ -259,7 +258,7 @@ export default function Homepage() {
             {/* Refined Description */}
             <div>
               <p className={styles.heroSubtitle}>
-              I’m Brett Snyder. I build SaaS products, Shopify experiences, and conversion-focused&nbsp;websites.</p>
+              I build SaaS products, Shopify experiences, and conversion-focused&nbsp;websites.</p>
             </div>
 
             {/* CTA */}

@@ -107,7 +107,7 @@ Every chart comes from the data you supplied. A blank cell stays blank instead o
 
 ## Testing it on real sites
 
-Before calling it done, I ran it against eleven real sites: online stores, SaaS companies, a news site, and my own CyWire site. The first pass was too noisy. It reported a dataLayer reset on three large sites because a pattern matched inside minified code. It judged a page that had blocked the audit as if it were the real site. And it warned SaaS companies about missing purchase tracking when they convert on sign-ups.
+Before calling it done, I ran it against eleven real sites: online stores, SaaS companies, a news site, and my own [CyWire](/projects/cywire) site. The first pass was too noisy. It reported a dataLayer reset on three large sites because a pattern matched inside minified code. It judged a page that had blocked the audit as if it were the real site. And it warned SaaS companies about missing purchase tracking when they convert on sign-ups.
 
 I fixed each one. A reset now needs proof from the running page, blocked pages are reported as blocked, and purchase checks only apply to sites that sell. Errors across the eleven sites dropped by more than half, and what's left holds up when I check it by hand.
 

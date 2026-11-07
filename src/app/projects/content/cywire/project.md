@@ -1,6 +1,6 @@
 ---
 title: "CyWire Master Prompts"
-description: "A B2B SaaS platform built to create foundational data structure for AI features. Structured AI prompts with validated JSON outputs that work for any platform using JSON and AI."
+description: "A B2B SaaS platform that gives AI features a solid data structure: structured prompts with validated JSON output that works on any platform using JSON and AI."
 contentTitle: "Why AI Needs Structure"
 achievementTitle: ""
 technologies: 

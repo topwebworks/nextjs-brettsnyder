@@ -1,6 +1,6 @@
 ---
 title: "Monarch Catalog Prototype"
-description: "From scratch html prototype built from provided design. Working interactions and fluid responsive provided for devs. Catalog also partnered with a microsite I built."
+description: "A from-scratch HTML prototype built from a provided design, with working interactions and fluid responsive layouts for devs, plus a partner microsite I built."
 contentTitle: ""
 achievementTitle: ""
 technologies: 

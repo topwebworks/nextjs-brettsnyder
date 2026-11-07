@@ -1,7 +1,7 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
   "title": "PushPad",
-  "description": "An in-progress supplemental learning platform where educators build 7-section lesson pads and PushPad grades them, gates progress on mastery, and adapts the path with educator approval.",
+  "description": "An in-progress learning platform where educators build 7-section lesson pads that PushPad grades, gates on mastery, and adapts with their approval.",
   "technologies": [
     "Next.js",
     "React",
@@ -25,7 +25,7 @@
   "publishDate": "2026-09-21",
   "contentTitle": "Start Small. Learn Big.",
   "readTime": "5 min read",
-  "excerpt": "An in-progress supplemental learning platform where educators build 7-section lesson pads and PushPad grades them, gates progress on mastery, and adapts the path with educator approval.",
+  "excerpt": "An in-progress learning platform where educators build 7-section lesson pads that PushPad grades, gates on mastery, and adapts with their approval.",
   "links": {
     "live": "https://pushpad.com"
   },

@@ -1,7 +1,7 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
   "title": "HTML Email",
-  "description": "It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from.",
+  "description": "HTML email is a different animal than landing pages. Years ago, I created a master email template that the entire art department pulled from.",
   "technologies": [
     "HTML",
     "CSS",
@@ -19,7 +19,7 @@
   "publishDate": "2017-01-15",
   "contentTitle": "A Different Animal",
   "readTime": "5 min read",
-  "excerpt": "It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from.",
+  "excerpt": "HTML email is a different animal than landing pages. Years ago, I created a master email template that the entire art department pulled from.",
   "links": {
     "demo": "/demo/emails/sample2/index.html",
     "live": "/demo/emails/master-email/index.html"

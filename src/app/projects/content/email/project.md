@@ -1,7 +1,7 @@
 ---
 # PROJECT METADATA - Remove comments after editing
 title: "HTML Email"
-description: "It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from."
+description: "HTML email is a different animal than landing pages. Years ago, I created a master email template that the entire art department pulled from."
 contentTitle: "A Different Animal"
 achievementTitle: ""
 technologies:

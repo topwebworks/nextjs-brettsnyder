@@ -7,6 +7,7 @@ import ProjectDetailUniversal from '@/components/ProjectDetailUniversal';
 import { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
 import { getProjectImages } from '@/lib/generated/projectImageImports';
+import { breadcrumbSchema, personSchema, shareImage, summaryAbstract } from '@/lib/profile';
 
 const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
@@ -30,6 +31,8 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       };
     }
     
+    const hero = getProjectImages(slug).hero;
+
     return {
       title: projectData.title,
       alternates: { canonical: `/projects/${slug}` },
@@ -38,6 +41,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
         title: projectData.title,
         description: projectData.description,
         type: 'website',
+        images: [hero ? { url: hero.src, width: hero.width, height: hero.height, alt: projectData.title } : shareImage],
       },
       twitter: {
         card: 'summary_large_image',
@@ -85,15 +89,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': isCyWire ? 'SoftwareApplication' : 'CreativeWork',
-    name: project.title,
-    description: project.description,
-    url: `${siteUrl}/projects/${sanitizedSlug}`,
-    ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
-    ...(isCyWire && {
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web',
-    }),
+    '@graph': [
+      {
+        '@type': isCyWire ? 'SoftwareApplication' : 'CreativeWork',
+        name: project.title,
+        description: project.description,
+        url: `${siteUrl}/projects/${sanitizedSlug}`,
+        author: personSchema,
+        datePublished: project.publishDate,
+        dateModified: project.updatedDate || project.publishDate,
+        abstract: summaryAbstract(project.content?.keyAchievements),
+        keywords: project.technologies,
+        ...(heroImage && { image: `${siteUrl}${heroImage.src}` }),
+        ...(isCyWire && {
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          featureList: project.content?.keyAchievements?.flatMap((a) => a.metrics ?? []),
+        }),
+      },
+      breadcrumbSchema('Projects', 'projects', project.title),
+    ],
   };
 
   // Render using the universal project detail component
