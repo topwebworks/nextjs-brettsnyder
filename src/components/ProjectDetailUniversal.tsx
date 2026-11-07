@@ -313,6 +313,9 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
 
   // Render media gallery section - extracted for better JSX parsing
   const renderMediaGallery = () => {
+    // A lone item is already showing as the hero, so its thumbnail would only repeat it
+    if (unifiedMediaItems.length === 1) return null;
+
     // Only show media gallery if we have actual media items to display in the scrollable thumbnails
     const hasMediaItems = unifiedMediaItems.length > 0;
     const hasStaticScreenshots = staticImages.screenshots && staticImages.screenshots.length > 0;

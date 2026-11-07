@@ -174,7 +174,10 @@ async function convertMarkdownToRichHTML(markdownContent, projectId, projectImag
     
     // First, convert markdown to HTML
     let html = markedInstance(markdownContent);
-    
+
+    // marked wraps image-only lines in <p>, but images render as blocks, which can't sit inside <p>
+    html = html.replace(/<p>((?:\s*<img[^>]*>\s*(?:<br\s*\/?>)?)+\s*)<\/p>/gi, '$1');
+
     // Process images: Convert to Next.js Image component strings
     html = processImagesInHTML(html, projectId, projectImages);
     
@@ -200,9 +203,10 @@ function processImagesInHTML(html, projectId, projectImages = {}) {
       const staticImport = findStaticImportForImage(projectId, imageName, projectImages);
       
       if (staticImport) {
-        // Generate Next.js Image component string with caption
-        const imageComponent = `<Image 
-  src={${staticImport}} 
+        // No wrapper: EnhancedHTMLContent splits the HTML at each <Image /> and adds its own,
+        // so tags around it here would end up unbalanced across the split and break hydration
+        return `<Image
+  src={${staticImport}}
   alt="${alt || 'Project Image'}" 
   class="project-content-image"
   width={800} 
@@ -219,20 +223,6 @@ function processImagesInHTML(html, projectId, projectImages = {}) {
     border: '1px solid rgba(255, 255, 255, 0.2)'
   }}
 />`;
-        
-        // Add caption if alt text is provided
-        if (alt && alt.trim() !== '' && alt !== 'Project Image') {
-          return `<div style="margin-bottom: 0rem;">
-  <div class="image-container">
-  ${imageComponent}
-  </div>
-
-</div>`;
-        }
-        
-        return `<div class="image-container">
-  ${imageComponent}
-</div>`;
       }
     }
     
