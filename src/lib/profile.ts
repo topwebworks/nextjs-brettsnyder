@@ -22,7 +22,7 @@ export const personSchema = {
   },
   worksFor: [
     { '@type': 'Organization', name: 'Cosaint, Inc.' },
-    { '@type': 'Organization', name: 'TopWebWorks', url: 'https://topwebworks.com' },
+    { '@type': 'Organization', '@id': 'https://topwebworks.com/#organization', name: 'Top Web Works', url: 'https://topwebworks.com' },
   ],
   knowsAbout: [
     'Frontend development',

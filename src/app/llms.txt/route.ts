@@ -29,10 +29,20 @@ export async function GET() {
     `- [Tools](${siteUrl}/tools): The software, hardware, and workflow tools Brett uses.`,
   ].filter(Boolean);
 
+  // Each of these marks Brett with the same Person @id, so answer engines can tie them back here.
+  const sites = [
+    '- [Top Web Works](https://topwebworks.com): Website and marketing studio in Queen Creek, AZ, founded by Brett.',
+    '- [CyWire](https://cywire.com): Master prompt marketplace and AI workflow platform, founded by Brett.',
+    '- [PushPad](https://pushpad.com): Lesson pads and targeted practice for educators, founded by Brett.',
+    '- [JesusChrist.art](https://www.jesuschrist.art): Free Christian artwork drawn and made by Brett.',
+    '- [Inspiration Library](https://inspire.jesuschrist.art): Short Christian stories written and gathered by Brett.',
+  ];
+
   const body = [
     '# Brett Snyder',
     `> ${siteDescription}`,
     `## About\n\n${about.join('\n')}`,
+    `## Sites Brett runs\n\n${sites.join('\n')}`,
     `## Projects\n\n${links('projects', projects)}`,
     `## Blog\n\n${links('blog', blogs)}`,
   ].join('\n\n');
