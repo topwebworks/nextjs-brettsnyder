@@ -628,9 +628,10 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                             <div className={styles.metaInfoItem}>
                               <Calendar size={16} className={styles.metaIcon} />
                               <span className={styles.metaText}>
-                                {new Date(project.publishDate).toLocaleDateString('en-US', { 
-                                  year: 'numeric', 
-                                  month: 'short' 
+                                {new Date(project.publishDate).toLocaleDateString('en-US', {
+                                  year: 'numeric',
+                                  month: 'short',
+                                  timeZone: 'UTC' // date-only strings parse as UTC; keeps server and browser on the same month
                                 })}
                               </span>
                             </div>

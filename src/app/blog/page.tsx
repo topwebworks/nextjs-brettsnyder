@@ -180,9 +180,10 @@ export default async function BlogPage() {
                           <div className={styles.blogDateInfo}>
                             <Calendar size={14} />
                             {blog?.publishDate 
-                              ? new Date(blog.publishDate).toLocaleDateString('en-US', { 
-                                  year: 'numeric', 
-                                  month: 'short' 
+                              ? new Date(blog.publishDate).toLocaleDateString('en-US', {
+                                  year: 'numeric',
+                                  month: 'short',
+                                  timeZone: 'UTC' // date-only strings parse as UTC; keeps server and browser on the same month
                                 })
                               : 'No Date'
                             }

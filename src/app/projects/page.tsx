@@ -207,7 +207,8 @@ export default async function ProjectsPage() {
                             {project?.publishDate
                               ? new Date(project.publishDate).toLocaleDateString('en-US', {
                                   year: 'numeric',
-                                  month: 'short'
+                                  month: 'short',
+                                  timeZone: 'UTC' // date-only strings parse as UTC; keeps server and browser on the same month
                                 })
                               : 'No Date'
                             }
