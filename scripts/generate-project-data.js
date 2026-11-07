@@ -309,10 +309,6 @@ function applyGoldStandardStyling(html) {
   html = html.replace(/<ul>/gi, '<ul class="project-content-list">');
   html = html.replace(/<ol>/gi, '<ol class="project-content-list project-numbered-list">');
   
-  // Style code blocks
-  html = html.replace(/<pre><code>/gi, '<div class="project-code-block"><pre><code>');
-  html = html.replace(/<\/code><\/pre>/gi, '</code></pre></div>');
-  
   // Style inline code
   html = html.replace(/<code>/gi, '<code class="project-inline-code">');
   

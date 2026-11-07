@@ -12,7 +12,7 @@ featured: false
 designSystem: true
 publishDate: "2022-06-01"
 links:
-  live: "https://topwebworks.com/works/aop"
+  live: "https://aop.com"
 keyAchievements:
   - type: "technical"
     icon: "🤝"
@@ -24,12 +24,15 @@ keyAchievements:
       - "Ensured ADA-compliant markup and accessibility on every custom marketing section built"
       - "Ongoing bug fixes and production support after each launch"
 media:
-  items: []
+  items:
+    - type: "video"
+      title: "Custom Shopify Sections"
+      src: "https://www.youtube.com/watch?v=GvHgPfRyoe4"
 ---
 
 ## Three Migrations, One Platform
 
-I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a [custom marketing design system](https://topwebworks.com/works/aop), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
+I planned and led migrations of three enterprise e-commerce properties to Shopify Plus. Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a custom marketing design system, giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
 
 ## A Design System, Built in Liquid
 

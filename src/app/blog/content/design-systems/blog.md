@@ -15,7 +15,7 @@ featured: true
 readTime: "9 min read"
 publishDate: "2026-09-23"
 links:
-  live: "https://topwebworks.com/works/aop"
+  demo: "/projects/shopify-migrations"
 author: "Brett Snyder"
 excerpt: "I was building design systems before anyone called them that. Here's what they are, how I use tokens, and why every one I've built started as the answer to a real deadline, not a trend."
 keyAchievements:
