@@ -442,11 +442,15 @@ export default function AboutPage() {
                       {faq.a.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
-                      {faq.link && (
-                        <Link href={faq.link.href} className={styles.faqLink}>
-                          {faq.link.label}
-                          <ArrowRight size={16} aria-hidden="true" />
-                        </Link>
+                      {faq.links && (
+                        <div className={styles.faqLinks}>
+                          {faq.links.map((link) => (
+                            <Link key={link.href} href={link.href} className={styles.faqLink}>
+                              {link.label}
+                              <ArrowRight size={16} aria-hidden="true" />
+                            </Link>
+                          ))}
+                        </div>
                       )}
                     </div>
                   </details>

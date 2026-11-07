@@ -88,7 +88,7 @@ A second menu covers search. It reads exports you already have, in your browser,
 - **Search performance**: Search Console exports, with weighted CTR and position, trends, and the pages or queries worth a closer look.
 - **Keyword opportunities**: Keyword Planner estimates next to the queries Search Console says you already get.
 - **SEO health**: indexing, metadata and content checks for one page.
-- **Answer visibility**: how clearly a page answers questions and shows its sources, which is what AI answer engines pick up.
+- **Answer visibility**: how clearly a page answers questions and shows its sources, which is what [AI answer engines](/projects/topwebworks) pick up.
 - **AI referrals**: visits and outcomes from ChatGPT, Perplexity, Claude, Copilot and Gemini in your GA4 data.
 
 Nothing is uploaded, and there's no invented visibility score. Every number comes from a file you chose, and the report says which one.

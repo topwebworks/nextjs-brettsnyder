@@ -35,6 +35,12 @@ export const personSchema = {
     'WordPress',
     'AI and agentic development',
     'Conversion-focused websites',
+    'Lead generation and marketing automation',
+    'Search engine optimization (SEO)',
+    'Answer engine optimization (AEO)',
+    'Generative engine optimization (GEO)',
+    'Web analytics, GA4, and Google Tag Manager',
+    'Digital marketing',
   ],
   sameAs: [siteConfig.github, siteConfig.linkedin, 'https://topwebworks.com/about'].filter(Boolean) as string[],
 };

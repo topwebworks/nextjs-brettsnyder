@@ -105,6 +105,8 @@ export default function ListenButton({
   if (voices.length === 0) return null;
 
   const voice = voices.find((v) => v.voiceURI === voiceURI) ?? voices[0];
+  // Edge's Natural and Apple's Premium/Enhanced voices sound human; without one, point to Edge.
+  const hint = /Natural|Premium|Enhanced/i.test(voices[0].name) ? undefined : 'Sounds best in Microsoft Edge';
 
   function start() {
     const text = document.getElementById(targetId)?.innerText ?? '';
@@ -172,7 +174,7 @@ export default function ListenButton({
 
   return (
     <div className={className ? `${styles.listen} ${className}` : styles.listen}>
-      <button type="button" onClick={toggle} className={styles.toggle}>
+      <button type="button" onClick={toggle} className={styles.toggle} title={status === 'idle' ? hint : undefined}>
         <Icon size={16} aria-hidden="true" />
         {label}
       </button>

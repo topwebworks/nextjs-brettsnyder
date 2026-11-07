@@ -1,13 +1,50 @@
 // About page FAQ. Shared by the visible section and its FAQPage structured data, so the two always match.
-export type Faq = { q: string; a: string[]; link?: { href: string; label: string } };
+export type Faq = { q: string; a: string[]; links?: { href: string; label: string }[] };
 
 export const faqs: Faq[] = [
   {
+    q: 'Who is Brett Snyder?',
+    a: [
+      'I’m a frontend developer and design engineer in Queen Creek, Arizona, with more than 15 years building websites. I started as a designer and moved into code. Today I’m the founder of Cosaint, Inc., the company behind CyWire and TopWebWorks.',
+    ],
+  },
+  {
+    q: 'What kind of work does Brett Snyder do?',
+    a: [
+      'I design and build websites and web products: SaaS platforms like CyWire, design systems, and Shopify stores, including three Shopify Plus migrations at Imagine Learning.',
+      'Through TopWebWorks, I build custom websites and Shopify stores for local businesses and set up what happens after someone reaches out: lead capture, automated email and text follow-up, SEO, and ongoing digital marketing.',
+    ],
+    links: [
+      { href: '/projects/cywire', label: 'CyWire' },
+      { href: '/projects/shopify-migrations', label: 'Shopify Plus migrations' },
+      { href: '/projects/topwebworks', label: 'TopWebWorks' },
+    ],
+  },
+  {
+    q: 'Is Brett Snyder available for work?',
+    a: [
+      'Yes, I’m open to new work. Click Say Hello or any mail icon and tell me what you have in mind.',
+    ],
+  },
+  {
+    q: 'Does Brett Snyder handle SEO, AEO, GEO, and web analytics?',
+    a: [
+      'Yes. SEO gets a site found on Google. AEO (answer engine optimization) and GEO (generative engine optimization) get it quoted by AI tools like ChatGPT, Perplexity, and Google AI Overviews. I build for all three: fast, crawlable pages, JSON-LD structured data, and content written as direct answers an AI can lift.',
+      'For analytics, I set up and audit GA4, Google Tag Manager, and Search Console. I also built Analytics Workbench, a tool that records what a page sends to GTM, GA4, and ad platforms and explains each tracking problem as a fix.',
+      'It works. People have told me they found TopWebWorks through ChatGPT.',
+    ],
+    links: [
+      { href: '/projects/analytics-workbench', label: 'Analytics Workbench' },
+      { href: '/projects/topwebworks', label: 'SEO, AEO, and GEO at TopWebWorks' },
+      { href: '/projects/amw-hardscape', label: 'AMW Hardscape client site' },
+    ],
+  },
+  {
     q: 'Did you build this site yourself?',
     a: [
-      'Yes, from scratch. I designed it in the browser and built it on the newest Next.js and React right after they came out. When Tailwind didn’t play well with them, I dropped it and wrote my own CSS.',
+      'Yes, from scratch. I built it on the newest Next.js and React right after they came out. When Tailwind didn’t play well with them, I dropped it and wrote my own CSS.',
     ],
-    link: { href: '/projects/personal-portfolio', label: 'Read the build story' },
+    links: [{ href: '/projects/personal-portfolio', label: 'Read the build story' }],
   },
   {
     q: 'How do I get a copy of your resume?',

@@ -113,7 +113,7 @@ Client sites run on two separate custom Next.js design systems instead, one for 
 
 Search visibility doesn't just mean traditional SEO anymore. A lot of buying research now happens inside AI answer engines like ChatGPT, Perplexity, and Google AI Overviews, so I built the site to perform in both worlds at once: SEO for search engines, AEO (answer engine optimization) and GEO (generative engine optimization) for AI-driven discovery.
 
-On the technical SEO side: sitemap.xml, robots.txt, canonical URLs, and real attention to Core Web Vitals so pages stay fast and fully crawlable.
+On the technical SEO side: sitemap.xml, robots.txt, canonical URLs, and real attention to [Core Web Vitals](/projects/analytics-workbench) so pages stay fast and fully crawlable.
 
 For structured data, I added JSON-LD schema (Organization, Product, FAQ) so search engines and AI crawlers can read exactly what the business offers instead of inferring it from unstructured page copy.
 
