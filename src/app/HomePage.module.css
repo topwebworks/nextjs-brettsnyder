@@ -593,6 +593,11 @@
   .heroSubtitle {
     font-size: clamp(1rem, 4vw, 1.2rem);
   }
+
+  /* The portrait sits above the badge on mobile and already supplies the gap */
+  .roleBadge {
+    padding-top: 0;
+  }
   
   .heroActions {
     flex-wrap: wrap;
@@ -622,7 +627,7 @@
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto 2rem auto;
+    margin: 2rem auto; /* gap from the social icons; the badge used to sit here */
     border: 3px solid rgba(var(--accent-rgb), 0.3);
     box-shadow: 0 8px 32px rgba(var(--accent-rgb), 0.2);
     transition: all 0.4s ease;
