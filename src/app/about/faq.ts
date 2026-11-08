@@ -11,7 +11,7 @@ export const faqs: Faq[] = [
   {
     q: 'What kind of work does Brett Snyder do?',
     a: [
-      'I design and build websites and web products: SaaS platforms like CyWire, design systems, and Shopify stores, including three Shopify Plus migrations at Imagine Learning.',
+      'I design and build websites and web products: SaaS platforms like CyWire, design systems, and Shopify stores, including two Shopify Plus migrations at Imagine Learning.',
       'Through TopWebWorks, I build custom websites and Shopify stores for local businesses and set up what happens after someone reaches out: lead capture, automated email and text follow-up, SEO, and ongoing digital marketing.',
     ],
     links: [

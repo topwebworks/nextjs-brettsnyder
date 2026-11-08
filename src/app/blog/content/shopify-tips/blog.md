@@ -34,7 +34,7 @@ media:
 
 ---
 
-Shopify offers a broad mix of simplicity and power. Here are practical notes on theme selection, Liquid, schema, and content workflows for building a scalable, maintainable&nbsp;store. This is the practical side of the work behind my [three migrations to Shopify Plus](/projects/shopify-migrations).
+Shopify offers a broad mix of simplicity and power. Here are practical notes on theme selection, Liquid, schema, and content workflows for building a scalable, maintainable&nbsp;store. This is the practical side of the work behind my [two migrations to Shopify Plus](/projects/shopify-migrations).
 
 ## Would I Recommend Shopify?
 

@@ -7,7 +7,7 @@ Dear Hiring Team,
 
 I'm a frontend developer and design engineer with 15+ years across enterprise marketing websites, e-commerce, and recent SaaS work. I work across design, development, and marketing, turning Figma concepts and business goals into accessible, maintainable web experiences.
 
-At Imagine Learning, I progressed from Senior Designer to UI/UX Designer/Developer and Marketing Web Developer. I managed 13 WordPress sites and one custom CMS property, led three Shopify migrations, and built reusable design systems across HTML/CSS, Liquid, and email. My Master Blocks system cut landing-page production time by 40% across more than 50 conversion-focused pages while giving marketing teams components they could edit and reuse. I also used A/B testing and heatmap data to guide improvements and mentored 12+ team members.
+At Imagine Learning, I progressed from Senior Designer to UI/UX Designer/Developer and Marketing Web Developer. I managed 13 WordPress sites and one custom CMS property, led two Shopify migrations, and built reusable design systems across HTML/CSS, Liquid, and email. My Master Blocks system cut landing-page production time by 40% across more than 50 conversion-focused pages while giving marketing teams components they could edit and reuse. I also used A/B testing and heatmap data to guide improvements and mentored 12+ team members.
 
 More recently, I launched CyWire, a B2B AI platform, in three months using Next.js, React, TypeScript, Supabase, and Vercel. I designed its structured-output system and built the visual builder, knowledge base, and team workspaces. At TopWebWorks, I built a design system for the marketing site and two reusable Next.js component systems for client sites, alongside lead-capture and follow-up workflows.
 

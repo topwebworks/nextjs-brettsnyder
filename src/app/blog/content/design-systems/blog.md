@@ -25,7 +25,7 @@ keyAchievements:
     description: "Token-based design systems built and used across static HTML, Shopify Liquid, email, and Next.js, each one solving a specific production problem instead of following a trend."
     metrics:
       - "Master Blocks cut landing-page production time 40% across 50+ pages"
-      - "One Liquid design system reused across 3 Shopify migrations and 2 theme frameworks, re-tokened per brand"
+      - "One Liquid design system reused across 2 Shopify migrations on 2 theme frameworks, re-tokened per brand"
       - "TopWebWorks runs three separate systems, one marketing site and two client site types"
       - "This portfolio runs on the same token approach in CSS Modules"
 media:
@@ -71,13 +71,13 @@ The default block order wasn't a guess either. I'd run A/B tests on landing page
 
 It cut landing-page production time 40% across more than 50 conversion-focused pages. What looked like an impossible ask on a Thursday afternoon turned into a process I could hand off and&nbsp;repeat.
 
-## Shopify: One System, Three Storefronts, Two Theme Frameworks
+## Shopify: One System, Two Storefronts, Two Theme Frameworks
 
 Later, I was handed the job of migrating existing e-commerce sites to Shopify, including AOP.com. The theme's default marketing sections covered the basics, but not what these specific pages needed to&nbsp;convert.
 
 Rather than stretch a default section further than it was meant to go, or add a paid app to cover the gap, I [built custom Liquid sections](/blog/shopify-tips) with shared tokens and schema settings marketing could configure on their own. I kept the work additive to the theme, so the upgrade path never broke. On AOP specifically, I stayed inside sections that were already approved for UI and UX, even while customizing them, so the new work never needed a fresh round of design approval. It was still inside what had already been signed&nbsp;off.
 
-That system didn't stay on one storefront. I carried it across three separate Shopify migrations, swapping in each brand's own tokens, color, type, spacing, so each site looked like itself while the underlying sections and schema stayed the same. Two of those migrations landed on different theme frameworks entirely, which meant the system had to hold up against Shopify's own architecture changing underneath it, not just a fresh coat of&nbsp;brand.
+That system didn't stay on one storefront. I carried it across two separate Shopify migrations, [AOP.com](https://www.aop.com) and [Ignite Christian Academy](https://www.ignitechristianacademy.com), swapping in each brand's own tokens, color, type, spacing, so each site looked like itself while the underlying sections and schema stayed the same. The two migrations landed on different theme frameworks entirely, which meant the system had to hold up against Shopify's own architecture changing underneath it, not just a fresh coat of&nbsp;brand.
 
 ## TopWebWorks: Fast Without Being Generic
 
