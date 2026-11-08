@@ -20,7 +20,7 @@ keyAchievements:
     description: "Worked directly with designers and business stakeholders as the developer on each migration, plus bug fixes and production support."
     metrics:
       - "Design system live on AOP.com and IgniteChristianAcademy.com, across two theme frameworks (Kalles and Horizon)"
-      - "Built custom dynamic product detail and collection page templates into Ignite's system"
+      - "Built custom dynamic product detail and collection page templates and a fully custom navigation header and footer into Ignite's system"
       - "Handed the finished system to marketing; their design department chose the content, assets, section pacing, and brand color use"
       - "Built conversion-focused custom marketing sections in direct collaboration with designers and stakeholders"
       - "Analytics stack: Google Tag Manager, GA4, Shopify Analytics, Shoplift, and Crazy Egg"
@@ -37,7 +37,7 @@ media:
 
 I planned and led migrations of two enterprise e-commerce properties to Shopify Plus, [AOP.com](https://www.aop.com) and [Ignite Christian Academy](https://www.ignitechristianacademy.com). Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a custom marketing [design system](/blog/design-systems), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
 
-Both stores run on the design system: AOP.com on the Kalles theme and Ignite Christian Academy on Shopify's Horizon theme. For Ignite, the system went past marketing sections: I added custom dynamic product detail and collection page templates. I handed the finished system to the marketing department, and their design department chose the content, assets, section pacing, and brand color&nbsp;use.
+Both stores run on the design system: AOP.com on the Kalles theme and Ignite Christian Academy on Shopify's Horizon theme. For Ignite, the system went past marketing sections: I added custom dynamic product detail and collection page templates and a fully custom navigation header and footer. I handed the finished system to the marketing department, and their design department chose the content, assets, section pacing, and brand color&nbsp;use.
 
 ## A Design System, Built in Liquid
 
