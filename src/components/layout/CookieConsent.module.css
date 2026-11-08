@@ -2,19 +2,27 @@
 
 .banner {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   z-index: 100;
+  max-width: 48rem;
+  margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem clamp(1rem, 4vw, 2rem);
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
   background: var(--glass-gradient-linear), var(--glass-gradient-mesh);
   backdrop-filter: var(--glass-backdrop-medium);
-  border-top: 1px solid var(--glass-border-primary);
+  border: 1px solid var(--glass-border-primary);
+  box-shadow: var(--shadow-xl);
+}
+
+.banner .text {
+  flex: 1 1 18rem;
 }
 
 .overlay {
@@ -187,6 +195,10 @@
     flex-direction: column;
     align-items: stretch;
     text-align: center;
+  }
+
+  .banner .text {
+    flex: none;
   }
 
   .actions {
