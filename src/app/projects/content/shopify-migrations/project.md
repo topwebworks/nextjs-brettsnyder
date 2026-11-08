@@ -20,6 +20,7 @@ keyAchievements:
     description: "Worked directly with designers and business stakeholders as the developer on each migration, then supported each store after launch."
     metrics:
       - "Design system live on AOP.com and IgniteChristianAcademy.com, across two theme frameworks (Kalles and Horizon)"
+      - "Extended Ignite's system with custom dynamic product detail and collection page templates"
       - "Built conversion-focused custom marketing sections in direct collaboration with designers and stakeholders"
       - "Analytics stack: Google Tag Manager, GA4, Shopify Analytics, Shoplift, and Crazy Egg"
       - "Ensured ADA-compliant markup and accessibility on every custom marketing section built"
@@ -35,7 +36,7 @@ media:
 
 I planned and led migrations of two enterprise e-commerce properties to Shopify Plus, [AOP.com](https://www.aop.com) and [Ignite Christian Academy](https://www.ignitechristianacademy.com). Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a custom marketing [design system](/blog/design-systems), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
 
-Both stores are live on the design system today: AOP.com on the Kalles theme and Ignite Christian Academy on Shopify's Horizon theme. AOP's team added the content and&nbsp;images.
+Both stores are live on the design system today: AOP.com on the Kalles theme and Ignite Christian Academy on Shopify's Horizon theme. For Ignite, the system went past marketing sections: I added custom dynamic product detail and collection page templates. AOP's team added the content and&nbsp;images.
 
 ## A Design System, Built in Liquid
 
