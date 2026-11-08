@@ -73,7 +73,7 @@ It cut landing-page production time 40% across more than 50 conversion-focused p
 
 ## Shopify: One System, Two Storefronts, Two Theme Frameworks
 
-Later, I was handed the job of migrating existing e-commerce sites to Shopify, including AOP.com. The theme's default marketing sections covered the basics, but not what these specific pages needed to&nbsp;convert.
+Later, I was handed the job of migrating existing e-commerce sites to Shopify, including AOP.com and IgniteChristianAcademy.com. The theme's default marketing sections covered the basics, but not what these specific pages needed to&nbsp;convert.
 
 Rather than stretch a default section further than it was meant to go, or add a paid app to cover the gap, I [built custom Liquid sections](/blog/shopify-tips) with shared tokens and schema settings marketing could configure on their own. I kept the work additive to the theme, so the upgrade path never broke. On AOP specifically, I stayed inside sections that were already approved for UI and UX, even while customizing them, so the new work never needed a fresh round of design approval. It was still inside what had already been signed&nbsp;off.
 

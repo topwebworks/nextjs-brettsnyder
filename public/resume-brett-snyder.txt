@@ -33,7 +33,7 @@ Imagine Learning (formerly Weld North Education / Glynlyon Inc.) | Arizona (Remo
 
 - Built Master Blocks, a token-based HTML/CSS design system that reduced landing-page production time by 40% across more than 50 conversion-focused pages and gave marketing teams reusable, CMS-compatible components.
 - Managed 13 WordPress sites on Pantheon and one custom CMS property, building accessible, responsive pages for enterprise campaigns.
-- Led two Shopify migrations with one reusable Liquid design system across two theme frameworks, using brand tokens and configurable sections to replace paid apps and give marketers page controls.
+- Led two Shopify migrations (AOP.com, IgniteChristianAcademy.com) with one Liquid design system across two theme frameworks: custom sections that replaced paid apps, plus product, collection, header, and footer templates.
 - Turned Figma designs into accessible web pages and responsive emails, using A/B testing and heatmap data to guide improvements; mentored 12+ team members and improved design-to-development handoffs.
 
 UI/UX DESIGNER/DEVELOPER
