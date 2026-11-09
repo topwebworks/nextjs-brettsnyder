@@ -1,5 +1,5 @@
 import React, { ViewTransition } from 'react';
-import { Calendar, Clock, Tag } from 'lucide-react';
+import { Calendar, Clock, Tag, Volume2 } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -189,6 +189,9 @@ export default async function BlogPage() {
                                 })
                               : 'No Date'
                             }
+                            {/* Hint only: every post has a Listen button at the top. */}
+                            <span aria-hidden="true">·</span>
+                            <Volume2 size={14} role="img" aria-label="Audio available" />
                           </div>
                         </div>
 

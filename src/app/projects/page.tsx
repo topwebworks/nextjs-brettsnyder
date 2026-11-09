@@ -2,7 +2,7 @@
 // This replaces the old API-based approach with direct JSX content templates
 
 import React, { ViewTransition } from 'react';
-import { Github, Calendar } from 'lucide-react';
+import { Github, Calendar, Volume2 } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -214,6 +214,9 @@ export default async function ProjectsPage() {
                                 })
                               : 'No Date'
                             }
+                            {/* Hint only: every project page has a Listen button at the top. */}
+                            <span aria-hidden="true">·</span>
+                            <Volume2 size={14} role="img" aria-label="Audio available" />
                           </div>
 
                           {(project.links?.demo || project.links?.live || project.links?.github) && (
