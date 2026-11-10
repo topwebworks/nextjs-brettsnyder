@@ -14,6 +14,7 @@ import { siteConfig, emailLinks } from '@/lib/config';
 import ResumeButton from '@/components/ui/ResumeButton';
 import { latestProjects } from '@/lib/generated/latestProjects';
 import professionalPortrait from '../../public/brett-snyder-portrait.jpg';
+import squarePortrait from '../../public/brett-snyder-portrait-square.jpg';
 import styles from './HomePage.module.css';
 
 // Memoize static data to prevent unnecessary re-renders
@@ -222,8 +223,8 @@ export default function Homepage() {
               )}
               
               <Image 
-                src={professionalPortrait}
-                overrideSrc="/brett-snyder-portrait.jpg"
+                src={squarePortrait}
+                overrideSrc="/brett-snyder-portrait-square.jpg"
                 alt="Portrait of Brett Snyder"
                 width={120}
                 height={120}

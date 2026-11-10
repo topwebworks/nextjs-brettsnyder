@@ -46,7 +46,7 @@ export const personSchema = {
 };
 
 // A page that sets its own openGraph replaces the layout's, so every page passes this (or its hero) explicitly.
-export const shareImage = { url: '/brett-snyder-portrait.jpg', width: 896, height: 1200, alt: 'Brett Snyder' };
+export const shareImage = { url: '/brett-snyder-portrait.jpg', width: 1140, height: 1520, alt: 'Brett Snyder' };
 
 // The bottom-of-page summary card as plain sentences: JSON-LD `abstract` for answer engines. Same facts as the visible card.
 export function summaryAbstract(achievements: KeyAchievement[] = []) {
