@@ -52,6 +52,17 @@ const nextConfig: NextConfig = {
         destination: '/blog/shopify-tips',
         permanent: true,
       },
+      {
+        source: '/blog/shopify-what-i-learned',
+        destination: '/blog/shopify-tips',
+        permanent: true,
+      },
+      // Old resume filenames still linked externally
+      {
+        source: '/:file(Brett_Snyder_resume\\.pdf|my_resume\\.docx)',
+        destination: '/resume-brett-snyder.pdf',
+        permanent: true,
+      },
     ];
   },
 }
