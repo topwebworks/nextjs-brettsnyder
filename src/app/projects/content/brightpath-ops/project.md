@@ -1,48 +1,81 @@
 ---
-title: "Brightpath Operations"
-description: "A functional UI prototype for an internal operations tool that surfaces only what needs attention across events, courses, and alerts from multiple platforms."
-contentTitle: "Only What Needs Attention"
-achievementTitle: ""
+title: Brightpath Operations
+description: "An operations UI prototype for finding urgent issues, acting on them, and checking whether the fix worked."
+contentTitle: Only What Needs Attention
 technologies:
-  - "Next.js"
-  - "TypeScript"
-category: "Prototype"
-status: "Prototype"
+  - Next.js
+  - TypeScript
+  - Tailwind CSS
+category: Prototype
+status: Prototype
 featured: false
-publishDate: "2026-09-14"
+publishDate: '2026-09-14'
+updatedDate: '2026-11-17'
 links:
-  live: "https://nextjs-nr-ops.vercel.app"
-keyAchievements:
-  - type: "technical"
-    icon: "🚨"
-    title: "Prioritized Operations Inbox"
-    description: "A functional UI prototype for consolidating alerts from multiple platforms into a single inbox, sorted by urgency, designed to plug into live data once connected."
-    metrics:
-      - "Now / Soon / Routine tabs segment open issues by urgency"
-      - "Grouped view designed to trace related exceptions back to a single upstream cause"
-      - "War Room, Playbooks, and Access Review interfaces round out the operational workflow"
+  live: https://nextjs-nr-ops.vercel.app
+keyAchievements: []
 media:
-  items: []
+  items:
+    - type: image
+      title: Brightpath Operations War Room with test data
+      src: ops-hero.png
 ---
 
-## Only What Needs Attention
+## The Brief
 
-This was originally built as an internal tool for another company. Since it's internal, the names here have been changed for this demo.
+I built this as a prototype for an internal operations tool. The company and brand names have been changed for this demo.
 
-Most of the noise in an operations inbox isn't worth a person's attention. Brightpath Operations is a UI prototype for a dashboard that would pull alerts from every connected platform and sort them into Now, Soon, and Routine, so a team could see what's actually urgent instead of triaging everything by hand.
+The problem was keeping track of an event across several platforms: registrations in one place, join credentials in another, reminders and automations somewhere else. I wanted an operator to see which exceptions needed attention and what they could do next.
 
-## Where the Alerts Would Come From
+The public prototype runs on test data. Its notes, counts and action results are seeded examples; no customer systems are connected.
 
-The dashboard is built to monitor and integrate with Kajabi, Zoom, ClickFunnels, n8n, and Zapier, catching issues like registration failures, join-delivery problems, email bounces, duplicate automation processing, and data inconsistencies across those systems. No backend or API connections are live yet, so everything shown runs on test data only, no real customer or operational data involved. The interaction design, including a grouped view meant to trace several related exceptions back to a single upstream cause, is built and ready to wire up.
+## An Inbox for One Event
 
-## Notes, Not Just Alerts
+The brand and event pickers define the scope. Now, Soon and Routine filters narrow the open issues, while each row keeps the source, owner, age and available action together.
 
-Each issue card includes an AI-generated note, powered by Anthropic's Claude, that explains a likely root cause and a recommended next step. Action buttons on each card, like retry delivery or confirm, are built into the interface and ready to trigger real actions once connected to live systems.
+A grouping banner highlights repeated check types within one channel as a possible shared cause. Two delivery failures can then be investigated together before someone works through them individually.
 
-## Pricing Governance and Access Review
+![The prototype inbox filtered to urgent issues, with event scope and a grouped exception banner](interface-inbox.webp)
 
-Beyond the inbox, the prototype includes Pricing Governance controls for managing pricing-related policies, and an Access Review interface for auditing user permissions.
+## What Happened After the Click?
 
-## Built in an Afternoon
+I gave action requests several visible outcomes. A queued request becomes overdue if it takes too long. A response that reports success triggers a separate health-check read before the interface shows Verified.
 
-The whole dashboard took a couple hours to put together, start to finish. That's the pace AI-assisted development makes possible when the shape of the problem is already clear.
+Still failing, rejected and a recheck mismatch have their own states. Higher-impact actions ask for confirmation, and each check has an allowed set of actions.
+
+![Simulated Verified and Still failing results, with the queued and rechecking states documented below](interface-actions.webp)
+
+This recording shows the urgency filter, table/card switch and two simulated action outcomes.
+
+<video controls playsinline preload="none" poster="/demo/brightpath/brightpath-workflow-poster.webp" width="1280" height="900">
+  <source src="/demo/brightpath/brightpath-workflow.mp4" type="video/mp4">
+  <a href="/demo/brightpath/brightpath-workflow.mp4">Watch the prototype interaction recording.</a>
+</video>
+
+The triage notes illustrate the intended assistant experience: explain the likely cause and suggest a next step. They are supplied with the demo data. Drafted next-step text can be edited or marked as reviewed; reviewing it does not execute an action.
+
+## The War Room
+
+The War Room puts the registration flow above the channel health strip. Submitted, credentialed, delivered and joined counts give the event a quick overview, with open exceptions below.
+
+Status and freshness stay separate. A failed check can have a recent verification time. An inferred state says “likely OK” and uses a dashed outline; an unconnected source stays visible.
+
+![The seeded War Room showing registration stages, channel status, verification age and inferred connections](interface-warroom.webp)
+
+## Shared Content, Different Layouts
+
+The table works where there is room for six columns. Below 1024 pixels, cards keep the same exception content and action behavior. A manual view switch lets someone choose either layout.
+
+I used Geist with shared Tailwind and shadcn components. Light and dark themes share the same roles for surfaces, text and borders. Table rows and cards reuse the exception body and action component, so feedback stays consistent.
+
+A disconnected store gets a clear error state. An inbox with no failing checks has a separate “Nothing needs attention” message.
+
+![The light-theme mobile cards beside the prototype's simulated connection-failure state](interface-responsive.webp)
+
+## Supporting Screens and Scope
+
+Pricing Governance and Access Review show policy and permission exceptions with a next step. Playbooks connects the checks to the wider operating procedures.
+
+The data source and action runner sit behind interfaces that currently use mock implementations. Connecting live providers is a separate phase. This prototype demonstrates the interface and its behavior; the figures shown are not production results.
+
+[Try the prototype](https://nextjs-nr-ops.vercel.app), [download the interface notes PDF](/demo/brightpath/brightpath-interface-notes.pdf), or [open the vector action board](/demo/brightpath/action-states.svg).

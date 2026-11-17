@@ -2,6 +2,10 @@
 
 Prepared 2026-11-17. A lighter engineering presentation within the approved Portfolio article format. PushPad remains deferred.
 
+Approved by Brett on 2026-11-17.
+
+The approved client job is archived under `BST_261117_director-visuals`; the archive copy was hash-verified before removing the working copy.
+
 ## Article
 
 - Preserve the existing Grok Bot chat capture as the single gallery image.

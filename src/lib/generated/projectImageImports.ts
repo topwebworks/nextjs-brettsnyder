@@ -15,6 +15,10 @@ import analyticsworkbenchScreenshot5 from '@/app/projects/content/analytics-work
 import analyticsworkbenchScreenshot6 from '@/app/projects/content/analytics-workbench/design-system-timeline.webp';
 import analyticsworkbenchScreenshot7 from '@/app/projects/content/analytics-workbench/design-system-workflow.webp';
 import brightpathopsHero from '@/app/projects/content/brightpath-ops/ops-hero.png';
+import brightpathopsScreenshot1 from '@/app/projects/content/brightpath-ops/interface-actions.webp';
+import brightpathopsScreenshot2 from '@/app/projects/content/brightpath-ops/interface-inbox.webp';
+import brightpathopsScreenshot3 from '@/app/projects/content/brightpath-ops/interface-responsive.webp';
+import brightpathopsScreenshot4 from '@/app/projects/content/brightpath-ops/interface-warroom.webp';
 import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.png';
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
@@ -71,7 +75,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'brightpath-ops': {
     hero: brightpathopsHero,
     demo: null,
-    screenshots: []
+    screenshots: [brightpathopsScreenshot1, brightpathopsScreenshot2, brightpathopsScreenshot3, brightpathopsScreenshot4]
   },
   'cywire': {
     hero: cywireHero,
@@ -141,7 +145,11 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'design-system-workflow.webp': analyticsworkbenchScreenshot7
   },
   'brightpath-ops': {
-    'ops-hero.png': brightpathopsHero
+    'ops-hero.png': brightpathopsHero,
+    'interface-actions.webp': brightpathopsScreenshot1,
+    'interface-inbox.webp': brightpathopsScreenshot2,
+    'interface-responsive.webp': brightpathopsScreenshot3,
+    'interface-warroom.webp': brightpathopsScreenshot4
   },
   'cywire': {
     '1-cywire-master-prompts.png': cywireHero
@@ -229,6 +237,10 @@ export { analyticsworkbenchScreenshot5 };
 export { analyticsworkbenchScreenshot6 };
 export { analyticsworkbenchScreenshot7 };
 export { brightpathopsHero };
+export { brightpathopsScreenshot1 };
+export { brightpathopsScreenshot2 };
+export { brightpathopsScreenshot3 };
+export { brightpathopsScreenshot4 };
 export { cywireHero };
 export { emailHero };
 export { emailScreenshot1 };

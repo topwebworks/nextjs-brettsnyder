@@ -42,8 +42,9 @@ Refine the remaining project case studies using the approved Portfolio presentat
 
 - Approved: Personal Portfolio case study and v08 presentation, approved by Brett on 2026-11-16. See the [source inventory](design-system-inventory.md).
 - Current review: Analytics Workbench (2026-10-22). The illustrated article now includes six boards, a real workflow recording, token downloads, vector controls and a six-page PDF. Editable assets and control prototypes are documented in the [source inventory](analytics-workbench-design-system.md).
-- Current review: Grok Bot / Director has a lighter engineering presentation: the existing chat capture plus three diagrams covering workers and saved state, checkpoint recovery, and recovery signals. Editable sources and evidence are documented in the [visual inventory](director-visuals.md).
-- Next task: review Director's visuals. PushPad is deferred; Brightpath Operations is the next remaining case in date order.
+- Approved: Grok Bot / Director's illustrated engineering presentation, approved by Brett on 2026-11-17. See the [visual inventory](director-visuals.md).
+- Current review: Brightpath Operations has refreshed prototype screenshots, four inline interface boards, an interaction recording and a four-page PDF. The copy distinguishes seeded notes and mock actions from future live integrations; see the [visual inventory](brightpath-interface-notes.md).
+- Next task: review Brightpath Operations, then continue with AMW Hardscape. PushPad remains deferred.
 - Scope: use each project's existing design and actual behavior. Keep stories in Markdown and place relevant visuals beside the explanation. Preserve the site's layouts, navigation, and themes.
 
 ## Scope Boundaries
