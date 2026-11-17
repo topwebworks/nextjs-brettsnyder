@@ -2,11 +2,11 @@
 
 ## Pilot
 
-- Editable v07 document: brief/inventory, light/dark foundations, button states/playground, and site-pattern pages. The pattern page includes real desktop/mobile screens and an editable content-engine diagram.
+- Editable v08 document: brief/inventory, light/dark foundations, button states/playground, and site-pattern pages. The pattern page includes real desktop/mobile screens and an editable content-engine diagram.
 - Foundations: seven semantic colors in two modes, eight button measurements, and five motion values, including the existing 45-second floating-panel cycle.
-- Button: primary, secondary, and ghost variants; default, hover, pressed, focus, and disabled states; shared label style and editable Label property. Focus outlines use auto layout with 4 px padding and a 2 px inside stroke, preserving equal 2 px gaps as labels grow. Hover/press prototype links connect the variants.
+- Button: primary, secondary, and ghost variants; default, hover, pressed, focus, and disabled states; shared label style and editable Label property. Arrow viewports preserve the live SVG sizing and stroke, including its internal space. Focus outlines use auto layout with 4 px padding and a 2 px inside stroke, preserving equal 2 px gaps as labels grow. Hover/press prototype links connect the variants.
 - Public evidence: five native board exports, token JSON/CSS, a seven-page overview PDF, a recording of the actual React buttons, and an inline component demo with button-based preview controls.
-- PDF v07: seven pages at 1280 points wide, one Inter family, regular/semibold documentation styles, and a consistent type scale. Content-flow arrows are centered from the actual card edges and checked in the rendered PDF. The duplicate playground sheet stays in the editable document and is omitted from the PDF. Paired portrait screens retain the measured 400 ms delay, 3 s fade, and 65% opacity.
+- PDF v08: seven pages at 1280 points wide, one Inter family, regular/semibold documentation styles, and a consistent type scale. Button arrows match the live component; content-flow arrows remain centered between their cards. The duplicate playground sheet stays in the editable document and is omitted from the PDF. Paired portrait screens retain the measured 400 ms delay, 3 s fade, and 65% opacity.
 
 ## Source Map
 
@@ -36,6 +36,6 @@
 
 Verified on 2026-11-16 with Next.js 16.4.6: lint, type checking, production build, and the browser check pass. Browser coverage includes both themes at 1200, 390, and 320 pixels; button behavior, responsive embeds, full-size image links, video playback, downloads, mobile navigation, scrolling tabs, and native FAQ disclosures.
 
-The v06 review also checks the loaded Inter font, article readability on an existing project and Blog post, all seven PDF page widths and export edges, and focus-outline resizing after a longer label is applied. The scrolled header uses its original transparent fill with 25 px backdrop blur. The browser recording and paired homepage captures use the corrected font.
+The v06 review also checks the loaded Inter font, article readability on an existing project and Blog post, all seven PDF page widths and export edges, and focus-outline resizing after a longer label is applied. The scrolled header uses a 60% theme tint with 25 px backdrop blur. The browser recording and paired homepage captures use the corrected font.
 
 Run a site server, then `node scripts/check-design-system.js [base-url]`. The check exercises the generated article, actual component behavior, themes, responsive embeds, recorded video, and downloads; screenshots go to the system temporary directory.

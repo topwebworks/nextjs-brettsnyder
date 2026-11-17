@@ -104,13 +104,18 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
           const main=frame.contentDocument?.querySelector('main');
           return main && frame.clientHeight >= Math.ceil(main.getBoundingClientRect().height);
         });
-        await page.waitForFunction(() => document.querySelector('header[class*="headerScrolled"]'));
+        // The initial programmatic scroll can precede hydration of the header.
+        await page.waitForFunction(() => {
+          window.dispatchEvent(new Event('scroll'));
+          return document.querySelector('header[class*="headerScrolled"]');
+        });
         await page.waitForFunction(() => !document.querySelector('header').getAnimations().some(animation => animation.playState === 'running'));
         const headerGlass = await page.$eval('header', node => {
           const css = getComputedStyle(node);
           return { background: css.backgroundColor, blur: css.backdropFilter };
         });
-        assert.equal(headerGlass.background, 'rgba(0, 0, 0, 0)', 'Preserve the transparent glass header.');
+        const headerTint = Number(headerGlass.background.match(/[/,]\s*([\d.]+)\s*\)$/)?.[1] ?? 1);
+        assert.ok(headerTint >= 0.45 && headerTint <= 0.7, 'Keep a moderate tint while preserving the glass effect.');
         assert.match(headerGlass.blur, /blur\(25px\)/);
         assert.equal(await frame.$('[aria-label="Cookie consent"]'), null);
         const innerHeight = await frame.evaluate(() => document.documentElement.scrollHeight);
