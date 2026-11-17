@@ -26,6 +26,11 @@ import brightpathopsScreenshot2 from '@/app/projects/content/brightpath-ops/inte
 import brightpathopsScreenshot3 from '@/app/projects/content/brightpath-ops/interface-responsive.webp';
 import brightpathopsScreenshot4 from '@/app/projects/content/brightpath-ops/interface-warroom.webp';
 import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.png';
+import cywireScreenshot1 from '@/app/projects/content/cywire/platform-blueprint.webp';
+import cywireScreenshot2 from '@/app/projects/content/cywire/platform-catalog.webp';
+import cywireScreenshot3 from '@/app/projects/content/cywire/platform-feature.webp';
+import cywireScreenshot4 from '@/app/projects/content/cywire/platform-handoff.webp';
+import cywireScreenshot5 from '@/app/projects/content/cywire/platform-quality.webp';
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
 import emailScreenshot2 from '@/app/projects/content/email/email-3.jpg';
@@ -55,6 +60,15 @@ import pushpadScreenshot5 from '@/app/projects/content/pushpad/platform-sim.webp
 import pushpadScreenshot6 from '@/app/projects/content/pushpad/platform-support.webp';
 import shopifymigrationsHero from '@/app/projects/content/shopify-migrations/shopify-hero.jpg';
 import topwebworksHero from '@/app/projects/content/topwebworks/topwebworks-hero.png';
+import topwebworksScreenshot1 from '@/app/projects/content/topwebworks/system-agency.webp';
+import topwebworksScreenshot2 from '@/app/projects/content/topwebworks/system-composition.webp';
+import topwebworksScreenshot3 from '@/app/projects/content/topwebworks/system-delivery.webp';
+import topwebworksScreenshot4 from '@/app/projects/content/topwebworks/system-followup.webp';
+import topwebworksScreenshot5 from '@/app/projects/content/topwebworks/system-foundation.webp';
+import topwebworksScreenshot6 from '@/app/projects/content/topwebworks/system-health.webp';
+import topwebworksScreenshot7 from '@/app/projects/content/topwebworks/system-responsive.webp';
+import topwebworksScreenshot8 from '@/app/projects/content/topwebworks/system-sections.webp';
+import topwebworksScreenshot9 from '@/app/projects/content/topwebworks/system-tokens.webp';
 
 // Type definition for project image imports
 export interface ProjectImageImports {
@@ -83,7 +97,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'cywire': {
     hero: cywireHero,
     demo: null,
-    screenshots: []
+    screenshots: [cywireScreenshot1, cywireScreenshot2, cywireScreenshot3, cywireScreenshot4, cywireScreenshot5]
   },
   'email': {
     hero: emailHero,
@@ -128,7 +142,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'topwebworks': {
     hero: topwebworksHero,
     demo: null,
-    screenshots: []
+    screenshots: [topwebworksScreenshot1, topwebworksScreenshot2, topwebworksScreenshot3, topwebworksScreenshot4, topwebworksScreenshot5, topwebworksScreenshot6, topwebworksScreenshot7, topwebworksScreenshot8, topwebworksScreenshot9]
   }
 };
 
@@ -161,7 +175,12 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'interface-warroom.webp': brightpathopsScreenshot4
   },
   'cywire': {
-    '1-cywire-master-prompts.png': cywireHero
+    '1-cywire-master-prompts.png': cywireHero,
+    'platform-blueprint.webp': cywireScreenshot1,
+    'platform-catalog.webp': cywireScreenshot2,
+    'platform-feature.webp': cywireScreenshot3,
+    'platform-handoff.webp': cywireScreenshot4,
+    'platform-quality.webp': cywireScreenshot5
   },
   'email': {
     'email-1.jpg': emailHero,
@@ -208,7 +227,16 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'shopify-hero.jpg': shopifymigrationsHero
   },
   'topwebworks': {
-    'topwebworks-hero.png': topwebworksHero
+    'topwebworks-hero.png': topwebworksHero,
+    'system-agency.webp': topwebworksScreenshot1,
+    'system-composition.webp': topwebworksScreenshot2,
+    'system-delivery.webp': topwebworksScreenshot3,
+    'system-followup.webp': topwebworksScreenshot4,
+    'system-foundation.webp': topwebworksScreenshot5,
+    'system-health.webp': topwebworksScreenshot6,
+    'system-responsive.webp': topwebworksScreenshot7,
+    'system-sections.webp': topwebworksScreenshot8,
+    'system-tokens.webp': topwebworksScreenshot9
   }
 };
 
@@ -254,6 +282,11 @@ export { brightpathopsScreenshot2 };
 export { brightpathopsScreenshot3 };
 export { brightpathopsScreenshot4 };
 export { cywireHero };
+export { cywireScreenshot1 };
+export { cywireScreenshot2 };
+export { cywireScreenshot3 };
+export { cywireScreenshot4 };
+export { cywireScreenshot5 };
 export { emailHero };
 export { emailScreenshot1 };
 export { emailScreenshot2 };
@@ -283,3 +316,12 @@ export { pushpadScreenshot5 };
 export { pushpadScreenshot6 };
 export { shopifymigrationsHero };
 export { topwebworksHero };
+export { topwebworksScreenshot1 };
+export { topwebworksScreenshot2 };
+export { topwebworksScreenshot3 };
+export { topwebworksScreenshot4 };
+export { topwebworksScreenshot5 };
+export { topwebworksScreenshot6 };
+export { topwebworksScreenshot7 };
+export { topwebworksScreenshot8 };
+export { topwebworksScreenshot9 };

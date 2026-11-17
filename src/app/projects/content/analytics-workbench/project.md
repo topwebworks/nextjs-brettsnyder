@@ -13,7 +13,7 @@ technologies:
   - Vercel
 category: Developer Tool
 status: Production
-featured: true
+featured: false
 publishDate: '2026-10-22'
 updatedDate: '2026-11-17'
 links:

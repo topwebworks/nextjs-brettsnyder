@@ -1,124 +1,128 @@
 ---
-title: "Top Web Works Rebrand"
-description: "A rebrand and rebuild of Top Web Works into a custom, lead-follow-up-focused web service for local businesses, with two design systems behind its client sites."
-contentTitle: "Websites That Capture and Follow Up on Every Lead"
+title: "Top Web Works Design Systems"
+description: "Three design systems I use for agency and client sites, with reusable components, client themes, CRM, search setup and conversion tracking."
+contentTitle: "Design Systems Behind the Site and the Service"
 achievementTitle: ""
 technologies:
   - "Next.js"
   - "React"
   - "TypeScript"
   - "Tailwind CSS"
+  - "CSS Modules"
+  - "Bootstrap"
   - "MDX"
   - "CRM Integration"
+  - "Vercel"
 category: "Website"
 status:
 featured: false
 designSystem: true
 publishDate: "2026-03-27"
+updatedDate: "2026-11-17"
 links:
   live: "https://topwebworks.com"
-keyAchievements:
-  - type: "impact"
-    icon: "🔄"
-    title: "Business Rebrand and Offer Simplification"
-    description: "Repositioned Top Web Works from a broad WordPress hosting and website business into a custom-built, lead-follow-up-focused service for local businesses, with a clearer customer offer: a free homepage prototype, a conversion-focused build, and recurring plans that keep leads captured and followed up automatically."
-    metrics:
-      - "Shifted messaging from general web services to lead capture and automated follow-up"
-      - "Built a cleaner service path from free preview to build to onboarding to long-term maintenance"
-      - "Framed the business around ownership, transparency, and recurring support"
+keyAchievements: []
 media:
   items:
-
-
+    - type: "image"
+      title: "Top Web Works Homepage"
+      src: "topwebworks-hero.png"
 ---
 
-## The Logo
+## The Brief
 
-Part of the rebrand meant designing a new logo from scratch: a custom mark built from the TWW letterforms, paired with the Top Web Works wordmark. It runs in the header and footer, so the new identity shows up everywhere on the site.
+At Top Web Works, I handle design and development together, including the identity, frontend and CRM setup. I use one design system for the agency site and two reusable libraries for client work.
 
-## The Starting Point
+## Three Design Systems
 
-Top Web Works started out as a WordPress business built around hosting and building websites. That model worked fine, but it stayed broad, and it never actually spoke to the thing that costs local businesses money: leads going cold because nobody followed up.
+- **Agency site:** customized Tailwind UI, with the agency's theme and Next.js components for marketing pages and articles.
+- **Service-site library:** reusable sections and controls for client builds. [AMW Hardscape](/projects/amw-hardscape) is a finished site built from it.
+- **Informational-site library:** a separate Next.js starting point for a different audience and reading pace. The [fictional Northfield Health homepage](https://tww-prototype.vercel.app/) shows one way to use it.
 
-So I narrowed the offer. Custom-built, conversion-focused websites for local businesses, paired with a lead capture and follow-up system Top Web Works runs for them. Shopify is still on the table for clients who need a store, but it's one option now, not the core pitch.
+Client branding and content sit apart from the shared code. A new business gets its own theme, photographs, copy and page order.
 
-This wasn't a redesign. It was a full repositioning of the business.
+![The agency design system and two client libraries, with AMW and Health shown as examples](system-foundation.webp)
 
-## Why Next.js Instead of Staying in WordPress
+## Tokens and Client Themes
 
-I didn't want to rebuild the new business on the same foundation it was leaving behind.
+The agency theme uses Parkinsans for display type and Switzer for body text. Its spacing unit is 4 pixels. The homepage action has a 500 ms transition and lifts 2 pixels on hover.
 
-The rebrand was a platform shift, not just a fresh coat of paint, so I moved the site to Next.js. It gave me a cleaner base for the lead-capture workflows the new business model needed. CRM pipelines and payment flows just fit better in a React app than bolted onto WordPress.
+The service library defines shared CSS properties for type, container width, section spacing and motion. Its defaults include DM Sans, a 1350-pixel container, 120-pixel section spacing and a 270 ms transition. A separate brand layer sets colors, tints, overlays and corners. The demo uses a 50-pixel base radius; AMW uses a 4-pixel base and a 10-pixel detail panel.
 
-## What the Public Site Needed to Do
+Northfield's theme uses `--pine`, `--sage`, `--cream`, `--ink` and `--muted`, with Georgia headings and Arial body and control text. Its body-size token changes from 16 to 15 pixels at 600 pixels and below.
 
-The live site is built around one clear offer: a free homepage prototype first, then a conversion-focused custom build, with lead capture and follow-up built into every site from day one. The homepage, About, How It Works, Pricing, and Works pages all back that up from different angles.
+![Shared token values, demo-brand overrides and client-specific measurements](system-tokens.webp)
 
-The public-facing content had a short list of jobs:
+[Inspect the token snapshot](/demo/topwebworks/design-system-tokens.json), including the responsive overrides and component measurements.
 
-- Make the lead-follow-up focus obvious, so no inquiry slips through
-- Show that the free prototype comes before any commitment
-- Lay out the service tiers and what's included, clearly
-- Make clear that follow-up runs on planned workflows, not guesswork
-- Give people an easy next step into a free preview
+## TWW Site Components
 
-Getting that across took real structure. A lot of small business service sites stay vague. This one had to be plain, specific, and easy to trust.
+The agency site shares navigation, headings, article cards, FAQs and the preview-request panel across its pages. An article card brings together an image, category, date, summary and link.
 
-## Building the Service Story
+FAQs use native `details` and `summary` elements. The mobile menu has collapsed and expanded states, a 48-pixel trigger and visible keyboard focus.
 
-One of the better parts of the rebrand was turning the service into a simple, step-by-step process: free homepage prototype first, a deposit once the client approves it, the balance due at launch, then a recurring plan starting the next month. It makes the service feel real and operational instead of abstract, and it takes the risk out of committing before seeing any work.
+![TWW article card, closed and open FAQ states, and mobile navigation](system-agency.webp)
 
-Each client build moves through audience positioning, messaging, site copy, and UI/UX design, and ends in either a custom conversion-focused site or a Shopify store. From there, a recurring plan covers hosting, maintenance, and lead follow-up, so clients aren't stuck managing the site or chasing leads on their own after launch.
+## The Service Library and AMW
 
-A clear process is just easier to trust and easier to buy into.
+The service library is built on a Resonance/Bootstrap base. I keep reusable hero, portfolio, service, about, benefits, testimonial, process and contact sections. Brand settings and CSS overrides are separate from the section code.
 
-Setup fees and recurring maintenance get paid through Stripe invoices I send manually. There's no checkout flow built into the site itself.
+AMW shows how I adapt that library. Its service view combines a project photograph, description and Learn More action. The detail panel adds supporting information, a gallery, image navigation, Call and Estimate actions.
 
-## The Blog
+Service data supplies categories, titles, descriptions, images and supporting points. The module handles selection, open and closed panels, and swipe navigation. AMW adds its own content, photographs and theme.
 
-The site includes a full blog. I ran it on Sanity for years, a solid headless CMS that plenty of companies build on. I eventually moved this site and my [client sites](/projects/amw-hardscape) to a custom MDX-based system instead, since content lives in the repo and ships with the same build, no separate CMS to manage.
+![Reusable service demo beside AMW's detail panel, with the service data and module states](system-sections.webp)
 
-## Every Site Ships With the Lead System Built In
+## The Informational Library and Health Example
 
-Topwebworks.com runs on the same lead system it sells. Every form, chat message, and inquiry coming through the site lands in a central CRM pipeline, with an instant email notification and an automated confirmation, so nothing gets missed from day one.
+In this library, `GoalSelector` builds tiles from titles, service labels and links. `CareJourney` and `HomeSections` provide larger sections. I used these components for the Northfield homepage.
 
-Every client site ships with that same system already configured and tested before launch. Automated email follow-up runs at every tier; SMS follow-up gets added on top at Grow and above.
+Each goal tile has a serif title, secondary text and directional control, with 250 ms background feedback on hover. Service cards repeat an image, index, title, description, supporting points and action. Larger image-and-text sections break up the grids.
 
-From there, I run the ongoing operations that keep it working for clients: a dedicated business texting number, estimate and booking requests built into the follow-up flow, and post-job review requests. Text, email, and chat all land in one inbox clients can check from their phone or desktop instead of chasing scattered emails and missed calls.
+![Health goal tiles, a service card and an image-and-text section](system-health.webp)
 
-## Ongoing Growth Programs
+The client name, metadata, links, theme and brand assets are configured for each build. Northfield is fictional: its people, reviews and business details are samples, and its CRM form and chat are not connected.
 
-That same pipeline feeds growth programs that scale with each client:
+## Page Order and Conversion
 
-- Social content on a set monthly cadence across Facebook and Instagram
-- Google Business posts keeping each client's profile active
-- Monthly email campaigns to the client's customer list
-- Meta ad campaigns, managed and optimized monthly
-- Monthly campaign landing pages built around a client's best offer
-- Monthly blog posts building local search rankings over time
-- Local SEO rankings tracked and reviewed monthly
-- Monthly performance reporting and strategy calls
+I arrange sections around the decision the visitor needs to make. TWW explains the service and asks for a preview request. AMW puts service information and completed work near the estimate path. Health starts with the visitor's goal, then explains the care, people and process before asking for a discovery call.
 
-## Internal Tools Behind the Scenes
+![Page sequences used by TWW, AMW and the Health example](system-composition.webp)
 
-Running the business day to day also meant building a couple of private internal tools. A prospect mailer tool manages the local outreach pipeline: manual calls, texts, and emails to new prospects, with duplicate detection and strict compliance rules around send limits and do-not-contact tracking. A separate monthly client report tool generates and emails PDF reports tied to each client's plan tier, replacing what used to be a manual checklist. Neither is public-facing; both run locally.
+## Mobile Behavior
 
-## Three Design Systems, Each With a Job
+TWW opens its navigation into a menu. AMW keeps section tabs and gallery controls usable on touch screens. Health stacks its content and keeps the discovery-call action at the bottom.
 
-Topwebworks.com itself runs on a fully customized Tailwind [design system](/blog/design-systems) I built for the marketing site. No generic templates, no colors fighting for attention, just a clean, modern build around the brand.
+![Navigation, content and contact controls at phone width](system-responsive.webp)
 
-Client sites run on two separate custom Next.js design systems instead, one for service sites and one for informational sites, in place of a page builder or UI kit. Both are conversion-focused, both are built from shared components and consistent styling, and both ship with the same lead capture and follow-up system underneath.
+This recording shows the TWW FAQ, Health goal-card feedback and the jump to its linked section.
 
-## SEO, AEO, and GEO
+<video controls playsinline preload="none" poster="/demo/topwebworks/design-system-interactions-poster.webp" width="1280" height="900">
+  <source src="/demo/topwebworks/design-system-interactions.mp4" type="video/mp4">
+  <a href="/demo/topwebworks/design-system-interactions.mp4">Watch the live design-system interactions.</a>
+</video>
 
-Search visibility doesn't just mean traditional SEO anymore. A lot of buying research now happens inside AI answer engines like ChatGPT, Perplexity, and Google AI Overviews, so I built the site to perform in both worlds at once: SEO for search engines, AEO (answer engine optimization) and GEO (generative engine optimization) for AI-driven discovery.
+## From Preview to Finished Site
 
-On the technical SEO side: sitemap.xml, robots.txt, canonical URLs, and real attention to [Core Web Vitals](/projects/analytics-workbench) so pages stay fast and fully crawlable.
+For a new client, I start with the service or informational library and configure the brand, content and sections. I send the owner a working homepage to review. The approved version becomes the starting point for the full site, where I finish the remaining pages, replace sample material and connect the CRM forms and chat.
 
-For structured data, I added JSON-LD schema (Organization, Product, FAQ) so search engines and AI crawlers can read exactly what the business offers instead of inferring it from unstructured page copy.
+![How the agency system and client libraries are configured and assembled into sites](system-followup.webp)
 
-For AEO and GEO specifically, that meant writing content in a format AI systems can lift straight into an answer: a clear semantic heading hierarchy, and service and pricing info framed as direct Q&A instead of marketing copy that needs to be reinterpreted. The How It Works and Pricing pages show this best, structured so an AI answer engine can quote the process and pricing verbatim.
+## CRM, Search and Measurement
 
-I carried the same approach into client builds too. Structured data and content formatting are part of the service.
+I plan the copy, project proof and calls to action around getting a call, inquiry or booking. I use GA4 to measure those actions after launch.
 
-It's already paying off. People have told me they found Top Web Works through ChatGPT.
+Production delivery includes:
+
+- **TWW CRM:** connected forms and chat, a lead pipeline, confirmations and follow-up.
+- **SEO, AEO and GEO:** semantic pages, metadata, appropriate JSON-LD schemas, useful FAQs and targeted service, local and blog content. Dynamic sitemaps follow the published routes and content.
+- **GA4 and GTM:** analytics and conversion tracking, with a cookie banner controlling consent for tracking tags.
+- **Agreed marketing services:** digital campaigns, search and content, social and email, plus branding, creative assets and print materials when needed.
+
+![Included CRM, search and content setup, GA4/GTM consent and agreed marketing services](system-delivery.webp)
+
+## Platform Choices
+
+Most of my new sites use Next.js and Vercel. I use Supabase for [product data and user accounts](/projects/pushpad). For larger ecommerce work, I [customize Shopify storefronts with Liquid](/projects/shopify-migrations). WordPress is a smaller part of my current work.
+
+[Read my design-system approach](/blog/design-systems), [see how the homepage preview works](https://topwebworks.com/blog/why-i-build-your-homepage-first), or [download the design-system notes](/demo/topwebworks/topwebworks-system-notes.pdf).

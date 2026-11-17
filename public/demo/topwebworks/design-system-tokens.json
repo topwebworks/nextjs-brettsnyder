@@ -1,0 +1,308 @@
+{
+  "inspected": "2026-11-17",
+  "systems": {
+    "agency": {
+      "source": "https://topwebworks.com",
+      "components": [
+        "navigation",
+        "primary action",
+        "article card",
+        "FAQ disclosure",
+        "preview-request form"
+      ],
+      "tokens": [
+        {
+          "selector": ":root, :host",
+          "key": "--font-sans",
+          "value": "Switzer, system-ui, sans-serif"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--color-gray-200",
+          "value": "#e5e7eb"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--color-gray-800",
+          "value": "#1e2939"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--color-gray-950",
+          "value": "#030712"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--radius-3xl",
+          "value": "1.5rem"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--radius-4xl",
+          "value": "2rem"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--font-display",
+          "value": "\"Parkinsans\", system-ui, sans-serif"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--color-gray-200",
+          "value": "lab(91.6229% -.159115 -2.26791)"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--color-gray-800",
+          "value": "lab(16.1051% -1.18239 -11.7533)"
+        },
+        {
+          "selector": ":root, :host",
+          "key": "--color-gray-950",
+          "value": "lab(1.90334% .278696 -5.48866)"
+        }
+      ],
+      "note": "Selected existing declarations, not a replacement stylesheet. Component measurements and scoped overrides remain separate.",
+      "role": "customized Tailwind UI agency system"
+    },
+    "service": {
+      "source": "Reusable service-site demo foundation",
+      "components": [
+        "service navigation",
+        "service module",
+        "detail modal",
+        "photo gallery",
+        "estimate form"
+      ],
+      "tokens": [
+        {
+          "selector": ":root",
+          "key": "--font-global",
+          "value": "\"DM Sans\", sans-serif"
+        },
+        {
+          "selector": ":root",
+          "key": "--container-width",
+          "value": "1350px"
+        },
+        {
+          "selector": ":root",
+          "key": "--section-padding-y",
+          "value": "120px"
+        },
+        {
+          "selector": ":root",
+          "key": "--color-dark-1",
+          "value": "#010101"
+        },
+        {
+          "selector": ":root",
+          "key": "--color-gray-1",
+          "value": "#757575"
+        },
+        {
+          "selector": ":root",
+          "key": "--border-radius-default",
+          "value": "4px"
+        },
+        {
+          "selector": ":root",
+          "key": "--border-radius-large",
+          "value": "30px"
+        },
+        {
+          "selector": ":root",
+          "key": "--transition-default",
+          "value": "all 0.27s cubic-bezier(0, 0, 0.58, 1)"
+        }
+      ],
+      "note": "Shared base values are distinct from last-loaded theme overrides and AMW client/component values.",
+      "role": "reusable service foundation; AMW is a client output",
+      "sourceFile": "public/assets/css/style.css",
+      "themeTokens": [
+        {
+          "selector": ":root",
+          "key": "--color-primary-1",
+          "value": "#c277ff"
+        },
+        {
+          "selector": ":root",
+          "key": "--color-primary-1-a",
+          "value": "#a855f7"
+        },
+        {
+          "selector": ":root",
+          "key": "--color-primary-light-1",
+          "value": "#f5e8ff"
+        },
+        {
+          "selector": ":root",
+          "key": "--brand-dark",
+          "value": "#7c3aed"
+        },
+        {
+          "selector": ":root",
+          "key": "--brand-overlay-base",
+          "value": "#0e0518"
+        },
+        {
+          "selector": ":root",
+          "key": "--border-radius-default",
+          "value": "50px"
+        },
+        {
+          "selector": ":root",
+          "key": "--font-global",
+          "value": "\"DM Sans\", sans-serif"
+        }
+      ],
+      "themeNote": "These are the replaceable demo-brand settings, not required colors or corner values for every client.",
+      "clientExample": {
+        "name": "AMW Hardscape",
+        "values": {
+          "baseCornerRadius": "4px",
+          "detailPanelRadius": "10px"
+        },
+        "note": "Finished client implementation; not the source component library."
+      }
+    },
+    "health": {
+      "source": "https://tww-prototype.vercel.app",
+      "fictional": true,
+      "components": [
+        "goal tile",
+        "service card",
+        "split feature",
+        "FAQ disclosure",
+        "mobile booking action"
+      ],
+      "tokens": [
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--pine",
+          "value": "#123d3c",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--deep",
+          "value": "#0b292b",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--sage",
+          "value": "#bfd5c8",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--cream",
+          "value": "#f7f8f4",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--ink",
+          "value": "#183534",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--muted",
+          "value": "#62736c",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--tww-body",
+          "value": "16px",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--tww-small",
+          "value": "14px",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--tww-action",
+          "value": "15px",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--tww-label",
+          "value": "12px",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--tww-label-spacing",
+          "value": ".18em",
+          "conditions": []
+        },
+        {
+          "selector": ".JAlmIW_site",
+          "key": "--tww-body",
+          "value": "15px",
+          "conditions": [
+            "(max-width: 600px)"
+          ]
+        }
+      ],
+      "typeRoles": {
+        "display": {
+          "value": "Georgia, Times New Roman, serif",
+          "kind": "computed style"
+        },
+        "body": {
+          "value": "Arial, Helvetica, sans-serif",
+          "kind": "computed style"
+        }
+      },
+      "responsiveNote": "--tww-body is 16px in the base site rule and 15px in a mobile media override.",
+      "note": "Selected existing declarations, not a replacement stylesheet. Component measurements and scoped overrides remain separate.",
+      "measuredComponentValues": {
+        "goal": {
+          "defaultSurface": "#f9fbf7",
+          "hoverSurface": "#eaf3ec",
+          "titleColor": "#24493e",
+          "subtitleColor": "#60786a",
+          "outlineColor": "#bad2bf",
+          "titleFamily": "Georgia",
+          "titleSize": "23px",
+          "secondaryFamily": "Arial",
+          "secondarySize": "14px",
+          "width": "420px",
+          "height": "106px",
+          "feedback": "background-color 250ms",
+          "arrowHoverSurface": "#1c504b",
+          "arrowHoverColor": "#ffffff",
+          "arrowHoverOffset": "2px right, 2px up",
+          "focusNote": "The same tile and arrow feedback applies to :focus-visible."
+        },
+        "serviceCard": {
+          "surface": "#fbfdf9",
+          "border": "#dae6db",
+          "photoHeight": "245px",
+          "contentPadding": "26px 28px 29px",
+          "title": "Arial 25px 700",
+          "actionHeight": "44px"
+        }
+      },
+      "role": "example theme on the reusable informational foundation",
+      "foundation": "Reusable TWW Next.js components and CSS modules",
+      "example": {
+        "name": "Northfield Health",
+        "fictional": true
+      },
+      "sourceFiles": [
+        "src/components/tww/GoalSelector.tsx",
+        "src/components/tww/HomeSections.tsx",
+        "src/styles/TwwHome.module.css"
+      ]
+    }
+  }
+}

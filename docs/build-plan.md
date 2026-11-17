@@ -38,15 +38,19 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Current Phase
 
-Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. PushPad is the current task; continue through the remaining projects afterward.
+Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. Master Blocks is the current task, followed by the master email project.
 
 - Approved: Personal Portfolio case study and v08 presentation, approved by Brett on 2026-11-16. See the [source inventory](design-system-inventory.md).
 - Current review: Analytics Workbench (2026-10-22). The illustrated article now includes six boards, a real workflow recording, token downloads, vector controls and a six-page PDF. Editable assets and control prototypes are documented in the [source inventory](analytics-workbench-design-system.md).
 - Approved: Grok Bot / Director's illustrated engineering presentation, approved by Brett on 2026-11-17. See the [visual inventory](director-visuals.md).
 - Approved: Brightpath Operations' illustrated prototype presentation, accepted by Brett on 2026-11-17. See the [visual inventory](brightpath-interface-notes.md).
 - Approved: AMW Hardscape's illustrated design-engineering case study and v02 arrow-spacing correction, accepted by Brett on 2026-11-17. See the [source inventory](amw-design-system.md).
-- Current review: PushPad's supplemental learning platform. The updated article has a new hero, six tightly cropped boards, an actual simulation recording and a six-page PDF. It explains focused pads, mastery, educator-controlled support, learner experience and content ownership. Raw uploads and obsolete gallery images were preserved before cleanup. See the [source inventory](pushpad-platform-notes.md).
-- Next task: review PushPad, then continue through the remaining projects.
+- Approved: PushPad's supplemental learning presentation, with Brett's selected boy hero and the homepage demo entry, accepted for continuation on 2026-11-17. See the [source inventory](pushpad-platform-notes.md).
+- Accepted for continuation: CyWire's Master Prompt workspace. The article explains authoring, tested-output review, versioning, discovery and application-owned integration, with five boards, a public-guide recording and a five-page PDF. The YouTube video is the only hero media, with no thumbnail gallery. See the [source inventory](cywire-platform-notes.md).
+- Featured project: CyWire is the sole featured project; all other project metadata remains unfeatured.
+- Completed for continuation: Top Web Works design-system reconstruction and final disclosure/copy review. Show the customized Tailwind UI agency system and two reusable client foundations, sourced from Brett's confirmed demos, from tokens through modules, page composition and responsive behavior. AMW is an output of the service-site library; Northfield Health is an example of the informational foundation. Preserve the original hero and exclude prices. Nine inline boards, a nine-page PDF, scoped token snapshots, component prototypes and a live interaction recording support the hiring-focused story. Include production CRM, conversion focus, SEO/AEO/GEO, schemas, targeted content, generated sitemaps, GA4/GTM consent and agreed marketing/branding/print services. Platform direction favors Next.js/Vercel, Supabase for data-backed products and Shopify/Liquid for larger ecommerce; keep pricing, cadence and internal plans private. See the [source inventory](topwebworks-design-system.md).
+- Current task: Master Blocks design-system presentation, using its existing article and bundled HTML demos.
+- Next task: repair the master email archive image references, then document its reusable email system from the article and HTML source.
 - Scope: use each project's existing design and actual behavior. Keep stories in Markdown and place relevant visuals beside the explanation. Preserve the site's layouts, navigation, and themes.
 
 ## Scope Boundaries

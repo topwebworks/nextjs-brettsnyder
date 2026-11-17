@@ -1,143 +1,100 @@
 ---
 title: "CyWire Master Prompts"
-description: "A B2B SaaS platform that gives AI features a solid data structure: structured prompts with validated JSON output that works on any platform using JSON and AI."
-contentTitle: "Why AI Needs Structure"
+description: "Tools for building, testing and sharing portable Master Prompts, with typed inputs, output schemas and version history."
+contentTitle: "A Workspace for Master Prompts"
 achievementTitle: ""
-technologies: 
+technologies:
   - "Next.js"
   - "React"
   - "TypeScript"
   - "Tailwind CSS"
   - "Supabase"
+  - "Stripe"
   - "Vercel"
 category: "SaaS"
-status: 
-featured: false
+status:
+featured: true
 publishDate: "2026-01-02"
+updatedDate: "2026-11-17"
 links:
   live: "https://cywire.com"
-keyAchievements:
-  - type: "impact"
-    icon: "🚀"
-    title: "Structured JSON Blueprint System"
-    description: "Built a master prompt architecture that transforms AI from unpredictable chat interfaces into reliable data layers with validated JSON outputs."
-    metrics:
-      - "Structured inputs with defined variables, rules, and output schemas"
-      - "Consistent, machine-readable JSON output every time"
-      - "Works with any LLM or platform"
-      - "Eliminates parsing errors and unexpected formats"
+keyAchievements: []
 media:
   items:
     - type: "video"
       title: "CyWire Demo"
       src: "https://www.youtube.com/watch?v=aSprWf0Byto"
-    - type: "image"
-      title: "Master Prompts Library"
-      src: "1-cywire-master-prompts.png"
-
 ---
 
-## The Problem No One Talks About
+## The Brief
 
-AI is already part of most jobs, and if it's not yet, it will be soon. It removes friction, shortens timelines, and lets small teams do things that once required entire departments.
+I built CyWire to make Master Prompts easier to create, review, test and hand off. A Master Prompt packages a feature's instructions, declared inputs, output schema and version information in a JSON file.
 
-But there's a problem we don't talk about enough: AI without structure creates messes.
+The product gives authors a workspace for that file and developers a defined artifact to integrate. The application team connects it to their chosen model, checks the response and decides how the returned data is used.
 
-Vague prompts, inconsistent output, features that work one day and break the next. Codebases end up littered with half-working "AI solutions" that someone eventually has to decipher and retarget. Even agentic workflows, which are impressive, start to feel risky once you move beyond small, repetitive tasks and into business-critical systems.
+I designed and implemented the platform, including its authoring tools, prompt library, publishing workflows, team permissions and marketplace.
 
-If you're a betting person, maybe you're comfortable with that. I'm not.
+## Make the Structure Editable
 
-## The Decision That Changed My Approach
+Long instructions are difficult to maintain when the rules, sample values and expected response are mixed together. I wanted an author to be able to inspect those parts separately and understand what a change would affect.
 
-To stay current, I made a goal: Every website or product I build going forward must include at least one core AI feature.
+The builder organizes six instruction sections: Identity, Industry Context, Task Instructions, Output Format, Quality and Safety, and Constraints. Typed variables declare the inputs that can change. The output schema describes the data the consuming feature expects.
 
-A real AI feature users actually depend on, not a chatbot or a demo. That's when the cracks showed up in testing.
+The visual editor and JSON representation work on the same blueprint. Its sections compile into the full instruction text; runtime values fill the declared variables. Published versions are snapshots, so later edits can be identified separately from a version already used by an application.
 
-The typical approach, long natural-language prompts, doesn't hold up well in production. They drift, they hallucinate, and running the same prompt twice can give you a different structure back. That's fine for brainstorming, but not when the output feeds core features.
+![CyWire blueprint anatomy showing six instruction sections, typed variables and a shortened public JSON example](platform-blueprint.webp)
 
-What I needed was consistency.
+## Help People Find a Useful Starting Point
 
-## From Prompts to Blueprints
+The library separates private work, team-shared material, free community prompts and marketplace purchases. Those distinctions affect what someone can open, edit and publish.
 
-The breakthrough wasn't "better prompting." It was structure. Instead of one long block of natural text, I wanted a single JSON blueprint, a file that contains everything the AI needs:
+Public catalogs expose the information needed to assess fit: the task, industry, description and quality signal. Filters narrow the list, while server-rendered pages and real pagination links make it possible to browse without loading the whole catalog at once. Opening free prompt code requires an account; paid code requires a purchase.
 
-- Clear instruction sections
-- Defined variables
-- Rules and constraints
-- Strict output schema
-- Validation
-- Many micro-shot examples (ultra-targeted)
+A marketplace purchase delivers the listed snapshot as an editable private version. The buyer's changes and version history develop independently from the publisher's original. Later publisher edits don't overwrite their customizations.
 
-Wire user input or data into that blueprint, send the compiled prompt to the LLM, and get back validated JSON you can actually work with.
+![CyWire's public Education catalog, with industry filtering, prompt descriptions, quality badges and access controls](platform-catalog.webp)
 
-Less guessing, less brittle parsing, fewer surprises. My time developing Shopify content showed how fast and solid JSON is, and that's what I wanted in a prompt.
+## Show What Needs Another Test
 
-## What a Master Prompt Is
+Testing is part of the publishing workflow. The review examines the latest tested output across accuracy, completeness, relevance and schema alignment, format, compliance with declared rules, and efficiency. Unresolved failures need another edit and test before publication.
 
-A Master Prompt is a reliable, single-feature blueprint, not a long natural-text sentence or a manual prompt-engineering time sink.
+I wanted the result to give an author something to act on. A quality score is useful when it points back to the output and the requirement that was missed. Schema validation checks the shape of the data; the consuming feature still needs tests for factual correctness and the rules of its domain.
 
-Store it like code. Treat it as your AI feature Source of Truth. You version it. You reuse it. One Master Prompt per AI feature: focused, testable, and practical to ship.
+The free community and marketplace also have separate moderation paths. Publishing makes an artifact available to others, so access, review state and ownership need to remain clear throughout the process.
 
-The output is structured JSON data that can be rendered into reports, instructions, workflows, dashboards, or downstream systems, etc. The goal is predictability. JSON is fast and reliable, which is why most platforms and devs love it.
+![A CyWire catalog quality badge beside the six dimensions used to review tested prompt output](platform-quality.webp)
 
-Once I started building this way, the AI features became easier to understand, output, and maintain.
+## Keep the Handoff in the Application
 
-## Why I Didn't Keep This Internal
+The integration starts with a downloaded JSON file in the project's master-prompts folder. A shared runtime loads that file, validates the declared inputs and compiles the instruction. The application's server makes the model call.
 
-As I refined the approach, it evolved - from a weekend project to several weeks:
+The guide separates those jobs into small files: prompt.ts loads the blueprint and prepares its variables; runner.ts handles execution; validate-output.ts checks the returned shape; prompt-registry.ts keeps file references in one place.
 
-- Variables that couldn't be accidentally overwritten
-- Stricter validation
-- Metadata and tagging
-- Many targeted examples I call micro-shot instead of bloated few-shot blocks
-- Enough flexibility and content without losing contextual control
+Saving the prompt filename, version, input and returned JSON together gives a developer a way to trace a stored result after the blueprint changes. The exported artifact remains inspectable in the project rather than disappearing into an account setting.
 
-I experimented with chaining Master Prompts together using RAG-style flows. It worked, but in practice I preferred the clarity and cost control of one comprehensive Master Prompt per feature. For agentic workflows use smaller master prompts.
+![CyWire's public integration guide showing output validation, with the local-file, variable, model-call and save steps explained](platform-handoff.webp)
 
-The main drawback was editing. Long structured prompts are powerful, but painful to maintain when they live as raw text.
+This recording expands the public guide's runtime examples and shows where validation and saved-result traceability fit.
 
-So I built tooling to make them easier to create, edit, and test. So became CyWire.
+<video controls playsinline preload="none" poster="/demo/cywire/cywire-integration-poster.webp" width="1280" height="900">
+  <source src="/demo/cywire/cywire-integration.mp4" type="video/mp4">
+  <a href="/demo/cywire/cywire-integration.mp4">Watch the CyWire integration-guide walkthrough.</a>
+</video>
 
-## What CyWire Is
+## Put It to Work in PushPad
 
-CyWire is a platform for building, testing, and providing Master Prompts. I decided an iterated one-off was not good enough, as I soon understood I needed it for all my future sites.
+[PushPad](/projects/pushpad) gave me a practical application for this approach. Form values supply the variables for lesson generation. Returned lesson data is stored and rendered into the pad's sections, with the learning platform handling assignments and progression.
 
-It's not another AI chat UI or API wrapper. It wires AI for reliable data by letting you design structured JSON blueprints for AI features, so they're easier to build, reason about, and maintain. You can build anything once you have structured data, just ask Shopify.
+CyWire's published proof of concept follows that handoff from local blueprint files to an input form and a rendered lesson. It makes the boundary tangible: the prompt defines the content contract, and the application turns the returned data into an experience someone can use.
 
-Product managers, analysts, content strategists, and designers, etc. can build, edit, and test a Master Prompt visually, then hand a solid JSON blueprint to a developer to wire up the compiled full prompt.
+![Published PushPad proof-of-concept screens showing local blueprint files, a lesson input form and rendered lesson data](platform-feature.webp)
 
-That's the vision.
+## Build the Workspace Around the Artifact
 
-## What's in the Platform
+The platform uses Next.js, React, TypeScript, Tailwind and Supabase. Shared interface patterns carry through the authoring, library and account flows. Organization owners control publication and deletion, while members contribute within their workspace permissions.
 
-I built and launched CyWire in three months, taking it from concept to production, refining the core engine through three major architectural versions along the way to reach the product vision above. It's built with Next.js, React, TypeScript, Tailwind CSS, Supabase, and Vercel.
+A document-backed knowledge base supports PDF, Word and Excel reference material. Labs includes a Chat Prompt Generator for adapting a Master Prompt to use in a chat tool. These features support the work of preparing and maintaining the artifact.
 
-Beyond the Master Prompt system itself, the platform includes:
+The design work was keeping the views and states in agreement: what an author edits, what a developer downloads, which version a test refers to and what an account is allowed to open.
 
-- A no-code visual builder for creating and editing Master Prompts without writing raw JSON, with version control and collaborative editing on the full underlying code
-- A community marketplace with free and premium Master Prompts, including industry-specific templates for healthcare, finance, manufacturing, and more
-- A document-backed knowledge base supporting PDF, Word, and Excel uploads
-- Labs, a Pro+ chat-based Master Prompt generator
-- Authentication with tier-based access control across membership levels
-- Scoped team workspaces for collaborative editing
-- Dashboards and leaderboards for tracking usage and activity
-
-## Why This Matters
-
-AI should be welcomed as a tool that removes barriers, not one that replaces you, and that only works if you avoid fragile systems, bloated natural-text prompts, and vibed codebases no one wants to touch.
-
-AI features need human orchestration, structure, and boundaries.
-
-Master Prompts aren't a temporary fix for today's AI, they're a permanent requirement for tomorrow's. As models get smarter, they don't need fewer rules, they need clearer ones. Without enforced structure and guardrails, increased intelligence just produces more confidently wrong output at scale.
-
-Master Prompts lock intent, constraints, and output contracts in place, ensuring AI remains predictable, governable, and production-ready. They're a foundational necessity for building AI features that can actually hold up in production. That's why I built CyWire.
-
-[PushPad](/projects/pushpad) is the real-world proof of concept, it runs on two Master Prompts, one for Sonnet to write lesson content and one for Haiku to grade it.
-
-For the initial launch, I've shared many free, industry-specific Master Prompts in the CyWire community. Use them as-is or adapt them for your own work. You have access to the entire master prompt code. Join as a free member, no credit card needed.
-
-If you're building AI features that need to actually be reliable, this approach may work for you. For me, it only made sense.
-
-Thanks for reading. Your thoughts are always appreciated.
-
-
+[Browse free Master Prompts](https://cywire.com/community/master-prompts), [read the integration guide](https://cywire.com/docs/integration), or [download the platform notes PDF](/demo/cywire/cywire-platform-notes.pdf).

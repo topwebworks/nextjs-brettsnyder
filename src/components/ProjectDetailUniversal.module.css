@@ -506,6 +506,16 @@
   right: -20px;
 }
 
+@media (max-width: 480px) {
+  .scrollArrowLeft {
+    left: 0;
+  }
+
+  .scrollArrowRight {
+    right: 0;
+  }
+}
+
 /* Media Items */
 .mediaItem {
   padding: 0;
