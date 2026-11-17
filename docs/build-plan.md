@@ -38,7 +38,11 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Current Phase
 
-No active initiative. The prior positioning alignment work is complete and the site reflects Brett's current resume and positioning. This file is the single source for project status and next steps.
+Portfolio design system documentation in FigCraft, using the implemented site as the source. Follow the [design system build outline](design-system-build-plan.md).
+
+- Status: v07 centers the content-flow arrows between the cards, using their actual bounds. The seven-page PDF retains consistent Inter text styles, responsive focus outlines, shorter copy, and a 1280-point page width. Five inline boards include paired portrait states and the measured fade timing. The case study keeps its live demo and recording and omits the repeated closing summary. See the [source inventory](design-system-inventory.md).
+- Next task: review graphical prototype playback, then sitemap/wireframes and the assets/brand page. Public boards and the case study have received a typography and copy pass; page heights follow their content.
+- Scope: author the system and prototypes in FigCraft. Refine the existing Markdown case study and place boards, downloads, recordings, and component demos inline. Add enlargement only where useful; label new motion explorations for review.
 
 ## Scope Boundaries
 

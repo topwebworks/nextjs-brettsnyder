@@ -1,122 +1,97 @@
 ---
-title: "Personal Portfolio Site"
-description: "A ground-up rebuild of my portfolio on the latest Next.js and React, with dark iridescent glassmorphism, animated elements, and a hybrid JSON/Markdown system."
-contentTitle: ""
-achievementTitle: ""
-technologies: 
-  - "React"
-  - "Nextjs"
-  - "Typescript" 
-  - "Web Design"
-category: "Website"
-status: "Prod"
+title: Personal Portfolio Site
+description: >-
+  A Next.js portfolio with a design system, live component demos and Markdown publishing.
+contentTitle: ''
+achievementTitle: ''
+technologies:
+  - Next.js
+  - React
+  - TypeScript
+  - CSS Modules
+category: Website
+status: Prod
 featured: false
-publishDate: "2025-09-08"
+publishDate: '2025-09-08'
 links:
-  github: "https://github.com/topwebworks/nextjs-brettsnyder"
-  live: "/"
-keyAchievements:
-  - type: "impact"
-    icon: "🚀"
-    title: "Next.js 15 & React 19 Migration"
-    description: "Built with bleeding-edge frameworks released just weeks prior. Overcame local cache, and Edge browser compatibility issues while maintaining modern development practices and performance standards."
-    metrics:
-      - "Next.js 15 and React 19 implementation within weeks of release"
-      - "Custom utility classes replacing Tailwind"
-      - "Glassmorphism design system with animated orb/panel elements"
-      - "Fluid responsive design"
+  github: 'https://github.com/topwebworks/nextjs-brettsnyder'
+  live: /
+  demo: /demo/portfolio/components
+keyAchievements: []
 media:
   items:
-
-
+    - type: image
+      title: Portfolio interface
+      src: 1-personal-portfolio.png
+designSystem: true
+updatedDate: '2026-11-16'
 ---
 
-## Previous Portfolio
+## The Brief
 
-I ran my old portfolio site for years using a customized Next.js + Tailwind UI template. It was solid: minimal design, dark mode, markdown content, clean layout. Nothing wrong with it, and it probably could have served me longer, but I was ready for something new.
+I built this site to bring my projects, writing and resume together. I worked directly in the browser, using dark backgrounds, glass panels and slow motion. The light theme keeps the same layout.
 
-## The Vision
+## Foundations
 
-I wanted to rebuild from scratch using the newest Next.js and React versions, which was risky since they'd just been released and had bugs. But as the only stakeholder, why not push boundaries?
+CSS variables hold the colors for text, surfaces, borders and accents. Each theme supplies its own values. I use Inter for the interface and JetBrains Mono for code.
 
-I chose Lucide icons over Font Awesome for a cleaner look. The goal was a more robust portfolio with the same easy markdown blog workflow, but instead of standard flat black-and-white dark mode, I wanted glassmorphism: dark, iridescent tones with glass and transparency effects.
+![Semantic color roles and button measurements in the dark theme](design-system-foundations.webp)
 
-Most portfolios use small circular avatars that lack impact on desktop. I didn't want a large portrait staring at visitors on page load either. My compromise: clean homepage with animated orbs and typography, then a large portrait background that appears only on hover.
+[Download the tokens as JSON](/demo/portfolio/portfolio-tokens.json) or [view the CSS](/demo/portfolio/portfolio-tokens.css).
 
-Navigation would show just two main hero buttons, moving everything else to a side menu and footer. Since I'm on Vercel's free tier, I added a config toggle to hide resume and commercial elements, which I've since turned back on as the site matured.
+## Buttons
 
-Below the hero, I'd keep the successful elements from my old site: latest project cards, recent work timeline, GitHub and LinkedIn links. I planned expanded About and Tools pages, proper blog and project listing pages with thumbnails, and actual project case studies this time. The goal was sharing the same content engine between blogs and projects.
+The React button has primary, secondary and ghost variants, three sizes and optional icons. The board shows its default, hover, pressed, focus and disabled states.
 
-For contact, I stuck with a simple email link. No forms, no bot problems.
+![Primary, secondary, and ghost buttons across five interaction states](design-system-buttons.webp)
 
-## Design Approach
+[Open the vector state board](/demo/portfolio/button-states.svg).
 
-I could have started with Figma mockups, but I already knew I was building sections similar to my old site, so I jumped straight into homepage prototyping to test concepts. The dark iridescent effect using feathered orbs over the hero image gave me exactly the soft color shifting I wanted. The hover portrait felt aggressive at first, but adjusting opacity and easing made it impactful without being overwhelming.
+### Try the Component
 
-Glass effects were appealing but could easily become cluttered. I added a slow-moving floating background panel to enhance the transparency effect. All hover interactions stayed soft and subtle. I initially tried fully glassy buttons but ended up emphasizing them more for better usability. 
+Change the theme or size, toggle Disabled, or press Tab to inspect keyboard focus.
 
-## The Build
+<iframe class="project-component-demo" src="/demo/portfolio/components" title="Portfolio button component playground" loading="lazy" height="700"></iframe>
 
-1. **Homepage:** Once the design concepts were working, I added navigation and footer components to the layout. The header uses a sticky glass effect. I liked the glass blur there but found it too distracting with content panels, so I mainly used rgba transparency instead. I added placeholder latest project cards and fine-tuned hover effects (the dynamic content would come later). The timeline added some color but was mostly static content mapping.
+[Open the playground on its own](/demo/portfolio/components).
 
-   This is where I hit the challenges of using bleeding-edge Next.js and React. Service worker issues, caching problems, Edge browser bugs, and Tailwind incompatibilities created constant friction. I almost switched back to stable versions, but knowing they'd be deprecated soon, I stuck with it. I ended up removing Tailwind entirely and creating [my own utility classes](/blog/design-systems). The framework versions were only weeks old, so bugs weren't surprising. Later I realized Vercel's Edge CDN made my service worker redundant, so I removed it and saw network performance improve.
+### Motion and Feedback
 
-2. **About Page:** I followed the same approach as the homepage but didn't want all the animated orbs, so I built a configurable background component that adapts based on the page. The About page uses one animated orb (top-left) with the rest static. I then updated the homepage to use this same background component.
+Hover lifts the button by two pixels. Pressing brings it back toward rest. The recording shows those changes and keyboard focus; reduced motion removes movement and transitions.
 
-   I added focused stats and achievements, much better than my previous verbose About section. The content was more conversion-oriented with clear takeaways. Glass effects made it more visually interesting than before.
+<video controls playsinline preload="none" poster="/demo/portfolio/button-motion-poster.webp" width="1200" height="700">
+  <source src="/demo/portfolio/button-motion.mp4" type="video/mp4">
+  <a href="/demo/portfolio/button-motion.mp4">Watch the button interaction recording.</a>
+</video>
 
-   This is also where I finalized the light and dark mode styling. I experimented with several theme variations but settled on the two I liked best. I kept some old test styles in case I want to revisit them later.
+## Patterns Across the Site
 
-3. **Tools:** This evolved from my old "Uses" page. Instead of a long scrolling list, I created a 4-tab tile layout. Icons are pulled from a large categorized array, giving me room to expand easily.
+### Glass and Ambient Motion
 
-4. **Projects and Blogs:** This section required the most trial and error with the new frameworks. The markdown approach from my old site didn't work despite trying multiple angles. My challenge: I wanted markdown's editing ease for blogs and projects, but also the fast loading I'd seen in JSON-based sites like Shopify. How could I combine both without exhausting API resources on Vercel's free tier?
+The header and panels use translucent fills and blur. Orbs and ribbons move behind the content, while the floating panel drifts on a slow loop.
 
-   The solution came close to what I'd hoped for. To create a project or blog, you add a folder (like `my-cool-project`) in the corresponding content directory, add images to that folder, then run an npm script to generate both a markdown file and JSON file in your project folder.
+The desktop portrait slowly appears on hover or focus. Mobile uses a square crop.
 
-   > You edit only the markdown file. Running the script again updates the JSON file. I use this same script to regenerate any markdown files with timestamps newer than their corresponding JSON files. This gives fast JSON loading with built-in markdown backup if the content gets corrupted.
+![Homepage before hover and after the slow portrait reveal](design-system-surfaces.webp)
 
-   Originally I wanted everything prebuilt locally (file paths, latest blogs, content) to bypass Vercel build deployment and save resources. But Vercel needed all build files to be static for prebuild deployment, and I was using some dynamic features I did not want to compromise. I didn't like the full-static results, so I let Vercel handle the build and changed the file checking logic to build based on change timestamp comparisons. Deploy times increased but stayed well within free tier limits.
+### Navigation and Mobile Tabs
 
-   Detail pages use a smart media gallery that detects tall vs. wide formats and skips thumbnail bars for single images. It supports inline images with external link awareness, feature tagging, and optional title overrides.
+The header links become a mobile drawer. [Tools](/tools) keeps its categories in a horizontal slider with touch scrolling and arrow controls.
 
-   I also convert markdown to rich HTML within the JSON files. This gives my JSON files basic HTML flexibility when needed. Pure markdown conversion to HTML is slow, and pure JSON is too limiting for styled content. With content redundancy, I get the best of both approaches.
+![The mobile drawer and horizontally scrolling Tools categories](design-system-navigation.webp)
 
-5. **Policy Pages:** These are straightforward, no-frills content pages.
+### Supporting Interactions
 
-6. **Mobile:** I used the standard small profile picture approach since text was hard to read otherwise. Everything stacks in typical mobile fashion. I tried to use fluid responsive design and clamp() where I remembered to. 
+- [Projects](/projects) and [Blog](/blog) have category filters and load-more pagination.
+- Galleries combine images and YouTube videos, with thumbnails and keyboard navigation.
+- Supported browsers animate card images into detail pages and give Previous/Next links directional transitions.
+- Listen uses browser speech playback with a voice picker. [About](/about) has native FAQ disclosures.
+- The resume opens in a PDF preview. Cookie preferences stay available from the footer.
 
-## Project Structure
-```html
-src/
-├── app/                    # Next.js App Router pages
-│   ├── about/              # About page
-│   ├── blog/               # Blog listing & [slug] pages  
-│   ├── projects/           # Project showcase & [slug] pages
-│   └── tools/              # Tools/stack page
-├── components/             # Reusable UI components
-│   ├── layout/             # Header, Footer, Navigation
-│   └── ui/                 # Button, LoadingSpinner, etc.
-├── lib/                    # Core utilities
-│   ├── generated/          # Auto-generated content manifests
-│   ├── types/              # TypeScript definitions
-│   ├── blogLoader.ts       # Blog content system
-│   └── projectLoader.ts    # Project content system
-└── styles/                 # CSS files
-```
+## Content and Implementation
 
-## Adding New Projects
-1. Create folder: `src/app/projects/content/your-project/`
-2. Add web-optimized project images to the folder
-3. Run `npm run generate-project-data`
-4. Edit the generated `project.md` file (ignore the JSON file)
-5. Run `npm run generate-project-data` again after editing
+I write projects and blog posts in Markdown. At build time, a script converts the text to HTML in JSON, imports images and updates the manifests used by the page templates.
 
-## Results
+![Markdown and assets become generated JSON and Project and Blog pages](design-system-content.webp)
 
-The portfolio rebuild hit most all technical and design goals. The dark iridescent glassmorphism creates visual impact while working well across devices. The hybrid content management system gives me markdown's editing convenience with JSON's performance benefits, making it practical on Vercel's free tier.
-
-Key achievements: implementing latest Next.js 15 and React 19 within weeks of their release, creating a custom utility system when Tailwind compatibility failed, and building an automated content generation workflow. The hover-activated portrait and animated orb system provides desktop impact without overwhelming mobile users.
-
-I'm still adding to it. New projects, updated content, whatever the site needs next.
-
-
+[Download the design system PDF](/demo/portfolio/portfolio-system-overview.pdf).

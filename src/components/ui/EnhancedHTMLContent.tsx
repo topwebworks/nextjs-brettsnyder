@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
 import { getProjectImageByFilename } from '@/lib/generated/projectImageImports';
@@ -25,6 +25,31 @@ export default function EnhancedHTMLContent({
   contentType = 'project',
   className = '' 
 }: EnhancedHTMLContentProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cleanups: Array<() => void> = [];
+    containerRef.current?.querySelectorAll<HTMLIFrameElement>('iframe.project-component-demo').forEach(frame => {
+      if (new URL(frame.src).origin !== window.location.origin) return;
+      let observer: ResizeObserver | undefined;
+      const fitContent = () => {
+        observer?.disconnect();
+        const main = frame.contentDocument?.querySelector('main');
+        if (!main) return;
+        observer = new ResizeObserver(() => {
+          frame.height = String(Math.ceil(main.getBoundingClientRect().height) + 2);
+        });
+        observer.observe(main);
+      };
+      frame.addEventListener('load', fitContent);
+      if (frame.contentDocument?.readyState === 'complete') fitContent();
+      cleanups.push(() => {
+        frame.removeEventListener('load', fitContent);
+        observer?.disconnect();
+      });
+    });
+    return () => cleanups.forEach(cleanup => cleanup());
+  }, [content]);
   
   // Trigger Highlight.js after HTML content renders (only if Highlight.js is already loaded)
   useEffect(() => {
@@ -59,7 +84,7 @@ export default function EnhancedHTMLContent({
   };
 
   return (
-    <div className={`${cssStyles['enhanced-html-content']} ${className}`}>
+    <div ref={containerRef} className={`${cssStyles['enhanced-html-content']} ${className}`}>
       {renderContent()}
     </div>
   );
@@ -125,6 +150,7 @@ function createImageComponent(srcVar: string, alt: string, projectId: string, co
   if (dynamicImage && typeof dynamicImage === 'object' && 'src' in dynamicImage) {
     return (
       <div key={key} className="project-image-container">
+        <a className={cssStyles.fullSizeImage} href={(dynamicImage as StaticImageData).src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size image: ${alt}`}>
         <Image
           src={dynamicImage as StaticImageData}
           alt={alt}
@@ -143,6 +169,7 @@ function createImageComponent(srcVar: string, alt: string, projectId: string, co
             border: '1px solid rgba(255, 255, 255, 0.2)'
           }}
         />
+        </a>
       </div>
     );
   }
@@ -156,6 +183,7 @@ function createImageComponent(srcVar: string, alt: string, projectId: string, co
     if (fallbackImage) {
       return (
         <div key={key} className="project-image-container">
+          <a className={cssStyles.fullSizeImage} href={fallbackImage.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size image: ${alt}`}>
           <Image
             src={fallbackImage as StaticImageData}
             alt={alt}
@@ -174,6 +202,7 @@ function createImageComponent(srcVar: string, alt: string, projectId: string, co
               border: '1px solid rgba(255, 255, 255, 0.2)'
             }}
           />
+          </a>
         </div>
       );
     }

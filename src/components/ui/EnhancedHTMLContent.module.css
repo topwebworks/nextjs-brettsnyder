@@ -9,16 +9,46 @@
   text-wrap: pretty;
 }
 
+.enhanced-html-content :global(video) {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 24px 0;
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}
+
+.enhanced-html-content :global(iframe.project-component-demo) {
+  display: block;
+  width: 100%;
+  margin: 24px 0;
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  background: var(--bg-primary);
+}
+
+.fullSizeImage {
+  display: block;
+  border-radius: 8px;
+  cursor: zoom-in;
+}
+
+.fullSizeImage:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 4px;
+}
+
 /* Typography - Matching About page hierarchy */
 .enhanced-html-content :global(.project-section-title) {
   font-size: clamp(1.6rem, 4vw, 1.8rem);
-  font-weight: 300;
+  font-weight: 500;
   color: var(--text-primary);
   letter-spacing: 0em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
   margin-top: 50px;
   margin-bottom: 20px;
-  line-height: 2rem;
+  line-height: 1.25;
   text-wrap: pretty;
 }
 
@@ -28,11 +58,11 @@
 }
 
 .enhanced-html-content :global(.project-subsection-title) {
-  font-size: clamp(1.0rem, 4vw, 1.5rem);
-  font-weight: 400;
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  font-weight: 500;
   color: var(--text-primary);
   letter-spacing: 0em;
-  line-height: 1.2;
+  line-height: 1.35;
   margin-top: 30px;
   margin-bottom: 20px;
   text-wrap: pretty;
@@ -48,13 +78,13 @@
 }
 
 .enhanced-html-content :global(.project-content-paragraph) {
-  font-size: clamp(0.9rem, 2.6vw, 1.1rem);
-  line-height: 1.9;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.75;
   color: var(--text-secondary);
   margin: 1rem 0;
-  max-width: none;
+  max-width: 68ch;
   /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); */
-  opacity: 0.8;
+  opacity: 1;
   text-wrap: pretty;
 }
 
@@ -94,16 +124,17 @@
 
 /* Lists - Enhanced Visual Hierarchy */
 .enhanced-html-content :global(.project-content-list) {
+  max-width: 68ch;
   margin: 0.5rem 0;
   padding-left: 1.5rem;
   color: var(--text-secondary);
-  line-height: 1.9;
-  opacity: 0.8;
+  line-height: 1.75;
+  opacity: 1;
 }
 
 .enhanced-html-content :global(.project-content-list li) {
   margin-bottom: 0.75rem;
-  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   text-wrap: pretty;
 }
 

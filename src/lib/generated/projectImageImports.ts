@@ -16,6 +16,11 @@ import grokbotHero from '@/app/projects/content/grok-bot/grok-hero.png';
 import masterblocksHero from '@/app/projects/content/master-blocks/masterblocks-hero.jpg';
 import monarchcatalogHero from '@/app/projects/content/monarch-catalog/monarch-prototype.png';
 import personalportfolioHero from '@/app/projects/content/personal-portfolio/1-personal-portfolio.png';
+import personalportfolioScreenshot1 from '@/app/projects/content/personal-portfolio/design-system-buttons.webp';
+import personalportfolioScreenshot2 from '@/app/projects/content/personal-portfolio/design-system-content.webp';
+import personalportfolioScreenshot3 from '@/app/projects/content/personal-portfolio/design-system-foundations.webp';
+import personalportfolioScreenshot4 from '@/app/projects/content/personal-portfolio/design-system-navigation.webp';
+import personalportfolioScreenshot5 from '@/app/projects/content/personal-portfolio/design-system-surfaces.webp';
 import printHero from '@/app/projects/content/print/franklin-catalog.jpg';
 import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
 import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
@@ -86,7 +91,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'personal-portfolio': {
     hero: personalportfolioHero,
     demo: null,
-    screenshots: []
+    screenshots: [personalportfolioScreenshot1, personalportfolioScreenshot2, personalportfolioScreenshot3, personalportfolioScreenshot4, personalportfolioScreenshot5]
   },
   'print': {
     hero: printHero,
@@ -139,7 +144,12 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'monarch-prototype.png': monarchcatalogHero
   },
   'personal-portfolio': {
-    '1-personal-portfolio.png': personalportfolioHero
+    '1-personal-portfolio.png': personalportfolioHero,
+    'design-system-buttons.webp': personalportfolioScreenshot1,
+    'design-system-content.webp': personalportfolioScreenshot2,
+    'design-system-foundations.webp': personalportfolioScreenshot3,
+    'design-system-navigation.webp': personalportfolioScreenshot4,
+    'design-system-surfaces.webp': personalportfolioScreenshot5
   },
   'print': {
     'franklin-catalog.jpg': printHero,
@@ -200,6 +210,11 @@ export { grokbotHero };
 export { masterblocksHero };
 export { monarchcatalogHero };
 export { personalportfolioHero };
+export { personalportfolioScreenshot1 };
+export { personalportfolioScreenshot2 };
+export { personalportfolioScreenshot3 };
+export { personalportfolioScreenshot4 };
+export { personalportfolioScreenshot5 };
 export { printHero };
 export { printScreenshot1 };
 export { printScreenshot2 };

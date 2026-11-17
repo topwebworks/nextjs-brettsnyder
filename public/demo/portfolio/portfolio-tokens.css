@@ -1,0 +1,36 @@
+/* theme · light */
+:root {
+  --text-primary: #0A0E1A;
+  --text-secondary: #1E293B;
+  --text-muted: #475569;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --border-primary: rgba(148, 163, 184, 0.20);
+  --text-accent: #4857ED;
+}
+/* theme · dark */
+[data-theme="dark"] {
+  --text-primary: #FFFFFF;
+  --text-secondary: #E2E8F0;
+  --text-muted: #94A3B8;
+  --bg-primary: #0A0A0F;
+  --bg-secondary: #1A1A2E;
+  --border-primary: rgba(148, 163, 184, 0.10);
+  --text-accent: #A0AAFF;
+}
+/* foundation · base */
+:root {
+  --button-height-small: 32px;
+  --button-height-medium: 44px;
+  --button-height-large: 56px;
+  --button-radius: 50px;
+  --button-gap: 8px;
+  --button-padding-medium: 28px;
+  --button-hover-lift: 2px;
+  --button-icon-medium: 16px;
+  --motion-duration-button: 250ms;
+  --motion-duration-icon: 200ms;
+  --motion-duration-press: 100ms;
+  --motion-easing-button: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-duration-panel: 45s;
+}

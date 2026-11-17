@@ -232,6 +232,7 @@ export default function UsesPage() {
               <button
                 className={`${styles.scrollArrow} ${styles.scrollArrowLeft} ${showLeftArrow ? styles['scrollArrow--visible'] : ''}`}
                 onClick={() => handleScroll('left')}
+                aria-label="Scroll tool categories left"
               >
                 <ChevronLeft size={20} />
               </button>
@@ -241,6 +242,8 @@ export default function UsesPage() {
                 ref={tabContainerRef}
                 className={styles.tabScrollContainer}
                 onScroll={checkScrollIndicators}
+                role="group"
+                aria-label="Tool categories"
               >
                 {categories.map((category, index) => {
                   const Icon = category.icon;
@@ -248,6 +251,7 @@ export default function UsesPage() {
                     <button
                       key={category.id}
                       onClick={() => setActiveTab(index)}
+                      aria-pressed={activeTab === index}
                       className={`${styles.tabButton} ${activeTab === index ? styles['tabButton--active'] : styles['tabButton--inactive']}`}
                     >
                       <Icon size={20} />
@@ -261,6 +265,7 @@ export default function UsesPage() {
               <button
                 className={`${styles.scrollArrow} ${styles.scrollArrowRight} ${showRightArrow ? styles['scrollArrow--visible'] : ''}`}
                 onClick={() => handleScroll('right')}
+                aria-label="Scroll tool categories right"
               >
                 <ChevronRight size={20} />
               </button>

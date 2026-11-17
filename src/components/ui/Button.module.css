@@ -2,13 +2,14 @@
 
 /* Base button styles */
 .button {
+  --button-hover-lift: 2px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   
   /* Typography */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-primary);
   font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
@@ -184,7 +185,7 @@
   background: linear-gradient(135deg, #3d4edf 0%, #4857ed 100%);
   border-color: #3d4edf;
   box-shadow: 0 4px 16px rgba(72, 87, 237, 0.35), 0 2px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  transform: translateY(calc(-1 * var(--button-hover-lift)));
 }
 
 .primary:active {
@@ -220,7 +221,7 @@
   border-color: rgba(255, 255, 255, 0.28);
   color: #ffffff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
+  transform: translateY(calc(-1 * var(--button-hover-lift)));
 }
 
 .secondary:active {
@@ -257,7 +258,7 @@
   color: #e4e4e7;
   border-color: rgba(161, 161, 170, 0.22);
   box-shadow: 0 2px 12px rgba(161, 161, 170, 0.12);
-  transform: translateY(-2px);
+  transform: translateY(calc(-1 * var(--button-hover-lift)));
 }
 
 .ghost:active {
@@ -279,6 +280,7 @@
 
 /* Disabled state - Clear distinction from secondary */
 .disabled {
+  --button-hover-lift: 0px;
   opacity: 0.5;
   cursor: not-allowed;
   transform: none !important;
@@ -398,5 +400,27 @@
 @media (max-width: 480px) {
   .button + .button {
     margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    --button-hover-lift: 0px;
+  }
+
+  .button,
+  .button::before,
+  .button::after,
+  .button .content,
+  .button .icon {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .button:hover,
+  .button:active,
+  .button:hover .content,
+  .button:hover .icon {
+    transform: none;
   }
 }

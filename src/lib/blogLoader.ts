@@ -11,30 +11,19 @@ export type { BlogData };
 const BLOG_DIR = path.join(process.cwd(), 'src/app/blog/content');
 
 // OPTIMIZED: Use pre-generated manifest or fallback to filesystem scanning
-export async function discoverBlogs(silent = false): Promise<string[]> {
+export async function discoverBlogs(): Promise<string[]> {
   // FAST PATH: Try to use pre-generated manifest (no filesystem calls)
   try {
     const blogManifest = await import('@/lib/generated/blogManifest');
-    const blogIds = blogManifest.getBlogIds();
-    if (!silent) {
-      console.log('Discovered blog folders:', blogIds);
-    }
-    return [...blogIds]; // Convert readonly to mutable array
+    return [...blogManifest.getBlogIds()]; // Convert readonly to mutable array
   } catch {
     // FALLBACK: Filesystem scanning (only during development or if manifest missing)
-    if (!silent) {
-      console.log('⚠️  Using filesystem fallback for blogs - consider running npm run generate-project-data');
-    }
+    console.log('⚠️  Using filesystem fallback for blogs - consider running npm run generate-project-data');
     try {
       const entries = await fs.promises.readdir(BLOG_DIR, { withFileTypes: true });
-      const blogFolders = entries
+      return entries
         .filter((entry: fs.Dirent) => entry.isDirectory())
         .map((entry: fs.Dirent) => entry.name);
-      
-      if (!silent) {
-        console.log('Discovered blog folders:', blogFolders);
-      }
-      return blogFolders;
     } catch (error) {
       console.error('Failed to discover blogs:', error);
       return [];
@@ -75,7 +64,7 @@ export async function loadBlogData(blogId: string): Promise<BlogData> {
 
 // Get all blogs for listing page
 export async function getAllBlogs(): Promise<BlogData[]> {
-  const blogIds = await discoverBlogs(); // Keep logging for listing pages
+  const blogIds = await discoverBlogs();
   const blogs: BlogData[] = [];
   
   for (const blogId of blogIds) {
@@ -137,7 +126,7 @@ export async function getFeaturedBlogs(): Promise<BlogData[]> {
 // Generate static params for Next.js (mirrors projects)
 export async function generateStaticParams() {
   try {
-    const blogIds = await discoverBlogs(true); // Silent mode to avoid redundant logging
+    const blogIds = await discoverBlogs();
     
     // Add validation and sanitization
     return blogIds

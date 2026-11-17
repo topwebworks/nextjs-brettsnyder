@@ -76,6 +76,8 @@ For local images, place the referenced file in the same project or Blog folder. 
 
 The alternative text is used by the rendered image and should describe the image's useful content. Do not use filenames or keyword lists as alternative text.
 
+Resolved local article images link to their original full-size asset in a new tab, so detailed boards can be inspected without changing the Markdown syntax.
+
 ## Automatic Image Roles
 
 The generator scans images in each content folder and assigns roles using the current filename rules:
@@ -119,6 +121,29 @@ media:
 ```
 
 The gallery recognizes standard YouTube, `youtu.be`, embed, and Shorts URLs. The current video renderer expects a YouTube URL. Local video-file shortcodes are not implemented.
+
+## Inline Recordings and Component Demos
+
+The Markdown converter preserves ordinary HTML in the body. Native video and iframe elements survive generation into `content.overviewHtml` and render in article order.
+
+Put recordings and posters under `public/demo/<project>/` and reference their public URLs:
+
+```html
+<video controls playsinline preload="none" poster="/demo/portfolio/button-motion-poster.webp" width="1200" height="700">
+  <source src="/demo/portfolio/button-motion.mp4" type="video/mp4">
+  <a href="/demo/portfolio/button-motion.mp4">Watch the interaction recording.</a>
+</video>
+```
+
+For live components, create a same-site demo route that reuses the actual React components, then embed it:
+
+```html
+<iframe class="project-component-demo" src="/demo/portfolio/components" title="Portfolio button component playground" loading="lazy" height="700"></iframe>
+```
+
+The shared article styles make video responsive. Same-origin iframes with the `project-component-demo` class automatically follow their embedded `<main>` element's height, including size and viewport changes. Other frames retain their authored height. Include an ordinary link to open the demo separately. Native video controls retain user control over playback.
+
+Place exported board images beside the source Markdown and use normal image syntax. Curate the top gallery with explicit `media.items` when those boards should appear only in the article. React behavior runs inside the demo route; JSX in the Markdown body is not mounted as React.
 
 ## Minimal Project Example
 
@@ -176,6 +201,6 @@ The current content system does not provide custom Markdown shortcodes for:
 - Animation and hover directives
 - Copy, share, toggle, or expand actions
 - Special insight, result, premium, or status blocks
-- Local video-file playback controls
+- Custom local-video shortcodes (use native HTML video instead)
 
 Use standard Markdown and the existing frontmatter fields unless the content engine is explicitly extended and tested in a future approved phase.

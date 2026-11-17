@@ -45,6 +45,9 @@ export default function CookieConsent() {
   const [prefs, setPrefs] = useState<CookiePrefs>(DEFAULT_PREFS);
 
   useEffect(() => {
+    // The containing page owns consent for same-site embedded component demos.
+    if (window.self !== window.top) return;
+
     const saved = readPrefs();
     if (saved) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is only readable after hydration

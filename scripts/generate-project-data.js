@@ -358,7 +358,8 @@ MEDIA GUIDELINES:
   
 - MEDIA GALLERY: Use the 'media.items' array above for videos and additional images
   * Supports YouTube videos, image galleries, and demos
-  * Videos should only be added to media gallery, not inline
+  * Inline recordings use HTML <video>; interactive same-site demos use a titled <iframe>
+  * See docs/MEDIA-SHORTCODE-REFERENCE.md for inline media markup
   * Example: { type: "video", title: "Demo", src: "https://youtube.com/watch?v=xyz", thumbnail: "thumb.jpg" }
 
 CONTENT TITLE FIELD: If specified, replaces the automatic "Article" or "Case Study" appended title
@@ -441,7 +442,8 @@ MEDIA GUIDELINES:
   
 - MEDIA GALLERY: Use the 'media.items' array above for videos and additional images
   * Supports YouTube videos, image galleries, and demos
-  * Videos should only be added to media gallery, not inline
+  * Inline recordings use HTML <video>; interactive same-site demos use a titled <iframe>
+  * See docs/MEDIA-SHORTCODE-REFERENCE.md for inline media markup
   * Example: { type: "video", title: "Demo", src: "https://youtube.com/watch?v=xyz", thumbnail: "thumb.jpg" }
 
 CONTENT TITLE FIELD: If specified, replaces the automatic "Article" or "Case Study" appended title

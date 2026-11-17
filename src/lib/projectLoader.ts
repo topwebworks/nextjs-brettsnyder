@@ -12,30 +12,19 @@ export type { ProjectData };
 const PROJECTS_DIR = path.join(process.cwd(), 'src/app/projects/content');
 
 // OPTIMIZED: Use pre-generated manifest or fallback to filesystem scanning
-export async function discoverProjects(silent = false): Promise<string[]> {
+export async function discoverProjects(): Promise<string[]> {
   // FAST PATH: Try to use pre-generated manifest (no filesystem calls)
   try {
     const projectManifest = await import('@/lib/generated/projectManifest');
-    const projectIds = projectManifest.getProjectIds();
-    if (!silent) {
-      console.log('Discovered project folders:', projectIds);
-    }
-    return [...projectIds]; // Convert readonly to mutable array
+    return [...projectManifest.getProjectIds()]; // Convert readonly to mutable array
   } catch {
     // FALLBACK: Filesystem scanning (only during development or if manifest missing)
-    if (!silent) {
-      console.log('⚠️  Using filesystem fallback - consider running npm run generate-project-data');
-    }
+    console.log('⚠️  Using filesystem fallback - consider running npm run generate-project-data');
     try {
       const entries = await fs.promises.readdir(PROJECTS_DIR, { withFileTypes: true });
-      const projectFolders = entries
+      return entries
         .filter((entry: fs.Dirent) => entry.isDirectory())
         .map((entry: fs.Dirent) => entry.name);
-      
-      if (!silent) {
-        console.log('Discovered project folders:', projectFolders);
-      }
-      return projectFolders;
     } catch (error) {
       console.error('Failed to discover projects:', error);
       return [];
@@ -69,7 +58,7 @@ export async function loadProjectData(projectId: string): Promise<ProjectData> {
 
 // Get all projects for listing page
 export async function getAllProjects(): Promise<ProjectData[]> {
-  const projectIds = await discoverProjects(); // Keep logging for listing pages
+  const projectIds = await discoverProjects();
   const projects: ProjectData[] = [];
   
   for (const projectId of projectIds) {
@@ -124,7 +113,7 @@ export async function generateStaticParams() {
   } catch {
     // Fallback to filesystem discovery with validation
     try {
-      const projectIds = await discoverProjects(true);
+      const projectIds = await discoverProjects();
       
       // Add validation and sanitization
       return projectIds

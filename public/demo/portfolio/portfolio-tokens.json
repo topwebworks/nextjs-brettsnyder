@@ -1,0 +1,483 @@
+{
+  "error": false,
+  "meta": {
+    "variableCollections": {
+      "VariableCollectionId:1": {
+        "defaultModeId": "VariableCollectionId:1/mode1",
+        "hiddenFromPublishing": false,
+        "id": "VariableCollectionId:1",
+        "key": "VariableCollectionId:1",
+        "modes": [
+          {
+            "modeId": "VariableCollectionId:1/mode1",
+            "name": "light"
+          },
+          {
+            "modeId": "VariableCollectionId:1/mode2",
+            "name": "dark"
+          }
+        ],
+        "name": "theme",
+        "remote": false,
+        "variableIds": [
+          "VariableID:1",
+          "VariableID:2",
+          "VariableID:3",
+          "VariableID:4",
+          "VariableID:5",
+          "VariableID:6",
+          "VariableID:7"
+        ]
+      },
+      "VariableCollectionId:2": {
+        "defaultModeId": "VariableCollectionId:2/mode1",
+        "hiddenFromPublishing": false,
+        "id": "VariableCollectionId:2",
+        "key": "VariableCollectionId:2",
+        "modes": [
+          {
+            "modeId": "VariableCollectionId:2/mode1",
+            "name": "base"
+          }
+        ],
+        "name": "foundation",
+        "remote": false,
+        "variableIds": [
+          "VariableID:8",
+          "VariableID:9",
+          "VariableID:10",
+          "VariableID:11",
+          "VariableID:12",
+          "VariableID:13",
+          "VariableID:14",
+          "VariableID:15",
+          "VariableID:16",
+          "VariableID:17",
+          "VariableID:18",
+          "VariableID:19",
+          "VariableID:20"
+        ]
+      }
+    },
+    "variables": {
+      "VariableID:1": {
+        "codeSyntax": {},
+        "description": "src/styles/variables.css --text-primary; active computed values",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:1",
+        "key": "VariableID:1",
+        "name": "text/primary",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.10196078568696976,
+            "g": 0.054901961237192154,
+            "r": 0.03921568766236305
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:10": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:10",
+        "key": "VariableID:10",
+        "name": "button/height/large",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 56.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:11": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:11",
+        "key": "VariableID:11",
+        "name": "button/radius",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 50.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:12": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:12",
+        "key": "VariableID:12",
+        "name": "button/gap",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 8.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:13": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:13",
+        "key": "VariableID:13",
+        "name": "button/padding/medium",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 28.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:14": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:14",
+        "key": "VariableID:14",
+        "name": "button/hover/lift",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 2.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:15": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:15",
+        "key": "VariableID:15",
+        "name": "button/icon/medium",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 16.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:16": {
+        "codeSyntax": {},
+        "description": "",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:16",
+        "key": "VariableID:16",
+        "name": "motion/duration/button",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "250ms"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:17": {
+        "codeSyntax": {},
+        "description": "",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:17",
+        "key": "VariableID:17",
+        "name": "motion/duration/icon",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "200ms"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:18": {
+        "codeSyntax": {},
+        "description": "",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:18",
+        "key": "VariableID:18",
+        "name": "motion/duration/press",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "100ms"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:19": {
+        "codeSyntax": {},
+        "description": "",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:19",
+        "key": "VariableID:19",
+        "name": "motion/easing/button",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:2": {
+        "codeSyntax": {},
+        "description": "src/styles/variables.css --text-secondary; active computed values",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:2",
+        "key": "VariableID:2",
+        "name": "text/secondary",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.23137255012989044,
+            "g": 0.16078431904315948,
+            "r": 0.11764705926179886
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.9411764740943909,
+            "g": 0.9098039269447327,
+            "r": 0.886274516582489
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:20": {
+        "codeSyntax": {},
+        "description": "src/styles/components.css .float-panel",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:20",
+        "key": "VariableID:20",
+        "name": "motion/duration/panel",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "45s"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:3": {
+        "codeSyntax": {},
+        "description": "src/styles/variables.css --text-muted; active computed values",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:3",
+        "key": "VariableID:3",
+        "name": "text/muted",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.4117647111415863,
+            "g": 0.3333333432674408,
+            "r": 0.27843138575553894
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.7215686440467834,
+            "g": 0.6392157077789307,
+            "r": 0.5803921818733215
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:4": {
+        "codeSyntax": {},
+        "description": "src/styles/variables.css --bg-primary; active computed values",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:4",
+        "key": "VariableID:4",
+        "name": "bg/primary",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.05882352963089943,
+            "g": 0.03921568766236305,
+            "r": 0.03921568766236305
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:5": {
+        "codeSyntax": {},
+        "description": "src/styles/variables.css --bg-secondary; active computed values",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:5",
+        "key": "VariableID:5",
+        "name": "bg/secondary",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.9882352948188782,
+            "g": 0.9803921580314636,
+            "r": 0.9725490212440491
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.18039216101169586,
+            "g": 0.10196078568696976,
+            "r": 0.10196078568696976
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:6": {
+        "codeSyntax": {},
+        "description": "src/styles/variables.css --border-primary; active computed values",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:6",
+        "key": "VariableID:6",
+        "name": "border/primary",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 0.20000000298023224,
+            "b": 0.7215686440467834,
+            "g": 0.6392157077789307,
+            "r": 0.5803921818733215
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 0.10196078568696976,
+            "b": 0.7215686440467834,
+            "g": 0.6392157077789307,
+            "r": 0.5803921818733215
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:7": {
+        "codeSyntax": {},
+        "description": "src/styles/variables.css --text-accent; active computed values",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:7",
+        "key": "VariableID:7",
+        "name": "text/accent",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.929411768913269,
+            "g": 0.34117648005485535,
+            "r": 0.2823529541492462
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 0.6666666865348816,
+            "r": 0.6274510025978088
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:8": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:8",
+        "key": "VariableID:8",
+        "name": "button/height/small",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 32.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:9": {
+        "codeSyntax": {},
+        "description": "src/components/ui/Button.module.css; existing component value",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:9",
+        "key": "VariableID:9",
+        "name": "button/height/medium",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 44.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      }
+    }
+  },
+  "status": 200
+}

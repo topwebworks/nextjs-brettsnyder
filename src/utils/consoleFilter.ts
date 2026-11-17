@@ -104,8 +104,6 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
     if (typeof message === 'string') {
       // Filter out development info messages
       const ignoredInfo = [
-        'Server  Discovered project folders:',
-        'Server  Discovered blog folders:',
         '🔧 Browser extension attribute handled:',
         'Initializing blog category filter',
         'Initializing category filter',
@@ -132,8 +130,6 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
         'Initializing category filter',
         'Found buttons:',
         'Initializing blog category filter',
-        'Server  Discovered project folders:',
-        'Server  Discovered blog folders:',
         '🔧 Browser extension attribute handled:',
         'data-new-gr-c-s-check-loaded',
         'data-gr-ext-installed',
