@@ -41,6 +41,7 @@ const nextConfig: NextConfig = {
   
   // Experimental features
   experimental: {
+    agentUpgrade: 'security',
     optimizePackageImports: ['lucide-react'],
   },
   
