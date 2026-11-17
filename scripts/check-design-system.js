@@ -106,7 +106,12 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         });
         await page.waitForFunction(() => document.querySelector('header[class*="headerScrolled"]'));
         await page.waitForFunction(() => !document.querySelector('header').getAnimations().some(animation => animation.playState === 'running'));
-        assert.notEqual(await page.$eval('header', node => getComputedStyle(node).backgroundColor), 'rgba(0, 0, 0, 0)', 'The scrolled header needs its themed backing over dark boards.');
+        const headerGlass = await page.$eval('header', node => {
+          const css = getComputedStyle(node);
+          return { background: css.backgroundColor, blur: css.backdropFilter };
+        });
+        assert.equal(headerGlass.background, 'rgba(0, 0, 0, 0)', 'Preserve the transparent glass header.');
+        assert.match(headerGlass.blur, /blur\(25px\)/);
         assert.equal(await frame.$('[aria-label="Cookie consent"]'), null);
         const innerHeight = await frame.evaluate(() => document.documentElement.scrollHeight);
         const outerHeight = await iframe.evaluate(node => node.clientHeight);

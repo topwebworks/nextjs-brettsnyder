@@ -36,6 +36,6 @@
 
 Verified on 2026-11-16 with Next.js 16.4.6: lint, type checking, production build, and the browser check pass. Browser coverage includes both themes at 1200, 390, and 320 pixels; button behavior, responsive embeds, full-size image links, video playback, downloads, mobile navigation, scrolling tabs, and native FAQ disclosures.
 
-The v06 review also checks the loaded Inter font, article readability on an existing project and Blog post, all seven PDF page widths and export edges, and focus-outline resizing after a longer label is applied. The scrolled header now uses a valid themed background so navigation stays readable over dark boards in light mode. The browser recording and paired homepage captures use the corrected font.
+The v06 review also checks the loaded Inter font, article readability on an existing project and Blog post, all seven PDF page widths and export edges, and focus-outline resizing after a longer label is applied. The scrolled header uses its original transparent fill with 25 px backdrop blur. The browser recording and paired homepage captures use the corrected font.
 
 Run a site server, then `node scripts/check-design-system.js [base-url]`. The check exercises the generated article, actual component behavior, themes, responsive embeds, recorded video, and downloads; screenshots go to the system temporary directory.
