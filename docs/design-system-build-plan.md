@@ -64,4 +64,4 @@ Record each interaction's trigger, start/end states, duration, easing, and reduc
 
 ## Next Step
 
-The native export and inline browser pilot is implemented; see [the source inventory](design-system-inventory.md). Review animated playback in the FigCraft document, then expand the brief into the sitemap/wireframes and build the assets/brand page. Keep the main build plan current as each stage is reviewed.
+The Portfolio case-study presentation is approved; see [the source inventory](design-system-inventory.md). Continue with the remaining projects, newest first by publish date, using the same Markdown and inline visual workflow. Follow [the main build plan](build-plan.md) for the next case.

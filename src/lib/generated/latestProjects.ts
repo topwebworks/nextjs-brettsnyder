@@ -15,13 +15,14 @@ export const latestProjects: LatestProject[] = [
   {
     "id": "analytics-workbench",
     "title": "Analytics Workbench",
-    "excerpt": "A tool that records what a page and its embedded iframes send to GTM, GA4 and ad platforms, checks the site around them, and explains each problem as a fix.",
+    "excerpt": "A tracking debugger that follows events across pages and embedded forms, then shows where to fix the gaps.",
     "category": "Developer Tool",
     "publishDate": "2026-10-22",
     "technologies": [
       "JavaScript",
       "Node.js",
-      "Chrome DevTools Protocol",
+      "Chrome DevTools",
+      "React",
       "Vite",
       "GTM",
       "GA4",

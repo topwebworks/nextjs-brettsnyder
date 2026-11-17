@@ -2,6 +2,7 @@
 
 ## Pilot
 
+- Portfolio case-study presentation approved by Brett on 2026-11-16.
 - Editable v08 document: brief/inventory, light/dark foundations, button states/playground, and site-pattern pages. The pattern page includes real desktop/mobile screens and an editable content-engine diagram.
 - Foundations: seven semantic colors in two modes, eight button measurements, and five motion values, including the existing 45-second floating-panel cycle.
 - Button: primary, secondary, and ghost variants; default, hover, pressed, focus, and disabled states; shared label style and editable Label property. Arrow viewports preserve the live SVG sizing and stroke, including its internal space. Focus outlines use auto layout with 4 px padding and a 2 px inside stroke, preserving equal 2 px gaps as labels grow. Hover/press prototype links connect the variants.

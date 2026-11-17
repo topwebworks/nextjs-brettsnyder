@@ -1,0 +1,47 @@
+/* theme · light */
+:root {
+  --bg: #F6F7F9;
+  --surface: #FFFFFF;
+  --ink: #101828;
+  --muted: #5B677A;
+  --line: #E4E7EC;
+  --line-strong: #D0D5DD;
+  --accent: #5A48D6;
+  --accent-ink: #FFFFFF;
+  --soft: #F2F4F7;
+  --error: #C4320A;
+  --warn: #B54708;
+  --ok: #067647;
+  --chart-a: #5A48D6;
+  --chart-b: #EB6834;
+}
+/* theme · dark */
+[data-theme="dark"] {
+  --bg: #0B1016;
+  --surface: #121A23;
+  --ink: #E7EDF3;
+  --muted: #98A6B5;
+  --line: #232F3C;
+  --line-strong: #314050;
+  --accent: #A99BF5;
+  --accent-ink: #191335;
+  --soft: #17212B;
+  --error: #F97066;
+  --warn: #FDB022;
+  --ok: #47CD89;
+  --chart-a: #9085E9;
+  --chart-b: #D95926;
+}
+/* foundation · base */
+:root {
+  --control-radius: 8px;
+  --control-padding-x: 14px;
+  --control-padding-y: 8px;
+  --focus-width: 2px;
+  --focus-offset: 2px;
+  --control-disabled-opacity: 0.55;
+  --motion-control: 150ms;
+  --motion-entry: 250ms;
+  --motion-arrival-duration: 5s;
+  --motion-arrival-hold: 1.25s;
+}

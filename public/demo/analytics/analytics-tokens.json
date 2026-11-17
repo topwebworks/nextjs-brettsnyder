@@ -1,0 +1,632 @@
+{
+  "error": false,
+  "meta": {
+    "variableCollections": {
+      "VariableCollectionId:1": {
+        "defaultModeId": "VariableCollectionId:1/mode1",
+        "hiddenFromPublishing": false,
+        "id": "VariableCollectionId:1",
+        "key": "VariableCollectionId:1",
+        "modes": [
+          {
+            "modeId": "VariableCollectionId:1/mode1",
+            "name": "light"
+          },
+          {
+            "modeId": "VariableCollectionId:1/mode2",
+            "name": "dark"
+          }
+        ],
+        "name": "theme",
+        "remote": false,
+        "variableIds": [
+          "VariableID:1",
+          "VariableID:2",
+          "VariableID:3",
+          "VariableID:4",
+          "VariableID:5",
+          "VariableID:6",
+          "VariableID:7",
+          "VariableID:8",
+          "VariableID:9",
+          "VariableID:10",
+          "VariableID:11",
+          "VariableID:12",
+          "VariableID:13",
+          "VariableID:14"
+        ]
+      },
+      "VariableCollectionId:2": {
+        "defaultModeId": "VariableCollectionId:2/mode1",
+        "hiddenFromPublishing": false,
+        "id": "VariableCollectionId:2",
+        "key": "VariableCollectionId:2",
+        "modes": [
+          {
+            "modeId": "VariableCollectionId:2/mode1",
+            "name": "base"
+          }
+        ],
+        "name": "foundation",
+        "remote": false,
+        "variableIds": [
+          "VariableID:15",
+          "VariableID:16",
+          "VariableID:17",
+          "VariableID:18",
+          "VariableID:19",
+          "VariableID:20",
+          "VariableID:21",
+          "VariableID:22",
+          "VariableID:23",
+          "VariableID:24"
+        ]
+      }
+    },
+    "variables": {
+      "VariableID:1": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --bg; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:1",
+        "key": "VariableID:1",
+        "name": "bg",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.9764705896377563,
+            "g": 0.9686274528503418,
+            "r": 0.9647058844566345
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.08627451211214066,
+            "g": 0.062745101749897,
+            "r": 0.04313725605607033
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:10": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --error; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:10",
+        "key": "VariableID:10",
+        "name": "error",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.03921568766236305,
+            "g": 0.19607843458652496,
+            "r": 0.7686274647712708
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.4000000059604645,
+            "g": 0.43921568989753723,
+            "r": 0.9764705896377563
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:11": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --warn; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:11",
+        "key": "VariableID:11",
+        "name": "warn",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.0313725508749485,
+            "g": 0.27843138575553894,
+            "r": 0.7098039388656616
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.13333334028720856,
+            "g": 0.6901960968971252,
+            "r": 0.9921568632125854
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:12": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --ok; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:12",
+        "key": "VariableID:12",
+        "name": "ok",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.27843138575553894,
+            "g": 0.4627451002597809,
+            "r": 0.0235294122248888
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.5372549295425415,
+            "g": 0.8039215803146362,
+            "r": 0.27843138575553894
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:13": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --chart-a; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:13",
+        "key": "VariableID:13",
+        "name": "chart-a",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.8392156958580017,
+            "g": 0.2823529541492462,
+            "r": 0.3529411852359772
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.9137254953384399,
+            "g": 0.5215686559677124,
+            "r": 0.5647059082984924
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:14": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --chart-b; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:14",
+        "key": "VariableID:14",
+        "name": "chart-b",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.20392157137393951,
+            "g": 0.40784314274787903,
+            "r": 0.9215686321258545
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.14901961386203766,
+            "g": 0.3490196168422699,
+            "r": 0.8509804010391235
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:15": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:15",
+        "key": "VariableID:15",
+        "name": "control/radius",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 8.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:16": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:16",
+        "key": "VariableID:16",
+        "name": "control/padding-x",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 14.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:17": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:17",
+        "key": "VariableID:17",
+        "name": "control/padding-y",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 8.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:18": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:18",
+        "key": "VariableID:18",
+        "name": "focus/width",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 2.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:19": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:19",
+        "key": "VariableID:19",
+        "name": "focus/offset",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 2.0
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:2": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --surface; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:2",
+        "key": "VariableID:2",
+        "name": "surface",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.13725490868091583,
+            "g": 0.10196078568696976,
+            "r": 0.07058823853731155
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:20": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:20",
+        "key": "VariableID:20",
+        "name": "control/disabled-opacity",
+        "remote": false,
+        "resolvedType": "FLOAT",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": 0.55
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:21": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:21",
+        "key": "VariableID:21",
+        "name": "motion/control",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "150ms"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:22": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:22",
+        "key": "VariableID:22",
+        "name": "motion/entry",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "250ms"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:23": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:23",
+        "key": "VariableID:23",
+        "name": "motion/arrival-duration",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "5s"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:24": {
+        "codeSyntax": {},
+        "description": "Existing CSS in tracking-inspector.js and index.html",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:24",
+        "key": "VariableID:24",
+        "name": "motion/arrival-hold",
+        "remote": false,
+        "resolvedType": "STRING",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:2/mode1": "1.25s"
+        },
+        "variableCollectionId": "VariableCollectionId:2"
+      },
+      "VariableID:3": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --ink; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:3",
+        "key": "VariableID:3",
+        "name": "ink",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.1568627506494522,
+            "g": 0.0941176488995552,
+            "r": 0.062745101749897
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.9529411792755127,
+            "g": 0.929411768913269,
+            "r": 0.9058823585510254
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:4": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --muted; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:4",
+        "key": "VariableID:4",
+        "name": "muted",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.47843137383461,
+            "g": 0.40392157435417175,
+            "r": 0.35686275362968445
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.7098039388656616,
+            "g": 0.6509804129600525,
+            "r": 0.5960784554481506
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:5": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --line; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:5",
+        "key": "VariableID:5",
+        "name": "line",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.9254902005195618,
+            "g": 0.9058823585510254,
+            "r": 0.8941176533699036
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.23529411852359772,
+            "g": 0.18431372940540314,
+            "r": 0.13725490868091583
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:6": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --line-strong; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:6",
+        "key": "VariableID:6",
+        "name": "line-strong",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.8666666746139526,
+            "g": 0.8352941274642944,
+            "r": 0.8156862854957581
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.3137255012989044,
+            "g": 0.250980406999588,
+            "r": 0.1921568661928177
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:7": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --accent; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:7",
+        "key": "VariableID:7",
+        "name": "accent",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.8392156958580017,
+            "g": 0.2823529541492462,
+            "r": 0.3529411852359772
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.9607843160629272,
+            "g": 0.6078431606292725,
+            "r": 0.6627451181411743
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:8": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --accent-ink; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:8",
+        "key": "VariableID:8",
+        "name": "accent-ink",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.2078431397676468,
+            "g": 0.07450980693101883,
+            "r": 0.09803921729326248
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      },
+      "VariableID:9": {
+        "codeSyntax": {},
+        "description": "tracking-inspector.js / --soft; measured in the public app",
+        "hiddenFromPublishing": false,
+        "id": "VariableID:9",
+        "key": "VariableID:9",
+        "name": "soft",
+        "remote": false,
+        "resolvedType": "COLOR",
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "valuesByMode": {
+          "VariableCollectionId:1/mode1": {
+            "a": 1.0,
+            "b": 0.9686274528503418,
+            "g": 0.95686274766922,
+            "r": 0.9490196108818054
+          },
+          "VariableCollectionId:1/mode2": {
+            "a": 1.0,
+            "b": 0.16862745583057404,
+            "g": 0.12941177189350128,
+            "r": 0.09019608050584793
+          }
+        },
+        "variableCollectionId": "VariableCollectionId:1"
+      }
+    }
+  },
+  "status": 200
+}

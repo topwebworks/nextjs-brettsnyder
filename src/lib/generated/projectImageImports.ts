@@ -7,6 +7,13 @@ import { StaticImageData } from 'next/image';
 // Import statements for all project images
 import amwhardscapeHero from '@/app/projects/content/amw-hardscape/amw-hardscape-hero.png';
 import analyticsworkbenchHero from '@/app/projects/content/analytics-workbench/analytics-workbench-hero.png';
+import analyticsworkbenchScreenshot1 from '@/app/projects/content/analytics-workbench/analytics-workbench.png';
+import analyticsworkbenchScreenshot2 from '@/app/projects/content/analytics-workbench/design-system-charts.webp';
+import analyticsworkbenchScreenshot3 from '@/app/projects/content/analytics-workbench/design-system-components.webp';
+import analyticsworkbenchScreenshot4 from '@/app/projects/content/analytics-workbench/design-system-findings.webp';
+import analyticsworkbenchScreenshot5 from '@/app/projects/content/analytics-workbench/design-system-foundations.webp';
+import analyticsworkbenchScreenshot6 from '@/app/projects/content/analytics-workbench/design-system-timeline.webp';
+import analyticsworkbenchScreenshot7 from '@/app/projects/content/analytics-workbench/design-system-workflow.webp';
 import brightpathopsHero from '@/app/projects/content/brightpath-ops/ops-hero.png';
 import cywireHero from '@/app/projects/content/cywire/1-cywire-master-prompts.png';
 import emailHero from '@/app/projects/content/email/email-1.jpg';
@@ -56,7 +63,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'analytics-workbench': {
     hero: analyticsworkbenchHero,
     demo: null,
-    screenshots: []
+    screenshots: [analyticsworkbenchScreenshot1, analyticsworkbenchScreenshot2, analyticsworkbenchScreenshot3, analyticsworkbenchScreenshot4, analyticsworkbenchScreenshot5, analyticsworkbenchScreenshot6, analyticsworkbenchScreenshot7]
   },
   'brightpath-ops': {
     hero: brightpathopsHero,
@@ -121,7 +128,14 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'amw-hardscape-hero.png': amwhardscapeHero
   },
   'analytics-workbench': {
-    'analytics-workbench-hero.png': analyticsworkbenchHero
+    'analytics-workbench-hero.png': analyticsworkbenchHero,
+    'analytics-workbench.png': analyticsworkbenchScreenshot1,
+    'design-system-charts.webp': analyticsworkbenchScreenshot2,
+    'design-system-components.webp': analyticsworkbenchScreenshot3,
+    'design-system-findings.webp': analyticsworkbenchScreenshot4,
+    'design-system-foundations.webp': analyticsworkbenchScreenshot5,
+    'design-system-timeline.webp': analyticsworkbenchScreenshot6,
+    'design-system-workflow.webp': analyticsworkbenchScreenshot7
   },
   'brightpath-ops': {
     'ops-hero.png': brightpathopsHero
@@ -201,6 +215,13 @@ export const availableProjects = ['amw-hardscape', 'analytics-workbench', 'brigh
 // Individual variable exports for direct access
 export { amwhardscapeHero };
 export { analyticsworkbenchHero };
+export { analyticsworkbenchScreenshot1 };
+export { analyticsworkbenchScreenshot2 };
+export { analyticsworkbenchScreenshot3 };
+export { analyticsworkbenchScreenshot4 };
+export { analyticsworkbenchScreenshot5 };
+export { analyticsworkbenchScreenshot6 };
+export { analyticsworkbenchScreenshot7 };
 export { brightpathopsHero };
 export { cywireHero };
 export { emailHero };

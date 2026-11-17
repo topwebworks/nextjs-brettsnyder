@@ -38,11 +38,13 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Current Phase
 
-Portfolio design system documentation in FigCraft, using the implemented site as the source. Follow the [design system build outline](design-system-build-plan.md).
+Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. Work newest to oldest by `publishDate`.
 
-- Status: v08 matches the button arrows to the live SVG viewport and stroke across all states and playground instances. The seven-page PDF retains centered flow arrows, consistent Inter styles, responsive focus outlines, shorter copy, and a 1280-point page width. Five inline boards include paired portrait states and the measured fade timing. The case study keeps its live demo and recording. See the [source inventory](design-system-inventory.md).
-- Next task: review graphical prototype playback, then sitemap/wireframes and the assets/brand page. Public boards and the case study have received a typography and copy pass; page heights follow their content.
-- Scope: author the system and prototypes in FigCraft. Refine the existing Markdown case study and place boards, downloads, recordings, and component demos inline. Add enlargement only where useful; label new motion explorations for review.
+- Approved: Personal Portfolio case study and v08 presentation, approved by Brett on 2026-11-16. See the [source inventory](design-system-inventory.md).
+- Current review: Analytics Workbench (2026-10-22). The illustrated article now includes six boards, a real workflow recording, token downloads, vector controls and a six-page PDF. Editable assets and control prototypes are documented in the [source inventory](analytics-workbench-design-system.md).
+- Next task: review the Analytics presentation, then continue with Grok Bot.
+- Following projects: Grok Bot, PushPad, then Brightpath Operations. Continue through the remaining cases in descending `publishDate` order.
+- Scope: use each project's existing design and actual behavior. Keep stories in Markdown and place relevant visuals beside the explanation. Preserve the site's layouts, navigation, and themes.
 
 ## Scope Boundaries
 

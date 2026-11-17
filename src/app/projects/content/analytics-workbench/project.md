@@ -1,128 +1,102 @@
 ---
-title: "Analytics Workbench"
-description: "A tool that records what a page and its embedded iframes send to GTM, GA4 and ad platforms, checks the site around them, and explains each problem as a fix."
-contentTitle: "Finding Where Tracking Breaks"
-achievementTitle: "Recording, Checks & Tools"
+title: Analytics Workbench
+description: "A tracking debugger that follows events across pages and embedded forms, then shows where to fix the gaps."
+contentTitle: Finding Where Tracking Breaks
 technologies:
-  - "JavaScript"
-  - "Node.js"
-  - "Chrome DevTools Protocol"
-  - "Vite"
-  - "GTM"
-  - "GA4"
-  - "Vercel"
-category: "Developer Tool"
-status: "Production"
+  - JavaScript
+  - Node.js
+  - Chrome DevTools
+  - React
+  - Vite
+  - GTM
+  - GA4
+  - Vercel
+category: Developer Tool
+status: Production
 featured: true
-publishDate: "2026-10-22"
+publishDate: '2026-10-22'
+updatedDate: '2026-11-17'
 links:
-  live: "https://analytics.rockitcode.com/"
-
-keyAchievements:
-  - type: "technical"
-    icon: "🔧"
-    title: "Workbench Summary"
-    description: "Records the page and every iframe on one timeline, checks it against the published GTM container and GA4 settings, and explains each problem with where it lives and how to fix it."
-    metrics:
-      - "dataLayer pushes, clicks and GA4, Google Ads and Meta requests from every frame"
-      - "Checks for tags, ecommerce, campaigns, consent, cookies and ad conversions"
-      - "Seven site tools: campaign links, email, DNS, security policy, server-side tagging, site basics, page speed"
-      - "Search and AI tools for Search Console, Keyword Planner and GA4 exports, SEO health and AI referrals"
-      - "Stat tiles and charts on the data tools, drawn only from data you supply"
-      - "Tested on 11 real sites; errors cut by more than half after tuning"
-      - "Online edition runs entirely in the browser, with no accounts or cookies"
-
+  live: https://analytics.rockitcode.com/
+keyAchievements: []
 media:
-  items: []
+  items:
+    - type: image
+      title: Analytics Workbench with the supplied Demo booking recording
+      src: analytics-workbench.png
+designSystem: true
 ---
 
-Ad campaigns drive traffic, the store or booking system shows sales, and GA4 credits almost none of them to the ads. The tags fire and Tag Assistant looks fine. I kept running into this, and the cause was usually somewhere most tools don't look: an embedded checkout or form running in an iframe from another domain.
+## The Brief
 
-To the visitor it's one page. To the browser it's two sites, each with its own dataLayer and cookies. Events inside the iframe never reach the page's GTM, the campaign on the landing URL doesn't make it into the iframe, and sometimes the purchase is counted twice, once from each side.
+An embedded checkout can finish a sale while the website's analytics misses it. The page and iframe have separate data layers, and campaign details do not always cross that boundary.
 
-Analytics Workbench is the tool I built to see that, and to turn what it finds into fixes.
+I built Analytics Workbench to follow that handoff. It brings clicks, dataLayer pushes and tag requests into one recording, checks what arrived, and gives the person fixing it a place to start.
 
-## What it does
+![How a page and embedded form feed one recording, followed by checks and repair steps](design-system-workflow.webp)
 
-- **Records a session**: dataLayer pushes, clicks, page loads, failed requests, and the requests sent to GA4, Google Ads and Meta, from the page and every iframe, on one timeline.
-- **Checks** it against the published GTM container and GA4's public settings. No login needed.
-- **Compares** a flow with a GA4 purchase standard or with a recording you know is good.
-- **Explains** every problem: where it lives, numbered steps to fix it, and a prompt for an AI coding assistant when code has to change.
-- **Exports** a Markdown report you can drop into a ticket or send to a client.
+## One Timeline
 
-## Seeing inside iframes
+Each row keeps its frame label. A click shows the events or tag hits that followed within a second and a half, making a dead end easier to spot. Filters narrow the recording without losing the surrounding session.
 
-Browsers keep sites apart, so an ordinary web page can't see into another site's iframe or its network traffic. The desktop edition gets around that by running its own Chrome through the DevTools Protocol, with a small recorder in every frame. It works on localhost, staging and pages behind a login, and each session starts with a clean profile, like a first-time visitor from an ad.
+The desktop recorder runs Chrome through the DevTools Protocol, with a recorder in every frame. The browser edition can inspect saved recordings and use a bookmark recorder for the current page; full cross-origin recording needs the desktop edition.
 
-Each click shows what it triggered within a second and a half. "No dataLayer event or tag hit followed" is the quickest way I know to find a button analytics can't see.
+![The Demo booking sample showing iframe clicks followed by events on the host page](design-system-timeline.webp)
 
-## What the checks catch
+## From Finding to Repair
 
-- GTM triggers waiting for an event name the site never sends, and variables reading the wrong key.
-- Purchases missing value, currency or transaction ID, or sending the value as text.
-- Events stuck inside an iframe, and campaigns that never reach it.
-- The same purchase sent to GA4 by two senders.
-- Ad conversions that won't get credit, with a verdict per platform: credited, at risk or lost.
-- Consent problems, tracking cookies set before the visitor agreed, and Safari's 7-day limit on cookies set by script.
-- Failed requests, and how much script each tag vendor loads.
-- Page basics that affect marketing: a missing title, a leftover noindex, a canonical tag pointing elsewhere, social preview tags and structured data.
+I put the location and numbered fix steps before the supporting detail. Evidence, embed files and a coding prompt stay in disclosures, so a long report does not bury the next action.
 
-## Tools for the rest of the site
+Compare checks a recording against the built-in GA4 booking standard, another session or an imported reference. The supplied Demo booking sample matches 31 of 31 checks. The Rezdy sample matches 4 of 10 and exposes missing events and purchase fields. Those counts describe the samples, not a customer's tracking health.
 
-Tracking problems often start outside the tags, so I added a Tools menu. Each tool checks one site or domain and gives the same kind of findings:
+![An actual missing-event finding, with its location, fix steps and expandable evidence](design-system-findings.webp)
 
-- **Campaign links**: builds tagged links and catches mixed case, missing source or medium, hard-coded click IDs, and redirects that drop the campaign.
-- **Email deliverability**: SPF (including the 10-lookup limit), DMARC, DKIM, MX, MTA-STS and BIMI.
-- **Domain overview**: DNS records, DNSSEC, IPv6 and CAA, plus a snapshot you can compare after a DNS change.
-- **Security policy for tags**: what a Content-Security-Policy blocks for GTM, GA4, Google Ads or Meta, and the lines to add.
-- **Server-side tagging**: whether Safari will keep the cookies your tagging subdomain sets.
-- **Site basics**: certificate, redirects, security headers, robots.txt, the sitemap and broken links on a page.
-- **Page speed**: Core Web Vitals from Google's PageSpeed Insights.
+This recording moves from the matching sample to the incomplete one and opens the evidence behind a finding.
 
-They're for checking your own sites. There's nothing in there for scanning other people's.
+<video controls playsinline preload="none" poster="/demo/analytics/analytics-workflow-poster.webp" width="1280" height="800">
+  <source src="/demo/analytics/analytics-workflow.mp4" type="video/mp4">
+  <a href="/demo/analytics/analytics-workflow.mp4">Watch the sample comparison and repair workflow.</a>
+</video>
 
-## Search and AI visibility
+Reports download as Markdown. The embed kit supplies the other half of the repair: one script sends standard events from the iframe; the host script checks the message origin and frame before pushing them into its dataLayer. The booking demo uses that kit.
 
-A second menu covers search. It reads exports you already have, in your browser, and shows what they say:
+## Foundations
 
-- **Search performance**: Search Console exports, with weighted CTR and position, trends, and the pages or queries worth a closer look.
-- **Keyword opportunities**: Keyword Planner estimates next to the queries Search Console says you already get.
-- **SEO health**: indexing, metadata and content checks for one page.
-- **Answer visibility**: how clearly a page answers questions and shows its sources, which is what [AI answer engines](/projects/topwebworks) pick up.
-- **AI referrals**: visits and outcomes from ChatGPT, Perplexity, Claude, Copilot and Gemini in your GA4 data.
+Shared CSS defines the canvas, surfaces, text, borders, actions and severity colors. Both themes use those roles. The interface uses the platform's system font, with compact labels and tabular figures in the data tables.
 
-Nothing is uploaded, and there's no invented visibility score. Every number comes from a file you chose, and the report says which one.
+![Light and dark color roles, system typography and control measurements](design-system-foundations.webp)
 
-## Charts and stats
+[Download the token JSON](/demo/analytics/analytics-tokens.json) or [view the CSS](/demo/analytics/analytics-tokens.css).
 
-The data tools open with stat tiles and charts, so the main numbers are readable at a glance:
+## Controls and Feedback
 
-- **Search performance**: clicks, impressions, CTR and position with the change since the earlier period, daily trends, clicks by weekday, and CTR against position.
-- **Page speed**: the score on a gauge, real-visitor Core Web Vitals split into good, needs improvement and poor, and charts for page weight, main-thread time and third-party tags.
-- **AI referrals and keywords**: sessions, engagement and revenue by AI source, and keyword demand next to what Search Console already shows.
-- **Email and domain**: SPF lookups against the limit of 10, DMARC and DKIM status, and DNS records by type.
-- **Sessions**: an At a glance panel that updates as events come in, with tag hits by platform and activity by frame.
+Buttons change color over 150 milliseconds. They keep their position and size. Keyboard focus uses a two-pixel outline with a two-pixel gap; disabled controls fade to 55% opacity.
 
-Every chart comes from the data you supplied. A blank cell stays blank instead of becoming a zero, a failed lookup shows as unknown, and each chart has a table of the exact numbers under it.
+![Primary and secondary buttons in default, hover, focus and disabled states in both themes](design-system-components.webp)
 
-## Testing it on real sites
+[Open the vector control board](/demo/analytics/control-states.svg).
 
-Before calling it done, I ran it against eleven real sites: online stores, SaaS companies, a news site, and my own [CyWire](/projects/cywire) site. The first pass was too noisy. It reported a dataLayer reset on three large sites because a pattern matched inside minified code. It judged a page that had blocked the audit as if it were the real site. And it warned SaaS companies about missing purchase tracking when they convert on sign-ups.
+New timeline entries briefly hold an amber highlight, then fade. Old recordings do not replay it. Reduced motion removes the arrival animation and control transitions.
 
-I fixed each one. A reset now needs proof from the running page, blocked pages are reported as blocked, and purchase checks only apply to sites that sell. Errors across the eleven sites dropped by more than half, and what's left holds up when I check it by hand.
+## Charts and Smaller Screens
 
-## The embed kit
+The session overview separates activity by time, event, platform and frame. Each chart has a Data disclosure for its table. Search and page-speed tools use the same pattern, with the source and coverage stated beside the results.
 
-For products that run inside an iframe, I wrote two small scripts that close the gap from the vendor's side, so site owners don't have to change anything. One runs inside the embedded app and sends each standard event to the page. The other runs on the page, checks where each message came from, and pushes it into the page's dataLayer with the campaign attached. The demo booking form on the site runs on them.
+On mobile, sessions scroll horizontally, tabs wrap, and event rows retain their frame labels.
 
-## Online and desktop
+![The sample activity chart beside the mobile session layout](design-system-charts.webp)
 
-The online version at [analytics.rockitcode.com](https://analytics.rockitcode.com/) runs entirely in your browser. You can open the sample recordings, import your own, run Checks and Compare, use the tools, download reports, and record any page with a bookmark. The parts that need to drive a browser, like recording iframes and tag requests or reading another site's certificate, are in the desktop edition, which isn't publicly released yet.
+## Beyond Tracking
 
-Each tool has its own page with answers to common questions, and a switch in the header changes between light and dark themes.
+- **Site tools** check campaign links, email records, DNS, security policy, server-side tagging, site basics and page speed.
+- **Search and AI tools** work with Search Console, Keyword Planner and GA4 exports, alongside page checks and sourced observations. They do not invent rankings, search volume or AI visibility scores.
 
-There are no accounts, cookies or analytics on the site. Recordings stay in your browser. When a check needs outside data, your browser asks Google or Cloudflare directly, and the Legal page lists exactly what goes where.
+Testing on 11 sites exposed false positives in the early checks. Minified code could look like a broken dataLayer, and a blocked page could look like a failed audit. I changed the rules to require runtime evidence for a reset and to report blocked access as a limit on the check.
 
-## What it doesn't do
+## Try It
 
-It doesn't change GTM, GA4 or ad accounts, and it doesn't monitor sites over time. Its findings cover what it could see on the pages you checked, not every page of a site.
+[Open Analytics Workbench](https://analytics.rockitcode.com/) to inspect the samples, import a recording, compare events or download a report. The desktop recorder is not publicly released.
+
+No account is required. Saved recordings stay in browser storage, and optional site analytics follows the visitor's cookie choice.
+
+[Download the design system PDF](/demo/analytics/analytics-system-overview.pdf).
