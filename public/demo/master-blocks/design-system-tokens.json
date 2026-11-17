@@ -1,0 +1,186 @@
+{
+  "title": "Master Blocks design system",
+  "basis": "Existing 2022 HTML/CSS landing-page library; documentation reconstructed from the archived source.",
+  "source": "/demo/master-blocks/aop-master-lp-blocks.html",
+  "declaredVariables": [
+    {
+      "name": "--primary",
+      "value": "#2ab5cd"
+    },
+    {
+      "name": "--primary-light",
+      "value": "#cfebef"
+    },
+    {
+      "name": "--primary-transparent",
+      "value": "rgba(42, 181, 205, 0.45)"
+    },
+    {
+      "name": "--primary-dark",
+      "value": "#00829b"
+    },
+    {
+      "name": "--primary-dark-transparent",
+      "value": "rgba(0, 129, 155, 0.35)"
+    },
+    {
+      "name": "--primary-video-transparent",
+      "value": "rgba(0, 67, 80, 0.80)"
+    },
+    {
+      "name": "--transparent",
+      "value": "rgba(255, 255, 255, 0)"
+    },
+    {
+      "name": "--white-transparent",
+      "value": "rgba(255, 255, 255, 0.35)"
+    },
+    {
+      "name": "--font-family",
+      "value": "'Open Sans', sans-serif"
+    },
+    {
+      "name": "--white",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "--gray-50",
+      "value": "#F9FAFB"
+    },
+    {
+      "name": "--gray-100",
+      "value": "#F3F4F6"
+    },
+    {
+      "name": "--gray-300",
+      "value": "#D1D5DB"
+    },
+    {
+      "name": "--gray-500",
+      "value": "#6B7280"
+    },
+    {
+      "name": "--gray-900",
+      "value": "#111827"
+    },
+    {
+      "name": "--purple",
+      "value": "#7686c5"
+    },
+    {
+      "name": "--purplelight",
+      "value": "#e9edff"
+    },
+    {
+      "name": "--green",
+      "value": "#8dc740"
+    },
+    {
+      "name": "--greenlight",
+      "value": "#f5ffe7"
+    },
+    {
+      "name": "--yellow",
+      "value": "#fcb13b"
+    },
+    {
+      "name": "--yellowlight",
+      "value": "#fff4e3"
+    },
+    {
+      "name": "--red",
+      "value": "#f37c7c"
+    },
+    {
+      "name": "--redlight",
+      "value": "#ffe4e4"
+    },
+    {
+      "name": "--blue",
+      "value": "#2ab5cd"
+    },
+    {
+      "name": "--bluelight",
+      "value": "#ddfaff"
+    },
+    {
+      "name": "--teal",
+      "value": "#3F8F8F"
+    },
+    {
+      "name": "--teallight",
+      "value": "#e6ffff"
+    }
+  ],
+  "rules": {
+    "fontFamily": "Open Sans, sans-serif",
+    "type": [
+      {
+        "selector": ".title-3xl",
+        "desktop": "52px / 58px",
+        "tablet": "42px / 46px",
+        "phone": "32px / 36px"
+      },
+      {
+        "selector": ".title-lg",
+        "desktop": "36px / 40px",
+        "phone": "26px / 30px"
+      },
+      {
+        "selector": ".title-md",
+        "desktop": "30px / 34px"
+      },
+      {
+        "selector": ".text-normal",
+        "desktop": "16px / 28px"
+      },
+      {
+        "selector": ".text-sm",
+        "desktop": "14px / 24px"
+      }
+    ],
+    "spacing": {
+      ".mb-sm": "5px",
+      ".mb-md": "10px",
+      ".mb-lg": "20px",
+      ".mb-xl": "40px"
+    },
+    "container": "1220px maximum",
+    "breakpoints": [
+      "768px",
+      "480px"
+    ],
+    "button": {
+      "padding": "7px 20px",
+      "radius": "5px",
+      "type": "14px / 24px, uppercase, 1px tracking",
+      "hover": "opacity 0.8 over 300ms"
+    },
+    "benefitCard": {
+      "surface": "var(--gray-100)",
+      "radius": "8px",
+      "layout": "row of three; column at 768px"
+    },
+    "tabs": {
+      "implementation": "radio inputs and labels; CSS checked selector",
+      "selectedPanel": "500ms opacity ease-in",
+      "limitations": "Inputs are display:none; text labels are hidden at 768px. Keyboard navigation and mobile labels need a separate update."
+    }
+  },
+  "layers": [
+    "Brand variables and host-page adjustments",
+    "Core and block CSS",
+    "Responsive rules",
+    "Campaign overrides"
+  ],
+  "modules": [
+    "Hero + lead form",
+    "Centered text",
+    "Benefits",
+    "Subject tabs",
+    "Image/text splits",
+    "Call to action",
+    "Information bar"
+  ],
+  "archiveNotes": "The demo contains placeholder copy, sample phone numbers and a form without a production submission integration."
+}

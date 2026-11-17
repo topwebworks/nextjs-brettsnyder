@@ -39,6 +39,12 @@ import grokbotScreenshot1 from '@/app/projects/content/grok-bot/director-archite
 import grokbotScreenshot2 from '@/app/projects/content/grok-bot/director-checkpoint.webp';
 import grokbotScreenshot3 from '@/app/projects/content/grok-bot/director-recovery.webp';
 import masterblocksHero from '@/app/projects/content/master-blocks/masterblocks-hero.jpg';
+import masterblocksScreenshot1 from '@/app/projects/content/master-blocks/system-components.webp';
+import masterblocksScreenshot2 from '@/app/projects/content/master-blocks/system-handoff.webp';
+import masterblocksScreenshot3 from '@/app/projects/content/master-blocks/system-modules.webp';
+import masterblocksScreenshot4 from '@/app/projects/content/master-blocks/system-responsive.webp';
+import masterblocksScreenshot5 from '@/app/projects/content/master-blocks/system-states.webp';
+import masterblocksScreenshot6 from '@/app/projects/content/master-blocks/system-tokens.webp';
 import monarchcatalogHero from '@/app/projects/content/monarch-catalog/monarch-prototype.png';
 import personalportfolioHero from '@/app/projects/content/personal-portfolio/1-personal-portfolio.png';
 import personalportfolioScreenshot1 from '@/app/projects/content/personal-portfolio/design-system-buttons.webp';
@@ -112,7 +118,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'master-blocks': {
     hero: masterblocksHero,
     demo: null,
-    screenshots: []
+    screenshots: [masterblocksScreenshot1, masterblocksScreenshot2, masterblocksScreenshot3, masterblocksScreenshot4, masterblocksScreenshot5, masterblocksScreenshot6]
   },
   'monarch-catalog': {
     hero: monarchcatalogHero,
@@ -194,7 +200,13 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'director-recovery.webp': grokbotScreenshot3
   },
   'master-blocks': {
-    'masterblocks-hero.jpg': masterblocksHero
+    'masterblocks-hero.jpg': masterblocksHero,
+    'system-components.webp': masterblocksScreenshot1,
+    'system-handoff.webp': masterblocksScreenshot2,
+    'system-modules.webp': masterblocksScreenshot3,
+    'system-responsive.webp': masterblocksScreenshot4,
+    'system-states.webp': masterblocksScreenshot5,
+    'system-tokens.webp': masterblocksScreenshot6
   },
   'monarch-catalog': {
     'monarch-prototype.png': monarchcatalogHero
@@ -295,6 +307,12 @@ export { grokbotScreenshot1 };
 export { grokbotScreenshot2 };
 export { grokbotScreenshot3 };
 export { masterblocksHero };
+export { masterblocksScreenshot1 };
+export { masterblocksScreenshot2 };
+export { masterblocksScreenshot3 };
+export { masterblocksScreenshot4 };
+export { masterblocksScreenshot5 };
+export { masterblocksScreenshot6 };
 export { monarchcatalogHero };
 export { personalportfolioHero };
 export { personalportfolioScreenshot1 };

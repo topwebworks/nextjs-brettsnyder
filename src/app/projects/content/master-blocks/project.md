@@ -1,15 +1,15 @@
 ---
 title: "Master Blocks Design System"
-description: "A design system of reusable, token-based landing page blocks that let our marketing team build lead-gen pages in a fraction of the time, with code flexibility."
+description: "A reusable HTML/CSS landing-page library for six product brands, built so the marketing team could assemble and edit campaigns in their existing CMS."
 contentTitle: ""
 achievementTitle: ""
-technologies: 
+technologies:
   - "HTML"
   - "CSS"
-  - "Javascript" 
-  - "Web Design"
+  - "JavaScript"
+  - "Design Systems"
 category: "Template"
-status: "Prod"
+status: "Production"
 featured: false
 designSystem: true
 publishDate: "2022-06-15"
@@ -17,127 +17,71 @@ links:
   demo: "/demo/master-blocks/example-aop-lp.html"
   github: "https://github.com/topwebworks/master-lp-blocks"
   live: "/demo/master-blocks/aop-master-lp-blocks.html"
-keyAchievements:
-  - type: "impact"
-    icon: "🚀"
-    title: "Accelerated Landing Page Delivery"
-    description: "Built a master template of reusable blocks so the marketing team could edit or even create landing pages. The simple HTML/CSS setup let them mix, match, and edit layouts right in the CMS, making campaigns faster to launch and easier to stay on brand."
-    metrics:
-      - "Reduced landing-page production time by 40% across more than 50 conversion-focused pages"
-      - "Modular block system reused across multiple product brands"
-      - "Flexible CMS-compatible HTML/CSS design for long-term scalability"
+keyAchievements: []
 media:
   items:
-
+    - type: "image"
+      src: "masterblocks-hero.jpg"
+      title: "Master Blocks landing-page library"
 ---
 
+## A library the team could use
 
-## The Issue
+Marketing needed landing pages for a busy season that had already started. They supported six product brands across WordPress and a custom .NET CMS. The team knew how to edit HTML in content buckets and widgets, and they needed to keep that control.
 
-Thursday afternoon, Marketing conveyed a dire need for landing pages - fast. Their busy season has started without them. The team requires the ability to edit site content, and even play with the layout blocks - the cms approach. Their platforms are WordPress and custom DotNet cms hosting up to 6 different product brands. Some brands will have more than one campaign. They gave me a wireframe to start building the first of many upcoming landing&nbsp;pages.
+I was given a wireframe for the first page. I proposed a master template with reusable blocks so we could handle the campaigns that would follow. I designed and built the HTML, CSS, responsive layouts and interactive pieces, then organized them for the team's day-to-day editing.
 
-What would be the fastest most efficient path to churn these out? A template of course! The fact Marketing needs direct code access, and soon, removes any option of introducing new frameworks like Tailwind or a static site generator. The pages have to be in HTML/CSS so the team can edit and repurpose them in the future. The marketing team had been working with basic HTML in cms buckets and widgets for a while&nbsp;already.
+These boards document the system in that work, from the declared variables through the campaign example.
 
-## A Solution
+## Brand values and shared rules
 
-By late afternoon, I threw together a quick [wireframe](https://www.figma.com/file/Touan7noP4nCCu9D7xioU2/Master-LP-Blocks-Graybox-(Copy)?type=design&node-id=0%3A1&t=iLDWaBbBw2Z5Y7jr-1) showing what a master template might look like - reflecting their provided wireframe elements - and then some. The concept was to design a system, not just a page: a library of modular content blocks, built on shared design tokens (CSS variables for color, type, and spacing), that are portable across brands and CMS platforms. Flex is more forgiving of change than CSS Grid. Meaning each block and child element can be moved or deleted without breaking the layout on any cms, or even standalone. The [design system](/blog/design-systems) would include almost all elements they would ever need, then refactor the page from there. The pitch was approved and I was off to the&nbsp;races.
+The brand layer holds CSS variables for the palette and Open Sans. Controls, body copy and section styles refer back to those values. Changing the brand layer carries the new colors and font through the page.
 
-This is a design system in the same sense as a component library in Figma or a token-based system in React: a shared set of building blocks, brand variables, and rules for how they combine, meant to be used by both designers and developers rather than hand-built per page. The platform here is HTML/CSS/CMS, but the same tokens-and-components approach ports to any framework, including&nbsp;Next.js.
+Type sizes and spacing live in shared classes. The main heading runs at 52/58 px on desktop and 32/36 px on phones. Paragraphs use 16/28 px. Margin utilities repeat 5, 10, 20 and 40 px values; most section wrappers share a 1220 px maximum width.
 
-## Default Block Sequence
+![Master Blocks color variables, typography, spacing and responsive rules](system-tokens.webp)
 
-All blocks can be moved, but what is the best default sequence? Having done some UI a/b testing before, my heatmaps revealed most all conversions take place above the fold. A long page funnel does not work at least for this demographic. The Blocks template needs to be able to work with or without a cms header and footer - a CSS override section is needed to reset entrenched cms styles. It also needs to have modular branding, so use CSS variables. If I want to keep the content blocks portable, I would need global and individual CSS block separation. Lastly, a "user" style override section at the bottom so the core styles above are not erased and break the template upgrade&nbsp;path. 
+[Inspect the source values](/demo/master-blocks/design-system-tokens.json).
 
-### Default&nbsp;block&nbsp;sequence:
+## Small parts, complete sections
 
-1. **Hero** block maxed out might have a simple lead-gen form, phone, logo, title, subtext, and 2 buttons. The hero background should contain a video background and modal. I prefer no nav links that send people off the page; kiss most of them goodbye. These landing pages are not microsites...but will include one nav link just in&nbsp;case.
+Fields, actions, text styles and media slots combine into larger components. A benefit card contains an image, heading, description and action. The hero combines the offer, phone link, button group and lead form.
 
-2. **Centered Text** block is to welcome and reinforce what the hero did not say clearly. It could include jump links or buttons to bring them down the&nbsp;page.
+![Editable field, action and benefit-card studies using the source values](system-components.webp)
 
-3. **Benefits** and features, each with buttons and download links. Include a floating call now button that launches if the user clicks on a benefit icon...they always do. Show this floating call button below the&nbsp;fold.
+I kept each section's wrapper, content and controls together. The team could duplicate a benefits block, swap an image-and-text section, or remove a section without rebuilding the rest of the page. Flex layouts handled the rows and stacking.
 
-4. **Tabs** to easily inform and encourage a conversion - images, content, and a&nbsp;button.
+![The hero, benefits, introduction, image-and-text, call-to-action and information-bar modules](system-modules.webp)
 
-5. **Split L/R** content blocks for pacing. Establish value with a deeper expert explanation or pricing options. Mix in user testimonials and a call now&nbsp;button.
+The master intentionally contains placeholder copy and media areas. The campaign example shows those structures with product branding and content.
 
-6. **CTA** shows a no-brainer offer. Of course, I will click this! I would be crazy not to. Freebies are always good. Forms do not pull at the&nbsp;bottom.
+## Behavior inside the blocks
 
-7. **Infobar** is not a large CTA block but a good content divider or small footer that shows a small button, text,&nbsp;etc.
+The subject selector pairs each category with a border color and a pale selected fill. Radio inputs and CSS selectors switch the content panel, with a 500 ms opacity transition. Buttons use a 300 ms hover fade. The form switches its field rows to a single column on phones.
 
-8. **Chat Widget** integration - only used if no existing cms header is in&nbsp;play.
+![Bible and Math selected states beside the shared lead-form component](system-states.webp)
 
-> **Performance Insight**: Now custom cms landing pages are developed 40% faster. They can also work as standalone pages, just have to add in the missing HTML head&nbsp;code.
+<video controls playsinline preload="none" poster="/demo/master-blocks/design-system-interactions-poster.webp" width="1280" height="900">
+  <source src="/demo/master-blocks/design-system-interactions.mp4" type="video/mp4">
+  <a href="/demo/master-blocks/design-system-interactions.mp4">Watch the subject-tab transitions.</a>
+</video>
 
-## The Build
+The archive also shows where I would revise it today: the radio inputs are hidden from keyboard focus, and phone layouts hide the subject text. I'd keep visible labels and add keyboard navigation. The demo form has no production submission integration.
 
-On Friday I started round 1, knocking out the blocks Marketing initially needed. Hero, Center Text, Benefits, Split L/R, CTA, and Infobar. For round 2 I would hit - tabs, videos, modal, floating button, and standalone chat. By Monday Round 1 was ready to test. To demo the template, I inspected elements in Chrome dev tools, moved and deleted blocks in-browser to create the initial wireframe they initially gave me - in just minutes. The beauty of using flex is how forgiving removing or duplicating elements is. I did not use grid as that may not cause too many issues. Kept it simple. Here is the page structure I used to get started. Brand styles and Core styles should be external CSS files. The rest of the styles are in-page&nbsp;overrides.
+## From modules to a campaign
 
-The goal was for either myself or the marketing team can cut and paste code blocks in-browser first to try out different layouts. Then to screen capture that inbrowser comp for approval. Then hand it off for asset creation or development using the master blocks template. Paste in the corresponding brand styles that include color variables and cms style overrides. To customize further, use in-browser style edits to try things out. Cut and paste from the browser into the "Your Override Styles"&nbsp;section.
+For the LIFEPAC page, the hero introduces the offer and keeps the form close to it. The introduction, benefits, subject content and supporting sections follow. This order reflected the team's earlier testing and audience; I wouldn't treat it as a rule for every campaign.
 
-```html
-<style>
+At 768 px, the hero, benefits and split sections stack. At 480 px, heading sizes, field rows and button layouts adjust again.
 
-  @import url("../aop-brand.css");
-  /* ----------------------------------------------- */
-  /* ---------------- AOP BRAND START -------------- */
-  /* ----------------------------------------------- */
+![The assembled LIFEPAC campaign at desktop and phone widths](system-responsive.webp)
 
-  /* ------- IMPORT GOOGLE FONTS ------- */
-  /* ------- AOP CSS VARIABLES ------- */
-  /* ------- AOP HEADER/FOOTER - CMS PAGE OVERRIDES  */
+## Keeping campaign edits manageable
 
-  @import url("../core-styles.css");
-  /* ----------------------------------------------- */
-  /* --------------- CORE CSS STYLES --------------- */
-  /* ----------------------------------------------- */
+The stylesheet separates brand and host-page adjustments, core and block styles, responsive rules, and final overrides. That last area gave the team somewhere to put campaign exceptions without rewriting shared styles. The original project proposed separate brand and core files; the archived demos keep these layers inline.
 
-  /* ------- RESET ------- */
-  /* ------- TESTING ------- */
-  /* ------- GLOBAL PAGE ------- */
-  /* ------- HERO BLOCK ------- */
-  /* ------- CENTERED BLOCK ------- */
-  /* ------- BENEFITS BLOCK ------- */
-  /* ------- INFOLEFT BLOCK ------- */
-  /* ------- INFORIGHT BLOCK ------- */
-  /* ------- CTA BLOCK ------- */
-  /* ------- INFOBAR BLOCK ------- */
+![Brand, core, responsive and override layers with the historical production result](system-handoff.webp)
 
-  /* ------- RESPONSIVE ------- */
+The system reduced landing-page production time by 40% across more than 50 pages. It gave the team a common starting point they could edit in the tools they already used.
 
-  /* ---------------------------------------------- */
-  /* ------------ YOUR OVERRIDE STYLES ------------ */
-  /* -------------Just Changed Styles!------------- */
-  /* ---------------------------------------------- */
-  ...
-
-</style>
-
-
-<!-- IMPORT FONTAWESOME (https://fontawesome.com/search) -->
-
-<!-- HERO BLOCK START -->
-
-<div class="hero-class"> Hero Content </div>
-
-<!-- HERO BLOCK END -->
-
-<!-- ETC START -->
-<!-- ETC END -->
-...
-
-<script src = "../index.js"></script>
-
-```
-
-### Recommended&nbsp;approach:
-
-1. Open template with VSCode > Live Server Extension in&nbsp;Chrome.
-2. Inspect (F12) elements using Dev Tools > Elements - delete/edit/move elements to test custom&nbsp;layouts.
-3. In VSCode, comment out (Ctrl /), move or delete collapsed elements. Review start/end&nbsp;tags.
-4. Add new or copy existing "CORE CSS STYLES" to "YOUR OVERRIDE STYLES" at bottom of the&nbsp;CSS.
-
-## Results
-
-After the first round of landing pages were quickly churned out, I added round 2 features to the template. I also created an example to illustrate use for the designers. Links are shown [above](#top-links). Now custom cms landing pages are developed 40% faster. They can also work as standalone pages, just have to add in the missing HTML head&nbsp;code.
-
-
+[Open the master library](/demo/master-blocks/aop-master-lp-blocks.html), [view the campaign example](/demo/master-blocks/example-aop-lp.html), or [download the system notes](/demo/master-blocks/master-blocks-system-notes.pdf).
