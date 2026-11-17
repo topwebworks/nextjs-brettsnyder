@@ -14,6 +14,7 @@ category: "AI Automation"
 status: "Production"
 featured: false
 publishDate: "2026-10-11"
+updatedDate: "2026-11-17"
 links: {}
 
 keyAchievements:
@@ -31,7 +32,10 @@ keyAchievements:
       - "Local tests cover lost sessions, repeated deliveries, and checkpoints"
 
 media:
-  items: []
+  items:
+    - type: image
+      title: Grok Bot chat with the connected workers
+      src: grok-hero.png
 ---
 
 I dove into Grok Bot and felt like I'd stumbled into Willy Wonka's factory. There was so much to try. I carefully worked through the guidelines for several bots, tested each role, and arranged their schedules around my day. The results were better than I expected.
@@ -56,6 +60,8 @@ The wider roster includes Avery for finance and governance, Maya for digital mar
 
 Each role has its own responsibilities. They share the same process for finding an assignment, saving results, and recovering interrupted work.
 
+![How the workers connect to Director and the saved instructions, tasks, checkpoints and documents in Supabase](director-architecture.webp)
+
 ## What the bots do
 
 Each bot's persistent setup is mainly a Grok routine. It identifies the worker, reconnects it to Director, and tells it to follow the instructions Director returns. That gives a fresh session a way back through the factory gates after a reset. No second golden ticket required.
@@ -71,6 +77,8 @@ Imagine a bot researching ten companies. A !@#$% random reset after the fifth.
 To continue, the next session needs the five completed records, any unfinished work, and a clear place to start. Director stores the findings and a checkpoint: a short record of what has been completed and the next safe step. 
 
 The bots are instructed to save after each meaningful piece of work, such as reviewing a company or qualifying a job opening. Work between saves can still be lost. Keeping the saves close to completed pieces limits how much needs to be repeated.
+
+![Illustrative checkpoint: five of ten companies saved, with the returning worker resuming at company six](director-checkpoint.webp)
 
 Documents go into a shared library linked to the relevant business and assignment. Director records where each file lives, whether stored through the backend or in a connected document service. A resume or draft can be retrieved again after the computer's temporary copy disappears. Another bot can also use it when the work moves to its role.
 
@@ -90,6 +98,8 @@ I had no reset notification to trigger recovery. Then I noticed that the compute
 - **Saved progress tells the bot where to resume.** The bot reconnects, gets its current instructions and a valid lease, and continues from the last checkpoint.
 
 Director checks that work has actually resumed. Failed restarts get a limited number of retries, with pauses between attempts. Saved progress remains available, and problems needing my attention are raised with a clear account of what happened in the chat interface.
+
+![Boot ID and QStash recovery signals lead to current instructions, a new session lease and a resumed run with its latest checkpoint](director-recovery.webp)
 
 ## Check before continuing
 
@@ -114,3 +124,5 @@ In the earlier example of researching ten companies, the bot's routine reconnect
 Those are the answers I had to reconstruct after that morning's alerts. Director gives them a durable home, and all that backend support now sits behind a simple Grok Bot chat interface.
 
 I can still have a good conversation, explore ideas, and ask the team to get things done. Pronto! Director keeps the guidelines, research, schedules, and saved progress ready for the next session. I can enjoy working with the bots without wondering what they'll remember by morning. I should add a bot to manage my kids' birthdays.
+
+Vector diagrams: [architecture](/demo/director/director-architecture.svg), [checkpoint example](/demo/director/director-checkpoint.svg), and [recovery flow](/demo/director/director-recovery.svg).

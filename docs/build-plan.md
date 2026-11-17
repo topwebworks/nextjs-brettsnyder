@@ -38,12 +38,12 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Current Phase
 
-Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. Work newest to oldest by `publishDate`.
+Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. Work newest to oldest by `publishDate`, with PushPad deferred at Brett's request.
 
 - Approved: Personal Portfolio case study and v08 presentation, approved by Brett on 2026-11-16. See the [source inventory](design-system-inventory.md).
 - Current review: Analytics Workbench (2026-10-22). The illustrated article now includes six boards, a real workflow recording, token downloads, vector controls and a six-page PDF. Editable assets and control prototypes are documented in the [source inventory](analytics-workbench-design-system.md).
-- Next task: review the Analytics presentation, then continue with Grok Bot.
-- Following projects: Grok Bot, PushPad, then Brightpath Operations. Continue through the remaining cases in descending `publishDate` order.
+- Current review: Grok Bot / Director has a lighter engineering presentation: the existing chat capture plus three diagrams covering workers and saved state, checkpoint recovery, and recovery signals. Editable sources and evidence are documented in the [visual inventory](director-visuals.md).
+- Next task: review Director's visuals. PushPad is deferred; Brightpath Operations is the next remaining case in date order.
 - Scope: use each project's existing design and actual behavior. Keep stories in Markdown and place relevant visuals beside the explanation. Preserve the site's layouts, navigation, and themes.
 
 ## Scope Boundaries

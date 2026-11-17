@@ -20,6 +20,9 @@ import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
 import emailScreenshot2 from '@/app/projects/content/email/email-3.jpg';
 import grokbotHero from '@/app/projects/content/grok-bot/grok-hero.png';
+import grokbotScreenshot1 from '@/app/projects/content/grok-bot/director-architecture.webp';
+import grokbotScreenshot2 from '@/app/projects/content/grok-bot/director-checkpoint.webp';
+import grokbotScreenshot3 from '@/app/projects/content/grok-bot/director-recovery.webp';
 import masterblocksHero from '@/app/projects/content/master-blocks/masterblocks-hero.jpg';
 import monarchcatalogHero from '@/app/projects/content/monarch-catalog/monarch-prototype.png';
 import personalportfolioHero from '@/app/projects/content/personal-portfolio/1-personal-portfolio.png';
@@ -83,7 +86,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'grok-bot': {
     hero: grokbotHero,
     demo: null,
-    screenshots: []
+    screenshots: [grokbotScreenshot1, grokbotScreenshot2, grokbotScreenshot3]
   },
   'master-blocks': {
     hero: masterblocksHero,
@@ -149,7 +152,10 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'email-3.jpg': emailScreenshot2
   },
   'grok-bot': {
-    'grok-hero.png': grokbotHero
+    'grok-hero.png': grokbotHero,
+    'director-architecture.webp': grokbotScreenshot1,
+    'director-checkpoint.webp': grokbotScreenshot2,
+    'director-recovery.webp': grokbotScreenshot3
   },
   'master-blocks': {
     'masterblocks-hero.jpg': masterblocksHero
@@ -228,6 +234,9 @@ export { emailHero };
 export { emailScreenshot1 };
 export { emailScreenshot2 };
 export { grokbotHero };
+export { grokbotScreenshot1 };
+export { grokbotScreenshot2 };
+export { grokbotScreenshot3 };
 export { masterblocksHero };
 export { monarchcatalogHero };
 export { personalportfolioHero };
