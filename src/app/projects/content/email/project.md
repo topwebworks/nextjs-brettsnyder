@@ -1,13 +1,13 @@
 ---
-# PROJECT METADATA - Remove comments after editing
-title: "HTML Email"
-description: "HTML email is a different animal than landing pages. Years ago, I created a master email template that the entire art department pulled from."
-contentTitle: "A Different Animal"
+title: "Master Email Design System"
+description: "A shared HTML email template with reusable rows, brand recipes and fluid layouts, alongside custom campaigns I built for Pearson Online Learning."
+contentTitle: ""
 achievementTitle: ""
 technologies:
   - "HTML"
   - "CSS"
   - "Responsive"
+  - "Design Systems"
 category: "Template"
 status: "Production"
 featured: false
@@ -16,54 +16,72 @@ publishDate: "2017-01-15"
 links:
   demo: "/demo/emails/sample2/index.html"
   live: "/demo/emails/master-email/index.html"
-
-# KEY ACHIEVEMENTS - Cards shown on detail page
-keyAchievements:
-  - type: "performance"
-    icon: "🌦️"
-    title: "What I Learned"
-    description: "After years of building fancy emails for big companies, a few patterns stick out:"
-    metrics:
-      - Emails aren’t landing pages. They need to be lighter and simpler.  
-      - A reusable template saves a ton of time and can keep working for years.  
-      - Fluid layouts beat media queries since some clients strip them out. Test by deleting the head in browser. 
-      - Fully custom emails look good but take much longer to build.
+keyAchievements: []
 media:
   items:
     - type: "image"
       src: "email-1.jpg"
-      title: "Master Email Template"
+      title: "AOP and product-brand email designs"
     - type: "image"
       src: "email-2.jpg"
-      title: "Demo 1 Email"
+      title: "Pearson campaign examples"
     - type: "image"
       src: "email-3.jpg"
-      title: "Demo 2 Email"
+      title: "Additional university campaign examples"
 ---
 
-<!-- PROJECT CONTENT - Markdown body text -->
+## One starting file
 
-It has been a while since I have churned out HTML emails. They are a different animal than landing pages to be sure. Years ago, I created a generic master email template for the entire art department to pull from. It was a simple HTML file they could make their own. I hear they have made some tweaks to better fit their needs, but still pull or refer to it as a resource even today.
+I built a master HTML email template for the art department to pull from. Each campaign needed its own offer and branding, but the team kept rebuilding familiar structures: headers, image rows, text sections, buttons and footers.
 
-## Master Email Template
+The template collected those pieces in one commented file. A designer could copy a complete section, replace the content and keep the surrounding layout intact. I handled the HTML/CSS, fluid layouts, brand options and editing notes.
 
-Here was some simple emails I knocked out a few years back. I added comments for cut and paste. Added top media queries for responsive, but personally I usually used fluid responsive so it could work in all devices. The media queries will get stripped out from some email clients. Fluid responsive is more reliable as it is just elastic or will just wrap down naturally.
+For this case study, I worked back through the source to document the shared values and modules. The original template and two custom Pearson Online Learning emails are available below.
 
-[Master Email Template](/demo/emails/master-email/index.html)
+## The shared style values
 
+The master repeats a small palette: cyan for headings and actions, dark gray for copy, and two pale gray footer surfaces. Its type rules distinguish the introduction, section headings, body copy and smaller image-and-text rows.
 
-## Other Emails
+The wrapper has a 500 px maximum and a 290 px minimum. Most text sits inside a 90% content area. Spacing comes from table-cell heights, padding and spacer images.
 
-Here are some emails I did for Pearson Online Learning many years ago. These were entirely custom so took longer to build. I did use more media queries back then but tried to stick to fluid responsive as a first choice.
+![Shared email colors, typography and wrapper dimensions from the HTML source](system-tokens.webp)
 
-[Sample Email 1](/demo/emails/sample1/index.html)
+These values are written directly into inline styles and HTML attributes. The [style snapshot](/demo/emails/design-system-tokens.json) collects them for inspection; the original email has no CSS custom properties.
 
+## Reusable rows
 
-Here is another back from the Pearson era. Again all custom builds so they took longer than using a master template. Looking back, alot of time was spent developing what seemed almost an email newsletter. Most people, me included, just was to see a simple great offer email that connects in 1-2 seconds. Nothing more. Usually people have one finger on the delete button as they scan their emails. I would recommend keeping it simple and to the point.
+The library includes a brand header, hero, introduction, live-text action, centered content, paired images, three-image rows, mirrored image-and-text sections, a banner and the footer.
 
-[Sample Email 2](/demo/emails/sample2/index.html)
+I put comments around the sections and smaller editing points. Those boundaries helped the team copy a whole row, including its nested tables and gutters.
 
-## What Works Best
+![Two-column image variants, mirrored content rows and a three-image module](system-modules.webp)
 
-Don't overbuild; most folks just want a clear offer fast. Short headlines, clear CTAs, and easy layouts beat anything fancy. Build flexible emails that hold up across all clients. Simple, fast, reliable emails convert better than fancy ones.
+The image-and-text row divides its width between a 38% image cell, 4% gutter, 56% content cell and a small remainder. Its action uses a 14 px label, 8 x 20 px padding and 3 px corners. The larger introductory action has its own 16 px label and 4 px corners.
 
+![Editable image-and-text row beside the archived module, with a shared action component](system-components.webp)
+
+## Working within email constraints
+
+I used percentage widths and inline presentation for the base layout. A small media query adjusts alignment below 457 px. Outlook conditional markup and Microsoft-specific button styles sit alongside the regular HTML.
+
+![The master at full width, phone width and with head styles removed](system-fluid.webp)
+
+Removing the head styles is a useful browser stress check for the inline layout. It doesn't replace testing delivered emails in Outlook, Gmail and other clients. The archive has been checked in the browser at desktop and phone widths; I haven't certified its current inbox compatibility.
+
+## Brand choices and custom work
+
+The source includes recipes for AOP, LIFEPAC, Monarch and other product brands. They identify which logo and colors to change across the header, headings and actions.
+
+The Kent State and UF Online emails were custom builds for Pearson Online Learning. They show how campaign artwork and content could call for a different composition. Those builds took longer than starting with the master.
+
+![Source brand-color recipes above the Kent State and UF Online campaign examples](system-brands.webp)
+
+## Editing and keeping the archive usable
+
+The handoff notes cover branding, image folders, replaceable content and sections that can be removed or repeated. Live text, working links and the preference footer need the same attention as the artwork.
+
+![Email assembly steps, source constraints and the repaired image references](system-handoff.webp)
+
+I repaired 42 image references in the master preview. They now use the bundled logos, social icons and placeholder artwork instead of old remote paths and a dead placeholder service. The gray images are intentional layout specimens.
+
+[Open the master template](/demo/emails/master-email/index.html), [view Kent State](/demo/emails/sample1/index.html), [view UF Online](/demo/emails/sample2/index.html), or [download the system notes](/demo/emails/email-system-notes.pdf).

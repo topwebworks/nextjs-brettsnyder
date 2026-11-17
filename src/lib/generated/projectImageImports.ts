@@ -34,6 +34,12 @@ import cywireScreenshot5 from '@/app/projects/content/cywire/platform-quality.we
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
 import emailScreenshot2 from '@/app/projects/content/email/email-3.jpg';
+import emailScreenshot3 from '@/app/projects/content/email/system-brands.webp';
+import emailScreenshot4 from '@/app/projects/content/email/system-components.webp';
+import emailScreenshot5 from '@/app/projects/content/email/system-fluid.webp';
+import emailScreenshot6 from '@/app/projects/content/email/system-handoff.webp';
+import emailScreenshot7 from '@/app/projects/content/email/system-modules.webp';
+import emailScreenshot8 from '@/app/projects/content/email/system-tokens.webp';
 import grokbotHero from '@/app/projects/content/grok-bot/grok-hero.png';
 import grokbotScreenshot1 from '@/app/projects/content/grok-bot/director-architecture.webp';
 import grokbotScreenshot2 from '@/app/projects/content/grok-bot/director-checkpoint.webp';
@@ -108,7 +114,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'email': {
     hero: emailHero,
     demo: null,
-    screenshots: [emailScreenshot1, emailScreenshot2]
+    screenshots: [emailScreenshot1, emailScreenshot2, emailScreenshot3, emailScreenshot4, emailScreenshot5, emailScreenshot6, emailScreenshot7, emailScreenshot8]
   },
   'grok-bot': {
     hero: grokbotHero,
@@ -191,7 +197,13 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
   'email': {
     'email-1.jpg': emailHero,
     'email-2.jpg': emailScreenshot1,
-    'email-3.jpg': emailScreenshot2
+    'email-3.jpg': emailScreenshot2,
+    'system-brands.webp': emailScreenshot3,
+    'system-components.webp': emailScreenshot4,
+    'system-fluid.webp': emailScreenshot5,
+    'system-handoff.webp': emailScreenshot6,
+    'system-modules.webp': emailScreenshot7,
+    'system-tokens.webp': emailScreenshot8
   },
   'grok-bot': {
     'grok-hero.png': grokbotHero,
@@ -302,6 +314,12 @@ export { cywireScreenshot5 };
 export { emailHero };
 export { emailScreenshot1 };
 export { emailScreenshot2 };
+export { emailScreenshot3 };
+export { emailScreenshot4 };
+export { emailScreenshot5 };
+export { emailScreenshot6 };
+export { emailScreenshot7 };
+export { emailScreenshot8 };
 export { grokbotHero };
 export { grokbotScreenshot1 };
 export { grokbotScreenshot2 };

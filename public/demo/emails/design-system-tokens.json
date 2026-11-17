@@ -1,0 +1,94 @@
+{
+  "title": "Master email system",
+  "source": "/demo/emails/master-email/index.html",
+  "sourceVersion": "AOP Fluid Responsive Email Template v2.2.8",
+  "basis": "Shared constants reconstructed from literal inline CSS, table attributes and source comments. The original email does not use CSS custom properties.",
+  "palette": {
+    "action": "#2AB5CD",
+    "body": "#444444",
+    "secondary": "#777777",
+    "footer": "#e2e7ea",
+    "secondarySurface": "#f0f3f4",
+    "paper": "#FFFFFF"
+  },
+  "typography": {
+    "declaredStack": "'mr-eaves-modern', Arial, Helvetica, sans-serif",
+    "archiveFallback": "Arial; optional screenshot-only Typekit script is commented out.",
+    "intro": "27px / 36px",
+    "section": "27px / 27px",
+    "body": "16px / 30px",
+    "splitBody": "14px / 26px"
+  },
+  "layout": {
+    "maximumWidth": "500px",
+    "minimumWidth": "290px",
+    "innerContent": "90% = 450px at full width",
+    "splitCells": [
+      "38% image",
+      "4% gutter",
+      "56% text",
+      "2% remainder"
+    ],
+    "mediaQuery": "457px; alignment adjustments",
+    "spacing": "Cell heights and spacer images; repeated 10px, 20px and 30px gaps"
+  },
+  "primaryAction": {
+    "fontSize": "16px",
+    "lineHeight": "30px",
+    "padding": "10px 30px",
+    "radius": "4px"
+  },
+  "action": {
+    "fontSize": "14px",
+    "padding": "8px 20px",
+    "radius": "3px",
+    "color": "#ffffff",
+    "background": "#2AB5CD",
+    "outlookFallback": "mso-border-alt: 8px solid #2AB5CD; mso-padding-alt: 0px"
+  },
+  "brandRecipes": [
+    {
+      "name": "AOP",
+      "color": "#2AB5CD",
+      "logo": "aopinitial.png"
+    },
+    {
+      "name": "LIFEPAC",
+      "color": "#be5c43",
+      "logo": "lifepaclogo.png"
+    },
+    {
+      "name": "Monarch",
+      "color": "#FBB03B",
+      "logo": "monarchlogo.png"
+    },
+    {
+      "name": "Horizons",
+      "color": "#974291",
+      "logo": "horizonslogo.png"
+    },
+    {
+      "name": "AOA",
+      "color": "#45447F",
+      "logo": "aoalogo.png"
+    },
+    {
+      "name": "SCH",
+      "color": "#F05A37",
+      "logo": "ignitialogo.png"
+    }
+  ],
+  "modules": [
+    "Preheader and view-online link",
+    "Brand header",
+    "Hero image and introduction",
+    "Live-text CTA",
+    "Centered image/text section",
+    "Two-column images with or without gutters",
+    "Three-image row",
+    "Mirrored image/text row",
+    "Banner",
+    "Social and preference footer"
+  ],
+  "verification": "Browser image loading and widths checked at 1200px, 390px and 320px. Head-style removal checked separately. No email-client delivery or inbox compatibility certification was performed."
+}

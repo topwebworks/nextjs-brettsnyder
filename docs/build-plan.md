@@ -38,7 +38,7 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Current Phase
 
-Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. Master Blocks is the current task, followed by the master email project.
+Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. Master Blocks and the master email project are complete for review.
 
 - Approved: Personal Portfolio case study and v08 presentation, approved by Brett on 2026-11-16. See the [source inventory](design-system-inventory.md).
 - Current review: Analytics Workbench (2026-10-22). The illustrated article now includes six boards, a real workflow recording, token downloads, vector controls and a six-page PDF. Editable assets and control prototypes are documented in the [source inventory](analytics-workbench-design-system.md).
@@ -49,8 +49,10 @@ Refine the remaining project case studies using the approved Portfolio presentat
 - Accepted for continuation: CyWire's Master Prompt workspace. The article explains authoring, tested-output review, versioning, discovery and application-owned integration, with five boards, a public-guide recording and a five-page PDF. The YouTube video is the only hero media, with no thumbnail gallery. See the [source inventory](cywire-platform-notes.md).
 - Featured project: CyWire is the sole featured project; all other project metadata remains unfeatured.
 - Completed for continuation: Top Web Works design-system reconstruction and final disclosure/copy review. Show the customized Tailwind UI agency system and two reusable client foundations, sourced from Brett's confirmed demos, from tokens through modules, page composition and responsive behavior. AMW is an output of the service-site library; Northfield Health is an example of the informational foundation. Preserve the original hero and exclude prices. Nine inline boards, a nine-page PDF, scoped token snapshots, component prototypes and a live interaction recording support the hiring-focused story. Include production CRM, conversion focus, SEO/AEO/GEO, schemas, targeted content, generated sitemaps, GA4/GTM consent and agreed marketing/branding/print services. Platform direction favors Next.js/Vercel, Supabase for data-backed products and Shopify/Liquid for larger ecommerce; keep pricing, cadence and internal plans private. See the [source inventory](topwebworks-design-system.md).
-- Current task: Master Blocks design-system presentation, using its existing article and bundled HTML demos.
-- Next task: repair the master email archive image references, then document its reusable email system from the article and HTML source.
+- Completed for review: Master Blocks, from declared brand variables and shared rules through editable components, modules, states, responsive campaign composition and CMS handoff. Six inline boards, a six-page PDF, a token snapshot and a live subject-tab recording. Historical keyboard/mobile-label limitations are stated. See the [source inventory](master-blocks-design-system.md).
+- Completed for review: Master Email, from inline style constants through reusable table rows, fluid layouts, brand recipes and Pearson campaign examples. Repaired 42 image references using bundled assets. Six inline boards, a six-page PDF, editable components and a style snapshot. Browser checks do not imply delivered email-client certification. See the [source inventory](email-design-system.md).
+- Verification: generated project data, lint, typecheck and production build passed. Both project pages passed light/dark checks at 1200, 390 and 320 px, with six distinct boards, working downloads and no overflow. All three email archives loaded their images at the same widths. Both PDFs have six pages at a consistent 1280-point width, embedded fonts and no document warnings.
+- Next task: awaiting the next project selection.
 - Scope: use each project's existing design and actual behavior. Keep stories in Markdown and place relevant visuals beside the explanation. Preserve the site's layouts, navigation, and themes.
 
 ## Scope Boundaries
