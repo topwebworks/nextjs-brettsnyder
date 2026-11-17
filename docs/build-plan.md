@@ -38,13 +38,15 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Current Phase
 
-Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. Work newest to oldest by `publishDate`, with PushPad deferred at Brett's request.
+Refine the remaining project case studies using the approved Portfolio presentation: concise prose with screenshots, diagrams, component details, and motion examples placed throughout the article. PushPad is the current task; continue through the remaining projects afterward.
 
 - Approved: Personal Portfolio case study and v08 presentation, approved by Brett on 2026-11-16. See the [source inventory](design-system-inventory.md).
 - Current review: Analytics Workbench (2026-10-22). The illustrated article now includes six boards, a real workflow recording, token downloads, vector controls and a six-page PDF. Editable assets and control prototypes are documented in the [source inventory](analytics-workbench-design-system.md).
 - Approved: Grok Bot / Director's illustrated engineering presentation, approved by Brett on 2026-11-17. See the [visual inventory](director-visuals.md).
-- Current review: Brightpath Operations has refreshed prototype screenshots, four inline interface boards, an interaction recording and a four-page PDF. The copy distinguishes seeded notes and mock actions from future live integrations; see the [visual inventory](brightpath-interface-notes.md).
-- Next task: review Brightpath Operations, then continue with AMW Hardscape. PushPad remains deferred.
+- Approved: Brightpath Operations' illustrated prototype presentation, accepted by Brett on 2026-11-17. See the [visual inventory](brightpath-interface-notes.md).
+- Approved: AMW Hardscape's illustrated design-engineering case study and v02 arrow-spacing correction, accepted by Brett on 2026-11-17. See the [source inventory](amw-design-system.md).
+- Current review: PushPad's supplemental learning platform. The updated article has a new hero, six tightly cropped boards, an actual simulation recording and a six-page PDF. It explains focused pads, mastery, educator-controlled support, learner experience and content ownership. Raw uploads and obsolete gallery images were preserved before cleanup. See the [source inventory](pushpad-platform-notes.md).
+- Next task: review PushPad, then continue through the remaining projects.
 - Scope: use each project's existing design and actual behavior. Keep stories in Markdown and place relevant visuals beside the explanation. Preserve the site's layouts, navigation, and themes.
 
 ## Scope Boundaries

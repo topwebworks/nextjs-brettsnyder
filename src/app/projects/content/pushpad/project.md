@@ -1,11 +1,12 @@
 ---
 title: "PushPad"
-description: "An in-progress learning platform where educators build 7-section lesson pads that PushPad grades, gates on mastery, and adapts with their approval."
-contentTitle: "Start Small. Learn Big."
+description: "A supplemental learning platform with focused lesson pads, interactive practice, mastery checks and educator-controlled learning paths."
+contentTitle: "Supplemental Learning, One Concept at a Time"
 achievementTitle: ""
 technologies:
   - "Next.js"
   - "React"
+  - "TypeScript"
   - "Supabase"
   - "Anthropic API"
   - "Stripe Connect"
@@ -14,116 +15,90 @@ category: "SaaS"
 status: "Prototype"
 featured: false
 publishDate: "2026-09-21"
+updatedDate: "2026-11-17"
 links:
   live: "https://pushpad.com"
-
-keyAchievements:
-  - type: "impact"
-    icon: "🎯"
-    title: "Mastery-Gated Learning Engine"
-    description: "A lesson-pad-centric content model where every pad is a single, atomic, self-contained unit, scored server-side and gated on mastery, not completion. Still in active development."
-    metrics:
-      - "7-section pads, one concept each, 15-25 minutes"
-      - "80%+ normalized mastery required to advance"
-      - "Every retry recorded as a new attempt, full history preserved"
-      - "Per-learner assignment copies, isolated from template edits"
-
+keyAchievements: []
 media:
   items:
     - type: "image"
-      title: "PushPad Overview"
-      src: "pushpad-hero.jpg"
-    - type: "image"
-      title: "Course Manager"
-      src: "course-manager.png"
-    - type: "image"
-      title: "Course Scaffold"
-      src: "course-scaffold.png"
-    - type: "image"
-      title: "Create Lesson Pad"
-      src: "create-lesson-pad.png"
-    - type: "image"
-      title: "Edit Course"
-      src: "edit-course.png"
-    - type: "image"
-      title: "Intervene"
-      src: "intervene.png"
-    - type: "image"
-      title: "Learner Pad Shell"
-      src: "learner-pad-shell.png"
-    - type: "image"
-      title: "Raw Pad Data"
-      src: "raw-pad-data.png"
-    - type: "image"
-      title: "Rendered Pad Data"
-      src: "rendered-pad-data.png"
-
+      title: "PushPad Homepage"
+      src: "pushpad-hero.webp"
 ---
 
-PushPad started as the proof of concept for [CyWire's](/projects/cywire) Master Prompt architecture back in January 2026. That was just me testing whether a structured JSON blueprint could reliably drive a real product. It wasn't PushPad itself yet. Active work on PushPad started about a month ago, and it's still a working build, not something shipped. The lesson pad, grading, and mastery engine are built and typecheck clean, but the full learner flow, taking a pad, getting graded, clearing the mastery bar, hasn't been walked through live yet. Neither has the marketplace purchase flow, and most of the voice input still needs to be checked in a real browser. Here's where it actually stands right now.
+## The Brief
 
-## Most Learning Apps Only Check If You Finished
+I'm building PushPad for educators who need to give a learner focused practice on something they haven't quite understood. It supplements the instruction they already use. An educator can create a lesson pad for one concept, assign it and use the learner's work to decide what comes next.
 
-Watch the video, read the passage, click next. That's most supplemental learning tools. They check if you got to the end, not whether anything actually stuck. That's part of why most of what gets taught is forgotten within a day, nothing makes you prove you remember it before moving on.
+I own the product design and implementation, including the educator tools, learner experience, content generation, grading, assignments and marketplace.
 
-The other extreme is going too far the other way and turning into a full curriculum platform, with seating charts, gradebooks, weighted categories. That's a lot more than an educator needs when a learner just needs to revisit one thing they're shaky on. PushPad is meant to supplement what's already being taught, not replace it.
+## Start With the Concept
 
-I wanted something in the middle. Quick enough to assign in a few minutes, but strict enough that you actually have to show you get it before moving forward.
+A learning path organizes pads into lessons and units. The outline comes first; generating the individual pads is a separate step. That gives the educator a chance to review the sequence, change a title or move a skill before building its content.
 
-## The Lesson Pad Is the Smallest Piece
+Numbered tiles make the hierarchy visible and provide the push-to-reorder control. A pad slot can be filled when it's needed. Educators can assign a whole path, a smaller part of it or a standalone pad.
 
-Everything in PushPad builds up from the lesson pad. Not the lesson, not the unit, the pad. One lesson pad covers one concept, and it walks through the same seven sections every time: concept, example, vocabulary, activity, practice, problems, quiz. A few of those are graded and count toward the pad's score. The rest are just practice, no grade attached.
+![PushPad's current learning path editor, cropped around its units, lessons and lesson pad slots](platform-path.webp)
 
-From there pads stack up. Three to five of them make a lesson, lessons group into units, units make a course. An educator can add, remove, swap, or reorder any pad whenever they want, or push a different one into the sequence when a learner needs something else. That's where the name comes from: PushPad, because nothing in the path is fixed, an educator can push a new pad, lesson, unit, or course into place any time a learner's needs change. Each lesson pad still only exists in one place and gets pulled in wherever it's used, so there's one copy to keep straight, even if it shows up in five different courses or gets sold on the marketplace.
+## Give Each Pad a Consistent Shape
 
-An educator usually starts at the course level and works down. Describe the course, and PushPad drafts the scaffold, units and lessons, ready to review. That scaffold becomes a real course structure an educator can open, assign, or edit, and individual lesson pads get created to fill the slots in it.
+Every lesson pad covers one concept through seven sections: Vocabulary, Concept, Example, Activity, Practice, Problems and Quiz. The learner knows where they are and what comes next, even when the subject or activity changes.
 
-## Grading Runs on the Server, Not the Browser
+The sections ask for work along the way. A learner might assemble a vocabulary word, recall it inside an explanation, explore a model and then solve a problem independently. Practice gives them room to try before the scored work.
 
-A mastery gate is pointless if the score behind it can be faked. So all grading happens server-side, using the pad's stored content and whatever the learner actually submitted. The learner's browser never gets to hand back its own score.
+![The seven-section lesson pad structure beside actual vocabulary tiles and a concept check from the public demo](platform-pad.webp)
 
-Each graded section has its own point scale, and before it counts toward the final mastery number, it gets converted to a percentage. That's what keeps a section worth more points from quietly outweighing one worth fewer just because of how it was built. Problems and Quiz get averaged evenly for the pad's mastery score. Practice doesn't count toward it at all, it's just there for reps.
+## Make the Concept Something They Can Move
 
-Writing a lesson pad and grading one use two different Claude models on purpose. Sonnet writes the content, because that's where quality is worth paying for. Haiku grades the answers, because that's a narrower job and speed matters more there. They don't swap roles.
+PushPad's interactions use the pad's own words, numbers and questions. Learners push letter tiles into order, move pieces into a model and work through exercises that fit the skill being taught. Dragging has tap and keyboard alternatives.
 
-No route in PushPad returns fake data to fill a gap. If something isn't there yet, the app either shows a real empty state or a real error, never a hardcoded stand-in dressed up as a result. A mastery score you can't trust is worse than no score at all.
+The Fair Shares simulation lets a learner explore a fraction as a circle, rectangle, ribbon or number line. Explore, Missions, Game and Review use the same concept model for different tasks. The illustrated scene, controls and feedback belong to PushPad's shared game kit.
 
-## You Don't Move On Until You've Shown Mastery
+Arcade play adds another reason to practice. Its points stay separate from the Problems and Quiz score used for pad mastery.
 
-Every lesson pad has a mastery bar to clear, 80% by default. The next pad in line stays locked until the learner's best score clears that bar, or an educator opens it manually. A learner can retry as many times as they need, and every attempt gets saved on its own instead of overwriting the last one, so there's a full record even after they eventually pass.
+![The working Fair Shares simulation showing one half, with its Explore, Missions, Game and Review modes explained](platform-sim.webp)
 
-If a learner doesn't clear the bar, PushPad doesn't just quietly move them somewhere else. It flags the pad for the educator and shows them related material they've already got on hand. Whatever happens next is the educator's decision, and it only affects that one learner, never the original course, never anyone else assigned to it. There's a record of what got changed and why.
+This recording uses the public lesson preview. It shows a fraction piece being pushed into place, then switches between models and modes.
 
-## Assigning Content Copies It, It Doesn't Link It
+<video controls playsinline preload="none" poster="/demo/pushpad/pushpad-interactions-poster.webp" width="1280" height="900">
+  <source src="/demo/pushpad/pushpad-interactions.mp4" type="video/mp4">
+  <a href="/demo/pushpad/pushpad-interactions.mp4">Watch the PushPad simulation recording.</a>
+</video>
 
-Courses, units, and lessons start as templates an educator builds once and reuses. The moment one gets assigned to a learner, PushPad makes a separate copy just for them. If the educator edits the original template afterward, that learner's copy doesn't change. Their progress and anything adjusted later stays inside their own copy, completely separate from every other learner who got the same assignment.
+## Use Mastery to Guide the Next Step
 
-Marketplace listings work the same way. When a lesson pad gets published, PushPad locks in a snapshot of it at that exact moment, separate from the version the educator keeps editing. A buyer gets that snapshot as their own copy, free to edit however they want from there, and it's no longer tied to the seller's original in any way. If the creator changes their live pad later, none of that reaches anyone who already bought it. You get the one pad you paid for, not a way into the seller's whole library.
+Problems and Quiz each contribute half of the final mastery score, after their point totals are normalized to percentages. Practice doesn't count toward it. The usual target is 80 percent. When an assignment requires mastery, the next pad stays locked until the learner meets its target.
 
-## Selling on the Marketplace Runs Through Stripe
+Grading happens on the server from submitted answers. The learner's browser doesn't choose its own score or decide that the next pad is unlocked. Attempts are recorded so the educator can review the work behind the number.
 
-If an educator wants to sell, they start from their listings settings, and PushPad kicks off a Stripe Connect account for them. Stripe's own onboarding handles identity and payout setup from there. That part is live and works. The other half, a learner actually buying a pad and the webhook that hands them their copy, is built but hasn't been tested with a real purchase yet. There just isn't enough listed yet to make that worth running.
+If more support is needed, the educator can add a related pad, change the order or adjust the deadline for that learner. The support panel also says when it can't find an easier match. Suggestions require confirmation, and a message explains the change to the learner.
 
-## No Cron Jobs
+![The educator's Learner path panel, with the mastery calculation and the steps for reviewing and adding support](platform-support.webp)
 
-Nothing in PushPad runs on a timer. No cron, no pg_cron, nothing sitting in the background waiting to fire. If something needs cleaning up, it happens because of something a user did, a pad gets archived when it's published, not swept up in some nightly job. If something truly can't be tied to an action a user takes, it goes through a Supabase database trigger before I'd ever add a scheduled job. Less stuff running unattended means less stuff to debug when it breaks quietly at 2am.
+## Make Returning to Work Easy
 
-## Mobile First, Not Mobile Eventually
+The learner dashboard puts Continue near the top and keeps assignments within reach. Completion and mastery have separate indicators. XP, streaks and awards recognize participation without becoming a shortcut through mastery-gated work.
 
-PushPad only runs in the browser, and it's built for a phone first: touch targets sized for a thumb, no desktop-only screens hiding somewhere. No app to install, no offline mode, no service worker. Installed web apps tend to fragment into different half-working copies per browser, and that's not worth it for something like this.
+Read aloud, speech input and display preferences offer different ways to participate. The interface uses Urbanist, shared Tailwind scales and reusable section components. The illustrated activities have their own coordinated controls, while audio starts off and remains optional.
 
-The UI runs on Tailwind, no separate design system built from scratch. Tailwind's spacing, color, and type scale already are a design system, so the actual work is a customized config and consistent component patterns, not reinventing a token scale that was already solid. It's also a base I can extend with custom overrides whenever branding needs it, not something I'm locked into.
+![PushPad's learner dashboard and assignment card, showing separate completion and mastery indicators](platform-learner.webp)
 
-Voice fits into that same mobile-first thinking, since a lot of this gets done in short sessions on a phone. Read Aloud and the mic both use the browser's own speech APIs, no outside voice service. Read Aloud is done across every section. The mic is wired into all nine fields where a learner can type, and it typechecks clean, but only one of those nine has actually been tested by talking into a real browser so far. Same code behind all nine, so it's low risk, just not confirmed yet.
+## Reuse Content Without Exposing Private Work
 
-## What This Actually Saves an Educator
+An assignment gets its own learner-scoped copy. Editing the source later doesn't overwrite work already issued, and an adjustment for one learner doesn't change everyone else's path.
 
-RAND has research showing educators spend around a quarter of their week just on content prep, and almost another fifth on grading and feedback. That's the exact time PushPad is built to give back. Sonnet writes a first draft of a pad so the educator isn't starting from a blank page, and Haiku grades each answer as it comes in instead of the educator doing it by hand. The educator still approves what gets assigned and still decides if a learner's path needs to change. PushPad just handles the repetitive part.
+Educator material stays private unless an individual pad is explicitly published to the marketplace. A listing freezes that version; a purchase delivers a buyer-owned copy. Series labels show where pads belong in a sequence. The private learning path itself isn't sold or opened to the buyer.
 
-## What's Not Done Yet
+Stripe Connect handles the seller onboarding and payment integration. Learners receive content through their educator's assignments.
 
-A few things are still open. First is just housekeeping: an old set of database tables from an earlier version of the Course Manager that nothing in the app reads or writes to anymore. The Course Manager educators actually use is unaffected, that old code is just sitting there unused. It's getting deleted, not kept around as a fallback, dead code with zero readers doesn't earn a reason to stay.
+![PushPad marketplace filters and illustrated lesson pad cards, with source, published snapshot and buyer-owned copy explained](platform-publishing.webp)
 
-Second: deleting a learner account that came in through an invite can fail partway through. I ruled out my own code first, client config, sequencing, dev environment, foreign key cascades, database triggers, before landing on Supabase's own auth service as the actual cause. It's reproducible every time, and it's on their end, not mine. Until that's sorted out there's no way inside the app to finish that delete if it fails. I've manually cleared out the accounts that were already stuck from it, but the bug itself is still live, so it'll happen again on the next one that gets hard-deleted.
+## Keep the Experience Consistent as Content Changes
 
-Third, and the biggest one before this is ready for real educators: there are only 2 lesson pads in the system right now. The generation tooling behind them is done, it's the same Master Prompt engine from CyWire, so building out a real starting library is a matter of running it, not building anything new. But an empty marketplace and a handful of pads isn't something to launch on.
+Structured pad data feeds the editor, preview and learner sections. Activity registries connect that data to the right interaction. Generation, validation and rendering have to agree on the same contract, so editing an activity preserves the rules that make it playable.
+
+That connection is central to my work on PushPad: the content model, interface and progression rules have to hold together when an educator changes the material or a learner needs another route through it.
+
+PushPad remains in active development, with billing and real-device checks still on the launch list. The screenshots show development accounts, and the recording uses the public preview. Displayed scores and counts aren't evidence of learning outcomes.
+
+[Visit PushPad](https://pushpad.com) and choose “Try a Lesson Pad,” [read how PushPad works](https://pushpad.com/how-pushpad-works), or [download the platform notes PDF](/demo/pushpad/pushpad-platform-notes.pdf).

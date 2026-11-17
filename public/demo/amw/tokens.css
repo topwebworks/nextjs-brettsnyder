@@ -1,0 +1,29 @@
+/* Site foundation · base */
+:root {
+  --font-global: "DM Sans", sans-serif;
+  --container-width: 1350px;
+  --section-padding-y: 120px;
+  --menu-bar-height: 85px;
+  --menu-bar-height-scrolled: 65px;
+  --color-dark-1: #010101;
+  --color-dark-2: #171717;
+  --color-gray-1: #757575;
+  --color-gray-light-1: #F1F1F1;
+  --color-gray-light-2: #F7F7F7;
+  --color-gray-light-3: #E5E5E5;
+  --border-radius-default: 4px;
+  --border-radius-large: 30px;
+  --transition-default: all .27s cubic-bezier(0, 0, .58, 1);
+  --surface-white: #FFFFFF;
+}
+/* Measured controls · base */
+:root {
+  --button-large-height: 52.5px;
+  --button-small-height: 33.5px;
+  --button-type-size: 13px;
+  --button-label-line-height: 19.5px;
+  --modal-radius: 10px;
+  --modal-max-width: 860px;
+  --motion-label-duration: 270ms;
+  --motion-label-easing: cubic-bezier(0, 0, 0.58, 1);
+}

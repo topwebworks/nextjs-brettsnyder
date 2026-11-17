@@ -6,6 +6,12 @@ import { StaticImageData } from 'next/image';
 
 // Import statements for all project images
 import amwhardscapeHero from '@/app/projects/content/amw-hardscape/amw-hardscape-hero.png';
+import amwhardscapeScreenshot1 from '@/app/projects/content/amw-hardscape/design-system-components.webp';
+import amwhardscapeScreenshot2 from '@/app/projects/content/amw-hardscape/design-system-crm.webp';
+import amwhardscapeScreenshot3 from '@/app/projects/content/amw-hardscape/design-system-features.webp';
+import amwhardscapeScreenshot4 from '@/app/projects/content/amw-hardscape/design-system-foundations.webp';
+import amwhardscapeScreenshot5 from '@/app/projects/content/amw-hardscape/design-system-growth.webp';
+import amwhardscapeScreenshot6 from '@/app/projects/content/amw-hardscape/design-system-modules.webp';
 import analyticsworkbenchHero from '@/app/projects/content/analytics-workbench/analytics-workbench-hero.png';
 import analyticsworkbenchScreenshot1 from '@/app/projects/content/analytics-workbench/analytics-workbench.png';
 import analyticsworkbenchScreenshot2 from '@/app/projects/content/analytics-workbench/design-system-charts.webp';
@@ -40,16 +46,13 @@ import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
 import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
 import printScreenshot3 from '@/app/projects/content/print/magazine-ad.jpg';
 import printScreenshot4 from '@/app/projects/content/print/reebok-brochure.jpg';
-import pushpadHero from '@/app/projects/content/pushpad/pushpad-hero.jpg';
-import pushpadScreenshot1 from '@/app/projects/content/pushpad/course-manager.png';
-import pushpadScreenshot2 from '@/app/projects/content/pushpad/course-scaffold.png';
-import pushpadScreenshot3 from '@/app/projects/content/pushpad/create-lesson-pad.png';
-import pushpadScreenshot4 from '@/app/projects/content/pushpad/edit-course.png';
-import pushpadScreenshot5 from '@/app/projects/content/pushpad/intervene.png';
-import pushpadScreenshot6 from '@/app/projects/content/pushpad/learner-pad-shell.png';
-import pushpadScreenshot7 from '@/app/projects/content/pushpad/parsed-pad-data.png';
-import pushpadScreenshot8 from '@/app/projects/content/pushpad/raw-pad-data.png';
-import pushpadScreenshot9 from '@/app/projects/content/pushpad/rendered-pad-data.png';
+import pushpadHero from '@/app/projects/content/pushpad/pushpad-hero.webp';
+import pushpadScreenshot1 from '@/app/projects/content/pushpad/platform-learner.webp';
+import pushpadScreenshot2 from '@/app/projects/content/pushpad/platform-pad.webp';
+import pushpadScreenshot3 from '@/app/projects/content/pushpad/platform-path.webp';
+import pushpadScreenshot4 from '@/app/projects/content/pushpad/platform-publishing.webp';
+import pushpadScreenshot5 from '@/app/projects/content/pushpad/platform-sim.webp';
+import pushpadScreenshot6 from '@/app/projects/content/pushpad/platform-support.webp';
 import shopifymigrationsHero from '@/app/projects/content/shopify-migrations/shopify-hero.jpg';
 import topwebworksHero from '@/app/projects/content/topwebworks/topwebworks-hero.png';
 
@@ -65,7 +68,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'amw-hardscape': {
     hero: amwhardscapeHero,
     demo: null,
-    screenshots: []
+    screenshots: [amwhardscapeScreenshot1, amwhardscapeScreenshot2, amwhardscapeScreenshot3, amwhardscapeScreenshot4, amwhardscapeScreenshot5, amwhardscapeScreenshot6]
   },
   'analytics-workbench': {
     hero: analyticsworkbenchHero,
@@ -115,7 +118,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'pushpad': {
     hero: pushpadHero,
     demo: null,
-    screenshots: [pushpadScreenshot1, pushpadScreenshot2, pushpadScreenshot3, pushpadScreenshot4, pushpadScreenshot5, pushpadScreenshot6, pushpadScreenshot7, pushpadScreenshot8, pushpadScreenshot9]
+    screenshots: [pushpadScreenshot1, pushpadScreenshot2, pushpadScreenshot3, pushpadScreenshot4, pushpadScreenshot5, pushpadScreenshot6]
   },
   'shopify-migrations': {
     hero: shopifymigrationsHero,
@@ -132,7 +135,13 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
 // Filename-based lookup for direct image resolution
 export const projectImagesByFilename: Record<string, Record<string, StaticImageData>> = {
   'amw-hardscape': {
-    'amw-hardscape-hero.png': amwhardscapeHero
+    'amw-hardscape-hero.png': amwhardscapeHero,
+    'design-system-components.webp': amwhardscapeScreenshot1,
+    'design-system-crm.webp': amwhardscapeScreenshot2,
+    'design-system-features.webp': amwhardscapeScreenshot3,
+    'design-system-foundations.webp': amwhardscapeScreenshot4,
+    'design-system-growth.webp': amwhardscapeScreenshot5,
+    'design-system-modules.webp': amwhardscapeScreenshot6
   },
   'analytics-workbench': {
     'analytics-workbench-hero.png': analyticsworkbenchHero,
@@ -187,16 +196,13 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'reebok-brochure.jpg': printScreenshot4
   },
   'pushpad': {
-    'pushpad-hero.jpg': pushpadHero,
-    'course-manager.png': pushpadScreenshot1,
-    'course-scaffold.png': pushpadScreenshot2,
-    'create-lesson-pad.png': pushpadScreenshot3,
-    'edit-course.png': pushpadScreenshot4,
-    'intervene.png': pushpadScreenshot5,
-    'learner-pad-shell.png': pushpadScreenshot6,
-    'parsed-pad-data.png': pushpadScreenshot7,
-    'raw-pad-data.png': pushpadScreenshot8,
-    'rendered-pad-data.png': pushpadScreenshot9
+    'pushpad-hero.webp': pushpadHero,
+    'platform-learner.webp': pushpadScreenshot1,
+    'platform-pad.webp': pushpadScreenshot2,
+    'platform-path.webp': pushpadScreenshot3,
+    'platform-publishing.webp': pushpadScreenshot4,
+    'platform-sim.webp': pushpadScreenshot5,
+    'platform-support.webp': pushpadScreenshot6
   },
   'shopify-migrations': {
     'shopify-hero.jpg': shopifymigrationsHero
@@ -228,6 +234,12 @@ export const availableProjects = ['amw-hardscape', 'analytics-workbench', 'brigh
 
 // Individual variable exports for direct access
 export { amwhardscapeHero };
+export { amwhardscapeScreenshot1 };
+export { amwhardscapeScreenshot2 };
+export { amwhardscapeScreenshot3 };
+export { amwhardscapeScreenshot4 };
+export { amwhardscapeScreenshot5 };
+export { amwhardscapeScreenshot6 };
 export { analyticsworkbenchHero };
 export { analyticsworkbenchScreenshot1 };
 export { analyticsworkbenchScreenshot2 };
@@ -269,8 +281,5 @@ export { pushpadScreenshot3 };
 export { pushpadScreenshot4 };
 export { pushpadScreenshot5 };
 export { pushpadScreenshot6 };
-export { pushpadScreenshot7 };
-export { pushpadScreenshot8 };
-export { pushpadScreenshot9 };
 export { shopifymigrationsHero };
 export { topwebworksHero };
