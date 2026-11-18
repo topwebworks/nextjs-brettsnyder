@@ -54,6 +54,7 @@ body {
   font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
   line-height: var(--leading-normal);
+  text-wrap: pretty;
   color: var(--text-primary);
   /* PREVENT FLASH: Dark mode default fallback before theme loads, then CSS variables take over */
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
