@@ -70,10 +70,11 @@ import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
 import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
 import printScreenshot3 from '@/app/projects/content/print/magazine-ad.jpg';
 import printScreenshot4 from '@/app/projects/content/print/print-broderbund-mailer.webp';
-import printScreenshot5 from '@/app/projects/content/print/print-nuskin-editorial.webp';
-import printScreenshot6 from '@/app/projects/content/print/print-product-illustration.webp';
-import printScreenshot7 from '@/app/projects/content/print/print-webmiles-identity.webp';
-import printScreenshot8 from '@/app/projects/content/print/reebok-brochure.jpg';
+import printScreenshot5 from '@/app/projects/content/print/print-logo-work.webp';
+import printScreenshot6 from '@/app/projects/content/print/print-nuskin-editorial.webp';
+import printScreenshot7 from '@/app/projects/content/print/print-product-illustration.webp';
+import printScreenshot8 from '@/app/projects/content/print/print-webmiles-identity.webp';
+import printScreenshot9 from '@/app/projects/content/print/reebok-brochure.jpg';
 import pushpadHero from '@/app/projects/content/pushpad/pushpad-hero.webp';
 import pushpadScreenshot1 from '@/app/projects/content/pushpad/platform-learner.webp';
 import pushpadScreenshot2 from '@/app/projects/content/pushpad/platform-pad.webp';
@@ -161,7 +162,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'print': {
     hero: printHero,
     demo: null,
-    screenshots: [printScreenshot1, printScreenshot2, printScreenshot3, printScreenshot4, printScreenshot5, printScreenshot6, printScreenshot7, printScreenshot8]
+    screenshots: [printScreenshot1, printScreenshot2, printScreenshot3, printScreenshot4, printScreenshot5, printScreenshot6, printScreenshot7, printScreenshot8, printScreenshot9]
   },
   'pushpad': {
     hero: pushpadHero,
@@ -266,10 +267,11 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'logo2.jpg': printScreenshot2,
     'magazine-ad.jpg': printScreenshot3,
     'print-broderbund-mailer.webp': printScreenshot4,
-    'print-nuskin-editorial.webp': printScreenshot5,
-    'print-product-illustration.webp': printScreenshot6,
-    'print-webmiles-identity.webp': printScreenshot7,
-    'reebok-brochure.jpg': printScreenshot8
+    'print-logo-work.webp': printScreenshot5,
+    'print-nuskin-editorial.webp': printScreenshot6,
+    'print-product-illustration.webp': printScreenshot7,
+    'print-webmiles-identity.webp': printScreenshot8,
+    'reebok-brochure.jpg': printScreenshot9
   },
   'pushpad': {
     'pushpad-hero.webp': pushpadHero,
@@ -398,6 +400,7 @@ export { printScreenshot5 };
 export { printScreenshot6 };
 export { printScreenshot7 };
 export { printScreenshot8 };
+export { printScreenshot9 };
 export { pushpadHero };
 export { pushpadScreenshot1 };
 export { pushpadScreenshot2 };

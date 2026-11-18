@@ -5,7 +5,7 @@ contentTitle: Only What Needs Attention
 technologies:
   - Next.js
   - TypeScript
-  - Tailwind CSS
+  - Tailwind
 category: Prototype
 status: Prototype
 featured: false

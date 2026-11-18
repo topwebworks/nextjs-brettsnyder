@@ -302,7 +302,7 @@ export default async function ProjectsPage() {
 
                                 {/* Technology Tags */}
                                 <div className={styles.techTagsContainer}>
-                                  {(project.technologies || []).slice(0, 5).map((tech: string, techIndex: number) => (
+                                  {(project.technologies || []).slice(0, 4).map((tech: string, techIndex: number) => (
                                     <span 
                                       key={`${project?.id || 'unknown'}-tech-${techIndex}`}
                                       className={`tech-tag ${styles.techTag}`}
@@ -310,9 +310,9 @@ export default async function ProjectsPage() {
                                       {tech}
                                     </span>
                                   ))}
-                                  {(project.technologies || []).length > 5 && (
+                                  {(project.technologies || []).length > 4 && (
                                     <span className={styles.techTagMoreCount}>
-                                      +{(project.technologies || []).length - 5}
+                                      +{(project.technologies || []).length - 4}
                                     </span>
                                   )}
                                 </div>
@@ -337,7 +337,7 @@ export default async function ProjectsPage() {
 
                               {/* Technology Tags */}
                               <div className={`${styles.techTagsContainer} ${styles.techTagsContainerNoImage}`}>
-                                {(project.technologies || []).slice(0, 5).map((tech: string, techIndex: number) => (
+                                {(project.technologies || []).slice(0, 4).map((tech: string, techIndex: number) => (
                                   <span 
                                     key={`${project?.id || 'unknown'}-tech-${techIndex}`}
                                     className={`tech-tag ${styles.techTag} ${styles.techTagAlt}`}
@@ -345,9 +345,9 @@ export default async function ProjectsPage() {
                                     {tech}
                                   </span>
                                 ))}
-                                {(project.technologies || []).length > 5 && (
+                                {(project.technologies || []).length > 4 && (
                                   <span className={styles.techTagMoreCount}>
-                                    +{(project.technologies || []).length - 5}
+                                    +{(project.technologies || []).length - 4}
                                   </span>
                                 )}
                               </div>

@@ -7,7 +7,7 @@ export interface PaginationConfig {
 // Default configurations for different page types
 export const PAGINATION_CONFIGS = {
   projects: {
-    initialCount: 6,
+    initialCount: 9,
     loadMoreCount: 6
   } as PaginationConfig,
   

@@ -5,7 +5,7 @@ contentTitle: Finding Where Tracking Breaks
 technologies:
   - JavaScript
   - Node.js
-  - Chrome DevTools
+  - DevTools
   - React
   - Vite
   - GTM

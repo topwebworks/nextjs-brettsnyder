@@ -7,7 +7,7 @@ technologies:
   - "HTML"
   - "CSS"
   - "JavaScript"
-  - "Material Components"
+  - "Material"
   - "WordPress"
 category: "Prototype"
 status: "Retired"

@@ -7,7 +7,7 @@ technologies:
   - "Next.js"
   - "React"
   - "TypeScript"
-  - "Tailwind CSS"
+  - "Tailwind"
   - "Supabase"
   - "Stripe"
   - "Vercel"
