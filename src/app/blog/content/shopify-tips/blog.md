@@ -27,7 +27,7 @@ keyAchievements:
       - "Clone templates for new content, assign to temp pages for approvals, then swap live"
       - "Adopt date-based naming for templates to track versions and iterations"
       - "Clone themes to safely test frontend without affecting live content"
-      - "Use Matrixify for targeted, transfers between staging and production"
+      - "Use Matrixify for targeted transfers between staging and production"
 
 media:
   items:

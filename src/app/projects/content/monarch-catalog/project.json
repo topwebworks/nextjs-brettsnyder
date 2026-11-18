@@ -1,6 +1,6 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
-  "title": "Monarch Catalog Prototype",
+  "title": "Monarch Catalog",
   "description": "A responsive HTML/CSS prototype built from supplied designs, with shared styles, Material controls and a working page flow for the Angular team.",
   "technologies": [
     "HTML",

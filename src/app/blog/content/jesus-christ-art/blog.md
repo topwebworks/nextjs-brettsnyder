@@ -7,14 +7,14 @@ achievementTitle: "Key Takeaways"
 technologies:
   - "Prints"
   - "Website"
-  - "Photoshop" 
+  - "Photoshop"
 category: "Digital Art"
 status: "Completed 2024"
 featured: false
 readTime: "2 min read"
 publishDate: "2023-06-15"
 author: "Brett Snyder"
-excerpt: "I used Photoshop as my canvas, locally generated AI elements, sketches, and some stock for base references. Then manually restructure and repaint."
+excerpt: "I used Photoshop as my canvas, locally generated AI elements, sketches, and some stock for base references. Then I manually restructured and repainted."
 links:
 keyAchievements:
   - type: "impact"
@@ -53,9 +53,9 @@ media:
 
 ## My Digital Process
 
-I used Photoshop as my canvas, locally generated AI elements, my sketches, and some stock as a base references. Then manually composite, restructure, and repaint. Then pass my draft through AI image to image refinement using local AI tools generated from my laptop. That output is the next round starting point to manually manipulate and repaint in Photoshop. 
+I used Photoshop as my canvas, locally generated AI elements, my sketches, and some stock as base references. Then I manually composite, restructure, and repaint. Then I pass my draft through AI image-to-image refinement using local AI tools generated from my laptop. That output is the next round's starting point to manually manipulate and repaint in Photoshop.
 
-Each manual round in Photoshop took several days, and crafting the image to image refinement would take a couple days. There is never direct AI output to final art as is common with online AI services. Every part of the final portrait is at usually around 30+ rounds, several weeks and months of manual evolution in PhotoShop.
+Each manual round in Photoshop took several days, and crafting the image to image refinement would take a couple days. There is never direct AI output to final art as is common with online AI services. Every part of the final portrait is usually around 30+ rounds, several weeks and months of manual evolution in Photoshop.
 
 ## Crown of Thorns
 

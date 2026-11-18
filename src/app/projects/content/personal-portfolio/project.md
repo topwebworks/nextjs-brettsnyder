@@ -1,5 +1,5 @@
 ---
-title: Personal Portfolio Site
+title: Personal Portfolio
 description: >-
   A Next.js portfolio with a design system, live component demos and Markdown publishing.
 contentTitle: ''
