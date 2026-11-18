@@ -1,7 +1,7 @@
-const assert = require('node:assert/strict');
-const puppeteer = require('puppeteer');
+import assert from 'node:assert/strict';
+import puppeteer from 'puppeteer';
 
-// Run against an existing site server: node scripts/check-legacy-demos.cjs [origin]
+// Run against an existing site server: node scripts/check-legacy-demos.mjs [origin]
 const origin = process.argv[2] || 'http://localhost:3001';
 
 (async () => {
@@ -49,6 +49,7 @@ const origin = process.argv[2] || 'http://localhost:3001';
       assert(await page.$eval('#tab2', e => e.checked));
       assert.equal(await page.$$eval('.tab-content:not([inert])', nodes => nodes.length), 1);
       assert(await page.$eval('#subject-label-2 span', e => getComputedStyle(e).display !== 'none'));
+      assert(await page.$$eval('form input:not([type=hidden])', nodes => nodes.every(e => e.labels.length === 1)));
       await page.click('#modalBtn');
       assert(await page.$eval('#myModal', e => e.open));
       await page.keyboard.press('Escape');
@@ -65,6 +66,12 @@ const origin = process.argv[2] || 'http://localhost:3001';
     await page.setJavaScriptEnabled(false);
     await page.goto(origin + paths[0], { waitUntil: 'load' });
     assert(await page.$eval('button[type=submit]', e => e.disabled));
+    await page.focus('#tab1');
+    await page.keyboard.press('ArrowRight');
+    assert(await page.$eval('#tab2', e => e.checked));
+    assert.equal(await page.$eval('#subject-panel-2', e => getComputedStyle(e).visibility), 'visible');
+    await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
+    assert.equal(await page.$eval('.tab-content', e => getComputedStyle(e).transitionDuration), '0s');
     assert.deepEqual(posts, []);
     assert.deepEqual(errors, []);
     console.log('Passed: 15 layouts, images, semantics, keyboard selection, dialog focus, local-only form and no-script guard.');

@@ -52,6 +52,12 @@ import masterblocksScreenshot4 from '@/app/projects/content/master-blocks/system
 import masterblocksScreenshot5 from '@/app/projects/content/master-blocks/system-states.webp';
 import masterblocksScreenshot6 from '@/app/projects/content/master-blocks/system-tokens.webp';
 import monarchcatalogHero from '@/app/projects/content/monarch-catalog/monarch-prototype.png';
+import monarchcatalogScreenshot1 from '@/app/projects/content/monarch-catalog/system-catalog.webp';
+import monarchcatalogScreenshot2 from '@/app/projects/content/monarch-catalog/system-components.webp';
+import monarchcatalogScreenshot3 from '@/app/projects/content/monarch-catalog/system-detail.webp';
+import monarchcatalogScreenshot4 from '@/app/projects/content/monarch-catalog/system-foundations.webp';
+import monarchcatalogScreenshot5 from '@/app/projects/content/monarch-catalog/system-microsite.webp';
+import monarchcatalogScreenshot6 from '@/app/projects/content/monarch-catalog/system-responsive.webp';
 import personalportfolioHero from '@/app/projects/content/personal-portfolio/1-personal-portfolio.png';
 import personalportfolioScreenshot1 from '@/app/projects/content/personal-portfolio/design-system-buttons.webp';
 import personalportfolioScreenshot2 from '@/app/projects/content/personal-portfolio/design-system-content.webp';
@@ -71,16 +77,27 @@ import pushpadScreenshot4 from '@/app/projects/content/pushpad/platform-publishi
 import pushpadScreenshot5 from '@/app/projects/content/pushpad/platform-sim.webp';
 import pushpadScreenshot6 from '@/app/projects/content/pushpad/platform-support.webp';
 import shopifymigrationsHero from '@/app/projects/content/shopify-migrations/shopify-hero.jpg';
+import shopifymigrationsScreenshot1 from '@/app/projects/content/shopify-migrations/design-components.webp';
+import shopifymigrationsScreenshot2 from '@/app/projects/content/shopify-migrations/design-tokens.webp';
+import shopifymigrationsScreenshot3 from '@/app/projects/content/shopify-migrations/page-mockups.webp';
+import shopifymigrationsScreenshot4 from '@/app/projects/content/shopify-migrations/section-contract.webp';
+import shopifymigrationsScreenshot5 from '@/app/projects/content/shopify-migrations/sections-cards.webp';
+import shopifymigrationsScreenshot6 from '@/app/projects/content/shopify-migrations/sections-comparison.webp';
+import shopifymigrationsScreenshot7 from '@/app/projects/content/shopify-migrations/sections-content.webp';
+import shopifymigrationsScreenshot8 from '@/app/projects/content/shopify-migrations/sections-cta.webp';
+import shopifymigrationsScreenshot9 from '@/app/projects/content/shopify-migrations/sections-lead-form.webp';
+import shopifymigrationsScreenshot10 from '@/app/projects/content/shopify-migrations/sections-tabs.webp';
 import topwebworksHero from '@/app/projects/content/topwebworks/topwebworks-hero.png';
 import topwebworksScreenshot1 from '@/app/projects/content/topwebworks/system-agency.webp';
-import topwebworksScreenshot2 from '@/app/projects/content/topwebworks/system-composition.webp';
-import topwebworksScreenshot3 from '@/app/projects/content/topwebworks/system-delivery.webp';
-import topwebworksScreenshot4 from '@/app/projects/content/topwebworks/system-followup.webp';
-import topwebworksScreenshot5 from '@/app/projects/content/topwebworks/system-foundation.webp';
-import topwebworksScreenshot6 from '@/app/projects/content/topwebworks/system-health.webp';
-import topwebworksScreenshot7 from '@/app/projects/content/topwebworks/system-responsive.webp';
-import topwebworksScreenshot8 from '@/app/projects/content/topwebworks/system-sections.webp';
-import topwebworksScreenshot9 from '@/app/projects/content/topwebworks/system-tokens.webp';
+import topwebworksScreenshot2 from '@/app/projects/content/topwebworks/system-branding.webp';
+import topwebworksScreenshot3 from '@/app/projects/content/topwebworks/system-composition.webp';
+import topwebworksScreenshot4 from '@/app/projects/content/topwebworks/system-delivery.webp';
+import topwebworksScreenshot5 from '@/app/projects/content/topwebworks/system-followup.webp';
+import topwebworksScreenshot6 from '@/app/projects/content/topwebworks/system-foundation.webp';
+import topwebworksScreenshot7 from '@/app/projects/content/topwebworks/system-health.webp';
+import topwebworksScreenshot8 from '@/app/projects/content/topwebworks/system-responsive.webp';
+import topwebworksScreenshot9 from '@/app/projects/content/topwebworks/system-sections.webp';
+import topwebworksScreenshot10 from '@/app/projects/content/topwebworks/system-tokens.webp';
 
 // Type definition for project image imports
 export interface ProjectImageImports {
@@ -129,7 +146,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'monarch-catalog': {
     hero: monarchcatalogHero,
     demo: null,
-    screenshots: []
+    screenshots: [monarchcatalogScreenshot1, monarchcatalogScreenshot2, monarchcatalogScreenshot3, monarchcatalogScreenshot4, monarchcatalogScreenshot5, monarchcatalogScreenshot6]
   },
   'personal-portfolio': {
     hero: personalportfolioHero,
@@ -149,12 +166,12 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'shopify-migrations': {
     hero: shopifymigrationsHero,
     demo: null,
-    screenshots: []
+    screenshots: [shopifymigrationsScreenshot1, shopifymigrationsScreenshot2, shopifymigrationsScreenshot3, shopifymigrationsScreenshot4, shopifymigrationsScreenshot5, shopifymigrationsScreenshot6, shopifymigrationsScreenshot7, shopifymigrationsScreenshot8, shopifymigrationsScreenshot9, shopifymigrationsScreenshot10]
   },
   'topwebworks': {
     hero: topwebworksHero,
     demo: null,
-    screenshots: [topwebworksScreenshot1, topwebworksScreenshot2, topwebworksScreenshot3, topwebworksScreenshot4, topwebworksScreenshot5, topwebworksScreenshot6, topwebworksScreenshot7, topwebworksScreenshot8, topwebworksScreenshot9]
+    screenshots: [topwebworksScreenshot1, topwebworksScreenshot2, topwebworksScreenshot3, topwebworksScreenshot4, topwebworksScreenshot5, topwebworksScreenshot6, topwebworksScreenshot7, topwebworksScreenshot8, topwebworksScreenshot9, topwebworksScreenshot10]
   }
 };
 
@@ -221,7 +238,13 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'system-tokens.webp': masterblocksScreenshot6
   },
   'monarch-catalog': {
-    'monarch-prototype.png': monarchcatalogHero
+    'monarch-prototype.png': monarchcatalogHero,
+    'system-catalog.webp': monarchcatalogScreenshot1,
+    'system-components.webp': monarchcatalogScreenshot2,
+    'system-detail.webp': monarchcatalogScreenshot3,
+    'system-foundations.webp': monarchcatalogScreenshot4,
+    'system-microsite.webp': monarchcatalogScreenshot5,
+    'system-responsive.webp': monarchcatalogScreenshot6
   },
   'personal-portfolio': {
     '1-personal-portfolio.png': personalportfolioHero,
@@ -248,19 +271,30 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'platform-support.webp': pushpadScreenshot6
   },
   'shopify-migrations': {
-    'shopify-hero.jpg': shopifymigrationsHero
+    'shopify-hero.jpg': shopifymigrationsHero,
+    'design-components.webp': shopifymigrationsScreenshot1,
+    'design-tokens.webp': shopifymigrationsScreenshot2,
+    'page-mockups.webp': shopifymigrationsScreenshot3,
+    'section-contract.webp': shopifymigrationsScreenshot4,
+    'sections-cards.webp': shopifymigrationsScreenshot5,
+    'sections-comparison.webp': shopifymigrationsScreenshot6,
+    'sections-content.webp': shopifymigrationsScreenshot7,
+    'sections-cta.webp': shopifymigrationsScreenshot8,
+    'sections-lead-form.webp': shopifymigrationsScreenshot9,
+    'sections-tabs.webp': shopifymigrationsScreenshot10
   },
   'topwebworks': {
     'topwebworks-hero.png': topwebworksHero,
     'system-agency.webp': topwebworksScreenshot1,
-    'system-composition.webp': topwebworksScreenshot2,
-    'system-delivery.webp': topwebworksScreenshot3,
-    'system-followup.webp': topwebworksScreenshot4,
-    'system-foundation.webp': topwebworksScreenshot5,
-    'system-health.webp': topwebworksScreenshot6,
-    'system-responsive.webp': topwebworksScreenshot7,
-    'system-sections.webp': topwebworksScreenshot8,
-    'system-tokens.webp': topwebworksScreenshot9
+    'system-branding.webp': topwebworksScreenshot2,
+    'system-composition.webp': topwebworksScreenshot3,
+    'system-delivery.webp': topwebworksScreenshot4,
+    'system-followup.webp': topwebworksScreenshot5,
+    'system-foundation.webp': topwebworksScreenshot6,
+    'system-health.webp': topwebworksScreenshot7,
+    'system-responsive.webp': topwebworksScreenshot8,
+    'system-sections.webp': topwebworksScreenshot9,
+    'system-tokens.webp': topwebworksScreenshot10
   }
 };
 
@@ -332,6 +366,12 @@ export { masterblocksScreenshot4 };
 export { masterblocksScreenshot5 };
 export { masterblocksScreenshot6 };
 export { monarchcatalogHero };
+export { monarchcatalogScreenshot1 };
+export { monarchcatalogScreenshot2 };
+export { monarchcatalogScreenshot3 };
+export { monarchcatalogScreenshot4 };
+export { monarchcatalogScreenshot5 };
+export { monarchcatalogScreenshot6 };
 export { personalportfolioHero };
 export { personalportfolioScreenshot1 };
 export { personalportfolioScreenshot2 };
@@ -351,6 +391,16 @@ export { pushpadScreenshot4 };
 export { pushpadScreenshot5 };
 export { pushpadScreenshot6 };
 export { shopifymigrationsHero };
+export { shopifymigrationsScreenshot1 };
+export { shopifymigrationsScreenshot2 };
+export { shopifymigrationsScreenshot3 };
+export { shopifymigrationsScreenshot4 };
+export { shopifymigrationsScreenshot5 };
+export { shopifymigrationsScreenshot6 };
+export { shopifymigrationsScreenshot7 };
+export { shopifymigrationsScreenshot8 };
+export { shopifymigrationsScreenshot9 };
+export { shopifymigrationsScreenshot10 };
 export { topwebworksHero };
 export { topwebworksScreenshot1 };
 export { topwebworksScreenshot2 };
@@ -361,3 +411,4 @@ export { topwebworksScreenshot6 };
 export { topwebworksScreenshot7 };
 export { topwebworksScreenshot8 };
 export { topwebworksScreenshot9 };
+export { topwebworksScreenshot10 };

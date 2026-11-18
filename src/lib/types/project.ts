@@ -47,6 +47,7 @@ export interface ProjectData {
         type: 'video' | 'image';
         src: string;
         title?: string;
+        poster?: string;
       }>;
       // Legacy format for backward compatibility  
       videos?: string[];

@@ -14,13 +14,13 @@ The public article, token snapshot and PDF exclude prices, plan tiers, marketing
 
 ## Deliverables
 
-Nine boards cover system boundaries, tokens and theme overrides, agency components, the service library and AMW output, informational components and Health theme, example page composition, responsive layouts foundation-to-client assembly, and production delivery standards.
+Ten boards cover system boundaries, tokens and theme overrides, agency components, the service library and AMW output, informational components and Health theme, example page composition, responsive layouts foundation-to-client assembly, and production delivery standards.
 
-Client job: `TWW_261117_platform-story`, under `TWW_topwebworks`. Native master: `TWW_261117_platform-story_v05.figcraft`; earlier versions are retained. Fifteen pages include nine boards, Assets, three state studies and two editable composition pages. Separate collections record base values and replaceable service-demo branding; Health includes desktop/mobile modes.
+Client job: `TWW_261117_platform-story`, under `TWW_topwebworks`. Native master: `TWW_261117_platform-story_v06.figcraft`; earlier versions are retained. Sixteen pages include ten boards, Assets, three state studies and two editable composition pages. Separate collections record base values and replaceable service-demo branding; Health includes desktop/mobile modes.
 
 The Health goal tile uses editable type and token-bound surfaces. Health service-card and AMW panel reconstructions retain separate photo, text, surface and control layers. FAQ and service-state studies use implementation captures. The live recording shows TWW disclosure behavior and Health goal-card feedback/navigation.
 
-The original hero remains the sole hero item. Public deliverables under `public/demo/topwebworks/` include the nine-page PDF, scoped token JSON, interaction recording and poster. Nine inline boards link to full-size images. Documentation uses Inter/Consolas; native example components also use Georgia/Arial and DM Sans.
+The original hero remains the sole hero item. Public deliverables under `public/demo/topwebworks/` include the ten-page PDF, scoped token JSON, interaction recording and poster. Ten inline boards link to full-size images. Documentation uses Inter/Consolas; native example components also use Georgia/Arial and DM Sans.
 
 ## Verification
 
@@ -31,3 +31,5 @@ All nine PDF pages were rendered and reviewed. Each is 1280 points wide, fonts a
 ## Final Content Review
 
 The article, PDF text, figures, recording and token download were reviewed for disclosure and voice. Public content is limited to design/engineering methods and Brett-approved client capabilities. Prices, margins, tier details, billing, marketing cadence, acquisition tactics and account identifiers are excluded. Unreferenced preview downloads were removed; their client-job originals are retained. The copy uses shorter first-person explanations and specific implementation details, with repeated scope statements and generic transitions removed. This review covers the current TWW materials, not deployment or repository history.
+
+Rebrand addition: the article credits Brett's new symbol/wordmark lockup. A dedicated board preserves the original symbol as vector paths and the implemented Afacad wordmark as a header capture. `logo.tsx` specifies a 28 px mark frame, 10 px gap, 25.6 px wordmark and a 400 ms letter wave with 40 ms stagger. Parkinsans/Switzer remain the site display/body roles. The revised PDF has ten pages with a consistent width; the native file retains the earlier studies plus the identity page.

@@ -39,6 +39,140 @@
   outline-offset: 4px;
 }
 
+.enhanced-html-content :global(a[data-section-gallery]) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 1px solid var(--text-accent);
+  border-radius: 50px;
+  color: var(--text-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sectionGallery {
+  inset: 0;
+  margin: auto;
+  width: min(1440px, calc(100vw - 24px));
+  height: calc(100dvh - 40px);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.sectionGallery[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionGallery::backdrop {
+  background: rgb(0 0 0 / 78%);
+}
+
+:global(body):has(.sectionGallery[open]) {
+  overflow: hidden;
+}
+
+.galleryHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.galleryHeader > div {
+  flex: 1;
+}
+
+.galleryHeader h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.galleryHeader p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.galleryHeader a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-accent);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.galleryHeader button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-primary);
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.galleryScroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+}
+
+.galleryScroll img {
+  display: block;
+  width: 100%;
+  min-width: 960px;
+  max-width: 1438px;
+  height: auto;
+  cursor: default;
+}
+
+.galleryHeader :is(a, button):focus-visible,
+.galleryScroll:focus-visible,
+.enhanced-html-content :global(a[data-section-gallery]):focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: -4px;
+}
+
+@media (max-width: 600px) {
+  .galleryHeader {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .galleryHeader > div {
+    flex-basis: calc(100% - 60px);
+  }
+
+  .galleryHeader a {
+    order: 1;
+  }
+
+  .galleryHeader h2 {
+    font-size: 18px;
+  }
+}
+
 /* Typography - Matching About page hierarchy */
 .enhanced-html-content :global(.project-section-title) {
   font-size: clamp(1.6rem, 4vw, 1.8rem);

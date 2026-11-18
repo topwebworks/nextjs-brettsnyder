@@ -65,14 +65,14 @@ function getScreenshotTitle(
 }
 
 // Unified media processing with backward compatibility
-function getUnifiedMediaItems(project: ProjectData): Array<{type: 'video' | 'image', src: string, title?: string}> {
+function getUnifiedMediaItems(project: ProjectData): Array<{type: 'video' | 'image', src: string, title?: string, poster?: string}> {
   // Check if project uses new unified media format
   if (project.content?.media?.items) {
     return project.content.media.items;
   }
   
   // Backward compatibility: convert old format to new format
-  const legacyItems: Array<{type: 'video' | 'image', src: string, title?: string}> = [];
+  const legacyItems: Array<{type: 'video' | 'image', src: string, title?: string, poster?: string}> = [];
   
   // Add videos first (if any)
   if (project.content?.media?.videos) {
@@ -113,6 +113,11 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
   const [currentHeroImage, setCurrentHeroImage] = useState<string | StaticImageData | null>(null);
   const [loadedHeroImage, setLoadedHeroImage] = useState<string | null>(null);
   const [currentHeroVideo, setCurrentHeroVideo] = useState<string | null>(null);
+  const [playingHeroVideo, setPlayingHeroVideo] = useState<string | null>(null);
+  const heroPlayerRef = useRef<HTMLIFrameElement>(null);
+  useEffect(() => {
+    if (playingHeroVideo) heroPlayerRef.current?.focus();
+  }, [playingHeroVideo]);
   const [currentVideoAspectRatio, setCurrentVideoAspectRatio] = useState<'portrait' | 'landscape'>('landscape');
   // State for scroll arrow visibility
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -227,6 +232,7 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
 
   // Get unified media items
   const unifiedMediaItems = getUnifiedMediaItems(project);
+  const heroVideoPoster = unifiedMediaItems.find(item => item.type === 'video' && getYouTubeVideoId(item.src) === currentHeroVideo)?.poster;
   
   // Get static image imports for this project/blog (ZERO API CALLS!)
   const staticImages = contentType === 'blog' ? getBlogImages(project.id) : getProjectImages(project.id);
@@ -562,14 +568,22 @@ export default function ProjectDetailUniversal({ project, contentType = 'project
                     <div className={`${styles.heroMediaAspectRatio} ${styles[currentVideoAspectRatio]}`}>
                       <div className={styles.heroMediaContent}>
                         <div className={styles.heroVideoContainer}>
+                          {heroVideoPoster && playingHeroVideo !== currentHeroVideo ? (
+                            <button type="button" className={styles.heroVideoPreview} aria-label={`Play ${project.title} demo video`} onClick={() => setPlayingHeroVideo(currentHeroVideo)}>
+                              <Image src={heroVideoPoster} alt="" fill sizes="(max-width: 1276px) 94vw, 1200px" className={styles.heroVideoPoster} quality={90} priority />
+                              <span className={styles.heroVideoPlay}><Play size={26} fill="currentColor" aria-hidden="true" /></span>
+                            </button>
+                          ) : (
                           <iframe
-                            src={`https://www.youtube.com/embed/${currentHeroVideo}?controls=1&modestbranding=1&fs=1&rel=0&playsinline=1`}
-                            title="Project Demo Video"
+                            ref={heroPlayerRef}
+                            src={`https://www.youtube.com/embed/${currentHeroVideo}?controls=1&modestbranding=1&fs=1&rel=0&playsinline=1${playingHeroVideo === currentHeroVideo ? '&autoplay=1' : ''}`}
+                            title={`${project.title} demo video`}
                             className={styles.heroVideo}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                             allowFullScreen
                             frameBorder="0"
                           />
+                          )}
                         </div>
                       </div>
                     </div>

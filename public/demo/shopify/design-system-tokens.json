@@ -1,0 +1,101 @@
+{
+  "title": "Shopify marketing sections",
+  "documented": "2026-11-17",
+  "provenance": {
+    "production": [
+      "https://aop.com/pages/monarch",
+      "https://www.ignitechristianacademy.com/pages/online-school-overview"
+    ],
+    "source": "MKTG Liquid-section snapshots; not asserted to match current deployed versions",
+    "historical": "Supplied full-page custom-development gallery"
+  },
+  "productionRoles": {
+    "primary": "#f15a37",
+    "primaryLight": "#ff8f76",
+    "primaryDark": "#bb452a",
+    "headingFont": "Caladea",
+    "bodyFont": "Open Sans",
+    "aopBenefitCard": {
+      "surface": "#f5f5f5",
+      "text": "#111827",
+      "padding": "15px 25px",
+      "cornerRadius": "0px",
+      "heading": "18px / 23px, 700",
+      "body": "14px / 24px, 400"
+    },
+    "aopSubjectIndicators": {
+      "languageArts": "#faaf3b",
+      "history": "#88c241",
+      "math": "#f27d7c",
+      "science": "#2ab5cd"
+    }
+  },
+  "schemaExamples": {
+    "benefits": {
+      "section": [
+        "cl_bg",
+        "section_padding",
+        "section_margin",
+        "max_boxes_per_row",
+        "box_padding_height",
+        "box_padding_width",
+        "box_margin_height",
+        "box_margin_width",
+        "border_width",
+        "border_color",
+        "border_radius",
+        "enable_hover_shadow"
+      ],
+      "block": [
+        "image",
+        "eyebrow",
+        "title",
+        "info_text",
+        "primary_url",
+        "primary_label",
+        "secondary_url",
+        "secondary_label"
+      ]
+    },
+    "tabs": {
+      "section": [
+        "tab_layout",
+        "tab_distribution",
+        "nav_content_spacing",
+        "tab_spacing",
+        "icon_position",
+        "mobile_icon_position"
+      ],
+      "block": [
+        "tab_title",
+        "icon",
+        "tab_indicator_color",
+        "media_position",
+        "mobile_stack",
+        "content_image",
+        "text_content"
+      ]
+    }
+  },
+  "cssBridge": {
+    "source": "MKTG-benefits-block.liquid",
+    "properties": {
+      "--box-padding": "box_padding_height + box_padding_width",
+      "--box-gap-h": "box_margin_height",
+      "--box-gap-w": "box_margin_width",
+      "--border-style": "border_width + border_color"
+    },
+    "scope": "Section ID scopes generated CSS so instances can carry separate settings."
+  },
+  "families": [
+    "CTA slider",
+    "Benefits",
+    "Info block",
+    "Tabs",
+    "Comparison table",
+    "Jump navigation",
+    "Dropdown navigation",
+    "Custom footer"
+  ],
+  "limits": "Measured roles describe the named production pages. Source settings show available controls, not active merchant values. No accessibility certification or conversion lift is claimed."
+}

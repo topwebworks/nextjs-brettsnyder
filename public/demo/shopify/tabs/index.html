@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopify tab section prototype</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<main data-layout="horizontal" data-icons="false" data-active-subject="language">
+  <header>
+    <p class="eyebrow">WORKING COMPONENT PROTOTYPE</p>
+    <h1>One section. Different layouts.</h1>
+    <p>Change the navigation, select a subject, or use the arrow keys in the tab list.</p>
+  </header>
+  <div class="controls">
+    <label>Layout <select id="layout"><option value="horizontal">Horizontal</option><option value="vertical">Vertical</option></select></label>
+    <label class="check"><input id="icons" type="checkbox"> Show icons</label>
+  </div>
+  <div class="section">
+    <div class="tabs" role="tablist" aria-label="Curriculum subjects" aria-orientation="horizontal">
+      <button id="tab-language" type="button" role="tab" aria-controls="panel-language" aria-selected="true" tabindex="0" data-subject="language"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14m-9-3V3c6-2 9 2 9 2s3-4 9-2v15c-6-2-9 2-9 2s-3-4-9-2Z"/></svg>Language arts</button>
+      <button id="tab-math" type="button" role="tab" aria-controls="panel-math" aria-selected="false" tabindex="-1" data-subject="math"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2m4 0h2m-8 4h2m4 0h2m-8 4h2m4 0h2"/></svg>Math</button>
+      <button id="tab-science" type="button" role="tab" aria-controls="panel-science" aria-selected="false" tabindex="-1" data-subject="science"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6m-5 0v7L4 20q-1 2 2 2h12q3 0 2-2l-6-10V3M7 16h10"/></svg>Science</button>
+    </div>
+    <section id="panel-language" role="tabpanel" aria-labelledby="tab-language" tabindex="0">
+      <div><p class="eyebrow">SUBJECT DETAIL</p><h2>Language arts</h2><p>Reading, writing, speaking and listening, with grammar and communication practice.</p><ul><li>Integrated reading and writing</li><li>Roots, prefixes and suffixes</li><li>Grammar and communication</li></ul><a class="action" href="https://aop.com/pages/monarch" target="_blank" rel="noopener noreferrer">See the production section <span aria-hidden="true">↗</span></a></div>
+      <img src="assets/language.png" alt="Monarch language arts lesson preview" width="800" height="600">
+    </section>
+    <section id="panel-math" role="tabpanel" aria-labelledby="tab-math" tabindex="0" hidden>
+      <div><p class="eyebrow">SUBJECT DETAIL</p><h2>Math</h2><p>A progression from arithmetic into algebra and more advanced concepts.</p><ul><li>A progressive curriculum</li><li>Real-life applications</li><li>Logic and reasoning</li></ul><a class="action" href="https://aop.com/pages/monarch" target="_blank" rel="noopener noreferrer">See the production section <span aria-hidden="true">↗</span></a></div>
+      <img src="assets/math.png" alt="Monarch math lesson preview" width="800" height="600" loading="lazy">
+    </section>
+    <section id="panel-science" role="tabpanel" aria-labelledby="tab-science" tabindex="0" hidden>
+      <div><p class="eyebrow">SUBJECT DETAIL</p><h2>Science</h2><p>Explore living systems, matter and energy, and Earth and space through observation and experimentation.</p><ul><li>Living organisms and systems</li><li>Matter and energy</li><li>Earth and space</li></ul><a class="action" href="https://aop.com/pages/monarch" target="_blank" rel="noopener noreferrer">See the production section <span aria-hidden="true">↗</span></a></div>
+      <img src="assets/science.png" alt="Monarch science lesson preview" width="800" height="600" loading="lazy">
+    </section>
+  </div>
+  <footer><output id="state" aria-live="polite">Horizontal · Text tabs · Language arts</output><p>A browser study of the section controls. The finished storefront uses Shopify Liquid.</p></footer>
+</main>
+</body>
+</html>

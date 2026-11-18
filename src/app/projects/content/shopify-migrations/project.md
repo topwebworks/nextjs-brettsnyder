@@ -1,7 +1,7 @@
 ---
 title: "Shopify Plus Migrations"
-description: "A Shopify Plus marketing design system of reusable Liquid sections and schemas, built for designers and developers across two enterprise migrations."
-contentTitle: "Two Migrations to Shopify Plus"
+description: "A reusable Liquid section system for AOP and Ignite Christian Academy, from brand rules and editor settings to complete Shopify Plus storefronts."
+contentTitle: "A Marketing Design System in Liquid"
 achievementTitle: ""
 technologies:
   - "Shopify Plus"
@@ -11,44 +11,106 @@ status: "Production"
 featured: false
 designSystem: true
 publishDate: "2022-06-01"
+updatedDate: "2026-11-17"
 links:
   live: "https://aop.com"
-keyAchievements:
-  - type: "technical"
-    icon: "🤝"
-    title: "Collaboration, Analytics, and Production Support"
-    description: "Worked directly with designers and business stakeholders as the developer on each migration, plus bug fixes and production support."
-    metrics:
-      - "Design system live on AOP.com and IgniteChristianAcademy.com, across two theme frameworks (Kalles and Horizon)"
-      - "Built custom dynamic product detail and collection page templates and a fully custom navigation header and footer into Ignite's system"
-      - "Handed the finished system to marketing; their design department chose the content, assets, section pacing, and brand color use"
-      - "Built conversion-focused custom marketing sections in direct collaboration with designers and stakeholders"
-      - "Analytics stack: Google Tag Manager, GA4, Shopify Analytics, Shoplift, and Crazy Egg"
-      - "Ensured ADA-compliant markup and accessibility on every custom marketing section built"
-      - "Bug fixes and production support"
+keyAchievements: []
 media:
   items:
     - type: "video"
       title: "Custom Shopify Sections"
       src: "https://www.youtube.com/watch?v=GvHgPfRyoe4"
+      poster: "/demo/shopify/hero-video-poster.webp"
+    - type: "image"
+      title: "01 · Brand tokens"
+      src: "design-tokens.webp"
+    - type: "image"
+      title: "02 · Editable component"
+      src: "design-components.webp"
+    - type: "image"
+      title: "03 · Section variants"
+      src: "section-contract.webp"
+    - type: "image"
+      title: "04 · Page mockups"
+      src: "page-mockups.webp"
+    - type: "image"
+      title: "05 · Finished storefront"
+      src: "sections-lead-form.webp"
 ---
 
-## Two Migrations, One Platform
+## A section library Marketing could build with
 
-I planned and led migrations of two enterprise e-commerce properties to Shopify Plus, [AOP.com](https://www.aop.com) and [Ignite Christian Academy](https://www.ignitechristianacademy.com). Each migration replaced paid third-party apps with custom Liquid sections and configurable Shopify schemas, built from a custom marketing [design system](/blog/design-systems), giving marketing teams the ability to build and edit sections directly instead of depending on app-store functionality.
+I planned and led Shopify Plus migrations for [AOP](https://aop.com) and [Ignite Christian Academy](https://www.ignitechristianacademy.com). Marketing needed to build campaigns without waiting for each page to be coded.
 
-Both stores run on the design system: AOP.com on the Kalles theme and Ignite Christian Academy on Shopify's Horizon theme. For Ignite, the system went past marketing sections: I added custom dynamic product detail and collection page templates and a fully custom navigation header and footer. I handed the finished system to the marketing department, and their design department chose the content, assets, section pacing, and brand color&nbsp;use.
+I built the Liquid sections and their Shopify editor controls: reusable layouts with editable content, media, spacing, actions and mobile behavior. The library replaced marketing functionality that would otherwise have depended on paid apps.
 
-## A Design System, Built in Liquid
+<p><a href="/demo/shopify-custom-sections.jpg" data-section-gallery>Explore all custom sections</a></p>
 
-Rather than leaning on the app ecosystem for marketing functionality, I built a design system of reusable, schema-driven Liquid sections tailored to each property's content needs: shared brand tokens, a consistent section library, and schema settings that exposed layout and content controls to marketing and design without touching code. The underlying sections stayed consistent and maintainable across storefronts, so designers and marketers could compose new pages from existing pieces instead of requesting one-off builds.
+The full gallery preserves the development examples, including placeholder copy and layout variants. The crops below show individual patterns alongside finished storefront examples.
 
-This is a separate design system from [Master Blocks](/projects/master-blocks), the HTML/CMS block system built for WordPress and standalone pages. The Shopify sections are Liquid-native and schema-driven, built specifically for the Shopify theme architecture, but the same principle carries across both: shared tokens and components that designers and developers can both work&nbsp;from.
+## Tabs that handle more than one layout
 
-## Collaboration and Ongoing Support
+The tab section supports text or icon navigation, horizontal or vertical layouts, media panels and accordion content. Editors choose the arrangement and populate each tab without changing the section code.
 
-As the developer on each migration, I worked directly with designers and business stakeholders to build conversion-focused custom marketing sections, responsive across devices and consistent with each brand's design system. I made sure the markup I built was ADA-compliant; a third-party accessibility widget (AccessiBe) covered site-wide accessibility beyond what the custom sections handled directly. Analytics ran through Google Tag Manager, GA4, Shopify Analytics, Shoplift, and Crazy Egg. I also handled bug fixes and production support.
+![Icon navigation, a media panel and configurable actions in the custom Shopify tab section](sections-tabs.webp)
 
-## Working Across Platform Constraints
+On AOP, that section becomes a subject browser. Each selection reveals curriculum information and an action for that subject.
 
-The [Shopify Tips](/blog/shopify-tips) write-up covers the practical side of this work in more depth: theme selection, staging workflows, and the tradeoffs of customizing versus extending Shopify's default Horizon theme. Across both migrations, the priority was the same: keep the upgrade path open, build additively, and avoid core theme changes that would leave a store stuck on an unsupported foundation.
+<video controls playsinline preload="none" poster="/demo/shopify/subject-tabs-poster.webp" width="1280" height="720">
+  <source src="/demo/shopify/subject-tabs.mp4" type="video/mp4">
+  <a href="/demo/shopify/subject-tabs.mp4">Watch the AOP subject tabs change panels.</a>
+</video>
+
+## Tokens, components and page layouts
+
+The design-system gallery follows the shared tokens, an editable benefit card, section variants, page layouts and a finished storefront. Orange action colors, Caladea headings, Open Sans content and repeated spacing rules carry through the components.
+
+The section schema exposes layout controls; repeatable tab blocks hold the labels, imagery, copy and actions. Liquid renders those choices, with CSS scoped to the section instance.
+
+![Brand rules, Shopify schema controls and three rendered tab layouts showing how one section stays reusable](section-contract.webp)
+
+That structure lets Marketing change a page's content and arrangement while the component stays maintainable. The [style and schema snapshot](/demo/shopify/design-system-tokens.json) includes examples of the actual settings.
+
+### Try the component
+
+This browser prototype demonstrates the tab structure, layout choices and keyboard behavior. The production section runs in Shopify Liquid.
+
+<iframe class="project-component-demo" src="/demo/shopify/tabs/index.html" title="Interactive Shopify tab-section prototype" width="1200" height="800" loading="lazy"></iframe>
+
+## More sections from the library
+
+### Benefits and content grids
+
+Repeated blocks combine images or icons, headings, copy and actions. Editors control the card treatment, spacing and layout, including a side-scroll option.
+
+![Two benefit cards from the development gallery, with image, copy and different action treatments](sections-cards.webp)
+
+### Media and product explanations
+
+Image-and-text sections handle product details, screenshots and video. Alignment and mobile spacing are configurable. This example is from AOP's finished Monarch page.
+
+![The custom media-and-text section explaining Monarch on the finished AOP storefront](sections-content.webp)
+
+### Campaign calls to action
+
+The gallery includes contained and full-width treatments, image and video backgrounds, and light and dark variants. Primary and secondary actions give each campaign a clear next step.
+
+![A dark campaign call-to-action variant from the original development gallery](sections-cta.webp)
+
+## Built into two Shopify Plus storefronts
+
+The page mockups show how the finished AOP sections fit together at desktop and phone sizes, from the hero and product explanation to benefits and subject detail.
+
+![Desktop and phone page-layout studies composed from the finished AOP marketing sections](page-mockups.webp)
+
+Ignite's landing page brings campaign messaging and a lead form into the same hero. Farther down, the comparison section helps families understand the school options.
+
+![Ignite's finished campaign hero with a lead-capture form](sections-lead-form.webp)
+
+![The reusable comparison table on Ignite's finished school overview page](sections-comparison.webp)
+
+AOP used Kalles; Ignite used Horizon. I also built jump navigation, custom dropdown navigation and a footer, plus dynamic product-detail and collection templates for Ignite. Client designers and marketers chose the final artwork, copy, section order and brand color use.
+
+I kept the custom work additive, handled production fixes and support, and worked with GTM, GA4, Shopify Analytics, Shoplift and Crazy Egg for measurement.
+
+[View AOP's Monarch page](https://aop.com/pages/monarch), [visit Ignite's school overview](https://www.ignitechristianacademy.com/pages/online-school-overview), or [open the technical design-system study](/demo/shopify/shopify-design-system.pdf).

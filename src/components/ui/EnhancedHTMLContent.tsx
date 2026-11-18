@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
 import { getProjectImageByFilename } from '@/lib/generated/projectImageImports';
@@ -26,6 +28,24 @@ export default function EnhancedHTMLContent({
   className = '' 
 }: EnhancedHTMLContentProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDialogElement>(null);
+  const galleryTitleId = useId();
+  const [gallerySrc, setGallerySrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (gallerySrc) {
+      galleryRef.current?.showModal();
+      galleryRef.current?.querySelector('button')?.focus();
+    }
+  }, [gallerySrc]);
+
+  function openSectionGallery(event: React.MouseEvent<HTMLDivElement>) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = (event.target as Element).closest<HTMLAnchorElement>('a[data-section-gallery]');
+    if (!link || new URL(link.href).origin !== window.location.origin) return;
+    event.preventDefault();
+    setGallerySrc(link.href);
+  }
 
   useEffect(() => {
     const cleanups: Array<() => void> = [];
@@ -84,8 +104,37 @@ export default function EnhancedHTMLContent({
   };
 
   return (
-    <div ref={containerRef} className={`${cssStyles['enhanced-html-content']} ${className}`}>
+    <div ref={containerRef} className={`${cssStyles['enhanced-html-content']} ${className}`} onClick={openSectionGallery}>
       {renderContent()}
+      {gallerySrc && createPortal(
+        <dialog
+          ref={galleryRef}
+          className={cssStyles.sectionGallery}
+          aria-labelledby={galleryTitleId}
+          data-section-gallery-dialog
+          onClose={() => setGallerySrc(null)}
+          onClick={event => {
+            if (event.target === event.currentTarget) event.currentTarget.close();
+          }}
+        >
+          <header className={cssStyles.galleryHeader}>
+            <div>
+              <h2 id={galleryTitleId}>Custom section library</h2>
+              <p>Full development gallery. Scroll to explore; swipe sideways on phones.</p>
+            </div>
+            <a href={gallerySrc} target="_blank" rel="noopener noreferrer">Open original</a>
+            <button type="button" aria-label="Close section gallery" onClick={() => galleryRef.current?.close()}>
+              <X size={22} aria-hidden="true" />
+            </button>
+          </header>
+          <div className={cssStyles.galleryScroll} tabIndex={0} role="region" aria-label="Scrollable section gallery">
+            {/* Preserve the supplied full-page image at a readable scale inside the scroll area. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={gallerySrc} alt="Original development gallery of custom Shopify heroes, tabs, content blocks, forms, tables and footers" onLoad={event => event.currentTarget.parentElement?.scrollTo(0, 0)} />
+          </div>
+        </dialog>,
+        document.body
+      )}
     </div>
   );
 }
