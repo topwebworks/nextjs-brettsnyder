@@ -22,6 +22,7 @@
   "designSystem": true,
   "publishDate": "2021-06-01",
   "updatedDate": "2026-11-17",
+  "contentTitle": "HTML/CSS prototype for Angular handoff",
   "readTime": "5 min read",
   "excerpt": "A responsive HTML/CSS prototype built from supplied designs, with shared styles, Material controls and a working page flow for the Angular team.",
   "links": {

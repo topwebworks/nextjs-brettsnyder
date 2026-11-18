@@ -1,7 +1,7 @@
 ---
 title: "Master Email"
 description: "The master template I used for AOP emails, with reusable rows and brand recipes, plus earlier custom campaigns from Pearson Online Learning."
-contentTitle: ""
+contentTitle: "AOP master template and Pearson campaigns"
 achievementTitle: ""
 technologies:
   - "HTML"
@@ -9,14 +9,13 @@ technologies:
   - "Responsive"
   - "Design Systems"
 category: "Template"
-status: "Production"
+status: "Retired"
 featured: false
 designSystem: true
 publishDate: "2017-01-15"
 updatedDate: "2026-11-18"
 links:
-  demo: "/demo/emails/sample2/index.html"
-  live: "/demo/emails/master-email/index.html"
+  demo: "/demo/emails/master-email/index.html"
 keyAchievements: []
 media:
   items:

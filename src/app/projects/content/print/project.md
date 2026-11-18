@@ -9,7 +9,7 @@ technologies:
   - "Illustrator"
   - "Photoshop"
 category: "Print"
-status: "Production"
+status: "Retired"
 featured: false
 publishDate: "2016-01-12"
 updatedDate: "2026-11-18"

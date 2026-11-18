@@ -1,7 +1,7 @@
 ---
 title: "Master Blocks"
 description: "A reusable HTML/CSS landing-page library for six product brands, built so the marketing team could assemble and edit campaigns in their existing CMS."
-contentTitle: ""
+contentTitle: "Landing-page library for six brands"
 achievementTitle: ""
 technologies:
   - "HTML"
@@ -9,15 +9,14 @@ technologies:
   - "JavaScript"
   - "Design Systems"
 category: "Template"
-status: "Production"
+status: "Retired"
 featured: false
 designSystem: true
 publishDate: "2022-06-15"
 updatedDate: "2026-11-17"
 links:
-  demo: "/demo/master-blocks/example-aop-lp.html"
+  demo: "/demo/master-blocks/aop-master-lp-blocks.html"
   github: "https://github.com/topwebworks/master-lp-blocks"
-  live: "/demo/master-blocks/aop-master-lp-blocks.html"
 keyAchievements: []
 media:
   items:

@@ -1,5 +1,5 @@
 ---
-title: "Grok Bot"
+title: "Director"
 description: "Director keeps Grok Bot instructions, research and saved progress available across sessions and resets."
 contentTitle: "Director: Building Bots in a World of Resets"
 achievementTitle: "Durable Work & Recovery"

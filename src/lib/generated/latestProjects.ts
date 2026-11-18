@@ -31,7 +31,7 @@ export const latestProjects: LatestProject[] = [
   },
   {
     "id": "grok-bot",
-    "title": "Grok Bot",
+    "title": "Director",
     "excerpt": "Director keeps Grok Bot instructions, research and saved progress available across sessions and resets.",
     "category": "AI Automation",
     "publishDate": "2026-10-11",

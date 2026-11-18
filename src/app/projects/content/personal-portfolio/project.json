@@ -20,6 +20,7 @@
   "designSystem": true,
   "publishDate": "2025-09-08",
   "updatedDate": "2026-11-17",
+  "contentTitle": "Design system and Markdown publishing",
   "readTime": "5 min read",
   "excerpt": "A Next.js portfolio with a design system, live component demos and Markdown publishing.",
   "links": {

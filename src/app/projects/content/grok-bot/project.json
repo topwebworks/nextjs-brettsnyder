@@ -1,6 +1,6 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
-  "title": "Grok Bot",
+  "title": "Director",
   "description": "Director keeps Grok Bot instructions, research and saved progress available across sessions and resets.",
   "technologies": [
     "Next.js",

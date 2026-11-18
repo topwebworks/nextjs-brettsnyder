@@ -1,7 +1,7 @@
 ---
 title: "Monarch Catalog"
 description: "A responsive HTML/CSS prototype built from supplied designs, with shared styles, Material controls and a working page flow for the Angular team."
-contentTitle: ""
+contentTitle: "HTML/CSS prototype for Angular handoff"
 achievementTitle: ""
 technologies:
   - "HTML"

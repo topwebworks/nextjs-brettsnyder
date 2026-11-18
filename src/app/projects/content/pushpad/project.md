@@ -30,6 +30,8 @@ media:
 
 I'm building PushPad for educators who need to give a learner focused practice on something they haven't quite understood. It supplements the instruction they already use. An educator can create a lesson pad for one concept, assign it and use the learner's work to decide what comes next.
 
+The marketing site is live; the product itself is still a working prototype.
+
 I own the product design and implementation, including the educator tools, learner experience, content generation, grading, assignments and marketplace.
 
 ## Start With the Concept
