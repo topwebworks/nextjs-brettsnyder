@@ -179,7 +179,7 @@
   position: relative;
   z-index: 2;
   pointer-events: none;
-  padding: 30px 25px;
+  padding: 20px 22px 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -192,7 +192,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .blogCategoryBadge {
@@ -212,7 +213,8 @@
 .blogDateInfo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  min-width: 0;
+  gap: 0.35rem;
   font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 500;
@@ -234,7 +236,7 @@
   width: 100%;
   height: 200px;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .projectContentWithImage {
@@ -252,7 +254,7 @@
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 400;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
 }
@@ -273,7 +275,7 @@
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .blogDescriptionMaxWidth {
@@ -281,11 +283,11 @@
 }
 
 .blogDescriptionNoImage {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .blogDescriptionWithImage {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 /* Read Time */
@@ -469,11 +471,25 @@
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
   }
+
+  .projectCardImage {
+    margin-bottom: 0.75rem;
+  }
+
+  .blogHeaderRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .blogDateInfo {
+    flex-wrap: nowrap;
+  }
 }
 
 @media (max-width: 480px) {
   .blogCardContent {
-    padding: 20px 18px;
+    padding: 16px 16px;
   }
   
   .blogTagsContainer {

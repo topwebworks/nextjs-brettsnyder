@@ -1,5 +1,5 @@
 import React, { ViewTransition } from 'react';
-import { Calendar, Clock, Tag, Volume2 } from 'lucide-react';
+import { Calendar, Clock, Volume2 } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -173,28 +173,6 @@ export default async function BlogPage() {
                     <div className={styles.blogCardContent}>
 
                       <div>
-                        {/* Blog Header Row - Category and Date */}
-                        <div className={styles.blogHeaderRow}>
-                          <div className={styles.blogCategoryBadge}>
-                            {blog?.category || 'General'}
-                          </div>
-
-                          <div className={styles.blogDateInfo}>
-                            <Calendar size={14} />
-                            {blog?.publishDate 
-                              ? new Date(blog.publishDate).toLocaleDateString('en-US', {
-                                  year: 'numeric',
-                                  month: 'short',
-                                  timeZone: 'UTC' // date-only strings parse as UTC; keeps server and browser on the same month
-                                })
-                              : 'No Date'
-                            }
-                            {/* Hint only: every post has a Listen button at the top. */}
-                            <span aria-hidden="true">·</span>
-                            <Volume2 size={14} role="img" aria-label="Audio available" />
-                          </div>
-                        </div>
-
                         {/* Image and Content Container */}
                         {(() => {
                           const firstImage = getFirstImage(blog?.id || '', blog);
@@ -222,6 +200,30 @@ export default async function BlogPage() {
                                 </ViewTransition>
 
                                 <div className={`project-content-with-image ${styles.projectContentWithImage}`}>
+                                  <div className={styles.blogHeaderRow}>
+                                    <div className={styles.blogCategoryBadge}>
+                                      {blog?.category || 'General'}
+                                    </div>
+
+                                    <div className={styles.blogDateInfo}>
+                                      <Calendar size={14} />
+                                      {blog?.publishDate 
+                                        ? new Date(blog.publishDate).toLocaleDateString('en-US', {
+                                            year: 'numeric',
+                                            month: 'short',
+                                            timeZone: 'UTC' // date-only strings parse as UTC; keeps server and browser on the same month
+                                          })
+                                        : 'No Date'
+                                      }
+                                      {/* Hint only: every post has a Listen button at the top. */}
+                                      <span aria-hidden="true">·</span>
+                                      <Volume2 size={14} role="img" aria-label="Audio available" />
+                                      <span aria-hidden="true">·</span>
+                                      <Clock size={14} />
+                                      {blog?.readTime || '5 min read'}
+                                    </div>
+                                  </div>
+
                                   {/* Blog Title */}
                                   <h3 className={styles.blogTitle}>
                                     <Link href={`/blog/${blog?.id || 'unknown'}`} transitionTypes={['card-to-hero']} className={styles.blogTitleLink}>
@@ -233,30 +235,6 @@ export default async function BlogPage() {
                                   <p className={`${styles.blogDescription} ${styles.blogDescriptionMaxWidth} ${styles.blogDescriptionWithImage}`}>
                                     {blog?.excerpt || blog?.description || 'No excerpt available.'}
                                   </p>
-
-                                  {/* Read Time */}
-                                  <div className={styles.blogReadTime}>
-                                    <Clock size={14} />
-                                    {blog?.readTime || '5 min read'}
-                                  </div>
-
-                                  {/* Blog Tags */}
-                                  <div className={styles.blogTagsContainer}>
-                                    {(blog.tags || []).slice(0, 4).map((tag: string, tagIndex: number) => (
-                                      <span 
-                                        key={`${blog?.id || 'unknown'}-tag-${tagIndex}`}
-                                        className={`tech-tag ${styles.techTag}`}
-                                      >
-                                        <Tag size={10} />
-                                        {tag}
-                                      </span>
-                                    ))}
-                                    {(blog.tags || []).length > 4 && (
-                                      <span className={styles.tagMoreCount}>
-                                        +{(blog.tags || []).length - 4}
-                                      </span>
-                                    )}
-                                  </div>
                                 </div>
 
                               </div>
@@ -265,6 +243,30 @@ export default async function BlogPage() {
                             // Without image: normal stacked layout
                             return (
                               <>
+                                <div className={styles.blogHeaderRow}>
+                                  <div className={styles.blogCategoryBadge}>
+                                    {blog?.category || 'General'}
+                                  </div>
+
+                                  <div className={styles.blogDateInfo}>
+                                    <Calendar size={14} />
+                                    {blog?.publishDate 
+                                      ? new Date(blog.publishDate).toLocaleDateString('en-US', {
+                                          year: 'numeric',
+                                          month: 'short',
+                                          timeZone: 'UTC' // date-only strings parse as UTC; keeps server and browser on the same month
+                                        })
+                                      : 'No Date'
+                                    }
+                                    {/* Hint only: every post has a Listen button at the top. */}
+                                    <span aria-hidden="true">·</span>
+                                    <Volume2 size={14} role="img" aria-label="Audio available" />
+                                    <span aria-hidden="true">·</span>
+                                    <Clock size={14} />
+                                    {blog?.readTime || '5 min read'}
+                                  </div>
+                                </div>
+
                                 {/* Blog Title */}
                                 <h3 className={styles.blogTitle}>
                                   <Link href={`/blog/${blog?.id || 'unknown'}`} className={styles.blogTitleLink}>
@@ -276,41 +278,11 @@ export default async function BlogPage() {
                                 <p className={`${styles.blogDescription} ${styles.blogDescriptionNoImage}`}>
                                   {blog?.excerpt || blog?.description || 'No excerpt available.'}
                                 </p>
-
-                                {/* Read Time */}
-                                <div className={`${styles.blogReadTime} ${styles.blogReadTimeNoImage}`}>
-                                  <Clock size={14} />
-                                  {blog?.readTime || '5 min read'}
-                                </div>
-
-                                {/* Blog Tags */}
-                                <div className={`${styles.blogTagsContainer} ${styles.blogTagsContainerNoImage}`}>
-                                  {(blog.tags || []).slice(0, 4).map((tag: string, tagIndex: number) => (
-                                    <span 
-                                      key={`${blog?.id || 'unknown'}-tag-${tagIndex}`}
-                                      className={`tech-tag ${styles.techTag} ${styles.techTagAlt}`}
-                                    >
-                                      <Tag size={10} />
-                                      {tag}
-                                    </span>
-                                  ))}
-                                  {(blog.tags || []).length > 4 && (
-                                    <span className={styles.tagMoreCount}>
-                                      +{(blog.tags || []).length - 4}
-                                    </span>
-                                  )}
-                                </div>
                               </>
                             );
                           }
                         })()}
 
-                      </div>
-
-                      {/* Blog Actions - button removed, whole card is clickable */}
-                      <div className={`${styles.blogActions} blog-actions`}>
-                        <div className={styles.blogActionsLeft}>
-                        </div>
                       </div>
                     </div>
                   </article>
