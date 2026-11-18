@@ -12,7 +12,7 @@ technologies:
   - "Stripe"
   - "Vercel"
 category: "SaaS"
-status:
+status: "Production"
 featured: true
 publishDate: "2026-01-02"
 updatedDate: "2026-11-17"
@@ -60,7 +60,7 @@ Testing is part of the publishing workflow. The review examines the latest teste
 
 I wanted the result to give an author something to act on. A quality score is useful when it points back to the output and the requirement that was missed. Schema validation checks the shape of the data; the consuming feature still needs tests for factual correctness and the rules of its domain.
 
-The free community and marketplace also have separate moderation paths. Publishing makes an artifact available to others, so access, review state and ownership need to remain clear throughout the process.
+The free community and marketplace have separate moderation paths.
 
 ![A CyWire catalog quality badge beside the six dimensions used to review tested prompt output](platform-quality.webp)
 
@@ -93,7 +93,7 @@ CyWire's published proof of concept follows that handoff from local blueprint fi
 
 The platform uses Next.js, React, TypeScript, Tailwind and Supabase. Shared interface patterns carry through the authoring, library and account flows. Organization owners control publication and deletion, while members contribute within their workspace permissions.
 
-A document-backed knowledge base supports PDF, Word and Excel reference material. Labs includes a Chat Prompt Generator for adapting a Master Prompt to use in a chat tool. These features support the work of preparing and maintaining the artifact.
+A document-backed knowledge base supports PDF, Word and Excel reference material. Labs includes a Chat Prompt Generator for adapting a Master Prompt to use in a chat tool.
 
 The design work was keeping the views and states in agreement: what an author edits, what a developer downloads, which version a test refers to and what an account is allowed to open.
 

@@ -72,7 +72,7 @@ The prototype let me work through the smaller layouts instead of leaving those d
   <a href="/demo/monarch-catalog/prototype-interactions.mp4">Watch the dropdown, course-row hover and page navigation.</a>
 </video>
 
-The preserved catalog, detail and error views have been checked at desktop, 390 px and 320 px widths. For this archive, I also repaired asset references and field labels. The content remains a historical prototype with sample copy and actions.
+For this archive, I repaired asset references and field labels, then checked the catalog, detail and error pages at desktop, 390 px and 320 px widths.
 
 ## The companion microsite
 

@@ -1,7 +1,6 @@
 ---
-# PROJECT METADATA - Remove comments after editing
 title: "Graphic Design"
-description: "Catalogs, mailers, and ads evolved into web and digital design, where the same principles of whitespace and simplicity now drive engagement and conversions."
+description: "Catalogs, direct mail, logos, ads and brochures from my print and graphic design work."
 contentTitle: "Before Web, there was Print"
 achievementTitle: ""
 technologies:
@@ -13,21 +12,9 @@ category: "Print"
 status: "Production"
 featured: false
 publishDate: "2016-01-12"
-links:
+updatedDate: "2026-11-17"
+keyAchievements: []
 
-# KEY ACHIEVEMENTS - Cards shown on detail page
-keyAchievements:
-  - type: "impact"
-    icon: "🌦️"
-    title: "Clean Design from Print to Web"
-    description: "Started in print, where I learned the value of whitespace, clarity, and strong calls to action. That style carried over naturally into web, where clean layouts and simple messaging drive better conversions."
-    metrics:
-      - "Evolved from catalogs, mailers, and ads to digital-first design"
-      - "Focus on whitespace and readability for stronger engagement"
-      - "Proven track record of turning dense content into clear stories"
-      - "Hands-on experience with printers, prepress, and now web conversions"
-
-# MEDIA - Optional additional images/videos      
 media:
   items:
     - type: "image"
@@ -41,39 +28,40 @@ media:
       title: "Reebok Brochure"
 ---
 
-<!-- PROJECT CONTENT - Markdown body text -->
+I still remember the daily trips to the typesetter to collect the type for my print projects. I'd hot-wax it in place for printer handoff. Later, I borrowed my boss's Mac Plus and used our laser printer to bring that step in-house.
 
-I remember, my daily trips to the nice Linotype lady. She would set the type for all my print projects. I would hot wax them on chromecoat for printer handoff. Or the empowerment when I borrowed my boss's Mac Plus to bypass the Linotype step by using our laser printer. Here are a few of my favorite print projects.
+Here are a few of my favorite print projects.
 
 ## Catalogs
 
-![Franklin Covey Catalog](franklin-catalog.jpg)
+![Franklin Quest catalog mockup](franklin-catalog.jpg)
 
-Here is a mockup board I did for Franklin Covey. This piece stood out to me since I went for a more airy clean feel. A sharp contrast to their common dark, heavy, and cluttered look. My preference is more whitespace over dense content. I think it's easier to read and more inviting.
+For this Franklin Quest catalog mockup, I wanted more space around the images and copy. I prefer a layout that gives the reader room to take things in.
 
 ## Mailers
 
-![Iomega Mailer](iomega-mailer.jpg)
+![Iomega Zip disk mailer](iomega-mailer.jpg)
 
-Don't you love all the direct mail you get every week? Sorry, some of that was me. The question you should always ask yourself is does the value I am presenting make it a no-brainer for the customer? If not, don't waste your time or theirs. If so, you will build brand loyalty. Here was a simple mailer for the Iomega Zip drive...and yes, new colors. Concept was nerd to a cool hipster. Crammed alot of freebies and value content in, but it worked well.
+Don't you love all the direct mail you get every week? Sorry, some of that was me.
+
+This Iomega mailer introduced multicolor Zip disks with a nerd-to-hipster concept and plenty of extras in the offer. The challenge was fitting it all into a piece someone would want to read.
 
 ## Logos
 
-![Logos](logo2.jpg)
+![Single-color logo studies for ACE, Automated Compliance Engine](logo2.jpg)
 
-Instead of showing all my logos, here is one. One color. Variations. Simple. Clean.
+For ACE (Automated Compliance Engine), I explored circular seals, monograms and wordmarks in a single color.
 
 ## Ads
 
-![Magazine Ad](magazine-ad.jpg)
+![Full-page Monarch curriculum magazine advertisement](magazine-ad.jpg)
 
-Clean. Bright. Happy. Not too busy, single CTA. This was a full page magazine ad, sizes vary depending on the magazine.
+This full-page Monarch ad pairs a short introduction to the curriculum with one trial call to action.
 
 ## Brochures
 
-![Reebok Brochure](reebok-brochure.jpg)
+![Reebok elliptical brochure](reebok-brochure.jpg)
 
-Reebok wanted to show off their new ellipticals. I added motion lines and bold text. I pushed most text to the outside to allow for larger product images. I also added a few callouts to highlight the features.
+For Reebok's elliptical brochure, I used larger product images, motion lines and bold type, with feature callouts around the edges.
 
-Over the years, I have designed print media from newspaper, brochures, newsletters, catalogs, direct mail, magazine ads, billboards, stationery, packaging, and more. I have worked with printers and prepress houses. Been on press-checks from Hong Kong to other major cities.
-
+I've also designed newspapers, newsletters, billboards, stationery and packaging, and worked with printers and prepress teams through press checks in Hong Kong and other cities.

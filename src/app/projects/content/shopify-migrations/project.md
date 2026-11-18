@@ -46,7 +46,7 @@ I built the Liquid sections and their Shopify editor controls: reusable layouts 
 
 <p><a href="/demo/shopify-custom-sections.jpg" data-section-gallery>Explore all custom sections</a></p>
 
-The full gallery preserves the development examples, including placeholder copy and layout variants. The crops below show individual patterns alongside finished storefront examples.
+The saved gallery includes placeholder copy and layout variants; the production examples show how the sections were used.
 
 ## Tabs that handle more than one layout
 
@@ -69,7 +69,7 @@ The section schema exposes layout controls; repeatable tab blocks hold the label
 
 ![Brand rules, Shopify schema controls and three rendered tab layouts showing how one section stays reusable](section-contract.webp)
 
-That structure lets Marketing change a page's content and arrangement while the component stays maintainable. The [style and schema snapshot](/demo/shopify/design-system-tokens.json) includes examples of the actual settings.
+The [style and schema snapshot](/demo/shopify/design-system-tokens.json) includes examples of the actual settings.
 
 ### Try the component
 
@@ -93,7 +93,7 @@ Image-and-text sections handle product details, screenshots and video. Alignment
 
 ### Campaign calls to action
 
-The gallery includes contained and full-width treatments, image and video backgrounds, and light and dark variants. Primary and secondary actions give each campaign a clear next step.
+The library supports contained and full-width campaigns, image or video backgrounds, and light and dark treatments.
 
 ![A dark campaign call-to-action variant from the original development gallery](sections-cta.webp)
 

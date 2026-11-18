@@ -8,7 +8,7 @@ CyWire is presented as a workspace for authoring, testing, versioning and distri
 
 The YouTube walkthrough is the sole hero media item, with no thumbnail gallery. The image asset remains available for listing and social previews. Five inline boards cover blueprint anatomy, catalog discovery and access, tested-output review, application handoff, and the published PushPad proof of concept. A recording demonstrates the public integration guide's controls. The five-page PDF and recording live under `public/demo/cywire/`.
 
-Old guarantees about error-free output, universal model compatibility and consistent output on every call were removed. The article does not claim live collaborative editing, A/B testing, model hosting, certification, fixed completion metrics or a newly verified production purchase flow. The existing empty status field is retained.
+Old guarantees about error-free output, universal model compatibility and consistent output on every call were removed. The article does not claim live collaborative editing, A/B testing, model hosting, certification, fixed completion metrics or a newly verified production purchase flow. The production status reflects the launched workspace; CyWire is not positioned as a model provider.
 
 ## Evidence
 

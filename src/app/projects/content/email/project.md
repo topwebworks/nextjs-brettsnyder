@@ -67,7 +67,7 @@ I used percentage widths and inline presentation for the base layout. A small me
 
 ![The master at full width, phone width and with head styles removed](system-fluid.webp)
 
-Removing the head styles is a useful browser stress check for the inline layout. It doesn't replace testing delivered emails in Outlook, Gmail and other clients. The archive has been checked in the browser at desktop and phone widths; I haven't certified its current inbox compatibility.
+Removing the head styles tests how much of the layout survives on inline styles alone. I checked the archive in browsers at desktop and phone widths; delivered rendering in Outlook, Gmail and other clients still needs separate testing.
 
 ## Brand choices and custom work
 

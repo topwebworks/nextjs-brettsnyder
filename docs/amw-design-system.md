@@ -12,7 +12,7 @@ The article retains the Design System badge. Its technology list reflects the Ja
 
 Site evidence comes from AMW's public website, shared stylesheet properties, custom components and current project documentation. Shared CSS defaults and component-specific measurements are distinguished in the token descriptions. The service modal, gallery, mobile navigation, local pages and form pictured are actual site captures.
 
-Brett confirmed on 2026-11-17 that AMW now receives every Launch, Grow and Dominate capability, including Google and Meta campaigns. That confirmation supersedes the source project's older Google-only scope; its build plan was updated accordingly. The case study includes all service inclusions without prices. Dominate's four monthly social pieces replace Grow's two.
+Brett confirmed on 2026-11-17 that AMW now receives every Launch, Grow and Dominate capability, including Google and Meta campaigns. That confirmation supersedes the source project's older Google-only scope; its build plan was updated accordingly. The article groups the work by service rather than repeating tier quotas and lead automation. The growth board retains the approved scope without prices. Dominate's four monthly social pieces replace Grow's two.
 
 Call opens the dialer; Estimate scrolls to the form. Review requests are automated, but website testimonials are curated separately. The pipeline diagram is a workflow map, not a fabricated CRM screenshot. Review completion is confirmed manually. SMS follow-up requires consent, uses a dedicated texting number and preserves the existing voice line. The lead drip stops on reply. AMW uses estimate requests; no calendar integration is claimed.
 

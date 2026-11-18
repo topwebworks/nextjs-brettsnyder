@@ -16,7 +16,7 @@ designSystem: true
 publishDate: "2026-07-01"
 updatedDate: "2026-11-17"
 links:
-  live: "https://amwhardscape.com"
+  live: "https://www.amwhardscape.com/"
 keyAchievements: []
 media:
   items:
@@ -83,15 +83,9 @@ The email and SMS drip stops when the lead replies. Estimate requests stay in th
 
 ## Keep the Marketing Connected
 
-AMW now receives the full Launch, Grow and Dominate service scope from Top Web Works.
+Alongside the site and lead system, I manage Google and Meta campaigns, Google Business Profile updates, local SEO, campaign landing pages, targeted blog posts, customer email and Facebook and Instagram content. Performance reports and strategy calls guide the ongoing work.
 
-Launch covers hosting and maintenance, chat routed to the business inbox, tracked contact submissions, the lead pipeline, instant owner notifications, lead confirmation and automated email follow-up.
-
-Grow adds consent-based SMS, the business texting number, estimate requests in follow-up and review requests after jobs. It also includes Google Business Profile posts, a monthly customer-list email and twice-monthly Facebook and Instagram content.
-
-Dominate brings managed Google and Meta campaigns, a monthly campaign landing page and blog post, customer-list email campaigns, monthly local SEO tracking, a performance report and strategy call. Social content increases to four pieces a month across Facebook and Instagram.
-
-I carry the campaign's service and message from the ad into the landing page, email and follow-up. The underlying build includes the core pages, mobile layouts, tested CRM capture, notifications, a thank-you page, source tracking, domain setup, on-page SEO and prelaunch speed checks.
+I carry the campaign's service and message from the ad into the landing page, email and follow-up. Site delivery also covers hosting and maintenance, a thank-you page, source tracking, domain setup, on-page SEO and prelaunch speed checks.
 
 ![The full AMW Launch, Grow and Dominate service scope, from website and lead handling to campaigns and reporting](design-system-growth.webp)
 

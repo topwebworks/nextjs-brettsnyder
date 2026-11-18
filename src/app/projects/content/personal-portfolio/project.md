@@ -10,7 +10,7 @@ technologies:
   - TypeScript
   - CSS Modules
 category: Website
-status: Prod
+status: "Production"
 featured: false
 publishDate: '2025-09-08'
 links:
@@ -24,7 +24,7 @@ media:
       title: Portfolio interface
       src: 1-personal-portfolio.png
 designSystem: true
-updatedDate: '2026-11-16'
+updatedDate: "2026-11-17"
 ---
 
 ## The Brief

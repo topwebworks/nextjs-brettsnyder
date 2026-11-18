@@ -32,8 +32,6 @@ Marketing needed landing pages for a busy season that had already started. They 
 
 I was given a wireframe for the first page. I proposed a master template with reusable blocks so we could handle the campaigns that would follow. I designed and built the HTML, CSS, responsive layouts and interactive pieces, then organized them for the team's day-to-day editing.
 
-These boards document the system in that work, from the declared variables through the campaign example.
-
 ## Brand values and shared rules
 
 The brand layer holds CSS variables for the palette and Open Sans. Controls, body copy and section styles refer back to those values. Changing the brand layer carries the new colors and font through the page.

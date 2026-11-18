@@ -1,6 +1,6 @@
 # Director: Case-Study Visuals
 
-Prepared 2026-11-17. A lighter engineering presentation within the approved Portfolio article format. PushPad remains deferred.
+Prepared 2026-11-17. An engineering presentation within the approved Portfolio article format.
 
 Approved by Brett on 2026-11-17.
 

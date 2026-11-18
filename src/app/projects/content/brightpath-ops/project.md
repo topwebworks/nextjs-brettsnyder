@@ -76,6 +76,6 @@ A disconnected store gets a clear error state. An inbox with no failing checks h
 
 Pricing Governance and Access Review show policy and permission exceptions with a next step. Playbooks connects the checks to the wider operating procedures.
 
-The data source and action runner sit behind interfaces that currently use mock implementations. Connecting live providers is a separate phase. This prototype demonstrates the interface and its behavior; the figures shown are not production results.
+The data source and action runner currently use mock implementations. Connecting live providers is a separate phase.
 
 [Try the prototype](https://nextjs-nr-ops.vercel.app), [download the interface notes PDF](/demo/brightpath/brightpath-interface-notes.pdf), or [open the vector action board](/demo/brightpath/action-states.svg).

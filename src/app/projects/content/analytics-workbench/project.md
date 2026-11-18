@@ -15,7 +15,7 @@ category: Developer Tool
 status: Production
 featured: false
 publishDate: '2026-10-22'
-updatedDate: '2026-11-17'
+updatedDate: "2026-11-17"
 links:
   live: https://analytics.rockitcode.com/
 keyAchievements: []
@@ -31,7 +31,7 @@ designSystem: true
 
 An embedded checkout can finish a sale while the website's analytics misses it. The page and iframe have separate data layers, and campaign details do not always cross that boundary.
 
-I built Analytics Workbench to follow that handoff. It brings clicks, dataLayer pushes and tag requests into one recording, checks what arrived, and gives the person fixing it a place to start.
+I built Analytics Workbench to follow that handoff. It brings clicks, dataLayer pushes and tag requests into one recording, then identifies missing events and fields.
 
 ![How a page and embedded form feed one recording, followed by checks and repair steps](design-system-workflow.webp)
 

@@ -97,8 +97,6 @@ Stripe Connect handles the seller onboarding and payment integration. Learners r
 
 Structured pad data feeds the editor, preview and learner sections. Activity registries connect that data to the right interaction. Generation, validation and rendering have to agree on the same contract, so editing an activity preserves the rules that make it playable.
 
-That connection is central to my work on PushPad: the content model, interface and progression rules have to hold together when an educator changes the material or a learner needs another route through it.
-
 PushPad remains in active development, with billing and real-device checks still on the launch list. The screenshots show development accounts, and the recording uses the public preview. Displayed scores and counts aren't evidence of learning outcomes.
 
 [Visit PushPad](https://pushpad.com) and choose “Try a Lesson Pad,” [read how PushPad works](https://pushpad.com/how-pushpad-works), or [download the platform notes PDF](/demo/pushpad/pushpad-platform-notes.pdf).

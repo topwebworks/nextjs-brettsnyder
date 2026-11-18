@@ -14,7 +14,7 @@ technologies:
   - "CRM Integration"
   - "Vercel"
 category: "Website"
-status:
+status: "Production"
 featured: false
 designSystem: true
 publishDate: "2026-03-27"
