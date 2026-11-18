@@ -13,6 +13,7 @@ status: "Production"
 featured: false
 designSystem: true
 publishDate: "2022-06-15"
+updatedDate: "2026-11-17"
 links:
   demo: "/demo/master-blocks/example-aop-lp.html"
   github: "https://github.com/topwebworks/master-lp-blocks"
@@ -66,7 +67,7 @@ The subject selector pairs each category with a border color and a pale selected
   <a href="/demo/master-blocks/design-system-interactions.mp4">Watch the subject-tab transitions.</a>
 </video>
 
-The archive also shows where I would revise it today: the radio inputs are hidden from keyboard focus, and phone layouts hide the subject text. I'd keep visible labels and add keyboard navigation. The demo form has no production submission integration.
+For this archive review, I restored keyboard access to the subject selector and kept its labels visible on phones. Inactive panels stay out of the focus order. The video uses a native dialog, and the form handles its demo action locally without sending information.
 
 ## From modules to a campaign
 

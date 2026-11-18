@@ -1,0 +1,175 @@
+{
+  "title": "Monarch catalog prototype",
+  "basis": "Shared styles reconstructed from the HTML prototype built from supplied visual designs.",
+  "source": "/demo/monarch-catalog/styles/global-styles.css",
+  "declaredVariables": [
+    {
+      "name": "--offBlack",
+      "value": "#222222",
+      "important": false
+    },
+    {
+      "name": "--white",
+      "value": "#ffffff",
+      "important": false
+    },
+    {
+      "name": "--shade-5",
+      "value": "#f9fafc",
+      "important": false
+    },
+    {
+      "name": "--shade-10",
+      "value": "#f3f5f8",
+      "important": false
+    },
+    {
+      "name": "--shade-15",
+      "value": "#e0e9ef",
+      "important": false
+    },
+    {
+      "name": "--shade-25",
+      "value": "#c3cfd6",
+      "important": false
+    },
+    {
+      "name": "--shade-40",
+      "value": "#98aeb9",
+      "important": false
+    },
+    {
+      "name": "--shade-50",
+      "value": "#688595",
+      "important": false
+    },
+    {
+      "name": "--shade-65",
+      "value": "#436579",
+      "important": false
+    },
+    {
+      "name": "--shade-80",
+      "value": "#002135",
+      "important": false
+    },
+    {
+      "name": "--primary",
+      "value": "#00829b",
+      "important": false
+    },
+    {
+      "name": "--primary-dark",
+      "value": "#003c51",
+      "important": false
+    },
+    {
+      "name": "--primary-shade",
+      "value": "#087194",
+      "important": false
+    },
+    {
+      "name": "--primary-shade2",
+      "value": "#00829b",
+      "important": false
+    },
+    {
+      "name": "--primary-bright",
+      "value": "#2ab5cd",
+      "important": false
+    },
+    {
+      "name": "--primary-tint",
+      "value": "#b4e7ef",
+      "important": false
+    },
+    {
+      "name": "--bluey-grey",
+      "value": "#7686c5",
+      "important": false
+    },
+    {
+      "name": "--butterscotch",
+      "value": "#fcb13b",
+      "important": false
+    },
+    {
+      "name": "--salmon",
+      "value": "#f37c7c",
+      "important": false
+    },
+    {
+      "name": "--apple",
+      "value": "#8dc740",
+      "important": false
+    },
+    {
+      "name": "--error",
+      "value": "#e75b4e",
+      "important": false
+    },
+    {
+      "name": "--success",
+      "value": "#6ae179",
+      "important": false
+    },
+    {
+      "name": "--light-grey-blue",
+      "value": "#a4afb8",
+      "important": false
+    },
+    {
+      "name": "--grey-blue",
+      "value": "#62798c",
+      "important": false
+    },
+    {
+      "name": "--fire-engine-red",
+      "value": "#ff0002",
+      "important": false
+    },
+    {
+      "name": "--vibrant-green",
+      "value": "#00e51c",
+      "important": false
+    },
+    {
+      "name": "--mdc-theme-primary",
+      "value": "#00829b",
+      "important": true
+    },
+    {
+      "name": "--mdc-theme-secondary",
+      "value": "#00829b",
+      "important": false
+    },
+    {
+      "name": "--mdc-theme-error",
+      "value": "#e75b4e",
+      "important": false
+    }
+  ],
+  "typography": {
+    "display": "Caladea",
+    "bodyAndControls": "Open Sans",
+    "h1": "36px / 38px",
+    "h2": "28px / 30px"
+  },
+  "layout": {
+    "contentMaximum": "1200px",
+    "subjectsMaximum": "1000px",
+    "subjectCard": "180px x 115px",
+    "cardRadius": "5px",
+    "transition": "300ms ease"
+  },
+  "implementation": {
+    "material": "Material Components for the Web; intended Angular handoff, not a React Material UI implementation",
+    "routes": [
+      "course-catalog.html",
+      "course-detail.html",
+      "error-404.html"
+    ],
+    "state": "Material field/dropdown states and mobile menu work. Product content, course totals, search and filtering are prototype samples."
+  },
+  "scope": "Brett Snyder implemented the supplied visual designs, responsive layouts, interactions and the companion WordPress microsite. No backend, current commerce or conversion results are claimed."
+}

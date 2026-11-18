@@ -304,5 +304,20 @@
         "src/styles/TwwHome.module.css"
       ]
     }
+  },
+  "brandIdentity": {
+    "source": "src/components/logo.tsx and public/tww-logo.svg",
+    "author": "Brett Snyder",
+    "wordmarkFont": "Afacad",
+    "wordmarkWeight": 500,
+    "wordmarkSize": "25.6px",
+    "markFrame": "28px",
+    "gap": "10px",
+    "hover": {
+      "letterRise": "4px",
+      "duration": "400ms",
+      "stagger": "40ms"
+    },
+    "serviceMark": true
   }
 }

@@ -164,7 +164,7 @@
     "tabs": {
       "implementation": "radio inputs and labels; CSS checked selector",
       "selectedPanel": "500ms opacity ease-in",
-      "limitations": "Inputs are display:none; text labels are hidden at 768px. Keyboard navigation and mobile labels need a separate update."
+      "maintenance": "Archive repair: native radio keyboard access, visible phone labels and inert inactive panels. Native dialog and local-only demo form."
     }
   },
   "layers": [

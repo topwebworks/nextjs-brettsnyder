@@ -13,6 +13,7 @@ status: "Production"
 featured: false
 designSystem: true
 publishDate: "2017-01-15"
+updatedDate: "2026-11-17"
 links:
   demo: "/demo/emails/sample2/index.html"
   live: "/demo/emails/master-email/index.html"
@@ -82,6 +83,6 @@ The handoff notes cover branding, image folders, replaceable content and section
 
 ![Email assembly steps, source constraints and the repaired image references](system-handoff.webp)
 
-I repaired 42 image references in the master preview. They now use the bundled logos, social icons and placeholder artwork instead of old remote paths and a dead placeholder service. The gray images are intentional layout specimens.
+I repaired 42 image references in the master preview. They now use the bundled logos, social icons and placeholder artwork instead of old remote paths and a dead placeholder service. The gray images are intentional layout specimens. I also marked layout tables as presentational and gave decorative spacers empty alt text. The original inline layout and Outlook markup remain intact.
 
 [Open the master template](/demo/emails/master-email/index.html), [view Kent State](/demo/emails/sample1/index.html), [view UF Online](/demo/emails/sample2/index.html), or [download the system notes](/demo/emails/email-system-notes.pdf).

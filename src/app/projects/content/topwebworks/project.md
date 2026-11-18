@@ -33,6 +33,12 @@ media:
 
 At Top Web Works, I handle design and development together, including the identity, frontend and CRM setup. I use one design system for the agency site and two reusable libraries for client work.
 
+## The Rebrand
+
+I designed the new logo lockup as part of the TWW rebrand. It pairs my symbol with an Afacad wordmark and a service mark. I built it into the shared header, with a short letter wave on hover.
+
+![The TWW logo lockup I designed, its type and proportions, and its use in the website header](system-branding.webp)
+
 ## Three Design Systems
 
 - **Agency site:** customized Tailwind UI, with the agency's theme and Next.js components for marketing pages and articles.
