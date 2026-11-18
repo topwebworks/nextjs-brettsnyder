@@ -51,6 +51,31 @@
   overflow-x: auto;
 }
 
+.enhanced-html-content :global(.project-source-values table) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.enhanced-html-content :global(.project-source-values :is(th, td)) {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-primary);
+  text-align: left;
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.enhanced-html-content :global(.project-source-values :is(th, td):first-child) {
+  width: 36%;
+  padding-right: 20px;
+}
+
+.enhanced-html-content :global(.project-source-values th) {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 .fullSizeImage {
   display: block;
   border-radius: 8px;

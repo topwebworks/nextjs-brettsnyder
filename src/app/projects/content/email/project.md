@@ -1,6 +1,6 @@
 ---
 title: "Master Email Design System"
-description: "A shared HTML email template with reusable rows, brand recipes and fluid layouts, alongside custom campaigns I built for Pearson Online Learning."
+description: "The master template I used for AOP emails, with reusable rows and brand recipes, plus earlier custom campaigns from Pearson Online Learning."
 contentTitle: ""
 achievementTitle: ""
 technologies:
@@ -13,7 +13,7 @@ status: "Production"
 featured: false
 designSystem: true
 publishDate: "2017-01-15"
-updatedDate: "2026-11-17"
+updatedDate: "2026-11-18"
 links:
   demo: "/demo/emails/sample2/index.html"
   live: "/demo/emails/master-email/index.html"
@@ -31,58 +31,61 @@ media:
       title: "Additional university campaign examples"
 ---
 
-## One starting file
+## One starting file for AOP
 
-I built a master HTML email template for the art department to pull from. Each campaign needed its own offer and branding, but the team kept rebuilding familiar structures: headers, image rows, text sections, buttons and footers.
+My custom Pearson emails came first. Later, I built a master HTML template for the art department to use on AOP campaigns. Each email needed its own offer and branding, but the team kept rebuilding familiar headers, content rows, buttons and footers.
 
-The template collected those pieces in one commented file. A designer could copy a complete section, replace the content and keep the surrounding layout intact. I handled the HTML/CSS, fluid layouts, brand options and editing notes.
+I collected those pieces in one commented file. A designer could copy a complete section, replace its content and keep the surrounding layout intact. I handled the HTML/CSS, fluid layouts, brand options and editing notes.
 
-For this case study, I worked back through the source to document the shared values and modules. The original template and two custom Pearson Online Learning emails are available below.
+## Shared styles, written for email
 
-## The shared style values
+The master uses repeated inline CSS and table attributes for its shared values. Email was a different constraint from my web work, where I usually keep style tokens in `:root` variables.
 
-The master repeats a small palette: cyan for headings and actions, dark gray for copy, and two pale gray footer surfaces. Its type rules distinguish the introduction, section headings, body copy and smaller image-and-text rows.
+<div class="project-source-values">
 
-The wrapper has a 500 px maximum and a 290 px minimum. Most text sits inside a 90% content area. Spacing comes from table-cell heights, padding and spacer images.
+| Rule | Value in the source |
+| --- | --- |
+| Actions and accent headings | `#2AB5CD` |
+| Body and supporting text | `#444444` and `#777777` |
+| Footer surfaces | `#e2e7ea` and `#f0f3f4` |
+| Font stack | Mr Eaves Modern, Arial, Helvetica, sans-serif |
+| Wrapper | 500 px maximum, 290 px minimum |
+| Inner content | 90% of the wrapper |
 
-![Shared email colors, typography and wrapper dimensions from the HTML source](system-tokens.webp)
+</div>
 
-These values are written directly into inline styles and HTML attributes. The [style snapshot](/demo/emails/design-system-tokens.json) collects them for inspection; the original email has no CSS custom properties.
+The [style snapshot](/demo/emails/design-system-tokens.json) collects those values. The template's comments also identify which logos and colors to change for AOP, LIFEPAC, Monarch and the other product brands.
 
-## Reusable rows
+## Rows the team could reuse
 
-The library includes a brand header, hero, introduction, live-text action, centered content, paired images, three-image rows, mirrored image-and-text sections, a banner and the footer.
+The file includes headers, heroes, introductions, live-text actions, paired images, three-image rows, mirrored image-and-text sections, banners and footers. I put comments around whole sections and smaller editing points so someone could copy a row with its nested tables and gutters intact.
 
-I put comments around the sections and smaller editing points. Those boundaries helped the team copy a whole row, including its nested tables and gutters.
+The split row, for example, uses a 38% image cell, a 4% gutter and a 56% text cell. Its smaller action has a different size from the introductory button. Those choices stay with the module when the content changes.
 
-![Two-column image variants, mirrored content rows and a three-image module](system-modules.webp)
+[Open the original AOP master template](/demo/emails/master-email/index.html). Its gray image slots are placeholders for campaign artwork.
 
-The image-and-text row divides its width between a 38% image cell, 4% gutter, 56% content cell and a small remainder. Its action uses a 14 px label, 8 x 20 px padding and 3 px corners. The larger introductory action has its own 16 px label and 4 px corners.
+## Earlier custom work at Pearson
 
-![Editable image-and-text row beside the archived module, with a shared action component](system-components.webp)
+At Pearson Online Learning, I built individual campaign emails for university programs. The archive includes desktop and mobile design files alongside the HTML. Bradley's nursing campaign is one example.
 
-## Working within email constraints
+![Bradley University nursing campaign rendered from Brett Snyder's original HTML build](pearson-bradley-build.webp)
 
-I used percentage widths and inline presentation for the base layout. A small media query adjusts alignment below 457 px. Outlook conditional markup and Microsoft-specific button styles sit alongside the regular HTML.
+*The Bradley campaign, rendered from my HTML. The original desktop and mobile designs are linked below.*
 
-![The master at full width, phone width and with head styles removed](system-fluid.webp)
+[View the desktop design](/demo/emails/bradley/design-desktop.webp), [view the mobile design](/demo/emails/bradley/design-mobile.png), or [open my Bradley HTML build](/demo/emails/bradley/index.html). The earlier [Kent State](/demo/emails/sample1/index.html) and [UF Online](/demo/emails/sample2/index.html) campaigns are also available.
 
-Removing the head styles tests how much of the layout survives on inline styles alone. I checked the archive in browsers at desktop and phone widths; delivered rendering in Outlook, Gmail and other clients still needs separate testing.
+## Four ways to handle a smaller screen
 
-## Brand choices and custom work
+I also kept examples of fixed, adaptive, fluid and responsive email layouts. This viewer runs those original HTML files. Change the layout approach and preview width to see what the code does.
 
-The source includes recipes for AOP, LIFEPAC, Monarch and other product brands. They identify which logo and colors to change across the header, headings and actions.
+<iframe class="project-component-demo" src="/demo/emails/layouts/index.html" title="Original email layouts: fixed, adaptive, fluid and responsive" loading="lazy" height="900"></iframe>
 
-The Kent State and UF Online emails were custom builds for Pearson Online Learning. They show how campaign artwork and content could call for a different composition. Those builds took longer than starting with the master.
+[Open the layout comparison](/demo/emails/layouts/index.html).
 
-![Source brand-color recipes above the Kent State and UF Online campaign examples](system-brands.webp)
+The fixed example stays 600 px wide on a phone. The adaptive version jumps between fixed widths at breakpoints, so it can still overflow between them. The fluid version uses percentage widths; the responsive version adds media queries for smaller layouts. The differences are visible in the headers, content rows and actions.
 
-## Editing and keeping the archive usable
+## Keeping the handoff usable
 
-The handoff notes cover branding, image folders, replaceable content and sections that can be removed or repeated. Live text, working links and the preference footer need the same attention as the artwork.
+For the AOP master, the editing notes cover branding, image folders and sections that can be removed or repeated. Outlook conditional markup and Microsoft-specific button styles sit alongside the regular HTML.
 
-![Email assembly steps, source constraints and the repaired image references](system-handoff.webp)
-
-I repaired 42 image references in the master preview. They now use the bundled logos, social icons and placeholder artwork instead of old remote paths and a dead placeholder service. The gray images are intentional layout specimens. I also marked layout tables as presentational and gave decorative spacers empty alt text. The original inline layout and Outlook markup remain intact.
-
-[Open the master template](/demo/emails/master-email/index.html), [view Kent State](/demo/emails/sample1/index.html), [view UF Online](/demo/emails/sample2/index.html), or [download the system notes](/demo/emails/email-system-notes.pdf).
+I repaired the archive's old image paths using the bundled assets and retained the original layout rules. The browser previews show the structure and responsive behavior. Delivered rendering in Outlook, Gmail and other email clients needs separate testing.

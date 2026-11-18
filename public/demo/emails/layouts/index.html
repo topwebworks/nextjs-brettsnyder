@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Original email layout comparison</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>One email. Four layout approaches.</h1>
+  <p>These are the original HTML examples. Change the approach and preview width, then scroll through the email.</p>
+  <div class="controls">
+    <label>Layout approach
+      <select id="approach">
+        <option value="fixed">Fixed width</option>
+        <option value="adaptive">Adaptive</option>
+        <option value="fluid">Fluid</option>
+        <option value="responsive" selected>Responsive</option>
+      </select>
+    </label>
+    <label>Preview width
+      <select id="width">
+        <option value="fit">Fit available space</option>
+        <option value="phone">390 px</option>
+        <option value="desktop">600 px</option>
+      </select>
+    </label>
+  </div>
+  <div class="stage" data-width="fit">
+    <iframe id="email" src="variants/responsive.html" title="Responsive email example" sandbox="allow-same-origin" width="600" height="640"></iframe>
+  </div>
+  <output id="state" aria-live="polite">Responsive email</output>
+  <p><a id="open" href="variants/responsive.html" target="_blank" rel="noopener noreferrer">Open this email on its own</a></p>
+  <p class="note">Browser previews of archived campaign HTML. The original layout rules remain; image paths use the bundled artwork.</p>
+</main>
+</body>
+</html>

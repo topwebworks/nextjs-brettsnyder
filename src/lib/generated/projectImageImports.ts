@@ -34,12 +34,13 @@ import cywireScreenshot5 from '@/app/projects/content/cywire/platform-quality.we
 import emailHero from '@/app/projects/content/email/email-1.jpg';
 import emailScreenshot1 from '@/app/projects/content/email/email-2.jpg';
 import emailScreenshot2 from '@/app/projects/content/email/email-3.jpg';
-import emailScreenshot3 from '@/app/projects/content/email/system-brands.webp';
-import emailScreenshot4 from '@/app/projects/content/email/system-components.webp';
-import emailScreenshot5 from '@/app/projects/content/email/system-fluid.webp';
-import emailScreenshot6 from '@/app/projects/content/email/system-handoff.webp';
-import emailScreenshot7 from '@/app/projects/content/email/system-modules.webp';
-import emailScreenshot8 from '@/app/projects/content/email/system-tokens.webp';
+import emailScreenshot3 from '@/app/projects/content/email/pearson-bradley-build.webp';
+import emailScreenshot4 from '@/app/projects/content/email/system-brands.webp';
+import emailScreenshot5 from '@/app/projects/content/email/system-components.webp';
+import emailScreenshot6 from '@/app/projects/content/email/system-fluid.webp';
+import emailScreenshot7 from '@/app/projects/content/email/system-handoff.webp';
+import emailScreenshot8 from '@/app/projects/content/email/system-modules.webp';
+import emailScreenshot9 from '@/app/projects/content/email/system-tokens.webp';
 import grokbotHero from '@/app/projects/content/grok-bot/grok-hero.png';
 import grokbotScreenshot1 from '@/app/projects/content/grok-bot/director-architecture.webp';
 import grokbotScreenshot2 from '@/app/projects/content/grok-bot/director-checkpoint.webp';
@@ -68,7 +69,11 @@ import printHero from '@/app/projects/content/print/franklin-catalog.jpg';
 import printScreenshot1 from '@/app/projects/content/print/iomega-mailer.jpg';
 import printScreenshot2 from '@/app/projects/content/print/logo2.jpg';
 import printScreenshot3 from '@/app/projects/content/print/magazine-ad.jpg';
-import printScreenshot4 from '@/app/projects/content/print/reebok-brochure.jpg';
+import printScreenshot4 from '@/app/projects/content/print/print-broderbund-mailer.webp';
+import printScreenshot5 from '@/app/projects/content/print/print-nuskin-editorial.webp';
+import printScreenshot6 from '@/app/projects/content/print/print-product-illustration.webp';
+import printScreenshot7 from '@/app/projects/content/print/print-webmiles-identity.webp';
+import printScreenshot8 from '@/app/projects/content/print/reebok-brochure.jpg';
 import pushpadHero from '@/app/projects/content/pushpad/pushpad-hero.webp';
 import pushpadScreenshot1 from '@/app/projects/content/pushpad/platform-learner.webp';
 import pushpadScreenshot2 from '@/app/projects/content/pushpad/platform-pad.webp';
@@ -131,7 +136,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'email': {
     hero: emailHero,
     demo: null,
-    screenshots: [emailScreenshot1, emailScreenshot2, emailScreenshot3, emailScreenshot4, emailScreenshot5, emailScreenshot6, emailScreenshot7, emailScreenshot8]
+    screenshots: [emailScreenshot1, emailScreenshot2, emailScreenshot3, emailScreenshot4, emailScreenshot5, emailScreenshot6, emailScreenshot7, emailScreenshot8, emailScreenshot9]
   },
   'grok-bot': {
     hero: grokbotHero,
@@ -156,7 +161,7 @@ export const projectImageImports: Record<string, ProjectImageImports> = {
   'print': {
     hero: printHero,
     demo: null,
-    screenshots: [printScreenshot1, printScreenshot2, printScreenshot3, printScreenshot4]
+    screenshots: [printScreenshot1, printScreenshot2, printScreenshot3, printScreenshot4, printScreenshot5, printScreenshot6, printScreenshot7, printScreenshot8]
   },
   'pushpad': {
     hero: pushpadHero,
@@ -215,12 +220,13 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'email-1.jpg': emailHero,
     'email-2.jpg': emailScreenshot1,
     'email-3.jpg': emailScreenshot2,
-    'system-brands.webp': emailScreenshot3,
-    'system-components.webp': emailScreenshot4,
-    'system-fluid.webp': emailScreenshot5,
-    'system-handoff.webp': emailScreenshot6,
-    'system-modules.webp': emailScreenshot7,
-    'system-tokens.webp': emailScreenshot8
+    'pearson-bradley-build.webp': emailScreenshot3,
+    'system-brands.webp': emailScreenshot4,
+    'system-components.webp': emailScreenshot5,
+    'system-fluid.webp': emailScreenshot6,
+    'system-handoff.webp': emailScreenshot7,
+    'system-modules.webp': emailScreenshot8,
+    'system-tokens.webp': emailScreenshot9
   },
   'grok-bot': {
     'grok-hero.png': grokbotHero,
@@ -259,7 +265,11 @@ export const projectImagesByFilename: Record<string, Record<string, StaticImageD
     'iomega-mailer.jpg': printScreenshot1,
     'logo2.jpg': printScreenshot2,
     'magazine-ad.jpg': printScreenshot3,
-    'reebok-brochure.jpg': printScreenshot4
+    'print-broderbund-mailer.webp': printScreenshot4,
+    'print-nuskin-editorial.webp': printScreenshot5,
+    'print-product-illustration.webp': printScreenshot6,
+    'print-webmiles-identity.webp': printScreenshot7,
+    'reebok-brochure.jpg': printScreenshot8
   },
   'pushpad': {
     'pushpad-hero.webp': pushpadHero,
@@ -354,6 +364,7 @@ export { emailScreenshot5 };
 export { emailScreenshot6 };
 export { emailScreenshot7 };
 export { emailScreenshot8 };
+export { emailScreenshot9 };
 export { grokbotHero };
 export { grokbotScreenshot1 };
 export { grokbotScreenshot2 };
@@ -383,6 +394,10 @@ export { printScreenshot1 };
 export { printScreenshot2 };
 export { printScreenshot3 };
 export { printScreenshot4 };
+export { printScreenshot5 };
+export { printScreenshot6 };
+export { printScreenshot7 };
+export { printScreenshot8 };
 export { pushpadHero };
 export { pushpadScreenshot1 };
 export { pushpadScreenshot2 };
