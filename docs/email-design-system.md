@@ -2,7 +2,9 @@
 
 Source: `src/app/projects/content/email/project.md` and the HTML/asset archives in `public/demo/emails/`.
 
-The master is AOP Fluid Responsive Email Template v2.2.8. Its shared styles are literal inline CSS, table attributes and repeated values, not CSS custom properties. The optional Typekit script is commented out; the browser preview uses the font fallback. Brand recipes come from the source comments. Kent State and UF Online are separate Pearson custom builds.
+The master is AOP Fluid Responsive Email Template v2.2.8. Its shared styles are literal inline CSS, table attributes and repeated values, not CSS custom properties. The optional Typekit script is commented out; the browser preview uses the font fallback. Brand recipes come from the source comments. Kent State and UF Online are earlier Pearson custom builds. Brett confirmed on 2026-11-18 that the master came later and was used for AOP emails.
+
+The legacy AOP campaign collage is only 672 × 410 px; the old portfolio has the same-size copy. Brett supplied four original Fireworks PNGs on 2026-11-18. The email sheet, `aop-1-1.fw.png`, is 1768 × 1080 px. The Design Systems blog uses a full-resolution WebP export from that original. Inputs and versioned exports are preserved in client job `BST_261118_design-systems-blog`. Correct the Email project chronology and replace its collage after blog approval; project presentation changes remain deferred.
 
 Repaired 42 image references representing 17 distinct remote URLs in `master-email/index.html`. Existing local assets replace old S3 image paths. `hero.jpg` replaces the wide placeholder URLs; `square-image.jpg` replaces square placeholder sizes. Relative paths preserve the archive's portability and work on Vercel. The two Pearson samples already had valid local images.
 

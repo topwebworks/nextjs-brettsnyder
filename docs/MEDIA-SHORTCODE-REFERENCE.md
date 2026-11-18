@@ -74,6 +74,8 @@ Use standard Markdown image syntax:
 
 For local images, place the referenced file in the same project or Blog folder. Supported discovered image extensions are `.jpg`, `.jpeg`, `.png`, `.gif`, `.webp`, and `.svg`.
 
+Root-relative image URLs, such as `/demo/example.webp`, refer to files in `public/` and remain native images. Raw HTML can supply their dimensions and a surrounding figure.
+
 The alternative text is used by the rendered image and should describe the image's useful content. Do not use filenames or keyword lists as alternative text.
 
 Resolved local article images link to their original full-size asset in a new tab, so detailed boards can be inspected without changing the Markdown syntax.

@@ -28,6 +28,29 @@
   background: var(--bg-primary);
 }
 
+.enhanced-html-content :global(.design-system-flow) {
+  width: 100%;
+  max-width: 800px;
+  margin: 24px 0;
+}
+
+.enhanced-html-content :global(.design-system-flow img) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.enhanced-html-content :global(.design-system-flow img:hover) {
+  transform: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.enhanced-html-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .fullSizeImage {
   display: block;
   border-radius: 8px;

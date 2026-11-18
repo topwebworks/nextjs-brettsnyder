@@ -25,7 +25,7 @@ media:
   items:
     - type: "image"
       src: "design-systems-hero.jpg"
-      title: "Tokens, section controls and rendered variants"
+      title: "Design systems in practice"
 ---
 
 I was building design systems before anyone I worked with called them that. The first was a master email template. Later came a landing-page library, Shopify sections and the foundations I use for client sites.
@@ -36,7 +36,17 @@ The useful part has always been the handoff. Someone else needs to understand th
 
 ## What I Mean by a Design System
 
-I start with shared values for color, type, spacing and motion, then build components that use them. I also document their states, responsive behavior and content requirements. A card needs rules for a long title and a missing image, as well as its default appearance.
+Brand, design, tokens, components, working components, then a modular library. That's the build sequence in the diagram. Figma is useful for exploring layouts and reviewing decisions; the browser is where I check whether those decisions hold up.
+
+<figure class="design-system-flow">
+  <a href="/demo/blog/design-systems/build-flow.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the design-system build flow at full size">
+    <img src="/demo/blog/design-systems/build-flow.webp" alt="Design-system build flow: Brand to Figma to Tokens to Components to Working components to a Modular library" width="1376" height="768" loading="lazy">
+  </a>
+</figure>
+
+These examples come from finished work and its source code. The older libraries grew through campaign work, rather than following that sequence neatly from the start.
+
+I start with shared values for color, type, spacing and motion, then build components that use them. I also check their states, responsive behavior and content requirements. A card needs rules for a long title and a missing image, as well as its default appearance.
 
 For marketing work, page composition matters too. The offer, supporting proof and next action need an order that suits the audience. I carry those decisions into the reusable sections so the next page has a sensible starting point.
 
@@ -44,7 +54,17 @@ I invest in the library when components repeat, several people will edit them, o
 
 ## My Tokens, Plainly
 
-Most of my work is web-first. CSS custom properties are usually enough for the shared values, with component styles keeping the implementation scoped.
+Most of my web work uses CSS custom properties in `:root` for shared style tokens. Components read those values; theme and section rules override them where needed.
+
+These color tokens come from my shared AOP stylesheet:
+
+```css
+:root {
+  --primary: #f15a37;
+  --primary-dark: #bb452a;
+  --blue: #2ab5cd;
+}
+```
 
 On [this portfolio](/projects/personal-portfolio), for example, the button combines a shared font with a component-owned motion value:
 
@@ -61,21 +81,23 @@ On [this portfolio](/projects/personal-portfolio), for example, the button combi
 
 The themes supply different text, surface and accent values to the same components. Other rules, including some dimensions, live in the component stylesheet. The important thing is knowing where a value belongs and what changing it will affect.
 
-The same separation shows up in a benefit card. Its surface, spacing and type follow repeated rules; its icon, heading and copy come from the content.
+Here is that component running. It imports the same React button used throughout the portfolio, including its arrow, styles and motion. Change the size or disable it and the measurements update from the rendered CSS.
 
-![An editable AOP benefit card beside its rendered version, with the surface, icon, type and spacing identified](card-layers.webp)
+<iframe class="project-component-demo" src="/demo/portfolio/components" title="Actual portfolio button component: theme, size and disabled controls" loading="lazy" height="700"></iframe>
 
-*An editable component study on the left, beside the captured AOP card on the right.*
+[Open the component on its own](/demo/portfolio/components). Try the keyboard focus and the light theme too.
 
-## The Email Template That Started It
+## From Custom Emails to a Master Template
 
-At Imagine Learning, campaign emails kept arriving with familiar requirements: a header, an offer, image-and-text rows, actions and a footer. I collected the variations in one commented [master email file](/projects/email).
+My Pearson emails came first. I built campaigns such as [Kent State](/demo/emails/sample1/index.html) and [UF Online](/demo/emails/sample2/index.html) individually.
+
+Later, I created a [master email template for AOP](/demo/emails/master-email/index.html). AOP campaigns kept needing the same structures: a header, an offer, image-and-text rows, actions and a footer. I collected those variations in one commented file.
 
 A designer could copy a complete row, replace its content and retain the nested tables, gutters and alignment. The brand recipes explained which logo and colors to change.
 
-![Two original master-email rows showing the same content structure with the image on opposite sides](email-row-variants.webp)
+![AOP campaign emails showing shared headers, reusable content rows, actions and footer treatments across product brands](aop-email-campaigns.webp)
 
-*The gray boxes are the original template's image slots. Each mirrored row keeps the table structure around the replaceable content.*
+*AOP campaign examples from my original artwork. Offers, branding and images change; the repeated rows gave the team a starting point.*
 
 These shared values were written into inline styles and HTML attributes. There were no CSS custom properties in the email. The platform called for a different implementation, so the editing notes and repeatable markup did more of the work.
 
@@ -95,17 +117,42 @@ Earlier A/B tests and heatmaps informed that order. I put the strongest offer an
 
 The system reduced landing-page production time by 40% across more than 50 pages. It also gave Marketing something they could edit in the tools they already used.
 
+<video controls playsinline preload="none" poster="/demo/blog/design-systems/master-blocks-tabs-poster.webp" width="1280" height="540">
+  <source src="/demo/blog/design-systems/master-blocks-tabs.mp4" type="video/mp4">
+  <a href="/demo/blog/design-systems/master-blocks-tabs.mp4">Watch the original Master Blocks subject selector.</a>
+</video>
+
+*The subject selector running in the original HTML/CSS library. Its icons and panel styles come from that code. The archive has keyboard and mobile repairs.*
+
+[Explore the original module library](/demo/master-blocks/aop-master-lp-blocks.html).
+
 ## Shopify: Carrying the Library Across Themes
 
 For [AOP and Ignite Christian Academy](/projects/shopify-migrations), I built Liquid sections with schema settings for content, media, layout, spacing and actions. Marketing could configure those settings in Shopify's theme editor.
 
-The section families carried across both migrations, with integration work for Kalles on AOP and Horizon on Ignite. I kept the custom marketing work in its own sections to limit changes to the base theme. Theme updates still needed checking against that integration.
+The section families carried across both migrations, with integration work for Kalles on AOP and Horizon on Ignite. I kept the custom marketing work in its own `MKTG-` sections to limit changes to the base theme. Theme updates still needed checking against that integration.
 
-![The Shopify development gallery's icon-tab variant, with repeatable labels, media, copy and actions](shopify-tab-variant.webp)
+The local `MKTG-tabs-block.liquid` source shows how the editor settings reach the styles. Each section gets its own selector, so changing one instance doesn't restyle every tab section on the page:
 
-*The tab section supports text or icon navigation and horizontal or vertical arrangements. The content blocks keep the same basic fields across those variants.*
+```liquid
+.tabs-block-{{ sid }} {
+  --section-bg: {{ section_bg }};
+  --section-padding: {{ section_padding }};
+  --section-max-width: {{ se_stts.content_max_width }}px;
+  --tab-spacing: {{ se_stts.tab_spacing }}px;
+}
+```
 
-[Try the working tab study](/demo/shopify/tabs/index.html) to change its layout and icons or move between subjects with the keyboard.
+The schema defines a `tab_layout` setting with `row` and `column` options, plus repeatable Tab Content blocks. Labels, images, copy and actions are content fields. Layout, spacing and active-state colors are section settings.
+
+<video controls playsinline preload="none" poster="/demo/shopify/subject-tabs-poster.webp" width="1280" height="720">
+  <source src="/demo/shopify/subject-tabs.mp4" type="video/mp4">
+  <a href="/demo/shopify/subject-tabs.mp4">Watch the MKTG subject tabs on AOP's finished storefront.</a>
+</video>
+
+*Recorded from AOP's finished Monarch page, using its own tab controls and handlers. The local theme snapshots document the architecture; they aren't a copy of the current production theme.*
+
+[See the finished MKTG sections on AOP](https://aop.com/pages/monarch).
 
 Ignite also needed custom product-detail and collection templates, navigation and a footer. After handoff, the client designers and marketers chose the final artwork, copy, page order and brand treatment.
 
@@ -115,9 +162,9 @@ I now use [three systems at Top Web Works](/projects/topwebworks): customized Ta
 
 AMW Hardscape uses the service foundation. Its project photos, service details and estimate actions help a homeowner assess the work and ask for a quote. The fictional Northfield Health demo uses the informational foundation, with goal selection, explanations and a longer introduction to the people and process.
 
-![AMW's service-detail module above the Northfield Health informational demo, showing different content and action patterns](client-foundations.webp)
+![AMW Hardscape's finished service-detail panel, showing project photography, service information and an estimate action](service-module.webp)
 
-*AMW is a finished client site. Northfield is a fictional demo. The two modules show why I keep separate starting components for these kinds of sites.*
+*AMW's service-detail module, captured from the finished site. Photos and service content change; the panel structure and estimate action repeat.*
 
 Within each foundation, clients get their own branding, content and page order. I can put a working homepage in front of an owner early, then use their feedback to finish the site. The shared code leaves more time for the choices specific to that business.
 

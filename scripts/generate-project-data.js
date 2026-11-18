@@ -196,6 +196,9 @@ function processImagesInHTML(html, projectId, projectImages = {}) {
   const imgRegex = /<img[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*>/gi;
   
   return html.replace(imgRegex, (match, src, alt) => {
+    // Root-relative images are public assets, not module imports.
+    if (src.startsWith('/')) return match;
+
     // Check if it's a local image (no protocol)
     if (!src.startsWith('http') && !src.startsWith('//')) {
       // Find corresponding static import
