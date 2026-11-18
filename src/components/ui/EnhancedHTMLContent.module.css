@@ -75,6 +75,42 @@
   font-weight: 500;
 }
 
+.enhanced-html-content :global(.project-logo-studies) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 800px;
+  margin: 24px 0;
+}
+
+.enhanced-html-content :global(.project-logo-studies figure) {
+  margin: 0;
+}
+
+.enhanced-html-content :global(.project-logo-studies img) {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.enhanced-html-content :global(.project-logo-studies figcaption) {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.enhanced-html-content :global(.project-logo-studies a:focus-visible) {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .enhanced-html-content :global(.project-logo-studies) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .fullSizeImage {
   display: block;
   border-radius: 8px;

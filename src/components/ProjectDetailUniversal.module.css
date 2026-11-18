@@ -87,7 +87,7 @@
   font-size: clamp(1rem, 2.2vw, 1.25rem);
   line-height: 1.6;
   color: var(--text-secondary);
-  max-width: 900px;
+  max-width: 650px;
   margin: 0 auto clamp(2rem, 4vw, 3rem) auto;
   font-weight: 400;
 }

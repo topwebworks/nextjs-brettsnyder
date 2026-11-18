@@ -38,6 +38,9 @@ media:
     - type: "image"
       src: "print-product-illustration.webp"
       title: "Product illustration"
+    - type: "image"
+      src: "print-logo-work.webp"
+      title: "Client and product logo designs"
 ---
 
 I still remember the daily trips to the typesetter to collect the type for my print projects. I'd hot-wax it in place for printer handoff. Later, I borrowed my boss's Mac Plus and used our laser printer to bring that step in-house.
@@ -59,6 +62,25 @@ Don't you love all the direct mail you get every week? Sorry, some of that was m
 This Iomega mailer introduced multicolor Zip disks with a nerd-to-hipster concept and plenty of extras in the offer. The challenge was fitting it all into a piece someone would want to read.
 
 ## Identity
+
+![Logo designs for WebMiles, TimeMarker, Navilor, ProForm and other client and product brands](print-logo-work.webp)
+
+These are some of the logos I designed over the years. The studies below show different directions for ACE, iEnhance and NXTV.
+
+<div class="project-logo-studies">
+  <figure>
+    <a href="/demo/print/ace-studies.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the ACE logo studies at full size">
+      <img src="/demo/print/ace-studies.webp" alt="Single-color logo studies for ACE, Automated Compliance Engine" width="414" height="572" loading="lazy">
+    </a>
+    <figcaption>ACE: seals, monograms and wordmarks.</figcaption>
+  </figure>
+  <figure>
+    <a href="/demo/print/identity-variants.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the iEnhance and NXTV logo studies at full size">
+      <img src="/demo/print/identity-variants.webp" alt="iEnhance and NXTV logo explorations" width="659" height="745" loading="lazy">
+    </a>
+    <figcaption>iEnhance and NXTV: alternate directions.</figcaption>
+  </figure>
+</div>
 
 ![WebMiles identity applied to a presentation folder, letterhead, envelope and business card](print-webmiles-identity.webp)
 
