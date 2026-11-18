@@ -6,6 +6,11 @@ import { StaticImageData } from 'next/image';
 
 // Import statements for all blog images
 import designsystemsHero from '@/app/blog/content/design-systems/design-systems-hero.jpg';
+import designsystemsScreenshot1 from '@/app/blog/content/design-systems/campaign-composition.webp';
+import designsystemsScreenshot2 from '@/app/blog/content/design-systems/card-layers.webp';
+import designsystemsScreenshot3 from '@/app/blog/content/design-systems/client-foundations.webp';
+import designsystemsScreenshot4 from '@/app/blog/content/design-systems/email-row-variants.webp';
+import designsystemsScreenshot5 from '@/app/blog/content/design-systems/shopify-tab-variant.webp';
 import funasticsHero from '@/app/blog/content/funastics/1-funastics-photos.jpg';
 import funasticsScreenshot1 from '@/app/blog/content/funastics/2-funastics-curriculum.jpg';
 import funasticsScreenshot2 from '@/app/blog/content/funastics/3-funastics-web.jpg';
@@ -34,7 +39,7 @@ export const blogImageImports: Record<string, BlogImageImports> = {
   'design-systems': {
     hero: designsystemsHero,
     demo: null,
-    screenshots: []
+    screenshots: [designsystemsScreenshot1, designsystemsScreenshot2, designsystemsScreenshot3, designsystemsScreenshot4, designsystemsScreenshot5]
   },
   'funastics': {
     hero: funasticsHero,
@@ -56,7 +61,12 @@ export const blogImageImports: Record<string, BlogImageImports> = {
 // Filename-based lookup for direct image resolution
 export const blogImagesByFilename: Record<string, Record<string, StaticImageData>> = {
   'design-systems': {
-    'design-systems-hero.jpg': designsystemsHero
+    'design-systems-hero.jpg': designsystemsHero,
+    'campaign-composition.webp': designsystemsScreenshot1,
+    'card-layers.webp': designsystemsScreenshot2,
+    'client-foundations.webp': designsystemsScreenshot3,
+    'email-row-variants.webp': designsystemsScreenshot4,
+    'shopify-tab-variant.webp': designsystemsScreenshot5
   },
   'funastics': {
     '1-funastics-photos.jpg': funasticsHero,
@@ -103,6 +113,11 @@ export const availableBlog = ['design-systems', 'funastics', 'jesus-christ-art',
 
 // Individual variable exports for direct access
 export { designsystemsHero };
+export { designsystemsScreenshot1 };
+export { designsystemsScreenshot2 };
+export { designsystemsScreenshot3 };
+export { designsystemsScreenshot4 };
+export { designsystemsScreenshot5 };
 export { funasticsHero };
 export { funasticsScreenshot1 };
 export { funasticsScreenshot2 };

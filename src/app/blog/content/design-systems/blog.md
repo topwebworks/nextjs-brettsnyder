@@ -1,8 +1,8 @@
 ---
 title: "Design Systems"
-description: "What a design system actually is, how I use tokens and components, and why every system I've built started as the answer to a real deadline or limitation."
+description: "How I use shared styles, reusable components and working prototypes across email, Shopify and client sites."
 contentTitle: "Design Systems: The Habit I Never Named"
-achievementTitle: "Where I've Used This"
+achievementTitle: ""
 tags:
   - "Design Systems"
   - "CSS"
@@ -12,107 +12,123 @@ tags:
 category: "Design"
 status: ""
 featured: true
-readTime: "9 min read"
+readTime: "6 min read"
 publishDate: "2026-09-23"
+updatedDate: "2026-11-18"
 links:
   demo: "/projects/shopify-migrations"
 author: "Brett Snyder"
-excerpt: "I was building design systems before anyone called them that. Here's what they are, how I use tokens, and why every one I've built started as the answer to a real deadline, not a trend."
-keyAchievements:
-  - type: "impact"
-    icon: "🧱"
-    title: "Five Systems Built Under Pressure"
-    description: "Token-based design systems built and used across static HTML, Shopify Liquid, email, and Next.js, each one solving a specific production problem instead of following a trend."
-    metrics:
-      - "Master Blocks cut landing-page production time 40% across 50+ pages"
-      - "One Liquid design system reused across 2 Shopify migrations on 2 theme frameworks, re-tokened per brand"
-      - "TopWebWorks runs three separate systems, one marketing site and two client site types"
-      - "This portfolio runs on the same token approach in CSS Modules"
+excerpt: "The email template, landing-page library and Shopify sections behind the way I build and hand off design systems."
+keyAchievements: []
+
 media:
   items:
-
+    - type: "image"
+      src: "design-systems-hero.jpg"
+      title: "Tokens, section controls and rendered variants"
 ---
 
-I was building design systems before anyone I worked with called them that. The first one was a master [email template](/projects/email) with every block variation already built in: header styles, content blocks, CTAs, footers, all built once and dropped into place instead of rebuilt for every campaign. Nobody handed me the term "design system." The approach just made&nbsp;sense.
+I was building design systems before anyone I worked with called them that. The first was a master email template. Later came a landing-page library, Shopify sections and the foundations I use for client sites.
 
-A design system is a shared set of tokens, components, pacing rules, and conversion rules. Tokens are the values, color, spacing, type, defined once and reused everywhere instead of typed in over and over. Components are the parts built from those tokens: a button, a card, a hero block. The pacing rules are what tell you what order those parts go in down the page. The conversion rules are data-backed: which of those parts actually needs to be there, a form, a CTA, a testimonial, so a page built by someone else still converts, not just&nbsp;matches.
+Each started with a practical problem: too many campaigns to build individually, several brands sharing the same CMS, or a theme that couldn't handle the pages Marketing needed.
 
-I didn't build any of mine because design systems sounded good, or because I read about them somewhere. A director gave me a deadline that building every page from scratch couldn't hit. A [Shopify migration](/projects/shopify-migrations) needed more than the theme's defaults could cover. A client base that couldn't afford months of custom work every time I built them a site. Five systems, five different problems, one repeated&nbsp;habit.
+The useful part has always been the handoff. Someone else needs to understand the values, assemble the parts and make changes without having to reconstruct my decisions first.
+
+## What I Mean by a Design System
+
+I start with shared values for color, type, spacing and motion, then build components that use them. I also document their states, responsive behavior and content requirements. A card needs rules for a long title and a missing image, as well as its default appearance.
+
+For marketing work, page composition matters too. The offer, supporting proof and next action need an order that suits the audience. I carry those decisions into the reusable sections so the next page has a sensible starting point.
+
+I invest in the library when components repeat, several people will edit them, or the work has to survive a platform change. For a one-off page with one owner, a small set of shared styles may be enough.
 
 ## My Tokens, Plainly
 
-I'm not usually building across a dozen devices and platforms at once. I'm not running one token source that feeds native iOS, Android, and web apps at the same time. My work is web-first: HTML and CSS, Shopify Liquid, React and Next.js. So my tokens are, mainly, plain CSS custom properties. `--color-primary`, `--space-lg`, `--font-primary`. Set once at the root, referenced everywhere else. Change the value in one place and every component using it updates.
+Most of my work is web-first. CSS custom properties are usually enough for the shared values, with component styles keeping the implementation scoped.
 
-It's the right-sized tool for the job I actually have. [This portfolio](/projects/personal-portfolio) runs on exactly that: a token layer for color, spacing, and font driving both the light and dark theme off the same&nbsp;components.
+On [this portfolio](/projects/personal-portfolio), for example, the button combines a shared font with a component-owned motion value:
 
-The mechanism is the same everywhere I've used it, even when the platform changes. Plain CSS variables in Master Blocks. On this site, a Next.js build, the tokens live in one global stylesheet and every component pulls from it through its own CSS Module, so the values stay shared but the styles stay scoped to the component that uses them. Liquid's version of the same idea inside Shopify's style blocks. Tailwind's token layer on TopWebWorks, which is CSS variables under the hood no matter what utility classes sit on top of it. One approach, reused on purpose every&nbsp;time.
+```css
+.button {
+  --button-hover-lift: 2px;
+  font-family: var(--font-primary);
+}
 
-## When It Earns Its Keep
+.button:hover {
+  transform: translateY(calc(-1 * var(--button-hover-lift)));
+}
+```
 
-A design system earns its time when more than one person touches the same visual surface, when the same components repeat across more pages or brands than you can track in your head, or when the platform is going to outlive the current build and needs an upgrade path that survives theme changes and CMS migrations. Any piece of the system can mix and match into any page. That's the whole point of building it modular, down to swapping which features live inside the same component. You don't need a second full system just because two pages have different goals, that's what the modularity is&nbsp;for. You need one when the market itself is different enough that one system can't credibly speak to both, different audience, different expectations, different context walking in the&nbsp;door.
+The themes supply different text, surface and accent values to the same components. Other rules, including some dimensions, live in the component stylesheet. The important thing is knowing where a value belongs and what changing it will affect.
 
-Skip it for a single page with one owner and no reuse coming. Skip it while requirements are still moving fast enough that locking tokens early just creates rework later. And if it's just you, with no handoff coming, a style guide in your head works fine right up until it&nbsp;doesn't.
+The same separation shows up in a benefit card. Its surface, spacing and type follow repeated rules; its icon, heading and copy come from the content.
 
-But most real jobs outgrow that fast. Once brand consistency and turnaround speed both matter, and they usually both matter sooner than people expect, a design system stops being optional and becomes the only way to keep&nbsp;up.
+![An editable AOP benefit card beside its rendered version, with the surface, icon, type and spacing identified](card-layers.webp)
 
-## The Email Template That Started All of This
+*An editable component study on the left, beside the captured AOP card on the right.*
 
-Before Master Blocks, before any of it, campaign emails at Imagine Learning were getting built one at a time by hand, with inconsistent results across email clients that still barely support CSS. So I built a master email template with every block variation already worked out: header styles, content blocks, CTAs, footers, all built once as reusable, CRM-ready pieces instead of rebuilt from scratch for every&nbsp;campaign.
+## The Email Template That Started It
 
-Nobody called it a design system. It just meant I stopped solving the same layout problem every time a new campaign landed on my desk. It became the company&nbsp;standard.
+At Imagine Learning, campaign emails kept arriving with familiar requirements: a header, an offer, image-and-text rows, actions and a footer. I collected the variations in one commented [master email file](/projects/email).
 
-## Master Blocks: The Deadline That Made It a Habit
+A designer could copy a complete row, replace its content and retain the nested tables, gutters and alignment. The brand recipes explained which logo and colors to change.
 
-A few years later at the same company, a new marketing director came in wanting more landing pages, faster, across six product brands, with no added headcount. I sat down and did the math on how long building each one from scratch would take, and the number didn't come close to fitting the&nbsp;timeline.
+![Two original master-email rows showing the same content structure with the image on opposite sides](email-row-variants.webp)
 
-I already knew the fix, because I'd done it before with the email template. So I built [Master Blocks](/projects/master-blocks), a token-based HTML and CSS block library. CSS variables handled color, type, and spacing. I used flexbox instead of grid so blocks stayed forgiving to move or delete without breaking a layout. Global styles, brand styles, and an override section stayed layered separately, so marketing could edit pages directly in the CMS without ever touching or breaking the upgrade&nbsp;path.
+*The gray boxes are the original template's image slots. Each mirrored row keeps the table structure around the replaceable content.*
 
-The default block order wasn't a guess either. I'd run A/B tests on landing pages before, and the heatmaps were consistent: almost all conversions happened above the fold. So the pacing rules for the whole system got built around that data, hero and the strongest offer up top, a long scroll funnel doesn't hold this kind of&nbsp;traffic.
+These shared values were written into inline styles and HTML attributes. There were no CSS custom properties in the email. The platform called for a different implementation, so the editing notes and repeatable markup did more of the work.
 
-It cut landing-page production time 40% across more than 50 conversion-focused pages. What looked like an impossible ask on a Thursday afternoon turned into a process I could hand off and&nbsp;repeat.
+## Master Blocks: Reuse Under a Deadline
 
-## Shopify: One System, Two Storefronts, Two Theme Frameworks
+A new marketing director wanted more landing pages, faster, across six product brands. Building each page from scratch wouldn't fit the schedule.
 
-Later, I was handed the job of migrating existing e-commerce sites to Shopify, including AOP.com and IgniteChristianAcademy.com. The theme's default marketing sections covered the basics, but not what these specific pages needed to&nbsp;convert.
+I proposed [Master Blocks](/projects/master-blocks): an HTML/CSS library the team could use in WordPress and a custom .NET CMS. CSS variables held the palette and font. Shared classes handled type sizes and spacing. Brand rules, core styles and campaign overrides had separate areas in the stylesheet.
 
-Rather than stretch a default section further than it was meant to go, or add a paid app to cover the gap, I [built custom Liquid sections](/blog/shopify-tips) with shared tokens and schema settings marketing could configure on their own. I kept the work additive to the theme, so the upgrade path never broke. On AOP specifically, I stayed inside sections that were already approved for UI and UX, even while customizing them, so the new work never needed a fresh round of design approval. It was still inside what had already been signed&nbsp;off.
+Each section kept its wrapper, content and controls together. The team could duplicate a benefits block, move an image-and-text section or remove a module. Flexbox handled the rows and mobile stacking.
 
-That system didn't stay on one storefront. I carried it across two separate Shopify migrations, [AOP.com](https://www.aop.com) and [Ignite Christian Academy](https://www.ignitechristianacademy.com), swapping in each brand's own tokens, color, type, spacing, so each site looked like itself while the underlying sections and schema stayed the same. The two migrations landed on different theme frameworks entirely, which meant the system had to hold up against Shopify's own architecture changing underneath it, not just a fresh coat of&nbsp;brand. On Ignite, it also went past marketing sections to include custom dynamic product detail and collection page templates and a fully custom navigation header and&nbsp;footer. Once the system was complete, I handed it to the marketing department, and their design department chose the content, assets, section pacing, and brand color use on each&nbsp;site.
+![The LIFEPAC campaign example assembled from the Master Blocks hero, lead form, introduction and benefit modules](campaign-composition.webp)
 
-## TopWebWorks: Fast Without Being Generic
+*The offer and form lead the LIFEPAC example; the introduction and benefits follow. These are sections assembled into a page, with a defined role for each.*
 
-Running TopWebWorks now, most clients don't want to spend months or a large budget getting a new website built. To offer a real custom site in a fraction of that time, I had to build the foundational structure ahead of the client work, before the client ever showed&nbsp;up.
+Earlier A/B tests and heatmaps informed that order. I put the strongest offer and form near the top for those campaigns, then used the remaining sections to answer questions and support the decision. I'd review that order again when the audience or offer changed.
 
-That became [three separate design systems](/projects/topwebworks), each with a job. A custom Tailwind system runs the TopWebWorks marketing site itself. Two more Next.js systems run client builds, split by site type: one for service sites, one for informational sites. That split isn't about the pages wanting different things, it's about the clients being different demographics entirely. A local service business and its customers expect a different tone, pace, and set of trust signals than an informational site's audience does. One system stretched across both would end up generic on one side to stay credible on the&nbsp;other.
+The system reduced landing-page production time by 40% across more than 50 pages. It also gave Marketing something they could edit in the tools they already used.
 
-Both client systems are conversion-focused, built from shared components, and ship with the same lead capture and follow-up system underneath no matter which client it goes to. It's also the reason I can offer a free homepage prototype at all. I'm not putting it together from nothing. I'm pulling from blocks I've already proven convert, which is why I can turn it around fast without handing someone something&nbsp;generic.
+## Shopify: Carrying the Library Across Themes
 
-This is the part of the job that isn't tokens on a page: deciding how many systems a business actually needs, and where the line between them&nbsp;goes.
+For [AOP and Ignite Christian Academy](/projects/shopify-migrations), I built Liquid sections with schema settings for content, media, layout, spacing and actions. Marketing could configure those settings in Shopify's theme editor.
 
-## The Real Payoff
+The section families carried across both migrations, with integration work for Kalles on AOP and Horizon on Ignite. I kept the custom marketing work in its own sections to limit changes to the base theme. Theme updates still needed checking against that integration.
 
-Ask most people why a design system matters and they'll say consistency. Fine answer, but it undersells what I actually get out of&nbsp;one.
+![The Shopify development gallery's icon-tab variant, with repeatable labels, media, copy and actions](shopify-tab-variant.webp)
 
-I stop re-deciding the same conversion questions on every new page, because I already made that call once and built it into the block. The 40% number on Master Blocks wasn't a one-time win either. It held across 50-plus pages because I wasn't starting page 51 from zero, I was assembling it from pieces I'd already proven&nbsp;worked.
+*The tab section supports text or icon navigation and horizontal or vertical arrangements. The content blocks keep the same basic fields across those variants.*
 
-The stakeholder conversation changes shape too. Show a director or a client an actual working prototype and they approve something real. Show them a description or a mood board and they're still guessing at what they're agreeing to, and that guessing is what eats a&nbsp;timeline.
+[Try the working tab study](/demo/shopify/tabs/index.html) to change its layout and icons or move between subjects with the keyboard.
 
-Sprints get shorter the longer the system's been running, not just on page one. And underneath all of it: a client or a director who can see the system trusts my timeline instead of padding it out of&nbsp;doubt.
+Ignite also needed custom product-detail and collection templates, navigation and a footer. After handoff, the client designers and marketers chose the final artwork, copy, page order and brand treatment.
 
-## Figma Earns a Shortcut
+## Top Web Works: Choosing the Right Starting Point
 
-Figma is a real, necessary part of how most web teams collaborate, and I still use it constantly. Prototyping in code before a design gets approved is normally a bad habit, and for good reason. On a from-scratch product, nothing is locked yet, and building ahead of approval just invites rework when the direction&nbsp;shifts.
+I now use [three systems at Top Web Works](/projects/topwebworks): customized Tailwind UI for the agency site, a service-site library and an informational-site library.
 
-But that rule assumes you're starting from nothing. Once a design system and an approved demo page already exist, you're not. A new feature built inside that system already inherits approved tokens, approved components, and in a case like AOP, sections that were already signed off for UI and UX. There's no open visual decision left for Figma to resolve first, because that decision already got made when the system itself was approved. So the order flips. The process still runs, it just doesn't need to re-open a decision that's already&nbsp;closed.
+AMW Hardscape uses the service foundation. Its project photos, service details and estimate actions help a homeowner assess the work and ask for a quote. The fictional Northfield Health demo uses the informational foundation, with goal selection, explanations and a longer introduction to the people and process.
 
-Once that's true, I'll build the new feature or prototype directly in the live system first. Then I get feedback one of two ways: I take a screen grab of the working version into Figma and drop in notes and revisions, or I make the change live in the browser and grab it again, whichever is faster for whoever's reviewing it. Figma stays in the loop as where feedback and annotation happen. It just isn't always where the thing started&nbsp;anymore.
+![AMW's service-detail module above the Northfield Health informational demo, showing different content and action patterns](client-foundations.webp)
 
-The system's own demo page doubles as a sandbox for this. Open dev tools, move an element, delete one, duplicate one, and see the layout change in real time, instead of mocking that same variation in Figma first. This works on any platform: an HTML demo page, a Shopify theme, a Next.js build, whatever the system runs on, because the sandbox only works when the tokens and components underneath it are already real and already approved. Editing it live can't produce something off-brand, so there's nothing risky about testing that&nbsp;way.
+*AMW is a finished client site. Northfield is a fictional demo. The two modules show why I keep separate starting components for these kinds of sites.*
 
-I used this with Master Blocks directly. The original demo template was built to be inspected and edited live in the browser, which is part of why flexbox mattered more than grid to me: blocks stayed forgiving to rearrange without anything breaking. When marketing later needed a new concept for a Student Program, I put together a working prototype using the existing blocks in almost no time, instead of designing it in Figma first. Revisions came back as screen grabs with comments dropped straight into&nbsp;Figma.
+Within each foundation, clients get their own branding, content and page order. I can put a working homepage in front of an owner early, then use their feedback to finish the site. The shared code leaves more time for the choices specific to that business.
 
-None of this holds for work built from scratch. A new product or a new visual direction still goes through Figma first, every&nbsp;time.
+## Working From an Approved System
 
-## The Habit That Ports
+Once a component and its visual rules are approved, I can explore a variation directly in the browser. Moving, duplicating or removing a block shows how the real layout responds. A working prototype also exposes behavior that a static comp can leave unresolved.
 
-Across the five systems in this post, the platform underneath changed: static HTML, Shopify Liquid, email markup, React components. But even inside one platform, a component doesn't stay frozen at whatever Figma first rendered. Feature updates, data-driven changes, bug fixes, all of it moves the component forward, sometimes past what the original design file still shows. What doesn't change, on a new platform or six feature updates into an old one, is the habit: define the values once, build the pieces from those values, and let the system carry the consistency as more people and more pages touch&nbsp;it.
+When feedback happens in Figma, I'll bring in screen grabs and annotate the changes there. I used that approach with Master Blocks when Marketing needed a Student Program concept: I assembled it from the existing blocks, then reviewed revisions through screenshots and notes.
+
+Approved styling still leaves interaction decisions to check. I review keyboard focus, validation, loading and error states, and the smaller layouts before calling a new version ready. A new product or visual direction needs its own exploration and review.
+
+## What I Want the Next Person to Know
+
+The files should tell someone which values to use, which pieces to combine and what to check before publishing. As features change, the components and their documentation need to move together. That's the standard I try to meet when I hand a system over.

@@ -39,6 +39,12 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Current Phase
 
+Design Systems blog visual pass completed 2026-11-18. Five evidence images use the approved project material: the layered AOP card, mirrored email rows, LIFEPAC page composition, Shopify tab specimen and the AMW/Northfield module comparison. The workspace cover is replaced by the actual section-contract study. The existing article layout and single hero are retained; supporting images sit beside the decisions they explain.
+
+The article is shortened around the implementation and handoff decisions. It retains the reported 40% production-time result, distinguishes email's inline constants from web CSS variables, and separates shared theme values from component-owned rules. Client-design credits and the fictional Health-demo label are retained. Repeated claims and guarantees about approvals, conversions and theme upgrades are removed. Shopify Tips and the other blogs remain separate work.
+
+The article is about 1,250 words with a six-minute reading estimate. The duplicate summary card is removed. Generation, lint, typecheck and production build pass. The article passed dark/light checks at 1200, 390 and 320 px, with five distinct loaded figures, current modification metadata, no overflow or page errors, and working local links and listing entry. Rendered images and captions were inspected. Source assets, non-destructive crops and the two image-composition pages are retained in client job `BST_261118_design-systems-blog`.
+
 The project presentation phase is complete. On 2026-11-17, Brett approved the presentations and authorized a final accuracy, repetition and voice review across all 13 projects, followed by a push to `main`.
 
 The final editorial pass removed repeated summary cards and scope descriptions, retained the personal narratives and design/implementation credits, corrected the print captions, and normalized live-project status metadata. Prototype, sample-data and archive-testing limits remain explicit. CyWire stays the sole featured project and is described as a Master Prompt workspace.

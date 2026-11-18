@@ -17,11 +17,11 @@ export const latestBlogPosts: LatestBlogPost[] = [
   {
     "id": "design-systems",
     "title": "Design Systems",
-    "description": "What a design system actually is, how I use tokens and components, and why every system I've built started as the answer to a real deadline or limitation.",
-    "excerpt": "I was building design systems before anyone called them that. Here's what they are, how I use tokens, and why every one I've built started as the answer to a real deadline, not a trend.",
+    "description": "How I use shared styles, reusable components and working prototypes across email, Shopify and client sites.",
+    "excerpt": "The email template, landing-page library and Shopify sections behind the way I build and hand off design systems.",
     "category": "Design",
     "publishDate": "2026-09-23",
-    "readTime": "9 min read",
+    "readTime": "6 min read",
     "tags": [
       "Design Systems",
       "CSS",
