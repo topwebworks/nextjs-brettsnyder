@@ -1,5 +1,5 @@
 ---
-title: "Master Email Design System"
+title: "Master Email"
 description: "The master template I used for AOP emails, with reusable rows and brand recipes, plus earlier custom campaigns from Pearson Online Learning."
 contentTitle: ""
 achievementTitle: ""

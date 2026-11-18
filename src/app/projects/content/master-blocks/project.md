@@ -1,5 +1,5 @@
 ---
-title: "Master Blocks Design System"
+title: "Master Blocks"
 description: "A reusable HTML/CSS landing-page library for six product brands, built so the marketing team could assemble and edit campaigns in their existing CMS."
 contentTitle: ""
 achievementTitle: ""

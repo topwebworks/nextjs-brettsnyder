@@ -1,6 +1,6 @@
 {
   "_WARNING": "IMPORTANT: The contents of this file are auto-generated. Manual changes will be overwritten when the generator runs.",
-  "title": "Master Email Design System",
+  "title": "Master Email",
   "description": "The master template I used for AOP emails, with reusable rows and brand recipes, plus earlier custom campaigns from Pearson Online Learning.",
   "technologies": [
     "HTML",
