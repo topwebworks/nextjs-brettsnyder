@@ -12,7 +12,7 @@ export const faqs: Faq[] = [
     q: 'What kind of work does Brett Snyder do?',
     a: [
       'I design and build websites and web products: SaaS platforms like CyWire, design systems, and Shopify stores, including two Shopify Plus migrations at Imagine Learning (AOP.com and IgniteChristianAcademy.com).',
-      'Through TopWebWorks, I build custom websites and Shopify stores for local businesses and set up what happens after someone reaches out: lead capture, automated email and text follow-up, SEO, and ongoing digital marketing.',
+      'Through TopWebWorks, I build custom websites and Shopify stores for local businesses that work on every device, host and maintain them, add custom AI features, and handle branding, SEO, AEO, GEO, analytics, and ongoing digital marketing. I also set up what happens after someone reaches out: lead capture with automated email and text follow-up.',
     ],
     links: [
       { href: '/projects/cywire', label: 'CyWire' },

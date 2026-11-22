@@ -27,6 +27,7 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
   - The bottom summary card (`keyAchievements`) feeds JSON-LD `abstract`, the tags feed `keywords`, and CyWire's metrics feed `featureList`. The card is a `<section>` inside the main article, and its metric bullets appear under each `/llms.txt` entry. FAQs stay on About only.
   - The sitemap carries content dates.
   - `/llms.txt` is built from the content loaders at build time.
+  - The `Person` record also lists custom AI features, hosting and maintenance, branding, and print design, and the About FAQ names the full TopWebWorks range (added 2026-11-22). The homepage `WebSite` carries `alternateName`. Experience claims stay at the resume's 15+ years; TopWebWorks alone uses 30+ years in marketing.
 
 ## Content Workflow
 

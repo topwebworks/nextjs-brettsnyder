@@ -26,6 +26,7 @@ const jsonLd = {
       '@id': `${siteUrl}/#website`,
       url: siteUrl,
       name: 'Brett Snyder',
+      alternateName: 'Brett Snyder Portfolio',
       publisher: { '@id': `${siteUrl}/#person` },
     },
   ],
