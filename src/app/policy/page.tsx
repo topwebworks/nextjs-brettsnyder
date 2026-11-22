@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy policy for the Brett Snyder portfolio website.',
   openGraph: {
+    siteName: 'Brett Snyder',
     title: 'Privacy Policy | Brett Snyder',
     description: 'Privacy policy for the Brett Snyder portfolio website.',
     type: 'website',

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Brett Snyder is a designer-turned-developer in Queen Creek, AZ, building SaaS products, design systems, Shopify experiences, and conversion-focused websites.",
   openGraph: {
+    siteName: 'Brett Snyder',
     title: 'About Brett Snyder',
     description:
       "Brett Snyder is a designer-turned-developer in Queen Creek, AZ, building SaaS products, design systems, Shopify experiences, and conversion-focused websites.",

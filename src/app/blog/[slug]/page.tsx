@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
       alternates: { canonical: `/blog/${slug}` },
       description: blogData.description,
       openGraph: {
+        siteName: 'Brett Snyder',
         title: blogData.title,
         description: blogData.description,
         type: 'article',

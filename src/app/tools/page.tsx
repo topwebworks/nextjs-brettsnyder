@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     'The software, hardware, and workflow tools Brett Snyder uses for development, design, and productivity.',
   openGraph: {
+    siteName: 'Brett Snyder',
     title: 'Tools | Brett Snyder',
     description:
       'The software, hardware, and workflow tools Brett Snyder uses for development, design, and productivity.',

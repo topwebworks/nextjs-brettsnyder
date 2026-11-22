@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   title: 'Projects',
   description: 'Projects by Brett Snyder: SaaS platforms, design systems, Shopify Plus migrations, client marketing sites, and prototypes, with the results behind each.',
   openGraph: {
+    siteName: 'Brett Snyder',
     title: 'Projects',
     description: 'Projects by Brett Snyder: SaaS platforms, design systems, Shopify Plus migrations, client marketing sites, and prototypes, with the results behind each.',
     type: 'website',

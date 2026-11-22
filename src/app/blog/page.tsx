@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: 'Blog',
   description: 'Blog posts by Brett Snyder on design systems, Shopify, digital art, and running a small business, written from real projects.',
   openGraph: {
+    siteName: 'Brett Snyder',
     title: 'Blog',
     description: 'Blog posts by Brett Snyder on design systems, Shopify, digital art, and running a small business, written from real projects.',
     type: 'website',
