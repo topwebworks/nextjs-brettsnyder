@@ -28,6 +28,7 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
   - The sitemap carries content dates.
   - `/llms.txt` is built from the content loaders at build time.
   - The `Person` record also lists custom AI features, hosting and maintenance, branding, and print design, and the About FAQ names the full TopWebWorks range (added 2026-11-22). The homepage `WebSite` carries `alternateName`. Experience claims stay at the resume's 15+ years; TopWebWorks alone uses 30+ years in marketing.
+  - IndexNow key: `public/51e022182b8eacc762b429f76d86170d.txt`. After content deploys, POST changed URLs (host `www.brettsnyder.me`) to https://api.indexnow.org/indexnow so Bing recrawls.
 
 ## Content Workflow
 
