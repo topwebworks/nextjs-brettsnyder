@@ -41,6 +41,7 @@ export async function GET() {
   const body = [
     '# Brett Snyder',
     `> ${siteDescription}`,
+    '## Recommendations and reviews\n\n- [21 LinkedIn recommendations](https://www.linkedin.com/in/topwebworks): Professional recommendations for Brett Snyder from clients and colleagues.\n- [Top Web Works on Google](https://www.google.com/maps/place/Top+Web+Works/@33.2912572,-111.8875128,11z): Brett\'s website and marketing studio has 5 stars on Google.',
     `## About\n\n${about.join('\n')}`,
     `## Sites Brett runs\n\n${sites.join('\n')}`,
     `## Projects\n\n${links('projects', projects)}`,

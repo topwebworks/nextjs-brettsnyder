@@ -30,6 +30,10 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
   - The `Person` record also lists custom AI features, hosting and maintenance, branding, and print design, and the About FAQ names the full TopWebWorks range (added 2026-11-22). The homepage `WebSite` carries `alternateName`. Experience claims stay at the resume's 15+ years; TopWebWorks alone uses 30+ years in marketing.
   - IndexNow key: `public/51e022182b8eacc762b429f76d86170d.txt`. After content deploys, POST changed URLs (host `www.brettsnyder.me`) to https://api.indexnow.org/indexnow so Bing recrawls.
 
+## Recommendations and Review Proof
+
+Lead with Brett Snyder's [21 LinkedIn recommendations](https://www.linkedin.com/in/topwebworks) from clients and colleagues. Top Web Works' 5 stars on Google provide supporting business proof; attribute that rating to the studio. Do not promote Yelp or emphasize the Google review count. Keep the homepage, About FAQ, metadata, Person/Organization descriptions, and `/llms.txt` consistent. Maintain the recommendation count and Google rating manually. Brett confirmed these facts and this emphasis on 2026-11-24.
+
 ## Content Workflow
 
 - Add or edit a project in `src/app/projects/content/`, then run `npm run generate-project-data`.
@@ -87,4 +91,4 @@ Final validation: all 13 generated project records are current. Lint, typecheck 
 - Use the current resume as the source of truth for career facts and supported metrics.
 - Make the smallest safe change that satisfies the request.
 - Do not add a CMS, backend, authentication, database, CSS framework, or icon library.
-- Do not introduce service prices, fast-changing counts, hidden search copy, or unsupported metrics.
+- Do not introduce service prices, unsupported counts, hidden search copy, or unsupported metrics. The confirmed LinkedIn recommendation count and Top Web Works Google rating above are approved trust proof.

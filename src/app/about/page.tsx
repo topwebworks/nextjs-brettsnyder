@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about' },
   title: 'About',
   description:
-    "Brett Snyder is a designer-turned-developer in Queen Creek, AZ, building SaaS products, design systems, Shopify experiences, and conversion-focused websites.",
+    "Brett Snyder, a designer-turned-developer in Queen Creek, AZ, builds SaaS, design systems, and Shopify experiences. Read his 21 LinkedIn recommendations.",
   openGraph: {
     siteName: 'Brett Snyder',
     title: 'About Brett Snyder',
     description:
-      "Brett Snyder is a designer-turned-developer in Queen Creek, AZ, building SaaS products, design systems, Shopify experiences, and conversion-focused websites.",
+      "Brett Snyder, a designer-turned-developer in Queen Creek, AZ, builds SaaS, design systems, and Shopify experiences. Read his 21 LinkedIn recommendations.",
     type: 'website',
     images: [shareImage],
   },

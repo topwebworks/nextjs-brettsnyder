@@ -4,7 +4,7 @@ import type { KeyAchievement } from '@/lib/types/project';
 const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
 export const siteDescription =
-  'Brett Snyder is a frontend developer and design engineer building SaaS and AI products, design systems, Shopify experiences, and conversion-focused websites.';
+  'Brett Snyder, frontend developer and design engineer for SaaS, AI, design systems, Shopify, and conversion-focused websites. 21 LinkedIn recommendations.';
 
 // One identity for every page and for topwebworks.com (same @id). Employer, skills, and city tell this
 // Brett Snyder apart from the others; all of it matches the public resume.
@@ -22,7 +22,7 @@ export const personSchema = {
   },
   worksFor: [
     { '@type': 'Organization', name: 'Cosaint, Inc.' },
-    { '@type': 'Organization', '@id': 'https://topwebworks.com/#organization', name: 'Top Web Works', url: 'https://topwebworks.com' },
+    { '@type': 'Organization', '@id': 'https://topwebworks.com/#organization', name: 'Top Web Works', url: 'https://topwebworks.com', description: 'Website and marketing studio founded by Brett Snyder, with 5 stars on Google.' },
   ],
   knowsAbout: [
     'Frontend development',

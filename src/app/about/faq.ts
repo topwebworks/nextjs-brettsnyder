@@ -21,6 +21,16 @@ export const faqs: Faq[] = [
     ],
   },
   {
+    q: 'Where can I read recommendations for Brett Snyder?',
+    a: [
+      'I have 21 LinkedIn recommendations from clients and colleagues about my design, development, and marketing work. Top Web Works, my website and marketing studio, also has 5 stars on Google.',
+    ],
+    links: [
+      { href: 'https://www.linkedin.com/in/topwebworks', label: 'Read all 21 LinkedIn recommendations' },
+      { href: 'https://www.google.com/maps/place/Top+Web+Works/@33.2912572,-111.8875128,11z', label: 'Top Web Works on Google' },
+    ],
+  },
+  {
     q: 'Is Brett Snyder available for work?',
     a: [
       'Yes, I’m open to new work. Click Say Hello or any mail icon and tell me what you have in mind.',
