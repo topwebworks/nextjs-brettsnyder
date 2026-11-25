@@ -21,6 +21,11 @@
 - Run `@ponytail-audit` only at the start of a new build phase that changes code structure.
 - Do not invoke Ponytail for Blog content, copy, documentation, or configuration-only changes.
 
+## Testing Workflow
+- Test mode is local only. Run development tests explicitly during local development, testing, and approval; never on Vercel or hosted CI.
+- Retain approved tests for reuse and run affected tests locally when related code changes. Do not attach development tests to build, install, or deployment hooks.
+- Preserve runtime validation, application type checking, and required production content or asset generation.
+
 ## Project Rules
 
 - Use CSS Modules and the existing custom CSS. Do not add Tailwind or another CSS framework.

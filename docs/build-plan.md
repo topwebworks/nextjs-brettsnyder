@@ -92,3 +92,7 @@ Final validation: all 13 generated project records are current. Lint, typecheck 
 - Make the smallest safe change that satisfies the request.
 - Do not add a CMS, backend, authentication, database, CSS framework, or icon library.
 - Do not introduce service prices, unsupported counts, hidden search copy, or unsupported metrics. The confirmed LinkedIn recommendation count and Top Web Works Google rating above are approved trust proof.
+
+## Build and Test Workflow
+
+Development tests run locally only, outside build/install/deployment hooks. The existing production `prebuild` generates project data, the resume, and the cover letter; keep those required content steps. See `AGENTS.md` and `CLAUDE.md`.
