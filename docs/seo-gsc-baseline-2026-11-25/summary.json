@@ -67,5 +67,24 @@
       "file": "generative-ai/Pages.csv",
       "sha256": "3cd2307ab85d47917d273e653d8d68664f22c3669edb9bb424c042e5e1c5ba59"
     }
-  ]
+  ],
+  "publication": {
+    "date": "2026-11-25",
+    "implementationCommit": "6d29a847ebe8a7e5f56527f2820cb92894bebc2c",
+    "deployment": "dpl_BZEnKJh8W6vfXPzGuChoWNpm5pzX",
+    "state": "Ready",
+    "sitemapUrls": 29,
+    "originalUrlsRetained": 22,
+    "originalPdfBytesRetained": true,
+    "indexNow": {
+      "status": 200,
+      "urls": 9
+    },
+    "google": {
+      "sitemap": "Submitted successfully",
+      "queenCreekInspection": "Discovered - currently not indexed; sitemap reference present",
+      "queenCreekManualRequest": "Daily quota exceeded; not queued",
+      "nextStep": "Retry priority Queen Creek/Gilbert requests after quota reset if needed; monitor all seven city URLs."
+    }
+  }
 }

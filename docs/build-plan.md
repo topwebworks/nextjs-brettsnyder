@@ -59,7 +59,11 @@ Validation: lint, typecheck, production build, 29-page SEO/content preservation,
 
 GSC pre-release baseline: selected last three months show 38 web clicks, 571 impressions, and 15 Google Generative AI feature impressions. The reported name query accounts for 33 clicks; remaining clicks cannot all be assigned to disclosed queries. Raw web and AI exports and observations are in docs/seo-gsc-baseline-2026-11-25/. These are existing results, not outcomes of the new city pages. Preserve broad hiring/product content while measuring the new local-client intent.
 
-Publication: use the existing main-branch Vercel connection, verify public pages/sitemap/PDFs, submit IndexNow, and use the open portfolio GSC for sitemap discovery and priority URL recrawls. Monitor weekly and compare complete 28-day periods after recrawling; first full post-release window is November 26 through December 23, allowing for reporting delay.
+Published on 2026-11-25 through the existing main-branch Vercel connection. Implementation commit: 6d29a84; deployment: dpl_BZEnKJh8W6vfXPzGuChoWNpm5pzX (Ready). Public checks confirmed all seven city pages return 200 with the expected copy, all 22 original URLs remain in the 29-URL sitemap, and both public PDFs retain their original bytes. Requests using Googlebot, Bingbot, and OAI-SearchBot user agents received the page content; local test/fixture URLs return 404. Vercel logs show required generation and next build, with no development test execution. Pre-release rollback reference: dpl_FtvKxprE8sgMVPrhfu6ozLR6YDca.
+
+Discovery: Google accepted the resubmitted sitemap and IndexNow accepted nine URLs (HTTP 200: Home, About, and all seven cities). GSC already lists Queen Creek as discovered through the sitemap, currently not indexed. Its manual indexing request reached Google's daily quota, so it was not queued; stop further manual requests until the quota resets. Retry Queen Creek/Gilbert after reset if needed. All city pages are discoverable through the sitemap and footer links. No immediate ranking or index-inclusion claim is made.
+
+Implementation is complete. Remaining work is normal discovery/indexing follow-up and measurement: monitor weekly and compare complete 28-day periods after recrawling. The first full post-release window is November 26 through December 23, allowing for reporting delay. Use the saved daily chart to compare the matching pre-release period and distinguish city/client intent from existing branded/hiring visibility.
 
 ## Prior Presentation Status
 
