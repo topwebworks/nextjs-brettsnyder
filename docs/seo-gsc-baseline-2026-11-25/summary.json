@@ -1,0 +1,71 @@
+{
+  "captured": "2026-11-25",
+  "source": "Signed-in Google Search Console, sc-domain:brettsnyder.me",
+  "filter": "Last 3 months",
+  "web": {
+    "clicks": 38,
+    "impressions": 571,
+    "ctrPercent": 6.7,
+    "averagePosition": 9.4
+  },
+  "generativeAI": {
+    "impressions": 15,
+    "report": "Generative AI features (Beta)"
+  },
+  "notes": [
+    "Pre-release baseline, not a result of the new city pages.",
+    "33 reported clicks are for brett snyder; anonymized queries prevent assigning every click to a disclosed query.",
+    "Average positions are aggregated web-search measurements, not fixed city/Maps ranks.",
+    "Generative AI impressions are from Google, not a measurement of ChatGPT citations."
+  ],
+  "files": [
+    {
+      "file": "Chart.csv",
+      "sha256": "13e1affabb881dbdfdcd163d20dd0ab6f1619fe90e44259723532c75d7ec2901"
+    },
+    {
+      "file": "Countries.csv",
+      "sha256": "944c0643e8e7f8ef34ef5c608afc839143a0133264bc34d6caab0cbeb37f0c91"
+    },
+    {
+      "file": "Devices.csv",
+      "sha256": "e22c55b2dc8bfb33799af947c02d6478968108814d06738dfc835f65b3950752"
+    },
+    {
+      "file": "Filters.csv",
+      "sha256": "335d093169630379294c15d230d6ef231bfb8f52e1b5793ba5f539bc393444c1"
+    },
+    {
+      "file": "Pages.csv",
+      "sha256": "f9a65e21ff4b449cac11400d1e005f4fd144aeadd96457d32f57c481c6b0cb0f"
+    },
+    {
+      "file": "Queries.csv",
+      "sha256": "ca0e922feeaca7bbd35a99cc205f330da57458cfe0d56bca264217fd993d49d2"
+    },
+    {
+      "file": "Search appearance.csv",
+      "sha256": "eed9ceafb9193e5e3d034f5897ad992bc851f1998204cd98f0b0f6873fbfc8b2"
+    },
+    {
+      "file": "generative-ai/Chart.csv",
+      "sha256": "e244568aa9cf94278cb1bd1d62b67a2fdd5f1821bfa62a2cd8fee4bcbccfa5b7"
+    },
+    {
+      "file": "generative-ai/Countries.csv",
+      "sha256": "9a9f5598aedac77a90051860bba17f8f912924db1f9a9615727a3eb314cd2c8d"
+    },
+    {
+      "file": "generative-ai/Devices.csv",
+      "sha256": "11fbc73609b39f302b310a9c93166730ed83f9db4a439a5b2e161b3324a2074b"
+    },
+    {
+      "file": "generative-ai/Filters.csv",
+      "sha256": "335d093169630379294c15d230d6ef231bfb8f52e1b5793ba5f539bc393444c1"
+    },
+    {
+      "file": "generative-ai/Pages.csv",
+      "sha256": "3cd2307ab85d47917d273e653d8d68664f22c3669edb9bb424c042e5e1c5ba59"
+    }
+  ]
+}

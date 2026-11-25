@@ -23,12 +23,17 @@ export const faqs: Faq[] = [
   {
     q: 'Where can I read recommendations for Brett Snyder?',
     a: [
-      'I have 21 LinkedIn recommendations from clients and colleagues about my design, development, and marketing work. Top Web Works, my website and marketing studio, also has 5 stars on Google.',
+      'I have 22 LinkedIn recommendations from clients and colleagues about my design, development, and marketing work. Top Web Works, my website and marketing studio, also has 5 stars on Google.',
     ],
     links: [
-      { href: 'https://www.linkedin.com/in/topwebworks', label: 'Read all 21 LinkedIn recommendations' },
+      { href: 'https://www.linkedin.com/in/topwebworks', label: 'Read all 22 LinkedIn recommendations' },
       { href: 'https://www.google.com/maps/place/Top+Web+Works/@33.2912572,-111.8875128,11z', label: 'Top Web Works on Google' },
     ],
+  },
+  {
+    q: 'What is your experience with Shopify, Next.js/React, and WordPress?',
+    a: ['I bring more than 15 years building websites, including extensive CMS/WordPress work and several years of hands-on Shopify/Liquid and Next.js/React development. My graphic design and branding background supports the way I plan content, interfaces, and reusable design systems. Today I emphasize Next.js/React and Shopify for new builds; existing CMS maintenance and scoped improvements can be discussed.'],
+    links: [{ href: '/projects/shopify-migrations', label: 'Shopify migration experience' }, { href: '/projects/master-blocks', label: 'CMS and design-system work' }],
   },
   {
     q: 'Is Brett Snyder available for work?',
@@ -39,9 +44,9 @@ export const faqs: Faq[] = [
   {
     q: 'Does Brett Snyder handle SEO, AEO, GEO, and web analytics?',
     a: [
-      'Yes. SEO gets a site found on Google. AEO (answer engine optimization) and GEO (generative engine optimization) get it quoted by AI tools like ChatGPT, Perplexity, and Google AI Overviews. I build for all three: fast, crawlable pages, JSON-LD structured data, and content written as direct answers an AI can lift.',
+      'Yes. I build SEO, AEO (answer engine optimization), and GEO (generative engine optimization) foundations into website work: crawlable content, clear customer answers, consistent business details, and appropriate structured data. These help search and AI tools understand and reference a site. Rankings and AI citations depend on the content, market, and search platform.',
       'For analytics, I set up and audit GA4, Google Tag Manager, and Search Console. I also built Analytics Workbench, a tool that records what a page sends to GTM, GA4, and ad platforms and explains each tracking problem as a fix.',
-      'It works. People have told me they found TopWebWorks through ChatGPT.',
+      'The AMW Hardscape case study shows a website connected to search foundations and an inquiry workflow. The client has reported an inquiry through ChatGPT.',
     ],
     links: [
       { href: '/projects/analytics-workbench', label: 'Analytics Workbench' },

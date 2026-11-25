@@ -1,0 +1,186 @@
+{
+  "date": "2026-11-25",
+  "origin": "https://www.brettsnyder.me",
+  "pages": [
+    {
+      "url": "https://www.brettsnyder.me",
+      "status": 200,
+      "title": "Brett Snyder | Frontend Developer & Design Engineer",
+      "canonical": "https://www.brettsnyder.me",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "1bbd102bbb792d7ea0d95421a4d183cfc10b4781a2d2cffeb566eb7bfa199f7e"
+    },
+    {
+      "url": "https://www.brettsnyder.me/about",
+      "status": 200,
+      "title": "About | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/about",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "bcd2ff11950e1ba137880ddcc62ebac2eaa0be85f8b158d66d5a78a9f48f6fbd"
+    },
+    {
+      "url": "https://www.brettsnyder.me/blog",
+      "status": 200,
+      "title": "Blog | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/blog",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "6de3ebfe35f2a941905b41d199d478be95ec0e1d31e230d8af2564ae6b58fca1"
+    },
+    {
+      "url": "https://www.brettsnyder.me/blog/design-systems",
+      "status": 200,
+      "title": "Design Systems | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/blog/design-systems",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/blog/funastics",
+      "status": 200,
+      "title": "Funastics | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/blog/funastics",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/blog/jesus-christ-art",
+      "status": 200,
+      "title": "Jesus Christ Art | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/blog/jesus-christ-art",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/blog/shopify-tips",
+      "status": 200,
+      "title": "Shopify Tips | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/blog/shopify-tips",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects",
+      "status": 200,
+      "title": "Projects | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "8a35404e0f4dbbc639436e8f6d411500e954c57d401fe21a92c23a89d8ac70ff"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/amw-hardscape",
+      "status": 200,
+      "title": "AMW Hardscape Solutions | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/amw-hardscape",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/analytics-workbench",
+      "status": 200,
+      "title": "Analytics Workbench | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/analytics-workbench",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/brightpath-ops",
+      "status": 200,
+      "title": "Brightpath Operations | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/brightpath-ops",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/cywire",
+      "status": 200,
+      "title": "CyWire Master Prompts | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/cywire",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/email",
+      "status": 200,
+      "title": "Master Email | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/email",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/grok-bot",
+      "status": 200,
+      "title": "Director | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/grok-bot",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/master-blocks",
+      "status": 200,
+      "title": "Master Blocks | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/master-blocks",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/monarch-catalog",
+      "status": 200,
+      "title": "Monarch Catalog | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/monarch-catalog",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/personal-portfolio",
+      "status": 200,
+      "title": "Personal Portfolio | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/personal-portfolio",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/print",
+      "status": 200,
+      "title": "Graphic Design | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/print",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/pushpad",
+      "status": 200,
+      "title": "PushPad | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/pushpad",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/shopify-migrations",
+      "status": 200,
+      "title": "Shopify Plus Migrations | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/shopify-migrations",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/projects/topwebworks",
+      "status": 200,
+      "title": "Top Web Works | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/projects/topwebworks",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.brettsnyder.me/tools",
+      "status": 200,
+      "title": "Tools | Brett Snyder",
+      "canonical": "https://www.brettsnyder.me/tools",
+      "robots": "index, follow, max-image-preview:large",
+      "mainHash": "a49bb0f7efa6bd2ab011cef35ebc3bcc559949ebe8099ba1865b1947b27c60af"
+    }
+  ],
+  "pdfs": {
+    "resume-brett-snyder.pdf": "6da8e8780fed4251c7e08217570814b50e9044581bc129dedb1fae866696ef87",
+    "cover-letter-brett-snyder.pdf": "325f9815b032d41977889c4aa1e45433dda42924720e02e856286aceae06fcc1"
+  }
+}

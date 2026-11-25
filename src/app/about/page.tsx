@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about' },
   title: 'About',
   description:
-    "Brett Snyder, a designer-turned-developer in Queen Creek, AZ, builds SaaS, design systems, and Shopify experiences. Read his 21 LinkedIn recommendations.",
+    "Brett Snyder, a designer-turned-developer in Queen Creek, AZ, builds SaaS, design systems, and Shopify experiences. Read his 22 LinkedIn recommendations.",
   openGraph: {
     siteName: 'Brett Snyder',
     title: 'About Brett Snyder',
     description:
-      "Brett Snyder, a designer-turned-developer in Queen Creek, AZ, builds SaaS, design systems, and Shopify experiences. Read his 21 LinkedIn recommendations.",
+      "Brett Snyder, a designer-turned-developer in Queen Creek, AZ, builds SaaS, design systems, and Shopify experiences. Read his 22 LinkedIn recommendations.",
     type: 'website',
     images: [shareImage],
   },
@@ -29,7 +29,7 @@ const jsonLd = {
       mainEntity: personSchema,
       primaryImageOfPage: personSchema.image,
     },
-    // Google shows FAQ rich results only for government and health sites, but answer engines still read this.
+    // Keep the structured answers consistent with the visible FAQs; FAQ rich results are retired.
     {
       '@type': 'FAQPage',
       '@id': `${personSchema.url}/about#faq`,

@@ -289,7 +289,7 @@ export default function Homepage() {
             </div>
             <p className={styles.heroProof}>
               <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">
-                21 LinkedIn recommendations
+                22 LinkedIn recommendations
               </a>
               <a href="https://www.google.com/maps/place/Top+Web+Works/@33.2912572,-111.8875128,11z" target="_blank" rel="noopener noreferrer">
                 Top Web Works: 5 stars on Google

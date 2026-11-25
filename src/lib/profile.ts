@@ -4,7 +4,7 @@ import type { KeyAchievement } from '@/lib/types/project';
 const siteUrl = siteConfig.url || 'https://www.brettsnyder.me';
 
 export const siteDescription =
-  'Brett Snyder, frontend developer and design engineer for SaaS, AI, design systems, Shopify, and conversion-focused websites. 21 LinkedIn recommendations.';
+  'Brett Snyder, frontend developer and design engineer for SaaS, AI, design systems, Shopify, and conversion-focused websites. 22 LinkedIn recommendations.';
 
 // One identity for every page and for topwebworks.com (same @id). Employer, skills, and city tell this
 // Brett Snyder apart from the others; all of it matches the public resume.

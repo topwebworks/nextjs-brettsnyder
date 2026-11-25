@@ -53,3 +53,6 @@ eslint.config.*
 .eslintrc.*
 .prettierrc.*
 stylelint.config.*
+
+# Local SEO preservation checks; production content/PDF generators remain included.
+scripts/check-local-seo.mjs

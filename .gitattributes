@@ -1,0 +1,2 @@
+# Preserve raw Search Console export bytes and query whitespace.
+docs/seo-gsc-baseline-*/** -text -whitespace

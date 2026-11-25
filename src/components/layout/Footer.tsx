@@ -6,6 +6,7 @@ import { Mail, Linkedin, Github, FileText } from 'lucide-react';
 import { siteConfig, emailLinks } from '../../lib/config';
 import ResumeButton from '../ui/ResumeButton';
 import styles from './Footer.module.css';
+import { cities } from '@/lib/cities';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -57,6 +58,11 @@ export default function Footer() {
               </div>
             </div>
 
+            <nav className={styles.cityNav} aria-label="East Valley web design and development">
+              {cities.map(city => (
+                <Link key={city.slug} href={`/${city.slug}`} className={styles.legalLink}>{city.name}</Link>
+              ))}
+            </nav>
             <div className={styles.copyright}>
               © {currentYear} Brett Snyder. All rights reserved worldwide.
             </div>

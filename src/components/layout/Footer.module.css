@@ -463,3 +463,11 @@
     border-bottom-color: currentColor;
   }
 }
+
+/* Local work links share the existing footer typography and wrap on phones. */
+.cityNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin-top: 0.8rem;
+}

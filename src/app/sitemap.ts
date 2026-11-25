@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/config';
+import { cities } from '@/lib/cities';
 import { getAllProjects } from '@/lib/projectLoader';
 import { getAllBlogs } from '@/lib/blogLoader';
 
@@ -36,5 +37,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...projectRoutes, ...blogRoutes];
+  return [...staticRoutes, ...cities.map(city => ({ url: `${siteUrl}/${city.slug}`, changeFrequency: 'monthly' as const, priority: 0.7 })), ...projectRoutes, ...blogRoutes];
 }

@@ -10,6 +10,8 @@ The portfolio should remain fast, personal, visually distinctive, and easy to ma
 
 Hiring managers and recruiters are the primary audience. Potential clients are secondary. Visitors should quickly understand Brett's role, see relevant work, reach the resume, and make contact.
 
+Dedicated East Valley city pages support local freelance and contract inquiries while preserving the broader hiring and remote-work positioning. They use the About visual layout, individual expertise, attributed portfolio proof, and direct contact. Top Web Works remains the managed small-business website and marketing offer.
+
 ## Success Criteria
 
 - Brett's positioning and strongest work are clear within 30 seconds.

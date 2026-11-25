@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import styles from './CookieConsent.module.css';
 
 interface CookiePrefs {
@@ -76,7 +77,7 @@ export default function CookieConsent() {
         <div className={styles.banner} role="dialog" aria-label="Cookie consent">
           <p className={styles.text}>
             We use cookies for analytics to understand how visitors use this site.{' '}
-            <a href="/policy" className={styles.link}>Privacy policy</a>
+            <Link href="/policy" className={styles.link}>Privacy policy</Link>
           </p>
           <div className={styles.actions}>
             <button

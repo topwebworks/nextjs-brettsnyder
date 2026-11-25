@@ -32,7 +32,7 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 ## Recommendations and Review Proof
 
-Lead with Brett Snyder's [21 LinkedIn recommendations](https://www.linkedin.com/in/topwebworks) from clients and colleagues. Top Web Works' 5 stars on Google provide supporting business proof; attribute that rating to the studio. Do not promote Yelp or emphasize the Google review count. Keep the homepage, About FAQ, metadata, Person/Organization descriptions, and `/llms.txt` consistent. Maintain the recommendation count and Google rating manually. Brett confirmed these facts and this emphasis on 2026-11-24.
+Lead with Brett Snyder's [22 LinkedIn recommendations](https://www.linkedin.com/in/topwebworks) from clients and colleagues. Top Web Works' 5 stars on Google provide supporting business proof; attribute that rating to the studio. Do not promote Yelp or emphasize the Google review count. Keep the homepage, About FAQ, metadata, Person/Organization descriptions, and `/llms.txt` consistent. Maintain the recommendation count and Google rating manually. Brett confirmed the updated count and emphasis on 2026-11-25.
 
 ## Content Workflow
 
@@ -43,7 +43,25 @@ Lead with Brett Snyder's [21 LinkedIn recommendations](https://www.linkedin.com/
 - Edit `public/cover-letter-brett-snyder.txt`, then run `npm run generate-cover-letter`.
 - Never edit generated JSON, TypeScript manifests, or PDFs directly.
 
-## Current Phase
+## Current Phase: Local SEO, AEO, and GEO
+
+Approved on 2026-11-25: implement all seven East Valley city pages: Queen Creek, Gilbert, Chandler, Tempe, San Tan Valley, Mesa, and Apache Junction. Use the About layout and existing CSS Modules for dedicated top-level pages, separate from Projects and Blog. City navigation belongs near the footer copyright, with the copyright retained.
+
+Position Brett's individual web design, Next.js/React, Shopify/Liquid, frontend, and design-system expertise for freelance and contract inquiries. Keep both platforms established and equally visible. Preserve the homepage's hiring/remote audience, all existing routes/titles, project/blog content, and PDF bytes. Attribute enterprise work accurately and use the real Queen Creek base for every city. Link relevant case studies and articles; do not assign those employers or clients a fictional city location. Use direct portfolio email/resume contact; TWW's managed website and marketing plans remain a distinct linked option. Keep prices out of the portfolio.
+
+SEO/AEO/GEO: descriptive metadata, crawlable content, useful buyer FAQs, consistent Person/Service identity, truthful areas served, sitemap/internal links, and generated llms.txt. Use 22 LinkedIn recommendations and attribute Google stars to Top Web Works. Explain search foundations through factual evidence, without promising rankings or AI citations.
+
+Baseline: docs/seo-baseline-2026-11-25.json records all 22 live sitemap URLs and existing PDF hashes. Check original metadata/content preservation, all new pages, FAQ/schema agreement, email/resume links, and dark/light responsive rendering. Run lint, typecheck, production build, and explicit local SEO checks. Keep development checks excluded from Vercel; retain required project-data and PDF generation. After publication, use the signed-in portfolio GSC, update IndexNow, and monitor complete reporting periods.
+
+Implementation and local verification complete. All seven pages are statically generated with a shared server-rendered About-style view; the phone layout leads with the city headline and direct contact. The footer links all seven cities and retains copyright.
+
+Validation: lint, typecheck, production build, 29-page SEO/content preservation, and 42 city/theme/viewport combinations pass. Native FAQ controls, resume preview opening/closing, and the city footer were checked. All 22 original titles and original project/blog/page main content remain, apart from the approved Home/About trust and FAQ changes. The existing resume and cover-letter PDFs were restored byte-for-byte after the required local generation. All 19 production file traces contain zero tests or baseline fixtures. The local check is explicitly excluded by .vercelignore; build/install/deployment hooks contain no development tests.
+
+GSC pre-release baseline: selected last three months show 38 web clicks, 571 impressions, and 15 Google Generative AI feature impressions. The reported name query accounts for 33 clicks; remaining clicks cannot all be assigned to disclosed queries. Raw web and AI exports and observations are in docs/seo-gsc-baseline-2026-11-25/. These are existing results, not outcomes of the new city pages. Preserve broad hiring/product content while measuring the new local-client intent.
+
+Publication: use the existing main-branch Vercel connection, verify public pages/sitemap/PDFs, submit IndexNow, and use the open portfolio GSC for sitemap discovery and priority URL recrawls. Monitor weekly and compare complete 28-day periods after recrawling; first full post-release window is November 26 through December 23, allowing for reporting delay.
+
+## Prior Presentation Status
 
 Design Systems blog revision is awaiting Brett's visual approval. Keep the original hero. The illustrated Google Flow pipeline, accepted by Brett on 2026-11-18, shows Brand → Figma → Tokens → Components → Working components → Modular library. It matches the other inline images at a maximum 800 px width. The article uses actual campaign and site captures, the portfolio's shared React component and recordings of the original Master Blocks and production AOP tabs. White presentation boards and the reconstructed Shopify browser study are removed from this blog.
 
