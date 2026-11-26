@@ -26,7 +26,7 @@ Account access is required before checking or changing the profile. Preserve the
 
 Proposed description:
 
-> Top Web Works is Brett Snyder's website and marketing studio, based in Queen Creek, Arizona and serving businesses across the East Valley. Services include custom Next.js/React websites, Shopify storefront design and Liquid development, branding, website hosting and maintenance, search foundations, analytics, and marketing by plan. Website projects connect clear services or products with useful customer answers, inquiry capture, and agreed follow-up workflows. Contact Top Web Works to discuss a managed website and marketing plan.
+> Top Web Works is Brett Snyder's website and marketing studio in Queen Creek, Arizona. I build Next.js/React websites and Shopify stores for businesses across the East Valley, and I handle hosting, maintenance, branding, SEO, and analytics. I also set up forms and lead follow-up so customers can get in touch and you can respond. You'll work with me directly, from the first preview through ongoing care.
 
 Review these service names against the actual profile and available categories: website design; website redesign; Shopify website design; Shopify Liquid development; Next.js/React development; website hosting and maintenance; branding; SEO and analytics. Choose Website designer as the primary category only if available and accurate for the business. Add approved real project images and accurate captions; obtain client permission where necessary. Keep contact details consistent with the studio site and legitimate existing business listings.
 
@@ -34,7 +34,7 @@ Google's local factors include relevance, distance, and prominence: [official gu
 
 ## Proof requiring source evidence
 
-- Keep the approved 22 LinkedIn recommendations link. Brett supplied and approved the recommendation text on November 25, 2026. The city pages reproduce one sentence from Christina Young Tessier's November 24, 2025 recommendation: "I handled the wireframes and dev-ready designs in Figma, and Brett worked on the development, so we collaborated often and stayed aligned on the best way to move things forward." Attribute her supplied role as Sr. Graphic Designer at Imagine Learning and the Shopify-redesign collaboration; link to Brett's LinkedIn recommendations. The excerpt supports the documented design/development roles rather than implying a local client endorsement.
+- Keep the approved 22 LinkedIn recommendations link. Brett supplied and approved the text on November 25, 2026. Each city page uses a different excerpt, with the author's name, working relationship, original date, and LinkedIn source link. Keep the quotations unchanged. The excerpts describe Brett's work and do not imply that the authors are clients in those cities.
 - Preserve Top Web Works' approved 5-star Google attribution to the studio. Do not convert it into Brett's personal rating or invent review counts.
 - Link an official Shopify Partner Directory profile only after verifying the exact profile and current status. A Partner logo does not establish directory eligibility or an additional credential. [Shopify Partner Directory](https://www.shopify.com/partners/directory)
 - Queen Creek is Brett's base. Funastics was his own Gilbert business. AMW serves Apache Junction. Enterprise Shopify work was undertaken at Imagine Learning; those clients are not assigned a fictional local address.

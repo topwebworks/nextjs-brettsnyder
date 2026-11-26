@@ -1,11 +1,17 @@
-.proofImage {
-  display: block;
-  width: 100%;
-  height: auto;
+.cityTitle {
+  text-wrap: balance;
+}
+
+.proofThumbnail {
+  position: relative;
   aspect-ratio: 16 / 10;
-  object-fit: contain;
+  overflow: hidden;
   border-radius: 4px;
   margin-bottom: 1.25rem;
+}
+
+.proofImage {
+  object-fit: cover;
 }
 
 .proofArrow {

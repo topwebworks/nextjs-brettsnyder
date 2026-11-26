@@ -23,13 +23,13 @@ export default function CityPage({ city }: { city: City }) {
   const facts = [
     { label: 'Years building websites', value: '15+', icon: Code },
     { label: 'LinkedIn recommendations', value: '22', icon: Target },
-    { label: 'Enterprise Shopify migrations', value: '2', icon: Layers },
-    { label: 'Enterprise CMS properties', value: '13', icon: Code },
+    { label: 'Shopify migrations', value: '2', icon: Layers },
+    { label: 'WordPress sites managed', value: '13', icon: Code },
   ];
   const capabilities = [
     { title: 'Website design with Next.js / React', text: content.frontend, icon: Code },
     { title: 'Shopify web design / Liquid', text: content.shopify, icon: Layers },
-    { title: 'Search and conversions', text: 'SEO, AEO, and GEO foundations, useful buyer answers, accessible interfaces, and tracking around the inquiry or purchase path. My design and branding background connects the visual work to the customer journey.', icon: Target },
+    { title: content.focus.title, text: content.focus.text, icon: Target },
   ];
   const schema = {
     '@context': 'https://schema.org',
@@ -75,22 +75,25 @@ export default function CityPage({ city }: { city: City }) {
               </div>
               <div className={styles.textContent}>
                 <div className={styles.textHeader}>
-                  <h1 className={styles.textTitle}>Web design in {city.name}, AZ</h1>
+                  <h1 className={`${styles.textTitle} ${cityStyles.cityTitle}`}>Web design in {city.name}, AZ</h1>
                   <ListenButton targetId="city-content" title={`Web design in ${city.name}, AZ. ${content.introduction}`} className={styles.listen} />
                   <p className={styles.textIntroduction}>{content.introduction}</p>
                 </div>
                 <div className={styles.personalStorySections}>
                   <section className={styles.personalStorySection}>
-                    <h2 className={styles.personalStorySectionTitle}>Working with you in {city.name}</h2>
+                    <h2 className={styles.personalStorySectionTitle}>{content.contextTitle}</h2>
                     <p className={styles.personalStorySectionContent}>{content.context}</p>
                   </section>
                   <section className={styles.personalStorySection}>
-                    <h2 className={styles.personalStorySectionTitle}>Design, development, and the next step</h2>
+                    <h2 className={styles.personalStorySectionTitle}>{content.approachTitle}</h2>
                     <p className={styles.personalStorySectionContent}>{content.approach}</p>
+                    <div className={styles.faqLinks}>
+                      {content.reading.map(link => <Link key={link.href} className={styles.faqLink} href={link.href}>{link.label}<ArrowRight size={16} className={cityStyles.proofArrow} aria-hidden="true" /></Link>)}
+                    </div>
                   </section>
                   <section className={styles.personalStorySection}>
-                    <h2 className={styles.personalStorySectionTitle}>Experience behind the work</h2>
-                    <p className={styles.personalStorySectionContent}>I bring more than 15 years building websites, extensive CMS/WordPress experience, and several years working with Shopify and Next.js/React. At Imagine Learning, my work included two enterprise Shopify migrations and 13 enterprise WordPress properties. My graphic design and branding background supports the way I plan content and interfaces.</p>
+                    <h2 className={styles.personalStorySectionTitle}>My experience</h2>
+                    <p className={styles.personalStorySectionContent}>I&apos;ve been building websites for more than 15 years. At Imagine Learning, I managed 13 WordPress sites and led two Shopify migrations. I started in design and moved into development, so I&apos;m comfortable working with both designers and developers. Today I build with Next.js/React and Shopify/Liquid.</p>
                     <div className={styles.faqLinks}>
                       <Link className={styles.faqLink} href="https://www.linkedin.com/in/topwebworks">22 LinkedIn recommendations <ArrowRight size={16} aria-hidden="true" /></Link>
                       <Link className={styles.faqLink} href="/about">More about Brett <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -127,7 +130,7 @@ export default function CityPage({ city }: { city: City }) {
                 const image = (proof.href.startsWith('/projects/') ? getProjectImages(id) : getBlogImages(id)).hero;
                 return (
                   <article key={proof.href} className={styles.skillCard}>
-                    {image && <Image src={image} alt={`${proof.title}, from Brett Snyder's portfolio`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px" className={cityStyles.proofImage} />}
+                    {image && <div className={cityStyles.proofThumbnail}><Image src={image} alt={`${proof.title}, from Brett Snyder's portfolio`} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px" className={cityStyles.proofImage} /></div>}
                     <h3 className={styles.personalStorySectionTitle}><Link className={styles.faqLink} href={proof.href}>{proof.title} <ArrowRight size={16} className={cityStyles.proofArrow} aria-hidden="true" /></Link></h3>
                     <p className={styles.personalStorySectionContent}>{proof.text}</p>
                   </article>
@@ -136,11 +139,11 @@ export default function CityPage({ city }: { city: City }) {
             </div>
             <figure className={cityStyles.recommendation}>
               <blockquote className={styles.valueQuoteBox}>
-                <p className={styles.valueQuoteText}>I handled the wireframes and dev-ready designs in Figma, and Brett worked on the development, so we collaborated often and stayed aligned on the best way to move things forward.</p>
+                <p className={styles.valueQuoteText}>{content.recommendation.quote}</p>
               </blockquote>
               <figcaption className={styles.personalStorySectionContent}>
-                Christina Young Tessier, Sr. Graphic Designer at Imagine Learning, on collaborating with Brett on a Shopify redesign.{' '}
-                <Link className={styles.faqLink} href="https://www.linkedin.com/in/topwebworks">LinkedIn recommendation, November 24, 2025</Link>
+                {content.recommendation.by}, {content.recommendation.context}.{' '}
+                <Link className={styles.faqLink} href="https://www.linkedin.com/in/topwebworks">LinkedIn recommendation, {content.recommendation.date}</Link>
               </figcaption>
             </figure>
           </div>

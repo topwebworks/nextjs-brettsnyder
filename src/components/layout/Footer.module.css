@@ -6,9 +6,24 @@
   background: var(--glass-gradient-linear), var(--glass-gradient-mesh);
   backdrop-filter: var(--glass-backdrop-medium);
   border-top: 1px solid var(--glass-border-primary);
-  padding: clamp(3rem, 6vh, 4rem) clamp(1rem, 4vw, 2rem);
   position: relative;
   overflow: hidden;
+}
+
+.footerMain {
+  padding: clamp(1.5rem, 3vh, 2rem) clamp(1rem, 4vw, 2rem);
+}
+
+.areaBar {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem clamp(1rem, 4vw, 2rem);
+  background: rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid var(--glass-border-subtle);
+}
+
+:global([data-theme="light"]) .areaBar {
+  background: rgba(15, 23, 42, 0.06);
 }
 
 /* Light theme: slate tint so the footer sits as the page base instead of the brightest band */
@@ -142,14 +157,6 @@
   flex-direction: column;
   gap: 0.5rem;
   align-items: flex-end;
-}
-
-.contactRow {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
 }
 
 /* Icons container */
@@ -321,10 +328,6 @@
     justify-content: center;
   }
 
-  .contactRow {
-    justify-content: center;
-  }
-
   .builtWith {
     justify-content: center;
   }
@@ -480,5 +483,15 @@
 .cityNav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0.9rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  gap: 0.5rem clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.areaLabel {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
 }

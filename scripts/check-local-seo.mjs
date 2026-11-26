@@ -52,7 +52,9 @@ for (const route of routes) {
     assert(description && !cityDescriptions.has(description), `${route}: distinct buyer description`);
     cityDescriptions.add(description);
     assert(/small.business/i.test(visible), `${route}: small-business website offering`);
-    assert(main.includes('<blockquote') && visible.includes('Christina Young Tessier') && visible.includes('November 24, 2025'), `${route}: visible attributed recommendation`);
+    const quote = main.match(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/i)?.[1] ?? '';
+    const attribution = main.match(/<figcaption\b[^>]*>([\s\S]*?)<\/figcaption>/i)?.[1] ?? '';
+    assert(textOf(quote).length > 20 && attribution.includes('href="https://www.linkedin.com/in/topwebworks"') && /\b20\d{2}\b/.test(textOf(attribution)), `${route}: visible sourced recommendation and date`);
     assert(/<h1[^>]*>[\s\S]*?, AZ<\/h1>/i.test(main), `${route}: state in main heading`);
     const questions = nodes.find(node => node['@type'] === 'FAQPage').mainEntity.map(question =>
       cities.reduce((text, city) => text.replaceAll(new RegExp(city.replaceAll('-', ' '), 'gi'), '[city]'), question.name));
@@ -83,14 +85,15 @@ assert(llms.includes('22 LinkedIn recommendations') && !llms.includes('21 Linked
 for (const city of cities) assert(llms.includes(`${baseline.origin}/${city}`), `${city}: LLM discovery`);
 const robots = await (await fetch(new URL('/robots.txt', base))).text();
 assert(/User-Agent:\s*\*/i.test(robots) && /Allow:\s*\/\s*$/im.test(robots) && !/^Disallow:\s*\/\s*$/im.test(robots), 'Search and AI crawler access');
-// Brett approved the MCP creative-tools resume revision on 2026-11-25; retain the launch snapshot.
-const approvedPdfs = { ...baseline.pdfs, 'resume-brett-snyder.pdf': '840aeeef5a5de7f12b5e1d0969d5acc0c49e396e5a086ac47e2067c0db997959' };
+// Brett requested the MCP tools and punctuation updates on 2026-11-25; retain the launch snapshot.
+const approvedPdfs = { ...baseline.pdfs, 'resume-brett-snyder.pdf': '8f9decd8f0c1d67e53576ab917fa14ae29c223c8afbb9ab99e6ed53114cfdf2f' };
 for (const [file, expected] of Object.entries(approvedPdfs))
   assert.equal(createHash('sha256').update(await readFile(new URL(`../public/${file}`, import.meta.url))).digest('hex'), expected, `${file}: preserve approved PDF bytes`);
 assert.equal((await fetch(new URL('/not-a-supported-city', base))).status, 404, 'Unsupported city route');
 console.log(`SEO/AEO/GEO checks passed: ${routes.length} pages, original content/titles, seven cities, FAQs, proof, schema, sitemap, robots, llms.txt, and PDF preservation.`);
 
-if (process.argv.includes('--browser')) {
+const footerOnly = process.argv.includes('--footer-only');
+if (process.argv.includes('--browser') || footerOnly) {
   const { default: puppeteer } = await import('puppeteer');
   const browser = await puppeteer.launch({ headless: true });
   try {
@@ -103,6 +106,7 @@ if (process.argv.includes('--browser')) {
     const output = path.join(process.env.TEMP ?? '/tmp', 'brett-seo-browser');
     await mkdir(output, { recursive: true });
     let checks = 0;
+    if (!footerOnly) {
     for (const theme of ['dark', 'light']) {
       await page.evaluate(value => localStorage.setItem('theme', value), theme);
       for (const width of [1200, 390, 320]) {
@@ -155,6 +159,7 @@ if (process.argv.includes('--browser')) {
     await page.screenshot({ path: path.join(output, 'resume-preview-mobile.png') });
     await page.click('button[aria-label="Close"]');
     await page.waitForSelector('iframe[title="Resume"]', { hidden: true });
+    }
     const footer = await page.$('footer');
     await footer.screenshot({ path: path.join(output, 'city-footer-mobile.png') });
     for (const theme of ['dark', 'light']) {
@@ -166,16 +171,32 @@ if (process.argv.includes('--browser')) {
       await new Promise(resolve => setTimeout(resolve, 2700));
       for (const width of [1574, 1200, 1024, 768, 390, 320]) {
         await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
+        // Footer icons and tags transition their size for 300ms at responsive breakpoints.
+        await new Promise(resolve => setTimeout(resolve, 350));
         const layout = await page.$eval('footer', footer => {
           const copyright = footer.querySelector('[class*="copyright"]').getBoundingClientRect();
           const icons = footer.querySelector('[class*="iconsContainer"]').getBoundingClientRect();
-          return { width: document.documentElement.scrollWidth, inline: copyright.right <= icons.left + 1 && Math.abs((copyright.top + copyright.bottom - icons.top - icons.bottom) / 2) < 1 };
+          const cityNav = footer.querySelector('nav[aria-label="East Valley web design and development"]');
+          const builtWith = footer.querySelector('[class*="builtWith"]');
+          const builtRect = builtWith.getBoundingClientRect();
+          const bar = footer.querySelector('[class*="areaBar"]');
+          const barRect = bar.getBoundingClientRect();
+          const footerRect = footer.getBoundingClientRect();
+          const mainRect = footer.querySelector('[class*="footerMain"]').getBoundingClientRect();
+          return {
+            width: document.documentElement.scrollWidth,
+            bottomRow: copyright.right <= builtRect.left + 1 && Math.abs(copyright.top - builtRect.top) < 8 && builtRect.top >= icons.bottom,
+            fullWidthBar: Math.abs(barRect.left - footerRect.left) < 1 && Math.abs(barRect.right - footerRect.right) < 1 && barRect.bottom <= mainRect.top + 1,
+            citiesInBar: bar.contains(cityNav) && cityNav.textContent.includes('Local service areas') && !bar.contains(builtWith),
+          };
         });
         assert(layout.width <= width + 1, `Footer/${theme}/${width}: no horizontal overflow`);
-        if (width >= 1200) assert(layout.inline, `Footer/${theme}/${width}: copyright left of icons on the same row`);
+        assert(layout.fullWidthBar && layout.citiesInBar, `Footer/${theme}/${width}: labeled city links in full-width top bar`);
+        if (width >= 1200) assert(layout.bottomRow, `Footer/${theme}/${width}: copyright bottom left, technologies bottom right`);
         await (await page.$('footer')).screenshot({ path: path.join(output, `footer-${theme}-${width}.png`) });
       }
     }
+    if (!footerOnly) {
     for (const theme of ['dark', 'light']) {
       await page.evaluate(value => localStorage.setItem('theme', value), theme);
       for (const width of [1200, 320]) {
@@ -198,7 +219,8 @@ if (process.argv.includes('--browser')) {
         await page.screenshot({ path: path.join(output, `about-local-${theme}-${width}.png`) });
       }
     }
+    }
     assert.equal(errors.length, 0, `Browser errors: ${errors.join('; ')}`);
-    console.log(`Browser checks passed: ${checks} city/theme/viewport combinations; 12 footer layouts; About local links; FAQ and resume interaction. Screenshots: ${output}`);
+    console.log(footerOnly ? `Browser checks passed: 12 footer layouts. Screenshots: ${output}` : `Browser checks passed: ${checks} city/theme/viewport combinations; 12 footer layouts; About local links; FAQ and resume interaction. Screenshots: ${output}`);
   } finally { await browser.close(); }
 }

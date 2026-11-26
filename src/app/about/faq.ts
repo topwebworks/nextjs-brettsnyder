@@ -22,7 +22,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'Where do you offer local website design and Shopify development?',
-    a: ['I am based in Queen Creek, Arizona and serve businesses and teams in Queen Creek, Gilbert, Chandler, Tempe, San Tan Valley, Mesa, and Apache Junction. You can work directly with me on a defined Next.js/React website or Shopify/Liquid project. Most collaboration is online, with client visits arranged around the project. Top Web Works is the separate option for managed small-business websites and ongoing marketing.'],
+    a: ["I'm based in Queen Creek, Arizona and work with local businesses across the East Valley, as well as remote teams elsewhere. You'll work directly with me on a website or Shopify project. Most work happens online. For ongoing hosting, maintenance, and marketing, I offer managed plans through Top Web Works. The city pages below explain more about the work I do."],
     links: [
       { href: '/queen-creek', label: 'Queen Creek web design and Shopify' },
       { href: '/gilbert', label: 'Gilbert web design and Shopify' },
