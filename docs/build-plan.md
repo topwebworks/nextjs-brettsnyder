@@ -34,6 +34,8 @@ Next.js 16 App Router, React 19, TypeScript, CSS Modules, custom CSS, Markdown, 
 
 Lead with Brett Snyder's [22 LinkedIn recommendations](https://www.linkedin.com/in/topwebworks) from clients and colleagues. Top Web Works' 5 stars on Google provide supporting business proof; attribute that rating to the studio. Do not promote Yelp or emphasize the Google review count. Keep the homepage, About FAQ, metadata, Person/Organization descriptions, and `/llms.txt` consistent. Maintain the recommendation count and Google rating manually. Brett confirmed the updated count and emphasis on 2026-11-25.
 
+Homepage refinement approved on 2026-11-25: remove the two recommendation/rating text links below View Projects and Say Hello. The existing LinkedIn icons in the hero, Recent Work, and footer show a native hover title with Brett's profile and 22 recommendations; retain accessible labels. Lint, typecheck, production build, and 29-page preservation checks pass. All three icon titles and desktop/phone rendering were checked in both themes. PDF bytes are unchanged. This refinement remains local.
+
 ## Content Workflow
 
 - Add or edit a project in `src/app/projects/content/`, then run `npm run generate-project-data`.

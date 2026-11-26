@@ -206,6 +206,7 @@ export default function Homepage() {
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noopener noreferrer' : undefined}
                 aria-label={label}
+                title={label === 'LinkedIn' ? "View Brett Snyder on LinkedIn (22 recommendations)" : undefined}
                 className={styles.heroSocialIcon}
               />
             ))}
@@ -287,14 +288,6 @@ export default function Homepage() {
                 Say Hello
               </Button>
             </div>
-            <p className={styles.heroProof}>
-              <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">
-                22 LinkedIn recommendations
-              </a>
-              <a href="https://www.google.com/maps/place/Top+Web+Works/@33.2912572,-111.8875128,11z" target="_blank" rel="noopener noreferrer">
-                Top Web Works: 5 stars on Google
-              </a>
-            </p>
           </div>
 
           <ChevronDown className={styles.heroScrollHint} size={28} strokeWidth={1.5} aria-hidden="true" />
@@ -395,6 +388,7 @@ export default function Homepage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn Profile"
+                      title="View Brett Snyder on LinkedIn (22 recommendations)"
                     />
                     
                     {siteConfig.showResume && (

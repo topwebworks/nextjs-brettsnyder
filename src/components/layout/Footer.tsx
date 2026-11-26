@@ -91,6 +91,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className={styles.socialIcon}
                   aria-label="LinkedIn profile"
+                  title="View Brett Snyder on LinkedIn (22 recommendations)"
                 >
                   <Linkedin size={16} strokeWidth={1.5} />
                 </a>

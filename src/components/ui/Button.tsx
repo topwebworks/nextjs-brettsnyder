@@ -60,6 +60,7 @@ export interface ButtonProps {
   download?: string | boolean;
   prefetch?: boolean;
   'aria-label'?: string;
+  title?: string;
 }
 
 /**
