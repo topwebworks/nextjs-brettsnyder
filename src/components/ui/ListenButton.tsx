@@ -79,13 +79,13 @@ const states = {
   paused: { label: 'Resume', Icon: Play },
 };
 
-// Reads an element's text aloud with the browser's built-in speech. No service, no cost.
+// Reads article sections aloud with the browser's built-in speech. No service, no cost.
 export default function ListenButton({
   targetId,
   title,
   className,
 }: {
-  targetId: string;
+  targetId: string | string[];
   title?: string;
   className?: string;
 }) {
@@ -109,7 +109,8 @@ export default function ListenButton({
   const hint = /Natural|Premium|Enhanced/i.test(voices[0].name) ? undefined : 'Sounds best in Microsoft Edge';
 
   function start() {
-    const text = document.getElementById(targetId)?.innerText ?? '';
+    const targets = Array.isArray(targetId) ? targetId : [targetId];
+    const text = targets.map(id => document.getElementById(id)?.innerText ?? '').join('\n');
     // One utterance per paragraph keeps natural phrasing; sentence-sized pieces sound choppy.
     const chunks = [title ?? '', ...text.split(/\n+/)].map((chunk) => chunk.trim()).filter(Boolean);
     if (chunks.length === 0) return;

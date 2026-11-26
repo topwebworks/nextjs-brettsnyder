@@ -85,8 +85,12 @@ assert(llms.includes('22 LinkedIn recommendations') && !llms.includes('21 Linked
 for (const city of cities) assert(llms.includes(`${baseline.origin}/${city}`), `${city}: LLM discovery`);
 const robots = await (await fetch(new URL('/robots.txt', base))).text();
 assert(/User-Agent:\s*\*/i.test(robots) && /Allow:\s*\/\s*$/im.test(robots) && !/^Disallow:\s*\/\s*$/im.test(robots), 'Search and AI crawler access');
-// Brett requested the MCP tools and punctuation updates on 2026-11-25; retain the launch snapshot.
-const approvedPdfs = { ...baseline.pdfs, 'resume-brett-snyder.pdf': '8f9decd8f0c1d67e53576ab917fa14ae29c223c8afbb9ab99e6ed53114cfdf2f' };
+// Preserve the PDFs in Brett's Test build commit (8e2b6d3); retain the launch snapshot.
+const approvedPdfs = {
+  ...baseline.pdfs,
+  'resume-brett-snyder.pdf': '0567c9bfdef33ec7152dc0992f19d3f724f6ef5b0dfe91e136eb5381be1f75ee',
+  'cover-letter-brett-snyder.pdf': '018900327018b33f9a77ad950b924026ef8bf24a2eaa055f4b01858eb52e8de8',
+};
 for (const [file, expected] of Object.entries(approvedPdfs))
   assert.equal(createHash('sha256').update(await readFile(new URL(`../public/${file}`, import.meta.url))).digest('hex'), expected, `${file}: preserve approved PDF bytes`);
 assert.equal((await fetch(new URL('/not-a-supported-city', base))).status, 404, 'Unsupported city route');

@@ -76,10 +76,10 @@ export default function CityPage({ city }: { city: City }) {
               <div className={styles.textContent}>
                 <div className={styles.textHeader}>
                   <h1 className={`${styles.textTitle} ${cityStyles.cityTitle}`}>Web design in {city.name}, AZ</h1>
-                  <ListenButton targetId="city-content" title={`Web design in ${city.name}, AZ. ${content.introduction}`} className={styles.listen} />
+                  <ListenButton targetId={['city-story', 'city-services', 'selected-work', 'city-faq']} title={`Web design in ${city.name}, AZ. ${content.introduction}`} className={styles.listen} />
                   <p className={styles.textIntroduction}>{content.introduction}</p>
                 </div>
-                <div className={styles.personalStorySections}>
+                <div id="city-story" className={styles.personalStorySections}>
                   <section className={styles.personalStorySection}>
                     <h2 className={styles.personalStorySectionTitle}>{content.contextTitle}</h2>
                     <p className={styles.personalStorySectionContent}>{content.context}</p>
@@ -108,7 +108,7 @@ export default function CityPage({ city }: { city: City }) {
             </div>
           </div>
         </section>
-        <section className={styles.skillsSection}>
+        <section id="city-services" className={styles.skillsSection}>
           <div className={styles.skillsContainer}>
             <h2 className={styles.skillsTitle}>What I can help you build</h2>
             <div className={styles.skillsGrid}>
@@ -148,7 +148,7 @@ export default function CityPage({ city }: { city: City }) {
             </figure>
           </div>
         </section>
-        <section className={`${styles.valuesSection} ${styles.faqSection}`}>
+        <section id="city-faq" className={`${styles.valuesSection} ${styles.faqSection}`}>
           <div className={styles.valuesContainer}>
             <h2 className={styles.valuesSectionTitle}>Questions about working together</h2>
             <div className={styles.faqList}>
