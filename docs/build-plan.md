@@ -71,6 +71,8 @@ Reuse approved project and Blog imagery in the selected-work cards and use descr
 
 Implementation and local verification are complete: lint, typecheck, production build, 29-page SEO/content preservation, 42 city/theme/viewport combinations, and four About local-link render checks pass. The FAQ controls, proof images/links, resume preview, footer, and original PDF bytes are verified. All 17 production page traces exclude development checks and baseline fixtures. The refinements use the existing main-branch Vercel connection for publication.
 
+The refinement is committed locally as e0cc3da and is not yet published. Publication awaits explicit deployment approval. Submit its changed URLs to IndexNow only after the deployed revision is verified.
+
 Follow [local search operations](local-search-operations.md) for the city/keyword targets, prepared Business Profile copy, account-dependent actions, and measurement procedure. Account edits and fresh authenticated reporting need a connected account. An official Shopify directory link remains pending its exact verified URL; no directory credential is invented.
 
 Monitor indexing weekly and compare complete 28-day periods after recrawling, allowing for reporting delay. The November 26 through December 23 launch window is useful only with its indexing history recorded. Use the saved daily chart to compare the matching pre-release period and distinguish city/client intent from existing branded/hiring visibility. Google AI features and Bing citations are separate measurements. Keep the existing llms.txt as a generated site map; do not describe it or FAQ markup as a Google ranking or rich-result advantage.
