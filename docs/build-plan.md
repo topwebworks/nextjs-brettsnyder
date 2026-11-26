@@ -63,7 +63,17 @@ Published on 2026-11-25 through the existing main-branch Vercel connection. Impl
 
 Discovery: Google accepted the resubmitted sitemap and IndexNow accepted nine URLs (HTTP 200: Home, About, and all seven cities). GSC already lists Queen Creek as discovered through the sitemap, currently not indexed. Its manual indexing request reached Google's daily quota, so it was not queued; stop further manual requests until the quota resets. Retry Queen Creek/Gilbert after reset if needed. All city pages are discoverable through the sitemap and footer links. No immediate ranking or index-inclusion claim is made.
 
-Implementation is complete. Remaining work is normal discovery/indexing follow-up and measurement: monitor weekly and compare complete 28-day periods after recrawling. The first full post-release window is November 26 through December 23, allowing for reporting delay. Use the saved daily chart to compare the matching pre-release period and distinguish city/client intent from existing branded/hiring visibility.
+### Buyer-intent refinement
+
+Approved on 2026-11-25: apply the SEO/AEO/GEO review to the existing seven pages. Titles explicitly cover web design and Shopify; each city has its own buyer-focused description, an Arizona heading, small-business website scope, Shopify theme/section/template scope, and four distinct buyer questions alongside three shared practical answers. Written project scope establishes ownership, access, handoff, and timing; the portfolio does not publish prices or invent fixed delivery promises.
+
+Reuse approved project and Blog imagery in the selected-work cards and use descriptive case-study links. Brett supplied and approved the LinkedIn recommendation text on 2026-11-25; the city pages quote Christina Young Tessier's description of the Figma/development collaboration, with her Imagine Learning role, Shopify-project context, November 24, 2025 date, and source link. About provides contextual links to all seven cities and distinguishes direct freelance work from Top Web Works' managed service. Keep the actual Queen Creek base, employer/client credits, 22 LinkedIn recommendations, and studio-attributed Google rating consistent. Preserve the existing project/Blog content and PDF bytes.
+
+Implementation and local verification are complete: lint, typecheck, production build, 29-page SEO/content preservation, 42 city/theme/viewport combinations, and four About local-link render checks pass. The FAQ controls, proof images/links, resume preview, footer, and original PDF bytes are verified. All 17 production page traces exclude development checks and baseline fixtures. The refinements use the existing main-branch Vercel connection for publication.
+
+Follow [local search operations](local-search-operations.md) for the city/keyword targets, prepared Business Profile copy, account-dependent actions, and measurement procedure. Account edits and fresh authenticated reporting need a connected account. An official Shopify directory link remains pending its exact verified URL; no directory credential is invented.
+
+Monitor indexing weekly and compare complete 28-day periods after recrawling, allowing for reporting delay. The November 26 through December 23 launch window is useful only with its indexing history recorded. Use the saved daily chart to compare the matching pre-release period and distinguish city/client intent from existing branded/hiring visibility. Google AI features and Bing citations are separate measurements. Keep the existing llms.txt as a generated site map; do not describe it or FAQ markup as a Google ranking or rich-result advantage.
 
 ## Prior Presentation Status
 

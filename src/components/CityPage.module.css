@@ -1,0 +1,25 @@
+.proofImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.proofArrow {
+  flex-shrink: 0;
+}
+
+.recommendation {
+  margin: 2rem 0 0;
+}
+
+.recommendation blockquote {
+  margin: 0 0 0.75rem;
+}
+
+.recommendation figcaption {
+  padding-left: 2rem;
+}

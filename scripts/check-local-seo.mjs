@@ -13,6 +13,8 @@ const textOf = s => decode(s.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, 
 const normalize = s => new URL(s).pathname.replace(/\/$/, '') || '/';
 const routes = [...new Set([...baseline.pages.map(p => normalize(p.url)), ...cities.map(city => '/' + city)])];
 const localLinks = new Set();
+const cityDescriptions = new Set();
+const cityQuestions = new Map();
 
 for (const route of routes) {
   const response = await fetch(new URL(route, base));
@@ -45,18 +47,33 @@ for (const route of routes) {
   }
   for (const city of cities) assert(html.includes(`href="/${city}"`), `${route}: footer discovery of ${city}`);
   if (cities.includes(route.slice(1))) {
+    assert(title.includes('Web Design & Shopify'), `${route}: web design and Shopify intent in title`);
+    const description = decode(html.match(/<meta[^>]*name="description"[^>]*content="([^"]+)"/i)?.[1] ?? '');
+    assert(description && !cityDescriptions.has(description), `${route}: distinct buyer description`);
+    cityDescriptions.add(description);
+    assert(/small.business/i.test(visible), `${route}: small-business website offering`);
+    assert(main.includes('<blockquote') && visible.includes('Christina Young Tessier') && visible.includes('November 24, 2025'), `${route}: visible attributed recommendation`);
+    assert(/<h1[^>]*>[\s\S]*?, AZ<\/h1>/i.test(main), `${route}: state in main heading`);
+    const questions = nodes.find(node => node['@type'] === 'FAQPage').mainEntity.map(question =>
+      cities.reduce((text, city) => text.replaceAll(new RegExp(city.replaceAll('-', ' '), 'gi'), '[city]'), question.name));
+    cityQuestions.set(route, questions);
     for (const phrase of ['Next.js', 'React', 'Shopify', 'SEO', 'AEO', 'GEO', '22 LinkedIn recommendations'])
       assert(visible.includes(phrase), `${route}: ${phrase}`);
     assert(!visible.includes('21 LinkedIn') && !/\$(997|197)/.test(visible), `${route}: portfolio positioning`);
     assert(html.includes('mailto:'), `${route}: direct contact`);
     const person = nodes.find(node => node['@type'] === 'Person');
     const service = nodes.find(node => node['@type'] === 'Service');
+    assert.equal(nodes.find(node => node['@type'] === 'WebPage').name, title, `${route}: page/schema title agreement`);
     assert.equal(person.homeLocation.address.addressLocality, 'Queen Creek', `${route}: real base`);
     assert.equal(service.provider['@id'], person['@id'], `${route}: consistent person identity`);
     assert.equal(service.areaServed.name.toLowerCase().replaceAll(' ', '-'), route.slice(1), `${route}: served city`);
     assert(!service.address && !person.aggregateRating, `${route}: no fictional office or conflated ratings`);
     for (const link of main.matchAll(/href="(\/(?:projects|blog)\/[^"#?]+)"/g)) localLinks.add(link[1]);
   }
+}
+for (const [route, questions] of cityQuestions) {
+  const otherQuestions = new Set([...cityQuestions].filter(([other]) => other !== route).flatMap(([, values]) => values));
+  assert(questions.filter(question => !otherQuestions.has(question)).length >= 3, `${route}: useful distinct buyer questions`);
 }
 for (const route of localLinks) assert.equal((await fetch(new URL(route, base))).status, 200, `${route}: proof destination`);
 const sitemap = await (await fetch(new URL('/sitemap.xml', base))).text();
@@ -91,6 +108,12 @@ if (process.argv.includes('--browser')) {
         for (const city of cities) {
           await page.goto(new URL('/' + city, base).href, { waitUntil: 'domcontentloaded' });
           await page.evaluate(() => document.fonts.ready);
+          await page.evaluate(async () => {
+            await Promise.all([...document.querySelectorAll('main img')].map(image => {
+              image.loading = 'eager';
+              return image.decode().catch(() => {});
+            }));
+          });
           await new Promise(resolve => setTimeout(resolve, 1100));
           const metrics = await page.evaluate(() => ({
             theme: document.documentElement.dataset.theme,
@@ -103,6 +126,11 @@ if (process.argv.includes('--browser')) {
           assert(metrics.width <= width + 1 && metrics.image && metrics.cityLinks === 7 && metrics.headingVisible, `${city}/${theme}/${width}: heading/layout/image/footer`);
           if (city === 'queen-creek' || city === 'apache-junction')
             await page.screenshot({ path: path.join(output, `${city}-${theme}-${width}.png`) });
+          if (city === 'queen-creek' && width !== 320) {
+            const proof = await page.$('#selected-work');
+            assert(proof, 'Selected work section');
+            await proof.screenshot({ path: path.join(output, `selected-work-${theme}-${width}.png`) });
+          }
           checks++;
         }
       }
@@ -127,7 +155,29 @@ if (process.argv.includes('--browser')) {
     await page.waitForSelector('iframe[title="Resume"]', { hidden: true });
     const footer = await page.$('footer');
     await footer.screenshot({ path: path.join(output, 'city-footer-mobile.png') });
+    for (const theme of ['dark', 'light']) {
+      await page.evaluate(value => localStorage.setItem('theme', value), theme);
+      for (const width of [1200, 320]) {
+        await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
+        await page.goto(new URL('/about', base).href, { waitUntil: 'domcontentloaded' });
+        await page.evaluate(() => document.fonts.ready);
+        await new Promise(resolve => setTimeout(resolve, 1100));
+        const localFaq = await page.evaluateHandle(() => [...document.querySelectorAll('main details')]
+          .find(details => details.querySelector('summary').textContent.includes('local website design')));
+        assert(localFaq.asElement(), 'About local services question');
+        await localFaq.evaluate(details => { details.open = true; });
+        await new Promise(resolve => setTimeout(resolve, 350));
+        await localFaq.evaluate(details => { details.scrollIntoView({ block: 'start', behavior: 'instant' }); scrollBy({ top: -100, behavior: 'instant' }); });
+        assert(await localFaq.evaluate(details => {
+          const top = details.querySelector('summary').getBoundingClientRect().top;
+          return top >= 60 && top < innerHeight;
+        }), 'About local question visible below header');
+        assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `About/${theme}/${width}: local links fit`);
+        assert.equal(await localFaq.evaluate(details => details.querySelectorAll('a[href^="/"]').length), 7, 'About contextual city links');
+        await page.screenshot({ path: path.join(output, `about-local-${theme}-${width}.png`) });
+      }
+    }
     assert.equal(errors.length, 0, `Browser errors: ${errors.join('; ')}`);
-    console.log(`Browser checks passed: ${checks} city/theme/viewport combinations; FAQ interaction. Screenshots: ${output}`);
+    console.log(`Browser checks passed: ${checks} city/theme/viewport combinations; About local links; FAQ and resume interaction. Screenshots: ${output}`);
   } finally { await browser.close(); }
 }

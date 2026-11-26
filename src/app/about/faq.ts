@@ -21,6 +21,20 @@ export const faqs: Faq[] = [
     ],
   },
   {
+    q: 'Where do you offer local website design and Shopify development?',
+    a: ['I am based in Queen Creek, Arizona and serve businesses and teams in Queen Creek, Gilbert, Chandler, Tempe, San Tan Valley, Mesa, and Apache Junction. You can work directly with me on a defined Next.js/React website or Shopify/Liquid project. Most collaboration is online, with client visits arranged around the project. Top Web Works is the separate option for managed small-business websites and ongoing marketing.'],
+    links: [
+      { href: '/queen-creek', label: 'Queen Creek web design and Shopify' },
+      { href: '/gilbert', label: 'Gilbert web design and Shopify' },
+      { href: '/chandler', label: 'Chandler web design and Shopify' },
+      { href: '/tempe', label: 'Tempe web design and Shopify' },
+      { href: '/san-tan-valley', label: 'San Tan Valley web design and Shopify' },
+      { href: '/mesa', label: 'Mesa web design and Shopify' },
+      { href: '/apache-junction', label: 'Apache Junction web design and Shopify' },
+      { href: 'https://topwebworks.com', label: 'Managed websites and marketing at Top Web Works' },
+    ],
+  },
+  {
     q: 'Where can I read recommendations for Brett Snyder?',
     a: [
       'I have 22 LinkedIn recommendations from clients and colleagues about my design, development, and marketing work. Top Web Works, my website and marketing studio, also has 5 stars on Google.',

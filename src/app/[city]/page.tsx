@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import CityPage from '@/components/CityPage';
 import { cities } from '@/lib/cities';
 import { personSchema, shareImage } from '@/lib/profile';
+import { cityContent } from '@/lib/city-content';
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ city: string }> };
@@ -19,8 +20,8 @@ function findCity(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = findCity((await params).city);
-  const title = `${city.name} Web Designer & Developer`;
-  const description = `${city.name} web design and frontend development with Brett Snyder. Next.js/React, Shopify/Liquid, and design systems. 22 LinkedIn recommendations.`;
+  const title = `${city.name} Web Design & Shopify`;
+  const description = cityContent[city.slug].description;
   return {
     title,
     description,

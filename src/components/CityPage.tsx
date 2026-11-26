@@ -10,8 +10,11 @@ import ListenButton from '@/components/ui/ListenButton';
 import { emailLinks, siteConfig } from '@/lib/config';
 import { personSchema } from '@/lib/profile';
 import { cityContent, cityFaqs } from '@/lib/city-content';
+import { getProjectImages } from '@/lib/generated/projectImageImports';
+import { getBlogImages } from '@/lib/generated/blogImageImports';
 import type { City } from '@/lib/cities';
 import styles from '@/app/about/AboutPage.module.css';
+import cityStyles from './CityPage.module.css';
 
 export default function CityPage({ city }: { city: City }) {
   const content = cityContent[city.slug];
@@ -24,16 +27,16 @@ export default function CityPage({ city }: { city: City }) {
     { label: 'Enterprise CMS properties', value: '13', icon: Code },
   ];
   const capabilities = [
-    { title: 'Next.js / React', text: content.frontend, icon: Code },
-    { title: 'Shopify / Liquid', text: content.shopify, icon: Layers },
+    { title: 'Website design with Next.js / React', text: content.frontend, icon: Code },
+    { title: 'Shopify web design / Liquid', text: content.shopify, icon: Layers },
     { title: 'Search and conversions', text: 'SEO, AEO, and GEO foundations, useful buyer answers, accessible interfaces, and tracking around the inquiry or purchase path. My design and branding background connects the visual work to the customer journey.', icon: Target },
   ];
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       personSchema,
-      { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: `${city.name} Web Designer & Developer | Brett Snyder`, about: { '@id': personSchema['@id'] }, mainEntity: { '@id': `${url}#service` } },
-      { '@type': 'Service', '@id': `${url}#service`, url, name: `Web design and frontend development for ${city.name}`, description: content.introduction, serviceType: ['Next.js and React website development', 'Shopify and Liquid development', 'Web design and design systems'], provider: { '@id': personSchema['@id'] }, areaServed: { '@type': 'City', name: city.name, containedInPlace: { '@type': 'State', name: 'Arizona' } } },
+      { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: `${city.name} Web Design & Shopify | Brett Snyder`, description: content.description, about: { '@id': personSchema['@id'] }, mainEntity: { '@id': `${url}#service` } },
+      { '@type': 'Service', '@id': `${url}#service`, url, name: `Website design and Shopify development for ${city.name}`, description: content.introduction, serviceType: ['Small-business website design', 'Next.js and React website development', 'Shopify web design and Liquid development', 'Web design and design systems'], provider: { '@id': personSchema['@id'] }, areaServed: { '@type': 'City', name: city.name, containedInPlace: { '@type': 'State', name: 'Arizona' } } },
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: personSchema.url }, { '@type': 'ListItem', position: 2, name: city.name, item: url }] },
       { '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') } })) },
     ],
@@ -72,8 +75,8 @@ export default function CityPage({ city }: { city: City }) {
               </div>
               <div className={styles.textContent}>
                 <div className={styles.textHeader}>
-                  <h1 className={styles.textTitle}>Web design in {city.name}</h1>
-                  <ListenButton targetId="city-content" title={`Web design in ${city.name}. ${content.introduction}`} className={styles.listen} />
+                  <h1 className={styles.textTitle}>Web design in {city.name}, AZ</h1>
+                  <ListenButton targetId="city-content" title={`Web design in ${city.name}, AZ. ${content.introduction}`} className={styles.listen} />
                   <p className={styles.textIntroduction}>{content.introduction}</p>
                 </div>
                 <div className={styles.personalStorySections}>
@@ -115,18 +118,31 @@ export default function CityPage({ city }: { city: City }) {
             </div>
           </div>
         </section>
-        <section className={styles.skillsSection}>
+        <section id="selected-work" className={styles.skillsSection}>
           <div className={styles.skillsContainer}>
-            <h2 className={styles.skillsTitle}>Selected work behind the experience</h2>
+            <h2 className={styles.skillsTitle}>Selected work</h2>
             <div className={styles.skillsGrid}>
-              {content.proof.map(proof => (
-                <article key={proof.href} className={styles.skillCard}>
-                  <h3 className={styles.personalStorySectionTitle}>{proof.title}</h3>
-                  <p className={styles.personalStorySectionContent}>{proof.text}</p>
-                  <div className={styles.faqLinks}><Link className={styles.faqLink} href={proof.href}>Explore the work <ArrowRight size={16} aria-hidden="true" /></Link></div>
-                </article>
-              ))}
+              {content.proof.map(proof => {
+                const id = proof.href.split('/').at(-1)!;
+                const image = (proof.href.startsWith('/projects/') ? getProjectImages(id) : getBlogImages(id)).hero;
+                return (
+                  <article key={proof.href} className={styles.skillCard}>
+                    {image && <Image src={image} alt={`${proof.title}, from Brett Snyder's portfolio`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px" className={cityStyles.proofImage} />}
+                    <h3 className={styles.personalStorySectionTitle}><Link className={styles.faqLink} href={proof.href}>{proof.title} <ArrowRight size={16} className={cityStyles.proofArrow} aria-hidden="true" /></Link></h3>
+                    <p className={styles.personalStorySectionContent}>{proof.text}</p>
+                  </article>
+                );
+              })}
             </div>
+            <figure className={cityStyles.recommendation}>
+              <blockquote className={styles.valueQuoteBox}>
+                <p className={styles.valueQuoteText}>I handled the wireframes and dev-ready designs in Figma, and Brett worked on the development, so we collaborated often and stayed aligned on the best way to move things forward.</p>
+              </blockquote>
+              <figcaption className={styles.personalStorySectionContent}>
+                Christina Young Tessier, Sr. Graphic Designer at Imagine Learning, on collaborating with Brett on a Shopify redesign.{' '}
+                <Link className={styles.faqLink} href="https://www.linkedin.com/in/topwebworks">LinkedIn recommendation, November 24, 2025</Link>
+              </figcaption>
+            </figure>
           </div>
         </section>
         <section className={`${styles.valuesSection} ${styles.faqSection}`}>
