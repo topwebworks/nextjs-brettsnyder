@@ -83,7 +83,9 @@ assert(llms.includes('22 LinkedIn recommendations') && !llms.includes('21 Linked
 for (const city of cities) assert(llms.includes(`${baseline.origin}/${city}`), `${city}: LLM discovery`);
 const robots = await (await fetch(new URL('/robots.txt', base))).text();
 assert(/User-Agent:\s*\*/i.test(robots) && /Allow:\s*\/\s*$/im.test(robots) && !/^Disallow:\s*\/\s*$/im.test(robots), 'Search and AI crawler access');
-for (const [file, expected] of Object.entries(baseline.pdfs))
+// Brett approved the MCP creative-tools resume revision on 2026-11-25; retain the launch snapshot.
+const approvedPdfs = { ...baseline.pdfs, 'resume-brett-snyder.pdf': '840aeeef5a5de7f12b5e1d0969d5acc0c49e396e5a086ac47e2067c0db997959' };
+for (const [file, expected] of Object.entries(approvedPdfs))
   assert.equal(createHash('sha256').update(await readFile(new URL(`../public/${file}`, import.meta.url))).digest('hex'), expected, `${file}: preserve approved PDF bytes`);
 assert.equal((await fetch(new URL('/not-a-supported-city', base))).status, 404, 'Unsupported city route');
 console.log(`SEO/AEO/GEO checks passed: ${routes.length} pages, original content/titles, seven cities, FAQs, proof, schema, sitemap, robots, llms.txt, and PDF preservation.`);
@@ -157,6 +159,25 @@ if (process.argv.includes('--browser')) {
     await footer.screenshot({ path: path.join(output, 'city-footer-mobile.png') });
     for (const theme of ['dark', 'light']) {
       await page.evaluate(value => localStorage.setItem('theme', value), theme);
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => document.fonts.ready);
+      await new Promise(resolve => setTimeout(resolve, 1100));
+      await page.$eval('footer', footer => footer.scrollIntoView({ block: 'end', behavior: 'instant' }));
+      await new Promise(resolve => setTimeout(resolve, 2700));
+      for (const width of [1574, 1200, 1024, 768, 390, 320]) {
+        await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
+        const layout = await page.$eval('footer', footer => {
+          const copyright = footer.querySelector('[class*="copyright"]').getBoundingClientRect();
+          const icons = footer.querySelector('[class*="iconsContainer"]').getBoundingClientRect();
+          return { width: document.documentElement.scrollWidth, inline: copyright.right <= icons.left + 1 && Math.abs((copyright.top + copyright.bottom - icons.top - icons.bottom) / 2) < 1 };
+        });
+        assert(layout.width <= width + 1, `Footer/${theme}/${width}: no horizontal overflow`);
+        if (width >= 1200) assert(layout.inline, `Footer/${theme}/${width}: copyright left of icons on the same row`);
+        await (await page.$('footer')).screenshot({ path: path.join(output, `footer-${theme}-${width}.png`) });
+      }
+    }
+    for (const theme of ['dark', 'light']) {
+      await page.evaluate(value => localStorage.setItem('theme', value), theme);
       for (const width of [1200, 320]) {
         await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
         await page.goto(new URL('/about', base).href, { waitUntil: 'domcontentloaded' });
@@ -178,6 +199,6 @@ if (process.argv.includes('--browser')) {
       }
     }
     assert.equal(errors.length, 0, `Browser errors: ${errors.join('; ')}`);
-    console.log(`Browser checks passed: ${checks} city/theme/viewport combinations; About local links; FAQ and resume interaction. Screenshots: ${output}`);
+    console.log(`Browser checks passed: ${checks} city/theme/viewport combinations; 12 footer layouts; About local links; FAQ and resume interaction. Screenshots: ${output}`);
   } finally { await browser.close(); }
 }

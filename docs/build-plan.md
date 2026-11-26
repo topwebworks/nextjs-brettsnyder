@@ -71,7 +71,13 @@ Reuse approved project and Blog imagery in the selected-work cards and use descr
 
 Implementation and local verification are complete: lint, typecheck, production build, 29-page SEO/content preservation, 42 city/theme/viewport combinations, and four About local-link render checks pass. The FAQ controls, proof images/links, resume preview, footer, and original PDF bytes are verified. All 17 production page traces exclude development checks and baseline fixtures. The refinements use the existing main-branch Vercel connection for publication.
 
-Implementation commit: e0cc3da. Brett explicitly approved production publication on 2026-11-25. Verify the deployed revision before submitting its changed URLs to IndexNow.
+Implementation commit: e0cc3da. Brett explicitly approved production publication on 2026-11-25; the Vercel deployment for b3b6687 succeeded. Public checks confirmed the seven revised city titles and recommendation excerpts, updated About, ten referenced image assets, 29 sitemap URLs, and the original PDF hashes. IndexNow accepted About and all seven city URLs (HTTP 200).
+
+### Footer and current creative tools
+
+Approved on 2026-11-25: place copyright immediately before the social icons in the footer's upper right row, leaving navigation/cities on the left and contact/build details on the right. Keep the two-row desktop layout and allow natural wrapping on smaller screens. Add `AI/MCP Creative Production` to the resume's Design & Growth competencies in both editable HTML and plain text, then regenerate and inspect the PDF. The current resume contains no Adobe product claims. This explicitly authorized resume revision supersedes byte preservation for the resume PDF; the cover-letter PDF remains unchanged.
+
+Local verification is complete: lint, typecheck, production build, 29-page SEO/content preservation, 42 city/theme/viewport combinations, and 12 footer layouts pass. Desktop checks place copyright immediately left of the icons; phone layouts wrap without overflow. ArtCraft PDF inspection confirms a tagged two-page resume, the new competency in extracted text, and no Adobe mention or document warnings. Both rendered PDF pages were reviewed. The local preservation check retains the original launch snapshot and explicitly records the approved resume's new hash.
 
 Follow [local search operations](local-search-operations.md) for the city/keyword targets, prepared Business Profile copy, account-dependent actions, and measurement procedure. Account edits and fresh authenticated reporting need a connected account. An official Shopify directory link remains pending its exact verified URL; no directory credential is invented.
 

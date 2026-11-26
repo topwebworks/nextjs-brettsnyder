@@ -15,7 +15,7 @@ CORE COMPETENCIES
 
 Frontend: React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, Responsive Design
 CMS & Commerce: WordPress, Shopify Plus, Liquid, Headless WordPress, PHP
-Design & Growth: Figma, UI/UX Design, Design Systems, Landing Pages, Accessibility, A/B Testing, CRO, SEO
+Design & Growth: Figma, AI/MCP Creative Production, UI/UX Design, Design Systems, Landing Pages, Accessibility, A/B Testing, CRO, SEO
 Analytics & Delivery: GA4, Google Tag Manager, Search Console, Core Web Vitals, Git/GitHub, Vercel, Supabase
 
 PROFESSIONAL EXPERIENCE

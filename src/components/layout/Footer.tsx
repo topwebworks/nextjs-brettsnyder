@@ -63,12 +63,13 @@ export default function Footer() {
                 <Link key={city.slug} href={`/${city.slug}`} className={styles.legalLink}>{city.name}</Link>
               ))}
             </nav>
-            <div className={styles.copyright}>
-              © {currentYear} Brett Snyder. All rights reserved worldwide.
-            </div>
           </div>
 
           <div className={styles.footerIcons}>
+            <div className={styles.contactRow}>
+              <div className={styles.copyright}>
+                © {currentYear} Brett Snyder. All rights reserved worldwide.
+              </div>
             <div className={styles.iconsContainer}>
               <a
                 href={emailLinks.portfolio()}
@@ -105,6 +106,7 @@ export default function Footer() {
                   </span>
                 </ResumeButton>
               )}
+            </div>
             </div>
 
             <div className={styles.builtWith}>
