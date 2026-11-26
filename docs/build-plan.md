@@ -86,6 +86,8 @@ Sources were checked live on 2026-11-25: Top Web Works [plans](https://topwebwor
 
 ### Footer and current creative tools
 
+Solo-provider copy correction on 2026-11-25: use "I" for Brett's services across all seven city pages, including service cards, introductions, process descriptions, and FAQ answers. Keep recommendation excerpts verbatim and customer questions in the customer's voice. No em dashes were introduced. Lint, typecheck, production build, and the provider-voice check pass. These copy changes remain local.
+
 Copy review on 2026-11-25: simplify all seven city pages, buyer FAQs, shared experience text, new About answer, and prepared Business Profile description. Use direct first-person language and everyday words; retain the distinct city topics, verified claims, source links, and exact recommendation quotations. Remove em dashes from the reviewed copy and resume template, regenerate the resume, and keep its plain-text version aligned. Resume PDF remains two pages. Validation passes: lint, typecheck, production build, 29-page content/schema checks, 42 city/theme/viewport combinations, 12 footer layouts, and About/FAQ/resume interaction checks. The reviewed sources and extracted resume text contain zero em dashes. Both resume pages were visually checked; the cover-letter PDF is unchanged.
 
 Main footer vertical padding is `clamp(1.5rem, 3vh, 2rem)`, halving the original top spacing below the service-area bar. City links use 1 to 1.5rem horizontal gaps, matching the main footer links.
