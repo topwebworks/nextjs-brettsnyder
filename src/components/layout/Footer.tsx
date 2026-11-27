@@ -107,7 +107,7 @@ export default function Footer() {
                 </a>
 
                 {siteConfig.showResume && (
-                  <ResumeButton aria-label="Open resume">
+                  <ResumeButton aria-label="Open resume" title="Resume">
                     <span className={`${styles.socialIcon} ${styles.resumeIcon}`}>
                       <FileText size={16} strokeWidth={1.5} />
                     </span>

@@ -408,6 +408,8 @@ export default function Homepage() {
                         size="small"
                         icon="file"
                         showText={false}
+                        aria-label="Resume"
+                        title="Resume"
                       />
                     )}
                   </div>
