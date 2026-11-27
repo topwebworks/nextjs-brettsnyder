@@ -192,6 +192,16 @@ export default function Homepage() {
 
           {/* Refined Social Icons - Minimal & Elegant */}
           <div className={styles.heroSocialIcons}>
+            {siteConfig.showResume && (
+              <ResumeButton
+                variant="secondary"
+                size="medium"
+                icon="file"
+                showText={false}
+                aria-label="Resume"
+                className={styles.heroSocialIcon}
+              />
+            )}
             {[
               { icon: Github, href: siteConfig.github, label: 'GitHub', external: true },
               { icon: Linkedin, href: siteConfig.linkedin, label: 'LinkedIn', external: true },
@@ -210,16 +220,6 @@ export default function Homepage() {
                 className={styles.heroSocialIcon}
               />
             ))}
-            {siteConfig.showResume && (
-              <ResumeButton
-                variant="secondary"
-                size="medium"
-                icon="file"
-                showText={false}
-                aria-label="Resume"
-                className={styles.heroSocialIcon}
-              />
-            )}
           </div>
 
           {/* Typography Hierarchy */}
