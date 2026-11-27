@@ -210,6 +210,16 @@ export default function Homepage() {
                 className={styles.heroSocialIcon}
               />
             ))}
+            {siteConfig.showResume && (
+              <ResumeButton
+                variant="secondary"
+                size="medium"
+                icon="file"
+                showText={false}
+                aria-label="Resume"
+                className={styles.heroSocialIcon}
+              />
+            )}
           </div>
 
           {/* Typography Hierarchy */}
