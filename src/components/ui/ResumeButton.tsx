@@ -17,6 +17,7 @@ interface ResumeButtonProps {
   icon?: 'download' | 'file';
   showText?: boolean;
   'aria-label'?: string;
+  title?: string;
 }
 
 /**
@@ -45,6 +46,7 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
   icon = 'download',
   showText = true,
   'aria-label': ariaLabel,
+  title,
 }) => {
   const [showModal, setShowModal] = useState(false);
   const resumeHtmlPath = '/resume-brett-snyder.html';
@@ -93,6 +95,7 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
           onClick={openResume}
           className={`${styles.trigger} ${className}`.trim()}
           aria-label={ariaLabel ?? 'Open resume'}
+          title={title}
         >
           {children}
         </button>
@@ -105,6 +108,7 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
           onClick={openResume}
           className={className}
           aria-label={ariaLabel}
+          title={title}
         >
           {showText && (children || 'Download Resume')}
         </Button>

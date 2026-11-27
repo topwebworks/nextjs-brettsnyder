@@ -199,6 +199,7 @@ export default function Homepage() {
                 icon="file"
                 showText={false}
                 aria-label="Resume"
+                title="Resume"
                 className={styles.heroSocialIcon}
               />
             )}
